@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Petit Pas — Французский — Продвинутый — Словарный запас</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Montserrat", "Segoe UI", sans-serif;
+      color: rgba(255, 255, 255, 0.95);
+      background: linear-gradient(135deg, #0f172a, #1e293b, #312e81);
+      background-size: 200% 200%;
+      animation: shimmer 18s ease infinite;
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    main {
+      max-width: 560px;
+      width: 100%;
+      background: rgba(15, 23, 42, 0.55);
+      border-radius: 24px;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 28px 48px rgba(2, 6, 23, 0.45);
+      padding: clamp(1.75rem, 6vw, 3rem);
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    h1 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      letter-spacing: 0.04em;
+    }
+
+    p {
+      font-size: clamp(1rem, 2.4vw, 1.2rem);
+      color: rgba(255, 255, 255, 0.82);
+      line-height: 1.8;
+    }
+
+    a {
+      color: #93c5fd;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Французский — Продвинутый — Словарный запас</h1>
+    <p>Тут контента пока нет, но я скоро добавлю!</p>
+    <p><a href="../">Вернуться к выбору раздела</a></p>
+  </main>
+</body>
+</html>
