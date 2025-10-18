@@ -42,7 +42,7 @@
     }
 
     main {
-      max-width: 560px;
+      max-width: 720px;
       width: 100%;
       background: rgba(15, 23, 42, 0.55);
       border-radius: 24px;
@@ -51,7 +51,7 @@
       padding: clamp(1.75rem, 6vw, 3rem);
       display: flex;
       flex-direction: column;
-      gap: 1.5rem;
+      gap: 1.75rem;
     }
 
     h1 {
@@ -65,16 +65,58 @@
       line-height: 1.8;
     }
 
-    a {
+    .options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      width: 100%;
+    }
+
+    .option-card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.35rem 1rem;
+      border-radius: 18px;
+      background: rgba(30, 64, 175, 0.22);
+      border: 1px solid rgba(147, 197, 253, 0.3);
+      color: #e0f2fe;
+      font-weight: 600;
+      font-size: 1.05rem;
+      text-decoration: none;
+      transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .option-card:hover,
+    .option-card:focus {
+      transform: translateY(-4px);
+      background: rgba(59, 130, 246, 0.35);
+      box-shadow: 0 16px 32px rgba(37, 99, 235, 0.35);
+    }
+
+    .back-link {
       color: #93c5fd;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .back-link:hover,
+    .back-link:focus {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
   <main>
     <h1>Сербский — Начальный — Словарный запас</h1>
-    <p>Тут контента пока нет, но я скоро добавлю!</p>
-    <p><a href="../">Вернуться к выбору раздела</a></p>
+    <p>Выберите категорию слов, которую хотите изучить:</p>
+    <div class="options">
+      <a class="option-card" href="nouns/">Существительные</a>
+      <a class="option-card" href="verbs/">Глаголы</a>
+      <a class="option-card" href="adjectives/">Прилагательные</a>
+      <a class="option-card" href="others/">Другое</a>
+    </div>
+    <p><a class="back-link" href="../">Вернуться к выбору раздела</a></p>
   </main>
 </body>
 </html>
