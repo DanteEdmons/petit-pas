@@ -129,7 +129,7 @@
     }
 
     .accordion-item.active .accordion-content {
-      max-height: 3000px;
+      max-height: 4000px;
       padding: 1.5rem;
     }
 
@@ -228,18 +228,15 @@
       text-decoration: underline;
     }
 
-    .number-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 0.75rem;
+    ul {
       margin: 1rem 0;
+      padding-left: 1.5rem;
     }
 
-    .number-item {
-      background: rgba(30, 41, 59, 0.5);
-      padding: 0.75rem;
-      border-radius: 8px;
-      text-align: center;
+    li {
+      margin: 0.5rem 0;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.6;
     }
   </style>
 </head>
@@ -249,279 +246,42 @@
     <p class="intro">Выберите тему, чтобы изучить грамматическое правило с примерами и таблицами.</p>
 
     <div class="accordion">
-      <!-- 1. Глагол être -->
+      <!-- 1. Артикли -->
       <div class="accordion-item">
         <button class="accordion-header" aria-expanded="false">
-          <span>Глагол быть (être)</span>
+          <span>1. Артикли (Les articles)</span>
           <span class="accordion-icon">▼</span>
         </button>
         <div class="accordion-content">
-          <p>Глагол <strong>être</strong> (быть) — один из самых важных глаголов во французском языке. Он неправильный и спрягается особым образом.</p>
-
-          <h3>Утвердительная форма</h3>
-          <table>
-            <thead>
-              <tr>
-                <th>Местоимение</th>
-                <th>Французский</th>
-                <th>Русский</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>je</td>
-                <td>suis</td>
-                <td>я есть</td>
-              </tr>
-              <tr>
-                <td>tu</td>
-                <td>es</td>
-                <td>ты есть</td>
-              </tr>
-              <tr>
-                <td>il/elle</td>
-                <td>est</td>
-                <td>он/она есть</td>
-              </tr>
-              <tr>
-                <td>nous</td>
-                <td>sommes</td>
-                <td>мы есть</td>
-              </tr>
-              <tr>
-                <td>vous</td>
-                <td>êtes</td>
-                <td>вы есть</td>
-              </tr>
-              <tr>
-                <td>ils/elles</td>
-                <td>sont</td>
-                <td>они есть</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <h3>Отрицательная форма (ne ... pas)</h3>
-          <table>
-            <thead>
-              <tr>
-                <th>Местоимение</th>
-                <th>Французский</th>
-                <th>Русский</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>je</td>
-                <td>ne suis pas</td>
-                <td>я не есть</td>
-              </tr>
-              <tr>
-                <td>tu</td>
-                <td>n'es pas</td>
-                <td>ты не есть</td>
-              </tr>
-              <tr>
-                <td>il/elle</td>
-                <td>n'est pas</td>
-                <td>он/она не есть</td>
-              </tr>
-              <tr>
-                <td>nous</td>
-                <td>ne sommes pas</td>
-                <td>мы не есть</td>
-              </tr>
-              <tr>
-                <td>vous</td>
-                <td>n'êtes pas</td>
-                <td>вы не есть</td>
-              </tr>
-              <tr>
-                <td>ils/elles</td>
-                <td>ne sont pas</td>
-                <td>они не есть</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <div class="examples">
-            <div class="example">
-              <span class="french">Je suis étudiant.</span> — <span class="russian">Я студент.</span>
-            </div>
-            <div class="example">
-              <span class="french">Tu es professeur.</span> — <span class="russian">Ты учитель.</span>
-            </div>
-            <div class="example">
-              <span class="french">Elle est médecin.</span> — <span class="russian">Она врач.</span>
-            </div>
-            <div class="example">
-              <span class="french">Nous sommes amis.</span> — <span class="russian">Мы друзья.</span>
-            </div>
-            <div class="example">
-              <span class="french">Je ne suis pas fatigué.</span> — <span class="russian">Я не уставший.</span>
-            </div>
-          </div>
-
-          <div class="note">
-            <strong>Примечание:</strong> Перед гласной "ne" превращается в "n'" (elision).
-          </div>
-        </div>
-      </div>
-
-      <!-- 2. Глагол avoir -->
-      <div class="accordion-item">
-        <button class="accordion-header" aria-expanded="false">
-          <span>Глагол иметь (avoir)</span>
-          <span class="accordion-icon">▼</span>
-        </button>
-        <div class="accordion-content">
-          <p>Глагол <strong>avoir</strong> (иметь) — второй важнейший глагол во французском языке. Также неправильный.</p>
-
-          <h3>Утвердительная форма</h3>
-          <table>
-            <thead>
-              <tr>
-                <th>Местоимение</th>
-                <th>Французский</th>
-                <th>Русский</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>j'</td>
-                <td>ai</td>
-                <td>я имею</td>
-              </tr>
-              <tr>
-                <td>tu</td>
-                <td>as</td>
-                <td>ты имеешь</td>
-              </tr>
-              <tr>
-                <td>il/elle</td>
-                <td>a</td>
-                <td>он/она имеет</td>
-              </tr>
-              <tr>
-                <td>nous</td>
-                <td>avons</td>
-                <td>мы имеем</td>
-              </tr>
-              <tr>
-                <td>vous</td>
-                <td>avez</td>
-                <td>вы имеете</td>
-              </tr>
-              <tr>
-                <td>ils/elles</td>
-                <td>ont</td>
-                <td>они имеют</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <h3>Отрицательная форма</h3>
-          <table>
-            <thead>
-              <tr>
-                <th>Местоимение</th>
-                <th>Французский</th>
-                <th>Русский</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>je</td>
-                <td>n'ai pas</td>
-                <td>я не имею</td>
-              </tr>
-              <tr>
-                <td>tu</td>
-                <td>n'as pas</td>
-                <td>ты не имеешь</td>
-              </tr>
-              <tr>
-                <td>il/elle</td>
-                <td>n'a pas</td>
-                <td>он/она не имеет</td>
-              </tr>
-              <tr>
-                <td>nous</td>
-                <td>n'avons pas</td>
-                <td>мы не имеем</td>
-              </tr>
-              <tr>
-                <td>vous</td>
-                <td>n'avez pas</td>
-                <td>вы не имеете</td>
-              </tr>
-              <tr>
-                <td>ils/elles</td>
-                <td>n'ont pas</td>
-                <td>они не имеют</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <div class="examples">
-            <div class="example">
-              <span class="french">J'ai un livre.</span> — <span class="russian">У меня есть книга.</span>
-            </div>
-            <div class="example">
-              <span class="french">Elle a une voiture.</span> — <span class="russian">У неё есть автомобиль.</span>
-            </div>
-            <div class="example">
-              <span class="french">Nous avons une maison.</span> — <span class="russian">У нас есть дом.</span>
-            </div>
-            <div class="example">
-              <span class="french">Ils n'ont pas d'argent.</span> — <span class="russian">У них нет денег.</span>
-            </div>
-          </div>
-
-          <div class="note">
-            <strong>Примечание:</strong> После отрицания неопределённый артикль (un, une, des) заменяется на "de" или "d'".
-          </div>
-        </div>
-      </div>
-
-      <!-- 3. Артикли -->
-      <div class="accordion-item">
-        <button class="accordion-header" aria-expanded="false">
-          <span>Артикли (les articles)</span>
-          <span class="accordion-icon">▼</span>
-        </button>
-        <div class="accordion-content">
-          <p>Во французском языке есть определённые и неопределённые артикли. Они зависят от рода и числа существительного.</p>
-
           <h3>Определённые артикли (le, la, les)</h3>
           <table>
             <thead>
               <tr>
-                <th>Род/Число</th>
                 <th>Артикль</th>
+                <th>Использование</th>
                 <th>Пример</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Мужской род</td>
                 <td>le</td>
-                <td>le livre (книга)</td>
+                <td>мужской род</td>
+                <td>le garçon (мальчик)</td>
               </tr>
               <tr>
-                <td>Женский род</td>
                 <td>la</td>
-                <td>la table (стол)</td>
+                <td>женский род</td>
+                <td>la fille (девочка)</td>
               </tr>
               <tr>
-                <td>Перед гласной</td>
                 <td>l'</td>
-                <td>l'ami (друг), l'école (школа)</td>
+                <td>перед гласной</td>
+                <td>l'ami, l'amie</td>
               </tr>
               <tr>
-                <td>Множественное число</td>
                 <td>les</td>
-                <td>les livres, les tables</td>
+                <td>множественное число</td>
+                <td>les garçons, les filles</td>
               </tr>
             </tbody>
           </table>
@@ -530,87 +290,138 @@
           <table>
             <thead>
               <tr>
-                <th>Род/Число</th>
                 <th>Артикль</th>
+                <th>Использование</th>
                 <th>Пример</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Мужской род</td>
                 <td>un</td>
-                <td>un livre (какая-то книга)</td>
+                <td>мужской род</td>
+                <td>un livre (книга)</td>
               </tr>
               <tr>
-                <td>Женский род</td>
                 <td>une</td>
-                <td>une table (какой-то стол)</td>
+                <td>женский род</td>
+                <td>une table (стол)</td>
               </tr>
               <tr>
-                <td>Множественное число</td>
                 <td>des</td>
+                <td>множественное число</td>
                 <td>des livres, des tables</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Партитивные артикли (du, de la, de l', des)</h3>
+          <p>Используются с неисчисляемыми существительными.</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Артикль</th>
+                <th>Использование</th>
+                <th>Пример</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>du</td>
+                <td>мужской род</td>
+                <td>du pain (хлеб)</td>
+              </tr>
+              <tr>
+                <td>de la</td>
+                <td>женский род</td>
+                <td>de la viande (мясо)</td>
+              </tr>
+              <tr>
+                <td>de l'</td>
+                <td>перед гласной</td>
+                <td>de l'eau (вода)</td>
               </tr>
             </tbody>
           </table>
 
           <div class="examples">
             <div class="example">
-              <span class="french">Le chat est noir.</span> — <span class="russian">Кот чёрный. (конкретный кот)</span>
+              <span class="french">Je mange du pain.</span> — <span class="russian">Я ем хлеб.</span>
             </div>
             <div class="example">
-              <span class="french">J'ai un chat.</span> — <span class="russian">У меня есть кот. (какой-то кот)</span>
+              <span class="french">Elle boit de l'eau.</span> — <span class="russian">Она пьёт воду.</span>
             </div>
-            <div class="example">
-              <span class="french">La femme est belle.</span> — <span class="russian">Женщина красивая.</span>
-            </div>
-            <div class="example">
-              <span class="french">Les enfants jouent.</span> — <span class="russian">Дети играют.</span>
-            </div>
-          </div>
-
-          <div class="note">
-            <strong>Примечание:</strong> Определённый артикль используется для конкретных предметов, неопределённый — для любых.
           </div>
         </div>
       </div>
 
-      <!-- 4. Множественное число -->
+      <!-- 2. Род существительных -->
       <div class="accordion-item">
         <button class="accordion-header" aria-expanded="false">
-          <span>Множественное число существительных</span>
+          <span>2. Род существительных (Le genre)</span>
           <span class="accordion-icon">▼</span>
         </button>
         <div class="accordion-content">
-          <p>Во французском языке множественное число обычно образуется добавлением <strong>-s</strong> к существительному.</p>
+          <p>Все французские существительные имеют либо мужской род (masculin), либо женский род (féminin).</p>
 
-          <h3>Основное правило</h3>
+          <div class="note">
+            <strong>Важно:</strong> Род существительного нужно запоминать вместе со словом! Часто род во французском не совпадает с русским.
+          </div>
+
+          <h3>Примеры</h3>
           <table>
             <thead>
               <tr>
-                <th>Единственное число</th>
-                <th>Множественное число</th>
-                <th>Перевод</th>
+                <th>Мужской род (m)</th>
+                <th>Женский род (f)</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>le livre</td>
-                <td>les livres</td>
-                <td>книги</td>
+                <td>le livre (книга)</td>
+                <td>la table (стол)</td>
               </tr>
               <tr>
-                <td>la table</td>
-                <td>les tables</td>
-                <td>столы</td>
+                <td>le garçon (мальчик)</td>
+                <td>la fille (девочка)</td>
               </tr>
               <tr>
-                <td>l'ami</td>
-                <td>les amis</td>
-                <td>друзья</td>
+                <td>le soleil (солнце)</td>
+                <td>la lune (луна)</td>
               </tr>
             </tbody>
           </table>
+
+          <h3>Некоторые подсказки</h3>
+          <p><strong>Обычно мужской род:</strong></p>
+          <ul>
+            <li>Слова на -age: le garage, le message</li>
+            <li>Слова на -ment: le gouvernement</li>
+            <li>Дни недели, месяцы, времена года</li>
+          </ul>
+
+          <p><strong>Обычно женский род:</strong></p>
+          <ul>
+            <li>Слова на -tion: la nation, la station</li>
+            <li>Слова на -ette: la cigarette</li>
+            <li>Слова на -ure: la nature</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 3. Множественное число -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>3. Множественное число (Le pluriel)</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Основное правило</h3>
+          <p>Обычно добавляется <strong>-s</strong></p>
+          <div class="examples">
+            <div class="example">
+              <span class="french">chat → chats</span> — <span class="russian">кот → коты</span>
+            </div>
+          </div>
 
           <h3>Особые случаи</h3>
           <table>
@@ -623,267 +434,223 @@
             </thead>
             <tbody>
               <tr>
-                <td>-s, -x, -z</td>
-                <td>не меняется</td>
-                <td>un fils → des fils (сын → сыновья)</td>
-              </tr>
-              <tr>
-                <td>-eau, -au</td>
+                <td>-eau, -au, -eu</td>
                 <td>+ x</td>
-                <td>un bateau → des bateaux (лодка → лодки)</td>
+                <td>cadeau → cadeaux</td>
               </tr>
               <tr>
                 <td>-al</td>
-                <td>→ aux</td>
-                <td>un animal → des animaux (животное → животные)</td>
+                <td>→ -aux</td>
+                <td>animal → animaux</td>
+              </tr>
+              <tr>
+                <td>-s, -x, -z</td>
+                <td>не меняется</td>
+                <td>le prix → les prix</td>
               </tr>
             </tbody>
           </table>
 
-          <div class="examples">
-            <div class="example">
-              <span class="french">J'ai des livres.</span> — <span class="russian">У меня есть книги.</span>
-            </div>
-            <div class="example">
-              <span class="french">Les enfants sont petits.</span> — <span class="russian">Дети маленькие.</span>
-            </div>
-            <div class="example">
-              <span class="french">Il y a des bateaux dans le port.</span> — <span class="russian">В порту есть лодки.</span>
-            </div>
-          </div>
-
           <div class="note">
-            <strong>Примечание:</strong> Буква -s на конце не произносится, но артикль меняется (le/la → les).
+            <strong>Примечание:</strong> Окончание -s не произносится, но артикль меняется (le/la → les).
           </div>
         </div>
       </div>
 
-      <!-- 5. Спряжение глаголов 1-й группы -->
+      <!-- 4. Прилагательные -->
       <div class="accordion-item">
         <button class="accordion-header" aria-expanded="false">
-          <span>Спряжение глаголов 1-й группы (-er)</span>
+          <span>4. Прилагательные (Les adjectifs)</span>
           <span class="accordion-icon">▼</span>
         </button>
         <div class="accordion-content">
-          <p>Глаголы 1-й группы оканчиваются на <strong>-er</strong>. Это самая большая и регулярная группа глаголов во французском языке.</p>
+          <h3>Согласование</h3>
+          <p>Прилагательные согласуются с существительным в роде и числе.</p>
 
-          <h3>Общая схема спряжения</h3>
-          <p>Убираем <strong>-er</strong> и добавляем окончания: <strong>-e, -es, -e, -ons, -ez, -ent</strong></p>
+          <table>
+            <thead>
+              <tr>
+                <th>Форма</th>
+                <th>Пример</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Мужской род</td>
+                <td>petit</td>
+              </tr>
+              <tr>
+                <td>Женский род (+e)</td>
+                <td>petite</td>
+              </tr>
+              <tr>
+                <td>Мн. число м.р. (+s)</td>
+                <td>petits</td>
+              </tr>
+              <tr>
+                <td>Мн. число ж.р. (+es)</td>
+                <td>petites</td>
+              </tr>
+            </tbody>
+          </table>
 
-          <h3>parler (говорить)</h3>
+          <h3>Позиция прилагательных</h3>
+          <p><strong>Обычно после существительного:</strong></p>
+          <div class="examples">
+            <div class="example">
+              <span class="french">une voiture rouge</span> — <span class="russian">красная машина</span>
+            </div>
+          </div>
+
+          <p><strong>Некоторые короткие прилагательные ПЕРЕД существительным (BAGS):</strong></p>
+          <ul>
+            <li><strong>B</strong>eauty: beau, joli</li>
+            <li><strong>A</strong>ge: jeune, vieux, nouveau</li>
+            <li><strong>G</strong>oodness: bon, mauvais</li>
+            <li><strong>S</strong>ize: grand, petit, gros</li>
+          </ul>
+
+          <div class="examples">
+            <div class="example">
+              <span class="french">un beau garçon</span> — <span class="russian">красивый мальчик</span>
+            </div>
+            <div class="example">
+              <span class="french">une grande maison</span> — <span class="russian">большой дом</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Настоящее время -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>5. Настоящее время (Le présent)</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Глаголы первой группы (-er)</h3>
+          <p>Убрать <strong>-er</strong> и добавить: <strong>-e, -es, -e, -ons, -ez, -ent</strong></p>
+
+          <p><strong>parler</strong> (говорить)</p>
           <table>
             <thead>
               <tr>
                 <th>Местоимение</th>
                 <th>Форма</th>
-                <th>Перевод</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>je</td>
-                <td>parle</td>
-                <td>я говорю</td>
-              </tr>
-              <tr>
-                <td>tu</td>
-                <td>parles</td>
-                <td>ты говоришь</td>
-              </tr>
-              <tr>
-                <td>il/elle</td>
-                <td>parle</td>
-                <td>он/она говорит</td>
-              </tr>
-              <tr>
-                <td>nous</td>
-                <td>parlons</td>
-                <td>мы говорим</td>
-              </tr>
-              <tr>
-                <td>vous</td>
-                <td>parlez</td>
-                <td>вы говорите</td>
-              </tr>
-              <tr>
-                <td>ils/elles</td>
-                <td>parlent</td>
-                <td>они говорят</td>
-              </tr>
+              <tr><td>je</td><td>parle</td></tr>
+              <tr><td>tu</td><td>parles</td></tr>
+              <tr><td>il/elle</td><td>parle</td></tr>
+              <tr><td>nous</td><td>parlons</td></tr>
+              <tr><td>vous</td><td>parlez</td></tr>
+              <tr><td>ils/elles</td><td>parlent</td></tr>
             </tbody>
           </table>
 
-          <h3>aimer (любить)</h3>
+          <h3>Глагол être (быть)</h3>
           <table>
             <thead>
               <tr>
                 <th>Местоимение</th>
                 <th>Форма</th>
-                <th>Перевод</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>je</td>
-                <td>aime</td>
-                <td>я люблю</td>
-              </tr>
-              <tr>
-                <td>tu</td>
-                <td>aimes</td>
-                <td>ты любишь</td>
-              </tr>
-              <tr>
-                <td>il/elle</td>
-                <td>aime</td>
-                <td>он/она любит</td>
-              </tr>
-              <tr>
-                <td>nous</td>
-                <td>aimons</td>
-                <td>мы любим</td>
-              </tr>
-              <tr>
-                <td>vous</td>
-                <td>aimez</td>
-                <td>вы любите</td>
-              </tr>
-              <tr>
-                <td>ils/elles</td>
-                <td>aiment</td>
-                <td>они любят</td>
-              </tr>
+              <tr><td>je</td><td>suis</td></tr>
+              <tr><td>tu</td><td>es</td></tr>
+              <tr><td>il/elle</td><td>est</td></tr>
+              <tr><td>nous</td><td>sommes</td></tr>
+              <tr><td>vous</td><td>êtes</td></tr>
+              <tr><td>ils/elles</td><td>sont</td></tr>
             </tbody>
           </table>
 
-          <div class="examples">
-            <div class="example">
-              <span class="french">Je parle français.</span> — <span class="russian">Я говорю по-французски.</span>
-            </div>
-            <div class="example">
-              <span class="french">Tu aimes le chocolat.</span> — <span class="russian">Ты любишь шоколад.</span>
-            </div>
-            <div class="example">
-              <span class="french">Nous travaillons ensemble.</span> — <span class="russian">Мы работаем вместе.</span>
-            </div>
-            <div class="example">
-              <span class="french">Ils regardent la télévision.</span> — <span class="russian">Они смотрят телевизор.</span>
-            </div>
-          </div>
+          <h3>Глагол avoir (иметь)</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Местоимение</th>
+                <th>Форма</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>j'</td><td>ai</td></tr>
+              <tr><td>tu</td><td>as</td></tr>
+              <tr><td>il/elle</td><td>a</td></tr>
+              <tr><td>nous</td><td>avons</td></tr>
+              <tr><td>vous</td><td>avez</td></tr>
+              <tr><td>ils/elles</td><td>ont</td></tr>
+            </tbody>
+          </table>
 
-          <div class="note">
-            <strong>Примечание:</strong> Окончания -e, -es, -ent не произносятся. Все три формы звучат одинаково.
-          </div>
+          <h3>Неправильные глаголы</h3>
+          <p><strong>aller</strong> (идти): je vais, tu vas, il va, nous allons, vous allez, ils vont</p>
+          <p><strong>faire</strong> (делать): je fais, tu fais, il fait, nous faisons, vous faites, ils font</p>
+          <p><strong>prendre</strong> (брать): je prends, tu prends, il prend, nous prenons, vous prenez, ils prennent</p>
+          <p><strong>venir</strong> (приходить): je viens, tu viens, il vient, nous venons, vous venez, ils viennent</p>
         </div>
       </div>
 
-      <!-- 6. Числительные -->
+      <!-- 6. Отрицание -->
       <div class="accordion-item">
         <button class="accordion-header" aria-expanded="false">
-          <span>Числительные (les nombres)</span>
+          <span>6. Отрицание (La négation)</span>
           <span class="accordion-icon">▼</span>
         </button>
         <div class="accordion-content">
-          <p>Французские числительные имеют свои особенности, особенно от 70 до 100.</p>
+          <h3>Схема: ne ... pas</h3>
+          <p><strong>ne</strong> + глагол + <strong>pas</strong></p>
 
-          <h3>Числа от 1 до 10</h3>
-          <div class="number-grid">
-            <div class="number-item">1 — <strong>un</strong></div>
-            <div class="number-item">2 — <strong>deux</strong></div>
-            <div class="number-item">3 — <strong>trois</strong></div>
-            <div class="number-item">4 — <strong>quatre</strong></div>
-            <div class="number-item">5 — <strong>cinq</strong></div>
-            <div class="number-item">6 — <strong>six</strong></div>
-            <div class="number-item">7 — <strong>sept</strong></div>
-            <div class="number-item">8 — <strong>huit</strong></div>
-            <div class="number-item">9 — <strong>neuf</strong></div>
-            <div class="number-item">10 — <strong>dix</strong></div>
-          </div>
-
-          <h3>Числа от 11 до 20</h3>
-          <div class="number-grid">
-            <div class="number-item">11 — <strong>onze</strong></div>
-            <div class="number-item">12 — <strong>douze</strong></div>
-            <div class="number-item">13 — <strong>treize</strong></div>
-            <div class="number-item">14 — <strong>quatorze</strong></div>
-            <div class="number-item">15 — <strong>quinze</strong></div>
-            <div class="number-item">16 — <strong>seize</strong></div>
-            <div class="number-item">17 — <strong>dix-sept</strong></div>
-            <div class="number-item">18 — <strong>dix-huit</strong></div>
-            <div class="number-item">19 — <strong>dix-neuf</strong></div>
-            <div class="number-item">20 — <strong>vingt</strong></div>
-          </div>
-
-          <h3>Десятки</h3>
-          <div class="number-grid">
-            <div class="number-item">30 — <strong>trente</strong></div>
-            <div class="number-item">40 — <strong>quarante</strong></div>
-            <div class="number-item">50 — <strong>cinquante</strong></div>
-            <div class="number-item">60 — <strong>soixante</strong></div>
-            <div class="number-item">70 — <strong>soixante-dix</strong></div>
-            <div class="number-item">80 — <strong>quatre-vingts</strong></div>
-            <div class="number-item">90 — <strong>quatre-vingt-dix</strong></div>
-            <div class="number-item">100 — <strong>cent</strong></div>
+          <div class="examples">
+            <div class="example">
+              <span class="french">Je ne parle pas anglais.</span> — <span class="russian">Я не говорю по-английски.</span>
+            </div>
           </div>
 
           <div class="note">
-            <strong>Особенности:</strong><br>
-            - 70 = soixante-dix (60 + 10)<br>
-            - 80 = quatre-vingts (4 × 20)<br>
-            - 90 = quatre-vingt-dix (4 × 20 + 10)<br>
-            - 21, 31, 41, 51, 61, 71 с "et": vingt et un
+            <strong>В разговорной речи:</strong> "ne" часто опускается → Je parle pas
           </div>
 
           <div class="examples">
             <div class="example">
-              <span class="french">J'ai vingt-trois ans.</span> — <span class="russian">Мне 23 года.</span>
+              <span class="french">Il n'est pas là.</span> — <span class="russian">Его здесь нет.</span>
             </div>
             <div class="example">
-              <span class="french">Le livre coûte quinze euros.</span> — <span class="russian">Книга стоит 15 евро.</span>
+              <span class="french">Nous ne travaillons pas aujourd'hui.</span> — <span class="russian">Мы не работаем сегодня.</span>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- 7. Вопросительное предложение -->
+      <!-- 7. Вопросительные предложения -->
       <div class="accordion-item">
         <button class="accordion-header" aria-expanded="false">
-          <span>Вопросительное предложение</span>
+          <span>7. Вопросительные предложения</span>
           <span class="accordion-icon">▼</span>
         </button>
         <div class="accordion-content">
-          <p>Во французском языке есть три способа задать вопрос.</p>
+          <h3>Три способа задать вопрос</h3>
 
-          <h3>Способ 1: Интонация (разговорный)</h3>
-          <p>Просто повышаем интонацию в конце предложения.</p>
+          <p><strong>1. Интонация</strong> (повышение тона в конце)</p>
           <div class="examples">
             <div class="example">
               <span class="french">Tu parles français?</span> — <span class="russian">Ты говоришь по-французски?</span>
             </div>
-            <div class="example">
-              <span class="french">Il est étudiant?</span> — <span class="russian">Он студент?</span>
-            </div>
           </div>
 
-          <h3>Способ 2: Est-ce que (универсальный)</h3>
-          <p>Добавляем "est-ce que" в начало предложения.</p>
+          <p><strong>2. Est-ce que</strong> (универсальный способ)</p>
           <div class="examples">
             <div class="example">
               <span class="french">Est-ce que tu parles français?</span> — <span class="russian">Ты говоришь по-французски?</span>
             </div>
-            <div class="example">
-              <span class="french">Est-ce qu'il est étudiant?</span> — <span class="russian">Он студент?</span>
-            </div>
           </div>
 
-          <h3>Способ 3: Инверсия (формальный)</h3>
-          <p>Меняем местами подлежащее и глагол.</p>
+          <p><strong>3. Инверсия</strong> (формальный стиль)</p>
           <div class="examples">
             <div class="example">
               <span class="french">Parles-tu français?</span> — <span class="russian">Ты говоришь по-французски?</span>
-            </div>
-            <div class="example">
-              <span class="french">Est-il étudiant?</span> — <span class="russian">Он студент?</span>
             </div>
           </div>
 
@@ -891,184 +658,175 @@
           <table>
             <thead>
               <tr>
-                <th>Французский</th>
-                <th>Русский</th>
+                <th>Слово</th>
+                <th>Перевод</th>
                 <th>Пример</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>qui</td>
-                <td>кто</td>
-                <td>Qui est-ce? (Кто это?)</td>
-              </tr>
-              <tr>
-                <td>que / quoi</td>
-                <td>что</td>
-                <td>Que fais-tu? (Что делаешь?)</td>
-              </tr>
-              <tr>
-                <td>où</td>
-                <td>где</td>
-                <td>Où habites-tu? (Где живёшь?)</td>
-              </tr>
-              <tr>
-                <td>quand</td>
-                <td>когда</td>
-                <td>Quand arrives-tu? (Когда приедешь?)</td>
-              </tr>
-              <tr>
-                <td>pourquoi</td>
-                <td>почему</td>
-                <td>Pourquoi? (Почему?)</td>
-              </tr>
-              <tr>
-                <td>comment</td>
-                <td>как</td>
-                <td>Comment vas-tu? (Как дела?)</td>
-              </tr>
-              <tr>
-                <td>combien</td>
-                <td>сколько</td>
-                <td>Combien ça coûte? (Сколько стоит?)</td>
-              </tr>
+              <tr><td>Qui?</td><td>кто?</td><td>Qui est-ce?</td></tr>
+              <tr><td>Que?/Quoi?</td><td>что?</td><td>Que fais-tu?</td></tr>
+              <tr><td>Où?</td><td>где?</td><td>Où habites-tu?</td></tr>
+              <tr><td>Quand?</td><td>когда?</td><td>Quand arrives-tu?</td></tr>
+              <tr><td>Comment?</td><td>как?</td><td>Comment vas-tu?</td></tr>
+              <tr><td>Pourquoi?</td><td>почему?</td><td>Pourquoi?</td></tr>
+              <tr><td>Combien?</td><td>сколько?</td><td>Combien ça coûte?</td></tr>
             </tbody>
           </table>
         </div>
       </div>
 
-      <!-- 8. Отрицание -->
+      <!-- 8. Притяжательные прилагательные -->
       <div class="accordion-item">
         <button class="accordion-header" aria-expanded="false">
-          <span>Отрицание (la négation)</span>
+          <span>8. Притяжательные прилагательные</span>
           <span class="accordion-icon">▼</span>
         </button>
         <div class="accordion-content">
-          <p>Во французском языке отрицание образуется с помощью двух частиц: <strong>ne ... pas</strong>.</p>
-
-          <h3>Схема построения</h3>
-          <p><strong>ne</strong> + глагол + <strong>pas</strong></p>
+          <table>
+            <thead>
+              <tr>
+                <th>Владелец</th>
+                <th>Мужской род</th>
+                <th>Женский род</th>
+                <th>Мн. число</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>je (я)</td>
+                <td>mon</td>
+                <td>ma</td>
+                <td>mes</td>
+              </tr>
+              <tr>
+                <td>tu (ты)</td>
+                <td>ton</td>
+                <td>ta</td>
+                <td>tes</td>
+              </tr>
+              <tr>
+                <td>il/elle (он/она)</td>
+                <td>son</td>
+                <td>sa</td>
+                <td>ses</td>
+              </tr>
+              <tr>
+                <td>nous (мы)</td>
+                <td colspan="2">notre</td>
+                <td>nos</td>
+              </tr>
+              <tr>
+                <td>vous (вы)</td>
+                <td colspan="2">votre</td>
+                <td>vos</td>
+              </tr>
+              <tr>
+                <td>ils/elles (они)</td>
+                <td colspan="2">leur</td>
+                <td>leurs</td>
+              </tr>
+            </tbody>
+          </table>
 
           <div class="examples">
             <div class="example">
-              <span class="french">Je ne parle pas anglais.</span> — <span class="russian">Я не говорю по-английски.</span>
+              <span class="french">mon livre</span> — <span class="russian">моя книга</span>
             </div>
             <div class="example">
-              <span class="french">Il n'est pas là.</span> — <span class="russian">Его здесь нет.</span>
+              <span class="french">ma table</span> — <span class="russian">мой стол</span>
             </div>
             <div class="example">
-              <span class="french">Nous ne travaillons pas aujourd'hui.</span> — <span class="russian">Мы не работаем сегодня.</span>
+              <span class="french">mes amis</span> — <span class="russian">мои друзья</span>
             </div>
             <div class="example">
-              <span class="french">Elle n'a pas d'argent.</span> — <span class="russian">У неё нет денег.</span>
+              <span class="french">notre maison</span> — <span class="russian">наш дом</span>
             </div>
           </div>
 
-          <h3>Другие виды отрицания</h3>
+          <div class="note">
+            <strong>Внимание:</strong> Согласование зависит от рода предмета, а не владельца! Son livre = его/её книга.
+          </div>
+        </div>
+      </div>
+
+      <!-- 9. Указательные прилагательные -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>9. Указательные прилагательные</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
           <table>
             <thead>
               <tr>
-                <th>Конструкция</th>
-                <th>Значение</th>
+                <th>Форма</th>
+                <th>Использование</th>
                 <th>Пример</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>ne ... jamais</td>
-                <td>никогда</td>
-                <td>Je ne fume jamais (Я никогда не курю)</td>
+                <td>ce</td>
+                <td>мужской род</td>
+                <td>ce livre (эта книга)</td>
               </tr>
               <tr>
-                <td>ne ... rien</td>
-                <td>ничего</td>
-                <td>Je ne vois rien (Я ничего не вижу)</td>
+                <td>cet</td>
+                <td>м.р. перед гласной</td>
+                <td>cet homme (этот человек)</td>
               </tr>
               <tr>
-                <td>ne ... personne</td>
-                <td>никого</td>
-                <td>Je ne vois personne (Я никого не вижу)</td>
+                <td>cette</td>
+                <td>женский род</td>
+                <td>cette femme (эта женщина)</td>
               </tr>
               <tr>
-                <td>ne ... plus</td>
-                <td>больше не</td>
-                <td>Je ne fume plus (Я больше не курю)</td>
+                <td>ces</td>
+                <td>множественное число</td>
+                <td>ces livres (эти книги)</td>
               </tr>
             </tbody>
           </table>
 
-          <div class="note">
-            <strong>Примечание:</strong> Перед гласной или немым h частица "ne" превращается в "n'" (элизия).
+          <div class="examples">
+            <div class="example">
+              <span class="french">Ce livre est intéressant.</span> — <span class="russian">Эта книга интересная.</span>
+            </div>
+            <div class="example">
+              <span class="french">Cette maison est grande.</span> — <span class="russian">Этот дом большой.</span>
+            </div>
+            <div class="example">
+              <span class="french">Ces enfants sont petits.</span> — <span class="russian">Эти дети маленькие.</span>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- 9. Предлоги места -->
+      <!-- 10. Предлоги места -->
       <div class="accordion-item">
         <button class="accordion-header" aria-expanded="false">
-          <span>Предлоги места (les prépositions de lieu)</span>
+          <span>10. Предлоги места</span>
           <span class="accordion-icon">▼</span>
         </button>
         <div class="accordion-content">
-          <p>Предлоги места помогают указать расположение объектов относительно друг друга.</p>
-
-          <h3>Основные предлоги места</h3>
           <table>
             <thead>
               <tr>
-                <th>Французский</th>
-                <th>Русский</th>
+                <th>Предлог</th>
+                <th>Перевод</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>dans</td>
-                <td>в (внутри)</td>
-              </tr>
-              <tr>
-                <td>sur</td>
-                <td>на</td>
-              </tr>
-              <tr>
-                <td>sous</td>
-                <td>под</td>
-              </tr>
-              <tr>
-                <td>devant</td>
-                <td>перед</td>
-              </tr>
-              <tr>
-                <td>derrière</td>
-                <td>за, позади</td>
-              </tr>
-              <tr>
-                <td>entre</td>
-                <td>между</td>
-              </tr>
-              <tr>
-                <td>à côté de</td>
-                <td>рядом с</td>
-              </tr>
-              <tr>
-                <td>près de</td>
-                <td>близко к</td>
-              </tr>
-              <tr>
-                <td>loin de</td>
-                <td>далеко от</td>
-              </tr>
-              <tr>
-                <td>au-dessus de</td>
-                <td>над</td>
-              </tr>
-              <tr>
-                <td>au-dessous de</td>
-                <td>под (ниже)</td>
-              </tr>
-              <tr>
-                <td>en face de</td>
-                <td>напротив</td>
-              </tr>
+              <tr><td>à</td><td>в, на</td></tr>
+              <tr><td>de</td><td>из, от</td></tr>
+              <tr><td>dans</td><td>в</td></tr>
+              <tr><td>sur</td><td>на</td></tr>
+              <tr><td>sous</td><td>под</td></tr>
+              <tr><td>devant</td><td>перед</td></tr>
+              <tr><td>derrière</td><td>за</td></tr>
+              <tr><td>entre</td><td>между</td></tr>
+              <tr><td>chez</td><td>у, к (кого-то)</td></tr>
             </tbody>
           </table>
 
@@ -1077,24 +835,291 @@
               <span class="french">Le livre est sur la table.</span> — <span class="russian">Книга на столе.</span>
             </div>
             <div class="example">
-              <span class="french">Le chat est dans la maison.</span> — <span class="russian">Кот в доме.</span>
+              <span class="french">Je vais chez Marie.</span> — <span class="russian">Я иду к Марии.</span>
             </div>
             <div class="example">
-              <span class="french">Le chien est sous la table.</span> — <span class="russian">Собака под столом.</span>
+              <span class="french">Le chat est sous le lit.</span> — <span class="russian">Кот под кроватью.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 11. Ближайшее будущее -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>11. Ближайшее будущее (Futur proche)</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Формула: aller + инфинитив</h3>
+          <p>Используется для выражения намерения что-то сделать в ближайшем будущем.</p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Местоимение</th>
+                <th>aller</th>
+                <th>+ инфинитив</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>je</td><td>vais</td><td>manger</td></tr>
+              <tr><td>tu</td><td>vas</td><td>manger</td></tr>
+              <tr><td>il/elle</td><td>va</td><td>manger</td></tr>
+              <tr><td>nous</td><td>allons</td><td>manger</td></tr>
+              <tr><td>vous</td><td>allez</td><td>manger</td></tr>
+              <tr><td>ils/elles</td><td>vont</td><td>manger</td></tr>
+            </tbody>
+          </table>
+
+          <div class="examples">
+            <div class="example">
+              <span class="french">Je vais manger.</span> — <span class="russian">Я собираюсь поесть.</span>
             </div>
             <div class="example">
-              <span class="french">La banque est en face de l'église.</span> — <span class="russian">Банк напротив церкви.</span>
+              <span class="french">Nous allons partir.</span> — <span class="russian">Мы собираемся уехать.</span>
             </div>
             <div class="example">
-              <span class="french">Je suis à côté de toi.</span> — <span class="russian">Я рядом с тобой.</span>
+              <span class="french">Il va étudier ce soir.</span> — <span class="russian">Он будет учиться сегодня вечером.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 12. Ближайшее прошедшее -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>12. Ближайшее прошедшее (Passé récent)</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Формула: venir de + инфинитив</h3>
+          <p>Используется для выражения действия, которое только что произошло.</p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Местоимение</th>
+                <th>venir de</th>
+                <th>+ инфинитив</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>je</td><td>viens de</td><td>manger</td></tr>
+              <tr><td>tu</td><td>viens de</td><td>manger</td></tr>
+              <tr><td>il/elle</td><td>vient de</td><td>manger</td></tr>
+              <tr><td>nous</td><td>venons de</td><td>manger</td></tr>
+              <tr><td>vous</td><td>venez de</td><td>manger</td></tr>
+              <tr><td>ils/elles</td><td>viennent de</td><td>manger</td></tr>
+            </tbody>
+          </table>
+
+          <div class="examples">
+            <div class="example">
+              <span class="french">Je viens de manger.</span> — <span class="russian">Я только что поел.</span>
             </div>
             <div class="example">
-              <span class="french">Le parc est près de chez moi.</span> — <span class="russian">Парк близко от моего дома.</span>
+              <span class="french">Elle vient d'arriver.</span> — <span class="russian">Она только что приехала.</span>
+            </div>
+            <div class="example">
+              <span class="french">Nous venons de finir.</span> — <span class="russian">Мы только что закончили.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 13. Местоимения-дополнения -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>13. Местоимения-дополнения</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Прямые дополнения (кого? что?)</h3>
+          <p>me, te, le/la, nous, vous, les</p>
+
+          <div class="examples">
+            <div class="example">
+              <span class="french">Je le vois.</span> — <span class="russian">Я его вижу.</span>
+            </div>
+            <div class="example">
+              <span class="french">Elle me regarde.</span> — <span class="russian">Она на меня смотрит.</span>
+            </div>
+          </div>
+
+          <h3>Косвенные дополнения (кому?)</h3>
+          <p>me, te, lui, nous, vous, leur</p>
+
+          <div class="examples">
+            <div class="example">
+              <span class="french">Je lui parle.</span> — <span class="russian">Я ему/ей говорю.</span>
+            </div>
+            <div class="example">
+              <span class="french">Il nous téléphone.</span> — <span class="russian">Он нам звонит.</span>
             </div>
           </div>
 
           <div class="note">
-            <strong>Примечание:</strong> Многие предлоги требуют "de" после себя (à côté de, près de, loin de, en face de).
+            <strong>Важно:</strong> Местоимения-дополнения ставятся ПЕРЕД глаголом!
+          </div>
+        </div>
+      </div>
+
+      <!-- 14. Числительные -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>14. Числительные (Les nombres)</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Количественные числительные</h3>
+          <p>1-10: un, deux, trois, quatre, cinq, six, sept, huit, neuf, dix</p>
+          <p>11-20: onze, douze, treize, quatorze, quinze, seize, dix-sept, dix-huit, dix-neuf, vingt</p>
+          <p>Десятки: 30 (trente), 40 (quarante), 50 (cinquante), 60 (soixante)</p>
+
+          <div class="note">
+            <strong>Особенности:</strong><br>
+            70 = soixante-dix (60+10)<br>
+            80 = quatre-vingts (4×20)<br>
+            90 = quatre-vingt-dix (4×20+10)
+          </div>
+
+          <h3>Порядковые числительные</h3>
+          <p>premier/première (первый/первая), deuxième (второй), troisième (третий), quatrième (четвёртый)...</p>
+
+          <div class="examples">
+            <div class="example">
+              <span class="french">C'est ma première fois.</span> — <span class="russian">Это мой первый раз.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 15. Время и дата -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>15. Время и дата</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Дни недели</h3>
+          <p>lundi (понедельник), mardi (вторник), mercredi (среда), jeudi (четверг), vendredi (пятница), samedi (суббота), dimanche (воскресенье)</p>
+
+          <h3>Месяцы</h3>
+          <p>janvier, février, mars, avril, mai, juin, juillet, août, septembre, octobre, novembre, décembre</p>
+
+          <h3>Который час?</h3>
+          <p><strong>Quelle heure est-il?</strong> — Который час?</p>
+
+          <div class="examples">
+            <div class="example">
+              <span class="french">Il est trois heures.</span> — <span class="russian">Три часа.</span>
+            </div>
+            <div class="example">
+              <span class="french">Il est midi.</span> — <span class="russian">Полдень.</span>
+            </div>
+            <div class="example">
+              <span class="french">Il est minuit.</span> — <span class="russian">Полночь.</span>
+            </div>
+            <div class="example">
+              <span class="french">Il est deux heures et demie.</span> — <span class="russian">Два с половиной часа.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 16. Повелительное наклонение -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>16. Повелительное наклонение (Impératif)</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <p>Образуется от настоящего времени без местоимения.</p>
+
+          <h3>Пример: parler</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Форма</th>
+                <th>Французский</th>
+                <th>Русский</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>tu</td>
+                <td>Parle!</td>
+                <td>Говори!</td>
+              </tr>
+              <tr>
+                <td>nous</td>
+                <td>Parlons!</td>
+                <td>Давай говорить!</td>
+              </tr>
+              <tr>
+                <td>vous</td>
+                <td>Parlez!</td>
+                <td>Говорите!</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="examples">
+            <div class="example">
+              <span class="french">Écoute!</span> — <span class="russian">Слушай!</span>
+            </div>
+            <div class="example">
+              <span class="french">Attendez!</span> — <span class="russian">Подождите!</span>
+            </div>
+            <div class="example">
+              <span class="french">Allons-y!</span> — <span class="russian">Пошли!</span>
+            </div>
+          </div>
+
+          <div class="note">
+            <strong>Примечание:</strong> Для глаголов 1-й группы (-er) форма "tu" теряет -s: tu parles → Parle!
+          </div>
+        </div>
+      </div>
+
+      <!-- 17. C'est vs Il est -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>17. C'est vs Il est</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>C'est + существительное/имя</h3>
+          <div class="examples">
+            <div class="example">
+              <span class="french">C'est un livre.</span> — <span class="russian">Это книга.</span>
+            </div>
+            <div class="example">
+              <span class="french">C'est Marie.</span> — <span class="russian">Это Мария.</span>
+            </div>
+            <div class="example">
+              <span class="french">C'est mon ami.</span> — <span class="russian">Это мой друг.</span>
+            </div>
+          </div>
+
+          <h3>Il/Elle est + прилагательное/профессия</h3>
+          <div class="examples">
+            <div class="example">
+              <span class="french">Il est grand.</span> — <span class="russian">Он высокий.</span>
+            </div>
+            <div class="example">
+              <span class="french">Elle est médecin.</span> — <span class="russian">Она врач.</span>
+            </div>
+            <div class="example">
+              <span class="french">Il est intelligent.</span> — <span class="russian">Он умный.</span>
+            </div>
+          </div>
+
+          <div class="note">
+            <strong>Правило:</strong><br>
+            C'est = это (идентификация)<br>
+            Il/Elle est = он/она есть (описание)
           </div>
         </div>
       </div>
