@@ -26,7 +26,6 @@
       background-size: 200% 200%;
       animation: shimmer 18s ease infinite;
       padding: 2.5rem 1.5rem;
-      text-align: center;
     }
 
     @keyframes shimmer {
@@ -42,7 +41,7 @@
     }
 
     main {
-      max-width: 560px;
+      max-width: 800px;
       width: 100%;
       background: rgba(15, 23, 42, 0.55);
       border-radius: 24px;
@@ -57,24 +56,1053 @@
     h1 {
       font-size: clamp(1.8rem, 4vw, 2.6rem);
       letter-spacing: 0.04em;
+      text-align: center;
+      margin-bottom: 0.5rem;
     }
 
-    p {
-      font-size: clamp(1rem, 2.4vw, 1.2rem);
+    .intro {
+      font-size: clamp(1rem, 2.4vw, 1.1rem);
       color: rgba(255, 255, 255, 0.82);
       line-height: 1.8;
+      text-align: center;
+      margin-bottom: 1rem;
     }
 
-    a {
+    .accordion {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .accordion-item {
+      background: rgba(30, 41, 59, 0.6);
+      border-radius: 16px;
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .accordion-item:hover {
+      border-color: rgba(148, 163, 184, 0.4);
+    }
+
+    .accordion-header {
+      width: 100%;
+      padding: 1.2rem 1.5rem;
+      background: rgba(30, 41, 59, 0.8);
+      border: none;
+      color: rgba(255, 255, 255, 0.95);
+      font-family: inherit;
+      font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+      font-weight: 600;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.3s ease;
+    }
+
+    .accordion-header:hover {
+      background: rgba(30, 41, 59, 0.95);
+    }
+
+    .accordion-header:focus-visible {
+      outline: 2px solid rgba(59, 130, 246, 0.65);
+      outline-offset: -2px;
+    }
+
+    .accordion-icon {
+      font-size: 1.2rem;
+      transition: transform 0.3s ease;
+    }
+
+    .accordion-item.active .accordion-icon {
+      transform: rotate(180deg);
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+      padding: 0 1.5rem;
+    }
+
+    .accordion-item.active .accordion-content {
+      max-height: 2000px;
+      padding: 1.5rem;
+    }
+
+    .accordion-content h3 {
+      font-size: clamp(1rem, 2.2vw, 1.2rem);
       color: #93c5fd;
+      margin-bottom: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .accordion-content h3:first-child {
+      margin-top: 0;
+    }
+
+    .accordion-content p {
+      font-size: clamp(0.95rem, 2vw, 1.05rem);
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: clamp(0.9rem, 2vw, 1rem);
+    }
+
+    th, td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+    }
+
+    th {
+      background: rgba(30, 41, 59, 0.8);
+      color: #93c5fd;
+      font-weight: 600;
+    }
+
+    td {
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    td:first-child {
+      color: rgba(255, 255, 255, 0.95);
+      font-weight: 500;
+    }
+
+    .examples {
+      background: rgba(30, 41, 59, 0.4);
+      border-left: 3px solid #93c5fd;
+      padding: 1rem 1.2rem;
+      margin: 1rem 0;
+      border-radius: 8px;
+    }
+
+    .example {
+      margin: 0.5rem 0;
+      font-size: clamp(0.95rem, 2vw, 1.05rem);
+    }
+
+    .serbian {
+      color: rgba(255, 255, 255, 0.95);
+      font-weight: 500;
+    }
+
+    .russian {
+      color: rgba(255, 255, 255, 0.7);
+      font-style: italic;
+    }
+
+    .note {
+      background: rgba(251, 191, 36, 0.15);
+      border-left: 3px solid #fbbf24;
+      padding: 1rem 1.2rem;
+      margin: 1rem 0;
+      border-radius: 8px;
+      font-size: clamp(0.9rem, 2vw, 1rem);
+    }
+
+    .back-link {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .back-link a {
+      color: #93c5fd;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: clamp(1rem, 2.2vw, 1.1rem);
+    }
+
+    .back-link a:hover,
+    .back-link a:focus {
+      text-decoration: underline;
+    }
+
+    .number-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 0.75rem;
+      margin: 1rem 0;
+    }
+
+    .number-item {
+      background: rgba(30, 41, 59, 0.5);
+      padding: 0.75rem;
+      border-radius: 8px;
+      text-align: center;
     }
   </style>
 </head>
 <body>
   <main>
     <h1>Сербский — Начальный — Грамматика</h1>
-    <p>Тут контента пока нет, но я скоро добавлю!</p>
-    <p><a href="../">Вернуться к выбору раздела</a></p>
+    <p class="intro">Выберите тему, чтобы изучить грамматическое правило с примерами и таблицами.</p>
+
+    <div class="accordion">
+      <!-- 1. Глагол быть -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Глагол быть (бити)</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <p>Глагол <strong>бити</strong> (быть) — один из самых важных глаголов в сербском языке. Он используется для описания состояния, профессии, национальности.</p>
+
+          <h3>Утвердительная форма</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Местоимение</th>
+                <th>Сербский</th>
+                <th>Русский</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>ја</td>
+                <td>сам</td>
+                <td>я есть</td>
+              </tr>
+              <tr>
+                <td>ти</td>
+                <td>си</td>
+                <td>ты есть</td>
+              </tr>
+              <tr>
+                <td>он/она/оно</td>
+                <td>је</td>
+                <td>он/она/оно есть</td>
+              </tr>
+              <tr>
+                <td>ми</td>
+                <td>смо</td>
+                <td>мы есть</td>
+              </tr>
+              <tr>
+                <td>ви</td>
+                <td>сте</td>
+                <td>вы есть</td>
+              </tr>
+              <tr>
+                <td>они/оне/она</td>
+                <td>су</td>
+                <td>они есть</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Отрицательная форма</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Местоимение</th>
+                <th>Сербский</th>
+                <th>Русский</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>ја</td>
+                <td>нисам</td>
+                <td>я не есть</td>
+              </tr>
+              <tr>
+                <td>ти</td>
+                <td>ниси</td>
+                <td>ты не есть</td>
+              </tr>
+              <tr>
+                <td>он/она/оно</td>
+                <td>није</td>
+                <td>он/она/оно не есть</td>
+              </tr>
+              <tr>
+                <td>ми</td>
+                <td>нисмо</td>
+                <td>мы не есть</td>
+              </tr>
+              <tr>
+                <td>ви</td>
+                <td>нисте</td>
+                <td>вы не есть</td>
+              </tr>
+              <tr>
+                <td>они/оне/она</td>
+                <td>нису</td>
+                <td>они не есть</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="examples">
+            <div class="example">
+              <span class="serbian">Ја сам студент.</span> — <span class="russian">Я студент.</span>
+            </div>
+            <div class="example">
+              <span class="serbian">Ти си учитељ.</span> — <span class="russian">Ты учитель.</span>
+            </div>
+            <div class="example">
+              <span class="serbian">Она је лекар.</span> — <span class="russian">Она врач.</span>
+            </div>
+            <div class="example">
+              <span class="serbian">Ми смо пријатељи.</span> — <span class="russian">Мы друзья.</span>
+            </div>
+            <div class="example">
+              <span class="serbian">Ја нисам уморан.</span> — <span class="russian">Я не уставший.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Глагол иметь -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Глагол иметь (имати)</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <p>Глагол <strong>имати</strong> (иметь) используется для обозначения владения, наличия чего-либо.</p>
+
+          <h3>Утвердительная форма</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Местоимение</th>
+                <th>Сербский</th>
+                <th>Русский</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>ја</td>
+                <td>имам</td>
+                <td>я имею</td>
+              </tr>
+              <tr>
+                <td>ти</td>
+                <td>имаш</td>
+                <td>ты имеешь</td>
+              </tr>
+              <tr>
+                <td>он/она/оно</td>
+                <td>има</td>
+                <td>он/она/оно имеет</td>
+              </tr>
+              <tr>
+                <td>ми</td>
+                <td>имамо</td>
+                <td>мы имеем</td>
+              </tr>
+              <tr>
+                <td>ви</td>
+                <td>имате</td>
+                <td>вы имеете</td>
+              </tr>
+              <tr>
+                <td>они/оне/она</td>
+                <td>имају</td>
+                <td>они имеют</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Отрицательная форма</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Местоимение</th>
+                <th>Сербский</th>
+                <th>Русский</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>ја</td>
+                <td>немам</td>
+                <td>я не имею</td>
+              </tr>
+              <tr>
+                <td>ти</td>
+                <td>немаш</td>
+                <td>ты не имеешь</td>
+              </tr>
+              <tr>
+                <td>он/она/оно</td>
+                <td>нема</td>
+                <td>он/она/оно не имеет</td>
+              </tr>
+              <tr>
+                <td>ми</td>
+                <td>немамо</td>
+                <td>мы не имеем</td>
+              </tr>
+              <tr>
+                <td>ви</td>
+                <td>немате</td>
+                <td>вы не имеете</td>
+              </tr>
+              <tr>
+                <td>они/оне/она</td>
+                <td>немају</td>
+                <td>они не имеют</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="examples">
+            <div class="example">
+              <span class="serbian">Ја имам књигу.</span> — <span class="russian">У меня есть книга.</span>
+            </div>
+            <div class="example">
+              <span class="serbian">Она има аутомобил.</span> — <span class="russian">У неё есть автомобиль.</span>
+            </div>
+            <div class="example">
+              <span class="serbian">Ми имамо куцу.</span> — <span class="russian">У нас есть дом.</span>
+            </div>
+            <div class="example">
+              <span class="serbian">Они немају новац.</span> — <span class="russian">У них нет денег.</span>
+            </div>
+          </div>
+
+          <div class="note">
+            <strong>Примечание:</strong> В отрицательной форме "не" сливается с глаголом: не + имам = немам.
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Числительные -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Числительные (бројеви)</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <p>Числительные в сербском языке имеют свои особенности. Вот основные числа для начального уровня.</p>
+
+          <h3>Числа от 1 до 10</h3>
+          <div class="number-grid">
+            <div class="number-item">1 — <strong>један</strong></div>
+            <div class="number-item">2 — <strong>два</strong></div>
+            <div class="number-item">3 — <strong>три</strong></div>
+            <div class="number-item">4 — <strong>четири</strong></div>
+            <div class="number-item">5 — <strong>пет</strong></div>
+            <div class="number-item">6 — <strong>шест</strong></div>
+            <div class="number-item">7 — <strong>седам</strong></div>
+            <div class="number-item">8 — <strong>осам</strong></div>
+            <div class="number-item">9 — <strong>девет</strong></div>
+            <div class="number-item">10 — <strong>десет</strong></div>
+          </div>
+
+          <h3>Числа от 11 до 20</h3>
+          <div class="number-grid">
+            <div class="number-item">11 — <strong>једанаест</strong></div>
+            <div class="number-item">12 — <strong>дванаест</strong></div>
+            <div class="number-item">13 — <strong>тринаест</strong></div>
+            <div class="number-item">14 — <strong>четрнаест</strong></div>
+            <div class="number-item">15 — <strong>петнаест</strong></div>
+            <div class="number-item">16 — <strong>шеснаест</strong></div>
+            <div class="number-item">17 — <strong>седамнаест</strong></div>
+            <div class="number-item">18 — <strong>осамнаест</strong></div>
+            <div class="number-item">19 — <strong>деветнаест</strong></div>
+            <div class="number-item">20 — <strong>двадесет</strong></div>
+          </div>
+
+          <h3>Десятки</h3>
+          <div class="number-grid">
+            <div class="number-item">30 — <strong>тридесет</strong></div>
+            <div class="number-item">40 — <strong>четрдесет</strong></div>
+            <div class="number-item">50 — <strong>педесет</strong></div>
+            <div class="number-item">60 — <strong>шездесет</strong></div>
+            <div class="number-item">70 — <strong>седамдесет</strong></div>
+            <div class="number-item">80 — <strong>осамдесет</strong></div>
+            <div class="number-item">90 — <strong>деведесет</strong></div>
+            <div class="number-item">100 — <strong>сто</strong></div>
+          </div>
+
+          <div class="note">
+            <strong>Как образуются составные числа:</strong> Числа между десятками образуются путём добавления единиц. Например: 21 = двадесет један, 35 = тридесет пет, 47 = четрдесет седам.
+          </div>
+
+          <div class="examples">
+            <div class="example">
+              <span class="serbian">Имам двадесет три године.</span> — <span class="russian">Мне 23 года.</span>
+            </div>
+            <div class="example">
+              <span class="serbian">Књига кошта педесет динара.</span> — <span class="russian">Книга стоит 50 динаров.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Вопросительное предложение -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Вопросительное предложение</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <p>В сербском языке вопросы строятся с помощью вопросительных слов или частицы <strong>ли</strong>.</p>
+
+          <h3>Вопросительные слова</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Сербский</th>
+                <th>Русский</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>ко</td>
+                <td>кто</td>
+              </tr>
+              <tr>
+                <td>шта</td>
+                <td>что</td>
+              </tr>
+              <tr>
+                <td>где</td>
+                <td>где</td>
+              </tr>
+              <tr>
+                <td>када</td>
+                <td>когда</td>
+              </tr>
+              <tr>
+                <td>зашто</td>
+                <td>почему</td>
+              </tr>
+              <tr>
+                <td>како</td>
+                <td>как</td>
+              </tr>
+              <tr>
+                <td>који/која/које</td>
+                <td>который/которая/которое</td>
+              </tr>
+              <tr>
+                <td>колико</td>
+                <td>сколько</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Примеры вопросов с вопросительными словами</h3>
+          <div class="examples">
+            <div class="example">
+              <span class="serbian">Ко си ти?</span> — <span class="russian">Кто ты?</span>
+            </div>
+            <div class="example">
+              <span class="serbian">Шта радиш?</span> — <span class="russian">Что делаешь?</span>
+            </div>
+            <div class="example">
+              <span class="serbian">Где живиш?</span> — <span class="russian">Где живёшь?</span>
+            </div>
+            <div class="example">
+              <span class="serbian">Када долазиш?</span> — <span class="russian">Когда приходишь?</span>
+            </div>
+            <div class="example">
+              <span class="serbian">Зашто учиш српски?</span> — <span class="russian">Почему учишь сербский?</span>
+            </div>
+            <div class="example">
+              <span class="serbian">Како се зовеш?</span> — <span class="russian">Как тебя зовут?</span>
+            </div>
+            <div class="example">
+              <span class="serbian">Колико кошта?</span> — <span class="russian">Сколько стоит?</span>
+            </div>
+          </div>
+
+          <h3>Вопросы с частицей "ли"</h3>
+          <p>Частица <strong>ли</strong> ставится после глагола и используется для общих вопросов (да/нет).</p>
+          <div class="examples">
+            <div class="example">
+              <span class="serbian">Да ли говориш српски?</span> — <span class="russian">Говоришь ли ты по-сербски?</span>
+            </div>
+            <div class="example">
+              <span class="serbian">Да ли имаш време?</span> — <span class="russian">Есть ли у тебя время?</span>
+            </div>
+            <div class="example">
+              <span class="serbian">Јеси ли студент?</span> — <span class="russian">Ты студент?</span>
+            </div>
+          </div>
+
+          <div class="note">
+            <strong>Примечание:</strong> Частица "да" в начале вопроса не означает "да" (yes), это просто вопросительная конструкция.
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Спряжение глаголов -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Спряжение глаголов (настоящее время)</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <p>В сербском языке глаголы спрягаются в зависимости от окончания инфинитива. Основные типы: глаголы на <strong>-ити</strong> и <strong>-ати</strong>.</p>
+
+          <h3>Глаголы на -ити</h3>
+          <p><strong>говорити</strong> (говорить)</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Местоимение</th>
+                <th>Форма</th>
+                <th>Перевод</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>ја</td>
+                <td>говорим</td>
+                <td>я говорю</td>
+              </tr>
+              <tr>
+                <td>ти</td>
+                <td>говориш</td>
+                <td>ты говоришь</td>
+              </tr>
+              <tr>
+                <td>он/она/оно</td>
+                <td>говори</td>
+                <td>он/она/оно говорит</td>
+              </tr>
+              <tr>
+                <td>ми</td>
+                <td>говоримо</td>
+                <td>мы говорим</td>
+              </tr>
+              <tr>
+                <td>ви</td>
+                <td>говорите</td>
+                <td>вы говорите</td>
+              </tr>
+              <tr>
+                <td>они/оне/она</td>
+                <td>говоре</td>
+                <td>они говорят</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p><strong>волети</strong> (любить)</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Местоимение</th>
+                <th>Форма</th>
+                <th>Перевод</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>ја</td>
+                <td>волим</td>
+                <td>я люблю</td>
+              </tr>
+              <tr>
+                <td>ти</td>
+                <td>волиш</td>
+                <td>ты любишь</td>
+              </tr>
+              <tr>
+                <td>он/она/оно</td>
+                <td>воли</td>
+                <td>он/она/оно любит</td>
+              </tr>
+              <tr>
+                <td>ми</td>
+                <td>волимо</td>
+                <td>мы любим</td>
+              </tr>
+              <tr>
+                <td>ви</td>
+                <td>волите</td>
+                <td>вы любите</td>
+              </tr>
+              <tr>
+                <td>они/оне/она</td>
+                <td>воле</td>
+                <td>они любят</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Глаголы на -ати</h3>
+          <p><strong>радити</strong> (работать)</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Местоимение</th>
+                <th>Форма</th>
+                <th>Перевод</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>ја</td>
+                <td>радим</td>
+                <td>я работаю</td>
+              </tr>
+              <tr>
+                <td>ти</td>
+                <td>радиш</td>
+                <td>ты работаешь</td>
+              </tr>
+              <tr>
+                <td>он/она/оно</td>
+                <td>ради</td>
+                <td>он/она/оно работает</td>
+              </tr>
+              <tr>
+                <td>ми</td>
+                <td>радимо</td>
+                <td>мы работаем</td>
+              </tr>
+              <tr>
+                <td>ви</td>
+                <td>радите</td>
+                <td>вы работаете</td>
+              </tr>
+              <tr>
+                <td>они/оне/она</td>
+                <td>раде</td>
+                <td>они работают</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p><strong>читати</strong> (читать)</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Местоимение</th>
+                <th>Форма</th>
+                <th>Перевод</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>ја</td>
+                <td>читам</td>
+                <td>я читаю</td>
+              </tr>
+              <tr>
+                <td>ти</td>
+                <td>читаш</td>
+                <td>ты читаешь</td>
+              </tr>
+              <tr>
+                <td>он/она/оно</td>
+                <td>чита</td>
+                <td>он/она/оно читает</td>
+              </tr>
+              <tr>
+                <td>ми</td>
+                <td>читамо</td>
+                <td>мы читаем</td>
+              </tr>
+              <tr>
+                <td>ви</td>
+                <td>читате</td>
+                <td>вы читаете</td>
+              </tr>
+              <tr>
+                <td>они/оне/она</td>
+                <td>читају</td>
+                <td>они читают</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="note">
+            <strong>Примечание:</strong> Обратите внимание на разницу в окончаниях 3-го лица множественного числа: глаголы на -ити → -е (говоре, воле, раде), глаголы на -ати → -ају (читају).
+          </div>
+
+          <div class="examples">
+            <div class="example">
+              <span class="serbian">Ја говорим српски.</span> — <span class="russian">Я говорю по-сербски.</span>
+            </div>
+            <div class="example">
+              <span class="serbian">Она воли кафу.</span> — <span class="russian">Она любит кофе.</span>
+            </div>
+            <div class="example">
+              <span class="serbian">Ми радимо у школи.</span> — <span class="russian">Мы работаем в школе.</span>
+            </div>
+            <div class="example">
+              <span class="serbian">Они читају књиге.</span> — <span class="russian">Они читают книги.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Направление -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Как указывать направление</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <p>Для указания направления движения в сербском языке используются предлоги и определённые глаголы.</p>
+
+          <h3>Основные предлоги направления</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Предлог</th>
+                <th>Значение</th>
+                <th>Пример</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>у / у</td>
+                <td>в (направление внутрь)</td>
+                <td>у школу (в школу)</td>
+              </tr>
+              <tr>
+                <td>из</td>
+                <td>из (направление наружу)</td>
+                <td>из куће (из дома)</td>
+              </tr>
+              <tr>
+                <td>од</td>
+                <td>от</td>
+                <td>од куће (от дома)</td>
+              </tr>
+              <tr>
+                <td>до</td>
+                <td>до</td>
+                <td>до града (до города)</td>
+              </tr>
+              <tr>
+                <td>ка / према</td>
+                <td>к, по направлению к</td>
+                <td>ка центру (к центру)</td>
+              </tr>
+              <tr>
+                <td>на</td>
+                <td>на (направление на поверхность)</td>
+                <td>на посао (на работу)</td>
+              </tr>
+              <tr>
+                <td>са</td>
+                <td>с (с поверхности)</td>
+                <td>са посла (с работы)</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Важные глаголы движения</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Сербский</th>
+                <th>Русский</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>ићи</td>
+                <td>идти (пешком)</td>
+              </tr>
+              <tr>
+                <td>долазити</td>
+                <td>приходить</td>
+              </tr>
+              <tr>
+                <td>одлазити</td>
+                <td>уходить</td>
+              </tr>
+              <tr>
+                <td>путовати</td>
+                <td>путешествовать</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="examples">
+            <div class="example">
+              <span class="serbian">Идем у школу.</span> — <span class="russian">Иду в школу.</span>
+            </div>
+            <div class="example">
+              <span class="serbian">Долазим из Београда.</span> — <span class="russian">Приезжаю из Белграда.</span>
+            </div>
+            <div class="example">
+              <span class="serbian">Идем од куће до радње.</span> — <span class="russian">Иду от дома до магазина.</span>
+            </div>
+            <div class="example">
+              <span class="serbian">Путујем ка Новом Саду.</span> — <span class="russian">Путешествую в сторону Нового Сада.</span>
+            </div>
+            <div class="example">
+              <span class="serbian">Идем на посао.</span> — <span class="russian">Иду на работу.</span>
+            </div>
+            <div class="example">
+              <span class="serbian">Долазим са факултета.</span> — <span class="russian">Иду с университета.</span>
+            </div>
+          </div>
+
+          <div class="note">
+            <strong>Примечание:</strong> Предлоги "у" и "на" требуют разных падежей в зависимости от контекста. "У" чаще используется для закрытых пространств (у школу, у кућу), а "на" для открытых мест или событий (на посао, на састанак).
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. Расположение объектов -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Расположение объектов</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <p>Для описания местоположения объектов относительно друг друга используются предлоги и наречия места.</p>
+
+          <h3>Предлоги и наречия места</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Сербский</th>
+                <th>Русский</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>на</td>
+                <td>на</td>
+              </tr>
+              <tr>
+                <td>у / у</td>
+                <td>в</td>
+              </tr>
+              <tr>
+                <td>испод</td>
+                <td>под</td>
+              </tr>
+              <tr>
+                <td>изnad</td>
+                <td>над</td>
+              </tr>
+              <tr>
+                <td>поред</td>
+                <td>рядом с, около</td>
+              </tr>
+              <tr>
+                <td>између</td>
+                <td>между</td>
+              </tr>
+              <tr>
+                <td>иза</td>
+                <td>за, позади</td>
+              </tr>
+              <tr>
+                <td>испред</td>
+                <td>перед</td>
+              </tr>
+              <tr>
+                <td>близу</td>
+                <td>близко</td>
+              </tr>
+              <tr>
+                <td>далеко</td>
+                <td>далеко</td>
+              </tr>
+              <tr>
+                <td>лево</td>
+                <td>слева</td>
+              </tr>
+              <tr>
+                <td>десно</td>
+                <td>справа</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="examples">
+            <div class="example">
+              <span class="serbian">Књига је на столу.</span> — <span class="russian">Книга на столе.</span>
+            </div>
+            <div class="example">
+              <span class="serbian">Мачка је у кући.</span> — <span class="russian">Кошка в доме.</span>
+            </div>
+            <div class="example">
+              <span class="serbian">Пас је испод стола.</span> — <span class="russian">Собака под столом.</span>
+            </div>
+            <div class="example">
+              <span class="serbian">Лампа је изнад стола.</span> — <span class="russian">Лампа над столом.</span>
+            </div>
+            <div class="example">
+              <span class="serbian">Седим поред тебе.</span> — <span class="russian">Сижу рядом с тобой.</span>
+            </div>
+            <div class="example">
+              <span class="serbian">Кафе је између школе и парка.</span> — <span class="russian">Кафе между школой и парком.</span>
+            </div>
+            <div class="example">
+              <span class="serbian">Аутомобил је иза куће.</span> — <span class="russian">Автомобиль за домом.</span>
+            </div>
+            <div class="example">
+              <span class="serbian">Дрво је испред прозора.</span> — <span class="russian">Дерево перед окном.</span>
+            </div>
+            <div class="example">
+              <span class="serbian">Станица је близу.</span> — <span class="russian">Станция близко.</span>
+            </div>
+            <div class="example">
+              <span class="serbian">Град је далеко.</span> — <span class="russian">Город далеко.</span>
+            </div>
+          </div>
+
+          <div class="note">
+            <strong>Примечание:</strong> Некоторые предлоги требуют определённых падежей. Например, "на" и "у" с локативом (где?), "поред" с генитивом (рядом с кем/чем?).
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="back-link">
+      <a href="../">← Вернуться к выбору раздела</a>
+    </div>
   </main>
+
+  <script>
+    const accordionItems = document.querySelectorAll('.accordion-item');
+
+    accordionItems.forEach(item => {
+      const header = item.querySelector('.accordion-header');
+
+      header.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+
+        // Close all items
+        accordionItems.forEach(i => {
+          i.classList.remove('active');
+          i.querySelector('.accordion-header').setAttribute('aria-expanded', 'false');
+        });
+
+        // Open clicked item if it wasn't active
+        if (!isActive) {
+          item.classList.add('active');
+          header.setAttribute('aria-expanded', 'true');
+        }
+      });
+
+      // Keyboard accessibility
+      header.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          header.click();
+        }
+      });
+    });
+  </script>
 </body>
 </html>
