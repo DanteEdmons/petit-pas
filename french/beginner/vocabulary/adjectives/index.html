@@ -42,16 +42,16 @@
     }
 
     main {
-      max-width: 620px;
+      max-width: 720px;
       width: 100%;
       background: rgba(15, 23, 42, 0.55);
       border-radius: 24px;
       backdrop-filter: blur(16px);
       box-shadow: 0 28px 48px rgba(2, 6, 23, 0.45);
-      padding: clamp(1.75rem, 6vw, 3rem);
+      padding: clamp(1.75rem, 6vw, 3.25rem);
       display: flex;
       flex-direction: column;
-      gap: 1.5rem;
+      gap: 1.75rem;
     }
 
     h1 {
@@ -63,6 +63,98 @@
       font-size: clamp(1rem, 2.4vw, 1.2rem);
       color: rgba(255, 255, 255, 0.82);
       line-height: 1.8;
+    }
+
+    .flashcard {
+      position: relative;
+      margin: 0 auto;
+      width: min(100%, 420px);
+      aspect-ratio: 3 / 2;
+      perspective: 1100px;
+      cursor: pointer;
+      border-radius: 20px;
+      outline: none;
+    }
+
+    .flashcard-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+      transition: transform 0.6s ease;
+      transform-style: preserve-3d;
+      box-shadow: 0 22px 38px rgba(15, 23, 42, 0.45);
+    }
+
+    .flashcard.flipped .flashcard-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flashcard-face {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      border-radius: inherit;
+      background: rgba(30, 41, 59, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      font-size: clamp(1.4rem, 5vw, 2.2rem);
+      font-weight: 600;
+      text-transform: lowercase;
+      backface-visibility: hidden;
+    }
+
+    .flashcard-face span {
+      display: inline-block;
+      max-width: 100%;
+    }
+
+    .flashcard-back {
+      transform: rotateY(180deg);
+      background: rgba(30, 41, 59, 0.96);
+    }
+
+    .flashcard:focus-visible {
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.65);
+    }
+
+    .navigation {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .navigation button {
+      padding: 0.8rem 1.6rem;
+      border: none;
+      border-radius: 999px;
+      background: rgba(59, 130, 246, 0.85);
+      color: white;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .navigation button:hover:not(:disabled),
+    .navigation button:focus-visible:not(:disabled) {
+      transform: translateY(-2px);
+      background: rgba(96, 165, 250, 0.95);
+    }
+
+    .navigation button:disabled {
+      cursor: not-allowed;
+      opacity: 0.55;
+      background: rgba(148, 163, 184, 0.35);
+    }
+
+    .progress {
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      color: rgba(226, 232, 240, 0.8);
     }
 
     .links {
@@ -87,11 +179,132 @@
 <body>
   <main>
     <h1>Французский — Начальный — Прилагательные</h1>
-    <p>Тут контента пока нет, но я скоро добавлю!</p>
+    <p>Нажмите на карточку, чтобы увидеть перевод, а затем используйте кнопки «Назад» и «Дальше», чтобы изучить все слова.</p>
+
+    <div
+      class="flashcard"
+      id="flashcard"
+      role="button"
+      tabindex="0"
+      aria-live="polite"
+      aria-label="Карточка словаря"
+    >
+      <div class="flashcard-inner">
+        <div class="flashcard-face flashcard-front">
+          <span id="card-front">bon</span>
+        </div>
+        <div class="flashcard-face flashcard-back">
+          <span id="card-back">хороший</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="progress" id="progress">1 / 30</div>
+
+    <div class="navigation">
+      <button type="button" id="prev-btn" disabled>Назад</button>
+      <button type="button" id="next-btn">Дальше</button>
+    </div>
+
     <div class="links">
       <a href="../">Назад к выбору категорий</a>
       <a href="../../">Вернуться к разделу</a>
     </div>
   </main>
+
+  <script>
+    const words = [
+      { french: "bon", russian: "хороший" },
+      { french: "grand", russian: "большой" },
+      { french: "petit", russian: "маленький" },
+      { french: "nouveau", russian: "новый" },
+      { french: "jeune", russian: "молодой" },
+      { french: "vieux", russian: "старый" },
+      { french: "beau", russian: "красивый" },
+      { french: "joli", russian: "милый, красивый" },
+      { french: "mauvais", russian: "плохой" },
+      { french: "facile", russian: "лёгкий" },
+      { french: "difficile", russian: "трудный" },
+      { french: "long", russian: "длинный" },
+      { french: "court", russian: "короткий" },
+      { french: "haut", russian: "высокий" },
+      { french: "bas", russian: "низкий" },
+      { french: "chaud", russian: "горячий, жаркий" },
+      { french: "froid", russian: "холодный" },
+      { french: "blanc", russian: "белый" },
+      { french: "noir", russian: "чёрный" },
+      { french: "rouge", russian: "красный" },
+      { french: "bleu", russian: "синий" },
+      { french: "vert", russian: "зелёный" },
+      { french: "jaune", russian: "жёлтый" },
+      { french: "important", russian: "важный" },
+      { french: "intéressant", russian: "интересный" },
+      { french: "content", russian: "довольный" },
+      { french: "heureux", russian: "счастливый" },
+      { french: "triste", russian: "грустный" },
+      { french: "fatigué", russian: "уставший" },
+      { french: "rapide", russian: "быстрый" }
+    ];
+
+    const flashcard = document.getElementById("flashcard");
+    const front = document.getElementById("card-front");
+    const back = document.getElementById("card-back");
+    const prevBtn = document.getElementById("prev-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const progress = document.getElementById("progress");
+
+    let currentIndex = 0;
+    const shuffledWords = shuffle(words);
+
+    function shuffle(array) {
+      const result = [...array];
+      for (let i = result.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [result[i], result[j]] = [result[j], result[i]];
+      }
+      return result;
+    }
+
+    function renderCard() {
+      const { french, russian } = shuffledWords[currentIndex];
+      front.textContent = french;
+      back.textContent = russian;
+      flashcard.classList.remove("flipped");
+      progress.textContent = `${currentIndex + 1} / ${shuffledWords.length}`;
+      prevBtn.disabled = currentIndex === 0;
+      nextBtn.disabled = currentIndex === shuffledWords.length - 1;
+      flashcard.setAttribute("aria-label", `Слово ${french} — нажмите, чтобы увидеть перевод`);
+    }
+
+    function showNext(offset) {
+      const newIndex = currentIndex + offset;
+      if (newIndex < 0 || newIndex >= shuffledWords.length) {
+        return;
+      }
+      currentIndex = newIndex;
+      renderCard();
+    }
+
+    flashcard.addEventListener("click", () => {
+      flashcard.classList.toggle("flipped");
+    });
+
+    flashcard.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        flashcard.classList.toggle("flipped");
+      }
+    });
+
+    prevBtn.addEventListener("click", () => {
+      showNext(-1);
+    });
+
+    nextBtn.addEventListener("click", () => {
+      showNext(1);
+    });
+
+    renderCard();
+  </script>
 </body>
 </html>
