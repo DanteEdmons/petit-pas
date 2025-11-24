@@ -65,16 +65,968 @@
       line-height: 1.8;
     }
 
-    a {
+    .intro {
+      font-size: clamp(1rem, 2.4vw, 1.1rem);
+      color: rgba(255, 255, 255, 0.82);
+      line-height: 1.8;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .accordion {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .accordion-item {
+      background: rgba(30, 41, 59, 0.6);
+      border-radius: 16px;
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .accordion-item:hover {
+      border-color: rgba(148, 163, 184, 0.4);
+    }
+
+    .accordion-header {
+      width: 100%;
+      padding: 1.2rem 1.5rem;
+      background: rgba(30, 41, 59, 0.8);
+      border: none;
+      color: rgba(255, 255, 255, 0.95);
+      font-family: inherit;
+      font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+      font-weight: 600;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.3s ease;
+    }
+
+    .accordion-header:hover {
+      background: rgba(30, 41, 59, 0.95);
+    }
+
+    .accordion-header:focus-visible {
+      outline: 2px solid rgba(59, 130, 246, 0.65);
+      outline-offset: -2px;
+    }
+
+    .accordion-icon {
+      font-size: 1.2rem;
+      transition: transform 0.3s ease;
+    }
+
+    .accordion-item.active .accordion-icon {
+      transform: rotate(180deg);
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+      padding: 0 1.5rem;
+    }
+
+    .accordion-item.active .accordion-content {
+      max-height: 4000px;
+      padding: 1.5rem;
+    }
+
+    .accordion-content h3 {
+      font-size: clamp(1rem, 2.2vw, 1.2rem);
       color: #93c5fd;
+      margin-bottom: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .accordion-content h3:first-child {
+      margin-top: 0;
+    }
+
+    .accordion-content p {
+      font-size: clamp(0.95rem, 2vw, 1.05rem);
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: clamp(0.9rem, 2vw, 1rem);
+    }
+
+    th, td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+    }
+
+    th {
+      background: rgba(30, 41, 59, 0.8);
+      color: #93c5fd;
+      font-weight: 600;
+    }
+
+    td {
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    td:first-child {
+      color: rgba(255, 255, 255, 0.95);
+      font-weight: 500;
+    }
+
+    .examples {
+      background: rgba(30, 41, 59, 0.4);
+      border-left: 3px solid #93c5fd;
+      padding: 1rem 1.2rem;
+      margin: 1rem 0;
+      border-radius: 8px;
+    }
+
+    .example {
+      margin: 0.5rem 0;
+      font-size: clamp(0.95rem, 2vw, 1.05rem);
+    }
+
+    .english {
+      color: rgba(255, 255, 255, 0.95);
+      font-weight: 500;
+    }
+
+    .russian {
+      color: rgba(255, 255, 255, 0.7);
+      font-style: italic;
+    }
+
+    .note {
+      background: rgba(251, 191, 36, 0.15);
+      border-left: 3px solid #fbbf24;
+      padding: 1rem 1.2rem;
+      margin: 1rem 0;
+      border-radius: 8px;
+      font-size: clamp(0.9rem, 2vw, 1rem);
+    }
+
+    .back-link {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .back-link a {
+      color: #93c5fd;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: clamp(1rem, 2.2vw, 1.1rem);
+    }
+
+    .back-link a:hover,
+    .back-link a:focus {
+      text-decoration: underline;
+    }
+
+    ul {
+      margin: 1rem 0;
+      padding-left: 1.5rem;
+    }
+
+    li {
+      margin: 0.5rem 0;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.6;
     }
   </style>
 </head>
 <body>
   <main>
     <h1>Английский — Начальный — Грамматика</h1>
-    <p>Тут контента пока нет, но я скоро добавлю!</p>
-    <p><a href="../">Вернуться к выбору раздела</a></p>
+    <p class="intro">Выберите тему, чтобы изучить грамматическое правило с примерами и таблицами.</p>
+
+    <div class="accordion">
+      <!-- 1. Articles -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>1. Артикли (Articles: a, an, the)</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Неопределённые артикли (a, an)</h3>
+          <p>Используются с исчисляемыми существительными в единственном числе, когда говорим о чем-то впервые или вообще.</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Артикль</th>
+                <th>Когда используется</th>
+                <th>Пример</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>a</td>
+                <td>перед согласной</td>
+                <td>a book, a cat</td>
+              </tr>
+              <tr>
+                <td>an</td>
+                <td>перед гласной</td>
+                <td>an apple, an hour</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Определённый артикль (the)</h3>
+          <p>Используется, когда говорим о конкретном, известном предмете.</p>
+          <div class="examples">
+            <div class="example">
+              <span class="english">I see a dog. The dog is big.</span> — <span class="russian">Я вижу собаку. Собака большая.</span>
+            </div>
+            <div class="example">
+              <span class="english">The sun is bright.</span> — <span class="russian">Солнце яркое.</span>
+            </div>
+          </div>
+
+          <h3>Без артикля</h3>
+          <p>Артикль не нужен с:</p>
+          <ul>
+            <li>Неисчисляемыми существительными в общем смысле: water, milk</li>
+            <li>Множественным числом в общем смысле: cats, books</li>
+            <li>Именами: John, London</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 2. Pronouns -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>2. Личные местоимения (Personal Pronouns)</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Субъектные местоимения</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Местоимение</th>
+                <th>Перевод</th>
+                <th>Пример</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>I</td><td>я</td><td>I am a student</td></tr>
+              <tr><td>you</td><td>ты, вы</td><td>You are nice</td></tr>
+              <tr><td>he</td><td>он</td><td>He is tall</td></tr>
+              <tr><td>she</td><td>она</td><td>She is smart</td></tr>
+              <tr><td>it</td><td>оно, это</td><td>It is a cat</td></tr>
+              <tr><td>we</td><td>мы</td><td>We are friends</td></tr>
+              <tr><td>they</td><td>они</td><td>They are happy</td></tr>
+            </tbody>
+          </table>
+
+          <h3>Объектные местоимения</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Местоимение</th>
+                <th>Перевод</th>
+                <th>Пример</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>me</td><td>меня, мне</td><td>Call me</td></tr>
+              <tr><td>you</td><td>тебя, вас</td><td>I see you</td></tr>
+              <tr><td>him</td><td>его, ему</td><td>I know him</td></tr>
+              <tr><td>her</td><td>её, ей</td><td>I like her</td></tr>
+              <tr><td>it</td><td>его, её (предмет)</td><td>I want it</td></tr>
+              <tr><td>us</td><td>нас, нам</td><td>Help us</td></tr>
+              <tr><td>them</td><td>их, им</td><td>I know them</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 3. Verb to be -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>3. Глагол to be (быть)</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Present Simple (Настоящее время)</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Местоимение</th>
+                <th>Форма</th>
+                <th>Краткая форма</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>I</td><td>am</td><td>I'm</td></tr>
+              <tr><td>you</td><td>are</td><td>you're</td></tr>
+              <tr><td>he/she/it</td><td>is</td><td>he's/she's/it's</td></tr>
+              <tr><td>we</td><td>are</td><td>we're</td></tr>
+              <tr><td>they</td><td>are</td><td>they're</td></tr>
+            </tbody>
+          </table>
+
+          <div class="examples">
+            <div class="example">
+              <span class="english">I am a teacher.</span> — <span class="russian">Я учитель.</span>
+            </div>
+            <div class="example">
+              <span class="english">She is happy.</span> — <span class="russian">Она счастлива.</span>
+            </div>
+            <div class="example">
+              <span class="english">They are students.</span> — <span class="russian">Они студенты.</span>
+            </div>
+          </div>
+
+          <h3>Отрицание</h3>
+          <p>am not / is not (isn't) / are not (aren't)</p>
+          <div class="examples">
+            <div class="example">
+              <span class="english">I am not tired.</span> — <span class="russian">Я не устал.</span>
+            </div>
+            <div class="example">
+              <span class="english">He isn't here.</span> — <span class="russian">Его здесь нет.</span>
+            </div>
+          </div>
+
+          <h3>Вопросы</h3>
+          <p>Меняем порядок слов: Am I? / Is he? / Are you?</p>
+          <div class="examples">
+            <div class="example">
+              <span class="english">Are you a student?</span> — <span class="russian">Ты студент?</span>
+            </div>
+            <div class="example">
+              <span class="english">Is she at home?</span> — <span class="russian">Она дома?</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Present Simple -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>4. Present Simple (Простое настоящее)</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Образование</h3>
+          <p>Основная форма глагола. Для he/she/it добавляем <strong>-s</strong> или <strong>-es</strong></p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Местоимение</th>
+                <th>Форма (work)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>I/you/we/they</td><td>work</td></tr>
+              <tr><td>he/she/it</td><td>works</td></tr>
+            </tbody>
+          </table>
+
+          <div class="note">
+            <strong>Правила добавления -s/-es:</strong><br>
+            • Обычно: -s (work → works)<br>
+            • После -s, -sh, -ch, -x, -o: -es (go → goes, watch → watches)<br>
+            • -y после согласной → -ies (study → studies)
+          </div>
+
+          <div class="examples">
+            <div class="example">
+              <span class="english">I work every day.</span> — <span class="russian">Я работаю каждый день.</span>
+            </div>
+            <div class="example">
+              <span class="english">She likes coffee.</span> — <span class="russian">Она любит кофе.</span>
+            </div>
+          </div>
+
+          <h3>Отрицание</h3>
+          <p>do not (don't) / does not (doesn't) + основная форма</p>
+          <div class="examples">
+            <div class="example">
+              <span class="english">I don't like tea.</span> — <span class="russian">Я не люблю чай.</span>
+            </div>
+            <div class="example">
+              <span class="english">He doesn't work here.</span> — <span class="russian">Он не работает здесь.</span>
+            </div>
+          </div>
+
+          <h3>Вопросы</h3>
+          <p>Do/Does + подлежащее + основная форма?</p>
+          <div class="examples">
+            <div class="example">
+              <span class="english">Do you speak English?</span> — <span class="russian">Ты говоришь по-английски?</span>
+            </div>
+            <div class="example">
+              <span class="english">Does she live here?</span> — <span class="russian">Она живёт здесь?</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Present Continuous -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>5. Present Continuous (Настоящее продолженное)</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Формула: am/is/are + глагол-ing</h3>
+          <p>Используется для действий, происходящих сейчас, в данный момент.</p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Местоимение</th>
+                <th>am/is/are</th>
+                <th>+ глагол-ing</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>I</td><td>am</td><td>working</td></tr>
+              <tr><td>you/we/they</td><td>are</td><td>working</td></tr>
+              <tr><td>he/she/it</td><td>is</td><td>working</td></tr>
+            </tbody>
+          </table>
+
+          <div class="note">
+            <strong>Правила добавления -ing:</strong><br>
+            • Обычно: -ing (work → working)<br>
+            • -e на конце убираем: make → making<br>
+            • Краткая гласная + согласная → удваиваем: sit → sitting, run → running
+          </div>
+
+          <div class="examples">
+            <div class="example">
+              <span class="english">I am reading now.</span> — <span class="russian">Я читаю сейчас.</span>
+            </div>
+            <div class="example">
+              <span class="english">She is working.</span> — <span class="russian">Она работает (сейчас).</span>
+            </div>
+            <div class="example">
+              <span class="english">They are playing football.</span> — <span class="russian">Они играют в футбол.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Past Simple -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>6. Past Simple (Простое прошедшее)</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Правильные глаголы</h3>
+          <p>Добавляем <strong>-ed</strong> к основе глагола</p>
+          <div class="examples">
+            <div class="example">
+              <span class="english">I worked yesterday.</span> — <span class="russian">Я работал вчера.</span>
+            </div>
+            <div class="example">
+              <span class="english">She played tennis.</span> — <span class="russian">Она играла в теннис.</span>
+            </div>
+          </div>
+
+          <h3>Неправильные глаголы</h3>
+          <p>Имеют особую форму прошедшего времени (нужно запоминать):</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Инфинитив</th>
+                <th>Past Simple</th>
+                <th>Перевод</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>go</td><td>went</td><td>идти</td></tr>
+              <tr><td>see</td><td>saw</td><td>видеть</td></tr>
+              <tr><td>have</td><td>had</td><td>иметь</td></tr>
+              <tr><td>do</td><td>did</td><td>делать</td></tr>
+              <tr><td>make</td><td>made</td><td>делать/создавать</td></tr>
+              <tr><td>come</td><td>came</td><td>приходить</td></tr>
+              <tr><td>take</td><td>took</td><td>брать</td></tr>
+            </tbody>
+          </table>
+
+          <h3>Отрицание и вопросы</h3>
+          <p><strong>Отрицание:</strong> did not (didn't) + основная форма</p>
+          <p><strong>Вопрос:</strong> Did + подлежащее + основная форма?</p>
+          <div class="examples">
+            <div class="example">
+              <span class="english">I didn't see him.</span> — <span class="russian">Я не видел его.</span>
+            </div>
+            <div class="example">
+              <span class="english">Did you go there?</span> — <span class="russian">Ты ходил туда?</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. There is / There are -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>7. There is / There are (Есть, находится)</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Использование</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Форма</th>
+                <th>Когда</th>
+                <th>Пример</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>There is</td><td>ед. число</td><td>There is a book</td></tr>
+              <tr><td>There are</td><td>мн. число</td><td>There are books</td></tr>
+            </tbody>
+          </table>
+
+          <div class="examples">
+            <div class="example">
+              <span class="english">There is a cat on the table.</span> — <span class="russian">На столе кот.</span>
+            </div>
+            <div class="example">
+              <span class="english">There are two apples in the bag.</span> — <span class="russian">В сумке два яблока.</span>
+            </div>
+          </div>
+
+          <h3>Отрицание</h3>
+          <p>There is not (isn't) / There are not (aren't)</p>
+          <div class="examples">
+            <div class="example">
+              <span class="english">There isn't a problem.</span> — <span class="russian">Нет проблемы.</span>
+            </div>
+          </div>
+
+          <h3>Вопросы</h3>
+          <p>Is there...? / Are there...?</p>
+          <div class="examples">
+            <div class="example">
+              <span class="english">Is there a bank near here?</span> — <span class="russian">Здесь есть банк поблизости?</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. Question Words -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>8. Вопросительные слова (Question Words)</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <table>
+            <thead>
+              <tr>
+                <th>Слово</th>
+                <th>Перевод</th>
+                <th>Пример</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>What?</td><td>что? какой?</td><td>What is this?</td></tr>
+              <tr><td>Who?</td><td>кто?</td><td>Who are you?</td></tr>
+              <tr><td>Where?</td><td>где? куда?</td><td>Where do you live?</td></tr>
+              <tr><td>When?</td><td>когда?</td><td>When is the meeting?</td></tr>
+              <tr><td>Why?</td><td>почему?</td><td>Why are you late?</td></tr>
+              <tr><td>How?</td><td>как?</td><td>How are you?</td></tr>
+              <tr><td>How many?</td><td>сколько? (исчисляемое)</td><td>How many books?</td></tr>
+              <tr><td>How much?</td><td>сколько? (неисчисляемое)</td><td>How much money?</td></tr>
+            </tbody>
+          </table>
+
+          <div class="examples">
+            <div class="example">
+              <span class="english">What do you want?</span> — <span class="russian">Что ты хочешь?</span>
+            </div>
+            <div class="example">
+              <span class="english">Where does she work?</span> — <span class="russian">Где она работает?</span>
+            </div>
+            <div class="example">
+              <span class="english">How old are you?</span> — <span class="russian">Сколько тебе лет?</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9. Plural Nouns -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>9. Множественное число существительных (Plural Nouns)</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Основное правило</h3>
+          <p>Добавляем <strong>-s</strong></p>
+          <div class="examples">
+            <div class="example">
+              <span class="english">cat → cats, book → books</span>
+            </div>
+          </div>
+
+          <h3>Особые случаи</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Окончание</th>
+                <th>Правило</th>
+                <th>Пример</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>-s, -ss, -sh, -ch, -x</td><td>+ es</td><td>bus → buses, box → boxes</td></tr>
+              <tr><td>-y после согласной</td><td>→ -ies</td><td>baby → babies, city → cities</td></tr>
+              <tr><td>-f, -fe</td><td>→ -ves</td><td>wife → wives, knife → knives</td></tr>
+              <tr><td>-o после согласной</td><td>+ es</td><td>tomato → tomatoes</td></tr>
+            </tbody>
+          </table>
+
+          <h3>Неправильное множественное число</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Единственное</th>
+                <th>Множественное</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>man</td><td>men</td></tr>
+              <tr><td>woman</td><td>women</td></tr>
+              <tr><td>child</td><td>children</td></tr>
+              <tr><td>person</td><td>people</td></tr>
+              <tr><td>tooth</td><td>teeth</td></tr>
+              <tr><td>foot</td><td>feet</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 10. Possessives -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>10. Притяжательные формы (Possessives)</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Притяжательные прилагательные</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Местоимение</th>
+                <th>Притяжательное</th>
+                <th>Пример</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>I</td><td>my</td><td>my book</td></tr>
+              <tr><td>you</td><td>your</td><td>your car</td></tr>
+              <tr><td>he</td><td>his</td><td>his house</td></tr>
+              <tr><td>she</td><td>her</td><td>her name</td></tr>
+              <tr><td>it</td><td>its</td><td>its tail</td></tr>
+              <tr><td>we</td><td>our</td><td>our family</td></tr>
+              <tr><td>they</td><td>their</td><td>their dog</td></tr>
+            </tbody>
+          </table>
+
+          <h3>Притяжательный падеж с 's</h3>
+          <p>Для людей и животных используем <strong>'s</strong></p>
+          <div class="examples">
+            <div class="example">
+              <span class="english">John's car</span> — <span class="russian">машина Джона</span>
+            </div>
+            <div class="example">
+              <span class="english">my sister's book</span> — <span class="russian">книга моей сестры</span>
+            </div>
+            <div class="example">
+              <span class="english">the cat's tail</span> — <span class="russian">хвост кота</span>
+            </div>
+          </div>
+
+          <div class="note">
+            <strong>Для множественного числа:</strong> dogs' (собак)
+          </div>
+        </div>
+      </div>
+
+      <!-- 11. Can / Can't -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>11. Модальный глагол Can (мочь, уметь)</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Использование</h3>
+          <p><strong>Can</strong> + основная форма глагола (для всех лиц одинаково)</p>
+
+          <div class="examples">
+            <div class="example">
+              <span class="english">I can swim.</span> — <span class="russian">Я умею плавать.</span>
+            </div>
+            <div class="example">
+              <span class="english">She can speak English.</span> — <span class="russian">Она умеет говорить по-английски.</span>
+            </div>
+          </div>
+
+          <h3>Отрицание</h3>
+          <p>cannot (can't)</p>
+          <div class="examples">
+            <div class="example">
+              <span class="english">I can't drive.</span> — <span class="russian">Я не умею водить.</span>
+            </div>
+          </div>
+
+          <h3>Вопросы</h3>
+          <p>Can + подлежащее + глагол?</p>
+          <div class="examples">
+            <div class="example">
+              <span class="english">Can you help me?</span> — <span class="russian">Ты можешь мне помочь?</span>
+            </div>
+            <div class="example">
+              <span class="english">Can she cook?</span> — <span class="russian">Она умеет готовить?</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 12. Adjectives -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>12. Прилагательные (Adjectives)</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Позиция</h3>
+          <p>Прилагательные в английском стоят <strong>перед</strong> существительным и <strong>не изменяются</strong></p>
+          <div class="examples">
+            <div class="example">
+              <span class="english">a big house</span> — <span class="russian">большой дом</span>
+            </div>
+            <div class="example">
+              <span class="english">a small car</span> — <span class="russian">маленькая машина</span>
+            </div>
+          </div>
+
+          <h3>Степени сравнения</h3>
+          <p><strong>Короткие прилагательные (1-2 слога):</strong></p>
+          <table>
+            <thead>
+              <tr>
+                <th>Положительная</th>
+                <th>Сравнительная (+er)</th>
+                <th>Превосходная (the +est)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>big</td><td>bigger</td><td>the biggest</td></tr>
+              <tr><td>small</td><td>smaller</td><td>the smallest</td></tr>
+              <tr><td>nice</td><td>nicer</td><td>the nicest</td></tr>
+            </tbody>
+          </table>
+
+          <p><strong>Длинные прилагательные (3+ слога):</strong></p>
+          <table>
+            <thead>
+              <tr>
+                <th>Положительная</th>
+                <th>Сравнительная</th>
+                <th>Превосходная</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>beautiful</td><td>more beautiful</td><td>the most beautiful</td></tr>
+              <tr><td>expensive</td><td>more expensive</td><td>the most expensive</td></tr>
+            </tbody>
+          </table>
+
+          <h3>Неправильные формы</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Положительная</th>
+                <th>Сравнительная</th>
+                <th>Превосходная</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>good</td><td>better</td><td>the best</td></tr>
+              <tr><td>bad</td><td>worse</td><td>the worst</td></tr>
+            </tbody>
+          </table>
+
+          <div class="examples">
+            <div class="example">
+              <span class="english">She is taller than me.</span> — <span class="russian">Она выше, чем я.</span>
+            </div>
+            <div class="example">
+              <span class="english">This is the best book.</span> — <span class="russian">Это лучшая книга.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 13. Prepositions of Time -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>13. Предлоги времени (Prepositions of Time)</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <table>
+            <thead>
+              <tr>
+                <th>Предлог</th>
+                <th>Использование</th>
+                <th>Пример</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>at</td><td>точное время</td><td>at 5 o'clock, at night</td></tr>
+              <tr><td>on</td><td>дни, даты</td><td>on Monday, on January 5th</td></tr>
+              <tr><td>in</td><td>месяцы, годы, части дня</td><td>in May, in 2024, in the morning</td></tr>
+            </tbody>
+          </table>
+
+          <div class="examples">
+            <div class="example">
+              <span class="english">I wake up at 7 o'clock.</span> — <span class="russian">Я просыпаюсь в 7 часов.</span>
+            </div>
+            <div class="example">
+              <span class="english">My birthday is on May 15th.</span> — <span class="russian">Мой день рождения 15 мая.</span>
+            </div>
+            <div class="example">
+              <span class="english">I was born in 1990.</span> — <span class="russian">Я родился в 1990.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 14. Prepositions of Place -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>14. Предлоги места (Prepositions of Place)</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <table>
+            <thead>
+              <tr>
+                <th>Предлог</th>
+                <th>Перевод</th>
+                <th>Пример</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>in</td><td>в (внутри)</td><td>in the room</td></tr>
+              <tr><td>on</td><td>на (поверхности)</td><td>on the table</td></tr>
+              <tr><td>at</td><td>у, в (точка)</td><td>at the door, at home</td></tr>
+              <tr><td>under</td><td>под</td><td>under the bed</td></tr>
+              <tr><td>behind</td><td>за, позади</td><td>behind the house</td></tr>
+              <tr><td>in front of</td><td>перед</td><td>in front of me</td></tr>
+              <tr><td>next to</td><td>рядом с</td><td>next to the bank</td></tr>
+              <tr><td>between</td><td>между</td><td>between two cars</td></tr>
+            </tbody>
+          </table>
+
+          <div class="examples">
+            <div class="example">
+              <span class="english">The book is on the table.</span> — <span class="russian">Книга на столе.</span>
+            </div>
+            <div class="example">
+              <span class="english">The cat is under the bed.</span> — <span class="russian">Кот под кроватью.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 15. Some / Any -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>15. Some / Any (немного, несколько)</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Some</h3>
+          <p>Используется в утвердительных предложениях</p>
+          <div class="examples">
+            <div class="example">
+              <span class="english">I have some books.</span> — <span class="russian">У меня есть несколько книг.</span>
+            </div>
+            <div class="example">
+              <span class="english">There is some water.</span> — <span class="russian">Есть немного воды.</span>
+            </div>
+          </div>
+
+          <h3>Any</h3>
+          <p>Используется в вопросах и отрицаниях</p>
+          <div class="examples">
+            <div class="example">
+              <span class="english">Do you have any questions?</span> — <span class="russian">У вас есть вопросы?</span>
+            </div>
+            <div class="example">
+              <span class="english">I don't have any money.</span> — <span class="russian">У меня нет денег.</span>
+            </div>
+          </div>
+
+          <div class="note">
+            <strong>Исключение:</strong> В вежливых просьбах используем some<br>
+            Can I have some water? — Можно мне воды?
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="back-link">
+      <a href="../">← Вернуться к выбору раздела</a>
+    </div>
   </main>
+
+  <script>
+    const accordionItems = document.querySelectorAll('.accordion-item');
+
+    accordionItems.forEach(item => {
+      const header = item.querySelector('.accordion-header');
+
+      header.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+
+        // Close all items
+        accordionItems.forEach(i => {
+          i.classList.remove('active');
+          i.querySelector('.accordion-header').setAttribute('aria-expanded', 'false');
+        });
+
+        // Open clicked item if it wasn't active
+        if (!isActive) {
+          item.classList.add('active');
+          header.setAttribute('aria-expanded', 'true');
+        }
+      });
+
+      // Keyboard accessibility
+      header.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          header.click();
+        }
+      });
+    });
+  </script>
 </body>
 </html>

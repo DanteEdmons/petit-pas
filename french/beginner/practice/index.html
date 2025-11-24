@@ -26,7 +26,6 @@
       background-size: 200% 200%;
       animation: shimmer 18s ease infinite;
       padding: 2.5rem 1.5rem;
-      text-align: center;
     }
 
     @keyframes shimmer {
@@ -42,7 +41,7 @@
     }
 
     main {
-      max-width: 560px;
+      max-width: 700px;
       width: 100%;
       background: rgba(15, 23, 42, 0.55);
       border-radius: 24px;
@@ -57,24 +56,429 @@
     h1 {
       font-size: clamp(1.8rem, 4vw, 2.6rem);
       letter-spacing: 0.04em;
+      text-align: center;
     }
 
-    p {
-      font-size: clamp(1rem, 2.4vw, 1.2rem);
+    h2 {
+      font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .intro {
+      font-size: clamp(0.95rem, 2.2vw, 1.1rem);
       color: rgba(255, 255, 255, 0.82);
-      line-height: 1.8;
+      line-height: 1.7;
+      text-align: center;
     }
 
-    a {
+    .quiz-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .question-card {
+      background: rgba(30, 41, 59, 0.6);
+      border-radius: 20px;
+      padding: 2rem;
+      border: 1px solid rgba(148, 163, 184, 0.2);
+    }
+
+    .question-number {
+      font-size: 0.9rem;
       color: #93c5fd;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .question-text {
+      font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .option {
+      padding: 1rem 1.25rem;
+      background: rgba(59, 130, 246, 0.15);
+      border: 2px solid rgba(59, 130, 246, 0.3);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: clamp(0.95rem, 2vw, 1.1rem);
+    }
+
+    .option:hover {
+      background: rgba(59, 130, 246, 0.25);
+      transform: translateX(4px);
+    }
+
+    .option.selected {
+      background: rgba(59, 130, 246, 0.35);
+      border-color: rgba(59, 130, 246, 0.6);
+    }
+
+    .option.correct {
+      background: rgba(16, 185, 129, 0.25);
+      border-color: rgba(16, 185, 129, 0.6);
+    }
+
+    .option.incorrect {
+      background: rgba(239, 68, 68, 0.25);
+      border-color: rgba(239, 68, 68, 0.6);
+    }
+
+    .feedback {
+      margin: 1rem 0;
+      padding: 1rem;
+      border-radius: 10px;
+      font-size: clamp(0.9rem, 2vw, 1rem);
+      line-height: 1.6;
+    }
+
+    .feedback.success {
+      background: rgba(16, 185, 129, 0.2);
+      border-left: 4px solid #10b981;
+      color: #d1fae5;
+    }
+
+    .feedback.error {
+      background: rgba(239, 68, 68, 0.2);
+      border-left: 4px solid #ef4444;
+      color: #fecaca;
+    }
+
+    .quiz-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.75rem 1.75rem;
+      border: none;
+      border-radius: 999px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+
+    .btn-primary {
+      background: rgba(59, 130, 246, 0.85);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: rgba(59, 130, 246, 1);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: rgba(107, 114, 128, 0.6);
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(107, 114, 128, 0.8);
+    }
+
+    .progress-bar {
+      height: 8px;
+      background: rgba(30, 41, 59, 0.6);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #3b82f6, #60a5fa);
+      transition: width 0.3s ease;
+      width: 10%;
+    }
+
+    .score {
+      text-align: center;
+      font-size: 1rem;
+      color: #93c5fd;
+      font-weight: 600;
+    }
+
+    .results-screen {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .final-score {
+      font-size: clamp(1.2rem, 3vw, 1.6rem);
+      margin: 1.5rem 0;
+      font-weight: 600;
+    }
+
+    .result-message {
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      margin: 1.5rem 0;
+      line-height: 1.6;
+    }
+
+    .back-link {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .back-link a {
+      color: #93c5fd;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .back-link a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
   <main>
     <h1>Французский — Начальный — Практика</h1>
-    <p>Тут контента пока нет, но я скоро добавлю!</p>
-    <p><a href="../">Вернуться к выбору раздела</a></p>
+    <p class="intro">Проверьте свои знания французской грамматики. Выберите правильный ответ и нажмите «Проверить».</p>
+
+    <div class="quiz-container">
+      <div class="question-card" id="question-card">
+        <div class="question-number" id="question-number">Вопрос 1 из 10</div>
+        <div class="question-text" id="question-text">Loading...</div>
+        <div class="options" id="options"></div>
+        <div class="feedback" id="feedback"></div>
+        <div class="quiz-actions">
+          <button id="check-btn" class="btn btn-primary">Проверить</button>
+          <button id="next-btn" class="btn btn-secondary" style="display: none;">Следующий вопрос</button>
+        </div>
+      </div>
+
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <div class="score" id="score">Правильных ответов: 0 / 0</div>
+    </div>
+
+    <div class="results-screen" id="results-screen" style="display: none;">
+      <h2>Результаты теста</h2>
+      <div class="final-score" id="final-score"></div>
+      <div class="result-message" id="result-message"></div>
+      <button id="restart-btn" class="btn btn-primary">Пройти заново</button>
+    </div>
+
+    <div class="back-link">
+      <a href="../">← Вернуться к выбору раздела</a>
+    </div>
   </main>
+
+  <script>
+    const questions = [
+      {
+        question: "Выберите правильный артикль: J'ai ___ chat.",
+        options: ["le", "la", "un", "une"],
+        correct: 2,
+        explanation: "Используется неопределённый артикль 'un', так как 'chat' мужского рода и мы говорим о коте впервые."
+      },
+      {
+        question: "Выберите правильную форму глагола être: Elle ___ étudiante.",
+        options: ["suis", "es", "est", "sont"],
+        correct: 2,
+        explanation: "Для 'elle' (она) используется форма 'est'."
+      },
+      {
+        question: "Выберите правильную форму: Il ___ français.",
+        options: ["parle", "parles", "parlons", "parlent"],
+        correct: 0,
+        explanation: "Для he/she/it (il/elle) глаголы первой группы имеют окончание -e."
+      },
+      {
+        question: "Выберите правильный партитивный артикль: Je mange ___ pain.",
+        options: ["le", "du", "de la", "des"],
+        correct: 1,
+        explanation: "'Du' используется с неисчисляемыми существительными мужского рода."
+      },
+      {
+        question: "Выберите правильную форму отрицания: Je ___ parle ___ anglais.",
+        options: ["ne ... pas", "pas ... ne", "no ... pas", "pas"],
+        correct: 0,
+        explanation: "Отрицание во французском: ne + глагол + pas."
+      },
+      {
+        question: "Выберите правильную форму: Ils ___ à l'école.",
+        options: ["va", "vas", "allons", "vont"],
+        correct: 3,
+        explanation: "Для 'ils' (они) глагол 'aller' имеет форму 'vont'."
+      },
+      {
+        question: "Выберите правильное притяжательное: C'est ___ livre.",
+        options: ["je", "me", "mon", "ma"],
+        correct: 2,
+        explanation: "Притяжательное прилагательное 'mon' (мой/моя) используется с существительными мужского рода."
+      },
+      {
+        question: "Выберите правильный предлог: Le chat est ___ la table.",
+        options: ["dans", "sur", "sous", "avec"],
+        correct: 1,
+        explanation: "Предлог 'sur' (на) используется для поверхностей."
+      },
+      {
+        question: "Выберите правильную форму ближайшего будущего: Je ___ manger.",
+        options: ["va", "vais", "vas", "allons"],
+        correct: 1,
+        explanation: "Futur proche образуется как: aller (в нужной форме) + инфинитив. Для 'je' это 'vais'."
+      },
+      {
+        question: "Выберите правильное вопросительное слово: ___ tu habites?",
+        options: ["Qui", "Que", "Où", "Quand"],
+        correct: 2,
+        explanation: "'Où' (где) используется для вопросов о месте."
+      }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+    let selectedOption = null;
+
+    const questionCard = document.getElementById('question-card');
+    const questionNumber = document.getElementById('question-number');
+    const questionText = document.getElementById('question-text');
+    const optionsContainer = document.getElementById('options');
+    const feedback = document.getElementById('feedback');
+    const checkBtn = document.getElementById('check-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const scoreDisplay = document.getElementById('score');
+    const progressFill = document.getElementById('progress-fill');
+    const resultsScreen = document.getElementById('results-screen');
+    const finalScore = document.getElementById('final-score');
+    const resultMessage = document.getElementById('result-message');
+    const restartBtn = document.getElementById('restart-btn');
+
+    function loadQuestion() {
+      const q = questions[currentQuestion];
+      questionNumber.textContent = `Вопрос ${currentQuestion + 1} из ${questions.length}`;
+      questionText.textContent = q.question;
+
+      optionsContainer.innerHTML = '';
+      feedback.textContent = '';
+      feedback.className = 'feedback';
+      selectedOption = null;
+      checkBtn.style.display = 'inline-block';
+      nextBtn.style.display = 'none';
+
+      q.options.forEach((option, index) => {
+        const optionEl = document.createElement('div');
+        optionEl.className = 'option';
+        optionEl.textContent = option;
+        optionEl.addEventListener('click', () => selectOption(index, optionEl));
+        optionsContainer.appendChild(optionEl);
+      });
+
+      updateProgress();
+    }
+
+    function selectOption(index, element) {
+      document.querySelectorAll('.option').forEach(opt => opt.classList.remove('selected'));
+      element.classList.add('selected');
+      selectedOption = index;
+    }
+
+    function checkAnswer() {
+      if (selectedOption === null) {
+        feedback.textContent = 'Пожалуйста, выберите ответ!';
+        feedback.className = 'feedback error';
+        return;
+      }
+
+      const q = questions[currentQuestion];
+      const options = document.querySelectorAll('.option');
+
+      if (selectedOption === q.correct) {
+        score++;
+        feedback.textContent = `✓ Правильно! ${q.explanation}`;
+        feedback.className = 'feedback success';
+        options[selectedOption].classList.add('correct');
+      } else {
+        feedback.textContent = `✗ Неправильно. ${q.explanation}`;
+        feedback.className = 'feedback error';
+        options[selectedOption].classList.add('incorrect');
+        options[q.correct].classList.add('correct');
+      }
+
+      checkBtn.style.display = 'none';
+      nextBtn.style.display = 'inline-block';
+      scoreDisplay.textContent = `Правильных ответов: ${score} / ${currentQuestion + 1}`;
+
+      options.forEach(opt => opt.style.pointerEvents = 'none');
+    }
+
+    function nextQuestion() {
+      currentQuestion++;
+      if (currentQuestion < questions.length) {
+        loadQuestion();
+      } else {
+        showResults();
+      }
+    }
+
+    function updateProgress() {
+      const progress = ((currentQuestion + 1) / questions.length) * 100;
+      progressFill.style.width = `${progress}%`;
+    }
+
+    function showResults() {
+      questionCard.style.display = 'none';
+      document.querySelector('.progress-bar').style.display = 'none';
+      document.querySelector('.score').style.display = 'none';
+      resultsScreen.style.display = 'block';
+
+      const percentage = (score / questions.length) * 100;
+      finalScore.textContent = `Вы ответили правильно на ${score} из ${questions.length} вопросов (${percentage.toFixed(0)}%)`;
+
+      if (percentage >= 90) {
+        resultMessage.textContent = 'Magnifique! У вас превосходные знания французского языка!';
+        resultMessage.style.color = '#10b981';
+      } else if (percentage >= 70) {
+        resultMessage.textContent = 'Très bien! Продолжайте в том же духе!';
+        resultMessage.style.color = '#3b82f6';
+      } else if (percentage >= 50) {
+        resultMessage.textContent = 'Pas mal! Но есть над чем поработать.';
+        resultMessage.style.color = '#f59e0b';
+      } else {
+        resultMessage.textContent = 'Нужно больше практики. Повторите грамматический материал и попробуйте снова!';
+        resultMessage.style.color = '#ef4444';
+      }
+    }
+
+    function restart() {
+      currentQuestion = 0;
+      score = 0;
+      selectedOption = null;
+
+      questionCard.style.display = 'block';
+      document.querySelector('.progress-bar').style.display = 'block';
+      document.querySelector('.score').style.display = 'block';
+      resultsScreen.style.display = 'none';
+
+      scoreDisplay.textContent = 'Правильных ответов: 0 / 0';
+      loadQuestion();
+    }
+
+    checkBtn.addEventListener('click', checkAnswer);
+    nextBtn.addEventListener('click', nextQuestion);
+    restartBtn.addEventListener('click', restart);
+
+    // Initialize
+    loadQuestion();
+  </script>
 </body>
 </html>
