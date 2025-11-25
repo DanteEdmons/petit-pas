@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Petit Pas — Японский — Продвинутый — Тест</title>
+    <style>
+        :root {
+            color-scheme: light dark;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "Montserrat", "Segoe UI", sans-serif;
+            color: rgba(255, 255, 255, 0.95);
+            background: linear-gradient(135deg, #0f172a, #1e293b, #312e81);
+            background-size: 200% 200%;
+            animation: shimmer 18s ease infinite;
+            padding: 2.5rem 1.5rem;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        main {
+            max-width: 700px;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.55);
+            border-radius: 24px;
+            backdrop-filter: blur(16px);
+            box-shadow: 0 28px 48px rgba(2, 6, 23, 0.45);
+            padding: clamp(1.75rem, 6vw, 3rem);
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        h1 {
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            letter-spacing: 0.04em;
+            text-align: center;
+        }
+
+        .intro {
+            font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+            color: rgba(255, 255, 255, 0.82);
+            line-height: 1.7;
+            text-align: center;
+        }
+
+        .quiz-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .question-card {
+            background: rgba(30, 41, 59, 0.6);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+        }
+
+        .question-number {
+            font-size: 0.9rem;
+            color: #93c5fd;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .question-text {
+            font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .option {
+            padding: 1rem 1.25rem;
+            background: rgba(59, 130, 246, 0.15);
+            border: 2px solid rgba(59, 130, 246, 0.3);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
+        }
+
+        .option:hover {
+            background: rgba(59, 130, 246, 0.25);
+            transform: translateX(4px);
+        }
+
+        .option.selected {
+            background: rgba(59, 130, 246, 0.35);
+            border-color: rgba(59, 130, 246, 0.6);
+        }
+
+        .option.correct {
+            background: rgba(16, 185, 129, 0.25);
+            border-color: rgba(16, 185, 129, 0.6);
+        }
+
+        .option.incorrect {
+            background: rgba(239, 68, 68, 0.25);
+            border-color: rgba(239, 68, 68, 0.6);
+        }
+
+        .feedback {
+            margin: 1rem 0;
+            padding: 1rem;
+            border-radius: 10px;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            line-height: 1.6;
+        }
+
+        .feedback.success {
+            background: rgba(16, 185, 129, 0.2);
+            border-left: 4px solid #10b981;
+            color: #d1fae5;
+        }
+
+        .feedback.error {
+            background: rgba(239, 68, 68, 0.2);
+            border-left: 4px solid #ef4444;
+            color: #fecaca;
+        }
+
+        .quiz-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.75rem 1.75rem;
+            border: none;
+            border-radius: 999px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: inherit;
+        }
+
+        .btn-primary {
+            background: rgba(59, 130, 246, 0.85);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: rgba(59, 130, 246, 1);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: rgba(107, 114, 128, 0.6);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(107, 114, 128, 0.8);
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: rgba(30, 41, 59, 0.6);
+            border-radius: 999px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #3b82f6, #60a5fa);
+            transition: width 0.3s ease;
+            width: 10%;
+        }
+
+        .score {
+            text-align: center;
+            font-size: 1rem;
+            color: #93c5fd;
+            font-weight: 600;
+        }
+
+        .results-screen {
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        .final-score {
+            font-size: clamp(1.2rem, 3vw, 1.6rem);
+            margin: 1.5rem 0;
+            font-weight: 600;
+        }
+
+        .result-message {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            margin: 1.5rem 0;
+            line-height: 1.6;
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .back-link a {
+            color: #93c5fd;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Тест на знания (Advanced)</h1>
+        <p class="intro">Проверьте свои знания грамматики продвинутого уровня (N2/N1).</p>
+
+        <div class="quiz-container">
+            <div class="question-card" id="question-card">
+                <div class="question-number" id="question-number">Вопрос 1 из 10</div>
+                <div class="question-text" id="question-text">Loading...</div>
+                <div class="options" id="options"></div>
+                <div class="feedback" id="feedback"></div>
+                <div class="quiz-actions">
+                    <button id="check-btn" class="btn btn-primary">Проверить</button>
+                    <button id="next-btn" class="btn btn-secondary" style="display: none;">Следующий вопрос</button>
+                </div>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <div class="score" id="score">Правильных ответов: 0 / 0</div>
+        </div>
+
+        <div class="results-screen" id="results-screen" style="display: none;">
+            <h2>Результаты теста</h2>
+            <div class="final-score" id="final-score"></div>
+            <div class="result-message" id="result-message"></div>
+            <button id="restart-btn" class="btn btn-primary">Пройти заново</button>
+        </div>
+
+        <div class="back-link">
+            <a href="../">← Вернуться к выбору практики</a>
+        </div>
+    </main>
+
+    <script>
+        const questions = [
+            {
+                question: "Shachou ga ___ ni narimashita. (Президент пришел)",
+                options: ["oide", "irassharu", "mairu", "ukagau"],
+                correct: 0,
+                explanation: "Вежливая форма (Sonkeigo) для 'kuru' (приходить) — 'oide ni naru' или 'irassharu'. Здесь 'oide' подходит к конструкции '... ni narimashita'."
+            },
+            {
+                question: "Watashi ga ___ shimasu. (Я сделаю [скромно])",
+                options: ["haiken", "goran", "meshiagaru", "ossharu"],
+                correct: 0,
+                explanation: "Скромная форма (Kenjougo) для 'miru' (смотреть) — 'haiken suru'."
+            },
+            {
+                question: "Ame ga ___ node, shiai wa chuushi desu. (Так как идет дождь, матч отменен)",
+                options: ["furu", "futta", "futte iru", "fureba"],
+                correct: 2,
+                explanation: "Причина (node) обычно используется с простой формой. 'Futte iru' подчеркивает текущее состояние."
+            },
+            {
+                question: "Kare wa sensei ___ yobarete imasu. (Его называют учителем)",
+                options: ["ni", "o", "to", "ga"],
+                correct: 2,
+                explanation: "В пассивном залоге или при назывании кем-то используется 'to' (to yobareru)."
+            },
+            {
+                question: "Motto hayaku ___ yokatta desu. (Было бы хорошо, если бы я встал раньше)",
+                options: ["okireba", "okitara", "okiru to", "okite"],
+                correct: 0,
+                explanation: "Конструкция '...ba yokatta' выражает сожаление (I should have...)."
+            },
+            {
+                question: "Kono mondai wa muzukashii ___, omoshiroi desu. (Эта проблема сложная, но интересная)",
+                options: ["kuse ni", "nagara", "hanmen", "toiu yori"],
+                correct: 2,
+                explanation: "'Hanmen' (с другой стороны) используется для противопоставления двух качеств."
+            },
+            {
+                question: "Kare wa byouki ___ kesseki shimashita. (Он отсутствовал по причине болезни)",
+                options: ["no tame", "ni yotte", "okage de", "sei de"],
+                correct: 0,
+                explanation: "'No tame' указывает на причину (из-за)."
+            },
+            {
+                question: "Watashi wa haha ni yasai o ___. (Мама заставила меня есть овощи)",
+                options: ["tabesasemashita", "taberaremashita", "tabesasaremashita", "tabemashita"],
+                correct: 2,
+                explanation: "Каузативно-пассивный залог (Causative-Passive): 'tabesasaremashita' (был вынужден съесть)."
+            },
+            {
+                question: "Kono hon wa yomi ___ desu. (Эту книгу легко читать)",
+                options: ["yasui", "nikui", "gatai", "kaneru"],
+                correct: 0,
+                explanation: "Глагольная основа + 'yasui' = легко делать."
+            },
+            {
+                question: "Tatoe ame ga ___ ikimasu. (Даже если пойдет дождь, я пойду)",
+                options: ["futtemo", "furu to", "futtara", "fureba"],
+                correct: 0,
+                explanation: "'Tatoe ... temo' = даже если."
+            }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+        let selectedOption = null;
+
+        const questionCard = document.getElementById('question-card');
+        const questionNumber = document.getElementById('question-number');
+        const questionText = document.getElementById('question-text');
+        const optionsContainer = document.getElementById('options');
+        const feedback = document.getElementById('feedback');
+        const checkBtn = document.getElementById('check-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const scoreDisplay = document.getElementById('score');
+        const progressFill = document.getElementById('progress-fill');
+        const resultsScreen = document.getElementById('results-screen');
+        const finalScore = document.getElementById('final-score');
+        const resultMessage = document.getElementById('result-message');
+        const restartBtn = document.getElementById('restart-btn');
+
+        function loadQuestion() {
+            const q = questions[currentQuestion];
+            questionNumber.textContent = `Вопрос ${currentQuestion + 1} из ${questions.length}`;
+            questionText.textContent = q.question;
+
+            optionsContainer.innerHTML = '';
+            feedback.textContent = '';
+            feedback.className = 'feedback';
+            selectedOption = null;
+            checkBtn.style.display = 'inline-block';
+            nextBtn.style.display = 'none';
+
+            q.options.forEach((option, index) => {
+                const optionEl = document.createElement('div');
+                optionEl.className = 'option';
+                optionEl.textContent = option;
+                optionEl.addEventListener('click', () => selectOption(index, optionEl));
+                optionsContainer.appendChild(optionEl);
+            });
+
+            updateProgress();
+        }
+
+        function selectOption(index, element) {
+            document.querySelectorAll('.option').forEach(opt => opt.classList.remove('selected'));
+            element.classList.add('selected');
+            selectedOption = index;
+        }
+
+        function checkAnswer() {
+            if (selectedOption === null) {
+                feedback.textContent = 'Пожалуйста, выберите ответ!';
+                feedback.className = 'feedback error';
+                return;
+            }
+
+            const q = questions[currentQuestion];
+            const options = document.querySelectorAll('.option');
+
+            if (selectedOption === q.correct) {
+                score++;
+                feedback.textContent = `✓ Правильно! ${q.explanation}`;
+                feedback.className = 'feedback success';
+                options[selectedOption].classList.add('correct');
+            } else {
+                feedback.textContent = `✗ Неправильно. ${q.explanation}`;
+                feedback.className = 'feedback error';
+                options[selectedOption].classList.add('incorrect');
+                options[q.correct].classList.add('correct');
+            }
+
+            checkBtn.style.display = 'none';
+            nextBtn.style.display = 'inline-block';
+            scoreDisplay.textContent = `Правильных ответов: ${score} / ${currentQuestion + 1}`;
+
+            options.forEach(opt => opt.style.pointerEvents = 'none');
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            if (currentQuestion < questions.length) {
+                loadQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function updateProgress() {
+            const progress = ((currentQuestion + 1) / questions.length) * 100;
+            progressFill.style.width = `${progress}%`;
+        }
+
+        function showResults() {
+            questionCard.style.display = 'none';
+            document.querySelector('.progress-bar').style.display = 'none';
+            document.querySelector('.score').style.display = 'none';
+            resultsScreen.style.display = 'block';
+
+            const percentage = (score / questions.length) * 100;
+            finalScore.textContent = `Вы ответили правильно на ${score} из ${questions.length} вопросов (${percentage.toFixed(0)}%)`;
+
+            if (percentage >= 90) {
+                resultMessage.textContent = 'Kanpeki! Идеально! Уровень N1/N2.';
+                resultMessage.style.color = '#10b981';
+            } else if (percentage >= 70) {
+                resultMessage.textContent = 'Subarashii! Отличные знания.';
+                resultMessage.style.color = '#3b82f6';
+            } else if (percentage >= 50) {
+                resultMessage.textContent = 'Motto benkyou shimashou. Есть пробелы.';
+                resultMessage.style.color = '#f59e0b';
+            } else {
+                resultMessage.textContent = 'Muzukashii desu ne. Рекомендуется повторить N3.';
+                resultMessage.style.color = '#ef4444';
+            }
+        }
+
+        function restart() {
+            currentQuestion = 0;
+            score = 0;
+            selectedOption = null;
+
+            questionCard.style.display = 'block';
+            document.querySelector('.progress-bar').style.display = 'block';
+            document.querySelector('.score').style.display = 'block';
+            resultsScreen.style.display = 'none';
+
+            scoreDisplay.textContent = 'Правильных ответов: 0 / 0';
+            loadQuestion();
+        }
+
+        checkBtn.addEventListener('click', checkAnswer);
+        nextBtn.addEventListener('click', nextQuestion);
+        restartBtn.addEventListener('click', restart);
+
+        // Initialize
+        loadQuestion();
+    </script>
+</body>
+
+</html>

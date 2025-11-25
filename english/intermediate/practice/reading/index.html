@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Petit Pas — Английский — Средний — Чтение</title>
+    <style>
+        :root {
+            color-scheme: light dark;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "Montserrat", "Segoe UI", sans-serif;
+            color: rgba(255, 255, 255, 0.95);
+            background: linear-gradient(135deg, #0f172a, #1e293b, #312e81);
+            background-size: 200% 200%;
+            animation: shimmer 18s ease infinite;
+            padding: 2.5rem 1.5rem;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        main {
+            max-width: 800px;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.55);
+            border-radius: 24px;
+            backdrop-filter: blur(16px);
+            box-shadow: 0 28px 48px rgba(2, 6, 23, 0.45);
+            padding: clamp(1.75rem, 6vw, 3rem);
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        h1 {
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            letter-spacing: 0.04em;
+            text-align: center;
+        }
+
+        .intro {
+            font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+            color: rgba(255, 255, 255, 0.82);
+            line-height: 1.7;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .story-card {
+            background: rgba(30, 41, 59, 0.6);
+            border-radius: 20px;
+            padding: 1.5rem;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            transition: transform 0.25s ease, background 0.25s ease;
+            cursor: pointer;
+        }
+
+        .story-card:hover {
+            transform: translateY(-6px);
+            background: rgba(59, 130, 246, 0.2);
+            border-color: rgba(96, 165, 250, 0.4);
+        }
+
+        .story-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #93c5fd;
+        }
+
+        .story-preview {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .story-meta {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Modal for reading */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            z-index: 100;
+        }
+
+        .modal-content {
+            background: #1e293b;
+            border-radius: 24px;
+            max-width: 650px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 2rem;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 2rem;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .close-modal:hover {
+            color: white;
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #93c5fd;
+        }
+
+        .modal-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+            white-space: pre-line;
+        }
+
+        .modal-translation {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+            display: none;
+        }
+
+        .toggle-translation {
+            margin-top: 1.5rem;
+            background: rgba(59, 130, 246, 0.2);
+            border: 1px solid rgba(59, 130, 246, 0.4);
+            color: #93c5fd;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .toggle-translation:hover {
+            background: rgba(59, 130, 246, 0.3);
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .back-link a {
+            color: #93c5fd;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Чтение и истории (Intermediate)</h1>
+        <p class="intro">Истории для среднего уровня. Более сложная лексика и грамматика.</p>
+
+        <div class="stories-grid">
+            <!-- Story 1 -->
+            <div class="story-card" onclick="openStory(0)">
+                <div class="story-title">The Unexpected Journey</div>
+                <div class="story-preview">Sarah decided to take a train to nowhere, but she found something she didn't
+                    expect.</div>
+                <div class="story-meta">
+                    <span>~250 words</span>
+                    <span>Intermediate B1</span>
+                </div>
+            </div>
+
+            <!-- Story 2 -->
+            <div class="story-card" onclick="openStory(1)">
+                <div class="story-title">A Digital Detox</div>
+                <div class="story-preview">Mark tried to live without his phone for a week. It was harder than he
+                    thought.</div>
+                <div class="story-meta">
+                    <span>~280 words</span>
+                    <span>Intermediate B1</span>
+                </div>
+            </div>
+
+            <!-- Story 3 -->
+            <div class="story-card" onclick="openStory(2)">
+                <div class="story-title">The Art of Cooking</div>
+                <div class="story-preview">Julia wanted to impress her friends with a fancy dinner, but things went
+                    wrong.</div>
+                <div class="story-meta">
+                    <span>~260 words</span>
+                    <span>Intermediate B1</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="back-link">
+            <a href="../">← Вернуться к выбору практики</a>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">&times;</button>
+            <h2 class="modal-title" id="modal-title">Title</h2>
+            <div class="modal-text" id="modal-text">Text content...</div>
+            <button class="toggle-translation" onclick="toggleTranslation()">Показать/скрыть перевод</button>
+            <div class="modal-translation" id="modal-translation">Translation content...</div>
+        </div>
+    </div>
+
+    <script>
+        const stories = [
+            {
+                title: "The Unexpected Journey",
+                text: `Sarah had always been a planner. She knew exactly what she would do every day of the week. But one Saturday morning, she woke up feeling different. She wanted an adventure. She packed a small bag, went to the train station, and bought a ticket to the last stop on the line—a small town she had never heard of called "Riverwood."
+
+The train ride took three hours. Sarah watched the city disappear and be replaced by green fields and forests. When she arrived in Riverwood, it was raining. She found a small café near the station and ordered a hot chocolate.
+
+In the café, she met an old man named Arthur. He told her stories about the town's history and a hidden waterfall nearby. Sarah decided to find it. Following Arthur's directions, she hiked through the woods. The rain stopped, and the sun came out. When she finally found the waterfall, it was more beautiful than she had imagined. She realized that sometimes, the best moments in life are the ones we don't plan.`,
+                translation: `Сара всегда всё планировала. Она точно знала, что будет делать каждый день недели. Но однажды субботним утром она проснулась с другим чувством. Ей захотелось приключений. Она собрала небольшую сумку, пошла на вокзал и купила билет до последней остановки — маленького городка под названием «Ривервуд», о котором она никогда не слышала.
+
+Поездка на поезде заняла три часа. Сара наблюдала, как город исчезает, сменяясь зелеными полями и лесами. Когда она приехала в Ривервуд, шел дождь. Она нашла маленькое кафе рядом со станцией и заказала горячий шоколад.
+
+В кафе она встретила старика по имени Артур. Он рассказал ей истории об истории города и скрытом водопаде неподалеку. Сара решила найти его. Следуя указаниям Артура, она пошла через лес. Дождь прекратился, и выглянуло солнце. Когда она наконец нашла водопад, он оказался прекраснее, чем она могла себе представить. Она поняла, что иногда лучшие моменты в жизни — это те, которые мы не планируем.`
+            },
+            {
+                title: "A Digital Detox",
+                text: `Mark was addicted to his phone. He checked social media every ten minutes, even when he was with friends. One day, his friend suggested a challenge: a "digital detox." No phone, no computer, no internet for one week. Mark laughed and said it would be easy.
+
+The first day was a nightmare. Mark felt anxious. He didn't know what to do with his hands. He kept reaching into his pocket for a phone that wasn't there. But by the third day, something changed. He started to notice things he had ignored before. He heard the birds singing in the morning. He saw the colors of the sunset.
+
+He started reading books again. He cooked meals from scratch instead of ordering food online. He met his friends and actually listened to them without looking at a screen. By the end of the week, Mark felt calmer and happier. He realized that while technology is useful, disconnecting from it once in a while is essential for the soul.`,
+                translation: `Марк был зависим от своего телефона. Он проверял социальные сети каждые десять минут, даже когда был с друзьями. Однажды его друг предложил челлендж: «цифровой детокс». Никакого телефона, компьютера и интернета в течение одной недели. Марк рассмеялся и сказал, что это будет легко.
+
+Первый день был кошмаром. Марк чувствовал тревогу. Он не знал, куда деть руки. Он постоянно тянулся в карман за телефоном, которого там не было. Но к третьему дню что-то изменилось. Он начал замечать вещи, которые раньше игнорировал. Он слышал пение птиц по утрам. Он видел краски заката.
+
+Он снова начал читать книги. Он готовил еду сам, вместо того чтобы заказывать её онлайн. Он встречался с друзьями и действительно слушал их, не глядя в экран. К концу недели Марк почувствовал себя спокойнее и счастливее. Он понял, что, хотя технологии полезны, отключаться от них время от времени необходимо для души.`
+            },
+            {
+                title: "The Art of Cooking",
+                text: `Julia was not a good cook. In fact, she was terrible. She once burned water. But she wanted to impress her friends, so she invited them over for a fancy dinner. She decided to make lasagna from scratch.
+
+She bought all the ingredients: fresh pasta, tomatoes, cheese, and meat. She followed the recipe carefully. Or so she thought. She put the lasagna in the oven and went to the living room to set the table. She started listening to music and forgot about the time.
+
+Suddenly, she smelled smoke. She ran to the kitchen. The lasagna was black! It was ruined. Julia wanted to cry. Just then, the doorbell rang. Her friends had arrived. She opened the door, looking sad. "I burned the dinner," she confessed.
+
+Her friends laughed. "Don't worry," said Mike. "We can order pizza." They sat on the floor, ate pizza, and laughed about Julia's cooking disaster. Julia learned that good company is more important than perfect food.`,
+                translation: `Джулия не умела готовить. На самом деле, она готовила ужасно. Однажды у неё даже пригорела вода. Но она хотела впечатлить своих друзей, поэтому пригласила их на изысканный ужин. Она решила приготовить лазанью с нуля.
+
+Она купила все ингредиенты: свежую пасту, помидоры, сыр и мясо. Она внимательно следовала рецепту. Или ей так казалось. Она поставила лазанью в духовку и пошла в гостиную накрывать на стол. Она начала слушать музыку и забыла о времени.
+
+Вдруг она почувствовала запах дыма. Она побежала на кухню. Лазанья была черной! Она была испорчена. Джулии хотелось плакать. В этот момент в дверь позвонили. Пришли её друзья. Она открыла дверь с грустным видом. «Я сожгла ужин», — призналась она.
+
+Её друзья рассмеялись. «Не волнуйся», — сказал Майк. «Мы можем заказать пиццу». Они сидели на полу, ели пиццу и смеялись над кулинарной катастрофой Джулии. Джулия поняла, что хорошая компания важнее идеальной еды.`
+            }
+        ];
+
+        const modalOverlay = document.getElementById('modal-overlay');
+        const modalTitle = document.getElementById('modal-title');
+        const modalText = document.getElementById('modal-text');
+        const modalTranslation = document.getElementById('modal-translation');
+
+        function openStory(index) {
+            const story = stories[index];
+            modalTitle.textContent = story.title;
+            modalText.textContent = story.text;
+            modalTranslation.textContent = story.translation;
+            modalTranslation.style.display = 'none';
+            modalOverlay.style.display = 'flex';
+        }
+
+        function closeModal() {
+            modalOverlay.style.display = 'none';
+        }
+
+        function toggleTranslation() {
+            if (modalTranslation.style.display === 'none') {
+                modalTranslation.style.display = 'block';
+            } else {
+                modalTranslation.style.display = 'none';
+            }
+        }
+
+        // Close modal when clicking outside
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+
+</html>

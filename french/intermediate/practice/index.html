@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -26,55 +27,112 @@
       background-size: 200% 200%;
       animation: shimmer 18s ease infinite;
       padding: 2.5rem 1.5rem;
-      text-align: center;
     }
 
     @keyframes shimmer {
       0% {
         background-position: 0% 50%;
       }
+
       50% {
         background-position: 100% 50%;
       }
+
       100% {
         background-position: 0% 50%;
       }
     }
 
     main {
-      max-width: 560px;
+      max-width: 720px;
       width: 100%;
       background: rgba(15, 23, 42, 0.55);
-      border-radius: 24px;
+      border-radius: 28px;
       backdrop-filter: blur(16px);
       box-shadow: 0 28px 48px rgba(2, 6, 23, 0.45);
-      padding: clamp(1.75rem, 6vw, 3rem);
+      padding: clamp(2rem, 5vw, 3.5rem);
       display: flex;
       flex-direction: column;
-      gap: 1.5rem;
+      gap: clamp(1.8rem, 4vw, 2.6rem);
     }
 
     h1 {
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
       letter-spacing: 0.04em;
+      text-align: center;
     }
 
-    p {
+    p.lead {
       font-size: clamp(1rem, 2.4vw, 1.2rem);
       color: rgba(255, 255, 255, 0.82);
-      line-height: 1.8;
+      line-height: 1.7;
+      text-align: center;
     }
 
-    a {
+    .options {
+      display: grid;
+      gap: 1.2rem;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .option-card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      padding: 1.4rem;
+      border-radius: 20px;
+      text-decoration: none;
+      color: inherit;
+      background: rgba(30, 41, 59, 0.55);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      transition: transform 0.25s ease, background 0.25s ease, border 0.25s ease;
+    }
+
+    .option-card:hover,
+    .option-card:focus-visible {
+      transform: translateY(-6px);
+      background: rgba(59, 130, 246, 0.25);
+      border-color: rgba(96, 165, 250, 0.55);
+    }
+
+    .option-card h2 {
+      font-size: 1.2rem;
+      letter-spacing: 0.03em;
+    }
+
+    .option-card p {
+      font-size: 0.95rem;
+      color: rgba(226, 232, 240, 0.85);
+      line-height: 1.6;
+    }
+
+    .back {
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    .back a {
       color: #93c5fd;
     }
   </style>
 </head>
+
 <body>
   <main>
-    <h1>Французский — Средний — Практика</h1>
-    <p>Тут контента пока нет, но я скоро добавлю!</p>
-    <p><a href="../">Вернуться к выбору раздела</a></p>
+    <h1>Практика (Intermediate)</h1>
+    <p class="lead">Закрепляйте знания с помощью тестов и чтения.</p>
+    <div class="options">
+      <a class="option-card" href="./quiz/">
+        <h2>Тест</h2>
+        <p>Проверьте свои знания грамматики и словарного запаса.</p>
+      </a>
+      <a class="option-card" href="./reading/">
+        <h2>Чтение</h2>
+        <p>Читайте интересные истории и улучшайте понимание текста.</p>
+      </a>
+    </div>
+    <p class="back"><a href="../">Вернуться к выбору направления</a></p>
   </main>
 </body>
+
 </html>

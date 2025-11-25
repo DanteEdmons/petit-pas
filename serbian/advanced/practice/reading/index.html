@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Petit Pas — Сербский — Продвинутый — Чтение</title>
+    <style>
+        :root {
+            color-scheme: light dark;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "Montserrat", "Segoe UI", sans-serif;
+            color: rgba(255, 255, 255, 0.95);
+            background: linear-gradient(135deg, #0f172a, #1e293b, #312e81);
+            background-size: 200% 200%;
+            animation: shimmer 18s ease infinite;
+            padding: 2.5rem 1.5rem;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        main {
+            max-width: 800px;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.55);
+            border-radius: 24px;
+            backdrop-filter: blur(16px);
+            box-shadow: 0 28px 48px rgba(2, 6, 23, 0.45);
+            padding: clamp(1.75rem, 6vw, 3rem);
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        h1 {
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            letter-spacing: 0.04em;
+            text-align: center;
+        }
+
+        .intro {
+            font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+            color: rgba(255, 255, 255, 0.82);
+            line-height: 1.7;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .story-card {
+            background: rgba(30, 41, 59, 0.6);
+            border-radius: 20px;
+            padding: 1.5rem;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            transition: transform 0.25s ease, background 0.25s ease;
+            cursor: pointer;
+        }
+
+        .story-card:hover {
+            transform: translateY(-6px);
+            background: rgba(59, 130, 246, 0.2);
+            border-color: rgba(96, 165, 250, 0.4);
+        }
+
+        .story-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #93c5fd;
+        }
+
+        .story-preview {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .story-meta {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Modal for reading */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            z-index: 100;
+        }
+
+        .modal-content {
+            background: #1e293b;
+            border-radius: 24px;
+            max-width: 650px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 2rem;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 2rem;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .close-modal:hover {
+            color: white;
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #93c5fd;
+        }
+
+        .modal-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+            white-space: pre-line;
+        }
+
+        .modal-translation {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+            display: none;
+        }
+
+        .toggle-translation {
+            margin-top: 1.5rem;
+            background: rgba(59, 130, 246, 0.2);
+            border: 1px solid rgba(59, 130, 246, 0.4);
+            color: #93c5fd;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .toggle-translation:hover {
+            background: rgba(59, 130, 246, 0.3);
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .back-link a {
+            color: #93c5fd;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Чтение и истории (Advanced)</h1>
+        <p class="intro">Литературные тексты для продвинутого уровня.</p>
+
+        <div class="stories-grid">
+            <!-- Story 1 -->
+            <div class="story-card" onclick="openStory(0)">
+                <div class="story-title">Na Drini ćuprija (Most na Drini)</div>
+                <div class="story-preview">Odlomak iz romana nobelovca Ive Andrića.</div>
+                <div class="story-meta">
+                    <span>~350 words</span>
+                    <span>Продвинутый C1</span>
+                </div>
+            </div>
+
+            <!-- Story 2 -->
+            <div class="story-card" onclick="openStory(1)">
+                <div class="story-title">Derviš i smrt (Derviš i smrt)</div>
+                <div class="story-preview">Filozofska razmišljanja iz dela Meše Selimovića.</div>
+                <div class="story-meta">
+                    <span>~380 words</span>
+                    <span>Продвинутый C1</span>
+                </div>
+            </div>
+
+            <!-- Story 3 -->
+            <div class="story-card" onclick="openStory(2)">
+                <div class="story-title">Seobe (Seobe)</div>
+                <div class="story-preview">Istorijski roman Miloša Crnjanskog o sudbini naroda.</div>
+                <div class="story-meta">
+                    <span>~400 words</span>
+                    <span>Продвинутый C1</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="back-link">
+            <a href="../">← Вернуться к выбору практики</a>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">&times;</button>
+            <h2 class="modal-title" id="modal-title">Title</h2>
+            <div class="modal-text" id="modal-text">Text content...</div>
+            <button class="toggle-translation" onclick="toggleTranslation()">Показать/скрыть перевод</button>
+            <div class="modal-translation" id="modal-translation">Translation content...</div>
+        </div>
+    </div>
+
+    <script>
+        const stories = [
+            {
+                title: "Na Drini ćuprija (Most na Drini)",
+                text: `Većim delom svoga toka reka Drina protiče kroz tesne gudure između strmih planina ili kroz duboke kanjone okomito odsečenih obala.
+(На большей части своего течения река Дрина протекает через узкие ущелья между крутыми горами или через глубокие каньоны с отвесными берегами.)
+
+Samo na nekoliko mesta rečno korito se proširuje u otvorene doline i stvara, bilo s jedne bilo s obe strane, župne, delimično ravne, delimično talasaste predele, podesne za obrađivanje i naselja.
+(Лишь в нескольких местах русло реки расширяется в открытые долины и создает, либо с одной, либо с обеих сторон, плодородные, частично равнинные, частично холмистые местности, пригодные для обработки и поселений.)
+
+Jedno takvo proširenje nastaje i ovde, kod Višegrada, na mestu gde Drina izbija u naglom luku iz dubokog i uskog tesnaca koji stvaraju Butkove Stijene i Uzavnica.
+(Одно такое расширение возникает и здесь, у Вишеграда, в месте, где Дрина вырывается резкой дугой из глубокой и узкой теснины, которую образуют Бутковы Скалы и Узавница.)
+
+Tu se veliki, kameniti most, skupocena građevina jedinstvene lepote, kakve nemaju ni mnogo bogatije varoši, isprečio nad rekom.
+(Здесь большой каменный мост, драгоценное сооружение уникальной красоты, какой нет даже у гораздо более богатых городов, перекинулся через реку.)`,
+                translation: `На большей части своего течения река Дрина протекает через узкие ущелья между крутыми горами или через глубокие каньоны с отвесными берегами.
+Лишь в нескольких местах русло реки расширяется в открытые долины и создает, либо с одной, либо с обеих сторон, плодородные, частично равнинные, частично холмистые местности, пригодные для обработки и поселений.
+Одно такое расширение возникает и здесь, у Вишеграда, в месте, где Дрина вырывается резкой дугой из глубокой и узкой теснины, которую образуют Бутковы Скалы и Узавница.
+Здесь большой каменный мост, драгоценное сооружение уникальной красоты, какой нет даже у гораздо более богатых городов, перекинулся через реку.`
+            },
+            {
+                title: "Derviš i smrt (Derviš i smrt)",
+                text: `Počinjem ovu svoju priču, nizašto, bez koristi za sebe i za druge, iz potrebe koja je jača od koristi i razuma, da ostane zapis moj o meni, zapisana muka razgovora sa sobom, s dalekom nadom da će se naći neko rješenje kad bude račun sveden, ako bude, kad ostavim trag mastila na ovoj hartiji što čeka kao izazov.
+(Я начинаю этот свой рассказ, ни для чего, без пользы для себя и для других, из потребности, которая сильнее пользы и разума, чтобы осталась моя запись обо мне, записанная мука разговора с собой, с далекой надеждой, что найдется какое-то решение, когда будет подведен итог, если будет, когда я оставлю след чернил на этой бумаге, которая ждет как вызов.)
+
+Ne znam šta će biti zabilježeno, ali će u kukama slova ostati nešto od onoga što je bivalo u meni, pa se više neće gubiti u kovitlacima magle, kao da nije ni bilo, ili da ne znam šta je bilo.
+(Я не знаю, что будет записано, но в крючках букв останется что-то от того, что было во мне, и больше не будет теряться в вихрях тумана, как будто этого и не было, или как будто я не знаю, что это было.)
+
+Tako ću moći da vidim sebe kakav postajem, to čudo koje ne poznajem, a čini mi se da je čudo što uvijek nisam bio ono što sam sad.
+(Так я смогу увидеть себя, каким я становлюсь, это чудо, которого я не знаю, а мне кажется чудом, что я всегда не был тем, что я есть сейчас.)`,
+                translation: `Я начинаю этот свой рассказ, ни для чего, без пользы для себя и для других, из потребности, которая сильнее пользы и разума, чтобы осталась моя запись обо мне, записанная мука разговора с собой, с далекой надеждой, что найдется какое-то решение, когда будет подведен итог, если будет, когда я оставлю след чернил на этой бумаге, которая ждет как вызов.
+Я не знаю, что будет записано, но в крючках букв останется что-то от того, что было во мне, и больше не будет теряться в вихрях тумана, как будто этого и не было, или как будто я не знаю, что это было.
+Так я смогу увидеть себя, каким я становлюсь, это чудо, которого я не знаю, а мне кажется чудом, что я всегда не был тем, что я есть сейчас.`
+            },
+            {
+                title: "Seobe (Seobe)",
+                text: `Beskrajni, plavi krug. U njemu, zvezda.
+(Бесконечный, синий круг. В нем, звезда.)
+
+Negde mora biti lakšeg života, vedrine i događaja, što se slivaju kao čisti i hladni, prijatni, penušavi slapovi.
+(Где-то должна быть более легкая жизнь, ясность и события, которые сливаются как чистые и холодные, приятные, пенящиеся водопады.)
+
+Odseliti se treba zato, otići nekuda, smiriti se negde, na nečem čistom, bistrom, glatkom kao što je površina dubokih, gorskih jezera.
+(Поэтому нужно переселиться, уйти куда-то, успокоиться где-то, на чем-то чистом, прозрачном, гладком, как поверхность глубоких горных озер.)
+
+Živeti po svojoj volji, bez ove strašne zbrke, idući za svojim životom, za koji se beše rodio.
+(Жить по своей воле, без этой страшной путаницы, следуя за своей жизнью, для которой он родился.)
+
+Idući za svojim bićem, kao za nekom zvezdom.
+(Следуя за своим существом, как за какой-то звездой.)`,
+                translation: `Бесконечный, синий круг. В нем, звезда.
+Где-то должна быть более легкая жизнь, ясность и события, которые сливаются как чистые и холодные, приятные, пенящиеся водопады.
+Поэтому нужно переселиться, уйти куда-то, успокоиться где-то, на чем-то чистом, прозрачном, гладком, как поверхность глубоких горных озер.
+Жить по своей воле, без этой страшной путаницы, следуя за своей жизнью, для которой он родился.
+Следуя за своим существом, как за какой-то звездой.`
+            }
+        ];
+
+        const modalOverlay = document.getElementById('modal-overlay');
+        const modalTitle = document.getElementById('modal-title');
+        const modalText = document.getElementById('modal-text');
+        const modalTranslation = document.getElementById('modal-translation');
+
+        function openStory(index) {
+            const story = stories[index];
+            modalTitle.textContent = story.title;
+            modalText.textContent = story.text;
+            modalTranslation.textContent = story.translation;
+            modalTranslation.style.display = 'none';
+            modalOverlay.style.display = 'flex';
+        }
+
+        function closeModal() {
+            modalOverlay.style.display = 'none';
+        }
+
+        function toggleTranslation() {
+            if (modalTranslation.style.display === 'none') {
+                modalTranslation.style.display = 'block';
+            } else {
+                modalTranslation.style.display = 'none';
+            }
+        }
+
+        // Close modal when clicking outside
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+
+</html>

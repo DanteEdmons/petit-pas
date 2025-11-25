@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Petit Pas — Английский — Начальный — Чтение</title>
+    <style>
+        :root {
+            color-scheme: light dark;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "Montserrat", "Segoe UI", sans-serif;
+            color: rgba(255, 255, 255, 0.95);
+            background: linear-gradient(135deg, #0f172a, #1e293b, #312e81);
+            background-size: 200% 200%;
+            animation: shimmer 18s ease infinite;
+            padding: 2.5rem 1.5rem;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        main {
+            max-width: 800px;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.55);
+            border-radius: 24px;
+            backdrop-filter: blur(16px);
+            box-shadow: 0 28px 48px rgba(2, 6, 23, 0.45);
+            padding: clamp(1.75rem, 6vw, 3rem);
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        h1 {
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            letter-spacing: 0.04em;
+            text-align: center;
+        }
+
+        .intro {
+            font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+            color: rgba(255, 255, 255, 0.82);
+            line-height: 1.7;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .story-card {
+            background: rgba(30, 41, 59, 0.6);
+            border-radius: 20px;
+            padding: 1.5rem;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            transition: transform 0.25s ease, background 0.25s ease;
+            cursor: pointer;
+        }
+
+        .story-card:hover {
+            transform: translateY(-6px);
+            background: rgba(59, 130, 246, 0.2);
+            border-color: rgba(96, 165, 250, 0.4);
+        }
+
+        .story-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #93c5fd;
+        }
+
+        .story-preview {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .story-meta {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Modal for reading */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            z-index: 100;
+        }
+
+        .modal-content {
+            background: #1e293b;
+            border-radius: 24px;
+            max-width: 650px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 2rem;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 2rem;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .close-modal:hover {
+            color: white;
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #93c5fd;
+        }
+
+        .modal-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+            white-space: pre-line;
+        }
+
+        .modal-translation {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+            display: none;
+        }
+
+        .toggle-translation {
+            margin-top: 1.5rem;
+            background: rgba(59, 130, 246, 0.2);
+            border: 1px solid rgba(59, 130, 246, 0.4);
+            color: #93c5fd;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .toggle-translation:hover {
+            background: rgba(59, 130, 246, 0.3);
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .back-link a {
+            color: #93c5fd;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Чтение и истории</h1>
+        <p class="intro">Короткие истории для начинающих. Читайте, переводите и запоминайте новые слова в контексте.</p>
+
+        <div class="stories-grid">
+            <!-- Story 1 -->
+            <div class="story-card" onclick="openStory(0)">
+                <div class="story-title">My Day</div>
+                <div class="story-preview">A simple story about daily routine. Morning, breakfast, and work.</div>
+                <div class="story-meta">
+                    <span>~100 words</span>
+                    <span>Beginner A1</span>
+                </div>
+            </div>
+
+            <!-- Story 2 -->
+            <div class="story-card" onclick="openStory(1)">
+                <div class="story-title">The Little Cat</div>
+                <div class="story-preview">Meet Luna, a small and playful cat who loves to explore the garden.</div>
+                <div class="story-meta">
+                    <span>~120 words</span>
+                    <span>Beginner A1</span>
+                </div>
+            </div>
+
+            <!-- Story 3 -->
+            <div class="story-card" onclick="openStory(2)">
+                <div class="story-title">At the Park</div>
+                <div class="story-preview">Sunday is a perfect day for a walk in the park with friends.</div>
+                <div class="story-meta">
+                    <span>~110 words</span>
+                    <span>Beginner A1</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="back-link">
+            <a href="../">← Вернуться к выбору практики</a>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">&times;</button>
+            <h2 class="modal-title" id="modal-title">Title</h2>
+            <div class="modal-text" id="modal-text">Text content...</div>
+            <button class="toggle-translation" onclick="toggleTranslation()">Показать/скрыть перевод</button>
+            <div class="modal-translation" id="modal-translation">Translation content...</div>
+        </div>
+    </div>
+
+    <script>
+        const stories = [
+            {
+                title: "My Day",
+                text: `I wake up at 7 o'clock every morning. I wash my face and brush my teeth. Then, I go to the kitchen to have breakfast. I usually eat eggs and drink coffee. I like coffee with milk.
+
+After breakfast, I get dressed and go to work. I work in an office. I like my job because my colleagues are friendly. We have lunch together at 1 o'clock.
+
+In the evening, I come home. I cook dinner and watch TV. Sometimes I read a book. I go to bed at 11 o'clock. It is a simple but good day.`,
+                translation: `Я просыпаюсь в 7 часов каждое утро. Я умываюсь и чищу зубы. Затем я иду на кухню завтракать. Обычно я ем яйца и пью кофе. Я люблю кофе с молоком.
+
+После завтрака я одеваюсь и иду на работу. Я работаю в офисе. Мне нравится моя работа, потому что мои коллеги дружелюбные. Мы обедаем вместе в час дня.
+
+Вечером я прихожу домой. Я готовлю ужин и смотрю телевизор. Иногда я читаю книгу. Я ложусь спать в 11 часов. Это простой, но хороший день.`
+            },
+            {
+                title: "The Little Cat",
+                text: `Luna is a small cat. She is black and white. She has big green eyes and a long tail. Luna is very playful. She likes to run and jump.
+
+Luna lives in a big house with a garden. Every morning, she goes outside. She looks at the birds and chases butterflies. She does not catch them; she just plays.
+
+When she is tired, she comes back inside. She sleeps on the sofa. She sleeps for many hours. Luna is a happy cat, and everyone loves her.`,
+                translation: `Луна — маленькая кошка. Она черно-белая. У нее большие зеленые глаза и длинный хвост. Луна очень игривая. Она любит бегать и прыгать.
+
+Луна живет в большом доме с садом. Каждое утро она выходит на улицу. Она смотрит на птиц и гоняется за бабочками. Она не ловит их, она просто играет.
+
+Когда она устает, она возвращается домой. Она спит на диване. Она спит много часов. Луна — счастливая кошка, и все ее любят.`
+            },
+            {
+                title: "At the Park",
+                text: `Today is Sunday. The sun is shining, and the sky is blue. It is a perfect day for the park. Tom and Anna are at the park. They are friends.
+
+Tom is riding his bike. He rides fast. Anna is sitting on a bench. She is reading a book. There are many people in the park. Some people are walking their dogs. Children are playing with a ball.
+
+Tom stops his bike and sits next to Anna. They eat ice cream. Chocolate ice cream is their favorite. They talk and laugh. It is a wonderful day.`,
+                translation: `Сегодня воскресенье. Светит солнце, и небо голубое. Это идеальный день для парка. Том и Анна в парке. Они друзья.
+
+Том катается на велосипеде. Он едет быстро. Анна сидит на скамейке. Она читает книгу. В парке много людей. Некоторые люди выгуливают собак. Дети играют в мяч.
+
+Том останавливает велосипед и садится рядом с Анной. Они едят мороженое. Шоколадное мороженое — их любимое. Они разговаривают и смеются. Это чудесный день.`
+            }
+        ];
+
+        const modalOverlay = document.getElementById('modal-overlay');
+        const modalTitle = document.getElementById('modal-title');
+        const modalText = document.getElementById('modal-text');
+        const modalTranslation = document.getElementById('modal-translation');
+
+        function openStory(index) {
+            const story = stories[index];
+            modalTitle.textContent = story.title;
+            modalText.textContent = story.text;
+            modalTranslation.textContent = story.translation;
+            modalTranslation.style.display = 'none';
+            modalOverlay.style.display = 'flex';
+        }
+
+        function closeModal() {
+            modalOverlay.style.display = 'none';
+        }
+
+        function toggleTranslation() {
+            if (modalTranslation.style.display === 'none') {
+                modalTranslation.style.display = 'block';
+            } else {
+                modalTranslation.style.display = 'none';
+            }
+        }
+
+        // Close modal when clicking outside
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Petit Pas — Французский — Средний — Чтение</title>
+    <style>
+        :root {
+            color-scheme: light dark;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "Montserrat", "Segoe UI", sans-serif;
+            color: rgba(255, 255, 255, 0.95);
+            background: linear-gradient(135deg, #0f172a, #1e293b, #312e81);
+            background-size: 200% 200%;
+            animation: shimmer 18s ease infinite;
+            padding: 2.5rem 1.5rem;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        main {
+            max-width: 800px;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.55);
+            border-radius: 24px;
+            backdrop-filter: blur(16px);
+            box-shadow: 0 28px 48px rgba(2, 6, 23, 0.45);
+            padding: clamp(1.75rem, 6vw, 3rem);
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        h1 {
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            letter-spacing: 0.04em;
+            text-align: center;
+        }
+
+        .intro {
+            font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+            color: rgba(255, 255, 255, 0.82);
+            line-height: 1.7;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .story-card {
+            background: rgba(30, 41, 59, 0.6);
+            border-radius: 20px;
+            padding: 1.5rem;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            transition: transform 0.25s ease, background 0.25s ease;
+            cursor: pointer;
+        }
+
+        .story-card:hover {
+            transform: translateY(-6px);
+            background: rgba(59, 130, 246, 0.2);
+            border-color: rgba(96, 165, 250, 0.4);
+        }
+
+        .story-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #93c5fd;
+        }
+
+        .story-preview {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .story-meta {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Modal for reading */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            z-index: 100;
+        }
+
+        .modal-content {
+            background: #1e293b;
+            border-radius: 24px;
+            max-width: 650px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 2rem;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 2rem;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .close-modal:hover {
+            color: white;
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #93c5fd;
+        }
+
+        .modal-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+            white-space: pre-line;
+        }
+
+        .modal-translation {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+            display: none;
+        }
+
+        .toggle-translation {
+            margin-top: 1.5rem;
+            background: rgba(59, 130, 246, 0.2);
+            border: 1px solid rgba(59, 130, 246, 0.4);
+            color: #93c5fd;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .toggle-translation:hover {
+            background: rgba(59, 130, 246, 0.3);
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .back-link a {
+            color: #93c5fd;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Чтение и истории (Intermediate)</h1>
+        <p class="intro">Тексты среднего уровня для развития навыков чтения и понимания.</p>
+
+        <div class="stories-grid">
+            <!-- Story 1 -->
+            <div class="story-card" onclick="openStory(0)">
+                <div class="story-title">Le Voyage Inattendu</div>
+                <div class="story-preview">Sophie avait tout prévu pour ses vacances, mais le destin en a décidé
+                    autrement.</div>
+                <div class="story-meta">
+                    <span>~250 words</span>
+                    <span>Intermédiaire B1</span>
+                </div>
+            </div>
+
+            <!-- Story 2 -->
+            <div class="story-card" onclick="openStory(1)">
+                <div class="story-title">Une Soirée Mystérieuse</div>
+                <div class="story-preview">Lors d'une fête d'anniversaire, un invité surprise change le cours de la
+                    soirée.</div>
+                <div class="story-meta">
+                    <span>~280 words</span>
+                    <span>Intermédiaire B1</span>
+                </div>
+            </div>
+
+            <!-- Story 3 -->
+            <div class="story-card" onclick="openStory(2)">
+                <div class="story-title">L'Art de la Cuisine</div>
+                <div class="story-preview">Pierre veut devenir chef, mais il doit d'abord impressionner le critique
+                    culinaire le plus sévère de Paris.</div>
+                <div class="story-meta">
+                    <span>~260 words</span>
+                    <span>Intermédiaire B1</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="back-link">
+            <a href="../">← Вернуться к выбору практики</a>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">&times;</button>
+            <h2 class="modal-title" id="modal-title">Title</h2>
+            <div class="modal-text" id="modal-text">Text content...</div>
+            <button class="toggle-translation" onclick="toggleTranslation()">Показать/скрыть перевод</button>
+            <div class="modal-translation" id="modal-translation">Translation content...</div>
+        </div>
+    </div>
+
+    <script>
+        const stories = [
+            {
+                title: "Le Voyage Inattendu",
+                text: `Sophie est une personne très organisée. Pour ses vacances d'été, elle avait tout planifié : les billets de train, l'hôtel, et même les restaurants. Elle devait aller à Nice, sur la Côte d'Azur. Mais quand elle est arrivée à la gare, elle a réalisé qu'elle avait oublié son passeport.
+
+Elle ne pouvait pas prendre le train. Déçue, elle est rentrée chez elle. Sur le chemin, elle a vu une affiche pour un festival de musique dans un petit village voisin. Elle a décidé d'y aller, juste pour voir.
+
+Le festival était magnifique. Il y avait des musiciens de partout dans le monde. Sophie a rencontré un groupe de personnes très sympathiques qui l'ont invitée à dîner. Ils ont passé la soirée à rire et à danser.
+
+Sophie n'est jamais allée à Nice cet été-là. Mais elle a passé les meilleures vacances de sa vie, juste à côté de chez elle. Elle a appris que parfois, les meilleurs moments sont ceux qu'on ne prévoit pas.`,
+                translation: `Софи — очень организованный человек. Для своего летнего отпуска она спланировала всё: билеты на поезд, отель и даже рестораны. Она должна была поехать в Ниццу, на Лазурный берег. Но когда она приехала на вокзал, она поняла, что забыла свой паспорт.
+
+Она не смогла сесть на поезд. Разочарованная, она вернулась домой. По дороге она увидела афишу музыкального фестиваля в соседней маленькой деревне. Она решила пойти туда, просто посмотреть.
+
+Фестиваль был великолепен. Там были музыканты со всего мира. Софи встретила группу очень приятных людей, которые пригласили её на ужин. Они провели вечер, смеясь и танцуя.
+
+Софи так и не поехала в Ниццу тем летом. Но она провела лучшие каникулы в своей жизни, совсем рядом с домом. Она поняла, что иногда лучшие моменты — это те, которые мы не планируем.`
+            },
+            {
+                title: "Une Soirée Mystérieuse",
+                text: `C'était l'anniversaire de Marc. Il avait invité tous ses amis dans son appartement à Paris. La musique était forte, et tout le monde s'amusait. Vers minuit, quelqu'un a frappé à la porte.
+
+Marc a ouvert. C'était un homme âgé, habillé d'un costume élégant mais démodé. Il tenait une petite boîte en bois. "Ceci est pour vous," a-t-il dit, avant de disparaître dans l'escalier.
+
+Marc a ouvert la boîte. À l'intérieur, il y avait une vieille clé dorée et une note. La note disait : "La clé de votre avenir se trouve là où tout a commencé."
+
+Les amis de Marc étaient intrigués. Ils ont commencé à chercher des indices. Ils ont réalisé que la clé ressemblait à celle de la vieille maison de campagne des grands-parents de Marc. Le lendemain, ils sont tous partis à la campagne.
+
+Ils ont trouvé un vieux coffre dans le grenier. La clé l'ouvrait parfaitement. À l'intérieur, il n'y avait pas d'or ni de bijoux, mais des photos de famille et des lettres d'amour écrites par ses grands-parents. Marc a souri. C'était le plus beau cadeau qu'il pouvait recevoir.`,
+                translation: `Это был день рождения Марка. Он пригласил всех своих друзей в свою квартиру в Париже. Музыка играла громко, и все веселились. Около полуночи кто-то постучал в дверь.
+
+Марк открыл. Это был пожилой мужчина, одетый в элегантный, но старомодный костюм. Он держал маленькую деревянную шкатулку. «Это для вас», — сказал он, прежде чем исчезнуть на лестнице.
+
+Марк открыл шкатулку. Внутри был старый золотой ключ и записка. В записке говорилось: «Ключ к вашему будущему находится там, где всё началось».
+
+Друзья Марка были заинтригованы. Они начали искать подсказки. Они поняли, что ключ похож на ключ от старого загородного дома бабушки и дедушки Марка. На следующий день они все отправились в деревню.
+
+Они нашли старый сундук на чердаке. Ключ идеально подошел. Внутри не было ни золота, ни драгоценностей, но были семейные фотографии и любовные письма, написанные его бабушкой и дедушкой. Марк улыбнулся. Это был самый лучший подарок, который он мог получить.`
+            },
+            {
+                title: "L'Art de la Cuisine",
+                text: `Pierre a toujours rêvé d'être un grand chef. Il travaillait dans un petit bistro, mais il voulait plus. Un jour, il a appris que le célèbre critique culinaire, M. Lecomte, allait venir dîner.
+
+Pierre était nerveux. Il voulait préparer quelque chose de spécial. Il a décidé de cuisiner un plat traditionnel, le bœuf bourguignon, mais avec sa propre touche moderne. Il a passé toute la journée à choisir les meilleurs ingrédients au marché.
+
+Le soir, le restaurant était plein. M. Lecomte est arrivé et s'est assis dans un coin. Pierre a cuisiné avec passion. Quand le plat a été servi, il a attendu, le cœur battant.
+
+M. Lecomte a goûté, a fermé les yeux, et a souri. Il a appelé Pierre à sa table. "Je n'ai pas mangé un bœuf bourguignon aussi délicieux depuis mon enfance," a-t-il dit.
+
+Le lendemain, une critique élogieuse est parue dans le journal. La vie de Pierre a changé. Il a ouvert son propre restaurant, mais il n'a jamais oublié que le secret de la bonne cuisine, c'est l'amour qu'on y met.`,
+                translation: `Пьер всегда мечтал стать великим шеф-поваром. Он работал в маленьком бистро, но хотел большего. Однажды он узнал, что знаменитый кулинарный критик, мсье Леконт, придет на ужин.
+
+Пьер нервничал. Он хотел приготовить что-то особенное. Он решил приготовить традиционное блюдо, бёф бургиньон, но со своей современной ноткой. Он провел весь день, выбирая лучшие ингредиенты на рынке.
+
+Вечером ресторан был полон. Мсье Леконт пришел и сел в углу. Пьер готовил со страстью. Когда блюдо подали, он ждал, и его сердце билось.
+
+Мсье Леконт попробовал, закрыл глаза и улыбнулся. Он подозвал Пьера к своему столику. «Я не ел такого вкусного бёф бургиньон с детства», — сказал он.
+
+На следующий день в газете появилась хвалебная рецензия. Жизнь Пьера изменилась. Он открыл свой собственный ресторан, но никогда не забывал, что секрет хорошей кухни — это любовь, которую вы в неё вкладываете.`
+            }
+        ];
+
+        const modalOverlay = document.getElementById('modal-overlay');
+        const modalTitle = document.getElementById('modal-title');
+        const modalText = document.getElementById('modal-text');
+        const modalTranslation = document.getElementById('modal-translation');
+
+        function openStory(index) {
+            const story = stories[index];
+            modalTitle.textContent = story.title;
+            modalText.textContent = story.text;
+            modalTranslation.textContent = story.translation;
+            modalTranslation.style.display = 'none';
+            modalOverlay.style.display = 'flex';
+        }
+
+        function closeModal() {
+            modalOverlay.style.display = 'none';
+        }
+
+        function toggleTranslation() {
+            if (modalTranslation.style.display === 'none') {
+                modalTranslation.style.display = 'block';
+            } else {
+                modalTranslation.style.display = 'none';
+            }
+        }
+
+        // Close modal when clicking outside
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+
+</html>

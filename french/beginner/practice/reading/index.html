@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Petit Pas — Французский — Начальный — Чтение</title>
+    <style>
+        :root {
+            color-scheme: light dark;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "Montserrat", "Segoe UI", sans-serif;
+            color: rgba(255, 255, 255, 0.95);
+            background: linear-gradient(135deg, #0f172a, #1e293b, #312e81);
+            background-size: 200% 200%;
+            animation: shimmer 18s ease infinite;
+            padding: 2.5rem 1.5rem;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        main {
+            max-width: 800px;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.55);
+            border-radius: 24px;
+            backdrop-filter: blur(16px);
+            box-shadow: 0 28px 48px rgba(2, 6, 23, 0.45);
+            padding: clamp(1.75rem, 6vw, 3rem);
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        h1 {
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            letter-spacing: 0.04em;
+            text-align: center;
+        }
+
+        .intro {
+            font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+            color: rgba(255, 255, 255, 0.82);
+            line-height: 1.7;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .story-card {
+            background: rgba(30, 41, 59, 0.6);
+            border-radius: 20px;
+            padding: 1.5rem;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            transition: transform 0.25s ease, background 0.25s ease;
+            cursor: pointer;
+        }
+
+        .story-card:hover {
+            transform: translateY(-6px);
+            background: rgba(59, 130, 246, 0.2);
+            border-color: rgba(96, 165, 250, 0.4);
+        }
+
+        .story-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #93c5fd;
+        }
+
+        .story-preview {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .story-meta {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Modal for reading */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            z-index: 100;
+        }
+
+        .modal-content {
+            background: #1e293b;
+            border-radius: 24px;
+            max-width: 650px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 2rem;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 2rem;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .close-modal:hover {
+            color: white;
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #93c5fd;
+        }
+
+        .modal-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+            white-space: pre-line;
+        }
+
+        .modal-translation {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+            display: none;
+        }
+
+        .toggle-translation {
+            margin-top: 1.5rem;
+            background: rgba(59, 130, 246, 0.2);
+            border: 1px solid rgba(59, 130, 246, 0.4);
+            color: #93c5fd;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .toggle-translation:hover {
+            background: rgba(59, 130, 246, 0.3);
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .back-link a {
+            color: #93c5fd;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Чтение и истории</h1>
+        <p class="intro">Короткие истории для начинающих. Читайте, переводите и запоминайте новые слова в контексте.</p>
+
+        <div class="stories-grid">
+            <!-- Story 1 -->
+            <div class="story-card" onclick="openStory(0)">
+                <div class="story-title">Ma Journée</div>
+                <div class="story-preview">Une histoire simple sur la routine quotidienne. Le matin, le petit déjeuner
+                    et le travail.</div>
+                <div class="story-meta">
+                    <span>~100 words</span>
+                    <span>Débutant A1</span>
+                </div>
+            </div>
+
+            <!-- Story 2 -->
+            <div class="story-card" onclick="openStory(1)">
+                <div class="story-title">Le Petit Chat</div>
+                <div class="story-preview">Rencontrez Minou, un petit chat joueur qui aime explorer le jardin.</div>
+                <div class="story-meta">
+                    <span>~120 words</span>
+                    <span>Débutant A1</span>
+                </div>
+            </div>
+
+            <!-- Story 3 -->
+            <div class="story-card" onclick="openStory(2)">
+                <div class="story-title">Au Parc</div>
+                <div class="story-preview">Le dimanche est un jour parfait pour une promenade au parc avec des amis.
+                </div>
+                <div class="story-meta">
+                    <span>~110 words</span>
+                    <span>Débutant A1</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="back-link">
+            <a href="../">← Вернуться к выбору практики</a>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">&times;</button>
+            <h2 class="modal-title" id="modal-title">Title</h2>
+            <div class="modal-text" id="modal-text">Text content...</div>
+            <button class="toggle-translation" onclick="toggleTranslation()">Показать/скрыть перевод</button>
+            <div class="modal-translation" id="modal-translation">Translation content...</div>
+        </div>
+    </div>
+
+    <script>
+        const stories = [
+            {
+                title: "Ma Journée",
+                text: `Je me réveille à 7 heures tous les matins. Je me lave le visage et je me brosse les dents. Ensuite, je vais à la cuisine pour prendre le petit déjeuner. D'habitude, je mange des œufs et je bois du café. J'aime le café au lait.
+
+Après le petit déjeuner, je m'habille et je vais au travail. Je travaille dans un bureau. J'aime mon travail parce que mes collègues sont sympathiques. Nous déjeunons ensemble à 13 heures.
+
+Le soir, je rentre à la maison. Je prépare le dîner et je regarde la télévision. Parfois, je lis un livre. Je me couche à 23 heures. C'est une journée simple mais bonne.`,
+                translation: `Я просыпаюсь в 7 часов каждое утро. Я умываюсь и чищу зубы. Затем я иду на кухню завтракать. Обычно я ем яйца и пью кофе. Я люблю кофе с молоком.
+
+После завтрака я одеваюсь и иду на работу. Я работаю в офисе. Мне нравится моя работа, потому что мои коллеги дружелюбные. Мы обедаем вместе в час дня.
+
+Вечером я прихожу домой. Я готовлю ужин и смотрю телевизор. Иногда я читаю книгу. Я ложусь спать в 11 часов. Это простой, но хороший день.`
+            },
+            {
+                title: "Le Petit Chat",
+                text: `Minou est un petit chat. Il est noir et blanc. Il a de grands yeux verts et une longue queue. Minou est très joueur. Il aime courir et sauter.
+
+Minou habite dans une grande maison avec un jardin. Tous les matins, il sort dehors. Il regarde les oiseaux et chasse les papillons. Il ne les attrape pas ; il joue juste.
+
+Quand il est fatigué, il rentre à l'intérieur. Il dort sur le canapé. Il dort pendant de nombreuses heures. Minou est un chat heureux, et tout le monde l'aime.`,
+                translation: `Мину — маленький кот. Он черно-белый. У него большие зеленые глаза и длинный хвост. Мину очень игривый. Он любит бегать и прыгать.
+
+Мину живет в большом доме с садом. Каждое утро он выходит на улицу. Он смотрит на птиц и гоняется за бабочками. Он не ловит их, он просто играет.
+
+Когда он устает, он возвращается домой. Он спит на диване. Он спит много часов. Мину — счастливый кот, и все его любят.`
+            },
+            {
+                title: "Au Parc",
+                text: `Aujourd'hui, c'est dimanche. Le soleil brille et le ciel est bleu. C'est une journée parfaite pour le parc. Thomas et Marie sont au parc. Ils sont amis.
+
+Thomas fait du vélo. Il roule vite. Marie est assise sur un banc. Elle lit un livre. Il y a beaucoup de monde au parc. Certaines personnes promènent leurs chiens. Les enfants jouent au ballon.
+
+Thomas arrête son vélo et s'assoit à côté de Marie. Ils mangent de la glace. La glace au chocolat est leur préférée. Ils parlent et rient. C'est une journée merveilleuse.`,
+                translation: `Сегодня воскресенье. Светит солнце, и небо голубое. Это идеальный день для парка. Томас и Мари в парке. Они друзья.
+
+Томас катается на велосипеде. Он едет быстро. Мари сидит на скамейке. Она читает книгу. В парке много людей. Некоторые люди выгуливают собак. Дети играют в мяч.
+
+Томас останавливает велосипед и садится рядом с Мари. Они едят мороженое. Шоколадное мороженое — их любимое. Они разговаривают и смеются. Это чудесный день.`
+            }
+        ];
+
+        const modalOverlay = document.getElementById('modal-overlay');
+        const modalTitle = document.getElementById('modal-title');
+        const modalText = document.getElementById('modal-text');
+        const modalTranslation = document.getElementById('modal-translation');
+
+        function openStory(index) {
+            const story = stories[index];
+            modalTitle.textContent = story.title;
+            modalText.textContent = story.text;
+            modalTranslation.textContent = story.translation;
+            modalTranslation.style.display = 'none';
+            modalOverlay.style.display = 'flex';
+        }
+
+        function closeModal() {
+            modalOverlay.style.display = 'none';
+        }
+
+        function toggleTranslation() {
+            if (modalTranslation.style.display === 'none') {
+                modalTranslation.style.display = 'block';
+            } else {
+                modalTranslation.style.display = 'none';
+            }
+        }
+
+        // Close modal when clicking outside
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+
+</html>

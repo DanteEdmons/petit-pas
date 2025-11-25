@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -26,23 +27,24 @@
       background-size: 200% 200%;
       animation: shimmer 18s ease infinite;
       padding: 2.5rem 1.5rem;
-      text-align: center;
     }
 
     @keyframes shimmer {
       0% {
         background-position: 0% 50%;
       }
+
       50% {
         background-position: 100% 50%;
       }
+
       100% {
         background-position: 0% 50%;
       }
     }
 
     main {
-      max-width: 560px;
+      max-width: 720px;
       width: 100%;
       background: rgba(15, 23, 42, 0.55);
       border-radius: 24px;
@@ -51,30 +53,95 @@
       padding: clamp(1.75rem, 6vw, 3rem);
       display: flex;
       flex-direction: column;
-      gap: 1.5rem;
+      gap: 1.75rem;
     }
 
     h1 {
       font-size: clamp(1.8rem, 4vw, 2.6rem);
       letter-spacing: 0.04em;
+      text-align: center;
     }
 
     p {
       font-size: clamp(1rem, 2.4vw, 1.2rem);
       color: rgba(255, 255, 255, 0.82);
       line-height: 1.8;
+      text-align: center;
     }
 
-    a {
+    .options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      width: 100%;
+    }
+
+    .option-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem 1rem;
+      border-radius: 18px;
+      background: rgba(30, 64, 175, 0.22);
+      border: 1px solid rgba(147, 197, 253, 0.3);
+      color: #e0f2fe;
+      text-decoration: none;
+      transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+      text-align: center;
+      gap: 0.5rem;
+    }
+
+    .option-card strong {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .option-card span {
+      font-size: 0.9rem;
+      color: rgba(224, 242, 254, 0.7);
+    }
+
+    .option-card:hover,
+    .option-card:focus {
+      transform: translateY(-4px);
+      background: rgba(59, 130, 246, 0.35);
+      box-shadow: 0 16px 32px rgba(37, 99, 235, 0.35);
+    }
+
+    .back-link {
       color: #93c5fd;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .back-link:hover,
+    .back-link:focus {
+      text-decoration: underline;
     }
   </style>
 </head>
+
 <body>
   <main>
-    <h1>Японский — Средний — Грамматика</h1>
-    <p>Тут контента пока нет, но я скоро добавлю!</p>
-    <p><a href="../">Вернуться к выбору раздела</a></p>
+    <h1>Грамматика (Intermediate)</h1>
+    <p>Выберите тему для изучения:</p>
+    <div class="options">
+      <a class="option-card" href="te_form/">
+        <strong>Te-form</strong>
+        <span>Тэ-форма (соединительная)</span>
+      </a>
+      <a class="option-card" href="potential/">
+        <strong>Potential Form</strong>
+        <span>Потенциальный залог</span>
+      </a>
+      <a class="option-card" href="volitional/">
+        <strong>Volitional Form</strong>
+        <span>Волевое наклонение</span>
+      </a>
+    </div>
+    <p><a class="back-link" href="../">Вернуться к выбору раздела</a></p>
   </main>
 </body>
+
 </html>

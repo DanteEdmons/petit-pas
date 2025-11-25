@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Petit Pas — Английский — Продвинутый — Чтение</title>
+    <style>
+        :root {
+            color-scheme: light dark;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "Montserrat", "Segoe UI", sans-serif;
+            color: rgba(255, 255, 255, 0.95);
+            background: linear-gradient(135deg, #0f172a, #1e293b, #312e81);
+            background-size: 200% 200%;
+            animation: shimmer 18s ease infinite;
+            padding: 2.5rem 1.5rem;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        main {
+            max-width: 800px;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.55);
+            border-radius: 24px;
+            backdrop-filter: blur(16px);
+            box-shadow: 0 28px 48px rgba(2, 6, 23, 0.45);
+            padding: clamp(1.75rem, 6vw, 3rem);
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        h1 {
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            letter-spacing: 0.04em;
+            text-align: center;
+        }
+
+        .intro {
+            font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+            color: rgba(255, 255, 255, 0.82);
+            line-height: 1.7;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .story-card {
+            background: rgba(30, 41, 59, 0.6);
+            border-radius: 20px;
+            padding: 1.5rem;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            transition: transform 0.25s ease, background 0.25s ease;
+            cursor: pointer;
+        }
+
+        .story-card:hover {
+            transform: translateY(-6px);
+            background: rgba(59, 130, 246, 0.2);
+            border-color: rgba(96, 165, 250, 0.4);
+        }
+
+        .story-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #93c5fd;
+        }
+
+        .story-preview {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .story-meta {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Modal for reading */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            z-index: 100;
+        }
+
+        .modal-content {
+            background: #1e293b;
+            border-radius: 24px;
+            max-width: 650px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 2rem;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 2rem;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .close-modal:hover {
+            color: white;
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #93c5fd;
+        }
+
+        .modal-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+            white-space: pre-line;
+        }
+
+        .modal-translation {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+            display: none;
+        }
+
+        .toggle-translation {
+            margin-top: 1.5rem;
+            background: rgba(59, 130, 246, 0.2);
+            border: 1px solid rgba(59, 130, 246, 0.4);
+            color: #93c5fd;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .toggle-translation:hover {
+            background: rgba(59, 130, 246, 0.3);
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .back-link a {
+            color: #93c5fd;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Чтение и истории (Advanced)</h1>
+        <p class="intro">Сложные тексты для продвинутого уровня. Богатая лексика и глубокий смысл.</p>
+
+        <div class="stories-grid">
+            <!-- Story 1 -->
+            <div class="story-card" onclick="openStory(0)">
+                <div class="story-title">The Paradox of Choice</div>
+                <div class="story-preview">Why having too many options can lead to anxiety and dissatisfaction. A
+                    philosophical reflection.</div>
+                <div class="story-meta">
+                    <span>~350 words</span>
+                    <span>Advanced C1</span>
+                </div>
+            </div>
+
+            <!-- Story 2 -->
+            <div class="story-card" onclick="openStory(1)">
+                <div class="story-title">The Silent City</div>
+                <div class="story-preview">A dystopian tale about a city where noise is forbidden and silence is the
+                    ultimate currency.</div>
+                <div class="story-meta">
+                    <span>~400 words</span>
+                    <span>Advanced C1</span>
+                </div>
+            </div>
+
+            <!-- Story 3 -->
+            <div class="story-card" onclick="openStory(2)">
+                <div class="story-title">Echoes of the Past</div>
+                <div class="story-preview">An archaeologist discovers an artifact that challenges everything we know
+                    about human history.</div>
+                <div class="story-meta">
+                    <span>~380 words</span>
+                    <span>Advanced C1</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="back-link">
+            <a href="../">← Вернуться к выбору практики</a>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">&times;</button>
+            <h2 class="modal-title" id="modal-title">Title</h2>
+            <div class="modal-text" id="modal-text">Text content...</div>
+            <button class="toggle-translation" onclick="toggleTranslation()">Показать/скрыть перевод</button>
+            <div class="modal-translation" id="modal-translation">Translation content...</div>
+        </div>
+    </div>
+
+    <script>
+        const stories = [
+            {
+                title: "The Paradox of Choice",
+                text: `In modern society, we are often led to believe that more choice means more freedom, and more freedom means more happiness. However, psychologist Barry Schwartz argues that this is not necessarily true. He calls it "the paradox of choice." When we are presented with too many options, we become paralyzed rather than liberated.
+
+Imagine walking into a supermarket to buy a jar of jam. If there are only three flavors, the decision is easy. You pick the one you like best and leave satisfied. But if there are thirty flavors, the process becomes exhausting. You compare ingredients, prices, and brands. Even after you make a choice, you might feel anxious. Did you pick the right one? Would the other one have tasted better?
+
+This phenomenon extends beyond groceries to significant life decisions like career paths, relationships, and places to live. The pressure to make the "perfect" choice can lead to chronic dissatisfaction. We are constantly looking over our shoulders, wondering if the grass is greener on the other side.
+
+To combat this, Schwartz suggests that we should aim for "good enough" rather than "the best." By lowering our expectations and limiting our options voluntarily, we can reduce anxiety and increase our overall well-being. True freedom, it seems, lies not in infinite choice, but in the ability to commit to what we have chosen.`,
+                translation: `В современном обществе нас часто заставляют верить, что больше выбора означает больше свободы, а больше свободы означает больше счастья. Однако психолог Барри Шварц утверждает, что это не обязательно так. Он называет это «парадоксом выбора». Когда нам предоставляется слишком много вариантов, мы становимся парализованными, а не освобожденными.
+
+Представьте, что вы заходите в супермаркет, чтобы купить банку варенья. Если есть только три вкуса, решение простое. Вы выбираете тот, который вам больше нравится, и уходите довольным. Но если вкусов тридцать, процесс становится утомительным. Вы сравниваете ингредиенты, цены и бренды. Даже после того, как вы сделали выбор, вы можете чувствовать тревогу. Выбрали ли вы правильный? Был бы другой вкуснее?
+
+Этот феномен распространяется не только на продукты, но и на важные жизненные решения, такие как карьера, отношения и место жительства. Давление сделать «идеальный» выбор может привести к хронической неудовлетворенности. Мы постоянно оглядываемся назад, задаваясь вопросом, не зеленее ли трава на другой стороне.
+
+Чтобы бороться с этим, Шварц предлагает нам стремиться к «достаточно хорошему», а не к «лучшему». Снижая наши ожидания и добровольно ограничивая свои варианты, мы можем уменьшить тревогу и повысить наше общее благополучие. Истинная свобода, похоже, заключается не в бесконечном выборе, а в способности быть преданным тому, что мы выбрали.`
+            },
+            {
+                title: "The Silent City",
+                text: `In the year 2084, the city of Veridia was known for one thing: its silence. Noise was considered a pollutant, a sign of chaos and inefficiency. The government had installed sound-absorbing technology in every building and street. Speaking above a whisper in public was a crime punishable by a fine.
+
+Elias was a musician, a profession that had become illegal decades ago. He lived in the underground tunnels, where the sound sensors didn't reach. Every night, he played his violin. The music was his rebellion, his way of proving that he was still human.
+
+One evening, he met a woman named Mara. She had stumbled upon his hideout while escaping a patrol. She had never heard music before. When Elias played for her, she wept. "It hurts," she whispered, "but in a beautiful way."
+
+They decided to bring the sound back to the city. They hacked into the public address system, a relic from the old world that was never used. At noon the next day, instead of the usual silence, the city was filled with the soaring notes of Elias's violin. People stopped in the streets. Some covered their ears, terrified. Others looked up at the sky, tears streaming down their faces. For the first time in years, Veridia was not efficient. It was alive.`,
+                translation: `В 2084 году город Веридия был известен одним: своей тишиной. Шум считался загрязнителем, признаком хаоса и неэффективности. Правительство установило звукопоглощающие технологии в каждом здании и на каждой улице. Разговаривать громче шепота в общественных местах было преступлением, караемым штрафом.
+
+Элиас был музыкантом, профессия, которая стала незаконной десятилетия назад. Он жил в подземных туннелях, куда не доставали звуковые датчики. Каждую ночь он играл на скрипке. Музыка была его бунтом, его способом доказать, что он всё ещё человек.
+
+Однажды вечером он встретил женщину по имени Мара. Она наткнулась на его убежище, убегая от патруля. Она никогда раньше не слышала музыки. Когда Элиас сыграл для неё, она заплакала. «Это больно, — прошептала она, — но по-прекрасному».
+
+Они решили вернуть звук в город. Они взломали систему оповещения, реликвию старого мира, которая никогда не использовалась. В полдень следующего дня, вместо обычной тишины, город наполнился парящими нотами скрипки Элиаса. Люди останавливались на улицах. Некоторые закрывали уши в ужасе. Другие смотрели в небо, и по их лицам текли слезы. Впервые за многие годы Веридия не была эффективной. Она была живой.`
+            },
+            {
+                title: "Echoes of the Past",
+                text: `Dr. Aris Thorne had spent his entire life searching for the Lost Civilization of Aethelgard. According to myths, the Aethelgardians possessed technology far superior to anything in the modern world. Most of his colleagues ridiculed him, calling it a fairy tale.
+
+But Aris was persistent. His research led him to a remote island in the Pacific. There, buried deep within a volcanic cave, he found it: a metallic sphere, pulsing with a faint blue light. It was unlike any material he had ever seen.
+
+When he touched it, a holographic projection filled the cave. It showed the history of Aethelgard. They hadn't been destroyed by war or natural disaster. They had left. They had realized that their technology was consuming their humanity, so they built a ship and departed for the stars, leaving behind only this archive as a warning.
+
+Aris sat in the cave for hours, watching the images of a society that had chosen wisdom over power. He realized that his discovery would change the world, but perhaps not in the way he had hoped. If he revealed the sphere, humanity might use the knowledge to build weapons, repeating the mistakes the Aethelgardians had tried to avoid. In the end, Aris made the hardest decision of his career. He left the sphere where it was and sealed the cave entrance. Some secrets, he decided, were meant to remain echoes.`,
+                translation: `Доктор Арис Торн провел всю свою жизнь в поисках Потерянной Цивилизации Этельгард. Согласно мифам, этельгардцы обладали технологиями, намного превосходящими всё, что есть в современном мире. Большинство его коллег высмеивали его, называя это сказкой.
+
+Но Арис был настойчив. Его исследования привели его на отдаленный остров в Тихом океане. Там, глубоко в вулканической пещере, он нашел это: металлическую сферу, пульсирующую слабым голубым светом. Это было непохоже ни на один материал, который он когда-либо видел.
+
+Когда он прикоснулся к ней, пещеру заполнила голографическая проекция. Она показала историю Этельгарда. Они не были уничтожены войной или стихийным бедствием. Они ушли. Они поняли, что их технологии поглощают их человечность, поэтому они построили корабль и улетели к звездам, оставив после себя только этот архив в качестве предупреждения.
+
+Арис просидел в пещере несколько часов, наблюдая за образами общества, которое выбрало мудрость вместо власти. Он понял, что его открытие изменит мир, но, возможно, не так, как он надеялся. Если он раскроет сферу, человечество может использовать знания для создания оружия, повторяя ошибки, которых этельгардцы пытались избежать. В конце концов, Арис принял самое трудное решение в своей карьере. Он оставил сферу там, где она была, и запечатал вход в пещеру. Некоторые секреты, решил он, должны оставаться эхом.`
+            }
+        ];
+
+        const modalOverlay = document.getElementById('modal-overlay');
+        const modalTitle = document.getElementById('modal-title');
+        const modalText = document.getElementById('modal-text');
+        const modalTranslation = document.getElementById('modal-translation');
+
+        function openStory(index) {
+            const story = stories[index];
+            modalTitle.textContent = story.title;
+            modalText.textContent = story.text;
+            modalTranslation.textContent = story.translation;
+            modalTranslation.style.display = 'none';
+            modalOverlay.style.display = 'flex';
+        }
+
+        function closeModal() {
+            modalOverlay.style.display = 'none';
+        }
+
+        function toggleTranslation() {
+            if (modalTranslation.style.display === 'none') {
+                modalTranslation.style.display = 'block';
+            } else {
+                modalTranslation.style.display = 'none';
+            }
+        }
+
+        // Close modal when clicking outside
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+
+</html>

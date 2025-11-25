@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Petit Pas — Сербский — Средний — Чтение</title>
+    <style>
+        :root {
+            color-scheme: light dark;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "Montserrat", "Segoe UI", sans-serif;
+            color: rgba(255, 255, 255, 0.95);
+            background: linear-gradient(135deg, #0f172a, #1e293b, #312e81);
+            background-size: 200% 200%;
+            animation: shimmer 18s ease infinite;
+            padding: 2.5rem 1.5rem;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        main {
+            max-width: 800px;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.55);
+            border-radius: 24px;
+            backdrop-filter: blur(16px);
+            box-shadow: 0 28px 48px rgba(2, 6, 23, 0.45);
+            padding: clamp(1.75rem, 6vw, 3rem);
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        h1 {
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            letter-spacing: 0.04em;
+            text-align: center;
+        }
+
+        .intro {
+            font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+            color: rgba(255, 255, 255, 0.82);
+            line-height: 1.7;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .story-card {
+            background: rgba(30, 41, 59, 0.6);
+            border-radius: 20px;
+            padding: 1.5rem;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            transition: transform 0.25s ease, background 0.25s ease;
+            cursor: pointer;
+        }
+
+        .story-card:hover {
+            transform: translateY(-6px);
+            background: rgba(59, 130, 246, 0.2);
+            border-color: rgba(96, 165, 250, 0.4);
+        }
+
+        .story-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #93c5fd;
+        }
+
+        .story-preview {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .story-meta {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Modal for reading */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            z-index: 100;
+        }
+
+        .modal-content {
+            background: #1e293b;
+            border-radius: 24px;
+            max-width: 650px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 2rem;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 2rem;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .close-modal:hover {
+            color: white;
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #93c5fd;
+        }
+
+        .modal-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+            white-space: pre-line;
+        }
+
+        .modal-translation {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+            display: none;
+        }
+
+        .toggle-translation {
+            margin-top: 1.5rem;
+            background: rgba(59, 130, 246, 0.2);
+            border: 1px solid rgba(59, 130, 246, 0.4);
+            color: #93c5fd;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .toggle-translation:hover {
+            background: rgba(59, 130, 246, 0.3);
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .back-link a {
+            color: #93c5fd;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Чтение и истории (Intermediate)</h1>
+        <p class="intro">Интересные тексты для среднего уровня.</p>
+
+        <div class="stories-grid">
+            <!-- Story 1 -->
+            <div class="story-card" onclick="openStory(0)">
+                <div class="story-title">Putovanje u Beograd (Путешествие в Белград)</div>
+                <div class="story-preview">Рассказ о первом посещении столицы Сербии.</div>
+                <div class="story-meta">
+                    <span>~250 words</span>
+                    <span>Средний B1</span>
+                </div>
+            </div>
+
+            <!-- Story 2 -->
+            <div class="story-card" onclick="openStory(1)">
+                <div class="story-title">Moj posao (Моя работа)</div>
+                <div class="story-preview">История о рабочем дне программиста в Нови-Саде.</div>
+                <div class="story-meta">
+                    <span>~280 words</span>
+                    <span>Средний B1</span>
+                </div>
+            </div>
+
+            <!-- Story 3 -->
+            <div class="story-card" onclick="openStory(2)">
+                <div class="story-title">Vikend na Zlatiboru (Выходные на Златиборе)</div>
+                <div class="story-preview">Описание отдыха в горах и традиционной еды.</div>
+                <div class="story-meta">
+                    <span>~300 words</span>
+                    <span>Средний B1</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="back-link">
+            <a href="../">← Вернуться к выбору практики</a>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">&times;</button>
+            <h2 class="modal-title" id="modal-title">Title</h2>
+            <div class="modal-text" id="modal-text">Text content...</div>
+            <button class="toggle-translation" onclick="toggleTranslation()">Показать/скрыть перевод</button>
+            <div class="modal-translation" id="modal-translation">Translation content...</div>
+        </div>
+    </div>
+
+    <script>
+        const stories = [
+            {
+                title: "Putovanje u Beograd (Путешествие в Белград)",
+                text: `Prošlog leta sam prvi put posetio Beograd.
+(Прошлым летом я впервые посетил Белград.)
+
+Putovao sam vozom iz Novog Sada.
+(Я ехал на поезде из Нови-Сада.)
+
+Putovanje je trajalo samo trideset minuta jer je voz bio veoma brz.
+(Путешествие длилось всего тридцать минут, потому что поезд был очень быстрым.)
+
+Kada sam stigao u Beograd, prvo sam otišao na Kalemegdan.
+(Когда я прибыл в Белград, я первым делом пошел на Калемегдан.)
+
+Tvrđava je bila impresivna, a pogled na ušće Save u Dunav prelep.
+(Крепость была впечатляющей, а вид на слияние Савы и Дуная — прекрасным.)
+
+Posle toga sam šetao Knez Mihailovom ulicom.
+(После этого я гулял по улице Князя Михаила.)
+
+Bilo je mnogo ljudi, prodavnica i kafića.
+(Было много людей, магазинов и кафе.)
+
+Ručao sam u Skadarliji, boemskoj četvrti grada.
+(Я пообедал в Скадарлии, богемном квартале города.)
+
+Probao sam ćevape i slušao starogradsku muziku.
+(Я попробовал чевапи и слушал старинную городскую музыку.)
+
+Beograd mi se veoma dopao jer ima posebnu energiju.
+(Белград мне очень понравился, потому что у него особая энергия.)`,
+                translation: `Прошлым летом я впервые посетил Белград.
+Я ехал на поезде из Нови-Сада.
+Путешествие длилось всего тридцать минут, потому что поезд был очень быстрым.
+Когда я прибыл в Белград, я первым делом пошел на Калемегдан.
+Крепость была впечатляющей, а вид на слияние Савы и Дуная — прекрасным.
+После этого я гулял по улице Князя Михаила.
+Было много людей, магазинов и кафе.
+Я пообедал в Скадарлии, богемном квартале города.
+Я попробовал чевапи и слушал старинную городскую музыку.
+Белград мне очень понравился, потому что у него особая энергия.`
+            },
+            {
+                title: "Moj posao (Моя работа)",
+                text: `Ja radim kao programer u jednoj IT kompaniji u Novom Sadu.
+(Я работаю программистом в одной IT-компании в Нови-Саде.)
+
+Moj radni dan počinje u devet sati ujutru.
+(Мой рабочий день начинается в девять часов утра.)
+
+Obično doručkujem kod kuće, a zatim idem na posao biciklom.
+(Обычно я завтракаю дома, а затем еду на работу на велосипеде.)
+
+Novi Sad je ravan grad, pa je vožnja bicikla veoma prijatna.
+(Нови-Сад — равнинный город, поэтому езда на велосипеде очень приятна.)
+
+Na poslu imam sastanke sa timom i pišem kod.
+(На работе у меня встречи с командой, и я пишу код.)
+
+Ponekad je posao stresan, ali ga volim jer je kreativan.
+(Иногда работа стрессовая, но я люблю её, потому что она творческая.)
+
+Imamo pauzu za ručak u jedan sat.
+(У нас перерыв на обед в час дня.)
+
+Često idem sa kolegama u obližnji restoran.
+(Я часто хожу с коллегами в ближайший ресторан.)
+
+Radim do pet sati popodne.
+(Я работаю до пяти часов вечера.)
+
+Posle posla volim da trčim pored Dunava ili da se družim sa prijateljima.
+(После работы я люблю бегать вдоль Дуная или общаться с друзьями.)`,
+                translation: `Я работаю программистом в одной IT-компании в Нови-Саде.
+Мой рабочий день начинается в девять часов утра.
+Обычно я завтракаю дома, а затем еду на работу на велосипеде.
+Нови-Сад — равнинный город, поэтому езда на велосипеде очень приятна.
+На работе у меня встречи с командой, и я пишу код.
+Иногда работа стрессовая, но я люблю её, потому что она творческая.
+У нас перерыв на обед в час дня.
+Я часто хожу с коллегами в ближайший ресторан.
+Я работаю до пяти часов вечера.
+После работы я люблю бегать вдоль Дуная или общаться с друзьями.`
+            },
+            {
+                title: "Vikend na Zlatiboru (Выходные на Златиборе)",
+                text: `Prošlog vikenda sam sa porodicom išao na Zlatibor.
+(В прошлые выходные я с семьей ездил на Златибор.)
+
+Zlatibor je jedna od najlepših planina u Srbiji.
+(Златибор — одна из самых красивых гор в Сербии.)
+
+Krenuli smo rano ujutru automobilom.
+(Мы выехали рано утром на машине.)
+
+Put je bio dug, ali zanimljiv.
+(Путь был долгим, но интересным.)
+
+Kada smo stigli, odmah smo osetili svež vazduh.
+(Когда мы приехали, мы сразу почувствовали свежий воздух.)
+
+Šetali smo pored jezera i popeli se na vrh Tornik.
+(Мы гуляли у озера и поднялись на вершину Торник.)
+
+Pogled sa vrha je bio neverovatan.
+(Вид с вершины был невероятным.)
+
+Uveče smo otišli u restoran da probamo lokalne specijalitete.
+(Вечером мы пошли в ресторан, чтобы попробовать местные деликатесы.)
+
+Jeli smo komplet lepinju i pršutu.
+(Мы ели комплет-лепинью и пршут.)
+
+Bilo je veoma ukusno, ali i kalorično.
+(Было очень вкусно, но и калорийно.)
+
+Vratili smo se kući u nedelju uveče, umorni ali srećni.
+(Мы вернулись домой в воскресенье вечером, уставшие, но счастливые.)`,
+                translation: `В прошлые выходные я с семьей ездил на Златибор.
+Златибор — одна из самых красивых гор в Сербии.
+Мы выехали рано утром на машине.
+Путь был долгим, но интересным.
+Когда мы приехали, мы сразу почувствовали свежий воздух.
+Мы гуляли у озера и поднялись на вершину Торник.
+Вид с вершины был невероятным.
+Вечером мы пошли в ресторан, чтобы попробовать местные деликатесы.
+Мы ели комплет-лепинью и пршут.
+Было очень вкусно, но и калорийно.
+Мы вернулись домой в воскресенье вечером, уставшие, но счастливые.`
+            }
+        ];
+
+        const modalOverlay = document.getElementById('modal-overlay');
+        const modalTitle = document.getElementById('modal-title');
+        const modalText = document.getElementById('modal-text');
+        const modalTranslation = document.getElementById('modal-translation');
+
+        function openStory(index) {
+            const story = stories[index];
+            modalTitle.textContent = story.title;
+            modalText.textContent = story.text;
+            modalTranslation.textContent = story.translation;
+            modalTranslation.style.display = 'none';
+            modalOverlay.style.display = 'flex';
+        }
+
+        function closeModal() {
+            modalOverlay.style.display = 'none';
+        }
+
+        function toggleTranslation() {
+            if (modalTranslation.style.display === 'none') {
+                modalTranslation.style.display = 'block';
+            } else {
+                modalTranslation.style.display = 'none';
+            }
+        }
+
+        // Close modal when clicking outside
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+
+</html>

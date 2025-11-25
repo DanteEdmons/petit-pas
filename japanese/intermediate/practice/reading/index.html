@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Petit Pas — Японский — Средний — Чтение</title>
+    <style>
+        :root {
+            color-scheme: light dark;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "Montserrat", "Segoe UI", sans-serif;
+            color: rgba(255, 255, 255, 0.95);
+            background: linear-gradient(135deg, #0f172a, #1e293b, #312e81);
+            background-size: 200% 200%;
+            animation: shimmer 18s ease infinite;
+            padding: 2.5rem 1.5rem;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        main {
+            max-width: 800px;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.55);
+            border-radius: 24px;
+            backdrop-filter: blur(16px);
+            box-shadow: 0 28px 48px rgba(2, 6, 23, 0.45);
+            padding: clamp(1.75rem, 6vw, 3rem);
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        h1 {
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            letter-spacing: 0.04em;
+            text-align: center;
+        }
+
+        .intro {
+            font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+            color: rgba(255, 255, 255, 0.82);
+            line-height: 1.7;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .story-card {
+            background: rgba(30, 41, 59, 0.6);
+            border-radius: 20px;
+            padding: 1.5rem;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            transition: transform 0.25s ease, background 0.25s ease;
+            cursor: pointer;
+        }
+
+        .story-card:hover {
+            transform: translateY(-6px);
+            background: rgba(59, 130, 246, 0.2);
+            border-color: rgba(96, 165, 250, 0.4);
+        }
+
+        .story-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #93c5fd;
+        }
+
+        .story-preview {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .story-meta {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Modal for reading */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            z-index: 100;
+        }
+
+        .modal-content {
+            background: #1e293b;
+            border-radius: 24px;
+            max-width: 650px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 2rem;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 2rem;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .close-modal:hover {
+            color: white;
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #93c5fd;
+        }
+
+        .modal-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+            white-space: pre-line;
+        }
+
+        .modal-translation {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+            display: none;
+        }
+
+        .toggle-translation {
+            margin-top: 1.5rem;
+            background: rgba(59, 130, 246, 0.2);
+            border: 1px solid rgba(59, 130, 246, 0.4);
+            color: #93c5fd;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .toggle-translation:hover {
+            background: rgba(59, 130, 246, 0.3);
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .back-link a {
+            color: #93c5fd;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Чтение и истории (Intermediate)</h1>
+        <p class="intro">Истории среднего уровня для развития навыков чтения.</p>
+
+        <div class="stories-grid">
+            <!-- Story 1 -->
+            <div class="story-card" onclick="openStory(0)">
+                <div class="story-title">Kaguya Hime (Принцесса Кагуя)</div>
+                <div class="story-preview">Таинственная девушка, найденная в стебле бамбука.</div>
+                <div class="story-meta">
+                    <span>~250 words</span>
+                    <span>Средний N4/N3</span>
+                </div>
+            </div>
+
+            <!-- Story 2 -->
+            <div class="story-card" onclick="openStory(1)">
+                <div class="story-title">Kasa Jizo (Шляпы для Дзидзо)</div>
+                <div class="story-preview">Трогательная история о доброте бедного старика в канун Нового года.</div>
+                <div class="story-meta">
+                    <span>~280 words</span>
+                    <span>Средний N4/N3</span>
+                </div>
+            </div>
+
+            <!-- Story 3 -->
+            <div class="story-card" onclick="openStory(2)">
+                <div class="story-title">Hachiko (Хатико)</div>
+                <div class="story-preview">Реальная история о верной собаке, которая ждала своего хозяина.</div>
+                <div class="story-meta">
+                    <span>~300 words</span>
+                    <span>Средний N4/N3</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="back-link">
+            <a href="../">← Вернуться к выбору практики</a>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">&times;</button>
+            <h2 class="modal-title" id="modal-title">Title</h2>
+            <div class="modal-text" id="modal-text">Text content...</div>
+            <button class="toggle-translation" onclick="toggleTranslation()">Показать/скрыть перевод</button>
+            <div class="modal-translation" id="modal-translation">Translation content...</div>
+        </div>
+    </div>
+
+    <script>
+        const stories = [
+            {
+                title: "Kaguya Hime (Принцесса Кагуя)",
+                text: `Mukashi, taketori no okina to iu ojiisan ga imashita.
+(Давным-давно жил старик, которого звали резчиком бамбука.)
+
+Aru hi, hikaru take o mitsukemashita.
+(Однажды он нашел светящийся бамбук.)
+
+Kitte miru to, naka ni chiisana onnanoko ga imashita.
+(Когда он разрезал его, внутри была маленькая девочка.)
+
+Ojiisan to obaasan wa, sono ko o taisetsu ni sodatemashita.
+(Дедушка и бабушка с любовью растили этого ребенка.)
+
+Kanojo wa totemo utsukushiku nari, "Kaguya Hime" to yobaremashita.
+(Она стала очень красивой, и её звали принцесса Кагуя.)
+
+Takusan no otoko no hito ga kekkon o moshikomimashita ga, kanojo wa kotowarimashita.
+(Многие мужчины предлагали ей руку и сердце, но она отказывала.)
+
+Jitsuwa, Kaguya Hime wa tsuki no hito deshita.
+(На самом деле, принцесса Кагуя была жительницей Луны.)
+
+Juugoya no yoru, tsuki kara mukae ga kite, kanojo wa kaette ikimashita.
+(В ночь полнолуния за ней пришли с Луны, и она вернулась обратно.)`,
+                translation: `Давным-давно жил старик, которого звали резчиком бамбука.
+Однажды он нашел светящийся бамбук.
+Когда он разрезал его, внутри оказалась крошечная девочка.
+Старик и его жена с любовью вырастили её.
+Она выросла очень красивой, и её назвали принцессой Кагуя.
+Многие мужчины просили её руки, но она всем отказывала.
+На самом деле принцесса Кагуя была с Луны.
+В ночь полнолуния за ней пришли посланники с Луны, и она вернулась домой.`
+            },
+            {
+                title: "Kasa Jizo (Шляпы для Дзидзо)",
+                text: `Aru oomisoka no hi, binbou na ojiisan wa kasa o uri ni machi e ikimashita.
+(В один канун Нового года бедный старик пошел в город продавать соломенные шляпы.)
+
+Demo, kasa wa zenzen uremasen deshita.
+(Но шляпы совсем не продавались.)
+
+Kaerimichi, yuki ga futte kimashita.
+(По дороге домой пошел снег.)
+
+Ojiisan wa, roku-nin no Jizo-sama ga yuki ni umorete iru no o mimashita.
+(Старик увидел шесть статуй Дзидзо, засыпанных снегом.)
+
+"Samui deshou" to itte, urenokotta kasa o Jizo-sama ni kabusemashita.
+("Вам, должно быть, холодно", — сказал он и надел непроданные шляпы на статуи.)
+
+Kasa wa itsutsu shika nakatta node, saigo wa jibun no tenugui o kabusemashita.
+(Шляп было только пять, поэтому на последнего он надел своё полотенце.)
+
+Sono yoru, fushigi na koto ga okorimashita.
+(Той ночью случилось чудо.)
+
+Jizo-sama tachi ga takusan no tabemono o motte, ojiisan no ie ni yatte kita no desu.
+(Статуи Дзидзо принесли много еды к дому старика.)`,
+                translation: `В канун Нового года бедный старик пошел в город продавать соломенные шляпы.
+Но шляпы совсем не продавались.
+По дороге домой пошел снег.
+Старик увидел шесть статуй Дзидзо, стоящих в снегу.
+"Вам, наверное, холодно", — сказал он и надел на них непроданные шляпы.
+Шляп было всего пять, поэтому на последнюю статую он повязал своё полотенце.
+Той ночью случилось чудо.
+Статуи Дзидзо пришли к дому старика и принесли много еды и подарков.`
+            },
+            {
+                title: "Hachiko (Хатико)",
+                text: `Hachiko wa, Ueno-sensei no inu deshita.
+(Хатико был собакой профессора Уэно.)
+
+Mainichi, Hachiko wa Shibuya-eki made sensei o okuri, yuugata ni mukae ni ikimashita.
+(Каждый день Хатико провожал профессора до станции Сибуя и встречал его вечером.)
+
+Shikashi, aru hi, sensei wa daigaku de taorete, nakunarimashita.
+(Однако однажды профессор упал в университете и умер.)
+
+Hachiko wa sore o shirimasen deshita.
+(Хатико этого не знал.)
+
+Juunenkan, Hachiko wa mainichi eki ni itte, sensei o machitsuzukemashita.
+(В течение десяти лет Хатико каждый день ходил на станцию и продолжал ждать профессора.)
+
+Hitobito wa Hachiko no sugata ni kandou shimashita.
+(Люди были тронуты видом Хатико.)
+
+Ima, Shibuya-eki ni wa Hachiko no douzou ga arimasu.
+(Сейчас на станции Сибуя стоит статуя Хатико.)`,
+                translation: `Хатико был собакой профессора Уэно.
+Каждый день Хатико провожал профессора до станции Сибуя и встречал его вечером.
+Но однажды профессор умер в университете.
+Хатико этого не знал.
+В течение десяти лет Хатико каждый день приходил на станцию и ждал профессора.
+Люди были тронуты преданностью Хатико.
+Сейчас на станции Сибуя стоит статуя Хатико.`
+            }
+        ];
+
+        const modalOverlay = document.getElementById('modal-overlay');
+        const modalTitle = document.getElementById('modal-title');
+        const modalText = document.getElementById('modal-text');
+        const modalTranslation = document.getElementById('modal-translation');
+
+        function openStory(index) {
+            const story = stories[index];
+            modalTitle.textContent = story.title;
+            modalText.textContent = story.text;
+            modalTranslation.textContent = story.translation;
+            modalTranslation.style.display = 'none';
+            modalOverlay.style.display = 'flex';
+        }
+
+        function closeModal() {
+            modalOverlay.style.display = 'none';
+        }
+
+        function toggleTranslation() {
+            if (modalTranslation.style.display === 'none') {
+                modalTranslation.style.display = 'block';
+            } else {
+                modalTranslation.style.display = 'none';
+            }
+        }
+
+        // Close modal when clicking outside
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Petit Pas — Японский — Продвинутый — Чтение</title>
+    <style>
+        :root {
+            color-scheme: light dark;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "Montserrat", "Segoe UI", sans-serif;
+            color: rgba(255, 255, 255, 0.95);
+            background: linear-gradient(135deg, #0f172a, #1e293b, #312e81);
+            background-size: 200% 200%;
+            animation: shimmer 18s ease infinite;
+            padding: 2.5rem 1.5rem;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        main {
+            max-width: 800px;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.55);
+            border-radius: 24px;
+            backdrop-filter: blur(16px);
+            box-shadow: 0 28px 48px rgba(2, 6, 23, 0.45);
+            padding: clamp(1.75rem, 6vw, 3rem);
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        h1 {
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            letter-spacing: 0.04em;
+            text-align: center;
+        }
+
+        .intro {
+            font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+            color: rgba(255, 255, 255, 0.82);
+            line-height: 1.7;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .story-card {
+            background: rgba(30, 41, 59, 0.6);
+            border-radius: 20px;
+            padding: 1.5rem;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            transition: transform 0.25s ease, background 0.25s ease;
+            cursor: pointer;
+        }
+
+        .story-card:hover {
+            transform: translateY(-6px);
+            background: rgba(59, 130, 246, 0.2);
+            border-color: rgba(96, 165, 250, 0.4);
+        }
+
+        .story-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #93c5fd;
+        }
+
+        .story-preview {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .story-meta {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Modal for reading */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            z-index: 100;
+        }
+
+        .modal-content {
+            background: #1e293b;
+            border-radius: 24px;
+            max-width: 650px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 2rem;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 2rem;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .close-modal:hover {
+            color: white;
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #93c5fd;
+        }
+
+        .modal-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+            white-space: pre-line;
+        }
+
+        .modal-translation {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+            display: none;
+        }
+
+        .toggle-translation {
+            margin-top: 1.5rem;
+            background: rgba(59, 130, 246, 0.2);
+            border: 1px solid rgba(59, 130, 246, 0.4);
+            color: #93c5fd;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .toggle-translation:hover {
+            background: rgba(59, 130, 246, 0.3);
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .back-link a {
+            color: #93c5fd;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Чтение и истории (Advanced)</h1>
+        <p class="intro">Сложные литературные тексты для продвинутого уровня.</p>
+
+        <div class="stories-grid">
+            <!-- Story 1 -->
+            <div class="story-card" onclick="openStory(0)">
+                <div class="story-title">Rashomon (Расёмон)</div>
+                <div class="story-preview">Классическая история Акутагавы Рюноскэ о моральном выборе в разрушенном
+                    Киото.</div>
+                <div class="story-meta">
+                    <span>~350 words</span>
+                    <span>Продвинутый N2/N1</span>
+                </div>
+            </div>
+
+            <!-- Story 2 -->
+            <div class="story-card" onclick="openStory(1)">
+                <div class="story-title">Botchan (Мальчуган)</div>
+                <div class="story-preview">Отрывок из романа Нацумэ Сосэки о молодом учителе из Токио.</div>
+                <div class="story-meta">
+                    <span>~400 words</span>
+                    <span>Продвинутый N2/N1</span>
+                </div>
+            </div>
+
+            <!-- Story 3 -->
+            <div class="story-card" onclick="openStory(2)">
+                <div class="story-title">Ginga Tetsudou no Yoru (Ночь на галактической железной дороге)</div>
+                <div class="story-preview">Фантастическая сказка Миядзавы Кэндзи о путешествии по Млечному Пути.</div>
+                <div class="story-meta">
+                    <span>~380 words</span>
+                    <span>Продвинутый N2/N1</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="back-link">
+            <a href="../">← Вернуться к выбору практики</a>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">&times;</button>
+            <h2 class="modal-title" id="modal-title">Title</h2>
+            <div class="modal-text" id="modal-text">Text content...</div>
+            <button class="toggle-translation" onclick="toggleTranslation()">Показать/скрыть перевод</button>
+            <div class="modal-translation" id="modal-translation">Translation content...</div>
+        </div>
+    </div>
+
+    <script>
+        const stories = [
+            {
+                title: "Rashomon (Расёмон)",
+                text: `Aru hi no kuregata no koto de aru. Hitori no genin ga, Rashomon no shita de ama-yadori o shite ita.
+(Это случилось однажды в сумерках. Один слуга пережидал дождь под воротами Расёмон.)
+
+Hiroi mon no shita ni wa, kono otoko no hoka ni dare mo inai.
+(Под широкими воротами, кроме этого мужчины, никого не было.)
+
+Tada, tokorodokoro nuri-hageta, ookina marubashira ni, kirigirisu ga ippiki tomatte iru.
+(Только на большой круглой колонне, с которой местами облупилась краска, сидел сверчок.)
+
+Genin wa, ame ga yamu no o matte ita no de aru.
+(Слуга ждал, когда прекратится дождь.)
+
+Shikashi, ame wa nakanaka yami-sou ni nai.
+(Однако дождь, похоже, и не думал прекращаться.)
+
+Kono otoko wa, saki-hodo kara, "Kore kara dou shiyou ka" to iu koto o kangaete ita.
+(Этот человек уже некоторое время думал: "Что же мне делать дальше?")
+
+Kyoto no machi wa, kono ni-san nen, jishin toka tsujikaze toka kaji toka kikin toka iu wazawai ga tsuzuite okotta.
+(В городе Киото последние два-три года продолжались бедствия: землетрясения, ураганы, пожары, голод.)
+
+Soko de rakuchuu no sabire-kata wa hitotoori de wa nai.
+(Поэтому запустение в столице было необычайным.)`,
+                translation: `Это случилось однажды в сумерках. Один слуга пережидал дождь под воротами Расёмон.
+Под широкими воротами, кроме этого мужчины, никого не было.
+Только на большой круглой колонне, с которой местами облупилась краска, сидел сверчок.
+Слуга ждал, когда прекратится дождь.
+Однако дождь, похоже, и не думал прекращаться.
+Этот человек уже некоторое время думал: "Что же мне делать дальше?"
+В городе Киото последние два-три года продолжались бедствия: землетрясения, ураганы, пожары, голод.
+Поэтому запустение в столице было необычайным.`
+            },
+            {
+                title: "Botchan (Мальчуган)",
+                text: `Oyayuzuri no muteppou de, kodomo no toki kara son bakari shite iru.
+(Из-за унаследованной от родителей безрассудности я с детства только и делал, что терпел убытки.)
+
+Shougakkou ni iru jibun, gakkou no nikai kara tobiorite ishuukan hodo koshi o nukashita koto ga aru.
+(Когда я был в начальной школе, я однажды спрыгнул со второго этажа школы и около недели не мог разогнуть спину.)
+
+Naze sonna baka na koto o shita ka to kiku hito ga iru kamo shirenai.
+(Возможно, найдутся люди, которые спросят, зачем я сделал такую глупость.)
+
+Betsu ni fukai riyuu wa nai.
+(Особой глубокой причины не было.)
+
+Shinchiku no nikai kara kubi o dashite itara, doukyuusei no hitori ga joudan ni, ikura ibatte mo, soko kara tobioriru koto wa dekimai. Yowamushi yaai. to hayashita kara de aru.
+(Просто когда я высунул голову со второго этажа нового здания, один из одноклассников в шутку поддразнил меня: "Сколько ни важничай, а спрыгнуть оттуда ты не сможешь. Слабак!")
+
+Kozukai ni makarete kaeru to, oyaji ga ookina me o shite "Nikai kara tobiorite koshi o nukasu yatsu ga aru ka" to itta.
+(Когда я вернулся домой на спине у слуги, отец вытаращил глаза и сказал: "Где это видано, чтобы кто-то прыгал со второго этажа и вывихивал спину?")`,
+                translation: `Из-за унаследованной от родителей безрассудности я с детства только и делал, что терпел убытки.
+Когда я был в начальной школе, я однажды спрыгнул со второго этажа школы и около недели не мог разогнуть спину.
+Возможно, найдутся люди, которые спросят, зачем я сделал такую глупость.
+Особой глубокой причины не было.
+Просто когда я высунул голову со второго этажа нового здания, один из одноклассников в шутку поддразнил меня: "Сколько ни важничай, а спрыгнуть оттуда ты не сможешь. Слабак!"
+Когда я вернулся домой на спине у слуги, отец вытаращил глаза и сказал: "Где это видано, чтобы кто-то прыгал со второго этажа и вывихивал спину?"`
+            },
+            {
+                title: "Ginga Tetsudou no Yoru (Ночь на галактической железной дороге)",
+                text: `Giovanni wa, gakkou no mon o dete, kuroi sugi no namiki no naka o tootte, sono koro wa mou sukkari hiete, sora ni wa tsumetai hakuchou no iro o shita kumo ga, kawa no you ni nagarete imashita.
+(Джованни вышел из школьных ворот, прошел через аллею черных криптомерий; к тому времени уже совсем похолодало, и в небе, словно река, плыли облака цвета холодного лебедя.)
+
+"Ginga no o-matsuri wa kon'ya da ne. Centaurus-matsuri da ne."
+("Праздник Галактики сегодня вечером, да? Праздник Центавра.")
+
+Machi no akari ga chirachira to hikari, Giovanni wa hitori de oka no ue e noborimashita.
+(Огни города мерцали, и Джованни в одиночестве поднялся на холм.)
+
+Oka no ue wa sukkari hiete, kusa wa tsuyu de nurete imashita.
+(На вершине холма было совсем холодно, трава была мокрой от росы.)
+
+Sora o miageru to, amanogawa ga shiroku, bokari to hikatte imashita.
+(Когда он посмотрел на небо, Млечный Путь светился белым, туманным светом.)
+
+Sono toki, Giovanni wa, "Ginga Station" to iu koe o kikimashita.
+(В этот момент Джованни услышал голос: "Станция Галактика".)
+
+Ki ga tsuku to, kare wa chiisana ressha ni notte ita no desu.
+(Когда он пришел в себя, он уже ехал в маленьком поезде.)`,
+                translation: `Джованни вышел из школьных ворот, прошел через аллею черных криптомерий; к тому времени уже совсем похолодало, и в небе, словно река, плыли облака цвета холодного лебедя.
+"Праздник Галактики сегодня вечером, да? Праздник Центавра."
+Огни города мерцали, и Джованни в одиночестве поднялся на холм.
+На вершине холма было совсем холодно, трава была мокрой от росы.
+Когда он посмотрел на небо, Млечный Путь светился белым, туманным светом.
+В этот момент Джованни услышал голос: "Станция Галактика".
+Когда он пришел в себя, он уже ехал в маленьком поезде.`
+            }
+        ];
+
+        const modalOverlay = document.getElementById('modal-overlay');
+        const modalTitle = document.getElementById('modal-title');
+        const modalText = document.getElementById('modal-text');
+        const modalTranslation = document.getElementById('modal-translation');
+
+        function openStory(index) {
+            const story = stories[index];
+            modalTitle.textContent = story.title;
+            modalText.textContent = story.text;
+            modalTranslation.textContent = story.translation;
+            modalTranslation.style.display = 'none';
+            modalOverlay.style.display = 'flex';
+        }
+
+        function closeModal() {
+            modalOverlay.style.display = 'none';
+        }
+
+        function toggleTranslation() {
+            if (modalTranslation.style.display === 'none') {
+                modalTranslation.style.display = 'block';
+            } else {
+                modalTranslation.style.display = 'none';
+            }
+        }
+
+        // Close modal when clicking outside
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+
+</html>
