@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Petit Pas — English — Fill-in-Blank Exercises</title>
+  <link rel="stylesheet" href="../../../../assets/css/styles.css" />
+</head>
+<body>
+  <main class="main-container">
+    <h1>Fill in the Blanks</h1>
+    <p class="intro">Write the correct word in the blank</p>
+    <div id="exercise-container"></div>
+    <div class="back-link"><a href="../">← Back</a></div>
+  </main>
+  <script src="../../../../assets/js/components.js"></script>
+  <script>
+    const exercises = [
+      // Present Perfect
+      { sentence: "I _____ already finished my homework.", answer: "have", hint: "present perfect" },
+      { sentence: "She _____ lived in Paris for five years.", answer: "has", hint: "present perfect" },
+      { sentence: "They have _____ to Japan three times.", answer: "been", hint: "be (past participle)" },
+      { sentence: "We haven't _____ this movie yet.", answer: "seen", hint: "see (past participle)" },
+      { sentence: "Have you ever _____ Thai food?", answer: "eaten", hint: "eat (past participle)" },
+
+      // Conditionals
+      { sentence: "If it rains tomorrow, we _____ stay home.", answer: "will", hint: "first conditional" },
+      { sentence: "If I _____ rich, I would travel the world.", answer: "were", hint: "second conditional" },
+      { sentence: "She would come if she _____ time.", answer: "had", hint: "second conditional" },
+      { sentence: "If you heat water to 100°C, it _____.", answer: "boils", hint: "zero conditional" },
+      { sentence: "If I had studied harder, I _____ have passed the exam.", answer: ["would", "could", "might"], hint: "third conditional" },
+
+      // Passive Voice
+      { sentence: "The book _____ written by Shakespeare.", answer: "was", hint: "passive voice" },
+      { sentence: "English _____ spoken in many countries.", answer: "is", hint: "passive voice - present" },
+      { sentence: "The building will _____ demolished next month.", answer: "be", hint: "passive voice - future" },
+      { sentence: "The letter has been _____ to the wrong address.", answer: "sent", hint: "send (past participle)" },
+      { sentence: "New computers are being _____ in the office.", answer: "installed", hint: "passive continuous" },
+
+      // Mixed Grammar
+      { sentence: "I wish I _____ speak French fluently.", answer: "could", hint: "wish + ability" },
+      { sentence: "He has been _____ for the company since 2010.", answer: "working", hint: "present perfect continuous" },
+      { sentence: "The project must _____ completed by Friday.", answer: "be", hint: "modal + passive" },
+      { sentence: "By next year, they will have _____ married for 10 years.", answer: "been", hint: "future perfect" },
+      { sentence: "She would rather _____ tea than coffee.", answer: "drink", hint: "would rather + base form" }
+    ];
+    new FillBlank('exercise-container', exercises);
+  </script>
+</body>
+</html>

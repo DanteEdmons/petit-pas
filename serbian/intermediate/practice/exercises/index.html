@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Petit Pas — Српски — Вежбе попуњавања</title>
+  <link rel="stylesheet" href="../../../../assets/css/styles.css" />
+</head>
+<body>
+  <main class="main-container">
+    <h1>Попуните празнине</h1>
+    <p class="intro">Упишите тачну реч у празнину</p>
+    <div id="exercise-container"></div>
+    <div class="back-link"><a href="../">← Назад</a></div>
+  </main>
+  <script src="../../../../assets/js/components.js"></script>
+  <script>
+    const exercises = [
+      // Cases - Genitive
+      { sentence: "Ово је књига мог _____.", answer: "брата", hint: "брат (genitive)" },
+      { sentence: "Нема _____ код куће.", answer: "хлеба", hint: "хлеб (genitive)" },
+      { sentence: "Купио сам кило _____.", answer: "јабука", hint: "јабука (genitive plural)" },
+
+      // Cases - Dative
+      { sentence: "Дао сам _____ поклон.", answer: "сестри", hint: "сестра (dative)" },
+      { sentence: "Помажем _____ са домаћим.", answer: "мајци", hint: "мајка (dative)" },
+      { sentence: "Причао сам _____ о путовању.", answer: "пријатељу", hint: "пријатељ (dative)" },
+
+      // Cases - Instrumental
+      { sentence: "Идем _____ на посао.", answer: "аутобусом", hint: "аутобус (instrumental)" },
+      { sentence: "Пишем _____.", answer: "оловком", hint: "оловка (instrumental)" },
+      { sentence: "Волим да се дружим са _____.", answer: "њим", hint: "он (instrumental)" },
+
+      // Perfekt
+      { sentence: "Ја _____ видео тај филм.", answer: "сам", hint: "бити (present)" },
+      { sentence: "Она је _____ у Београд.", answer: "отишла", hint: "отићи (past participle - feminine)" },
+      { sentence: "Ми смо _____ целу ноћ.", answer: "учили", hint: "учити (past participle - plural)" },
+      { sentence: "Ти си _____ домаћи задатак.", answer: "урадио", hint: "урадити (past participle - masculine)" },
+
+      // Future
+      { sentence: "Ја _____ доћи сутра.", answer: "ћу", hint: "future auxiliary - ја" },
+      { sentence: "Они _____ путовати следеће недеље.", answer: "ће", hint: "future auxiliary - они" },
+      { sentence: "Хоћу _____ нову књигу.", answer: "купити", hint: "купити (infinitive)" },
+
+      // Mixed Grammar
+      { sentence: "Ако _____ времена, доћи ћу.", answer: "будем имао", hint: "conditional - имати" },
+      { sentence: "Желим _____ боље говорим српски.", answer: "да", hint: "da + present" },
+      { sentence: "Морам _____ иду на састанак.", answer: "да", hint: "modal + da" },
+      { sentence: "Волео _____ да посетим Србију.", answer: "бих", hint: "conditional auxiliary" }
+    ];
+    new FillBlank('exercise-container', exercises);
+  </script>
+</body>
+</html>

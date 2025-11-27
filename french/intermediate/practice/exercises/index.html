@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Petit Pas — Français — Exercices à trous</title>
+  <link rel="stylesheet" href="../../../../assets/css/styles.css" />
+</head>
+<body>
+  <main class="main-container">
+    <h1>Remplissez les blancs</h1>
+    <p class="intro">Écrivez le mot correct dans l'espace vide</p>
+    <div id="exercise-container"></div>
+    <div class="back-link"><a href="../">← Retour</a></div>
+  </main>
+  <script src="../../../../assets/js/components.js"></script>
+  <script>
+    const exercises = [
+      // Imparfait
+      { sentence: "Quand j'_____ petit, j'aimais jouer dehors.", answer: "étais", hint: "être (imparfait)" },
+      { sentence: "Nous _____ à la plage tous les étés.", answer: "allions", hint: "aller (imparfait)" },
+      { sentence: "Il _____ beau ce jour-là.", answer: "faisait", hint: "faire (imparfait)" },
+      { sentence: "Vous _____ souvent vos grands-parents?", answer: "visitiez", hint: "visiter (imparfait)" },
+      { sentence: "Elles _____ ensemble depuis longtemps.", answer: "travaillaient", hint: "travailler (imparfait)" },
+
+      // Passé Composé
+      { sentence: "J'_____ mangé une pomme ce matin.", answer: "ai", hint: "passé composé - avoir" },
+      { sentence: "Elle _____ partie à huit heures.", answer: "est", hint: "passé composé - être" },
+      { sentence: "Nous avons _____ un film hier soir.", answer: "vu", hint: "voir (participe passé)" },
+      { sentence: "Ils sont _____ en France l'année dernière.", answer: "allés", hint: "aller (participe passé)" },
+      { sentence: "Tu as _____ tes devoirs?", answer: "fini", hint: "finir (participe passé)" },
+
+      // Futur Simple
+      { sentence: "Demain, je _____ mes amis.", answer: "verrai", hint: "voir (futur)" },
+      { sentence: "Nous _____ en vacances en juillet.", answer: "partirons", hint: "partir (futur)" },
+      { sentence: "Il _____ médecin quand il sera grand.", answer: "sera", hint: "être (futur)" },
+      { sentence: "Vous _____ le temps de finir?", answer: "aurez", hint: "avoir (futur)" },
+      { sentence: "Elles _____ tard ce soir.", answer: "rentreront", hint: "rentrer (futur)" },
+
+      // Mixed Tenses
+      { sentence: "Si j'avais de l'argent, j'_____ une nouvelle voiture.", answer: "achèterais", hint: "conditionnel présent" },
+      { sentence: "Il faut que tu _____ tes légumes.", answer: "manges", hint: "subjonctif présent" },
+      { sentence: "Pendant que je _____, il a téléphoné.", answer: "dormais", hint: "imparfait" },
+      { sentence: "Quand j'_____ fini, je t'appellerai.", answer: "aurai", hint: "futur antérieur" },
+      { sentence: "Elle _____ bien parler trois langues.", answer: ["sait", "peut"], hint: "savoir/pouvoir" }
+    ];
+    new FillBlank('exercise-container', exercises);
+  </script>
+</body>
+</html>

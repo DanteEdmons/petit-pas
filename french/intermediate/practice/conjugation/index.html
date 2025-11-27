@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Petit Pas — Entraîneur de conjugaison</title>
+  <link rel="stylesheet" href="../../../../assets/css/styles.css" />
+</head>
+<body>
+  <main class="main-container">
+    <h1>Entraîneur de conjugaison</h1>
+    <p class="intro">Entrez la forme correcte du verbe au présent</p>
+    <div id="trainer-container"></div>
+    <div class="back-link"><a href="../">← Retour</a></div>
+  </main>
+  <script src="../../../../assets/js/components.js"></script>
+  <script>
+    // Override feedback text for French
+    ConjugationTrainer.prototype.checkAnswer = function(pronounIndex) {
+      const input = this.container.querySelector('#conjugationInput');
+      const userAnswer = input.value.trim().toLowerCase();
+      const correctAnswer = this.currentVerb.conjugations[pronounIndex].toLowerCase();
+      const isCorrect = userAnswer === correctAnswer;
+
+      if (isCorrect) {
+        this.correct++;
+      } else {
+        this.incorrect++;
+      }
+
+      // Show feedback
+      const feedback = this.container.querySelector('#feedback');
+      feedback.style.display = 'block';
+      feedback.className = `quiz-feedback ${isCorrect ? 'correct' : 'incorrect'}`;
+      feedback.innerHTML = isCorrect
+        ? 'Correct !'
+        : `Bonne réponse : <strong>${this.currentVerb.conjugations[pronounIndex]}</strong>`;
+
+      input.disabled = true;
+      input.classList.add(isCorrect ? 'correct' : 'incorrect');
+
+      // Auto-advance after delay
+      setTimeout(() => this.nextQuestion(), 1500);
+    };
+
+    ConjugationTrainer.prototype.render = function(pronounIndex) {
+      this.container.innerHTML = `
+        <div class="conjugation-container">
+          <div class="conjugation-prompt">
+            <div class="conjugation-verb">${this.currentVerb.infinitive}</div>
+            <div class="conjugation-pronoun">${this.currentPronoun}</div>
+          </div>
+          <input type="text" class="conjugation-input" id="conjugationInput" autocomplete="off" placeholder="...">
+          <div class="conjugation-stats">
+            <span class="correct">Correct : ${this.correct}</span>
+            <span class="incorrect">Erreurs : ${this.incorrect}</span>
+          </div>
+          <div class="quiz-feedback" id="feedback" style="display: none;"></div>
+        </div>
+      `;
+
+      const input = this.container.querySelector('#conjugationInput');
+      input.focus();
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') this.checkAnswer(pronounIndex);
+      });
+    };
+
+    const verbs = [
+      {
+        infinitive: "être (to be)",
+        conjugations: ["suis", "es", "est", "sommes", "êtes", "sont"]
+      },
+      {
+        infinitive: "avoir (to have)",
+        conjugations: ["ai", "as", "a", "avons", "avez", "ont"]
+      },
+      {
+        infinitive: "aller (to go)",
+        conjugations: ["vais", "vas", "va", "allons", "allez", "vont"]
+      },
+      {
+        infinitive: "faire (to do/make)",
+        conjugations: ["fais", "fais", "fait", "faisons", "faites", "font"]
+      },
+      {
+        infinitive: "parler (to speak)",
+        conjugations: ["parle", "parles", "parle", "parlons", "parlez", "parlent"]
+      },
+      {
+        infinitive: "finir (to finish)",
+        conjugations: ["finis", "finis", "finit", "finissons", "finissez", "finissent"]
+      },
+      {
+        infinitive: "prendre (to take)",
+        conjugations: ["prends", "prends", "prend", "prenons", "prenez", "prennent"]
+      },
+      {
+        infinitive: "venir (to come)",
+        conjugations: ["viens", "viens", "vient", "venons", "venez", "viennent"]
+      },
+      {
+        infinitive: "voir (to see)",
+        conjugations: ["vois", "vois", "voit", "voyons", "voyez", "voient"]
+      },
+      {
+        infinitive: "pouvoir (can/to be able)",
+        conjugations: ["peux", "peux", "peut", "pouvons", "pouvez", "peuvent"]
+      },
+      {
+        infinitive: "vouloir (to want)",
+        conjugations: ["veux", "veux", "veut", "voulons", "voulez", "veulent"]
+      },
+      {
+        infinitive: "devoir (must/to have to)",
+        conjugations: ["dois", "dois", "doit", "devons", "devez", "doivent"]
+      },
+      {
+        infinitive: "savoir (to know)",
+        conjugations: ["sais", "sais", "sait", "savons", "savez", "savent"]
+      },
+      {
+        infinitive: "mettre (to put)",
+        conjugations: ["mets", "mets", "met", "mettons", "mettez", "mettent"]
+      }
+    ];
+
+    new ConjugationTrainer('trainer-container', verbs, {
+      pronouns: ['je', 'tu', 'il/elle', 'nous', 'vous', 'ils/elles']
+    });
+  </script>
+</body>
+</html>

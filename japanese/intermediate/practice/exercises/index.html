@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Petit Pas — 日本語 — 穴埋め練習</title>
+  <link rel="stylesheet" href="../../../../assets/css/styles.css" />
+</head>
+<body>
+  <main class="main-container">
+    <h1>穴埋め問題</h1>
+    <p class="intro">正しい言葉を書いてください</p>
+    <div id="exercise-container"></div>
+    <div class="back-link"><a href="../">← 戻る</a></div>
+  </main>
+  <script src="../../../../assets/js/components.js"></script>
+  <script>
+    const exercises = [
+      // Te-form
+      { sentence: "本を読_____ 、寝ました。", answer: "んで", hint: "読む (te-form)" },
+      { sentence: "友達に会_____ から、買い物をします。", answer: "って", hint: "会う (te-form)" },
+      { sentence: "手を洗_____ 、ご飯を食べます。", answer: "って", hint: "洗う (te-form)" },
+      { sentence: "音楽を聞_____ 、勉強しています。", answer: "きながら", hint: "聞く (te-form + ながら)" },
+      { sentence: "ドアを開け_____ ください。", answer: "て", hint: "開ける (te-form)" },
+
+      // Potential Form
+      { sentence: "日本語が話_____。", answer: "せます", hint: "話す (potential)" },
+      { sentence: "泳ぐことが_____。", answer: ["できます", "できる"], hint: "can do" },
+      { sentence: "漢字が読_____ますか？", answer: "め", hint: "読む (potential)" },
+      { sentence: "明日来_____か？", answer: ["られます", "れます"], hint: "来る (potential)" },
+      { sentence: "この本は買_____。", answer: "えます", hint: "買う (potential)" },
+
+      // Particles
+      { sentence: "学校_____ 歩いて行きます。", answer: "へ", hint: "direction particle" },
+      { sentence: "駅_____ 友達に会いました。", answer: "で", hint: "location of action" },
+      { sentence: "私_____ 学生です。", answer: "は", hint: "topic particle" },
+      { sentence: "コーヒー_____ 紅茶、どちらがいいですか？", answer: "か", hint: "or" },
+      { sentence: "先生_____ 質問しました。", answer: "に", hint: "indirect object" },
+
+      // Mixed Grammar
+      { sentence: "映画を見_____ ことがあります。", answer: "た", hint: "past experience" },
+      { sentence: "毎日運動_____ います。", answer: "して", hint: "する (te-form + いる)" },
+      { sentence: "雨が降_____ そうです。", answer: "り", hint: "そう (looks like)" },
+      { sentence: "もっと早く_____ ください。", answer: "来て", hint: "来る (te-form)" },
+      { sentence: "日本に_____ たいです。", answer: "行き", hint: "行く + たい" }
+    ];
+    new FillBlank('exercise-container', exercises);
+  </script>
+</body>
+</html>
