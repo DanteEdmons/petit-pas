@@ -1,43 +1,514 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Petit Pas — Potential Form</title>
-    <style>
-        body {
-            font-family: "Montserrat", sans-serif;
-            background: #0f172a;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            text-align: center;
-        }
-
-        main {
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-        }
-
-        a {
-            color: #93c5fd;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Petit Pas — Потенциальная форма (可能形)</title>
+  <link rel="stylesheet" href="../../../../assets/css/styles.css" />
 </head>
-
 <body>
-    <main>
-        <h1>Potential Form</h1>
-        <p>Потенциальный залог (Могу сделать).</p>
-        <p>Iku -> Ikeru (Могу идти)</p>
-        <p>Taberu -> Taberareru (Могу есть)</p>
-        <p><a href="../">Назад</a></p>
-    </main>
-</body>
+  <main class="main-container">
+    <h1>Потенциальная форма (可能形)</h1>
+    <p class="intro">Потенциальная форма используется для выражения способности или возможности что-то сделать. Эквивалентна конструкции "мочь", "уметь", "быть в состоянии" в русском языке.</p>
 
+    <div class="accordion">
+      <!-- Section 1: Formation for u-verbs -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Образование: う-глаголы (五段動詞)</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <p>Для う-глаголов (глаголов I группы) потенциальная форма образуется изменением окончания:</p>
+
+          <h3>Правило спряжения</h3>
+          <p><strong>Последний слог меняется с う-ряда на え-ряд + る</strong></p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Словарная форма</th>
+                <th>Основа</th>
+                <th>Потенциальная форма</th>
+                <th>Перевод</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>書く (kaku)</td>
+                <td>kak- (く→け)</td>
+                <td>書ける (kakeru)</td>
+                <td>писать → мочь писать</td>
+              </tr>
+              <tr>
+                <td>読む (yomu)</td>
+                <td>yom- (む→め)</td>
+                <td>読める (yomeru)</td>
+                <td>читать → мочь читать</td>
+              </tr>
+              <tr>
+                <td>話す (hanasu)</td>
+                <td>hanas- (す→せ)</td>
+                <td>話せる (hanaseru)</td>
+                <td>говорить → мочь говорить</td>
+              </tr>
+              <tr>
+                <td>買う (kau)</td>
+                <td>ka- (う→え)</td>
+                <td>買える (kaeru)</td>
+                <td>покупать → мочь купить</td>
+              </tr>
+              <tr>
+                <td>行く (iku)</td>
+                <td>ik- (く→け)</td>
+                <td>行ける (ikeru)</td>
+                <td>идти → мочь пойти</td>
+              </tr>
+              <tr>
+                <td>飲む (nomu)</td>
+                <td>nom- (む→め)</td>
+                <td>飲める (nomeru)</td>
+                <td>пить → мочь пить</td>
+              </tr>
+              <tr>
+                <td>待つ (matsu)</td>
+                <td>mat- (つ→て)</td>
+                <td>待てる (materu)</td>
+                <td>ждать → мочь ждать</td>
+              </tr>
+              <tr>
+                <td>泳ぐ (oyogu)</td>
+                <td>oyog- (ぐ→げ)</td>
+                <td>泳げる (oyogeru)</td>
+                <td>плавать → уметь плавать</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="note">
+            <strong>Важно:</strong> Потенциальная форма う-глаголов спрягается как る-глагол!
+          </div>
+
+          <div class="examples">
+            <div class="example">
+              <div class="target-lang">私は日本語が話せます。</div>
+              <div class="translation">Watashi wa nihongo ga hanasemasu. — Я могу говорить по-японски.</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">漢字が書けますか。</div>
+              <div class="translation">Kanji ga kakemasu ka. — Вы умеете писать кандзи?</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">明日行けません。</div>
+              <div class="translation">Ashita ikemasen. — Завтра не смогу прийти.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2: Formation for ru-verbs -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Образование: る-глаголы (一段動詞)</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <p>Для る-глаголов (глаголов II группы) образование потенциальной формы простое:</p>
+
+          <h3>Правило спряжения</h3>
+          <p><strong>る заменяется на られる</strong></p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Словарная форма</th>
+                <th>Изменение</th>
+                <th>Потенциальная форма</th>
+                <th>Перевод</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>食べる (taberu)</td>
+                <td>る → られる</td>
+                <td>食べられる (taberareru)</td>
+                <td>есть → мочь есть</td>
+              </tr>
+              <tr>
+                <td>見る (miru)</td>
+                <td>る → られる</td>
+                <td>見られる (mirareru)</td>
+                <td>смотреть → мочь смотреть</td>
+              </tr>
+              <tr>
+                <td>起きる (okiru)</td>
+                <td>る → られる</td>
+                <td>起きられる (okirareru)</td>
+                <td>вставать → мочь встать</td>
+              </tr>
+              <tr>
+                <td>寝る (neru)</td>
+                <td>る → られる</td>
+                <td>寝られる (nerareru)</td>
+                <td>спать → мочь спать</td>
+              </tr>
+              <tr>
+                <td>教える (oshieru)</td>
+                <td>る → られる</td>
+                <td>教えられる (oshierareru)</td>
+                <td>учить → мочь научить</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="note">
+            <strong>Разговорный вариант:</strong> В разговорной речи часто используется сокращённая форма с ら-抜き (ra-nuki): 食べられる → 食べれる (tabereru), 見られる → 見れる (mireru). Это неформально, но очень распространено.
+          </div>
+
+          <div class="examples">
+            <div class="example">
+              <div class="target-lang">納豆が食べられますか。</div>
+              <div class="translation">Nattou ga taberaremasu ka. — Вы можете есть натто?</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">富士山が見られます。</div>
+              <div class="translation">Fujisan ga miraremasu. — Можно увидеть гору Фудзи.</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">明日は早く起きられません。</div>
+              <div class="translation">Ashita wa hayaku okiraraemasen. — Завтра не смогу встать рано.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 3: Irregular verbs -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Неправильные глаголы</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <p>Два неправильных глагола имеют особые формы потенциальной формы:</p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Словарная форма</th>
+                <th>Потенциальная форма</th>
+                <th>Перевод</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>する (suru)</td>
+                <td>できる (dekiru)</td>
+                <td>делать → мочь делать</td>
+              </tr>
+              <tr>
+                <td>来る (kuru)</td>
+                <td>来られる (korareru)</td>
+                <td>приходить → мочь прийти</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="note">
+            <strong>Важно:</strong> できる (dekiru) — это отдельный глагол, который также используется в значении "быть готовым", "завершиться" (например, 料理ができた — еда готова).
+          </div>
+
+          <div class="examples">
+            <div class="example">
+              <div class="target-lang">日本語ができますか。</div>
+              <div class="translation">Nihongo ga dekimasu ka. — Вы владеете японским языком?</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">料理ができます。</div>
+              <div class="translation">Ryouri ga dekimasu. — Я умею готовить.</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">明日来られますか。</div>
+              <div class="translation">Ashita koraremasu ka. — Сможете прийти завтра?</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">勉強ができる学生です。</div>
+              <div class="translation">Benkyou ga dekiru gakusei desu. — Это способный студент.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 4: Particle usage -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Употребление частиц: が vs を</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <p>С потенциальной формой обычно используется частица <strong>が</strong> вместо を для обозначения объекта действия.</p>
+
+          <h3>Сравнение</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Обычная форма (を)</th>
+                <th>Потенциальная форма (が)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>本を読みます (hon wo yomimasu)</td>
+                <td>本が読めます (hon ga yomemasu)</td>
+              </tr>
+              <tr>
+                <td>魚を食べます (sakana wo tabemasu)</td>
+                <td>魚が食べられます (sakana ga taberaremasu)</td>
+              </tr>
+              <tr>
+                <td>漢字を書きます (kanji wo kakimasu)</td>
+                <td>漢字が書けます (kanji ga kakemasu)</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="note">
+            <strong>Примечание:</strong> В разговорной речи иногда используется を, но が является более правильным и естественным выбором для потенциальной формы.
+          </div>
+
+          <div class="examples">
+            <div class="example">
+              <div class="target-lang">日本語が話せますか。</div>
+              <div class="translation">Nihongo ga hanasemasu ka. — Вы говорите по-японски?</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">ピアノが弾けます。</div>
+              <div class="translation">Piano ga hikemasu. — Я умею играть на фортепиано.</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">辛い物が食べられません。</div>
+              <div class="translation">Karai mono ga taberaremasen. — Я не могу есть острое.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 5: Polite forms -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Формальные и неформальные формы</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <p>Потенциальная форма может использоваться в различных уровнях вежливости:</p>
+
+          <h3>Уровни вежливости</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Глагол</th>
+                <th>Неформальная (утв.)</th>
+                <th>Формальная (утв.)</th>
+                <th>Неформальная (отр.)</th>
+                <th>Формальная (отр.)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>書く (писать)</td>
+                <td>書ける (kakeru)</td>
+                <td>書けます (kakemasu)</td>
+                <td>書けない (kakenai)</td>
+                <td>書けません (kakemasen)</td>
+              </tr>
+              <tr>
+                <td>食べる (есть)</td>
+                <td>食べられる (taberareru)</td>
+                <td>食べられます (taberaremasu)</td>
+                <td>食べられない (taberarenai)</td>
+                <td>食べられません (taberaremasen)</td>
+              </tr>
+              <tr>
+                <td>する (делать)</td>
+                <td>できる (dekiru)</td>
+                <td>できます (dekimasu)</td>
+                <td>できない (dekinai)</td>
+                <td>できません (dekimasen)</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="examples">
+            <div class="example">
+              <div class="target-lang">泳げる？ (неформально)</div>
+              <div class="translation">Oyogeru? — Умеешь плавать?</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">泳げますか。(формально)</div>
+              <div class="translation">Oyogemasu ka. — Вы умеете плавать?</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">今日は行けない。(неформально)</div>
+              <div class="translation">Kyou wa ikenai. — Сегодня не могу пойти.</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">今日は行けません。(формально)</div>
+              <div class="translation">Kyou wa ikemasen. — Сегодня не смогу прийти.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 6: Common expressions -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Распространённые выражения</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Часто используемые фразы с потенциальной формой</h3>
+
+          <div class="examples">
+            <div class="example">
+              <div class="target-lang">英語ができますか。</div>
+              <div class="translation">Eigo ga dekimasu ka. — Вы владеете английским?</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">運転できますか。</div>
+              <div class="translation">Unten dekimasu ka. — Вы умеете водить машину?</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">信じられない！</div>
+              <div class="translation">Shinjirarenai! — Не могу поверить!</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">会えてうれしいです。</div>
+              <div class="translation">Aete ureshii desu. — Рад встрече (рад, что смог встретиться).</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">時間があれば行けます。</div>
+              <div class="translation">Jikan ga areba ikemasu. — Если будет время, смогу прийти.</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">お酒が飲めません。</div>
+              <div class="translation">Osake ga nomemasen. — Я не могу пить алкоголь.</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">自転車に乗れますか。</div>
+              <div class="translation">Jitensha ni noremasu ka. — Вы умеете ездить на велосипеде?</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">日本料理が作れます。</div>
+              <div class="translation">Nihon ryouri ga tsukuremasu. — Я могу готовить японскую еду.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 7: Potential vs できる -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Потенциальная форма vs できる</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <p>Есть два способа выразить способность сделать что-то: использовать потенциальную форму глагола или конструкцию с できる.</p>
+
+          <h3>Сравнение</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Потенциальная форма</th>
+                <th>Конструкция с できる</th>
+                <th>Значение</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>書ける (kakeru)</td>
+                <td>書くことができる (kaku koto ga dekiru)</td>
+                <td>мочь писать</td>
+              </tr>
+              <tr>
+                <td>話せる (hanaseru)</td>
+                <td>話すことができる (hanasu koto ga dekiru)</td>
+                <td>мочь говорить</td>
+              </tr>
+              <tr>
+                <td>泳げる (oyogeru)</td>
+                <td>泳ぐことができる (oyogu koto ga dekiru)</td>
+                <td>мочь плавать</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="note">
+            <strong>Различие:</strong> Потенциальная форма более естественна в разговорной речи, а конструкция с できる звучит более формально и часто используется в письменной речи.
+          </div>
+
+          <div class="examples">
+            <div class="example">
+              <div class="target-lang">日本語が話せます。(разговорная)</div>
+              <div class="translation">Nihongo ga hanasemasu. — Я говорю по-японски.</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">日本語を話すことができます。(формальная)</div>
+              <div class="translation">Nihongo wo hanasu koto ga dekimasu. — Я могу говорить по-японски.</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">一人で行けます。(разговорная)</div>
+              <div class="translation">Hitori de ikemasu. — Могу пойти один.</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">一人で行くことができます。(формальная)</div>
+              <div class="translation">Hitori de iku koto ga dekimasu. — Могу пойти один.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 8: Practice examples -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Практические примеры</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Диалоги и ситуации</h3>
+
+          <div class="examples">
+            <div class="example">
+              <div class="target-lang">A: 明日のパーティーに来られますか。</div>
+              <div class="translation">A: Ashita no paatii ni koraremasu ka. — Сможете прийти на завтрашнюю вечеринку?</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">B: はい、行けます。何時ですか。</div>
+              <div class="translation">B: Hai, ikemasu. Nanji desu ka. — Да, смогу. Во сколько?</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">A: 箸が使えますか。</div>
+              <div class="translation">A: Hashi ga tsukaemasu ka. — Вы умеете пользоваться палочками?</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">B: はい、使えます。日本に住んでいましたから。</div>
+              <div class="translation">B: Hai, tsukaemasu. Nihon ni sunde imashita kara. — Да, умею. Потому что жил в Японии.</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">A: この漢字が読めますか。</div>
+              <div class="translation">A: Kono kanji ga yomemasu ka. — Можете прочитать это кандзи?</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">B: いいえ、読めません。難しいです。</div>
+              <div class="translation">B: Iie, yomemasen. Muzukashii desu. — Нет, не могу. Это сложно.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="back-link">
+      <a href="../">← Вернуться к выбору темы</a>
+    </div>
+  </main>
+  <script src="../../../../assets/js/components.js"></script>
+</body>
 </html>

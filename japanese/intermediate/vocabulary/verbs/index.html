@@ -42,16 +42,16 @@
     }
 
     main {
-      max-width: 620px;
+      max-width: 720px;
       width: 100%;
       background: rgba(15, 23, 42, 0.55);
       border-radius: 24px;
       backdrop-filter: blur(16px);
       box-shadow: 0 28px 48px rgba(2, 6, 23, 0.45);
-      padding: clamp(1.75rem, 6vw, 3rem);
+      padding: clamp(1.75rem, 6vw, 3.25rem);
       display: flex;
       flex-direction: column;
-      gap: 1.5rem;
+      gap: 1.75rem;
     }
 
     h1 {
@@ -63,6 +63,104 @@
       font-size: clamp(1rem, 2.4vw, 1.2rem);
       color: rgba(255, 255, 255, 0.82);
       line-height: 1.8;
+    }
+
+    .flashcard {
+      position: relative;
+      margin: 0 auto;
+      width: min(100%, 420px);
+      aspect-ratio: 3 / 2;
+      perspective: 1100px;
+      cursor: pointer;
+      border-radius: 20px;
+      outline: none;
+    }
+
+    .flashcard-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+      transition: transform 0.6s ease;
+      transform-style: preserve-3d;
+      box-shadow: 0 22px 38px rgba(15, 23, 42, 0.45);
+    }
+
+    .flashcard.flipped .flashcard-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flashcard-face {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      border-radius: inherit;
+      background: rgba(30, 41, 59, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      backface-visibility: hidden;
+    }
+
+    .flashcard-face .kanji {
+      font-size: clamp(2rem, 6vw, 2.8rem);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .flashcard-face .reading {
+      font-size: clamp(1.2rem, 4vw, 1.6rem);
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .flashcard-back {
+      transform: rotateY(180deg);
+      background: rgba(30, 41, 59, 0.96);
+      font-size: clamp(1.4rem, 5vw, 2.2rem);
+      font-weight: 600;
+    }
+
+    .flashcard:focus-visible {
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.65);
+    }
+
+    .progress {
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      color: rgba(226, 232, 240, 0.8);
+    }
+
+    .navigation {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    button {
+      padding: 0.65rem 1.4rem;
+      border-radius: 9999px;
+      border: none;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      background: rgba(59, 130, 246, 0.85);
+      color: #fff;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    button:hover:not(:disabled),
+    button:focus-visible {
+      transform: translateY(-1px);
+      background: rgba(96, 165, 250, 0.9);
+    }
+
+    button:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
     }
 
     .links {
@@ -87,11 +185,151 @@
 <body>
   <main>
     <h1>Японский — Средний — Глаголы</h1>
-    <p>Тут контента пока нет, но я скоро добавлю!</p>
+    <p>Нажмите на карточку, чтобы увидеть перевод. Используйте кнопки, чтобы переходить между словами.</p>
+
+    <div
+      class="flashcard"
+      id="flashcard"
+      role="button"
+      tabindex="0"
+      aria-live="polite"
+      aria-label="Карточка словаря"
+    >
+      <div class="flashcard-inner">
+        <div class="flashcard-face flashcard-front">
+          <div class="kanji" id="card-kanji">働く</div>
+          <div class="reading" id="card-reading">はたらく</div>
+        </div>
+        <div class="flashcard-face flashcard-back">
+          <span id="card-back">работать</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="progress" id="progress">1 / 33</div>
+
+    <div class="navigation">
+      <button type="button" id="prev-btn" disabled>Назад</button>
+      <button type="button" id="next-btn">Дальше</button>
+      <button type="button" id="shuffle-btn">Перемешать</button>
+    </div>
+
     <div class="links">
       <a href="../">Назад к выбору категорий</a>
       <a href="../../">Вернуться к разделу</a>
     </div>
   </main>
+
+  <script>
+    const words = [
+      { japanese: "働く", reading: "はたらく", russian: "работать" },
+      { japanese: "勤める", reading: "つとめる", russian: "служить (в компании)" },
+      { japanese: "辞める", reading: "やめる", russian: "увольняться, бросать" },
+      { japanese: "出張する", reading: "しゅっちょうする", russian: "ехать в командировку" },
+      { japanese: "契約する", reading: "けいやくする", russian: "заключать контракт" },
+      { japanese: "管理する", reading: "かんりする", russian: "управлять" },
+      { japanese: "旅行する", reading: "りょこうする", russian: "путешествовать" },
+      { japanese: "予約する", reading: "よやくする", russian: "бронировать" },
+      { japanese: "到着する", reading: "とうちゃくする", russian: "прибывать" },
+      { japanese: "出発する", reading: "しゅっぱつする", russian: "отправляться" },
+      { japanese: "乗る", reading: "のる", russian: "садиться (на транспорт)" },
+      { japanese: "降りる", reading: "おりる", russian: "выходить, сходить" },
+      { japanese: "泊まる", reading: "とまる", russian: "останавливаться, ночевать" },
+      { japanese: "案内する", reading: "あんないする", russian: "проводить, показывать дорогу" },
+      { japanese: "訪問する", reading: "ほうもんする", russian: "посещать" },
+      { japanese: "調べる", reading: "しらべる", russian: "проверять, исследовать" },
+      { japanese: "治す", reading: "なおす", russian: "лечить, исправлять" },
+      { japanese: "治る", reading: "なおる", russian: "выздоравливать" },
+      { japanese: "痛む", reading: "いたむ", russian: "болеть" },
+      { japanese: "診察する", reading: "しんさつする", russian: "осматривать (пациента)" },
+      { japanese: "接続する", reading: "せつぞくする", russian: "подключать" },
+      { japanese: "操作する", reading: "そうさする", russian: "управлять, оперировать" },
+      { japanese: "保存する", reading: "ほぞんする", russian: "сохранять" },
+      { japanese: "削除する", reading: "さくじょする", russian: "удалять" },
+      { japanese: "送信する", reading: "そうしんする", russian: "отправлять (сообщение)" },
+      { japanese: "受信する", reading: "じゅしんする", russian: "получать (сообщение)" },
+      { japanese: "感じる", reading: "かんじる", russian: "чувствовать" },
+      { japanese: "喜ぶ", reading: "よろこぶ", russian: "радоваться" },
+      { japanese: "悲しむ", reading: "かなしむ", russian: "грустить" },
+      { japanese: "怒る", reading: "おこる", russian: "злиться" },
+      { japanese: "心配する", reading: "しんぱいする", russian: "беспокоиться" },
+      { japanese: "決める", reading: "きめる", russian: "решать" },
+      { japanese: "考える", reading: "かんがえる", russian: "думать" }
+    ];
+
+    const flashcard = document.getElementById("flashcard");
+    const kanji = document.getElementById("card-kanji");
+    const reading = document.getElementById("card-reading");
+    const back = document.getElementById("card-back");
+    const prevBtn = document.getElementById("prev-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const shuffleBtn = document.getElementById("shuffle-btn");
+    const progress = document.getElementById("progress");
+
+    let currentIndex = 0;
+    let shuffledWords = shuffle([...words]);
+
+    function shuffle(array) {
+      const result = [...array];
+      for (let i = result.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [result[i], result[j]] = [result[j], result[i]];
+      }
+      return result;
+    }
+
+    function renderCard() {
+      const { japanese, reading: readingText, russian } = shuffledWords[currentIndex];
+      kanji.textContent = japanese;
+      reading.textContent = readingText;
+      back.textContent = russian;
+      flashcard.classList.remove("flipped");
+      progress.textContent = `${currentIndex + 1} / ${shuffledWords.length}`;
+      prevBtn.disabled = currentIndex === 0;
+      nextBtn.disabled = currentIndex === shuffledWords.length - 1;
+      flashcard.setAttribute(
+        "aria-label",
+        `Японское слово ${japanese} (${readingText}) — нажмите, чтобы увидеть перевод`
+      );
+    }
+
+    function showNext(offset) {
+      const newIndex = currentIndex + offset;
+      if (newIndex < 0 || newIndex >= shuffledWords.length) {
+        return;
+      }
+      currentIndex = newIndex;
+      renderCard();
+    }
+
+    function shuffleCards() {
+      currentIndex = 0;
+      shuffledWords = shuffle([...words]);
+      renderCard();
+    }
+
+    flashcard.addEventListener("click", () => {
+      flashcard.classList.toggle("flipped");
+    });
+
+    flashcard.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        flashcard.classList.toggle("flipped");
+      }
+    });
+
+    prevBtn.addEventListener("click", () => {
+      showNext(-1);
+    });
+
+    nextBtn.addEventListener("click", () => {
+      showNext(1);
+    });
+
+    shuffleBtn.addEventListener("click", shuffleCards);
+
+    renderCard();
+  </script>
 </body>
 </html>

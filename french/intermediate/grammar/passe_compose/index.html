@@ -1,43 +1,604 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Petit Pas — Passé Composé</title>
-    <style>
-        body {
-            font-family: "Montserrat", sans-serif;
-            background: #0f172a;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            text-align: center;
-        }
-
-        main {
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-        }
-
-        a {
-            color: #93c5fd;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Petit Pas — Passé Composé</title>
+  <link rel="stylesheet" href="../../../../assets/css/styles.css" />
 </head>
-
 <body>
-    <main>
-        <h1>Passé Composé</h1>
-        <p>Прошедшее завершенное время.</p>
-        <p>Образуется: avoir/être (в настоящем) + Participe Passé.</p>
-        <p>Используется для законченных действий в прошлом.</p>
-        <p><a href="../">Назад</a></p>
-    </main>
-</body>
+  <main class="main-container">
+    <h1>Passé Composé</h1>
+    <p class="intro">Прошедшее завершённое время используется для законченных действий в прошлом, событий и результатов.</p>
 
+    <div class="accordion">
+      <!-- Accordion Item 1: Formation with Avoir -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Образование с глаголом avoir</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Формула</h3>
+          <p>Большинство глаголов образуют Passé Composé с помощью вспомогательного глагола <strong>avoir</strong> в настоящем времени + <strong>participe passé</strong> (причастие прошедшего времени):</p>
+
+          <div class="note">
+            <strong>Формула:</strong> avoir (présent) + participe passé
+          </div>
+
+          <h3>Образование Participe Passé</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Группа глаголов</th>
+                <th>Правило</th>
+                <th>Пример</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>-ER глаголы</td>
+                <td>-er → -é</td>
+                <td>parler → parlé</td>
+              </tr>
+              <tr>
+                <td>-IR глаголы</td>
+                <td>-ir → -i</td>
+                <td>finir → fini</td>
+              </tr>
+              <tr>
+                <td>-RE глаголы</td>
+                <td>-re → -u</td>
+                <td>vendre → vendu</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Спряжение глагола parler</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Лицо</th>
+                <th>Passé Composé</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>j'</td>
+                <td>ai parlé</td>
+              </tr>
+              <tr>
+                <td>tu</td>
+                <td>as parlé</td>
+              </tr>
+              <tr>
+                <td>il/elle/on</td>
+                <td>a parlé</td>
+              </tr>
+              <tr>
+                <td>nous</td>
+                <td>avons parlé</td>
+              </tr>
+              <tr>
+                <td>vous</td>
+                <td>avez parlé</td>
+              </tr>
+              <tr>
+                <td>ils/elles</td>
+                <td>ont parlé</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Примеры</h3>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">J'ai mangé une pomme.</span><br>
+              <span class="translation">Я съел яблоко.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Elle a fini ses devoirs.</span><br>
+              <span class="translation">Она закончила домашнее задание.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Nous avons vendu notre voiture.</span><br>
+              <span class="translation">Мы продали нашу машину.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Accordion Item 2: Formation with Être -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Образование с глаголом être</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Глаголы движения и изменения состояния</h3>
+          <p>Некоторые глаголы образуют Passé Composé с вспомогательным глаголом <strong>être</strong>. Их можно запомнить по мнемоническому правилу <strong>DR MRS VANDERTRAMP</strong>:</p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Буква</th>
+                <th>Глагол</th>
+                <th>Participe Passé</th>
+                <th>Перевод</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>D</td>
+                <td>Devenir</td>
+                <td>devenu</td>
+                <td>становиться</td>
+              </tr>
+              <tr>
+                <td>R</td>
+                <td>Revenir</td>
+                <td>revenu</td>
+                <td>возвращаться</td>
+              </tr>
+              <tr>
+                <td>M</td>
+                <td>Mourir</td>
+                <td>mort</td>
+                <td>умирать</td>
+              </tr>
+              <tr>
+                <td>R</td>
+                <td>Retourner</td>
+                <td>retourné</td>
+                <td>возвращаться</td>
+              </tr>
+              <tr>
+                <td>S</td>
+                <td>Sortir</td>
+                <td>sorti</td>
+                <td>выходить</td>
+              </tr>
+              <tr>
+                <td>V</td>
+                <td>Venir</td>
+                <td>venu</td>
+                <td>приходить</td>
+              </tr>
+              <tr>
+                <td>A</td>
+                <td>Arriver</td>
+                <td>arrivé</td>
+                <td>прибывать</td>
+              </tr>
+              <tr>
+                <td>N</td>
+                <td>Naître</td>
+                <td>né</td>
+                <td>рождаться</td>
+              </tr>
+              <tr>
+                <td>D</td>
+                <td>Descendre</td>
+                <td>descendu</td>
+                <td>спускаться</td>
+              </tr>
+              <tr>
+                <td>E</td>
+                <td>Entrer</td>
+                <td>entré</td>
+                <td>входить</td>
+              </tr>
+              <tr>
+                <td>R</td>
+                <td>Rentrer</td>
+                <td>rentré</td>
+                <td>возвращаться домой</td>
+              </tr>
+              <tr>
+                <td>T</td>
+                <td>Tomber</td>
+                <td>tombé</td>
+                <td>падать</td>
+              </tr>
+              <tr>
+                <td>R</td>
+                <td>Rester</td>
+                <td>resté</td>
+                <td>оставаться</td>
+              </tr>
+              <tr>
+                <td>A</td>
+                <td>Aller</td>
+                <td>allé</td>
+                <td>идти, ехать</td>
+              </tr>
+              <tr>
+                <td>M</td>
+                <td>Monter</td>
+                <td>monté</td>
+                <td>подниматься</td>
+              </tr>
+              <tr>
+                <td>P</td>
+                <td>Partir</td>
+                <td>parti</td>
+                <td>уезжать</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Спряжение глагола aller</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Лицо</th>
+                <th>Passé Composé</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>je</td>
+                <td>suis allé(e)</td>
+              </tr>
+              <tr>
+                <td>tu</td>
+                <td>es allé(e)</td>
+              </tr>
+              <tr>
+                <td>il/elle/on</td>
+                <td>est allé/allée</td>
+              </tr>
+              <tr>
+                <td>nous</td>
+                <td>sommes allé(e)s</td>
+              </tr>
+              <tr>
+                <td>vous</td>
+                <td>êtes allé(e)(s)</td>
+              </tr>
+              <tr>
+                <td>ils/elles</td>
+                <td>sont allés/allées</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="note">
+            <strong>Важно!</strong> Все возвратные глаголы (se laver, se lever и т.д.) также используют <strong>être</strong> в Passé Composé.
+          </div>
+
+          <h3>Примеры</h3>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">Je suis allé au cinéma.</span><br>
+              <span class="translation">Я ходил в кино.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Elle est arrivée hier.</span><br>
+              <span class="translation">Она приехала вчера.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Nous sommes sortis à 20h.</span><br>
+              <span class="translation">Мы вышли в 20:00.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Accordion Item 3: Agreement Rules -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Правила согласования</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Согласование с être</h3>
+          <p>Когда Passé Composé образуется с <strong>être</strong>, причастие согласуется в роде и числе с подлежащим:</p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Подлежащее</th>
+                <th>Окончание</th>
+                <th>Пример</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Мужской род, ед.ч.</td>
+                <td>-</td>
+                <td>Il est parti</td>
+              </tr>
+              <tr>
+                <td>Женский род, ед.ч.</td>
+                <td>+e</td>
+                <td>Elle est partie</td>
+              </tr>
+              <tr>
+                <td>Мужской род, мн.ч.</td>
+                <td>+s</td>
+                <td>Ils sont partis</td>
+              </tr>
+              <tr>
+                <td>Женский род, мн.ч.</td>
+                <td>+es</td>
+                <td>Elles sont parties</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">Marie est allée à Paris.</span><br>
+              <span class="translation">Мари ездила в Париж. (женский род)</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Mes frères sont arrivés tard.</span><br>
+              <span class="translation">Мои братья приехали поздно. (мужской род, мн.ч.)</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Les filles sont revenues hier.</span><br>
+              <span class="translation">Девочки вернулись вчера. (женский род, мн.ч.)</span>
+            </div>
+          </div>
+
+          <h3>Согласование с avoir</h3>
+          <p>С глаголом <strong>avoir</strong> причастие обычно НЕ согласуется, <strong>КРОМЕ</strong> случаев, когда прямое дополнение стоит ПЕРЕД глаголом:</p>
+
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">J'ai vu Marie. (дополнение после глагола — нет согласования)</span><br>
+              <span class="translation">Я видел Мари.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">La fille que j'ai vue. (дополнение перед глаголом — есть согласование)</span><br>
+              <span class="translation">Девушка, которую я видел.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Les pommes? Je les ai mangées. (местоимение 'les' перед глаголом)</span><br>
+              <span class="translation">Яблоки? Я их съел.</span>
+            </div>
+          </div>
+
+          <div class="note">
+            <strong>Совет:</strong> Согласование с avoir — продвинутое правило. На начальном этапе главное — запомнить обязательное согласование с être.
+          </div>
+        </div>
+      </div>
+
+      <!-- Accordion Item 4: Irregular Participles -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Неправильные причастия</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Самые частые неправильные причастия</h3>
+          <p>Эти глаголы имеют нестандартные формы participe passé, которые нужно запомнить:</p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Infinitif</th>
+                <th>Participe Passé</th>
+                <th>Перевод</th>
+                <th>Пример</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>être</td>
+                <td>été</td>
+                <td>быть</td>
+                <td>J'ai été</td>
+              </tr>
+              <tr>
+                <td>avoir</td>
+                <td>eu</td>
+                <td>иметь</td>
+                <td>J'ai eu</td>
+              </tr>
+              <tr>
+                <td>faire</td>
+                <td>fait</td>
+                <td>делать</td>
+                <td>J'ai fait</td>
+              </tr>
+              <tr>
+                <td>dire</td>
+                <td>dit</td>
+                <td>говорить</td>
+                <td>J'ai dit</td>
+              </tr>
+              <tr>
+                <td>écrire</td>
+                <td>écrit</td>
+                <td>писать</td>
+                <td>J'ai écrit</td>
+              </tr>
+              <tr>
+                <td>lire</td>
+                <td>lu</td>
+                <td>читать</td>
+                <td>J'ai lu</td>
+              </tr>
+              <tr>
+                <td>voir</td>
+                <td>vu</td>
+                <td>видеть</td>
+                <td>J'ai vu</td>
+              </tr>
+              <tr>
+                <td>prendre</td>
+                <td>pris</td>
+                <td>брать</td>
+                <td>J'ai pris</td>
+              </tr>
+              <tr>
+                <td>mettre</td>
+                <td>mis</td>
+                <td>класть</td>
+                <td>J'ai mis</td>
+              </tr>
+              <tr>
+                <td>comprendre</td>
+                <td>compris</td>
+                <td>понимать</td>
+                <td>J'ai compris</td>
+              </tr>
+              <tr>
+                <td>ouvrir</td>
+                <td>ouvert</td>
+                <td>открывать</td>
+                <td>J'ai ouvert</td>
+              </tr>
+              <tr>
+                <td>offrir</td>
+                <td>offert</td>
+                <td>предлагать</td>
+                <td>J'ai offert</td>
+              </tr>
+              <tr>
+                <td>boire</td>
+                <td>bu</td>
+                <td>пить</td>
+                <td>J'ai bu</td>
+              </tr>
+              <tr>
+                <td>courir</td>
+                <td>couru</td>
+                <td>бежать</td>
+                <td>J'ai couru</td>
+              </tr>
+              <tr>
+                <td>pouvoir</td>
+                <td>pu</td>
+                <td>мочь</td>
+                <td>J'ai pu</td>
+              </tr>
+              <tr>
+                <td>savoir</td>
+                <td>su</td>
+                <td>знать</td>
+                <td>J'ai su</td>
+              </tr>
+              <tr>
+                <td>vouloir</td>
+                <td>voulu</td>
+                <td>хотеть</td>
+                <td>J'ai voulu</td>
+              </tr>
+              <tr>
+                <td>devoir</td>
+                <td>dû</td>
+                <td>быть должным</td>
+                <td>J'ai dû</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Примеры использования</h3>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">J'ai fait mes devoirs.</span><br>
+              <span class="translation">Я сделал домашнее задание.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Tu as lu ce livre?</span><br>
+              <span class="translation">Ты читал эту книгу?</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Il a pris le train.</span><br>
+              <span class="translation">Он сел на поезд.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Nous avons vu un film.</span><br>
+              <span class="translation">Мы посмотрели фильм.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Elle a ouvert la fenêtre.</span><br>
+              <span class="translation">Она открыла окно.</span>
+            </div>
+          </div>
+
+          <div class="note">
+            <strong>Совет:</strong> Неправильные причастия нужно просто выучить наизусть. Повторяйте их регулярно!
+          </div>
+        </div>
+      </div>
+
+      <!-- Accordion Item 5: Usage -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Употребление Passé Composé</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Когда использовать Passé Composé</h3>
+
+          <h3>1. Законченные действия</h3>
+          <p>Для описания завершённых действий в прошлом:</p>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">J'ai déjeuné à midi.</span><br>
+              <span class="translation">Я пообедал в полдень.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Il a terminé son travail.</span><br>
+              <span class="translation">Он закончил свою работу.</span>
+            </div>
+          </div>
+
+          <h3>2. Последовательность событий</h3>
+          <p>Для действий, следующих друг за другом:</p>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">Je suis entré, j'ai fermé la porte et je me suis assis.</span><br>
+              <span class="translation">Я вошёл, закрыл дверь и сел.</span>
+            </div>
+          </div>
+
+          <h3>3. Конкретные события</h3>
+          <p>Для отдельных событий с чётким временным указанием:</p>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">Hier, j'ai rencontré Marie.</span><br>
+              <span class="translation">Вчера я встретил Мари.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">En 2010, nous avons déménagé à Paris.</span><br>
+              <span class="translation">В 2010 году мы переехали в Париж.</span>
+            </div>
+          </div>
+
+          <h3>4. Внезапные действия</h3>
+          <p>Для действий, которые прервали продолжающееся действие (в Imparfait):</p>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">Je dormais quand le téléphone a sonné.</span><br>
+              <span class="translation">Я спал, когда зазвонил телефон.</span>
+            </div>
+          </div>
+
+          <h3>Типичные маркеры Passé Composé</h3>
+          <ul>
+            <li><strong>Hier</strong> — вчера</li>
+            <li><strong>La semaine dernière</strong> — на прошлой неделе</li>
+            <li><strong>Il y a (+ время)</strong> — назад</li>
+            <li><strong>Soudain</strong> — вдруг</li>
+            <li><strong>Tout à coup</strong> — вдруг</li>
+            <li><strong>Un jour</strong> — однажды</li>
+            <li><strong>Une fois</strong> — один раз</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="back-link">
+      <a href="../">← Вернуться к выбору темы</a>
+    </div>
+  </main>
+  <script src="../../../../assets/js/components.js"></script>
+</body>
 </html>

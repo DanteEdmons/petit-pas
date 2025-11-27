@@ -1,43 +1,488 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Petit Pas — Inversion</title>
-    <style>
-        body {
-            font-family: "Montserrat", sans-serif;
-            background: #0f172a;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            text-align: center;
-        }
-
-        main {
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-        }
-
-        a {
-            color: #93c5fd;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Petit Pas — Inversion</title>
+  <link rel="stylesheet" href="../../../../assets/css/styles.css" />
 </head>
-
 <body>
-    <main>
-        <h1>Inversion</h1>
-        <p>Инверсия.</p>
-        <p>Изменение порядка слов для усиления эмоциональности.</p>
-        <p>Пример: Never have I seen such beauty.</p>
-        <p><a href="../">Назад</a></p>
-    </main>
-</body>
+  <main class="main-container">
+    <h1>Inversion</h1>
+    <p class="intro">Инверсия — это изменение обычного порядка слов в предложении (подлежащее + глагол) на обратный (глагол + подлежащее). Инверсия используется для усиления эмоциональности, драматичности или в формальной речи.</p>
 
+    <div class="accordion">
+      <!-- Negative Adverbs -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>1. Инверсия после отрицательных наречий</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Формула</h3>
+          <p><strong>Negative Adverb + Auxiliary Verb + Subject + Main Verb</strong></p>
+
+          <h3>Основные отрицательные наречия</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Наречие</th>
+                <th>Значение</th>
+                <th>Обычный порядок</th>
+                <th>Инверсия</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Never</td>
+                <td>никогда</td>
+                <td>I have never seen such beauty.</td>
+                <td><strong>Never have I seen</strong> such beauty.</td>
+              </tr>
+              <tr>
+                <td>Rarely</td>
+                <td>редко</td>
+                <td>She rarely goes out.</td>
+                <td><strong>Rarely does she go</strong> out.</td>
+              </tr>
+              <tr>
+                <td>Seldom</td>
+                <td>редко</td>
+                <td>He seldom complains.</td>
+                <td><strong>Seldom does he complain</strong>.</td>
+              </tr>
+              <tr>
+                <td>Hardly</td>
+                <td>едва</td>
+                <td>I had hardly arrived when the phone rang.</td>
+                <td><strong>Hardly had I arrived</strong> when the phone rang.</td>
+              </tr>
+              <tr>
+                <td>Scarcely</td>
+                <td>едва</td>
+                <td>We had scarcely begun.</td>
+                <td><strong>Scarcely had we begun</strong>.</td>
+              </tr>
+              <tr>
+                <td>Barely</td>
+                <td>едва</td>
+                <td>They had barely finished.</td>
+                <td><strong>Barely had they finished</strong>.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">Never before have I witnessed such courage.</span> — <span class="translation">Никогда прежде я не видел такой храбрости.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Rarely do we get such opportunities.</span> — <span class="translation">Редко нам попадаются такие возможности.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Seldom has there been a more difficult decision.</span> — <span class="translation">Редко бывало более сложное решение.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Hardly had we left when it started raining.</span> — <span class="translation">Едва мы ушли, как начался дождь.</span>
+            </div>
+          </div>
+
+          <div class="note">
+            <strong>Важно:</strong> В Present Simple и Past Simple добавляется вспомогательный глагол do/does/did.
+          </div>
+        </div>
+      </div>
+
+      <!-- No Sooner, Not Only -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>2. No sooner, Not only, No way</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>No sooner... than</h3>
+          <p><strong>No sooner + auxiliary + subject + verb... than...</strong></p>
+          <p>Значение: как только... так сразу...</p>
+
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">No sooner had I arrived than the meeting started.</span> — <span class="translation">Как только я приехал, собрание началось.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">No sooner had we sat down than the waiter came over.</span> — <span class="translation">Как только мы сели, подошёл официант.</span>
+            </div>
+          </div>
+
+          <h3>Not only... but also</h3>
+          <p><strong>Not only + auxiliary + subject + verb... but also...</strong></p>
+
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">Not only did he lose his job, but he also lost his house.</span> — <span class="translation">Он не только потерял работу, но и лишился дома.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Not only is she intelligent, but she is also kind.</span> — <span class="translation">Она не только умная, но и добрая.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Not only have they finished the project, but they've also started a new one.</span> — <span class="translation">Они не только завершили проект, но и начали новый.</span>
+            </div>
+          </div>
+
+          <h3>Другие отрицательные выражения</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Выражение</th>
+                <th>Пример с инверсией</th>
+                <th>Перевод</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>No way</td>
+                <td>No way will I accept this offer.</td>
+                <td>Ни за что я не приму это предложение.</td>
+              </tr>
+              <tr>
+                <td>Under no circumstances</td>
+                <td>Under no circumstances should you open this door.</td>
+                <td>Ни при каких обстоятельствах не открывайте эту дверь.</td>
+              </tr>
+              <tr>
+                <td>At no time</td>
+                <td>At no time did I agree to this.</td>
+                <td>Я никогда с этим не соглашался.</td>
+              </tr>
+              <tr>
+                <td>On no account</td>
+                <td>On no account must you tell anyone.</td>
+                <td>Ни в коем случае никому не рассказывайте.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="note">
+            <strong>Регистр:</strong> Эти конструкции очень формальные, используются в письменной речи, публичных выступлениях, литературе.
+          </div>
+        </div>
+      </div>
+
+      <!-- Only Expressions -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>3. Инверсия с Only</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Формула</h3>
+          <p><strong>Only + time/place expression + auxiliary + subject + verb</strong></p>
+
+          <h3>Only + время</h3>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">Only yesterday did I realize the truth.</span> — <span class="translation">Только вчера я понял правду.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Only then did she understand what had happened.</span> — <span class="translation">Только тогда она поняла, что произошло.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Only after the exam did I feel relaxed.</span> — <span class="translation">Только после экзамена я почувствовал облегчение.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Only when I saw her face did I recognize her.</span> — <span class="translation">Только когда я увидел её лицо, я узнал её.</span>
+            </div>
+          </div>
+
+          <h3>Only + место</h3>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">Only in this way can we solve the problem.</span> — <span class="translation">Только таким образом мы можем решить проблему.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Only here will you find such quality.</span> — <span class="translation">Только здесь вы найдёте такое качество.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Only by working hard can you succeed.</span> — <span class="translation">Только упорно работая, вы сможете добиться успеха.</span>
+            </div>
+          </div>
+
+          <h3>Only if</h3>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">Only if you study will you pass the exam.</span> — <span class="translation">Только если ты будешь учиться, ты сдашь экзамен.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Only if we hurry will we catch the train.</span> — <span class="translation">Только если мы поторопимся, мы успеем на поезд.</span>
+            </div>
+          </div>
+
+          <div class="note">
+            <strong>Внимание:</strong> Инверсия НЕ используется, если "only" относится к подлежащему:<br>
+            • Only John knows the answer. (Только Джон знает ответ.) — обычный порядок слов
+          </div>
+        </div>
+      </div>
+
+      <!-- Conditional Inversion -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>4. Инверсия в условных предложениях</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Инверсия вместо IF</h3>
+          <p>В формальном английском можно опустить "if" и использовать инверсию.</p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Тип условия</th>
+                <th>С IF</th>
+                <th>С инверсией</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Second Conditional (were)</td>
+                <td>If I were rich...</td>
+                <td><strong>Were I</strong> rich...</td>
+              </tr>
+              <tr>
+                <td>Third Conditional (had)</td>
+                <td>If I had known...</td>
+                <td><strong>Had I known</strong>...</td>
+              </tr>
+              <tr>
+                <td>First Conditional (should)</td>
+                <td>If you should need help...</td>
+                <td><strong>Should you need</strong> help...</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Примеры с Were</h3>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">Were I you, I would accept the offer.</span> — <span class="translation">Будь я на твоём месте, я бы принял предложение.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Were she here, she would help us.</span> — <span class="translation">Будь она здесь, она бы нам помогла.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Were it not for your help, I would have failed.</span> — <span class="translation">Если бы не твоя помощь, я бы провалился.</span>
+            </div>
+          </div>
+
+          <h3>Примеры с Had</h3>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">Had I known you were coming, I would have prepared dinner.</span> — <span class="translation">Знай я, что ты придёшь, я бы приготовил ужин.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Had we left earlier, we wouldn't have missed the flight.</span> — <span class="translation">Уйди мы раньше, мы бы не опоздали на рейс.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Had she studied harder, she would have passed.</span> — <span class="translation">Учись она усерднее, она бы сдала.</span>
+            </div>
+          </div>
+
+          <h3>Примеры с Should</h3>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">Should you need any assistance, please call me.</span> — <span class="translation">Если вам понадобится помощь, позвоните мне.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Should the situation change, we will inform you immediately.</span> — <span class="translation">Если ситуация изменится, мы сразу вас проинформируем.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Should anyone ask, tell them I'm in a meeting.</span> — <span class="translation">Если кто-нибудь спросит, скажи, что я на встрече.</span>
+            </div>
+          </div>
+
+          <div class="note">
+            <strong>Регистр:</strong> Условная инверсия очень формальная, используется в деловой переписке, официальных документах, литературе.
+          </div>
+        </div>
+      </div>
+
+      <!-- After So/Such/As -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>5. Инверсия с So, Such, As</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>So + прилагательное/наречие</h3>
+          <p><strong>So + adjective/adverb + auxiliary + subject + verb</strong></p>
+
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">So beautiful was the sunset that everyone stopped to watch.</span> — <span class="translation">Закат был настолько красивым, что все остановились посмотреть.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">So quickly did he run that no one could catch him.</span> — <span class="translation">Он бежал так быстро, что никто не мог его догнать.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">So tired was I that I fell asleep immediately.</span> — <span class="translation">Я был так устал, что заснул мгновенно.</span>
+            </div>
+          </div>
+
+          <h3>Such + существительное</h3>
+          <p><strong>Such + be + noun</strong></p>
+
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">Such was his anger that he couldn't speak.</span> — <span class="translation">Его гнев был таков, что он не мог говорить.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Such is life.</span> — <span class="translation">Такова жизнь.</span>
+            </div>
+          </div>
+
+          <h3>As + выражения сравнения</h3>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">Expensive as it was, I bought it.</span> — <span class="translation">Хотя это было дорого, я купил это.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Try as she might, she couldn't open the door.</span> — <span class="translation">Как она ни старалась, она не могла открыть дверь.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Young as he is, he's very responsible.</span> — <span class="translation">Хотя он молод, он очень ответственный.</span>
+            </div>
+          </div>
+
+          <div class="note">
+            <strong>Стиль:</strong> Эти конструкции характерны для литературного и формального стиля.
+          </div>
+        </div>
+      </div>
+
+      <!-- After Place Expressions -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>6. Инверсия после выражений места</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Формула</h3>
+          <p><strong>Place expression + verb + subject</strong></p>
+          <p>Используется для описания сцены или создания драматического эффекта.</p>
+
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">On the hill stood a lonely castle.</span> — <span class="translation">На холме стоял одинокий замок.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">In the corner sat an old man.</span> — <span class="translation">В углу сидел старик.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Under the tree lay a sleeping dog.</span> — <span class="translation">Под деревом лежала спящая собака.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Around the corner came a police car.</span> — <span class="translation">Из-за угла показалась полицейская машина.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Through the door walked a tall stranger.</span> — <span class="translation">В дверь вошёл высокий незнакомец.</span>
+            </div>
+          </div>
+
+          <h3>С направлением движения</h3>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">Down the street raced the children.</span> — <span class="translation">По улице мчались дети.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Up the stairs ran the cat.</span> — <span class="translation">По лестнице вверх побежал кот.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Away flew the birds.</span> — <span class="translation">Прочь улетели птицы.</span>
+            </div>
+          </div>
+
+          <div class="note">
+            <strong>Важно:</strong> Эта инверсия НЕ используется с местоимениями:<br>
+            • In the corner he sat. ✗<br>
+            • In the corner sat he. ✗<br>
+            • He sat in the corner. ✓
+          </div>
+        </div>
+      </div>
+
+      <!-- Summary -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>7. Сводная таблица и применение</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Когда использовать инверсию</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Ситуация</th>
+                <th>Регистр</th>
+                <th>Пример</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Отрицательные наречия</td>
+                <td>Формальный</td>
+                <td>Never have I seen such beauty.</td>
+              </tr>
+              <tr>
+                <td>Условные предложения</td>
+                <td>Очень формальный</td>
+                <td>Had I known, I would have come.</td>
+              </tr>
+              <tr>
+                <td>Only + время/место</td>
+                <td>Формальный</td>
+                <td>Only then did I understand.</td>
+              </tr>
+              <tr>
+                <td>So/Such для эмфазы</td>
+                <td>Литературный</td>
+                <td>So beautiful was the view...</td>
+              </tr>
+              <tr>
+                <td>Описание места/сцены</td>
+                <td>Повествовательный</td>
+                <td>On the hill stood a castle.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Формальность: от менее к более формальному</h3>
+          <ol>
+            <li><strong>Описание места</strong> — нейтральный повествовательный стиль</li>
+            <li><strong>Only + выражения</strong> — формальная речь и письмо</li>
+            <li><strong>Отрицательные наречия</strong> — формальная речь, публичные выступления</li>
+            <li><strong>Условная инверсия</strong> — деловая переписка, юридические документы</li>
+            <li><strong>So/Such инверсия</strong> — литературный, поэтический стиль</li>
+          </ol>
+
+          <div class="note">
+            <strong>Совет:</strong> В повседневной разговорной речи инверсия почти не используется. Она характерна для:
+            <ul>
+              <li>Формальных публичных выступлений</li>
+              <li>Академического письма</li>
+              <li>Художественной литературы</li>
+              <li>Официальных документов</li>
+              <li>Новостных репортажей</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="back-link">
+      <a href="../">← Вернуться к выбору темы</a>
+    </div>
+  </main>
+
+  <script src="../../../../assets/js/components.js"></script>
+</body>
 </html>

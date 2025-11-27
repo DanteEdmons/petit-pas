@@ -1,44 +1,278 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Petit Pas — Conditionals</title>
-    <style>
-        body {
-            font-family: "Montserrat", sans-serif;
-            background: #0f172a;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            text-align: center;
-        }
-
-        main {
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-        }
-
-        a {
-            color: #93c5fd;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Petit Pas — Conditionals</title>
+  <link rel="stylesheet" href="../../../../assets/css/styles.css" />
 </head>
-
 <body>
-    <main>
-        <h1>Conditionals</h1>
-        <p>Условные предложения.</p>
-        <p>Zero Conditional: Всегда истина (If + Present Simple, Present Simple).</p>
-        <p>First Conditional: Реальное будущее (If + Present Simple, will + V).</p>
-        <p>Second Conditional: Нереальное настоящее (If + Past Simple, would + V).</p>
-        <p><a href="../">Назад</a></p>
-    </main>
-</body>
+  <main class="main-container">
+    <h1>Conditionals</h1>
+    <p class="intro">Условные предложения выражают гипотетические ситуации и их последствия.</p>
 
+    <div class="accordion">
+      <!-- Zero Conditional -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>1. Zero Conditional (Нулевое условное)</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Формула</h3>
+          <p><strong>If + Present Simple, Present Simple</strong></p>
+
+          <h3>Использование</h3>
+          <p>Общие истины, научные факты, законы природы — то, что всегда верно.</p>
+
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">If you heat water to 100°C, it boils.</span> — <span class="translation">Если нагреть воду до 100°C, она закипает.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">If it rains, the ground gets wet.</span> — <span class="translation">Если идёт дождь, земля становится мокрой.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Plants die if they don't get water.</span> — <span class="translation">Растения умирают, если не получают воду.</span>
+            </div>
+          </div>
+
+          <div class="note">
+            <strong>Примечание:</strong> "If" можно заменить на "when" без изменения смысла.
+          </div>
+        </div>
+      </div>
+
+      <!-- First Conditional -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>2. First Conditional (Первое условное)</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Формула</h3>
+          <p><strong>If + Present Simple, will + Infinitive</strong></p>
+
+          <h3>Использование</h3>
+          <p>Реальные, вероятные ситуации в будущем.</p>
+
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">If it rains tomorrow, I will stay home.</span> — <span class="translation">Если завтра пойдёт дождь, я останусь дома.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">If you study hard, you will pass the exam.</span> — <span class="translation">Если будешь усердно учиться, сдашь экзамен.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">She will be angry if you don't call her.</span> — <span class="translation">Она разозлится, если ты ей не позвонишь.</span>
+            </div>
+          </div>
+
+          <h3>Варианты с модальными глаголами</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Модальный глагол</th>
+                <th>Пример</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>can</td><td>If you finish early, you can leave.</td></tr>
+              <tr><td>may</td><td>If it stops raining, we may go out.</td></tr>
+              <tr><td>should</td><td>If you feel sick, you should see a doctor.</td></tr>
+              <tr><td>must</td><td>If you want to succeed, you must work hard.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Second Conditional -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>3. Second Conditional (Второе условное)</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Формула</h3>
+          <p><strong>If + Past Simple, would + Infinitive</strong></p>
+
+          <h3>Использование</h3>
+          <p>Нереальные, гипотетические ситуации в настоящем или будущем; советы.</p>
+
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">If I had a million dollars, I would travel the world.</span> — <span class="translation">Если бы у меня был миллион долларов, я бы путешествовал по миру.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">If I were you, I would accept the job offer.</span> — <span class="translation">На твоём месте я бы принял предложение о работе.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">She would be happier if she lived by the sea.</span> — <span class="translation">Она была бы счастливее, если бы жила у моря.</span>
+            </div>
+          </div>
+
+          <div class="note">
+            <strong>If I were:</strong> В формальном английском с "I" используется "were", а не "was":<br>
+            • If I were rich... (правильно)<br>
+            • If I was rich... (разговорный вариант)
+          </div>
+
+          <h3>Варианты с модальными глаголами</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Модальный глагол</th>
+                <th>Пример</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>could</td><td>If I had time, I could help you.</td></tr>
+              <tr><td>might</td><td>If she tried harder, she might succeed.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Third Conditional -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>4. Third Conditional (Третье условное)</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Формула</h3>
+          <p><strong>If + Past Perfect, would have + Past Participle</strong></p>
+
+          <h3>Использование</h3>
+          <p>Нереальные ситуации в прошлом — то, что могло бы произойти, но не произошло.</p>
+
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">If I had studied harder, I would have passed the exam.</span> — <span class="translation">Если бы я учился усерднее, я бы сдал экзамен.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">If she had left earlier, she wouldn't have missed the train.</span> — <span class="translation">Если бы она вышла раньше, она бы не опоздала на поезд.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">We would have gone to the beach if it hadn't rained.</span> — <span class="translation">Мы бы пошли на пляж, если бы не было дождя.</span>
+            </div>
+          </div>
+
+          <h3>Варианты с модальными глаголами</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Модальный глагол</th>
+                <th>Пример</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>could have</td><td>If you had asked, I could have helped.</td></tr>
+              <tr><td>might have</td><td>If he had known, he might have come.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Comparison Table -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>5. Сравнительная таблица</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <table>
+            <thead>
+              <tr>
+                <th>Тип</th>
+                <th>If-clause</th>
+                <th>Main clause</th>
+                <th>Время</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Zero</td>
+                <td>Present Simple</td>
+                <td>Present Simple</td>
+                <td>Всегда</td>
+              </tr>
+              <tr>
+                <td>First</td>
+                <td>Present Simple</td>
+                <td>will + Inf</td>
+                <td>Будущее (реальное)</td>
+              </tr>
+              <tr>
+                <td>Second</td>
+                <td>Past Simple</td>
+                <td>would + Inf</td>
+                <td>Настоящее/Будущее (нереальное)</td>
+              </tr>
+              <tr>
+                <td>Third</td>
+                <td>Past Perfect</td>
+                <td>would have + V3</td>
+                <td>Прошлое (нереальное)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Unless, As long as, etc. -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>6. Другие условные союзы</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <table>
+            <thead>
+              <tr>
+                <th>Союз</th>
+                <th>Значение</th>
+                <th>Пример</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>unless</td>
+                <td>если не (= if not)</td>
+                <td>Unless you hurry, you'll be late.</td>
+              </tr>
+              <tr>
+                <td>as long as</td>
+                <td>при условии что</td>
+                <td>I'll help you as long as you listen.</td>
+              </tr>
+              <tr>
+                <td>provided (that)</td>
+                <td>при условии что</td>
+                <td>You can go provided you're back by 10.</td>
+              </tr>
+              <tr>
+                <td>in case</td>
+                <td>на случай если</td>
+                <td>Take an umbrella in case it rains.</td>
+              </tr>
+              <tr>
+                <td>even if</td>
+                <td>даже если</td>
+                <td>I'll go even if it rains.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="back-link">
+      <a href="../">← Вернуться к выбору темы</a>
+    </div>
+  </main>
+
+  <script src="../../../../assets/js/components.js"></script>
+</body>
 </html>

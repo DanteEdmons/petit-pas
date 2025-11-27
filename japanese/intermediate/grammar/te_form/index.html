@@ -1,43 +1,451 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Petit Pas — Te-form</title>
-    <style>
-        body {
-            font-family: "Montserrat", sans-serif;
-            background: #0f172a;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            text-align: center;
-        }
-
-        main {
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-        }
-
-        a {
-            color: #93c5fd;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Petit Pas — Тэ-форма (て形)</title>
+  <link rel="stylesheet" href="../../../../assets/css/styles.css" />
 </head>
-
 <body>
-    <main>
-        <h1>Te-form</h1>
-        <p>Тэ-форма глаголов.</p>
-        <p>Используется для соединения предложений, просьб (kudasai) и длительного вида (imasu).</p>
-        <p>Tabete, nonde, mite.</p>
-        <p><a href="../">Назад</a></p>
-    </main>
-</body>
+  <main class="main-container">
+    <h1>Тэ-форма (て形)</h1>
+    <p class="intro">Тэ-форма — одна из важнейших форм японских глаголов. Используется для соединения предложений, выражения просьб, длительного действия и многих других грамматических конструкций.</p>
 
+    <div class="accordion">
+      <!-- Section 1: う-verbs (Godan verbs) -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Образование тэ-формы: う-глаголы (五段動詞)</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <p>У う-глаголов (глаголов I группы) правила образования зависят от последнего слога основы:</p>
+
+          <h3>Правила спряжения</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Окончание</th>
+                <th>Изменение</th>
+                <th>Пример</th>
+                <th>Тэ-форма</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>う, つ, る</td>
+                <td>→ って</td>
+                <td>買う (kau - покупать)</td>
+                <td>買って (katte)</td>
+              </tr>
+              <tr>
+                <td>む, ぶ, ぬ</td>
+                <td>→ んで</td>
+                <td>飲む (nomu - пить)</td>
+                <td>飲んで (nonde)</td>
+              </tr>
+              <tr>
+                <td>く</td>
+                <td>→ いて</td>
+                <td>書く (kaku - писать)</td>
+                <td>書いて (kaite)</td>
+              </tr>
+              <tr>
+                <td>ぐ</td>
+                <td>→ いで</td>
+                <td>泳ぐ (oyogu - плавать)</td>
+                <td>泳いで (oyoide)</td>
+              </tr>
+              <tr>
+                <td>す</td>
+                <td>→ して</td>
+                <td>話す (hanasu - говорить)</td>
+                <td>話して (hanashite)</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="note">
+            <strong>Исключение:</strong> 行く (iku - идти) → 行って (itte), а не いいて
+          </div>
+
+          <div class="examples">
+            <div class="example">
+              <div class="target-lang">待つ → 待って (matsu → matte)</div>
+              <div class="translation">ждать → подожди</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">遊ぶ → 遊んで (asobu → asonde)</div>
+              <div class="translation">играть → поиграй</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">読む → 読んで (yomu → yonde)</div>
+              <div class="translation">читать → прочитай</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2: る-verbs (Ichidan verbs) -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Образование тэ-формы: る-глаголы (一段動詞)</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <p>У る-глаголов (глаголов II группы) образование тэ-формы очень простое:</p>
+
+          <h3>Правило спряжения</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Словарная форма</th>
+                <th>Изменение</th>
+                <th>Тэ-форма</th>
+                <th>Перевод</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>食べる (taberu)</td>
+                <td>る → て</td>
+                <td>食べて (tabete)</td>
+                <td>есть → поешь</td>
+              </tr>
+              <tr>
+                <td>見る (miru)</td>
+                <td>る → て</td>
+                <td>見て (mite)</td>
+                <td>смотреть → посмотри</td>
+              </tr>
+              <tr>
+                <td>起きる (okiru)</td>
+                <td>る → て</td>
+                <td>起きて (okite)</td>
+                <td>вставать → вставай</td>
+              </tr>
+              <tr>
+                <td>寝る (neru)</td>
+                <td>る → て</td>
+                <td>寝て (nete)</td>
+                <td>спать → поспи</td>
+              </tr>
+              <tr>
+                <td>教える (oshieru)</td>
+                <td>る → て</td>
+                <td>教えて (oshiete)</td>
+                <td>учить → научи</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="note">
+            <strong>Совет:</strong> Просто убираем る и добавляем て. Это самая простая группа глаголов!
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 3: Irregular verbs -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Неправильные глаголы</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <p>В японском языке всего два неправильных глагола, которые нужно запомнить:</p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Словарная форма</th>
+                <th>Тэ-форма</th>
+                <th>Перевод</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>する (suru)</td>
+                <td>して (shite)</td>
+                <td>делать</td>
+              </tr>
+              <tr>
+                <td>来る (kuru)</td>
+                <td>来て (kite)</td>
+                <td>приходить</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="examples">
+            <div class="example">
+              <div class="target-lang">勉強する → 勉強して (benkyou suru → benkyou shite)</div>
+              <div class="translation">учиться → учись</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">来る → 来て (kuru → kite)</div>
+              <div class="translation">приходить → приходи</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 4: Uses - てください -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Использование: てください (просьбы)</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <p>Конструкция <strong>て + ください</strong> используется для вежливых просьб и означает "пожалуйста, сделайте..."</p>
+
+          <h3>Формула</h3>
+          <p><strong>Глагол в тэ-форме + ください = Пожалуйста, сделайте...</strong></p>
+
+          <div class="examples">
+            <div class="example">
+              <div class="target-lang">ちょっと待ってください。</div>
+              <div class="translation">Chotto matte kudasai. — Пожалуйста, немного подождите.</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">ここに座ってください。</div>
+              <div class="translation">Koko ni suwatte kudasai. — Пожалуйста, садитесь здесь.</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">もう一度言ってください。</div>
+              <div class="translation">Mou ichido itte kudasai. — Пожалуйста, скажите ещё раз.</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">窓を開けてください。</div>
+              <div class="translation">Mado wo akete kudasai. — Пожалуйста, откройте окно.</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">写真を撮ってください。</div>
+              <div class="translation">Shashin wo totte kudasai. — Пожалуйста, сфотографируйте.</div>
+            </div>
+          </div>
+
+          <div class="note">
+            <strong>Уровень вежливости:</strong> Это стандартная вежливая форма. Для более неформальной просьбы можно использовать просто тэ-форму без ください.
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 5: Uses - ている -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Использование: ている (длительное действие)</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <p>Конструкция <strong>て + いる</strong> выражает продолжающееся действие или состояние (аналог Present Continuous в английском).</p>
+
+          <h3>Формула</h3>
+          <p><strong>Глагол в тэ-форме + いる/います = делаю сейчас / нахожусь в состоянии</strong></p>
+
+          <div class="examples">
+            <div class="example">
+              <div class="target-lang">今、何をしていますか。</div>
+              <div class="translation">Ima, nani wo shite imasu ka. — Что вы сейчас делаете?</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">本を読んでいます。</div>
+              <div class="translation">Hon wo yonde imasu. — Я читаю книгу (сейчас).</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">友達を待っています。</div>
+              <div class="translation">Tomodachi wo matte imasu. — Я жду друга.</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">日本語を勉強しています。</div>
+              <div class="translation">Nihongo wo benkyou shite imasu. — Я изучаю японский язык.</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">雨が降っています。</div>
+              <div class="translation">Ame ga futte imasu. — Идёт дождь.</div>
+            </div>
+          </div>
+
+          <div class="note">
+            <strong>Важно:</strong> ている также используется для описания результативного состояния (я женат, дверь открыта и т.д.)
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 6: Uses - てもいい -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Использование: てもいい (разрешение)</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <p>Конструкция <strong>て + もいい/もいいです</strong> выражает разрешение: "можно...", "разрешается..."</p>
+
+          <h3>Формула</h3>
+          <p><strong>Глагол в тэ-форме + もいい = можно (сделать)</strong></p>
+
+          <div class="examples">
+            <div class="example">
+              <div class="target-lang">写真を撮ってもいいですか。</div>
+              <div class="translation">Shashin wo totte mo ii desu ka. — Можно сфотографировать?</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">はい、撮ってもいいですよ。</div>
+              <div class="translation">Hai, totte mo ii desu yo. — Да, можете сфотографировать.</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">ここに座ってもいいですか。</div>
+              <div class="translation">Koko ni suwatte mo ii desu ka. — Можно здесь сесть?</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">トイレに行ってもいいですか。</div>
+              <div class="translation">Toire ni itte mo ii desu ka. — Можно сходить в туалет?</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">辞書を使ってもいいです。</div>
+              <div class="translation">Jisho wo tsukatte mo ii desu. — Можно пользоваться словарём.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 7: Uses - てはいけない -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Использование: てはいけない (запрет)</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <p>Конструкция <strong>て + はいけない/はいけません</strong> выражает запрет: "нельзя...", "не разрешается..."</p>
+
+          <h3>Формула</h3>
+          <p><strong>Глагол в тэ-форме + はいけない = нельзя (делать)</strong></p>
+
+          <div class="examples">
+            <div class="example">
+              <div class="target-lang">ここで写真を撮ってはいけません。</div>
+              <div class="translation">Koko de shashin wo totte wa ikemasen. — Здесь нельзя фотографировать.</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">タバコを吸ってはいけません。</div>
+              <div class="translation">Tabako wo sutte wa ikemasen. — Нельзя курить.</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">嘘をついてはいけない。</div>
+              <div class="translation">Uso wo tsuite wa ikenai. — Нельзя лгать.</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">遅刻してはいけません。</div>
+              <div class="translation">Chikoku shite wa ikemasen. — Нельзя опаздывать.</div>
+            </div>
+          </div>
+
+          <div class="note">
+            <strong>Разговорный вариант:</strong> В разговорной речи часто используют てはだめ (te wa dame) вместо てはいけない.
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 8: Sequential actions -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Соединение действий</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <p>Тэ-форма используется для перечисления последовательных действий: "сделал это и то..."</p>
+
+          <div class="examples">
+            <div class="example">
+              <div class="target-lang">朝起きて、シャワーを浴びて、朝ごはんを食べます。</div>
+              <div class="translation">Asa okite, shawaa wo abite, asagohan wo tabemasu. — Утром встаю, принимаю душ и завтракаю.</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">駅に行って、切符を買って、電車に乗りました。</div>
+              <div class="translation">Eki ni itte, kippu wo katte, densha ni norimashita. — Пошёл на станцию, купил билет и сел на поезд.</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">宿題をして、テレビを見て、寝ました。</div>
+              <div class="translation">Shukudai wo shite, terebi wo mite, nemashita. — Сделал домашнее задание, посмотрел телевизор и лёг спать.</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">友達に会って、映画を見て、レストランで食事をしました。</div>
+              <div class="translation">Tomodachi ni atte, eiga wo mite, resutoran de shokuji wo shimashita. — Встретился с другом, посмотрел фильм и поел в ресторане.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 9: Common expressions -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Распространённые выражения с тэ-формой</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <table>
+            <thead>
+              <tr>
+                <th>Выражение</th>
+                <th>Значение</th>
+                <th>Пример</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>てみる</td>
+                <td>попробовать сделать</td>
+                <td>食べてみる (tabete miru) — попробовать поесть</td>
+              </tr>
+              <tr>
+                <td>てあげる</td>
+                <td>сделать для кого-то</td>
+                <td>教えてあげる (oshiete ageru) — научить кого-то</td>
+              </tr>
+              <tr>
+                <td>てくれる</td>
+                <td>сделать для меня</td>
+                <td>手伝ってくれる (tetsudatte kureru) — помочь мне</td>
+              </tr>
+              <tr>
+                <td>てもらう</td>
+                <td>получить услугу</td>
+                <td>教えてもらう (oshiete morau) — попросить научить</td>
+              </tr>
+              <tr>
+                <td>ておく</td>
+                <td>сделать заранее</td>
+                <td>買っておく (katte oku) — купить заранее</td>
+              </tr>
+              <tr>
+                <td>てしまう</td>
+                <td>закончить / сожаление</td>
+                <td>食べてしまった (tabete shimatta) — съел всё</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="examples">
+            <div class="example">
+              <div class="target-lang">この本を読んでみてください。</div>
+              <div class="translation">Kono hon wo yonde mite kudasai. — Попробуйте прочитать эту книгу.</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">荷物を持ってあげましょう。</div>
+              <div class="translation">Nimotsu wo motte agemashou. — Давайте я понесу ваш багаж.</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">友達が手伝ってくれました。</div>
+              <div class="translation">Tomodachi ga tetsudatte kuremashita. — Друг помог мне.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="back-link">
+      <a href="../">← Вернуться к выбору темы</a>
+    </div>
+  </main>
+  <script src="../../../../assets/js/components.js"></script>
+</body>
 </html>

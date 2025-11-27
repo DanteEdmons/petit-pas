@@ -1,43 +1,344 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Petit Pas — Subjonctif</title>
-    <style>
-        body {
-            font-family: "Montserrat", sans-serif;
-            background: #0f172a;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            text-align: center;
-        }
-
-        main {
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-        }
-
-        a {
-            color: #93c5fd;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Petit Pas — Subjonctif</title>
+  <link rel="stylesheet" href="../../../../assets/css/styles.css" />
 </head>
-
 <body>
-    <main>
-        <h1>Subjonctif</h1>
-        <p>Сослагательное наклонение.</p>
-        <p>Используется для выражения сомнения, желания, эмоций, необходимости.</p>
-        <p>Часто употребляется после 'que'.</p>
-        <p><a href="../">Назад</a></p>
-    </main>
-</body>
+  <main class="main-container">
+    <h1>Subjonctif (Сослагательное наклонение)</h1>
+    <p class="intro">Subjonctif — это особое наклонение во французском языке, которое выражает субъективное отношение к действию: сомнение, желание, эмоции, необходимость, возможность. В отличие от изъявительного наклонения (indicatif), которое описывает факты и реальность, subjonctif используется для выражения того, что может быть, должно быть или желательно.</p>
 
+    <div class="accordion">
+      <!-- Section 1: Formation -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h2>Образование Subjonctif présent</h2>
+          <span class="accordion-icon">+</span>
+        </div>
+        <div class="accordion-content">
+          <h3>Правило образования:</h3>
+          <p><strong>Основа:</strong> берём форму 3-го лица множественного числа настоящего времени (ils/elles) и убираем окончание <em>-ent</em></p>
+          <p><strong>Окончания:</strong> -e, -es, -e, -ions, -iez, -ent</p>
+
+          <h3>Пример с глаголом PARLER:</h3>
+          <table>
+            <tr><th>Лицо</th><th>Форма</th><th>Пример</th></tr>
+            <tr><td>je</td><td>parle</td><td>Il faut que je parle — Нужно, чтобы я говорил</td></tr>
+            <tr><td>tu</td><td>parles</td><td>Il faut que tu parles — Нужно, чтобы ты говорил</td></tr>
+            <tr><td>il/elle</td><td>parle</td><td>Il faut qu'elle parle — Нужно, чтобы она говорила</td></tr>
+            <tr><td>nous</td><td>parlions</td><td>Il faut que nous parlions — Нужно, чтобы мы говорили</td></tr>
+            <tr><td>vous</td><td>parliez</td><td>Il faut que vous parliez — Нужно, чтобы вы говорили</td></tr>
+            <tr><td>ils/elles</td><td>parlent</td><td>Il faut qu'ils parlent — Нужно, чтобы они говорили</td></tr>
+          </table>
+
+          <h3>Пример с глаголом FINIR:</h3>
+          <table>
+            <tr><th>Лицо</th><th>Форма</th></tr>
+            <tr><td>je</td><td>finisse</td></tr>
+            <tr><td>tu</td><td>finisses</td></tr>
+            <tr><td>il/elle</td><td>finisse</td></tr>
+            <tr><td>nous</td><td>finissions</td></tr>
+            <tr><td>vous</td><td>finissiez</td></tr>
+            <tr><td>ils/elles</td><td>finissent</td></tr>
+          </table>
+
+          <h3>Пример с глаголом VENDRE:</h3>
+          <table>
+            <tr><th>Лицо</th><th>Форма</th></tr>
+            <tr><td>je</td><td>vende</td></tr>
+            <tr><td>tu</td><td>vendes</td></tr>
+            <tr><td>il/elle</td><td>vende</td></tr>
+            <tr><td>nous</td><td>vendions</td></tr>
+            <tr><td>vous</td><td>vendiez</td></tr>
+            <tr><td>ils/elles</td><td>vendent</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- Section 2: Irregular Forms -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h2>Неправильные глаголы в Subjonctif</h2>
+          <span class="accordion-icon">+</span>
+        </div>
+        <div class="accordion-content">
+          <h3>Полностью неправильные глаголы:</h3>
+
+          <h4>ÊTRE (быть):</h4>
+          <table>
+            <tr><th>Лицо</th><th>Форма</th><th>Пример</th></tr>
+            <tr><td>je</td><td>sois</td><td>Il faut que je sois patient — Нужно, чтобы я был терпеливым</td></tr>
+            <tr><td>tu</td><td>sois</td><td>Il faut que tu sois là — Нужно, чтобы ты был там</td></tr>
+            <tr><td>il/elle</td><td>soit</td><td>Il faut qu'elle soit prête — Нужно, чтобы она была готова</td></tr>
+            <tr><td>nous</td><td>soyons</td><td>Il faut que nous soyons ensemble — Нужно, чтобы мы были вместе</td></tr>
+            <tr><td>vous</td><td>soyez</td><td>Il faut que vous soyez honnête — Нужно, чтобы вы были честны</td></tr>
+            <tr><td>ils/elles</td><td>soient</td><td>Il faut qu'ils soient contents — Нужно, чтобы они были довольны</td></tr>
+          </table>
+
+          <h4>AVOIR (иметь):</h4>
+          <table>
+            <tr><th>Лицо</th><th>Форма</th><th>Пример</th></tr>
+            <tr><td>je</td><td>aie</td><td>Il faut que j'aie du temps — Нужно, чтобы у меня было время</td></tr>
+            <tr><td>tu</td><td>aies</td><td>Il faut que tu aies raison — Нужно, чтобы ты был прав</td></tr>
+            <tr><td>il/elle</td><td>ait</td><td>Il faut qu'il ait de la patience — Нужно, чтобы у него было терпение</td></tr>
+            <tr><td>nous</td><td>ayons</td><td>Il faut que nous ayons confiance — Нужно, чтобы у нас было доверие</td></tr>
+            <tr><td>vous</td><td>ayez</td><td>Il faut que vous ayez du courage — Нужно, чтобы у вас была смелость</td></tr>
+            <tr><td>ils/elles</td><td>aient</td><td>Il faut qu'elles aient une chance — Нужно, чтобы у них был шанс</td></tr>
+          </table>
+
+          <h4>ALLER (идти):</h4>
+          <table>
+            <tr><th>Лицо</th><th>Форма</th></tr>
+            <tr><td>je</td><td>aille</td></tr>
+            <tr><td>tu</td><td>ailles</td></tr>
+            <tr><td>il/elle</td><td>aille</td></tr>
+            <tr><td>nous</td><td>allions</td></tr>
+            <tr><td>vous</td><td>alliez</td></tr>
+            <tr><td>ils/elles</td><td>aillent</td></tr>
+          </table>
+
+          <h4>FAIRE (делать):</h4>
+          <table>
+            <tr><th>Лицо</th><th>Форма</th></tr>
+            <tr><td>je</td><td>fasse</td></tr>
+            <tr><td>tu</td><td>fasses</td></tr>
+            <tr><td>il/elle</td><td>fasse</td></tr>
+            <tr><td>nous</td><td>fassions</td></tr>
+            <tr><td>vous</td><td>fassiez</td></tr>
+            <tr><td>ils/elles</td><td>fassent</td></tr>
+          </table>
+
+          <h4>POUVOIR (мочь):</h4>
+          <table>
+            <tr><th>Лицо</th><th>Форма</th></tr>
+            <tr><td>je</td><td>puisse</td></tr>
+            <tr><td>tu</td><td>puisses</td></tr>
+            <tr><td>il/elle</td><td>puisse</td></tr>
+            <tr><td>nous</td><td>puissions</td></tr>
+            <tr><td>vous</td><td>puissiez</td></tr>
+            <tr><td>ils/elles</td><td>puissent</td></tr>
+          </table>
+
+          <h4>SAVOIR (знать):</h4>
+          <table>
+            <tr><th>Лицо</th><th>Форма</th></tr>
+            <tr><td>je</td><td>sache</td></tr>
+            <tr><td>tu</td><td>saches</td></tr>
+            <tr><td>il/elle</td><td>sache</td></tr>
+            <tr><td>nous</td><td>sachions</td></tr>
+            <tr><td>vous</td><td>sachiez</td></tr>
+            <tr><td>ils/elles</td><td>sachent</td></tr>
+          </table>
+
+          <h4>VOULOIR (хотеть):</h4>
+          <table>
+            <tr><th>Лицо</th><th>Форма</th></tr>
+            <tr><td>je</td><td>veuille</td></tr>
+            <tr><td>tu</td><td>veuilles</td></tr>
+            <tr><td>il/elle</td><td>veuille</td></tr>
+            <tr><td>nous</td><td>voulions</td></tr>
+            <tr><td>vous</td><td>vouliez</td></tr>
+            <tr><td>ils/elles</td><td>veuillent</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- Section 3: Triggers -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h2>Когда используется Subjonctif: триггеры</h2>
+          <span class="accordion-icon">+</span>
+        </div>
+        <div class="accordion-content">
+          <h3>1. Безличные выражения (Il faut que, Il est important que)</h3>
+          <ul>
+            <li><strong>Il faut que</strong> — Нужно, чтобы<br>
+              <em>Il faut que tu viennes ce soir.</em> — Нужно, чтобы ты пришел сегодня вечером.</li>
+            <li><strong>Il est important que</strong> — Важно, чтобы<br>
+              <em>Il est important que nous soyons à l'heure.</em> — Важно, чтобы мы были вовремя.</li>
+            <li><strong>Il est nécessaire que</strong> — Необходимо, чтобы<br>
+              <em>Il est nécessaire qu'elle comprenne la situation.</em> — Необходимо, чтобы она поняла ситуацию.</li>
+            <li><strong>Il est possible que</strong> — Возможно, что<br>
+              <em>Il est possible qu'il pleuve demain.</em> — Возможно, завтра будет дождь.</li>
+            <li><strong>Il vaut mieux que</strong> — Лучше, чтобы<br>
+              <em>Il vaut mieux que vous restiez ici.</em> — Лучше, чтобы вы остались здесь.</li>
+          </ul>
+
+          <h3>2. Желание и воля (vouloir que, désirer que, souhaiter que)</h3>
+          <ul>
+            <li><strong>Je veux que</strong> — Я хочу, чтобы<br>
+              <em>Je veux que tu sois heureux.</em> — Я хочу, чтобы ты был счастлив.</li>
+            <li><strong>Je souhaite que</strong> — Я желаю, чтобы<br>
+              <em>Je souhaite que vous réussissiez.</em> — Я желаю, чтобы вы преуспели.</li>
+            <li><strong>J'aimerais que</strong> — Я хотел бы, чтобы<br>
+              <em>J'aimerais que nous partions ensemble.</em> — Я хотел бы, чтобы мы уехали вместе.</li>
+            <li><strong>Je préfère que</strong> — Я предпочитаю, чтобы<br>
+              <em>Je préfère que tu attendes ici.</em> — Я предпочитаю, чтобы ты подождал здесь.</li>
+          </ul>
+
+          <h3>3. Эмоции и чувства (être content que, avoir peur que)</h3>
+          <ul>
+            <li><strong>Je suis content(e) que</strong> — Я рад, что<br>
+              <em>Je suis content que tu puisses venir.</em> — Я рад, что ты можешь прийти.</li>
+            <li><strong>Je suis triste que</strong> — Мне грустно, что<br>
+              <em>Je suis triste qu'elle parte.</em> — Мне грустно, что она уезжает.</li>
+            <li><strong>J'ai peur que</strong> — Я боюсь, что<br>
+              <em>J'ai peur qu'il ne comprenne pas.</em> — Я боюсь, что он не поймет.</li>
+            <li><strong>Je suis surpris(e) que</strong> — Я удивлен, что<br>
+              <em>Je suis surprise qu'ils soient déjà là.</em> — Я удивлена, что они уже здесь.</li>
+            <li><strong>Je regrette que</strong> — Я сожалею, что<br>
+              <em>Je regrette que vous ne puissiez pas rester.</em> — Я сожалею, что вы не можете остаться.</li>
+          </ul>
+
+          <h3>4. Сомнение и неуверенность (douter que, ne pas croire que)</h3>
+          <ul>
+            <li><strong>Je doute que</strong> — Я сомневаюсь, что<br>
+              <em>Je doute qu'il vienne ce soir.</em> — Я сомневаюсь, что он придет сегодня вечером.</li>
+            <li><strong>Je ne crois pas que</strong> — Я не верю, что<br>
+              <em>Je ne crois pas que ce soit possible.</em> — Я не верю, что это возможно.</li>
+            <li><strong>Je ne pense pas que</strong> — Я не думаю, что<br>
+              <em>Je ne pense pas qu'elle ait raison.</em> — Я не думаю, что она права.</li>
+          </ul>
+
+          <h3>5. Союзы (bien que, pour que, avant que, sans que)</h3>
+          <ul>
+            <li><strong>bien que / quoique</strong> — хотя<br>
+              <em>Bien qu'il soit tard, je travaille encore.</em> — Хотя уже поздно, я все еще работаю.</li>
+            <li><strong>pour que / afin que</strong> — чтобы (цель)<br>
+              <em>Je t'explique pour que tu comprennes.</em> — Я объясняю тебе, чтобы ты понял.</li>
+            <li><strong>avant que</strong> — прежде чем<br>
+              <em>Parle-lui avant qu'il (ne) parte.</em> — Поговори с ним, прежде чем он уйдет.</li>
+            <li><strong>sans que</strong> — без того, чтобы<br>
+              <em>Il est parti sans que je le sache.</em> — Он ушел, без того чтобы я знал.</li>
+            <li><strong>jusqu'à ce que</strong> — пока не<br>
+              <em>Attends jusqu'à ce qu'il revienne.</em> — Жди, пока он не вернется.</li>
+            <li><strong>à condition que</strong> — при условии, что<br>
+              <em>Je viendrai à condition que tu sois là.</em> — Я приду при условии, что ты будешь там.</li>
+            <li><strong>pourvu que</strong> — лишь бы<br>
+              <em>Pourvu qu'il fasse beau demain!</em> — Лишь бы завтра была хорошая погода!</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Section 4: Subjonctif vs Indicatif -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h2>Subjonctif или Indicatif?</h2>
+          <span class="accordion-icon">+</span>
+        </div>
+        <div class="accordion-content">
+          <h3>Когда НЕ используется Subjonctif:</h3>
+
+          <h4>После выражений уверенности (в утвердительной форме):</h4>
+          <ul>
+            <li><strong>Je crois que</strong> + Indicatif<br>
+              <em>Je crois qu'il <u>est</u> intelligent.</em> — Я думаю, что он умный. (уверенность)</li>
+            <li><strong>Je pense que</strong> + Indicatif<br>
+              <em>Je pense qu'elle <u>viendra</u> demain.</em> — Я думаю, она придет завтра.</li>
+            <li><strong>Je suis sûr(e) que</strong> + Indicatif<br>
+              <em>Je suis sûr qu'il <u>a</u> raison.</em> — Я уверен, что он прав.</li>
+          </ul>
+
+          <h4>Сравнение - утверждение vs отрицание:</h4>
+          <table>
+            <tr><th>Утверждение (Indicatif)</th><th>Отрицание (Subjonctif)</th></tr>
+            <tr>
+              <td>Je crois qu'il <u>est</u> là.<br>(Я думаю, он там)</td>
+              <td>Je ne crois pas qu'il <u>soit</u> là.<br>(Я не думаю, что он там)</td>
+            </tr>
+            <tr>
+              <td>Il est certain qu'elle <u>viendra</u>.<br>(Точно, что она придет)</td>
+              <td>Il n'est pas certain qu'elle <u>vienne</u>.<br>(Не точно, что она придет)</td>
+            </tr>
+            <tr>
+              <td>Je suis sûr qu'il <u>peut</u> le faire.<br>(Я уверен, он может это сделать)</td>
+              <td>Je ne suis pas sûr qu'il <u>puisse</u> le faire.<br>(Я не уверен, что он может это сделать)</td>
+            </tr>
+          </table>
+
+          <h4>Espérer que — исключение:</h4>
+          <p>После <strong>espérer que</strong> (надеяться, что) используется Indicatif, даже если это выражает надежду:</p>
+          <p><em>J'espère qu'il <u>viendra</u>.</em> — Я надеюсь, что он придет. (Indicatif)</p>
+          <p><em>J'espère que tu <u>vas</u> bien.</em> — Я надеюсь, что у тебя все хорошо. (Indicatif)</p>
+        </div>
+      </div>
+
+      <!-- Section 5: Practice Examples -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h2>Практические примеры</h2>
+          <span class="accordion-icon">+</span>
+        </div>
+        <div class="accordion-content">
+          <h3>Диалог с использованием Subjonctif:</h3>
+          <div class="dialogue">
+            <p><strong>Marie:</strong> Il faut que tu <u>viennes</u> à ma fête samedi!</p>
+            <p class="translation">— Нужно, чтобы ты пришел на мою вечеринку в субботу!</p>
+
+            <p><strong>Paul:</strong> Je ne suis pas sûr que je <u>puisse</u> venir. J'ai beaucoup de travail.</p>
+            <p class="translation">— Я не уверен, что смогу прийти. У меня много работы.</p>
+
+            <p><strong>Marie:</strong> Je souhaite vraiment que tu <u>sois</u> là. Tous nos amis seront présents.</p>
+            <p class="translation">— Я очень хочу, чтобы ты был там. Все наши друзья будут.</p>
+
+            <p><strong>Paul:</strong> D'accord, je vais essayer. Mais il faut que je <u>finisse</u> ce projet avant.</p>
+            <p class="translation">— Хорошо, я постараюсь. Но мне нужно закончить этот проект сначала.</p>
+
+            <p><strong>Marie:</strong> Parfait! Je suis contente que tu <u>fasses</u> cet effort.</p>
+            <p class="translation">— Отлично! Я рада, что ты делаешь это усилие.</p>
+          </div>
+
+          <h3>Предложения для перевода:</h3>
+          <ol>
+            <li>Важно, чтобы вы знали правду.<br>
+              <em>Il est important que vous sachiez la vérité.</em></li>
+            <li>Я хочу, чтобы ты был счастлив.<br>
+              <em>Je veux que tu sois heureux.</em></li>
+            <li>Я боюсь, что они не поймут.<br>
+              <em>J'ai peur qu'ils ne comprennent pas.</em></li>
+            <li>Хотя он молод, он очень опытен.<br>
+              <em>Bien qu'il soit jeune, il est très expérimenté.</em></li>
+            <li>Я объясняю это, чтобы вы поняли.<br>
+              <em>Je vous explique cela pour que vous compreniez.</em></li>
+            <li>Нужно, чтобы мы уехали до 8 часов.<br>
+              <em>Il faut que nous partions avant 8 heures.</em></li>
+            <li>Я сомневаюсь, что это возможно.<br>
+              <em>Je doute que ce soit possible.</em></li>
+            <li>Лучше, чтобы ты остался дома.<br>
+              <em>Il vaut mieux que tu restes à la maison.</em></li>
+          </ol>
+
+          <h3>Распространенные ошибки:</h3>
+          <table>
+            <tr><th>Неправильно</th><th>Правильно</th></tr>
+            <tr>
+              <td>❌ Il faut que je <em>vais</em> là-bas.</td>
+              <td>✓ Il faut que j'<em>aille</em> là-bas.</td>
+            </tr>
+            <tr>
+              <td>❌ Je veux que tu <em>viens</em>.</td>
+              <td>✓ Je veux que tu <em>viennes</em>.</td>
+            </tr>
+            <tr>
+              <td>❌ J'espère qu'il <em>soit</em> là.</td>
+              <td>✓ J'espère qu'il <em>sera</em> là. (Indicatif!)</td>
+            </tr>
+            <tr>
+              <td>❌ Bien que il <em>est</em> malade...</td>
+              <td>✓ Bien qu'il <em>soit</em> malade...</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="back-link">
+      <a href="../">← Вернуться к выбору темы</a>
+    </div>
+  </main>
+  <script src="../../../../assets/js/components.js"></script>
+</body>
 </html>

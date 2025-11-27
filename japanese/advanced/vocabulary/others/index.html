@@ -42,16 +42,16 @@
     }
 
     main {
-      max-width: 620px;
+      max-width: 720px;
       width: 100%;
       background: rgba(15, 23, 42, 0.55);
       border-radius: 24px;
       backdrop-filter: blur(16px);
       box-shadow: 0 28px 48px rgba(2, 6, 23, 0.45);
-      padding: clamp(1.75rem, 6vw, 3rem);
+      padding: clamp(1.75rem, 6vw, 3.25rem);
       display: flex;
       flex-direction: column;
-      gap: 1.5rem;
+      gap: 1.75rem;
     }
 
     h1 {
@@ -63,6 +63,107 @@
       font-size: clamp(1rem, 2.4vw, 1.2rem);
       color: rgba(255, 255, 255, 0.82);
       line-height: 1.8;
+    }
+
+    .flashcard {
+      position: relative;
+      margin: 0 auto;
+      width: min(100%, 420px);
+      aspect-ratio: 3 / 2;
+      perspective: 1100px;
+      cursor: pointer;
+      border-radius: 20px;
+      outline: none;
+    }
+
+    .flashcard-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+      transition: transform 0.6s ease;
+      transform-style: preserve-3d;
+      box-shadow: 0 22px 38px rgba(15, 23, 42, 0.45);
+    }
+
+    .flashcard.flipped .flashcard-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flashcard-face {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      border-radius: inherit;
+      background: rgba(30, 41, 59, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      backface-visibility: hidden;
+    }
+
+    .flashcard-face .kanji {
+      font-size: clamp(1.7rem, 5.5vw, 2.4rem);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    .flashcard-face .reading {
+      font-size: clamp(1rem, 3.5vw, 1.4rem);
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.75);
+      text-align: center;
+    }
+
+    .flashcard-back {
+      transform: rotateY(180deg);
+      background: rgba(30, 41, 59, 0.96);
+      font-size: clamp(1.2rem, 4.5vw, 1.9rem);
+      font-weight: 600;
+    }
+
+    .flashcard:focus-visible {
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.65);
+    }
+
+    .progress {
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      color: rgba(226, 232, 240, 0.8);
+    }
+
+    .navigation {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    button {
+      padding: 0.65rem 1.4rem;
+      border-radius: 9999px;
+      border: none;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      background: rgba(59, 130, 246, 0.85);
+      color: #fff;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    button:hover:not(:disabled),
+    button:focus-visible {
+      transform: translateY(-1px);
+      background: rgba(96, 165, 250, 0.9);
+    }
+
+    button:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
     }
 
     .links {
@@ -87,11 +188,155 @@
 <body>
   <main>
     <h1>Японский — Продвинутый — Другое</h1>
-    <p>Тут контента пока нет, но я скоро добавлю!</p>
+    <p>Нажмите на карточку, чтобы увидеть перевод. Используйте кнопки, чтобы переходить между словами.</p>
+
+    <div
+      class="flashcard"
+      id="flashcard"
+      role="button"
+      tabindex="0"
+      aria-live="polite"
+      aria-label="Карточка словаря"
+    >
+      <div class="flashcard-inner">
+        <div class="flashcard-face flashcard-front">
+          <div class="kanji" id="card-kanji">従って</div>
+          <div class="reading" id="card-reading">したがって</div>
+        </div>
+        <div class="flashcard-face flashcard-back">
+          <span id="card-back">следовательно, таким образом</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="progress" id="progress">1 / 37</div>
+
+    <div class="navigation">
+      <button type="button" id="prev-btn" disabled>Назад</button>
+      <button type="button" id="next-btn">Дальше</button>
+      <button type="button" id="shuffle-btn">Перемешать</button>
+    </div>
+
     <div class="links">
       <a href="../">Назад к выбору категорий</a>
       <a href="../../">Вернуться к разделу</a>
     </div>
   </main>
+
+  <script>
+    const words = [
+      { japanese: "従って", reading: "したがって", russian: "следовательно, таким образом" },
+      { japanese: "故に", reading: "ゆえに", russian: "поэтому, потому что" },
+      { japanese: "それ故", reading: "それゆえ", russian: "по этой причине, поэтому" },
+      { japanese: "なぜなら", reading: "なぜなら", russian: "потому что, так как" },
+      { japanese: "つまり", reading: "つまり", russian: "то есть, иными словами" },
+      { japanese: "即ち", reading: "すなわち", russian: "а именно, то есть" },
+      { japanese: "要するに", reading: "ようするに", russian: "короче говоря, в общем" },
+      { japanese: "換言すれば", reading: "かんげんすれば", russian: "другими словами" },
+      { japanese: "然しながら", reading: "しかしながら", russian: "однако, тем не менее" },
+      { japanese: "にもかかわらず", reading: "にもかかわらず", russian: "несмотря на, вопреки" },
+      { japanese: "とはいえ", reading: "とはいえ", russian: "хотя, тем не менее" },
+      { japanese: "むしろ", reading: "むしろ", russian: "скорее, лучше" },
+      { japanese: "更に", reading: "さらに", russian: "более того, кроме того" },
+      { japanese: "加えて", reading: "くわえて", russian: "в добавление, кроме того" },
+      { japanese: "のみならず", reading: "のみならず", russian: "не только, но и" },
+      { japanese: "ひいては", reading: "ひいては", russian: "в конечном счёте, вдобавок" },
+      { japanese: "要は", reading: "ようは", russian: "суть в том, что; главное" },
+      { japanese: "ともあれ", reading: "ともあれ", russian: "как бы то ни было, в любом случае" },
+      { japanese: "言うまでもなく", reading: "いうまでもなく", russian: "само собой разумеется" },
+      { japanese: "一概に", reading: "いちがいに", russian: "безоговорочно, однозначно" },
+      { japanese: "敢えて", reading: "あえて", russian: "намеренно, нарочно" },
+      { japanese: "あくまで", reading: "あくまで", russian: "до конца, исключительно" },
+      { japanese: "概して", reading: "がいして", russian: "в общем, как правило" },
+      { japanese: "そもそも", reading: "そもそも", russian: "изначально, в принципе" },
+      { japanese: "果たして", reading: "はたして", russian: "действительно ли, в самом деле" },
+      { japanese: "案の定", reading: "あんのじょう", russian: "как и ожидалось" },
+      { japanese: "思いのほか", reading: "おもいのほか", russian: "неожиданно, вопреки ожиданиям" },
+      { japanese: "善は急げ", reading: "ぜんはいそげ", russian: "не откладывай доброе дело (пословица)" },
+      { japanese: "急がば回れ", reading: "いそがばまわれ", russian: "тише едешь — дальше будешь (пословица)" },
+      { japanese: "雨降って地固まる", reading: "あめふってじかたまる", russian: "после дождя земля крепнет (пословица)" },
+      { japanese: "言わぬが花", reading: "いわぬがはな", russian: "молчание — золото (пословица)" },
+      { japanese: "猿も木から落ちる", reading: "さるもきからおちる", russian: "и на старуху бывает проруха (пословица)" },
+      { japanese: "能ある鷹は爪を隠す", reading: "のうあるたかはつめをかくす", russian: "умный скрывает свои способности (пословица)" },
+      { japanese: "一石二鳥", reading: "いっせきにちょう", russian: "одним выстрелом двух зайцев" },
+      { japanese: "十人十色", reading: "じゅうにんといろ", russian: "сколько людей, столько мнений" },
+      { japanese: "千里の道も一歩から", reading: "せんりのみちもいっぽから", russian: "путь в тысячу ли начинается с одного шага" },
+      { japanese: "習うより慣れよ", reading: "ならうよりなれよ", russian: "практика важнее теории" }
+    ];
+
+    const flashcard = document.getElementById("flashcard");
+    const kanji = document.getElementById("card-kanji");
+    const reading = document.getElementById("card-reading");
+    const back = document.getElementById("card-back");
+    const prevBtn = document.getElementById("prev-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const shuffleBtn = document.getElementById("shuffle-btn");
+    const progress = document.getElementById("progress");
+
+    let currentIndex = 0;
+    let shuffledWords = shuffle([...words]);
+
+    function shuffle(array) {
+      const result = [...array];
+      for (let i = result.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [result[i], result[j]] = [result[j], result[i]];
+      }
+      return result;
+    }
+
+    function renderCard() {
+      const { japanese, reading: readingText, russian } = shuffledWords[currentIndex];
+      kanji.textContent = japanese;
+      reading.textContent = readingText;
+      back.textContent = russian;
+      flashcard.classList.remove("flipped");
+      progress.textContent = `${currentIndex + 1} / ${shuffledWords.length}`;
+      prevBtn.disabled = currentIndex === 0;
+      nextBtn.disabled = currentIndex === shuffledWords.length - 1;
+      flashcard.setAttribute(
+        "aria-label",
+        `Японское выражение ${japanese} (${readingText}) — нажмите, чтобы увидеть перевод`
+      );
+    }
+
+    function showNext(offset) {
+      const newIndex = currentIndex + offset;
+      if (newIndex < 0 || newIndex >= shuffledWords.length) {
+        return;
+      }
+      currentIndex = newIndex;
+      renderCard();
+    }
+
+    function shuffleCards() {
+      currentIndex = 0;
+      shuffledWords = shuffle([...words]);
+      renderCard();
+    }
+
+    flashcard.addEventListener("click", () => {
+      flashcard.classList.toggle("flipped");
+    });
+
+    flashcard.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        flashcard.classList.toggle("flipped");
+      }
+    });
+
+    prevBtn.addEventListener("click", () => {
+      showNext(-1);
+    });
+
+    nextBtn.addEventListener("click", () => {
+      showNext(1);
+    });
+
+    shuffleBtn.addEventListener("click", shuffleCards);
+
+    renderCard();
+  </script>
 </body>
 </html>
