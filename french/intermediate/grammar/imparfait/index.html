@@ -1,43 +1,278 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Petit Pas — Imparfait</title>
-    <style>
-        body {
-            font-family: "Montserrat", sans-serif;
-            background: #0f172a;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            text-align: center;
-        }
-
-        main {
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-        }
-
-        a {
-            color: #93c5fd;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Petit Pas — Imparfait</title>
+  <link rel="stylesheet" href="../../../../assets/css/styles.css" />
 </head>
-
 <body>
-    <main>
-        <h1>Imparfait</h1>
-        <p>Прошедшее незавершенное время.</p>
-        <p>Используется для описания, привычек в прошлом или фоновых действий.</p>
-        <p>Образуется от основы 'nous' настоящего времени + окончания: -ais, -ais, -ait, -ions, -iez, -aient.</p>
-        <p><a href="../">Назад</a></p>
-    </main>
-</body>
+  <main class="main-container">
+    <h1>Imparfait</h1>
+    <p class="intro">Прошедшее незавершенное время используется для описания, привычек в прошлом и фоновых действий.</p>
 
+    <div class="accordion">
+      <!-- Accordion Item 1: Formation -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Образование Imparfait</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Правило образования</h3>
+          <p>Imparfait образуется от основы глагола в форме <strong>nous</strong> в настоящем времени (Présent), от которой отбрасывается окончание <strong>-ons</strong>, к полученной основе добавляются следующие окончания:</p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Лицо</th>
+                <th>Окончание</th>
+                <th>Пример (parler)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>je</td>
+                <td>-ais</td>
+                <td>je parlais</td>
+              </tr>
+              <tr>
+                <td>tu</td>
+                <td>-ais</td>
+                <td>tu parlais</td>
+              </tr>
+              <tr>
+                <td>il/elle/on</td>
+                <td>-ait</td>
+                <td>il parlait</td>
+              </tr>
+              <tr>
+                <td>nous</td>
+                <td>-ions</td>
+                <td>nous parlions</td>
+              </tr>
+              <tr>
+                <td>vous</td>
+                <td>-iez</td>
+                <td>vous parliez</td>
+              </tr>
+              <tr>
+                <td>ils/elles</td>
+                <td>-aient</td>
+                <td>ils parlaient</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Примеры образования основы</h3>
+          <ul>
+            <li><strong>Finir:</strong> nous finiss<strong>ons</strong> → finiss- → je finissais, tu finissais...</li>
+            <li><strong>Vendre:</strong> nous vend<strong>ons</strong> → vend- → je vendais, tu vendais...</li>
+            <li><strong>Prendre:</strong> nous pren<strong>ons</strong> → pren- → je prenais, tu prenais...</li>
+          </ul>
+
+          <div class="note">
+            <strong>Внимание!</strong> Единственное исключение — глагол <strong>être</strong>: основа <strong>ét-</strong> (j'étais, tu étais, il était, nous étions, vous étiez, ils étaient).
+          </div>
+        </div>
+      </div>
+
+      <!-- Accordion Item 2: Usage -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Употребление Imparfait</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>1. Описание в прошлом</h3>
+          <p>Imparfait используется для описания людей, мест, погоды, обстоятельств в прошлом:</p>
+
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">Il faisait beau ce jour-là.</span><br>
+              <span class="translation">В тот день была хорошая погода.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Elle portait une robe rouge.</span><br>
+              <span class="translation">Она носила красное платье.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">La maison était grande et blanche.</span><br>
+              <span class="translation">Дом был большой и белый.</span>
+            </div>
+          </div>
+
+          <h3>2. Привычные или повторяющиеся действия в прошлом</h3>
+          <p>Для обозначения регулярных действий, которые происходили в прошлом:</p>
+
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">Quand j'étais jeune, je jouais au football tous les jours.</span><br>
+              <span class="translation">Когда я был молодым, я играл в футбол каждый день.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Nous allions à la plage chaque été.</span><br>
+              <span class="translation">Мы ездили на пляж каждое лето.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Elle lisait toujours avant de dormir.</span><br>
+              <span class="translation">Она всегда читала перед сном.</span>
+            </div>
+          </div>
+
+          <h3>3. Фоновое действие</h3>
+          <p>Для описания продолжающегося действия, на фоне которого происходит другое действие (обычно в Passé Composé):</p>
+
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">Je regardais la télé quand il est arrivé.</span><br>
+              <span class="translation">Я смотрел телевизор, когда он пришёл.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Il pleuvait quand nous sommes sortis.</span><br>
+              <span class="translation">Шёл дождь, когда мы вышли.</span>
+            </div>
+          </div>
+
+          <h3>4. Выражение состояния или эмоций в прошлом</h3>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">J'étais fatigué.</span><br>
+              <span class="translation">Я был уставшим.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Elle voulait partir.</span><br>
+              <span class="translation">Она хотела уйти.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Nous avions peur.</span><br>
+              <span class="translation">Мы боялись.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Accordion Item 3: Imparfait vs Passé Composé -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Imparfait vs Passé Composé</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Основные различия</h3>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Imparfait</th>
+                <th>Passé Composé</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Продолжающееся действие</td>
+                <td>Завершённое действие</td>
+              </tr>
+              <tr>
+                <td>Описание, фон</td>
+                <td>Конкретное событие</td>
+              </tr>
+              <tr>
+                <td>Привычные действия</td>
+                <td>Однократные действия</td>
+              </tr>
+              <tr>
+                <td>Без указания начала/конца</td>
+                <td>С чётким началом/концом</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Примеры сравнения</h3>
+
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">Imparfait: Il faisait beau. (описание)</span><br>
+              <span class="target-lang">Passé Composé: Il a fait beau hier. (конкретный факт)</span><br>
+              <span class="translation">Была хорошая погода. / Вчера была хорошая погода.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Imparfait: Je lisais un livre. (процесс)</span><br>
+              <span class="target-lang">Passé Composé: J'ai lu un livre. (законченное действие)</span><br>
+              <span class="translation">Я читал книгу. / Я прочитал книгу.</span>
+            </div>
+          </div>
+
+          <h3>Совместное использование</h3>
+          <p>Часто Imparfait и Passé Composé используются вместе в одном предложении:</p>
+
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">Pendant que je dormais, le téléphone a sonné.</span><br>
+              <span class="translation">Пока я спал, зазвонил телефон.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Il neigeait quand nous sommes arrivés.</span><br>
+              <span class="translation">Шёл снег, когда мы приехали.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Elle était heureuse parce qu'elle a réussi son examen.</span><br>
+              <span class="translation">Она была счастлива, потому что сдала экзамен.</span>
+            </div>
+          </div>
+
+          <div class="note">
+            <strong>Совет:</strong> Imparfait = процесс, описание, привычка. Passé Composé = результат, завершённое действие, событие.
+          </div>
+        </div>
+      </div>
+
+      <!-- Accordion Item 4: Common Expressions -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Типичные маркеры Imparfait</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Слова-индикаторы Imparfait</h3>
+          <p>Эти выражения часто указывают на необходимость использования Imparfait:</p>
+
+          <ul>
+            <li><strong>Tous les jours</strong> — каждый день</li>
+            <li><strong>Chaque semaine/mois/année</strong> — каждую неделю/месяц/год</li>
+            <li><strong>Toujours</strong> — всегда</li>
+            <li><strong>Souvent</strong> — часто</li>
+            <li><strong>D'habitude</strong> — обычно</li>
+            <li><strong>Autrefois</strong> — прежде, в прошлом</li>
+            <li><strong>Quand j'étais jeune/petit(e)</strong> — когда я был молодым/маленьким</li>
+            <li><strong>Pendant que</strong> — в то время как</li>
+            <li><strong>Tandis que</strong> — тогда как</li>
+          </ul>
+
+          <h3>Примеры с маркерами</h3>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">Autrefois, les gens voyageaient à cheval.</span><br>
+              <span class="translation">Прежде люди путешествовали на лошадях.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">D'habitude, il prenait le bus pour aller au travail.</span><br>
+              <span class="translation">Обычно он ездил на автобусе на работу.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Quand j'étais petit, je croyais au Père Noël.</span><br>
+              <span class="translation">Когда я был маленьким, я верил в Деда Мороза.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="back-link">
+      <a href="../">← Вернуться к выбору темы</a>
+    </div>
+  </main>
+  <script src="../../../../assets/js/components.js"></script>
+</body>
 </html>

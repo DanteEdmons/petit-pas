@@ -1,43 +1,520 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Petit Pas — Passive Voice</title>
-    <style>
-        body {
-            font-family: "Montserrat", sans-serif;
-            background: #0f172a;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            text-align: center;
-        }
-
-        main {
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-        }
-
-        a {
-            color: #93c5fd;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Petit Pas — Passive Voice (受身形)</title>
+  <link rel="stylesheet" href="../../../../assets/css/styles.css" />
 </head>
-
 <body>
-    <main>
-        <h1>Passive Voice</h1>
-        <p>Страдательный залог (Ukemi).</p>
-        <p>Kaku -> Kakareru (Быть написанным)</p>
-        <p>Shikaru -> Shikareru (Быть отруганным)</p>
-        <p><a href="../">Назад</a></p>
-    </main>
-</body>
+  <main class="main-container">
+    <h1>Passive Voice — Страдательный залог (受身形 — うけみけい)</h1>
+    <p class="intro">Страдательный залог в японском языке используется, когда подлежащее получает действие, испытывает его влияние или страдает от него. В японском пассив имеет более широкое применение, чем в русском.</p>
 
+    <div class="accordion">
+      <!-- Formation -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>1. Образование пассивной формы (Formation)</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Правила спряжения</h3>
+
+          <h4>Глаголы I группы (五段動詞 — godan doushi)</h4>
+          <p><strong>Основа ~あ段 + れる</strong></p>
+          <table>
+            <thead>
+              <tr>
+                <th>Словарная форма</th>
+                <th>Пассив</th>
+                <th>Romaji</th>
+                <th>Перевод</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>書く (kaku)</td>
+                <td>書かれる (kakareru)</td>
+                <td>kak-u → kak-areru</td>
+                <td>писать → быть написанным</td>
+              </tr>
+              <tr>
+                <td>読む (yomu)</td>
+                <td>読まれる (yomareru)</td>
+                <td>yom-u → yom-areru</td>
+                <td>читать → быть прочитанным</td>
+              </tr>
+              <tr>
+                <td>待つ (matsu)</td>
+                <td>待たれる (matareru)</td>
+                <td>mat-u → mat-areru</td>
+                <td>ждать → кого-то ждут</td>
+              </tr>
+              <tr>
+                <td>話す (hanasu)</td>
+                <td>話される (hanasareru)</td>
+                <td>hanas-u → hanas-areru</td>
+                <td>говорить → о чём-то говорят</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4>Глаголы II группы (一段動詞 — ichidan doushi)</h4>
+          <p><strong>Основа + られる</strong></p>
+          <table>
+            <thead>
+              <tr>
+                <th>Словарная форма</th>
+                <th>Пассив</th>
+                <th>Romaji</th>
+                <th>Перевод</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>見る (miru)</td>
+                <td>見られる (mirareru)</td>
+                <td>mi-ru → mi-rareru</td>
+                <td>видеть → быть увиденным</td>
+              </tr>
+              <tr>
+                <td>食べる (taberu)</td>
+                <td>食べられる (taberareru)</td>
+                <td>tabe-ru → tabe-rareru</td>
+                <td>есть → быть съеденным</td>
+              </tr>
+              <tr>
+                <td>教える (oshieru)</td>
+                <td>教えられる (oshierareru)</td>
+                <td>oshie-ru → oshie-rareru</td>
+                <td>учить → быть обученным</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4>Неправильные глаголы (不規則動詞)</h4>
+          <table>
+            <thead>
+              <tr>
+                <th>Словарная форма</th>
+                <th>Пассив</th>
+                <th>Romaji</th>
+                <th>Перевод</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>する (suru)</td>
+                <td>される (sareru)</td>
+                <td>suru → sareru</td>
+                <td>делать → быть сделанным</td>
+              </tr>
+              <tr>
+                <td>来る (くる — kuru)</td>
+                <td>来られる (こられる — korareru)</td>
+                <td>kuru → korareru</td>
+                <td>приходить → к кому-то приходят</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Types of Passive -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>2. Типы страдательного залога</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>A. Прямой пассив (直接受身 — chokusetsu ukemi)</h3>
+          <p>Прямой объект активного предложения становится подлежащим пассивного.</p>
+
+          <div class="examples">
+            <div class="example">
+              <div><strong>Активная форма:</strong></div>
+              <span class="target-lang">先生が私を叱った。</span><br>
+              <span class="target-lang">せんせいがわたしをしかった。</span><br>
+              <span class="romanization">Sensei ga watashi wo shikatta.</span><br>
+              <span class="translation">Учитель отругал меня.</span>
+            </div>
+            <div class="example">
+              <div><strong>Пассивная форма:</strong></div>
+              <span class="target-lang">私は先生に叱られた。</span><br>
+              <span class="target-lang">わたしはせんせいにしかられた。</span><br>
+              <span class="romanization">Watashi wa sensei ni shikararem ashita.</span><br>
+              <span class="translation">Я был отруган учителем.</span>
+            </div>
+          </div>
+
+          <div class="note">
+            <strong>Структура:</strong> [Подлежащее]は + [Агент]に + [Глагол в пассиве]<br>
+            Частица を меняется на は, а が меняется на に для обозначения агента действия.
+          </div>
+
+          <h3>B. Косвенный пассив (間接受身 — kansetsu ukemi)</h3>
+          <p>Уникальная форма японского языка: человек испытывает влияние действия, даже если не является прямым объектом.</p>
+
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">私は雨に降られた。</span><br>
+              <span class="target-lang">わたしはあめにふられた。</span><br>
+              <span class="romanization">Watashi wa ame ni furareru.</span><br>
+              <span class="translation">Меня застал дождь (букв. я был подвергнут дождю).</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">私は友達に来られて困った。</span><br>
+              <span class="target-lang">わたしはともだちにこられてこまった。</span><br>
+              <span class="romanization">Watashi wa tomodachi ni korarete komatta.</span><br>
+              <span class="translation">Мне было неудобно, что друг пришёл (букв. друг пришёл ко мне, и это создало проблему).</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">母に死なれた。</span><br>
+              <span class="target-lang">ははにしなれた。</span><br>
+              <span class="romanization">Haha ni shinareta.</span><br>
+              <span class="translation">Моя мать умерла (и я страдаю от этого).</span>
+            </div>
+          </div>
+
+          <div class="note">
+            <strong>Особенность:</strong> Косвенный пассив выражает эмоциональное воздействие или неудобство, причинённое говорящему. Часто переводится как "пострадать от чего-то".
+          </div>
+
+          <h3>C. Пассив владения (持ち主の受身)</h3>
+          <p>Когда действие совершается над чьей-то собственностью или частью тела.</p>
+
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">私は弟に本を破られた。</span><br>
+              <span class="target-lang">わたしはおとうとにほんをやぶられた。</span><br>
+              <span class="romanization">Watashi wa otouto ni hon wo yaburareta.</span><br>
+              <span class="translation">Младший брат порвал мою книгу (и я от этого пострадал).</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">私は犬に足を噛まれた。</span><br>
+              <span class="target-lang">わたしはいぬにあしをかまれた。</span><br>
+              <span class="romanization">Watashi wa inu ni ashi wo kamareta.</span><br>
+              <span class="translation">Собака укусила меня за ногу.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Passive Structure -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>3. Структура пассивного предложения</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Базовая структура</h3>
+          <p><strong>[Получатель действия]は + [Агент]に + [Глагол в пассиве]</strong></p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Элемент</th>
+                <th>Частица</th>
+                <th>Пример</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Получатель (тема)</td>
+                <td>は</td>
+                <td>私は (watashi wa) — я</td>
+              </tr>
+              <tr>
+                <td>Агент (исполнитель)</td>
+                <td>に</td>
+                <td>先生に (sensei ni) — учителем</td>
+              </tr>
+              <tr>
+                <td>Объект (при наличии)</td>
+                <td>を</td>
+                <td>本を (hon wo) — книгу</td>
+              </tr>
+              <tr>
+                <td>Пассивный глагол</td>
+                <td>—</td>
+                <td>褒められた (homerareta) — был похвален</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Примеры с различными частицами</h3>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">この本は多くの人に読まれている。</span><br>
+              <span class="target-lang">このほんはおおくのひとによまれている。</span><br>
+              <span class="romanization">Kono hon wa ooku no hito ni yomarete iru.</span><br>
+              <span class="translation">Эту книгу читают многие люди.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">彼は皆に愛されている。</span><br>
+              <span class="target-lang">かれはみんなにあいされている。</span><br>
+              <span class="romanization">Kare wa minna ni ai sarete iru.</span><br>
+              <span class="translation">Его все любят.</span>
+            </div>
+          </div>
+
+          <div class="note">
+            <strong>Важно:</strong> Агент может быть опущен, если он неизвестен, очевиден или неважен.
+          </div>
+        </div>
+      </div>
+
+      <!-- Usage -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>4. Использование пассивной формы</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>1. Выражение страдания или неудобства</h3>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">私は父に怒られた。</span><br>
+              <span class="target-lang">わたしはちちにおこられた。</span><br>
+              <span class="romanization">Watashi wa chichi ni okorareta.</span><br>
+              <span class="translation">Отец на меня рассердился (и мне от этого плохо).</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">泥棒に財布を盗まれた。</span><br>
+              <span class="target-lang">どろぼうにさいふをぬすまれた。</span><br>
+              <span class="romanization">Dorobou ni saifu wo nusumareta.</span><br>
+              <span class="translation">Вор украл мой кошелёк (и я пострадал).</span>
+            </div>
+          </div>
+
+          <h3>2. Уважительное или нейтральное описание</h3>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">この小説は夏目漱石によって書かれた。</span><br>
+              <span class="target-lang">このしょうせつはなつめそうせきによってかかれた。</span><br>
+              <span class="romanization">Kono shousetsu wa Natsume Souseki ni yotte kakareta.</span><br>
+              <span class="translation">Этот роман был написан Нацумэ Сосэки.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">日本語は世界中で勉強されている。</span><br>
+              <span class="target-lang">にほんごはせかいじゅうでべんきょうされている。</span><br>
+              <span class="romanization">Nihongo wa sekaijuu de benkyou sarete iru.</span><br>
+              <span class="translation">Японский язык изучается по всему миру.</span>
+            </div>
+          </div>
+
+          <h3>3. Формальный стиль (научный, деловой)</h3>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">この実験は昨日行われました。</span><br>
+              <span class="target-lang">このじっけんはきのうおこなわれました。</span><br>
+              <span class="romanization">Kono jikken wa kinou okonawaremashita.</span><br>
+              <span class="translation">Этот эксперимент был проведён вчера.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">新しい法律が制定された。</span><br>
+              <span class="target-lang">あたらしいほうりつがせいていされた。</span><br>
+              <span class="romanization">Atarashii houritsu ga seitei sareta.</span><br>
+              <span class="translation">Был принят новый закон.</span>
+            </div>
+          </div>
+
+          <h3>4. Вежливая форма (尊敬語 — sonkeigo)</h3>
+          <p>Пассивная форма может использоваться для выражения уважения к действию другого человека.</p>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">先生は何を言われましたか。</span><br>
+              <span class="target-lang">せんせいはなにをいわれましたか。</span><br>
+              <span class="romanization">Sensei wa nani wo iwaremashita ka.</span><br>
+              <span class="translation">Что сказал учитель? (вежливо)</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">社長はもう帰られました。</span><br>
+              <span class="target-lang">しゃちょうはもうかえられました。</span><br>
+              <span class="romanization">Shachou wa mou kaeraremashita.</span><br>
+              <span class="translation">Директор уже ушёл. (почтительно)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Passive with Different Tenses -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>5. Пассив в разных временах и формах</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <table>
+            <thead>
+              <tr>
+                <th>Форма</th>
+                <th>Пример (書く — писать)</th>
+                <th>Romaji</th>
+                <th>Перевод</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Настоящее/будущее</td>
+                <td>書かれる</td>
+                <td>kakareru</td>
+                <td>быть написанным</td>
+              </tr>
+              <tr>
+                <td>Прошедшее</td>
+                <td>書かれた</td>
+                <td>kakareta</td>
+                <td>был написан</td>
+              </tr>
+              <tr>
+                <td>Отрицательное</td>
+                <td>書かれない</td>
+                <td>kakarenai</td>
+                <td>не быть написанным</td>
+              </tr>
+              <tr>
+                <td>Отр. прошедшее</td>
+                <td>書かれなかった</td>
+                <td>kakarenakatta</td>
+                <td>не был написан</td>
+              </tr>
+              <tr>
+                <td>Вежливое настоящее</td>
+                <td>書かれます</td>
+                <td>kakaremasu</td>
+                <td>быть написанным (вежл.)</td>
+              </tr>
+              <tr>
+                <td>Вежливое прошедшее</td>
+                <td>書かれました</td>
+                <td>kakaremashita</td>
+                <td>был написан (вежл.)</td>
+              </tr>
+              <tr>
+                <td>Длительное</td>
+                <td>書かれている</td>
+                <td>kakarete iru</td>
+                <td>написан/находится в процессе написания</td>
+              </tr>
+              <tr>
+                <td>Te-форма</td>
+                <td>書かれて</td>
+                <td>kakarete</td>
+                <td>будучи написанным</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Common Mistakes -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>6. Типичные ошибки</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>1. Неправильное использование частиц</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>❌ Неправильно</th>
+                <th>✓ Правильно</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>私が先生に叱られた。</td>
+                <td>私は先生に叱られた。</td>
+              </tr>
+              <tr>
+                <td>私は先生を叱られた。</td>
+                <td>私は先生に叱られた。</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>2. Путаница с потенциальной формой</h3>
+          <p>Глаголы II группы имеют одинаковую форму для пассива и потенциала — различие по контексту!</p>
+          <div class="examples">
+            <div class="example">
+              <strong>Пассив:</strong><br>
+              <span class="target-lang">私は犬に噛まれる。</span><br>
+              <span class="romanization">Watashi wa inu ni kamareru.</span><br>
+              <span class="translation">Меня кусает собака.</span>
+            </div>
+            <div class="example">
+              <strong>Потенциал (возможность):</strong><br>
+              <span class="target-lang">ここから富士山が見られる。</span><br>
+              <span class="romanization">Koko kara Fujisan ga mirareru.</span><br>
+              <span class="translation">Отсюда можно увидеть гору Фудзи.</span>
+            </div>
+          </div>
+
+          <h3>3. Избыточное использование пассива</h3>
+          <div class="note">
+            <strong>Важно:</strong> В японском языке пассив используется реже, чем в русском. Активная форма часто предпочтительнее, особенно в разговорной речи.
+          </div>
+        </div>
+      </div>
+
+      <!-- Practice Examples -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>7. Практические примеры</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">その映画は多くの人に見られた。</span><br>
+              <span class="target-lang">そのえいがはおおくのひとにみられた。</span><br>
+              <span class="romanization">Sono eiga wa ooku no hito ni mirareta.</span><br>
+              <span class="translation">Этот фильм посмотрело много людей.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">私は友達に秘密を知られてしまった。</span><br>
+              <span class="target-lang">わたしはともだちにひみつをしられてしまった。</span><br>
+              <span class="romanization">Watashi wa tomodachi ni himitsu wo shirarete shimatta.</span><br>
+              <span class="translation">Друг узнал мой секрет (к моему огорчению).</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">彼女は皆に尊敬されている。</span><br>
+              <span class="target-lang">かのじょはみんなにそんけいされている。</span><br>
+              <span class="romanization">Kanojo wa minna ni sonkei sarete iru.</span><br>
+              <span class="translation">Её все уважают.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">昨夜、雨に降られて濡れてしまった。</span><br>
+              <span class="target-lang">さくや、あめにふられてぬれてしまった。</span><br>
+              <span class="romanization">Sakuya, ame ni furarete nurete shimatta.</span><br>
+              <span class="translation">Прошлой ночью меня застал дождь, и я промок.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">その問題は今日の会議で話された。</span><br>
+              <span class="target-lang">そのもんだいはきょうのかいぎではなされた。</span><br>
+              <span class="romanization">Sono mondai wa kyou no kaigi de hanasareta.</span><br>
+              <span class="translation">Этот вопрос обсуждался на сегодняшнем собрании.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">私は母に早く寝なさいと言われた。</span><br>
+              <span class="target-lang">わたしははははやくねなさいといわれた。</span><br>
+              <span class="romanization">Watashi wa haha ni hayaku nenasai to iwareta.</span><br>
+              <span class="translation">Мама сказала мне рано ложиться спать.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="back-link">
+      <a href="../">← Вернуться к выбору темы</a>
+    </div>
+  </main>
+
+  <script src="../../../../assets/js/components.js"></script>
+</body>
 </html>

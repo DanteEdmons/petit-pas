@@ -1,43 +1,586 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Petit Pas — Volitional Form</title>
-    <style>
-        body {
-            font-family: "Montserrat", sans-serif;
-            background: #0f172a;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            text-align: center;
-        }
-
-        main {
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-        }
-
-        a {
-            color: #93c5fd;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Petit Pas — Волевая форма (意向形)</title>
+  <link rel="stylesheet" href="../../../../assets/css/styles.css" />
 </head>
-
 <body>
-    <main>
-        <h1>Volitional Form</h1>
-        <p>Волевое наклонение (Давай сделаем / Собираюсь сделать).</p>
-        <p>Iku -> Ikou (Пойдем)</p>
-        <p>Taberu -> Tabeyou (Поедим)</p>
-        <p><a href="../">Назад</a></p>
-    </main>
-</body>
+  <main class="main-container">
+    <h1>Волевая форма (意向形)</h1>
+    <p class="intro">Волевая форма (или форма предположения) используется для выражения намерения, предложения или приглашения. Соответствует русским конструкциям "давай(те)", "собираюсь", "пойдём" и т.д.</p>
 
+    <div class="accordion">
+      <!-- Section 1: Formation for u-verbs -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Образование: う-глаголы (五段動詞)</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <p>Для う-глаголов волевая форма образуется изменением последнего слога на о-ряд:</p>
+
+          <h3>Правило спряжения</h3>
+          <p><strong>Последний слог меняется с う-ряда на お-ряд + う</strong></p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Словарная форма</th>
+                <th>Основа</th>
+                <th>Волевая форма</th>
+                <th>Перевод</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>書く (kaku)</td>
+                <td>kak- (く→こ)</td>
+                <td>書こう (kakou)</td>
+                <td>писать → давай напишем</td>
+              </tr>
+              <tr>
+                <td>読む (yomu)</td>
+                <td>yom- (む→も)</td>
+                <td>読もう (yomou)</td>
+                <td>читать → давай почитаем</td>
+              </tr>
+              <tr>
+                <td>話す (hanasu)</td>
+                <td>hanas- (す→そ)</td>
+                <td>話そう (hanasou)</td>
+                <td>говорить → давай поговорим</td>
+              </tr>
+              <tr>
+                <td>買う (kau)</td>
+                <td>ka- (う→お)</td>
+                <td>買おう (kaou)</td>
+                <td>покупать → давай купим</td>
+              </tr>
+              <tr>
+                <td>行く (iku)</td>
+                <td>ik- (く→こ)</td>
+                <td>行こう (ikou)</td>
+                <td>идти → пойдём</td>
+              </tr>
+              <tr>
+                <td>飲む (nomu)</td>
+                <td>nom- (む→も)</td>
+                <td>飲もう (nomou)</td>
+                <td>пить → давай выпьем</td>
+              </tr>
+              <tr>
+                <td>待つ (matsu)</td>
+                <td>mat- (つ→と)</td>
+                <td>待とう (matou)</td>
+                <td>ждать → давай подождём</td>
+              </tr>
+              <tr>
+                <td>泳ぐ (oyogu)</td>
+                <td>oyog- (ぐ→ご)</td>
+                <td>泳ごう (oyogou)</td>
+                <td>плавать → давай поплывём</td>
+              </tr>
+              <tr>
+                <td>遊ぶ (asobu)</td>
+                <td>asob- (ぶ→ぼ)</td>
+                <td>遊ぼう (asobou)</td>
+                <td>играть → давай поиграем</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="examples">
+            <div class="example">
+              <div class="target-lang">映画を見に行こう。</div>
+              <div class="translation">Eiga wo mi ni ikou. — Пойдём посмотрим фильм.</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">一緒に勉強しよう。</div>
+              <div class="translation">Issho ni benkyou shiyou. — Давай поучимся вместе.</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">明日また会おう。</div>
+              <div class="translation">Ashita mata aou. — Давай завтра снова встретимся.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2: Formation for ru-verbs -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Образование: る-глаголы (一段動詞)</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <p>Для る-глаголов образование волевой формы очень простое:</p>
+
+          <h3>Правило спряжения</h3>
+          <p><strong>る заменяется на よう</strong></p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Словарная форма</th>
+                <th>Изменение</th>
+                <th>Волевая форма</th>
+                <th>Перевод</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>食べる (taberu)</td>
+                <td>る → よう</td>
+                <td>食べよう (tabeyou)</td>
+                <td>есть → давай поедим</td>
+              </tr>
+              <tr>
+                <td>見る (miru)</td>
+                <td>る → よう</td>
+                <td>見よう (miyou)</td>
+                <td>смотреть → давай посмотрим</td>
+              </tr>
+              <tr>
+                <td>起きる (okiru)</td>
+                <td>る → よう</td>
+                <td>起きよう (okiyou)</td>
+                <td>вставать → давай встанем</td>
+              </tr>
+              <tr>
+                <td>寝る (neru)</td>
+                <td>る → よう</td>
+                <td>寝よう (neyou)</td>
+                <td>спать → давай поспим</td>
+              </tr>
+              <tr>
+                <td>教える (oshieru)</td>
+                <td>る → よう</td>
+                <td>教えよう (oshieyou)</td>
+                <td>учить → давай научим</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="note">
+            <strong>Совет:</strong> Просто убираем る и добавляем よう. Очень легко запомнить!
+          </div>
+
+          <div class="examples">
+            <div class="example">
+              <div class="target-lang">何か食べよう。</div>
+              <div class="translation">Nanika tabeyou. — Давай что-нибудь поедим.</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">この映画を見よう。</div>
+              <div class="translation">Kono eiga wo miyou. — Давай посмотрим этот фильм.</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">もう寝よう。</div>
+              <div class="translation">Mou neyou. — Давай уже спать.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 3: Irregular verbs -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Неправильные глаголы</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <p>Два неправильных глагола имеют особые формы волевого наклонения:</p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Словарная форма</th>
+                <th>Волевая форма</th>
+                <th>Перевод</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>する (suru)</td>
+                <td>しよう (shiyou)</td>
+                <td>делать → давай сделаем</td>
+              </tr>
+              <tr>
+                <td>来る (kuru)</td>
+                <td>来よう (koyou)</td>
+                <td>приходить → давай придём</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="examples">
+            <div class="example">
+              <div class="target-lang">一緒にしよう。</div>
+              <div class="translation">Issho ni shiyou. — Давай сделаем вместе.</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">早く来よう。</div>
+              <div class="translation">Hayaku koyou. — Давай придём пораньше.</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">頑張ろう！</div>
+              <div class="translation">Ganbarou! — Давай постараемся! / Вперёд!</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 4: Polite form with ましょう -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Вежливая форма: ましょう</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <p>Для вежливых ситуаций используется форма <strong>ます-основа + ましょう</strong>:</p>
+
+          <h3>Образование вежливой формы</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Глагол</th>
+                <th>ます-форма</th>
+                <th>Вежливая волевая форма</th>
+                <th>Перевод</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>行く (iku)</td>
+                <td>行きます (ikimasu)</td>
+                <td>行きましょう (ikimashou)</td>
+                <td>Пойдёмте</td>
+              </tr>
+              <tr>
+                <td>食べる (taberu)</td>
+                <td>食べます (tabemasu)</td>
+                <td>食べましょう (tabemashou)</td>
+                <td>Давайте поедим</td>
+              </tr>
+              <tr>
+                <td>する (suru)</td>
+                <td>します (shimasu)</td>
+                <td>しましょう (shimashou)</td>
+                <td>Давайте сделаем</td>
+              </tr>
+              <tr>
+                <td>来る (kuru)</td>
+                <td>来ます (kimasu)</td>
+                <td>来ましょう (kimashou)</td>
+                <td>Давайте придём</td>
+              </tr>
+              <tr>
+                <td>話す (hanasu)</td>
+                <td>話します (hanashimasu)</td>
+                <td>話しましょう (hanashimashou)</td>
+                <td>Давайте поговорим</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="note">
+            <strong>Уровень вежливости:</strong> ましょう — это стандартная вежливая форма, используется в официальных ситуациях и с незнакомыми людьми. Неформальная волевая форма (〜よう) используется с друзьями и близкими.
+          </div>
+
+          <div class="examples">
+            <div class="example">
+              <div class="target-lang">一緒に行きましょう。</div>
+              <div class="translation">Issho ni ikimashou. — Давайте пойдём вместе.</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">お茶でも飲みましょうか。</div>
+              <div class="translation">Ocha demo nomimashou ka. — Давайте выпьем чаю?</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">始めましょう。</div>
+              <div class="translation">Hajimemashou. — Давайте начнём.</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">休みましょう。</div>
+              <div class="translation">Yasumimashou. — Давайте отдохнём.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 5: Usage - Suggestions -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Использование: предложения и приглашения</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <p>Волевая форма часто используется для предложений сделать что-то вместе:</p>
+
+          <h3>Формула</h3>
+          <p><strong>Глагол в волевой форме (+ か) = Давай(те) сделаем / Может, сделаем?</strong></p>
+
+          <div class="examples">
+            <div class="example">
+              <div class="target-lang">映画を見よう。</div>
+              <div class="translation">Eiga wo miyou. — Давай посмотрим фильм.</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">カフェに行きましょうか。</div>
+              <div class="translation">Kafe ni ikimashou ka. — Может, пойдём в кафе?</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">休憩しよう。</div>
+              <div class="translation">Kyuukei shiyou. — Давай сделаем перерыв.</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">ランチを食べましょう。</div>
+              <div class="translation">Ranchi wo tabemashou. — Давайте пообедаем.</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">今日は早く帰ろう。</div>
+              <div class="translation">Kyou wa hayaku kaerou. — Давай сегодня пойдём домой пораньше.</div>
+            </div>
+          </div>
+
+          <div class="note">
+            <strong>Совет:</strong> Добавление か делает предложение более мягким и вопросительным: "Может, сделаем?" вместо "Давай сделаем!"
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 6: Usage - Intentions -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Использование: выражение намерения</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <p>Волевая форма также используется для выражения собственного намерения или решимости:</p>
+
+          <h3>Паттерны с волевой формой</h3>
+
+          <h3>〜ようと思う (собираюсь / думаю)</h3>
+          <div class="examples">
+            <div class="example">
+              <div class="target-lang">日本に行こうと思います。</div>
+              <div class="translation">Nihon ni ikou to omoimasu. — Я думаю поехать в Японию.</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">来年結婚しようと思っています。</div>
+              <div class="translation">Rainen kekkon shiyou to omotte imasu. — Я думаю пожениться в следующем году.</div>
+            </div>
+          </div>
+
+          <h3>〜ようとする (пытаться сделать)</h3>
+          <div class="examples">
+            <div class="example">
+              <div class="target-lang">ドアを開けようとしました。</div>
+              <div class="translation">Doa wo akeyou to shimashita. — Я попытался открыть дверь.</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">出かけようとしたら、電話が鳴りました。</div>
+              <div class="translation">Dekakeyou to shitara, denwa ga narimashita. — Когда я собирался выходить, зазвонил телефон.</div>
+            </div>
+          </div>
+
+          <h3>〜ようか (размышление)</h3>
+          <div class="examples">
+            <div class="example">
+              <div class="target-lang">何を食べようか。</div>
+              <div class="translation">Nani wo tabeyou ka. — Что бы мне съесть?</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">どうしようか。</div>
+              <div class="translation">Dou shiyou ka. — Что же мне делать?</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 7: Common expressions -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Распространённые выражения</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Часто используемые фразы</h3>
+
+          <div class="examples">
+            <div class="example">
+              <div class="target-lang">頑張ろう！</div>
+              <div class="translation">Ganbarou! — Давай постараемся! / Вперёд! / Не сдавайся!</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">乾杯しよう！</div>
+              <div class="translation">Kanpai shiyou! — Давайте выпьем! (за здоровье)</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">始めましょうか。</div>
+              <div class="translation">Hajimemashou ka. — Может, начнём?</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">そろそろ行こうか。</div>
+              <div class="translation">Sorosoro ikou ka. — Может, пора идти?</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">またね。じゃあ、また会おう。</div>
+              <div class="translation">Mata ne. Jaa, mata aou. — Пока. Ну что ж, увидимся.</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">どこに座りましょうか。</div>
+              <div class="translation">Doko ni suwarimashou ka. — Где присядем?</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">何時に会いましょうか。</div>
+              <div class="translation">Nanji ni aimashou ka. — Во сколько встретимся?</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">一緒に写真を撮りましょう。</div>
+              <div class="translation">Issho ni shashin wo torimashou. — Давайте сфотографируемся вместе.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 8: Polite responses -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Ответы на предложения</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <p>Как отвечать на предложения в волевой форме:</p>
+
+          <h3>Положительные ответы</h3>
+          <div class="examples">
+            <div class="example">
+              <div class="target-lang">いいですね。/ いいね。</div>
+              <div class="translation">Ii desu ne. / Ii ne. — Хорошо! / Звучит отлично!</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">そうしましょう。/ そうしよう。</div>
+              <div class="translation">Sou shimashou. / Sou shiyou. — Давайте так и сделаем.</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">賛成です。</div>
+              <div class="translation">Sansei desu. — Согласен.</div>
+            </div>
+          </div>
+
+          <h3>Отрицательные или нейтральные ответы</h3>
+          <div class="examples">
+            <div class="example">
+              <div class="target-lang">ちょっと…</div>
+              <div class="translation">Chotto... — Ну, это... (вежливый отказ)</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">今日はちょっと無理です。</div>
+              <div class="translation">Kyou wa chotto muri desu. — Сегодня не получится.</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">また今度にしましょう。</div>
+              <div class="translation">Mata kondo ni shimashou. — Давайте в другой раз.</div>
+            </div>
+          </div>
+
+          <h3>Диалог-пример</h3>
+          <div class="examples">
+            <div class="example">
+              <div class="target-lang">A: 明日映画を見に行きませんか。</div>
+              <div class="translation">A: Ashita eiga wo mi ni ikimasen ka. — Не хотите завтра сходить в кино?</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">B: いいですね。行きましょう。</div>
+              <div class="translation">B: Ii desu ne. Ikimashou. — Отлично! Пойдёмте.</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">A: じゃあ、何時に会いましょうか。</div>
+              <div class="translation">A: Jaa, nanji ni aimashou ka. — Тогда во сколько встретимся?</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">B: 3時はどうですか。</div>
+              <div class="translation">B: San-ji wa dou desu ka. — Как насчёт трёх часов?</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 9: Differences summary -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Сравнение форм приглашения</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <p>В японском языке есть несколько способов пригласить кого-то сделать что-то вместе:</p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Форма</th>
+                <th>Пример</th>
+                <th>Уровень вежливости</th>
+                <th>Значение</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>〜よう</td>
+                <td>行こう (ikou)</td>
+                <td>Неформально</td>
+                <td>Давай пойдём (с друзьями)</td>
+              </tr>
+              <tr>
+                <td>〜ましょう</td>
+                <td>行きましょう (ikimashou)</td>
+                <td>Вежливо</td>
+                <td>Давайте пойдём</td>
+              </tr>
+              <tr>
+                <td>〜ましょうか</td>
+                <td>行きましょうか (ikimashou ka)</td>
+                <td>Очень вежливо</td>
+                <td>Может, пойдём? (предложение)</td>
+              </tr>
+              <tr>
+                <td>〜ませんか</td>
+                <td>行きませんか (ikimasen ka)</td>
+                <td>Формально</td>
+                <td>Не хотите ли пойти?</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="note">
+            <strong>Выбор формы:</strong> Используйте 〜よう с друзьями и семьёй, 〜ましょう в обычных вежливых ситуациях, и 〜ませんか для более формальных приглашений.
+          </div>
+
+          <div class="examples">
+            <div class="example">
+              <div class="target-lang">友達に: 映画見に行こう！(неформально)</div>
+              <div class="translation">Tomodachi ni: Eiga mi ni ikou! — Другу: Пойдём в кино!</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">同僚に: 一緒にランチを食べましょう。(вежливо)</div>
+              <div class="translation">Douryou ni: Issho ni ranchi wo tabemashou. — Коллеге: Давайте пообедаем вместе.</div>
+            </div>
+            <div class="example">
+              <div class="target-lang">上司に: お茶でもいかがですか。(очень формально)</div>
+              <div class="translation">Joushi ni: Ocha demo ikaga desu ka. — Начальнику: Не хотите ли чаю?</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="back-link">
+      <a href="../">← Вернуться к выбору темы</a>
+    </div>
+  </main>
+  <script src="../../../../assets/js/components.js"></script>
+</body>
 </html>

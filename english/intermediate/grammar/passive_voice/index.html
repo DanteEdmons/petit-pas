@@ -1,43 +1,311 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Petit Pas — Passive Voice</title>
-    <style>
-        body {
-            font-family: "Montserrat", sans-serif;
-            background: #0f172a;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            text-align: center;
-        }
-
-        main {
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-        }
-
-        a {
-            color: #93c5fd;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Petit Pas — Passive Voice</title>
+  <link rel="stylesheet" href="../../../../assets/css/styles.css" />
 </head>
-
 <body>
-    <main>
-        <h1>Passive Voice</h1>
-        <p>Пассивный залог.</p>
-        <p>Образуется: to be + V3 (Past Participle).</p>
-        <p>Используется, когда действие важнее исполнителя.</p>
-        <p><a href="../">Назад</a></p>
-    </main>
-</body>
+  <main class="main-container">
+    <h1>Passive Voice</h1>
+    <p class="intro">Пассивный залог используется, когда важнее действие, чем тот, кто его совершает.</p>
 
+    <div class="accordion">
+      <!-- Formation -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>1. Образование (Formation)</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Формула</h3>
+          <p><strong>Subject + be + Past Participle (V3) + (by agent)</strong></p>
+
+          <h3>Преобразование Active → Passive</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Active Voice</th>
+                <th>Passive Voice</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Shakespeare wrote Hamlet.</td>
+                <td>Hamlet was written by Shakespeare.</td>
+              </tr>
+              <tr>
+                <td>They build houses.</td>
+                <td>Houses are built (by them).</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="note">
+            <strong>Правило:</strong> Объект активного предложения становится подлежащим пассивного. "By + agent" добавляется, только если важно указать исполнителя.
+          </div>
+        </div>
+      </div>
+
+      <!-- Passive in Different Tenses -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>2. Пассив во всех временах</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <table>
+            <thead>
+              <tr>
+                <th>Время</th>
+                <th>Active</th>
+                <th>Passive</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Present Simple</td>
+                <td>They make cars.</td>
+                <td>Cars <strong>are made</strong>.</td>
+              </tr>
+              <tr>
+                <td>Present Continuous</td>
+                <td>They are making a car.</td>
+                <td>A car <strong>is being made</strong>.</td>
+              </tr>
+              <tr>
+                <td>Past Simple</td>
+                <td>They made a car.</td>
+                <td>A car <strong>was made</strong>.</td>
+              </tr>
+              <tr>
+                <td>Past Continuous</td>
+                <td>They were making a car.</td>
+                <td>A car <strong>was being made</strong>.</td>
+              </tr>
+              <tr>
+                <td>Present Perfect</td>
+                <td>They have made a car.</td>
+                <td>A car <strong>has been made</strong>.</td>
+              </tr>
+              <tr>
+                <td>Past Perfect</td>
+                <td>They had made a car.</td>
+                <td>A car <strong>had been made</strong>.</td>
+              </tr>
+              <tr>
+                <td>Future Simple</td>
+                <td>They will make a car.</td>
+                <td>A car <strong>will be made</strong>.</td>
+              </tr>
+              <tr>
+                <td>Future Perfect</td>
+                <td>They will have made a car.</td>
+                <td>A car <strong>will have been made</strong>.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Modal Verbs in Passive -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>3. Пассив с модальными глаголами</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Формула</h3>
+          <p><strong>Modal + be + Past Participle</strong></p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Modal</th>
+                <th>Active</th>
+                <th>Passive</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>can</td>
+                <td>You can do it.</td>
+                <td>It <strong>can be done</strong>.</td>
+              </tr>
+              <tr>
+                <td>must</td>
+                <td>You must finish it.</td>
+                <td>It <strong>must be finished</strong>.</td>
+              </tr>
+              <tr>
+                <td>should</td>
+                <td>You should clean the room.</td>
+                <td>The room <strong>should be cleaned</strong>.</td>
+              </tr>
+              <tr>
+                <td>might</td>
+                <td>They might cancel the meeting.</td>
+                <td>The meeting <strong>might be cancelled</strong>.</td>
+              </tr>
+              <tr>
+                <td>have to</td>
+                <td>You have to do it.</td>
+                <td>It <strong>has to be done</strong>.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- When to Use Passive -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>4. Когда использовать пассив</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>1. Исполнитель неизвестен</h3>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">My car was stolen last night.</span> — <span class="translation">Мою машину угнали прошлой ночью.</span>
+            </div>
+          </div>
+
+          <h3>2. Исполнитель очевиден</h3>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">The criminal was arrested.</span> — <span class="translation">Преступник был арестован (полицией — очевидно).</span>
+            </div>
+          </div>
+
+          <h3>3. Исполнитель неважен</h3>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">English is spoken all over the world.</span> — <span class="translation">На английском говорят по всему миру.</span>
+            </div>
+          </div>
+
+          <h3>4. Формальный/научный стиль</h3>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">The experiment was conducted in 2020.</span> — <span class="translation">Эксперимент был проведён в 2020 году.</span>
+            </div>
+          </div>
+
+          <h3>5. Акцент на объекте действия</h3>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">The Mona Lisa was painted by Leonardo da Vinci.</span> — <span class="translation">«Мона Лиза» была написана Леонардо да Винчи.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- By vs With -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>5. By vs With</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <table>
+            <thead>
+              <tr>
+                <th>By</th>
+                <th>With</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Исполнитель (кто?)</td>
+                <td>Инструмент (чем?)</td>
+              </tr>
+              <tr>
+                <td>The book was written <strong>by</strong> Tolstoy.</td>
+                <td>The letter was written <strong>with</strong> a pen.</td>
+              </tr>
+              <tr>
+                <td>The cake was made <strong>by</strong> my mother.</td>
+                <td>The door was opened <strong>with</strong> a key.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Get Passive -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>6. Get + Past Participle</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <p>В разговорном английском часто используется "get" вместо "be".</p>
+
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">He got fired.</span> — <span class="translation">Его уволили.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">They got married last summer.</span> — <span class="translation">Они поженились прошлым летом.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">I got stuck in traffic.</span> — <span class="translation">Я застрял в пробке.</span>
+            </div>
+          </div>
+
+          <h3>Распространённые выражения с get</h3>
+          <ul>
+            <li>get married — пожениться</li>
+            <li>get divorced — развестись</li>
+            <li>get lost — потеряться</li>
+            <li>get hurt — пораниться</li>
+            <li>get paid — получить зарплату</li>
+            <li>get fired — быть уволенным</li>
+            <li>get arrested — быть арестованным</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Have Something Done -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>7. Have/Get Something Done</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Формула</h3>
+          <p><strong>have/get + object + Past Participle</strong></p>
+          <p>Используется, когда кто-то делает что-то для вас (услуга).</p>
+
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">I had my car repaired.</span> — <span class="translation">Мне починили машину (в сервисе).</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">She's getting her hair done.</span> — <span class="translation">Ей делают причёску (в салоне).</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">We need to have the house painted.</span> — <span class="translation">Нам нужно покрасить дом (нанять маляров).</span>
+            </div>
+          </div>
+
+          <div class="note">
+            <strong>Сравните:</strong><br>
+            • I repaired my car. — Я починил машину (сам).<br>
+            • I had my car repaired. — Мне починили машину (кто-то другой).
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="back-link">
+      <a href="../">← Вернуться к выбору темы</a>
+    </div>
+  </main>
+
+  <script src="../../../../assets/js/components.js"></script>
+</body>
 </html>

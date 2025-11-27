@@ -1,43 +1,773 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Petit Pas — Causative Form</title>
-    <style>
-        body {
-            font-family: "Montserrat", sans-serif;
-            background: #0f172a;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            text-align: center;
-        }
-
-        main {
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-        }
-
-        a {
-            color: #93c5fd;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Petit Pas — Causative Form (使役形)</title>
+  <link rel="stylesheet" href="../../../../assets/css/styles.css" />
 </head>
-
 <body>
-    <main>
-        <h1>Causative Form</h1>
-        <p>Понудительный залог (Shieki).</p>
-        <p>Taberu -> Tabesaseru (Заставить есть / Позволить есть)</p>
-        <p>Iku -> Ikaseru (Заставить идти)</p>
-        <p><a href="../">Назад</a></p>
-    </main>
-</body>
+  <main class="main-container">
+    <h1>Causative Form — Понудительный залог (使役形 — しえきけい)</h1>
+    <p class="intro">Понудительный залог используется, когда один человек заставляет или позволяет другому совершить действие. В японском языке эта форма может выражать как принуждение, так и разрешение.</p>
 
+    <div class="accordion">
+      <!-- Formation -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>1. Образование понудительной формы (Formation)</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Правила спряжения</h3>
+
+          <h4>Глаголы I группы (五段動詞 — godan doushi)</h4>
+          <p><strong>Основа ~あ段 + せる</strong></p>
+          <table>
+            <thead>
+              <tr>
+                <th>Словарная форма</th>
+                <th>Каузатив</th>
+                <th>Romaji</th>
+                <th>Перевод</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>書く (kaku)</td>
+                <td>書かせる (kakaseru)</td>
+                <td>kak-u → kak-aseru</td>
+                <td>писать → заставить писать</td>
+              </tr>
+              <tr>
+                <td>読む (yomu)</td>
+                <td>読ませる (yomaseru)</td>
+                <td>yom-u → yom-aseru</td>
+                <td>читать → заставить читать</td>
+              </tr>
+              <tr>
+                <td>待つ (matsu)</td>
+                <td>待たせる (mataseru)</td>
+                <td>mat-u → mat-aseru</td>
+                <td>ждать → заставить ждать</td>
+              </tr>
+              <tr>
+                <td>行く (iku)</td>
+                <td>行かせる (ikaseru)</td>
+                <td>ik-u → ik-aseru</td>
+                <td>идти → позволить пойти</td>
+              </tr>
+              <tr>
+                <td>話す (hanasu)</td>
+                <td>話させる (hanasaseru)</td>
+                <td>hanas-u → hanas-aseru</td>
+                <td>говорить → позволить говорить</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4>Глаголы II группы (一段動詞 — ichidan doushi)</h4>
+          <p><strong>Основа + させる</strong></p>
+          <table>
+            <thead>
+              <tr>
+                <th>Словарная форма</th>
+                <th>Каузатив</th>
+                <th>Romaji</th>
+                <th>Перевод</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>見る (miru)</td>
+                <td>見させる (misaseru)</td>
+                <td>mi-ru → mi-saseru</td>
+                <td>видеть → позволить увидеть</td>
+              </tr>
+              <tr>
+                <td>食べる (taberu)</td>
+                <td>食べさせる (tabesaseru)</td>
+                <td>tabe-ru → tabe-saseru</td>
+                <td>есть → заставить есть</td>
+              </tr>
+              <tr>
+                <td>教える (oshieru)</td>
+                <td>教えさせる (oshiesaseru)</td>
+                <td>oshie-ru → oshie-saseru</td>
+                <td>учить → позволить учить</td>
+              </tr>
+              <tr>
+                <td>寝る (neru)</td>
+                <td>寝させる (nesaseru)</td>
+                <td>ne-ru → ne-saseru</td>
+                <td>спать → уложить спать</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4>Неправильные глаголы (不規則動詞)</h4>
+          <table>
+            <thead>
+              <tr>
+                <th>Словарная форма</th>
+                <th>Каузатив</th>
+                <th>Romaji</th>
+                <th>Перевод</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>する (suru)</td>
+                <td>させる (saseru)</td>
+                <td>suru → saseru</td>
+                <td>делать → заставить делать</td>
+              </tr>
+              <tr>
+                <td>来る (くる — kuru)</td>
+                <td>来させる (こさせる — kosaseru)</td>
+                <td>kuru → kosaseru</td>
+                <td>приходить → заставить прийти</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Structure -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>2. Структура каузативного предложения</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Базовая структура</h3>
+          <p><strong>[Инициатор]が/は + [Исполнитель]を/に + [Глагол в каузативе]</strong></p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Элемент</th>
+                <th>Частица</th>
+                <th>Описание</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Инициатор</td>
+                <td>が/は</td>
+                <td>Тот, кто заставляет или позволяет</td>
+              </tr>
+              <tr>
+                <td>Исполнитель</td>
+                <td>を/に</td>
+                <td>Тот, кто выполняет действие</td>
+              </tr>
+              <tr>
+                <td>Объект (если есть)</td>
+                <td>を</td>
+                <td>То, над чем совершается действие</td>
+              </tr>
+              <tr>
+                <td>Каузативный глагол</td>
+                <td>—</td>
+                <td>Глагол в понудительной форме</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Выбор частицы を или に для исполнителя</h3>
+
+          <h4>Используйте を:</h4>
+          <ul>
+            <li><strong>С непереходными глаголами</strong> (без прямого объекта)</li>
+            <li>Когда исполнитель — единственный объект действия</li>
+          </ul>
+
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">母は子供を寝させた。</span><br>
+              <span class="target-lang">はははこどもをねさせた。</span><br>
+              <span class="romanization">Haha wa kodomo wo nesaseta.</span><br>
+              <span class="translation">Мать уложила ребёнка спать.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">先生は学生を立たせた。</span><br>
+              <span class="target-lang">せんせいはがくせいをたたせた。</span><br>
+              <span class="romanization">Sensei wa gakusei wo tataseta.</span><br>
+              <span class="translation">Учитель заставил ученика встать.</span>
+            </div>
+          </div>
+
+          <h4>Используйте に:</h4>
+          <ul>
+            <li><strong>С переходными глаголами</strong> (когда есть прямой объект)</li>
+            <li>Когда в предложении уже есть другой объект с を</li>
+            <li>Чтобы подчеркнуть разрешение или вежливую просьбу</li>
+          </ul>
+
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">母は子供に部屋を掃除させた。</span><br>
+              <span class="target-lang">はははこどもにへやをそうじさせた。</span><br>
+              <span class="romanization">Haha wa kodomo ni heya wo souji saseta.</span><br>
+              <span class="translation">Мать заставила ребёнка убрать комнату.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">先生は学生に本を読ませた。</span><br>
+              <span class="target-lang">せんせいはがくせいにほんをよませた。</span><br>
+              <span class="romanization">Sensei wa gakusei ni hon wo yomaseta.</span><br>
+              <span class="translation">Учитель заставил ученика прочитать книгу.</span>
+            </div>
+          </div>
+
+          <div class="note">
+            <strong>Важно:</strong> В одном предложении не может быть двух を, поэтому с переходными глаголами используется に для исполнителя.
+          </div>
+        </div>
+      </div>
+
+      <!-- Usage: Making vs Letting -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>3. Значения: принуждение и разрешение</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>A. Принуждение (заставлять)</h3>
+          <p>Инициатор принуждает кого-то сделать что-то против их воли или желания.</p>
+
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">親は子供に野菜を食べさせる。</span><br>
+              <span class="target-lang">おやはこどもにやさいをたべさせる。</span><br>
+              <span class="romanization">Oya wa kodomo ni yasai wo tabesaseru.</span><br>
+              <span class="translation">Родители заставляют ребёнка есть овощи.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">先生は学生を三時間待たせた。</span><br>
+              <span class="target-lang">せんせいはがくせいをさんじかんまたせた。</span><br>
+              <span class="romanization">Sensei wa gakusei wo san-jikan mataseta.</span><br>
+              <span class="translation">Учитель заставил студента ждать три часа.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">会社は社員を残業させた。</span><br>
+              <span class="target-lang">かいしゃはしゃいんをざんぎょうさせた。</span><br>
+              <span class="romanization">Kaisha wa shain wo zangyou saseta.</span><br>
+              <span class="translation">Компания заставила сотрудников работать сверхурочно.</span>
+            </div>
+          </div>
+
+          <h3>B. Разрешение (позволять, давать разрешение)</h3>
+          <p>Инициатор даёт разрешение или позволяет кому-то сделать что-то по их желанию.</p>
+
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">両親は私を一人で旅行させてくれた。</span><br>
+              <span class="target-lang">りょうしんはわたしをひとりでりょこうさせてくれた。</span><br>
+              <span class="romanization">Ryoushin wa watashi wo hitori de ryokou sasete kureta.</span><br>
+              <span class="translation">Родители позволили мне путешествовать одному.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">先生は私に質問させてくださった。</span><br>
+              <span class="target-lang">せんせいはわたしにしつもんさせてくださった。</span><br>
+              <span class="romanization">Sensei wa watashi ni shitsumon sasete kudasatta.</span><br>
+              <span class="translation">Учитель позволил мне задать вопрос.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">母は私を友達と遊ばせてくれた。</span><br>
+              <span class="target-lang">ははははわたしをともだちとあそばせてくれた。</span><br>
+              <span class="romanization">Haha wa watashi wo tomodachi to asobasete kureta.</span><br>
+              <span class="translation">Мама разрешила мне поиграть с друзьями.</span>
+            </div>
+          </div>
+
+          <div class="note">
+            <strong>Совет:</strong> Добавление てくれる/てくださる подчёркивает, что действие было разрешением (благом для говорящего), а не принуждением.
+          </div>
+
+          <h3>C. Просьба о разрешении</h3>
+          <p>Использование させてください для вежливой просьбы о разрешении.</p>
+
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">行かせてください。</span><br>
+              <span class="target-lang">いかせてください。</span><br>
+              <span class="romanization">Ikasete kudasai.</span><br>
+              <span class="translation">Позвольте мне пойти, пожалуйста.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">考えさせてください。</span><br>
+              <span class="target-lang">かんがえさせてください。</span><br>
+              <span class="romanization">Kangaesasete kudasai.</span><br>
+              <span class="translation">Позвольте мне подумать, пожалуйста.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">もう一度説明させていただけませんか。</span><br>
+              <span class="target-lang">もういちどせつめいさせていただけませんか。</span><br>
+              <span class="romanization">Mou ichido setsumei sasete itadakemasen ka.</span><br>
+              <span class="translation">Не могли бы вы позволить мне объяснить ещё раз? (очень вежливо)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Causative in Different Forms -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>4. Каузатив в разных временах и формах</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <table>
+            <thead>
+              <tr>
+                <th>Форма</th>
+                <th>Пример (行く — идти)</th>
+                <th>Romaji</th>
+                <th>Перевод</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Настоящее/будущее</td>
+                <td>行かせる</td>
+                <td>ikaseru</td>
+                <td>заставлять/позволять идти</td>
+              </tr>
+              <tr>
+                <td>Прошедшее</td>
+                <td>行かせた</td>
+                <td>ikaseta</td>
+                <td>заставил/позволил пойти</td>
+              </tr>
+              <tr>
+                <td>Отрицательное</td>
+                <td>行かせない</td>
+                <td>ikasenai</td>
+                <td>не заставлять/не позволять идти</td>
+              </tr>
+              <tr>
+                <td>Отр. прошедшее</td>
+                <td>行かせなかった</td>
+                <td>ikasenakatta</td>
+                <td>не заставил/не позволил пойти</td>
+              </tr>
+              <tr>
+                <td>Вежливое настоящее</td>
+                <td>行かせます</td>
+                <td>ikasemasu</td>
+                <td>заставляю/позволяю идти (вежл.)</td>
+              </tr>
+              <tr>
+                <td>Вежливое прошедшее</td>
+                <td>行かせました</td>
+                <td>ikasemashita</td>
+                <td>заставил/позволил пойти (вежл.)</td>
+              </tr>
+              <tr>
+                <td>Te-форма</td>
+                <td>行かせて</td>
+                <td>ikasete</td>
+                <td>заставляя/позволяя идти</td>
+              </tr>
+              <tr>
+                <td>Просьба о разрешении</td>
+                <td>行かせてください</td>
+                <td>ikasete kudasai</td>
+                <td>позвольте мне пойти, пожалуйста</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Causative-Passive -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>5. Каузативно-пассивная форма (使役受身 — Shieki Ukemi)</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Что такое каузативно-пассивная форма?</h3>
+          <p>Это комбинация каузативной и пассивной форм. Она выражает, что кто-то <strong>был вынужден</strong> сделать что-то другим человеком. Подлежащее предложения — это тот, кого заставили, и он обычно не хочет этого делать.</p>
+
+          <h3>Образование</h3>
+          <p><strong>Каузативная форма → Пассивная форма</strong></p>
+
+          <h4>Глаголы I группы (五段動詞)</h4>
+          <p><strong>Основа ~あ段 + される</strong> (короткая форма)<br>
+          <strong>Основа ~あ段 + せられる</strong> (полная форма)</p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Глагол</th>
+                <th>Каузатив</th>
+                <th>Каузатив-пассив</th>
+                <th>Romaji</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>書く (kaku)</td>
+                <td>書かせる (kakaseru)</td>
+                <td>書かされる (kakasareru)<br>書かせられる (kakaserareru)</td>
+                <td>kakasareru /<br>kakaserareru</td>
+              </tr>
+              <tr>
+                <td>読む (yomu)</td>
+                <td>読ませる (yomaseru)</td>
+                <td>読まされる (yomasareru)<br>読ませられる (yomaserareru)</td>
+                <td>yomasareru /<br>yomaserareru</td>
+              </tr>
+              <tr>
+                <td>行く (iku)</td>
+                <td>行かせる (ikaseru)</td>
+                <td>行かされる (ikasareru)<br>行かせられる (ikaserareru)</td>
+                <td>ikasareru /<br>ikaserareru</td>
+              </tr>
+              <tr>
+                <td>待つ (matsu)</td>
+                <td>待たせる (mataseru)</td>
+                <td>待たされる (matasareru)<br>待たせられる (mataserareru)</td>
+                <td>matasareru /<br>mataserareru</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4>Глаголы II группы (一段動詞)</h4>
+          <p><strong>Основа + させられる</strong></p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Глагол</th>
+                <th>Каузатив</th>
+                <th>Каузатив-пассив</th>
+                <th>Romaji</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>見る (miru)</td>
+                <td>見させる (misaseru)</td>
+                <td>見させられる (misaserareru)</td>
+                <td>misaserareru</td>
+              </tr>
+              <tr>
+                <td>食べる (taberu)</td>
+                <td>食べさせる (tabesaseru)</td>
+                <td>食べさせられる (tabesaserareru)</td>
+                <td>tabesaserareru</td>
+              </tr>
+              <tr>
+                <td>寝る (neru)</td>
+                <td>寝させる (nesaseru)</td>
+                <td>寝させられる (nesaserareru)</td>
+                <td>nesaserareru</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4>Неправильные глаголы (不規則動詞)</h4>
+          <table>
+            <thead>
+              <tr>
+                <th>Глагол</th>
+                <th>Каузатив</th>
+                <th>Каузатив-пассив</th>
+                <th>Romaji</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>する (suru)</td>
+                <td>させる (saseru)</td>
+                <td>させられる (saserareru)</td>
+                <td>saserareru</td>
+              </tr>
+              <tr>
+                <td>来る (kuru)</td>
+                <td>来させる (kosaseru)</td>
+                <td>来させられる (kosaserareru)</td>
+                <td>kosaserareru</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="note">
+            <strong>Важно:</strong> Глаголы I группы имеют две формы каузатив-пассива. Короткая форма (~される) более распространена в разговорной речи, полная форма (~せられる) — более формальная.
+          </div>
+
+          <h3>Структура предложения</h3>
+          <p><strong>[Жертва]は + [Инициатор]に + [Действие/Объект] + [Каузатив-пассив]</strong></p>
+
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">私は先生に宿題をたくさんさせられた。</span><br>
+              <span class="target-lang">わたしはせんせいにしゅくだいをたくさんさせられた。</span><br>
+              <span class="romanization">Watashi wa sensei ni shukudai wo takusan saserareta.</span><br>
+              <span class="translation">Учитель заставил меня сделать много домашней работы.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">私は母に部屋を掃除させられた。</span><br>
+              <span class="target-lang">わたしははははへやをそうじさせられた。</span><br>
+              <span class="romanization">Watashi wa haha ni heya wo souji saserareta.</span><br>
+              <span class="translation">Мама заставила меня убрать комнату.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">彼は上司に残業させられた。</span><br>
+              <span class="target-lang">かれはじょうしにざんぎょうさせられた。</span><br>
+              <span class="romanization">Kare wa joushi ni zangyou saserareta.</span><br>
+              <span class="translation">Начальник заставил его работать сверхурочно.</span>
+            </div>
+          </div>
+
+          <h3>Значение и использование</h3>
+          <p>Каузативно-пассивная форма подчёркивает:</p>
+          <ul>
+            <li><strong>Принуждение:</strong> действие совершается против воли подлежащего</li>
+            <li><strong>Отсутствие выбора:</strong> подлежащее не могло отказаться</li>
+            <li><strong>Негативные эмоции:</strong> часто выражает недовольство или страдание</li>
+          </ul>
+
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">子供の時、嫌いな野菜を食べさせられた。</span><br>
+              <span class="target-lang">こどものとき、きらいなやさいをたべさせられた。</span><br>
+              <span class="romanization">Kodomo no toki, kirai na yasai wo tabesaserareta.</span><br>
+              <span class="translation">В детстве меня заставляли есть овощи, которые я не любил.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">私は3時間も待たされた。</span><br>
+              <span class="target-lang">わたしはさんじかんもまたされた。</span><br>
+              <span class="romanization">Watashi wa san-jikan mo matasareta.</span><br>
+              <span class="translation">Меня заставили ждать целых три часа.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">学生は先生に難しい本を読まされた。</span><br>
+              <span class="target-lang">がくせいはせんせいにむずかしいほんをよまされた。</span><br>
+              <span class="romanization">Gakusei wa sensei ni muzukashii hon wo yomasareta.</span><br>
+              <span class="translation">Учитель заставил студентов читать сложную книгу.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">私は友達にカラオケに行かされた。</span><br>
+              <span class="target-lang">わたしはともだちにカラオケにいかされた。</span><br>
+              <span class="romanization">Watashi wa tomodachi ni karaoke ni ikasareta.</span><br>
+              <span class="translation">Друзья заставили меня пойти в караоке (хотя я не хотел).</span>
+            </div>
+          </div>
+
+          <h3>Каузатив-пассив в разных формах</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Форма</th>
+                <th>Пример (行く)</th>
+                <th>Romaji</th>
+                <th>Перевод</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Настоящее/будущее</td>
+                <td>行かされる</td>
+                <td>ikasareru</td>
+                <td>быть вынужденным идти</td>
+              </tr>
+              <tr>
+                <td>Прошедшее</td>
+                <td>行かされた</td>
+                <td>ikasareta</td>
+                <td>был вынужден пойти</td>
+              </tr>
+              <tr>
+                <td>Отрицательное</td>
+                <td>行かされない</td>
+                <td>ikasarenai</td>
+                <td>не быть вынужденным идти</td>
+              </tr>
+              <tr>
+                <td>Отр. прошедшее</td>
+                <td>行かされなかった</td>
+                <td>ikasarenakatta</td>
+                <td>не был вынужден пойти</td>
+              </tr>
+              <tr>
+                <td>Вежливое настоящее</td>
+                <td>行かされます</td>
+                <td>ikasaremasu</td>
+                <td>быть вынужденным идти (вежл.)</td>
+              </tr>
+              <tr>
+                <td>Вежливое прошедшее</td>
+                <td>行かされました</td>
+                <td>ikasaremashita</td>
+                <td>был вынужден пойти (вежл.)</td>
+              </tr>
+              <tr>
+                <td>Te-форма</td>
+                <td>行かされて</td>
+                <td>ikasarete</td>
+                <td>будучи вынужденным пойти</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Common Mistakes -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>6. Типичные ошибки</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>1. Неправильный выбор частицы を/に</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>❌ Неправильно</th>
+                <th>✓ Правильно</th>
+                <th>Объяснение</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>母は私に寝させた。</td>
+                <td>母は私を寝させた。</td>
+                <td>寝る — непереходный глагол (нет объекта), используйте を</td>
+              </tr>
+              <tr>
+                <td>母は私を本を読ませた。</td>
+                <td>母は私に本を読ませた。</td>
+                <td>読む — переходный глагол (есть объект 本を), используйте に</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>2. Путаница между каузативом и каузатив-пассивом</h3>
+          <div class="examples">
+            <div class="example">
+              <strong>Каузатив (активный):</strong><br>
+              <span class="target-lang">先生は学生に本を読ませた。</span><br>
+              <span class="romanization">Sensei wa gakusei ni hon wo yomaseta.</span><br>
+              <span class="translation">Учитель заставил студента читать книгу.</span><br>
+              <span style="color: #93c5fd;">→ Фокус на учителе (инициаторе)</span>
+            </div>
+            <div class="example">
+              <strong>Каузатив-пассив:</strong><br>
+              <span class="target-lang">学生は先生に本を読まされた。</span><br>
+              <span class="romanization">Gakusei wa sensei ni hon wo yomasareta.</span><br>
+              <span class="translation">Студента заставили читать книгу.</span><br>
+              <span style="color: #93c5fd;">→ Фокус на студенте (жертве), подчёркивает принуждение</span>
+            </div>
+          </div>
+
+          <h3>3. Неправильное спряжение глаголов I группы</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>❌ Неправильно</th>
+                <th>✓ Правильно</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>行きせる (ikiseru)</td>
+                <td>行かせる (ikaseru)</td>
+              </tr>
+              <tr>
+                <td>書きせる (kikiseru)</td>
+                <td>書かせる (kakaseru)</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="note">
+            <strong>Помните:</strong> Для глаголов I группы меняется последний звук на あ段 перед добавлением せる.
+          </div>
+        </div>
+      </div>
+
+      <!-- Practice Examples -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>7. Практические примеры</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Каузатив (Принуждение/Разрешение)</h3>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">先生は学生に質問させた。</span><br>
+              <span class="target-lang">せんせいはがくせいにしつもんさせた。</span><br>
+              <span class="romanization">Sensei wa gakusei ni shitsumon saseta.</span><br>
+              <span class="translation">Учитель позволил студентам задавать вопросы.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">医者は患者を歩かせた。</span><br>
+              <span class="target-lang">いしゃはかんじゃをあるかせた。</span><br>
+              <span class="romanization">Isha wa kanja wo arukaseta.</span><br>
+              <span class="translation">Врач заставил пациента ходить.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">親は子供に習い事をさせる。</span><br>
+              <span class="target-lang">おやはこどもにならいごとをさせる。</span><br>
+              <span class="romanization">Oya wa kodomo ni naraigoto wo saseru.</span><br>
+              <span class="translation">Родители заставляют ребёнка ходить на дополнительные занятия.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">私を一人にさせてください。</span><br>
+              <span class="target-lang">わたしをひとりにさせてください。</span><br>
+              <span class="romanization">Watashi wo hitori ni sasete kudasai.</span><br>
+              <span class="translation">Пожалуйста, оставьте меня одного.</span>
+            </div>
+          </div>
+
+          <h3>Каузатив-пассив (Быть вынужденным)</h3>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">私は毎日早起きさせられる。</span><br>
+              <span class="target-lang">わたしはまいにちはやおきさせられる。</span><br>
+              <span class="romanization">Watashi wa mainichi hayaoki saserareru.</span><br>
+              <span class="translation">Меня каждый день заставляют рано вставать.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">会社で長時間働かされている。</span><br>
+              <span class="target-lang">かいしゃでちょうじかんはたらかされている。</span><br>
+              <span class="romanization">Kaisha de chou-jikan hatarakasarete iru.</span><br>
+              <span class="translation">На работе меня заставляют работать много часов.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">学生時代、嫌いな科目を勉強させられた。</span><br>
+              <span class="target-lang">がくせいじだい、きらいなかもくをべんきょうさせられた。</span><br>
+              <span class="romanization">Gakusei jidai, kirai na kamoku wo benkyou saserareta.</span><br>
+              <span class="translation">В студенческие годы меня заставляли учить предметы, которые я ненавидел.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">私は両親に医者になるように言われ続けた。</span><br>
+              <span class="target-lang">わたしはりょうしんにいしゃになるようにいわれつづけた。</span><br>
+              <span class="romanization">Watashi wa ryoushin ni isha ni naru you ni iware tsuzuketa.</span><br>
+              <span class="translation">Родители постоянно говорили мне стать врачом.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">子供の頃、ピアノを習わされた。</span><br>
+              <span class="target-lang">こどものころ、ピアノをならわされた。</span><br>
+              <span class="romanization">Kodomo no koro, piano wo narawasareta.</span><br>
+              <span class="translation">В детстве меня заставляли учиться играть на пианино.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="back-link">
+      <a href="../">← Вернуться к выбору темы</a>
+    </div>
+  </main>
+
+  <script src="../../../../assets/js/components.js"></script>
+</body>
 </html>

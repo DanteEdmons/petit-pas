@@ -1,43 +1,640 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Petit Pas — Futur Simple</title>
-    <style>
-        body {
-            font-family: "Montserrat", sans-serif;
-            background: #0f172a;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            text-align: center;
-        }
-
-        main {
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-        }
-
-        a {
-            color: #93c5fd;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Petit Pas — Futur Simple</title>
+  <link rel="stylesheet" href="../../../../assets/css/styles.css" />
 </head>
-
 <body>
-    <main>
-        <h1>Futur Simple</h1>
-        <p>Будущее простое время.</p>
-        <p>Образуется: инфинитив + окончания: -ai, -as, -a, -ons, -ez, -ont.</p>
-        <p>Используется для будущих действий.</p>
-        <p><a href="../">Назад</a></p>
-    </main>
-</body>
+  <main class="main-container">
+    <h1>Futur Simple</h1>
+    <p class="intro">Будущее простое время используется для выражения действий, которые произойдут в будущем.</p>
 
+    <div class="accordion">
+      <!-- Accordion Item 1: Formation -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Образование Futur Simple</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Правило образования</h3>
+          <p>Futur Simple образуется очень просто: к <strong>инфинитиву глагола</strong> добавляются окончания будущего времени:</p>
+
+          <div class="note">
+            <strong>Формула:</strong> Инфинитив + окончания (-ai, -as, -a, -ons, -ez, -ont)
+          </div>
+
+          <h3>Окончания Futur Simple</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Лицо</th>
+                <th>Окончание</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>je</td>
+                <td>-ai</td>
+              </tr>
+              <tr>
+                <td>tu</td>
+                <td>-as</td>
+              </tr>
+              <tr>
+                <td>il/elle/on</td>
+                <td>-a</td>
+              </tr>
+              <tr>
+                <td>nous</td>
+                <td>-ons</td>
+              </tr>
+              <tr>
+                <td>vous</td>
+                <td>-ez</td>
+              </tr>
+              <tr>
+                <td>ils/elles</td>
+                <td>-ont</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Спряжение правильных глаголов</h3>
+
+          <h3>Глаголы на -ER (parler)</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Лицо</th>
+                <th>Futur Simple</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>je</td>
+                <td>parlerai</td>
+              </tr>
+              <tr>
+                <td>tu</td>
+                <td>parleras</td>
+              </tr>
+              <tr>
+                <td>il/elle/on</td>
+                <td>parlera</td>
+              </tr>
+              <tr>
+                <td>nous</td>
+                <td>parlerons</td>
+              </tr>
+              <tr>
+                <td>vous</td>
+                <td>parlerez</td>
+              </tr>
+              <tr>
+                <td>ils/elles</td>
+                <td>parleront</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Глаголы на -IR (finir)</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Лицо</th>
+                <th>Futur Simple</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>je</td>
+                <td>finirai</td>
+              </tr>
+              <tr>
+                <td>tu</td>
+                <td>finiras</td>
+              </tr>
+              <tr>
+                <td>il/elle/on</td>
+                <td>finira</td>
+              </tr>
+              <tr>
+                <td>nous</td>
+                <td>finirons</td>
+              </tr>
+              <tr>
+                <td>vous</td>
+                <td>finirez</td>
+              </tr>
+              <tr>
+                <td>ils/elles</td>
+                <td>finiront</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Глаголы на -RE (vendre)</h3>
+          <p>Для глаголов на -RE отбрасывается конечное -e перед добавлением окончаний:</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Лицо</th>
+                <th>Futur Simple</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>je</td>
+                <td>vendrai</td>
+              </tr>
+              <tr>
+                <td>tu</td>
+                <td>vendras</td>
+              </tr>
+              <tr>
+                <td>il/elle/on</td>
+                <td>vendra</td>
+              </tr>
+              <tr>
+                <td>nous</td>
+                <td>vendrons</td>
+              </tr>
+              <tr>
+                <td>vous</td>
+                <td>vendrez</td>
+              </tr>
+              <tr>
+                <td>ils/elles</td>
+                <td>vendront</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">Je parlerai français.</span><br>
+              <span class="translation">Я буду говорить по-французски.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Tu finiras ton travail demain.</span><br>
+              <span class="translation">Ты закончишь свою работу завтра.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Nous vendrons la maison.</span><br>
+              <span class="translation">Мы продадим дом.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Accordion Item 2: Irregular Stems -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Неправильные основы</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Частые неправильные глаголы</h3>
+          <p>Некоторые глаголы имеют нестандартные основы в Futur Simple, но окончания остаются теми же:</p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Infinitif</th>
+                <th>Основа</th>
+                <th>Пример (je)</th>
+                <th>Перевод</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>être</td>
+                <td>ser-</td>
+                <td>je serai</td>
+                <td>я буду (есть)</td>
+              </tr>
+              <tr>
+                <td>avoir</td>
+                <td>aur-</td>
+                <td>j'aurai</td>
+                <td>я буду иметь</td>
+              </tr>
+              <tr>
+                <td>aller</td>
+                <td>ir-</td>
+                <td>j'irai</td>
+                <td>я пойду</td>
+              </tr>
+              <tr>
+                <td>faire</td>
+                <td>fer-</td>
+                <td>je ferai</td>
+                <td>я сделаю</td>
+              </tr>
+              <tr>
+                <td>pouvoir</td>
+                <td>pourr-</td>
+                <td>je pourrai</td>
+                <td>я смогу</td>
+              </tr>
+              <tr>
+                <td>vouloir</td>
+                <td>voudr-</td>
+                <td>je voudrai</td>
+                <td>я захочу</td>
+              </tr>
+              <tr>
+                <td>devoir</td>
+                <td>devr-</td>
+                <td>je devrai</td>
+                <td>я должен буду</td>
+              </tr>
+              <tr>
+                <td>savoir</td>
+                <td>saur-</td>
+                <td>je saurai</td>
+                <td>я буду знать</td>
+              </tr>
+              <tr>
+                <td>venir</td>
+                <td>viendr-</td>
+                <td>je viendrai</td>
+                <td>я приду</td>
+              </tr>
+              <tr>
+                <td>tenir</td>
+                <td>tiendr-</td>
+                <td>je tiendrai</td>
+                <td>я буду держать</td>
+              </tr>
+              <tr>
+                <td>voir</td>
+                <td>verr-</td>
+                <td>je verrai</td>
+                <td>я увижу</td>
+              </tr>
+              <tr>
+                <td>envoyer</td>
+                <td>enverr-</td>
+                <td>j'enverrai</td>
+                <td>я отправлю</td>
+              </tr>
+              <tr>
+                <td>courir</td>
+                <td>courr-</td>
+                <td>je courrai</td>
+                <td>я побегу</td>
+              </tr>
+              <tr>
+                <td>mourir</td>
+                <td>mourr-</td>
+                <td>je mourrai</td>
+                <td>я умру</td>
+              </tr>
+              <tr>
+                <td>recevoir</td>
+                <td>recevr-</td>
+                <td>je recevrai</td>
+                <td>я получу</td>
+              </tr>
+              <tr>
+                <td>falloir</td>
+                <td>faudr-</td>
+                <td>il faudra</td>
+                <td>нужно будет</td>
+              </tr>
+              <tr>
+                <td>pleuvoir</td>
+                <td>pleuvr-</td>
+                <td>il pleuvra</td>
+                <td>будет идти дождь</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Полное спряжение être</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Лицо</th>
+                <th>Futur Simple</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>je</td>
+                <td>serai</td>
+              </tr>
+              <tr>
+                <td>tu</td>
+                <td>seras</td>
+              </tr>
+              <tr>
+                <td>il/elle/on</td>
+                <td>sera</td>
+              </tr>
+              <tr>
+                <td>nous</td>
+                <td>serons</td>
+              </tr>
+              <tr>
+                <td>vous</td>
+                <td>serez</td>
+              </tr>
+              <tr>
+                <td>ils/elles</td>
+                <td>seront</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Полное спряжение avoir</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Лицо</th>
+                <th>Futur Simple</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>j'</td>
+                <td>aurai</td>
+              </tr>
+              <tr>
+                <td>tu</td>
+                <td>auras</td>
+              </tr>
+              <tr>
+                <td>il/elle/on</td>
+                <td>aura</td>
+              </tr>
+              <tr>
+                <td>nous</td>
+                <td>aurons</td>
+              </tr>
+              <tr>
+                <td>vous</td>
+                <td>aurez</td>
+              </tr>
+              <tr>
+                <td>ils/elles</td>
+                <td>auront</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">Je serai médecin.</span><br>
+              <span class="translation">Я буду врачом.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Tu auras vingt ans demain.</span><br>
+              <span class="translation">Тебе завтра будет двадцать лет.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Il fera beau ce week-end.</span><br>
+              <span class="translation">В эти выходные будет хорошая погода.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Nous irons à Paris l'année prochaine.</span><br>
+              <span class="translation">Мы поедем в Париж в следующем году.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Vous verrez la différence.</span><br>
+              <span class="translation">Вы увидите разницу.</span>
+            </div>
+          </div>
+
+          <div class="note">
+            <strong>Совет:</strong> Неправильные основы нужно выучить наизусть. Обратите внимание, что окончания всегда одинаковые!
+          </div>
+        </div>
+      </div>
+
+      <!-- Accordion Item 3: Usage -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Употребление Futur Simple</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Когда использовать Futur Simple</h3>
+
+          <h3>1. Будущие действия</h3>
+          <p>Для описания действий, которые произойдут в будущем:</p>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">Demain, je partirai en vacances.</span><br>
+              <span class="translation">Завтра я уеду в отпуск.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">L'année prochaine, nous déménagerons.</span><br>
+              <span class="translation">В следующем году мы переедем.</span>
+            </div>
+          </div>
+
+          <h3>2. Обещания и предсказания</h3>
+          <p>Для выражения обещаний, предсказаний и прогнозов:</p>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">Je te promets que je t'aiderai.</span><br>
+              <span class="translation">Обещаю, что помогу тебе.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Il pleuvra demain.</span><br>
+              <span class="translation">Завтра будет дождь.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Un jour, tu comprendras.</span><br>
+              <span class="translation">Однажды ты поймёшь.</span>
+            </div>
+          </div>
+
+          <h3>3. Предположения о настоящем</h3>
+          <p>Для выражения предположений или догадок о настоящем:</p>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">Elle sera malade. (= возможно, она больна)</span><br>
+              <span class="translation">Она, наверное, больна.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Il aura 30 ans. (= вероятно, ему 30 лет)</span><br>
+              <span class="translation">Ему, должно быть, 30 лет.</span>
+            </div>
+          </div>
+
+          <h3>4. Приказы и инструкции</h3>
+          <p>В официальном или литературном стиле для выражения приказов:</p>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">Vous ferez vos devoirs avant de sortir.</span><br>
+              <span class="translation">Вы сделаете домашнее задание перед тем, как выйти.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Tu ne tueras point. (библейская заповедь)</span><br>
+              <span class="translation">Не убий.</span>
+            </div>
+          </div>
+
+          <h3>Типичные маркеры Futur Simple</h3>
+          <ul>
+            <li><strong>Demain</strong> — завтра</li>
+            <li><strong>Après-demain</strong> — послезавтра</li>
+            <li><strong>La semaine prochaine</strong> — на следующей неделе</li>
+            <li><strong>Le mois prochain</strong> — в следующем месяце</li>
+            <li><strong>L'année prochaine</strong> — в следующем году</li>
+            <li><strong>Dans + время</strong> — через (dans deux jours — через два дня)</li>
+            <li><strong>Bientôt</strong> — скоро</li>
+            <li><strong>Plus tard</strong> — позже</li>
+            <li><strong>Un jour</strong> — однажды</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Accordion Item 4: Futur Simple vs Futur Proche -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Futur Simple vs Futur Proche</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Различия между временами</h3>
+          <p><strong>Futur Proche</strong> (ближайшее будущее) образуется: <strong>aller (présent) + infinitif</strong></p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Futur Proche</th>
+                <th>Futur Simple</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Ближайшее будущее</td>
+                <td>Отдалённое будущее</td>
+              </tr>
+              <tr>
+                <td>Запланированные действия</td>
+                <td>Общие планы, предсказания</td>
+              </tr>
+              <tr>
+                <td>Разговорная речь</td>
+                <td>Формальная речь, письмо</td>
+              </tr>
+              <tr>
+                <td>Неизбежные события</td>
+                <td>Возможные события</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Примеры сравнения</h3>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">Futur Proche: Je vais manger. (сейчас, очень скоро)</span><br>
+              <span class="target-lang">Futur Simple: Je mangerai. (когда-то в будущем)</span><br>
+              <span class="translation">Я собираюсь поесть. / Я поем.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Futur Proche: Il va pleuvoir. (вот-вот начнётся дождь)</span><br>
+              <span class="target-lang">Futur Simple: Il pleuvra demain. (прогноз на завтра)</span><br>
+              <span class="translation">Сейчас пойдёт дождь. / Завтра будет дождь.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Futur Proche: Nous allons partir dans cinq minutes.</span><br>
+              <span class="target-lang">Futur Simple: Nous partirons l'année prochaine.</span><br>
+              <span class="translation">Мы уйдём через пять минут. / Мы уедем в следующем году.</span>
+            </div>
+          </div>
+
+          <div class="note">
+            <strong>Совет:</strong> В разговорной речи французы чаще используют Futur Proche для ближайших планов. Futur Simple звучит более формально и используется для отдалённого будущего.
+          </div>
+
+          <h3>Совместное использование</h3>
+          <p>Оба времени могут использоваться в одном предложении:</p>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">Quand je vais arriver à Paris, je te téléphonerai.</span><br>
+              <span class="translation">Когда я приеду в Париж, я позвоню тебе.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Si tu viens demain, nous irons au cinéma.</span><br>
+              <span class="translation">Если ты придёшь завтра, мы пойдём в кино.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Accordion Item 5: Conditional Use -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>Futur Simple в придаточных предложениях</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>После временных союзов</h3>
+          <p>Важная особенность: после союзов времени (<strong>quand, lorsque, dès que, aussitôt que</strong>) французский язык использует <strong>Futur Simple</strong>, а не настоящее время:</p>
+
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">Quand tu arriveras, appelle-moi.</span><br>
+              <span class="translation">Когда ты приедешь, позвони мне.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Dès que je serai prêt, je partirai.</span><br>
+              <span class="translation">Как только я буду готов, я уйду.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Lorsque vous viendrez, nous mangerons ensemble.</span><br>
+              <span class="translation">Когда вы придёте, мы поедим вместе.</span>
+            </div>
+          </div>
+
+          <div class="note">
+            <strong>Важно!</strong> В русском языке в таких случаях используется будущее время, но во французском это правило обязательно — после <strong>quand/lorsque/dès que</strong> + будущее время = <strong>Futur Simple</strong>.
+          </div>
+
+          <h3>Основные временные союзы</h3>
+          <ul>
+            <li><strong>Quand</strong> — когда</li>
+            <li><strong>Lorsque</strong> — когда (более формально)</li>
+            <li><strong>Dès que</strong> — как только</li>
+            <li><strong>Aussitôt que</strong> — как только, сразу как</li>
+            <li><strong>Après que</strong> — после того как</li>
+            <li><strong>Pendant que</strong> — в то время как</li>
+            <li><strong>Tant que</strong> — пока</li>
+          </ul>
+
+          <h3>Дополнительные примеры</h3>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">Après que tu auras fini, nous sortirons.</span><br>
+              <span class="translation">После того как ты закончишь, мы выйдем.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Tant que tu seras là, je serai heureux.</span><br>
+              <span class="translation">Пока ты здесь, я буду счастлив.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Aussitôt qu'il arrivera, la fête commencera.</span><br>
+              <span class="translation">Как только он придёт, праздник начнётся.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="back-link">
+      <a href="../">← Вернуться к выбору темы</a>
+    </div>
+  </main>
+  <script src="../../../../assets/js/components.js"></script>
+</body>
 </html>

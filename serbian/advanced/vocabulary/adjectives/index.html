@@ -42,16 +42,16 @@
     }
 
     main {
-      max-width: 620px;
+      max-width: 720px;
       width: 100%;
       background: rgba(15, 23, 42, 0.55);
       border-radius: 24px;
       backdrop-filter: blur(16px);
       box-shadow: 0 28px 48px rgba(2, 6, 23, 0.45);
-      padding: clamp(1.75rem, 6vw, 3rem);
+      padding: clamp(1.75rem, 6vw, 3.25rem);
       display: flex;
       flex-direction: column;
-      gap: 1.5rem;
+      gap: 1.75rem;
     }
 
     h1 {
@@ -63,6 +63,97 @@
       font-size: clamp(1rem, 2.4vw, 1.2rem);
       color: rgba(255, 255, 255, 0.82);
       line-height: 1.8;
+    }
+
+    .flashcard {
+      position: relative;
+      margin: 0 auto;
+      width: min(100%, 420px);
+      aspect-ratio: 3 / 2;
+      perspective: 1100px;
+      cursor: pointer;
+      border-radius: 20px;
+      outline: none;
+    }
+
+    .flashcard-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+      transition: transform 0.6s ease;
+      transform-style: preserve-3d;
+      box-shadow: 0 22px 38px rgba(15, 23, 42, 0.45);
+    }
+
+    .flashcard.flipped .flashcard-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flashcard-face {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      border-radius: inherit;
+      background: rgba(30, 41, 59, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      font-size: clamp(1.4rem, 5vw, 2.2rem);
+      font-weight: 600;
+      text-transform: lowercase;
+      backface-visibility: hidden;
+    }
+
+    .flashcard-face span {
+      display: inline-block;
+      max-width: 100%;
+    }
+
+    .flashcard-back {
+      transform: rotateY(180deg);
+      background: rgba(30, 41, 59, 0.96);
+    }
+
+    .flashcard:focus-visible {
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.65);
+    }
+
+    .progress {
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      color: rgba(226, 232, 240, 0.8);
+    }
+
+    .navigation {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    button {
+      padding: 0.65rem 1.4rem;
+      border-radius: 9999px;
+      border: none;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      background: rgba(59, 130, 246, 0.85);
+      color: #fff;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    button:hover:not(:disabled),
+    button:focus-visible {
+      transform: translateY(-1px);
+      background: rgba(96, 165, 250, 0.9);
+    }
+
+    button:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
     }
 
     .links {
@@ -87,11 +178,151 @@
 <body>
   <main>
     <h1>Сербский — Продвинутый — Прилагательные</h1>
-    <p>Тут контента пока нет, но я скоро добавлю!</p>
+    <p>Нажмите на карточку, чтобы увидеть перевод. Используйте кнопки, чтобы переходить между словами.</p>
+
+    <div
+      class="flashcard"
+      id="flashcard"
+      role="button"
+      tabindex="0"
+      aria-live="polite"
+      aria-label="Карточка словаря"
+    >
+      <div class="flashcard-inner">
+        <div class="flashcard-face flashcard-front">
+          <span id="card-front">изузетан / izuzetan</span>
+        </div>
+        <div class="flashcard-face flashcard-back">
+          <span id="card-back">исключительный, выдающийся</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="progress" id="progress">1 / 36</div>
+
+    <div class="navigation">
+      <button type="button" id="prev-btn" disabled>Назад</button>
+      <button type="button" id="next-btn">Дальше</button>
+      <button type="button" id="shuffle-btn">Перемешать</button>
+    </div>
+
     <div class="links">
       <a href="../">Назад к выбору категорий</a>
       <a href="../../">Вернуться к разделу</a>
     </div>
   </main>
+
+  <script>
+    const words = [
+      { serbian: "изузетан / izuzetan", russian: "исключительный, выдающийся" },
+      { serbian: "двосмислен / dvosmislen", russian: "двусмысленный" },
+      { serbian: "неодређен / neodređen", russian: "неопределённый, неясный" },
+      { serbian: "суптилан / suptilan", russian: "тонкий, деликатный" },
+      { serbian: "величанствен / veličanstven", russian: "величественный" },
+      { serbian: "огроман / ogroman", russian: "огромный" },
+      { serbian: "тананан / tananan", russian: "тонкий, деликатный" },
+      { serbian: "миран / miran", russian: "спокойный, тихий" },
+      { serbian: "строг / strog", russian: "строгий, суровый" },
+      { serbian: "великодушан / velikodušan", russian: "великодушный" },
+      { serbian: "охол / ohol", russian: "надменный, высокомерный" },
+      { serbian: "скроман / skroman", russian: "скромный" },
+      { serbian: "искрен / iskren", russian: "искренний, честный" },
+      { serbian: "лукав / lukav", russian: "хитрый, коварный" },
+      { serbian: "глуп / glup", russian: "глупый" },
+      { serbian: "мудар / mudar", russian: "мудрый" },
+      { serbian: "опрезан / oprezan", russian: "осторожный" },
+      { serbian: "смео / smeo", russian: "смелый, отважный" },
+      { serbian: "плашљив / plašljiv", russian: "трусливый" },
+      { serbian: "храбар / hrabar", russian: "храбрый" },
+      { serbian: "хладнокрван / hladnokrvan", russian: "хладнокровный" },
+      { serbian: "страствен / strastvен", russian: "страстный" },
+      { serbian: "логичан / logičan", russian: "логичный" },
+      { serbian: "емотиван / emotivan", russian: "эмоциональный" },
+      { serbian: "објективан / objektivan", russian: "объективный" },
+      { serbian: "субјективан / subjektivan", russian: "субъективный" },
+      { serbian: "оригиналан / originalan", russian: "оригинальный" },
+      { serbian: "преломан / preloman", russian: "эпохальный, переломный" },
+      { serbian: "иновативан / inovativan", russian: "инновационный" },
+      { serbian: "конзервативан / konzervativаn", russian: "консервативный" },
+      { serbian: "напредан / napredan", russian: "прогрессивный" },
+      { serbian: "суштински / suštinski", russian: "сущностный, существенный" },
+      { serbian: "коренит / korenit", russian: "коренной, радикальный" },
+      { serbian: "одлучујући / odlučujući", russian: "решающий" },
+      { serbian: "драматичан / dramatičan", russian: "драматичный" },
+      { serbian: "ироничан / ironičan", russian: "ироничный" }
+    ];
+
+    const flashcard = document.getElementById("flashcard");
+    const front = document.getElementById("card-front");
+    const back = document.getElementById("card-back");
+    const prevBtn = document.getElementById("prev-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const shuffleBtn = document.getElementById("shuffle-btn");
+    const progress = document.getElementById("progress");
+
+    let currentIndex = 0;
+    let shuffledWords = shuffle([...words]);
+
+    function shuffle(array) {
+      const result = [...array];
+      for (let i = result.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [result[i], result[j]] = [result[j], result[i]];
+      }
+      return result;
+    }
+
+    function renderCard() {
+      const { serbian, russian } = shuffledWords[currentIndex];
+      front.textContent = serbian;
+      back.textContent = russian;
+      flashcard.classList.remove("flipped");
+      progress.textContent = `${currentIndex + 1} / ${shuffledWords.length}`;
+      prevBtn.disabled = currentIndex === 0;
+      nextBtn.disabled = currentIndex === shuffledWords.length - 1;
+      flashcard.setAttribute(
+        "aria-label",
+        `Сербское слово ${serbian} — нажмите, чтобы увидеть перевод`
+      );
+    }
+
+    function showNext(offset) {
+      const newIndex = currentIndex + offset;
+      if (newIndex < 0 || newIndex >= shuffledWords.length) {
+        return;
+      }
+      currentIndex = newIndex;
+      renderCard();
+    }
+
+    function shuffleCards() {
+      currentIndex = 0;
+      shuffledWords = shuffle([...words]);
+      renderCard();
+    }
+
+    flashcard.addEventListener("click", () => {
+      flashcard.classList.toggle("flipped");
+    });
+
+    flashcard.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        flashcard.classList.toggle("flipped");
+      }
+    });
+
+    prevBtn.addEventListener("click", () => {
+      showNext(-1);
+    });
+
+    nextBtn.addEventListener("click", () => {
+      showNext(1);
+    });
+
+    shuffleBtn.addEventListener("click", shuffleCards);
+
+    renderCard();
+  </script>
 </body>
 </html>

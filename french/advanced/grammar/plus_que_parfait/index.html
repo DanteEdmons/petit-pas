@@ -1,43 +1,373 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Petit Pas — Plus-que-parfait</title>
-    <style>
-        body {
-            font-family: "Montserrat", sans-serif;
-            background: #0f172a;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            text-align: center;
-        }
-
-        main {
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-        }
-
-        a {
-            color: #93c5fd;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Petit Pas — Plus-que-parfait</title>
+  <link rel="stylesheet" href="../../../../assets/css/styles.css" />
 </head>
-
 <body>
-    <main>
-        <h1>Plus-que-parfait</h1>
-        <p>Предпрошедшее время.</p>
-        <p>Используется для действия, которое произошло раньше другого действия в прошлом.</p>
-        <p>Образуется: avoir/être (в Imparfait) + Participe Passé.</p>
-        <p><a href="../">Назад</a></p>
-    </main>
-</body>
+  <main class="main-container">
+    <h1>Plus-que-parfait (Предпрошедшее время)</h1>
+    <p class="intro">Plus-que-parfait — это время, которое используется для описания действия, которое произошло раньше другого действия в прошлом. Оно показывает предысторию или причину событий, произошедших в прошлом. Plus-que-parfait — это "прошлое в прошлом".</p>
 
+    <div class="accordion">
+      <!-- Section 1: Formation -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h2>Образование Plus-que-parfait</h2>
+          <span class="accordion-icon">+</span>
+        </div>
+        <div class="accordion-content">
+          <h3>Формула:</h3>
+          <p class="formula"><strong>AVOIR или ÊTRE в Imparfait + Participe passé</strong></p>
+
+          <h3>С глаголом AVOIR (большинство глаголов):</h3>
+          <p>Сначала вспомним спряжение <strong>avoir</strong> в Imparfait:</p>
+          <table>
+            <tr><th>Лицо</th><th>Avoir (Imparfait)</th></tr>
+            <tr><td>j'</td><td>avais</td></tr>
+            <tr><td>tu</td><td>avais</td></tr>
+            <tr><td>il/elle</td><td>avait</td></tr>
+            <tr><td>nous</td><td>avions</td></tr>
+            <tr><td>vous</td><td>aviez</td></tr>
+            <tr><td>ils/elles</td><td>avaient</td></tr>
+          </table>
+
+          <h3>Пример: глагол PARLER (говорить)</h3>
+          <table>
+            <tr><th>Лицо</th><th>Plus-que-parfait</th><th>Пример</th></tr>
+            <tr><td>j'</td><td>avais parlé</td><td>J'avais parlé avec lui — Я говорил с ним (раньше)</td></tr>
+            <tr><td>tu</td><td>avais parlé</td><td>Tu avais parlé trop vite — Ты говорил слишком быстро</td></tr>
+            <tr><td>il/elle</td><td>avait parlé</td><td>Elle avait parlé à son père — Она говорила с отцом</td></tr>
+            <tr><td>nous</td><td>avions parlé</td><td>Nous avions parlé de ce problème — Мы говорили об этой проблеме</td></tr>
+            <tr><td>vous</td><td>aviez parlé</td><td>Vous aviez parlé de moi — Вы говорили обо мне</td></tr>
+            <tr><td>ils/elles</td><td>avaient parlé</td><td>Ils avaient parlé ensemble — Они говорили вместе</td></tr>
+          </table>
+
+          <h3>С глаголом ÊTRE (глаголы движения и возвратные глаголы):</h3>
+          <p>Спряжение <strong>être</strong> в Imparfait:</p>
+          <table>
+            <tr><th>Лицо</th><th>Être (Imparfait)</th></tr>
+            <tr><td>j'</td><td>étais</td></tr>
+            <tr><td>tu</td><td>étais</td></tr>
+            <tr><td>il/elle</td><td>était</td></tr>
+            <tr><td>nous</td><td>étions</td></tr>
+            <tr><td>vous</td><td>étiez</td></tr>
+            <tr><td>ils/elles</td><td>étaient</td></tr>
+          </table>
+
+          <h3>Пример: глагол ALLER (идти)</h3>
+          <table>
+            <tr><th>Лицо</th><th>Plus-que-parfait</th><th>Пример</th></tr>
+            <tr><td>j'</td><td>étais allé(e)</td><td>J'étais allé à Paris — Я ездил в Париж (до этого)</td></tr>
+            <tr><td>tu</td><td>étais allé(e)</td><td>Tu étais allé au cinéma — Ты ходил в кино</td></tr>
+            <tr><td>il/elle</td><td>était allé(e)</td><td>Elle était allée chez le médecin — Она ходила к врачу</td></tr>
+            <tr><td>nous</td><td>étions allé(e)s</td><td>Nous étions allés au restaurant — Мы ходили в ресторан</td></tr>
+            <tr><td>vous</td><td>étiez allé(e)(s)</td><td>Vous étiez allés au marché — Вы ходили на рынок</td></tr>
+            <tr><td>ils/elles</td><td>étaient allé(e)s</td><td>Ils étaient allés en vacances — Они ездили на каникулы</td></tr>
+          </table>
+
+          <h3>Важно! Согласование с ÊTRE:</h3>
+          <p>Когда используется глагол être, причастие прошедшего времени согласуется с подлежащим:</p>
+          <ul>
+            <li>Il était allé (мужской род)</li>
+            <li>Elle était allée (женский род)</li>
+            <li>Ils étaient allés (мужской род множественное число)</li>
+            <li>Elles étaient allées (женский род множественное число)</li>
+          </ul>
+
+          <h3>Пример: возвратный глагол SE LEVER (вставать)</h3>
+          <table>
+            <tr><th>Лицо</th><th>Plus-que-parfait</th></tr>
+            <tr><td>je</td><td>m'étais levé(e)</td></tr>
+            <tr><td>tu</td><td>t'étais levé(e)</td></tr>
+            <tr><td>il/elle</td><td>s'était levé(e)</td></tr>
+            <tr><td>nous</td><td>nous étions levé(e)s</td></tr>
+            <tr><td>vous</td><td>vous étiez levé(e)(s)</td></tr>
+            <tr><td>ils/elles</td><td>s'étaient levé(e)s</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- Section 2: Usage -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h2>Использование Plus-que-parfait</h2>
+          <span class="accordion-icon">+</span>
+        </div>
+        <div class="accordion-content">
+          <h3>1. Действие, предшествующее другому действию в прошлом</h3>
+          <p>Plus-que-parfait показывает, что одно действие произошло раньше другого в прошлом.</p>
+
+          <h4>Примеры:</h4>
+          <ul>
+            <li><em>Quand je suis arrivé, il <strong>était déjà parti</strong>.</em><br>
+              Когда я пришел, он уже ушел. (Сначала он ушел, потом я пришел)</li>
+
+            <li><em>Elle a mangé le gâteau que j'<strong>avais préparé</strong>.</em><br>
+              Она съела торт, который я приготовил. (Сначала я приготовил, потом она съела)</li>
+
+            <li><em>Nous avons visité le musée dont tu nous <strong>avais parlé</strong>.</em><br>
+              Мы посетили музей, о котором ты нам рассказывал. (Сначала ты рассказал, потом мы посетили)</li>
+
+            <li><em>Il <strong>avait plu</strong> toute la nuit, donc les rues étaient mouillées.</em><br>
+              Всю ночь шел дождь, поэтому улицы были мокрыми. (Сначала шел дождь, потом улицы стали мокрыми)</li>
+
+            <li><em>Je ne pouvais pas entrer parce que j'<strong>avais oublié</strong> mes clés.</em><br>
+              Я не мог войти, потому что забыл ключи. (Сначала забыл, потом не мог войти)</li>
+          </ul>
+
+          <h3>2. В косвенной речи (для передачи Passé composé)</h3>
+          <p>Когда мы передаем чьи-то слова в прошедшем времени:</p>
+
+          <table>
+            <tr><th>Прямая речь</th><th>Косвенная речь</th></tr>
+            <tr>
+              <td>Il a dit: "J'<strong>ai fini</strong> mon travail."</td>
+              <td>Il a dit qu'il <strong>avait fini</strong> son travail.</td>
+            </tr>
+            <tr>
+              <td>Elle a dit: "Je <strong>suis allée</strong> au cinéma."</td>
+              <td>Elle a dit qu'elle <strong>était allée</strong> au cinéma.</td>
+            </tr>
+          </table>
+
+          <h4>Примеры:</h4>
+          <ul>
+            <li><em>Marie a expliqué qu'elle <strong>avait perdu</strong> son téléphone.</em><br>
+              Мари объяснила, что потеряла свой телефон.</li>
+
+            <li><em>Il nous a raconté ce qui <strong>s'était passé</strong>.</em><br>
+              Он рассказал нам, что произошло.</li>
+          </ul>
+
+          <h3>3. Выражение сожаления или упущенной возможности</h3>
+          <ul>
+            <li><em>Si j'<strong>avais su</strong>, je ne serais pas venu.</em><br>
+              Если бы я знал, я бы не пришел.</li>
+
+            <li><em>Si tu m'<strong>avais appelé</strong>, je t'aurais aidé.</em><br>
+              Если бы ты мне позвонил, я бы тебе помог.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Section 3: Plus-que-parfait with Si clauses -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h2>Plus-que-parfait в условных предложениях (avec Si)</h2>
+          <span class="accordion-icon">+</span>
+        </div>
+        <div class="accordion-content">
+          <h3>Условные предложения 3-го типа (нереальное прошлое)</h3>
+          <p>Plus-que-parfait используется в условных предложениях, когда мы говорим о ситуации в прошлом, которая не произошла.</p>
+
+          <h3>Структура:</h3>
+          <p class="formula"><strong>Si + Plus-que-parfait, ... Conditionnel passé</strong></p>
+
+          <h3>Примеры:</h3>
+          <table>
+            <tr><th>Si + Plus-que-parfait</th><th>Conditionnel passé</th><th>Перевод</th></tr>
+            <tr>
+              <td>Si j'<strong>avais étudié</strong>,</td>
+              <td>j'aurais réussi l'examen.</td>
+              <td>Если бы я учился, я бы сдал экзамен.</td>
+            </tr>
+            <tr>
+              <td>Si tu <strong>étais venu</strong>,</td>
+              <td>tu aurais rencontré Paul.</td>
+              <td>Если бы ты пришел, ты бы встретил Поля.</td>
+            </tr>
+            <tr>
+              <td>Si nous <strong>avions su</strong>,</td>
+              <td>nous serions partis plus tôt.</td>
+              <td>Если бы мы знали, мы бы уехали раньше.</td>
+            </tr>
+            <tr>
+              <td>Si elle <strong>avait pris</strong> le train,</td>
+              <td>elle serait arrivée à l'heure.</td>
+              <td>Если бы она взяла поезд, она бы прибыла вовремя.</td>
+            </tr>
+          </table>
+
+          <h3>Больше примеров:</h3>
+          <ul>
+            <li><em>Si vous <strong>aviez appelé</strong>, je vous aurais aidé.</em><br>
+              Если бы вы позвонили, я бы вам помог.</li>
+
+            <li><em>Si j'<strong>avais eu</strong> plus de temps, j'aurais fait ce travail.</em><br>
+              Если бы у меня было больше времени, я бы сделал эту работу.</li>
+
+            <li><em>Si tu <strong>avais écouté</strong> mes conseils, tu n'aurais pas eu de problèmes.</em><br>
+              Если бы ты послушал моих советов, у тебя не было бы проблем.</li>
+
+            <li><em>S'il <strong>avait plu</strong>, nous serions restés à la maison.</em><br>
+              Если бы шел дождь, мы бы остались дома.</li>
+
+            <li><em>Si elles <strong>étaient parties</strong> plus tôt, elles auraient évité les embouteillages.</em><br>
+              Если бы они уехали раньше, они бы избежали пробок.</li>
+          </ul>
+
+          <h3>Важная заметка:</h3>
+          <p>Эти предложения описывают <strong>нереальные ситуации в прошлом</strong> — то, что не произошло. Мы используем их для выражения сожаления или размышления о том, что могло бы быть.</p>
+        </div>
+      </div>
+
+      <!-- Section 4: Comparison with other tenses -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h2>Сравнение с другими временами</h2>
+          <span class="accordion-icon">+</span>
+        </div>
+        <div class="accordion-content">
+          <h3>Plus-que-parfait vs Passé composé vs Imparfait</h3>
+
+          <h4>Временная линия:</h4>
+          <table>
+            <tr><th>Время</th><th>Когда использовать</th><th>Пример</th></tr>
+            <tr>
+              <td><strong>Plus-que-parfait</strong><br>(самое раннее)</td>
+              <td>Действие, которое произошло раньше других действий в прошлом</td>
+              <td>J'<strong>avais mangé</strong> avant qu'il arrive.</td>
+            </tr>
+            <tr>
+              <td><strong>Passé composé</strong><br>(прошлое)</td>
+              <td>Завершенное действие в прошлом</td>
+              <td>Il <strong>est arrivé</strong> à 8 heures.</td>
+            </tr>
+            <tr>
+              <td><strong>Imparfait</strong><br>(фон в прошлом)</td>
+              <td>Описание, привычка, длительное действие в прошлом</td>
+              <td>Il <strong>faisait</strong> beau.</td>
+            </tr>
+          </table>
+
+          <h3>Сравнительные примеры:</h3>
+
+          <h4>Пример 1: Последовательность событий</h4>
+          <div class="dialogue">
+            <p><em>Quand Marie <strong>est arrivée</strong> (Passé composé) au restaurant, Pierre <strong>était déjà parti</strong> (Plus-que-parfait).</em></p>
+            <p class="translation">Когда Мари пришла в ресторан, Пьер уже ушел.</p>
+            <p><strong>Порядок событий:</strong> 1) Пьер ушел (Plus-que-parfait) → 2) Мари пришла (Passé composé)</p>
+          </div>
+
+          <h4>Пример 2: Все три времени вместе</h4>
+          <div class="dialogue">
+            <p><em>Il <strong>faisait</strong> (Imparfait) très froid parce qu'il <strong>avait neigé</strong> (Plus-que-parfait) toute la nuit. Alors, je <strong>suis resté</strong> (Passé composé) à la maison.</em></p>
+            <p class="translation">Было очень холодно, потому что всю ночь шел снег. Поэтому я остался дома.</p>
+            <p><strong>Порядок:</strong> 1) Снег шел всю ночь (Plus-que-parfait) → 2) Было холодно (Imparfait - описание) → 3) Я остался дома (Passé composé)</p>
+          </div>
+
+          <h4>Пример 3: Причина и следствие</h4>
+          <div class="dialogue">
+            <p><em>Elle <strong>était</strong> (Imparfait) fatiguée parce qu'elle <strong>avait travaillé</strong> (Plus-que-parfait) toute la journée. Donc elle <strong>s'est couchée</strong> (Passé composé) tôt.</em></p>
+            <p class="translation">Она была уставшей, потому что работала весь день. Поэтому она легла спать рано.</p>
+          </div>
+
+          <h3>Ключевые слова-индикаторы:</h3>
+          <ul>
+            <li><strong>déjà</strong> (уже) — <em>Il était déjà parti.</em></li>
+            <li><strong>avant</strong> (прежде) — <em>J'avais mangé avant de venir.</em></li>
+            <li><strong>après que</strong> (после того как) — <em>Après qu'il était parti, j'ai nettoyé.</em></li>
+            <li><strong>quand/lorsque</strong> (когда) — <em>Quand je suis arrivé, il avait fini.</em></li>
+          </ul>
+
+          <h3>Таблица сравнения:</h3>
+          <table>
+            <tr><th>Ситуация</th><th>Какое время использовать</th></tr>
+            <tr>
+              <td>Описываем, что кто-то сделал что-то раньше</td>
+              <td><strong>Plus-que-parfait</strong><br>J'avais déjà vu ce film.</td>
+            </tr>
+            <tr>
+              <td>Описываем завершенное действие в прошлом</td>
+              <td><strong>Passé composé</strong><br>J'ai vu ce film hier.</td>
+            </tr>
+            <tr>
+              <td>Описываем состояние или длительное действие</td>
+              <td><strong>Imparfait</strong><br>Je regardais la télé.</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- Section 5: Practice Examples -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h2>Практические примеры</h2>
+          <span class="accordion-icon">+</span>
+        </div>
+        <div class="accordion-content">
+          <h3>Рассказ с использованием Plus-que-parfait:</h3>
+          <div class="dialogue">
+            <p>Hier, je <strong>suis allé</strong> (Passé composé) au cinéma avec mes amis. Nous <strong>avions décidé</strong> (Plus-que-parfait) de voir le nouveau film français dont tout le monde parlait. J'<strong>avais acheté</strong> (Plus-que-parfait) les billets en ligne la veille.</p>
+            <p class="translation">Вчера я ходил в кино с друзьями. Мы решили посмотреть новый французский фильм, о котором все говорили. Я купил билеты онлайн накануне.</p>
+
+            <p>Quand nous <strong>sommes arrivés</strong> (Passé composé), il <strong>y avait</strong> (Imparfait) beaucoup de monde. Heureusement, j'<strong>avais réservé</strong> (Plus-que-parfait) nos places. Le film <strong>était</strong> (Imparfait) excellent, exactement comme Marie nous l'<strong>avait décrit</strong> (Plus-que-parfait).</p>
+            <p class="translation">Когда мы прибыли, там было много людей. К счастью, я зарезервировал наши места. Фильм был отличным, точно таким, как нам описала Мари.</p>
+
+            <p>Après le cinéma, nous <strong>avons voulu</strong> (Passé composé) aller au restaurant, mais tous les restaurants <strong>étaient</strong> (Imparfait) complets. Nous <strong>n'avions pas pensé</strong> (Plus-que-parfait) à réserver une table. Finalement, nous <strong>sommes allés</strong> (Passé composé) manger une pizza.</p>
+            <p class="translation">После кино мы хотели пойти в ресторан, но все рестораны были заполнены. Мы не подумали зарезервировать столик. В конце концов, мы пошли есть пиццу.</p>
+          </div>
+
+          <h3>Упражнения - выберите правильное время:</h3>
+          <ol>
+            <li>Когда я проснулся, мама уже приготовила завтрак.<br>
+              <em>Quand je me suis réveillé, maman <strong>avait déjà préparé</strong> le petit déjeuner.</em></li>
+
+            <li>Она была счастлива, потому что получила хорошую оценку.<br>
+              <em>Elle était heureuse parce qu'elle <strong>avait reçu</strong> une bonne note.</em></li>
+
+            <li>Мы не могли войти в дом, так как забыли ключи.<br>
+              <em>Nous ne pouvions pas entrer dans la maison parce que nous <strong>avions oublié</strong> les clés.</em></li>
+
+            <li>Когда поезд прибыл, они уже ждали на платформе 20 минут.<br>
+              <em>Quand le train est arrivé, ils <strong>avaient déjà attendu</strong> sur le quai pendant 20 minutes.</em></li>
+
+            <li>Если бы ты мне сказал, я бы тебе помог.<br>
+              <em>Si tu me l'<strong>avais dit</strong>, je t'aurais aidé.</em></li>
+
+            <li>Он объяснил, что видел этот фильм раньше.<br>
+              <em>Il a expliqué qu'il <strong>avait vu</strong> ce film avant.</em></li>
+          </ol>
+
+          <h3>Распространенные ошибки:</h3>
+          <table>
+            <tr><th>Неправильно</th><th>Правильно</th></tr>
+            <tr>
+              <td>❌ Quand je suis arrivé, il <em>est parti</em>.</td>
+              <td>✓ Quand je suis arrivé, il <em>était parti</em>.</td>
+            </tr>
+            <tr>
+              <td>❌ J'ai mangé le gâteau que tu <em>as fait</em>.</td>
+              <td>✓ J'ai mangé le gâteau que tu <em>avais fait</em>.</td>
+            </tr>
+            <tr>
+              <td>❌ Si j'<em>ai su</em>, je serais venu.</td>
+              <td>✓ Si j'<em>avais su</em>, je serais venu.</td>
+            </tr>
+            <tr>
+              <td>❌ Elle a été fatiguée parce qu'elle <em>a travaillé</em>.</td>
+              <td>✓ Elle était fatiguée parce qu'elle <em>avait travaillé</em>.</td>
+            </tr>
+          </table>
+
+          <h3>Советы для запоминания:</h3>
+          <ul>
+            <li>Ищите слова-маркеры: <strong>déjà, avant, quand, après que</strong></li>
+            <li>Задайте себе вопрос: "Что произошло РАНЬШЕ?" — это будет Plus-que-parfait</li>
+            <li>В условных предложениях с "si": если говорите о нереальном прошлом, используйте Plus-que-parfait</li>
+            <li>Помните: Plus-que-parfait = "прошлое в прошлом"</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="back-link">
+      <a href="../">← Вернуться к выбору темы</a>
+    </div>
+  </main>
+  <script src="../../../../assets/js/components.js"></script>
+</body>
 </html>

@@ -1,43 +1,499 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Petit Pas — Mixed Conditionals</title>
-    <style>
-        body {
-            font-family: "Montserrat", sans-serif;
-            background: #0f172a;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            text-align: center;
-        }
-
-        main {
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-        }
-
-        a {
-            color: #93c5fd;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Petit Pas — Mixed Conditionals</title>
+  <link rel="stylesheet" href="../../../../assets/css/styles.css" />
 </head>
-
 <body>
-    <main>
-        <h1>Mixed Conditionals</h1>
-        <p>Смешанные условия.</p>
-        <p>Используются, когда условие и результат относятся к разным временам.</p>
-        <p>Пример: If I had studied harder (past), I would be rich now (present).</p>
-        <p><a href="../">Назад</a></p>
-    </main>
-</body>
+  <main class="main-container">
+    <h1>Mixed Conditionals</h1>
+    <p class="intro">Смешанные условные предложения (Mixed Conditionals) используются, когда условие относится к одному времени, а результат — к другому. Они позволяют выражать более сложные логические связи между прошлым и настоящим.</p>
 
+    <div class="accordion">
+      <!-- Review of Standard Conditionals -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>1. Обзор стандартных условных предложений</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Повторение базовых условных</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Тип</th>
+                <th>Формула</th>
+                <th>Пример</th>
+                <th>Использование</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Second Conditional</td>
+                <td>If + Past Simple, would + infinitive</td>
+                <td>If I were rich, I would travel.</td>
+                <td>Нереальное настоящее</td>
+              </tr>
+              <tr>
+                <td>Third Conditional</td>
+                <td>If + Past Perfect, would have + V3</td>
+                <td>If I had studied, I would have passed.</td>
+                <td>Нереальное прошлое</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="note">
+            <strong>Напоминание:</strong> В стандартных условных предложениях оба времени совпадают:<br>
+            • Second: настоящее → настоящее<br>
+            • Third: прошлое → прошлое
+          </div>
+        </div>
+      </div>
+
+      <!-- Past → Present Mixed -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>2. Прошлое условие → Настоящий результат</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Формула</h3>
+          <p><strong>If + Past Perfect, would/could/might + infinitive</strong></p>
+          <p>(Third Conditional IF-clause + Second Conditional result)</p>
+
+          <h3>Когда использовать</h3>
+          <p>Используется, когда прошлое действие или ситуация имеет результат или влияние в настоящем.</p>
+
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">If I had studied medicine, I would be a doctor now.</span> — <span class="translation">Если бы я учился на врача (в прошлом), я был бы врачом сейчас.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">If she had accepted that job, she would be living in Paris now.</span> — <span class="translation">Если бы она приняла ту работу (тогда), она бы жила в Париже сейчас.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">If they had bought that house, they would own property today.</span> — <span class="translation">Если бы они купили тот дом (раньше), у них была бы недвижимость сегодня.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">If we had taken his advice, we wouldn't be in this mess now.</span> — <span class="translation">Если бы мы послушали его совета (тогда), мы бы не были в этой ситуации сейчас.</span>
+            </div>
+          </div>
+
+          <h3>Больше примеров</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Прошлое условие</th>
+                <th>Настоящий результат</th>
+                <th>Перевод</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>If he had saved money</td>
+                <td>he would be rich now</td>
+                <td>Если бы он копил деньги, он был бы богат сейчас</td>
+              </tr>
+              <tr>
+                <td>If I had learned to drive</td>
+                <td>I could drive to work</td>
+                <td>Если бы я научился водить, я мог бы ездить на работу</td>
+              </tr>
+              <tr>
+                <td>If they had married</td>
+                <td>they would have children now</td>
+                <td>Если бы они поженились, у них были бы дети сейчас</td>
+              </tr>
+              <tr>
+                <td>If she hadn't moved abroad</td>
+                <td>she might be with us today</td>
+                <td>Если бы она не уехала за границу, она могла бы быть с нами сегодня</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="note">
+            <strong>Логика:</strong> Прошлое решение/действие → Текущее состояние/ситуация<br>
+            Это самый распространённый тип смешанных условных предложений.
+          </div>
+        </div>
+      </div>
+
+      <!-- Present → Past Mixed -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>3. Настоящее условие → Прошлый результат</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Формула</h3>
+          <p><strong>If + Past Simple, would/could/might have + V3</strong></p>
+          <p>(Second Conditional IF-clause + Third Conditional result)</p>
+
+          <h3>Когда использовать</h3>
+          <p>Используется, когда постоянная характеристика, качество или текущее состояние повлияло бы на прошлое событие.</p>
+
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">If I were more careful, I wouldn't have made that mistake.</span> — <span class="translation">Если бы я был более внимательным (по характеру), я бы не совершил ту ошибку.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">If he weren't so lazy, he would have finished the project on time.</span> — <span class="translation">Если бы он не был таким ленивым (вообще), он бы закончил проект вовремя.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">If she were taller, she could have become a model.</span> — <span class="translation">Если бы она была выше (ростом), она могла бы стать моделью.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">If we lived closer, we would have visited you last weekend.</span> — <span class="translation">Если бы мы жили ближе (сейчас), мы бы навестили вас на прошлых выходных.</span>
+            </div>
+          </div>
+
+          <h3>Больше примеров</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Настоящее условие</th>
+                <th>Прошлый результат</th>
+                <th>Перевод</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>If I were braver</td>
+                <td>I would have asked her out</td>
+                <td>Если бы я был смелее, я бы пригласил её на свидание</td>
+              </tr>
+              <tr>
+                <td>If they spoke French</td>
+                <td>they could have helped us yesterday</td>
+                <td>Если бы они говорили по-французски, они могли бы помочь нам вчера</td>
+              </tr>
+              <tr>
+                <td>If she weren't allergic to cats</td>
+                <td>she would have adopted that kitten</td>
+                <td>Если бы у неё не было аллергии на кошек, она бы взяла того котёнка</td>
+              </tr>
+              <tr>
+                <td>If he had more experience</td>
+                <td>he might have got the job</td>
+                <td>Если бы у него было больше опыта, он мог бы получить ту работу</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="note">
+            <strong>Логика:</strong> Постоянная характеристика/текущее состояние → Прошлое событие<br>
+            Этот тип менее распространён, но очень полезен для выражения сожалений о том, как личные качества повлияли на прошлое.
+          </div>
+        </div>
+      </div>
+
+      <!-- Comparison Table -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>4. Сравнительная таблица</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Все типы условных предложений</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Тип</th>
+                <th>If-clause</th>
+                <th>Result clause</th>
+                <th>Пример</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Second Conditional</strong><br>(настоящее → настоящее)</td>
+                <td>Past Simple</td>
+                <td>would + infinitive</td>
+                <td>If I were rich, I would travel.</td>
+              </tr>
+              <tr>
+                <td><strong>Third Conditional</strong><br>(прошлое → прошлое)</td>
+                <td>Past Perfect</td>
+                <td>would have + V3</td>
+                <td>If I had studied, I would have passed.</td>
+              </tr>
+              <tr>
+                <td><strong>Mixed (Past → Present)</strong><br>(прошлое → настоящее)</td>
+                <td>Past Perfect</td>
+                <td>would + infinitive</td>
+                <td>If I had studied medicine, I would be a doctor now.</td>
+              </tr>
+              <tr>
+                <td><strong>Mixed (Present → Past)</strong><br>(настоящее → прошлое)</td>
+                <td>Past Simple</td>
+                <td>would have + V3</td>
+                <td>If I were braver, I would have asked her out.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Как выбрать правильный тип</h3>
+          <ol>
+            <li><strong>Определите время условия:</strong> это о прошлом или о настоящем/постоянном состоянии?</li>
+            <li><strong>Определите время результата:</strong> это о прошлом или о настоящем?</li>
+            <li><strong>Выберите соответствующую формулу</strong> из таблицы выше</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Practice Recognition -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>5. Практика распознавания</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Определите тип условного предложения</h3>
+
+          <h4>1. If I had won the lottery, I would be living in a mansion now.</h4>
+          <p><strong>Ответ:</strong> Mixed Past → Present (купил бы лотерею в прошлом → жил бы в особняке сейчас)</p>
+
+          <h4>2. If she weren't so stubborn, she would have apologized yesterday.</h4>
+          <p><strong>Ответ:</strong> Mixed Present → Past (упрямая по характеру → извинилась бы вчера)</p>
+
+          <h4>3. If they had invested in that company, they would be millionaires today.</h4>
+          <p><strong>Ответ:</strong> Mixed Past → Present (инвестировали бы тогда → были бы миллионерами сейчас)</p>
+
+          <h4>4. If I knew Spanish, I could have helped them last week.</h4>
+          <p><strong>Ответ:</strong> Mixed Present → Past (знал бы испанский сейчас → помог бы на прошлой неделе)</p>
+
+          <h3>Ситуации для смешанных условных</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Ситуация</th>
+                <th>Тип</th>
+                <th>Пример</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Сожаление о прошлом выборе, влияющем на настоящее</td>
+                <td>Past → Present</td>
+                <td>If I had gone to university, I would have a better job now.</td>
+              </tr>
+              <tr>
+                <td>Личное качество, которое повлияло на прошлое событие</td>
+                <td>Present → Past</td>
+                <td>If I were more organised, I wouldn't have missed the deadline.</td>
+              </tr>
+              <tr>
+                <td>Прошлое решение с текущими последствиями</td>
+                <td>Past → Present</td>
+                <td>If we had bought that house, we wouldn't be renting now.</td>
+              </tr>
+              <tr>
+                <td>Текущее ограничение, влияющее на прошлую возможность</td>
+                <td>Present → Past</td>
+                <td>If I had a car, I could have driven you to the airport.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- With Modals -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>6. Смешанные условные с модальными глаголами</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Could, Might, Should</h3>
+          <p>Помимо "would" можно использовать другие модальные глаголы для разных оттенков значения.</p>
+
+          <h4>Could (мог бы)</h4>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">If I had learned programming, I could be working as a developer now.</span> — <span class="translation">Если бы я выучил программирование, я мог бы работать разработчиком сейчас.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">If I were stronger, I could have lifted that box.</span> — <span class="translation">Если бы я был сильнее, я мог бы поднять ту коробку.</span>
+            </div>
+          </div>
+
+          <h4>Might (возможно, мог бы)</h4>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">If we had left earlier, we might be there by now.</span> — <span class="translation">Если бы мы уехали раньше, мы, возможно, были бы там уже.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">If he weren't so shy, he might have talked to her.</span> — <span class="translation">Если бы он не был таким застенчивым, он, возможно, поговорил бы с ней.</span>
+            </div>
+          </div>
+
+          <h4>Should (следовало бы)</h4>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">If I had known it was important, I should have paid more attention.</span> — <span class="translation">Если бы я знал, что это важно, мне следовало бы уделить больше внимания.</span>
+            </div>
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Модальный глагол</th>
+                <th>Значение</th>
+                <th>Пример</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>would</td>
+                <td>определённый результат</td>
+                <td>If I had studied, I would be a doctor.</td>
+              </tr>
+              <tr>
+                <td>could</td>
+                <td>возможность, способность</td>
+                <td>If I had studied, I could be a doctor.</td>
+              </tr>
+              <tr>
+                <td>might</td>
+                <td>возможность (менее уверенно)</td>
+                <td>If I had studied, I might be a doctor.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Common Contexts -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>7. Типичные контексты использования</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>1. Сожаления о прошлых решениях</h3>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">If I had taken that job offer, I would be earning more money now.</span> — <span class="translation">Если бы я принял то предложение о работе, я бы зарабатывал больше сейчас.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">If we had moved to the city, the kids would be going to better schools now.</span> — <span class="translation">Если бы мы переехали в город, дети ходили бы в лучшие школы сейчас.</span>
+            </div>
+          </div>
+
+          <h3>2. Объяснение текущей ситуации через прошлое</h3>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">If he had listened to the doctor, he wouldn't be in hospital now.</span> — <span class="translation">Если бы он послушал врача, он не лежал бы в больнице сейчас.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">If they hadn't argued, they would still be friends today.</span> — <span class="translation">Если бы они не поссорились, они всё ещё были бы друзьями сегодня.</span>
+            </div>
+          </div>
+
+          <h3>3. Характер и его влияние на прошлое</h3>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">If I weren't so forgetful, I wouldn't have left my keys at home.</span> — <span class="translation">Если бы я не был таким забывчивым, я бы не оставил ключи дома.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">If she were more confident, she would have applied for the promotion.</span> — <span class="translation">Если бы она была более уверенной в себе, она бы подала заявку на повышение.</span>
+            </div>
+          </div>
+
+          <h3>4. Навыки и упущенные возможности</h3>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">If I could cook, I would have prepared dinner for them last night.</span> — <span class="translation">Если бы я умел готовить, я бы приготовил им ужин прошлым вечером.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">If he spoke Chinese, he could have got that job in Beijing.</span> — <span class="translation">Если бы он говорил по-китайски, он мог бы получить ту работу в Пекине.</span>
+            </div>
+          </div>
+
+          <div class="note">
+            <strong>Регистр:</strong> Смешанные условные предложения используются как в формальной, так и в неформальной речи. Они особенно часты в:
+            <ul>
+              <li>Разговорах о сожалениях и упущенных возможностях</li>
+              <li>Анализе причин текущей ситуации</li>
+              <li>Размышлениях о том, как всё могло бы быть иначе</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Summary -->
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          <span>8. Резюме и ключевые моменты</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <h3>Ключевые формулы</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Тип</th>
+                <th>Формула</th>
+                <th>Значение</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Past → Present</strong></td>
+                <td>If + Past Perfect, would + infinitive</td>
+                <td>Прошлое действие влияет на настоящее</td>
+              </tr>
+              <tr>
+                <td><strong>Present → Past</strong></td>
+                <td>If + Past Simple, would have + V3</td>
+                <td>Текущее состояние влияло на прошлое</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Как избежать ошибок</h3>
+          <div class="note">
+            <strong>Распространённые ошибки:</strong>
+            <ol>
+              <li>
+                <strong>Путаница времён:</strong><br>
+                ✗ If I studied medicine, I would have been a doctor.<br>
+                ✓ If I had studied medicine, I would be a doctor now.
+              </li>
+              <li>
+                <strong>Неправильный модальный глагол:</strong><br>
+                ✗ If I were taller, I would have been a model.<br>
+                ✓ If I were taller, I could have become a model.
+              </li>
+              <li>
+                <strong>Забывание "now/then" для ясности:</strong><br>
+                Хорошо: If I had saved money, I would be rich now.<br>
+                Лучше добавить "now" для ясности!
+              </li>
+            </ol>
+          </div>
+
+          <h3>Когда использовать смешанные условные</h3>
+          <ul>
+            <li>Когда причина и следствие находятся в разных временных рамках</li>
+            <li>Для выражения сожалений о прошлых решениях с текущими последствиями</li>
+            <li>Для объяснения, как личные качества повлияли на прошлые события</li>
+            <li>В рефлексивных беседах о жизненном пути и выборах</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="back-link">
+      <a href="../">← Вернуться к выбору темы</a>
+    </div>
+  </main>
+
+  <script src="../../../../assets/js/components.js"></script>
+</body>
 </html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Petit Pas — Тренажер за конјугацију</title>
+  <link rel="stylesheet" href="../../../../assets/css/styles.css" />
+</head>
+<body>
+  <main class="main-container">
+    <h1>Тренажер за конјугацију</h1>
+    <p class="intro">Унесите правилан облик глагола у презенту</p>
+    <div id="trainer-container"></div>
+    <div class="back-link"><a href="../">← Назад</a></div>
+  </main>
+  <script src="../../../../assets/js/components.js"></script>
+  <script>
+    // Override feedback text for Serbian
+    ConjugationTrainer.prototype.checkAnswer = function(pronounIndex) {
+      const input = this.container.querySelector('#conjugationInput');
+      const userAnswer = input.value.trim().toLowerCase();
+      const correctAnswer = this.currentVerb.conjugations[pronounIndex].toLowerCase();
+      const isCorrect = userAnswer === correctAnswer;
+
+      if (isCorrect) {
+        this.correct++;
+      } else {
+        this.incorrect++;
+      }
+
+      // Show feedback
+      const feedback = this.container.querySelector('#feedback');
+      feedback.style.display = 'block';
+      feedback.className = `quiz-feedback ${isCorrect ? 'correct' : 'incorrect'}`;
+      feedback.innerHTML = isCorrect
+        ? 'Тачно!'
+        : `Тачан одговор: <strong>${this.currentVerb.conjugations[pronounIndex]}</strong>`;
+
+      input.disabled = true;
+      input.classList.add(isCorrect ? 'correct' : 'incorrect');
+
+      // Auto-advance after delay
+      setTimeout(() => this.nextQuestion(), 1500);
+    };
+
+    ConjugationTrainer.prototype.render = function(pronounIndex) {
+      this.container.innerHTML = `
+        <div class="conjugation-container">
+          <div class="conjugation-prompt">
+            <div class="conjugation-verb">${this.currentVerb.infinitive}</div>
+            <div class="conjugation-pronoun">${this.currentPronoun}</div>
+          </div>
+          <input type="text" class="conjugation-input" id="conjugationInput" autocomplete="off" placeholder="...">
+          <div class="conjugation-stats">
+            <span class="correct">Тачно: ${this.correct}</span>
+            <span class="incorrect">Грешака: ${this.incorrect}</span>
+          </div>
+          <div class="quiz-feedback" id="feedback" style="display: none;"></div>
+        </div>
+      `;
+
+      const input = this.container.querySelector('#conjugationInput');
+      input.focus();
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') this.checkAnswer(pronounIndex);
+      });
+    };
+
+    const verbs = [
+      {
+        infinitive: "бити / biti (to be)",
+        conjugations: ["сам", "си", "је", "смо", "сте", "су"]
+      },
+      {
+        infinitive: "имати / imati (to have)",
+        conjugations: ["имам", "имаш", "има", "имамо", "имате", "имају"]
+      },
+      {
+        infinitive: "ићи / ići (to go)",
+        conjugations: ["идем", "идеш", "иде", "идемо", "идете", "иду"]
+      },
+      {
+        infinitive: "моћи / moći (can)",
+        conjugations: ["могу", "можеш", "може", "можемо", "можете", "могу"]
+      },
+      {
+        infinitive: "хтети / hteti (to want)",
+        conjugations: ["хоћу", "хоћеш", "хоће", "хоћемо", "хоћете", "хоће"]
+      },
+      {
+        infinitive: "радити / raditi (to work)",
+        conjugations: ["радим", "радиш", "ради", "радимо", "радите", "раде"]
+      },
+      {
+        infinitive: "говорити / govoriti (to speak)",
+        conjugations: ["говорим", "говориш", "говори", "говоримо", "говорите", "говоре"]
+      },
+      {
+        infinitive: "волети / voleti (to love)",
+        conjugations: ["волим", "волиш", "воли", "волимо", "волите", "воле"]
+      },
+      {
+        infinitive: "знати / znati (to know)",
+        conjugations: ["знам", "знаш", "зна", "знамо", "знате", "знају"]
+      },
+      {
+        infinitive: "видети / videti (to see)",
+        conjugations: ["видим", "видиш", "види", "видимо", "видите", "виде"]
+      },
+      {
+        infinitive: "јести / jesti (to eat)",
+        conjugations: ["једем", "једеш", "једе", "једемо", "једете", "једу"]
+      },
+      {
+        infinitive: "пити / piti (to drink)",
+        conjugations: ["пијем", "пијеш", "пије", "пијемо", "пијете", "пију"]
+      },
+      {
+        infinitive: "читати / čitati (to read)",
+        conjugations: ["читам", "читаш", "чита", "читамо", "читате", "читају"]
+      },
+      {
+        infinitive: "писати / pisati (to write)",
+        conjugations: ["пишем", "пишеш", "пише", "пишемо", "пишете", "пишу"]
+      }
+    ];
+
+    new ConjugationTrainer('trainer-container', verbs, {
+      pronouns: ['ја', 'ти', 'он/она', 'ми', 'ви', 'они']
+    });
+  </script>
+</body>
+</html>

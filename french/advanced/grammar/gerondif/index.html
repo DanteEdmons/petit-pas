@@ -1,43 +1,542 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Petit Pas — Gérondif</title>
-    <style>
-        body {
-            font-family: "Montserrat", sans-serif;
-            background: #0f172a;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            text-align: center;
-        }
-
-        main {
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-        }
-
-        a {
-            color: #93c5fd;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Petit Pas — Gérondif</title>
+  <link rel="stylesheet" href="../../../../assets/css/styles.css" />
 </head>
-
 <body>
-    <main>
-        <h1>Gérondif</h1>
-        <p>Деепричастие.</p>
-        <p>Образуется: en + nous-форма настоящего времени + -ant.</p>
-        <p>Используется для выражения одновременности действий (делая что-то).</p>
-        <p><a href="../">Назад</a></p>
-    </main>
-</body>
+  <main class="main-container">
+    <h1>Gérondif (Деепричастие)</h1>
+    <p class="intro">Gérondif — это особая форма глагола во французском языке, которая используется для выражения одновременности двух действий, способа выполнения действия или условия. Gérondif всегда сопровождается предлогом "en" и отвечает на вопросы "как?", "когда?", "при каком условии?".</p>
 
+    <div class="accordion">
+      <!-- Section 1: Formation -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h2>Образование Gérondif</h2>
+          <span class="accordion-icon">+</span>
+        </div>
+        <div class="accordion-content">
+          <h3>Формула:</h3>
+          <p class="formula"><strong>EN + основа глагола (nous-форма настоящего времени) + -ANT</strong></p>
+
+          <h3>Пошаговое образование:</h3>
+          <ol>
+            <li>Берём форму глагола в настоящем времени для <strong>nous</strong></li>
+            <li>Убираем окончание <strong>-ons</strong></li>
+            <li>Добавляем окончание <strong>-ant</strong></li>
+            <li>Добавляем предлог <strong>en</strong> перед глаголом</li>
+          </ol>
+
+          <h3>Примеры образования:</h3>
+          <table>
+            <tr><th>Инфинитив</th><th>Nous-форма</th><th>Основа</th><th>Gérondif</th><th>Перевод</th></tr>
+            <tr>
+              <td>parler</td>
+              <td>nous parlons</td>
+              <td>parl-</td>
+              <td>en parlant</td>
+              <td>говоря</td>
+            </tr>
+            <tr>
+              <td>finir</td>
+              <td>nous finissons</td>
+              <td>finiss-</td>
+              <td>en finissant</td>
+              <td>заканчивая</td>
+            </tr>
+            <tr>
+              <td>vendre</td>
+              <td>nous vendons</td>
+              <td>vend-</td>
+              <td>en vendant</td>
+              <td>продавая</td>
+            </tr>
+            <tr>
+              <td>manger</td>
+              <td>nous mangeons</td>
+              <td>mange-</td>
+              <td>en mangeant</td>
+              <td>кушая</td>
+            </tr>
+            <tr>
+              <td>faire</td>
+              <td>nous faisons</td>
+              <td>fais-</td>
+              <td>en faisant</td>
+              <td>делая</td>
+            </tr>
+            <tr>
+              <td>prendre</td>
+              <td>nous prenons</td>
+              <td>pren-</td>
+              <td>en prenant</td>
+              <td>беря</td>
+            </tr>
+            <tr>
+              <td>lire</td>
+              <td>nous lisons</td>
+              <td>lis-</td>
+              <td>en lisant</td>
+              <td>читая</td>
+            </tr>
+            <tr>
+              <td>écrire</td>
+              <td>nous écrivons</td>
+              <td>écriv-</td>
+              <td>en écrivant</td>
+              <td>пиша</td>
+            </tr>
+            <tr>
+              <td>boire</td>
+              <td>nous buvons</td>
+              <td>buv-</td>
+              <td>en buvant</td>
+              <td>пья</td>
+            </tr>
+            <tr>
+              <td>dormir</td>
+              <td>nous dormons</td>
+              <td>dorm-</td>
+              <td>en dormant</td>
+              <td>спя</td>
+            </tr>
+          </table>
+
+          <h3>Неправильные формы Gérondif (исключения):</h3>
+          <p>Всего три глагола имеют неправильную форму gérondif:</p>
+          <table>
+            <tr><th>Глагол</th><th>Gérondif</th><th>Перевод</th></tr>
+            <tr>
+              <td>être (быть)</td>
+              <td><strong>en étant</strong></td>
+              <td>будучи</td>
+            </tr>
+            <tr>
+              <td>avoir (иметь)</td>
+              <td><strong>en ayant</strong></td>
+              <td>имея</td>
+            </tr>
+            <tr>
+              <td>savoir (знать)</td>
+              <td><strong>en sachant</strong></td>
+              <td>зная</td>
+            </tr>
+          </table>
+
+          <h3>Примеры в предложениях:</h3>
+          <ul>
+            <li><em>En <strong>étant</strong> patient, tu réussiras.</em> — Будучи терпеливым, ты добьешься успеха.</li>
+            <li><em>En <strong>ayant</strong> de l'argent, on peut voyager.</em> — Имея деньги, можно путешествовать.</li>
+            <li><em>En <strong>sachant</strong> la vérité, il a pris une décision.</em> — Зная правду, он принял решение.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Section 2: Usage - Simultaneity -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h2>Использование: Одновременность действий</h2>
+          <span class="accordion-icon">+</span>
+        </div>
+        <div class="accordion-content">
+          <h3>1. Два действия происходят одновременно</h3>
+          <p>Gérondif показывает, что два действия выполняются одним и тем же человеком в одно и то же время.</p>
+
+          <h4>Примеры:</h4>
+          <ul>
+            <li><em>Je chante <strong>en marchant</strong>.</em><br>
+              Я пою, когда иду / Я пою, идя. (одновременно)</li>
+
+            <li><em>Elle écoute de la musique <strong>en travaillant</strong>.</em><br>
+              Она слушает музыку, работая / когда работает.</li>
+
+            <li><em>Il réfléchit <strong>en regardant</strong> par la fenêtre.</em><br>
+              Он размышляет, глядя в окно.</li>
+
+            <li><em>Nous discutons <strong>en buvant</strong> du café.</em><br>
+              Мы разговариваем, попивая кофе / когда пьем кофе.</li>
+
+            <li><em>Tu peux m'appeler <strong>en arrivant</strong>.</em><br>
+              Ты можешь мне позвонить, когда приедешь / по приезде.</li>
+
+            <li><em>Je l'ai vu <strong>en sortant</strong> du magasin.</em><br>
+              Я его видел, когда выходил из магазина / выходя из магазина.</li>
+          </ul>
+
+          <h3>2. Gérondif = "pendant que" (в то время как)</h3>
+          <p>Gérondif часто можно заменить на "pendant que" + глагол:</p>
+
+          <table>
+            <tr><th>С Gérondif</th><th>С "pendant que"</th><th>Перевод</th></tr>
+            <tr>
+              <td>Je lis <strong>en mangeant</strong>.</td>
+              <td>Je lis pendant que je mange.</td>
+              <td>Я читаю, когда ем.</td>
+            </tr>
+            <tr>
+              <td>Elle chante <strong>en cuisinant</strong>.</td>
+              <td>Elle chante pendant qu'elle cuisine.</td>
+              <td>Она поет, когда готовит.</td>
+            </tr>
+            <tr>
+              <td>Il s'est endormi <strong>en lisant</strong>.</td>
+              <td>Il s'est endormi pendant qu'il lisait.</td>
+              <td>Он заснул, когда читал.</td>
+            </tr>
+          </table>
+
+          <h3>Важное правило!</h3>
+          <p class="warning">Оба действия (главное и в gérondif) должны выполняться <strong>одним и тем же субъектом</strong>!</p>
+
+          <h4>Правильные примеры:</h4>
+          <ul>
+            <li>✓ <em>Je mange en regardant la télé.</em> (Я ем, смотря телевизор — оба действия выполняю "я")</li>
+            <li>✓ <em>Elle parle en souriant.</em> (Она говорит, улыбаясь — оба действия выполняет "она")</li>
+          </ul>
+
+          <h4>Неправильные примеры:</h4>
+          <ul>
+            <li>❌ <em>Je mange en regardant la télé mon frère.</em> (Нельзя! Разные субъекты)</li>
+            <li>✓ Правильно: <em>Je mange pendant que mon frère regarde la télé.</em></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Section 3: Usage - Manner -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h2>Использование: Способ действия (Как?)</h2>
+          <span class="accordion-icon">+</span>
+        </div>
+        <div class="accordion-content">
+          <h3>Gérondif отвечает на вопрос "Как? Каким образом?"</h3>
+          <p>Gérondif показывает, каким образом выполняется действие.</p>
+
+          <h4>Примеры:</h4>
+          <ul>
+            <li><em>Il a réussi <strong>en travaillant</strong> dur.</em><br>
+              Он добился успеха, работая усердно / благодаря усердной работе.</li>
+
+            <li><em>On apprend <strong>en faisant</strong> des erreurs.</em><br>
+              Мы учимся, делая ошибки / совершая ошибки.</li>
+
+            <li><em>Elle a maigri <strong>en faisant</strong> du sport.</em><br>
+              Она похудела, занимаясь спортом.</li>
+
+            <li><em>Tu vas t'améliorer <strong>en pratiquant</strong> régulièrement.</em><br>
+              Ты улучшишься, практикуясь регулярно.</li>
+
+            <li><em>J'ai gagné du temps <strong>en prenant</strong> le métro.</em><br>
+              Я выиграл время, взяв метро.</li>
+
+            <li><em>Il s'est blessé <strong>en tombant</strong>.</em><br>
+              Он поранился, упав / при падении.</li>
+
+            <li><em>Nous avons trouvé la solution <strong>en réfléchissant</strong> ensemble.</em><br>
+              Мы нашли решение, размышляя вместе.</li>
+          </ul>
+
+          <h3>Усиление с "tout en" (хотя, несмотря на то что)</h3>
+          <p>Конструкция <strong>tout en + gérondif</strong> подчеркивает одновременность или противопоставление:</p>
+
+          <h4>Примеры с "tout en":</h4>
+          <ul>
+            <li><em>Je travaille <strong>tout en écoutant</strong> de la musique.</em><br>
+              Я работаю, одновременно слушая музыку. (подчеркивает одновременность)</li>
+
+            <li><em>Il est resté calme <strong>tout en étant</strong> très nerveux.</em><br>
+              Он остался спокойным, хотя был очень нервным. (контраст)</li>
+
+            <li><em>Elle souriait <strong>tout en pleurant</strong>.</em><br>
+              Она улыбалась, одновременно плача / несмотря на слезы.</li>
+
+            <li><em>Tu peux apprendre <strong>tout en t'amusant</strong>.</em><br>
+              Ты можешь учиться, одновременно развлекаясь.</li>
+
+            <li><em>Ils ont accepté <strong>tout en ayant</strong> des doutes.</em><br>
+              Они согласились, хотя у них были сомнения.</li>
+          </ul>
+
+          <h3>Сравнение: en + gérondif vs tout en + gérondif</h3>
+          <table>
+            <tr><th>En + gérondif</th><th>Tout en + gérondif</th></tr>
+            <tr>
+              <td>Je travaille <strong>en écoutant</strong> la radio.</td>
+              <td>Je travaille <strong>tout en écoutant</strong> la radio.</td>
+            </tr>
+            <tr>
+              <td>Я работаю, слушая радио.</td>
+              <td>Я работаю, ОДНОВРЕМЕННО слушая радио. (усиление)</td>
+            </tr>
+            <tr>
+              <td>Il mange <strong>en regardant</strong> la télé.</td>
+              <td>Il mange <strong>tout en regardant</strong> la télé.</td>
+            </tr>
+            <tr>
+              <td>Он ест, смотря телевизор.</td>
+              <td>Он ест, ОДНОВРЕМЕННО смотря телевизор. (подчеркивается)</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- Section 4: Usage - Condition -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h2>Использование: Условие (При каком условии?)</h2>
+          <span class="accordion-icon">+</span>
+        </div>
+        <div class="accordion-content">
+          <h3>Gérondif может выражать условие</h3>
+          <p>В этом случае gérondif можно заменить на "si" + глагол в настоящем времени.</p>
+
+          <h4>Примеры:</h4>
+          <table>
+            <tr><th>С Gérondif</th><th>С "Si"</th><th>Перевод</th></tr>
+            <tr>
+              <td><strong>En travaillant</strong> dur, tu réussiras.</td>
+              <td><strong>Si</strong> tu travailles dur, tu réussiras.</td>
+              <td>Если будешь упорно работать, ты добьешься успеха.</td>
+            </tr>
+            <tr>
+              <td><strong>En prenant</strong> le train, on arrive plus vite.</td>
+              <td><strong>Si</strong> on prend le train, on arrive plus vite.</td>
+              <td>Если взять поезд, приедем быстрее.</td>
+            </tr>
+            <tr>
+              <td><strong>En mangeant</strong> sainement, tu seras en forme.</td>
+              <td><strong>Si</strong> tu manges sainement, tu seras en forme.</td>
+              <td>Если питаться правильно, будешь в форме.</td>
+            </tr>
+            <tr>
+              <td><strong>En étudiant</strong> régulièrement, vous progresserez.</td>
+              <td><strong>Si</strong> vous étudiez régulièrement, vous progresserez.</td>
+              <td>Если заниматься регулярно, вы будете прогрессировать.</td>
+            </tr>
+          </table>
+
+          <h3>Больше примеров условия:</h3>
+          <ul>
+            <li><em><strong>En arrivant</strong> tôt, nous aurons de bonnes places.</em><br>
+              Если придем рано, у нас будут хорошие места.</li>
+
+            <li><em><strong>En suivant</strong> ces instructions, tu ne te tromperas pas.</em><br>
+              Если следовать этим инструкциям, ты не ошибешься.</li>
+
+            <li><em><strong>En économisant</strong> chaque mois, vous pourrez acheter une voiture.</em><br>
+              Если откладывать каждый месяц, вы сможете купить машину.</li>
+
+            <li><em><strong>En faisant</strong> attention, on évite les accidents.</em><br>
+              Если быть внимательным, можно избежать несчастных случаев.</li>
+          </ul>
+
+          <h3>Причина (Почему?)</h3>
+          <p>Иногда gérondif также выражает причину:</p>
+
+          <ul>
+            <li><em><strong>En voyant</strong> la situation, j'ai compris le problème.</em><br>
+              Увидев ситуацию, я понял проблему. (причина: потому что я увидел)</li>
+
+            <li><em><strong>En entendant</strong> cette nouvelle, elle a pleuré.</em><br>
+              Услышав эту новость, она заплакала. (причина: потому что услышала)</li>
+
+            <li><em><strong>En apprenant</strong> son départ, nous étions tristes.</em><br>
+              Узнав о его отъезде, мы были грустны. (причина: потому что узнали)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Section 5: Gérondif vs Participe présent -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h2>Gérondif vs Participe présent</h2>
+          <span class="accordion-icon">+</span>
+        </div>
+        <div class="accordion-content">
+          <h3>Различие между Gérondif и Participe présent</h3>
+          <p>Обе формы образуются одинаково (основа + -ant), но имеют разное использование:</p>
+
+          <table>
+            <tr><th>Характеристика</th><th>Gérondif</th><th>Participe présent</th></tr>
+            <tr>
+              <td><strong>Форма</strong></td>
+              <td><strong>EN</strong> + глагол + -ant</td>
+              <td>глагол + -ant (БЕЗ en)</td>
+            </tr>
+            <tr>
+              <td><strong>Функция</strong></td>
+              <td>Относится к глаголу (обстоятельство)</td>
+              <td>Относится к существительному (определение)</td>
+            </tr>
+            <tr>
+              <td><strong>Изменяемость</strong></td>
+              <td>Неизменяемая форма</td>
+              <td>Может согласовываться</td>
+            </tr>
+            <tr>
+              <td><strong>Отвечает на вопрос</strong></td>
+              <td>Как? Когда? При каком условии?</td>
+              <td>Какой? Который?</td>
+            </tr>
+          </table>
+
+          <h3>Сравнительные примеры:</h3>
+
+          <h4>1. Gérondif (с EN):</h4>
+          <ul>
+            <li><em>Je l'ai rencontré <strong>en sortant</strong> du cinéma.</em><br>
+              Я встретил его, выходя из кинотеатра. (когда? как?)</li>
+
+            <li><em>Elle travaille <strong>en chantant</strong>.</em><br>
+              Она работает, напевая. (как?)</li>
+          </ul>
+
+          <h4>2. Participe présent (БЕЗ EN):</h4>
+          <ul>
+            <li><em>J'ai vu une étoile <strong>filant</strong> dans le ciel.</em><br>
+              Я видел падающую звезду в небе. (какую звезду? падающую)</li>
+
+            <li><em>Les étudiants <strong>parlant</strong> français sont là-bas.</em><br>
+              Студенты, говорящие по-французски, вон там. (какие студенты? говорящие)</li>
+          </ul>
+
+          <h3>Наглядное сравнение:</h3>
+          <table>
+            <tr><th>Gérondif (EN + -ant)</th><th>Participe présent (-ant)</th></tr>
+            <tr>
+              <td><em>J'écoute de la musique <strong>en travaillant</strong>.</em></td>
+              <td><em>Les gens <strong>travaillant</strong> ici sont sympas.</em></td>
+            </tr>
+            <tr>
+              <td>Я слушаю музыку, работая.</td>
+              <td>Люди, работающие здесь, симпатичные.</td>
+            </tr>
+            <tr>
+              <td><em>Elle lit <strong>en marchant</strong>.</em></td>
+              <td><em>Un homme <strong>marchant</strong> dans la rue.</em></td>
+            </tr>
+            <tr>
+              <td>Она читает, идя.</td>
+              <td>Мужчина, идущий по улице.</td>
+            </tr>
+          </table>
+
+          <h3>Ключевое правило:</h3>
+          <p class="warning"><strong>Если есть EN → это Gérondif!</strong><br>
+          <strong>Если нет EN → это Participe présent!</strong></p>
+        </div>
+      </div>
+
+      <!-- Section 6: Practice Examples -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h2>Практические примеры</h2>
+          <span class="accordion-icon">+</span>
+        </div>
+        <div class="accordion-content">
+          <h3>Диалог с использованием Gérondif:</h3>
+          <div class="dialogue">
+            <p><strong>Sophie:</strong> Comment tu as appris à parler français si bien?</p>
+            <p class="translation">— Как ты так хорошо научился говорить по-французски?</p>
+
+            <p><strong>Marc:</strong> <strong>En vivant</strong> à Paris pendant deux ans et <strong>en pratiquant</strong> tous les jours!</p>
+            <p class="translation">— Живя в Париже два года и практикуясь каждый день!</p>
+
+            <p><strong>Sophie:</strong> Tu as fait des progrès rapidement?</p>
+            <p class="translation">— Ты быстро сделал успехи?</p>
+
+            <p><strong>Marc:</strong> Oui, <strong>en regardant</strong> des films français et <strong>en parlant</strong> avec des locaux, j'ai beaucoup appris.</p>
+            <p class="translation">— Да, смотря французские фильмы и разговаривая с местными жителями, я многому научился.</p>
+
+            <p><strong>Sophie:</strong> C'est motivant! Je vais essayer de faire pareil <strong>en écoutant</strong> des podcasts.</p>
+            <p class="translation">— Это вдохновляет! Я попробую сделать то же самое, слушая подкасты.</p>
+
+            <p><strong>Marc:</strong> Exactement! <strong>En étant</strong> régulier, tu vas progresser rapidement.</p>
+            <p class="translation">— Точно! Занимаясь регулярно, ты быстро будешь прогрессировать.</p>
+          </div>
+
+          <h3>Упражнения для практики:</h3>
+          <ol>
+            <li>Я слушаю музыку, когда готовлю.<br>
+              <em>J'écoute de la musique <strong>en cuisinant</strong>.</em></li>
+
+            <li>Она похудела, занимаясь спортом.<br>
+              <em>Elle a maigri <strong>en faisant</strong> du sport.</em></li>
+
+            <li>Мы учимся, делая ошибки.<br>
+              <em>Nous apprenons <strong>en faisant</strong> des erreurs.</em></li>
+
+            <li>Он улыбнулся, видя меня.<br>
+              <em>Il a souri <strong>en me voyant</strong>.</em></li>
+
+            <li>Если придешь рано, ты найдешь место.<br>
+              <em><strong>En arrivant</strong> tôt, tu trouveras une place.</em></li>
+
+            <li>Я выхожу, напевая песню.<br>
+              <em>Je sors <strong>en chantant</strong> une chanson.</em></li>
+
+            <li>Работая упорно, вы добьетесь успеха.<br>
+              <em><strong>En travaillant</strong> dur, vous réussirez.</em></li>
+
+            <li>Она читает, попивая чай.<br>
+              <em>Elle lit <strong>en buvant</strong> du thé.</em></li>
+          </ol>
+
+          <h3>Распространенные ошибки:</h3>
+          <table>
+            <tr><th>Неправильно</th><th>Правильно</th></tr>
+            <tr>
+              <td>❌ Je travaille <em>parlant</em> français.</td>
+              <td>✓ Je travaille <em>en parlant</em> français.</td>
+            </tr>
+            <tr>
+              <td>❌ <em>En être</em> patient, tu réussiras.</td>
+              <td>✓ <em>En étant</em> patient, tu réussiras.</td>
+            </tr>
+            <tr>
+              <td>❌ <em>En allant</em> je mange à la maison.</td>
+              <td>✓ Je mange <em>en allant</em> à la maison.</td>
+            </tr>
+            <tr>
+              <td>❌ Elle marche <em>en lire</em>.</td>
+              <td>✓ Elle marche <em>en lisant</em>.</td>
+            </tr>
+          </table>
+
+          <h3>Полезные выражения с Gérondif:</h3>
+          <ul>
+            <li><em><strong>En attendant</strong></em> — Тем временем, в ожидании<br>
+              <em>En attendant, je vais prendre un café.</em> — Тем временем я выпью кофе.</li>
+
+            <li><em><strong>En passant</strong></em> — Проходя мимо, между прочим<br>
+              <em>Je l'ai vu en passant devant sa maison.</em> — Я видел его, проходя мимо его дома.</li>
+
+            <li><em><strong>En général</strong></em> — В общем, обычно<br>
+              (Примечание: это устойчивое выражение, не настоящий gérondif)</li>
+
+            <li><em><strong>Tout en sachant</strong></em> — Хотя зная, несмотря на то что знаю<br>
+              <em>Il a accepté tout en sachant les risques.</em> — Он согласился, хотя знал о рисках.</li>
+          </ul>
+
+          <h3>Советы для запоминания:</h3>
+          <ul>
+            <li>Всегда используйте <strong>EN</strong> перед gérondif (кроме случаев с "tout en")</li>
+            <li>Образование: nous-форма → убрать -ons → добавить -ant</li>
+            <li>Всего 3 исключения: être → en étant, avoir → en ayant, savoir → en sachant</li>
+            <li>Оба действия должны выполняться одним и тем же субъектом!</li>
+            <li>Gérondif неизменяем — всегда одна и та же форма для всех лиц и чисел</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="back-link">
+      <a href="../">← Вернуться к выбору темы</a>
+    </div>
+  </main>
+  <script src="../../../../assets/js/components.js"></script>
+</body>
 </html>
