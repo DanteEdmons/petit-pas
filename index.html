@@ -3,151 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Petit Pas — Путешествие в языки</title>
-  <style>
-    :root {
-      color-scheme: light dark;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: "Montserrat", "Segoe UI", sans-serif;
-      color: rgba(255, 255, 255, 0.95);
-      background: linear-gradient(130deg, #2f80ed, #56ccf2, #bb6bd9, #6fcf97, #f2c94c);
-      background-size: 400% 400%;
-      animation: aurora 20s ease infinite;
-      padding: 4rem 1.5rem;
-    }
-
-    @keyframes aurora {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
-    }
-
-    main {
-      max-width: 720px;
-      width: 100%;
-      background: rgba(12, 22, 35, 0.45);
-      border-radius: 28px;
-      backdrop-filter: blur(18px);
-      box-shadow: 0 30px 60px rgba(5, 15, 25, 0.35);
-      padding: 3rem clamp(1.5rem, 4vw, 3rem);
-      display: flex;
-      flex-direction: column;
-      gap: 2.5rem;
-    }
-
-    header {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      text-align: center;
-    }
-
-    h1 {
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    p {
-      font-size: clamp(1rem, 2.2vw, 1.3rem);
-      line-height: 1.8;
-      color: rgba(255, 255, 255, 0.8);
-    }
-
-    nav {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 1.25rem;
-    }
-
-    a.language-card {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 0.75rem;
-      padding: 1.5rem;
-      background: rgba(255, 255, 255, 0.07);
-      border-radius: 20px;
-      text-decoration: none;
-      color: inherit;
-      font-weight: 600;
-      font-size: 1.05rem;
-      letter-spacing: 0.04em;
-      transition: transform 250ms ease, background 250ms ease, box-shadow 250ms ease;
-      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
-    }
-
-    a.language-card span {
-      font-size: 2.5rem;
-    }
-
-    a.language-card:focus-visible,
-    a.language-card:hover {
-      transform: translateY(-6px);
-      background: rgba(255, 255, 255, 0.18);
-      box-shadow: 0 18px 35px rgba(5, 15, 25, 0.28);
-      outline: none;
-    }
-
-    footer {
-      text-align: center;
-      font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.6);
-    }
-  </style>
+  <title>Petit Pas — Тренажёр языков</title>
+  <meta name="description" content="Ультимативный тренажёр для изучения иностранных языков с интервальным повторением, геймификацией и ежедневными сессиями" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="app/style.css" />
 </head>
 <body>
-  <main>
-    <header>
-      <h1>Petit Pas</h1>
-      <p>
-        Пространство для медитативного и самостоятельного изучения иностранных языков.
-        Двигайтесь в своем ритме, делая маленькие шаги — petit pas — навстречу новому словарю,
-        звучанию и культурам.
-      </p>
-    </header>
-
-    <nav aria-label="Выбор языка">
-      <a class="language-card" href="english/">
-        <span aria-hidden="true">🇬🇧</span>
-        Английский
-      </a>
-      <a class="language-card" href="french/">
-        <span aria-hidden="true">🇫🇷</span>
-        Французский
-      </a>
-      <a class="language-card" href="japanese/">
-        <span aria-hidden="true">🇯🇵</span>
-        Японский
-      </a>
-      <a class="language-card" href="serbian/">
-        <span aria-hidden="true">🇷🇸</span>
-        Сербский
-      </a>
-    </nav>
-
-    <footer>
-      Выберите язык и начните своё путешествие сегодня.
-    </footer>
-  </main>
+  <div id="app">
+    <main class="app-content">
+      <div class="page" style="text-align:center;padding-top:4rem;">
+        <h1 style="font-size:2rem;letter-spacing:0.06em;text-transform:uppercase;color:#93c5fd;">Petit Pas</h1>
+        <p style="margin-top:1rem;color:rgba(255,255,255,0.6);">Загрузка...</p>
+      </div>
+    </main>
+  </div>
+  <script type="module" src="app/main.js"></script>
 </body>
 </html>
