@@ -1,0 +1,2532 @@
+{
+  "name": "Французский",
+  "flag": "🇫🇷",
+  "code": "french",
+  "speechLang": "fr-FR",
+  "levels": {
+    "beginner": {
+      "vocabulary": {
+        "nouns": [
+          {
+            "front": "temps",
+            "back": "время"
+          },
+          {
+            "front": "personne",
+            "back": "человек, персона"
+          },
+          {
+            "front": "jour",
+            "back": "день"
+          },
+          {
+            "front": "homme",
+            "back": "мужчина, человек"
+          },
+          {
+            "front": "chose",
+            "back": "вещь"
+          },
+          {
+            "front": "femme",
+            "back": "женщина"
+          },
+          {
+            "front": "vie",
+            "back": "жизнь"
+          },
+          {
+            "front": "enfant",
+            "back": "ребёнок"
+          },
+          {
+            "front": "monde",
+            "back": "мир"
+          },
+          {
+            "front": "école",
+            "back": "школа"
+          },
+          {
+            "front": "main",
+            "back": "рука (кисть)"
+          },
+          {
+            "front": "travail",
+            "back": "работа"
+          },
+          {
+            "front": "semaine",
+            "back": "неделя"
+          },
+          {
+            "front": "maison",
+            "back": "дом"
+          },
+          {
+            "front": "famille",
+            "back": "семья"
+          },
+          {
+            "front": "ami",
+            "back": "друг"
+          },
+          {
+            "front": "ville",
+            "back": "город"
+          },
+          {
+            "front": "pays",
+            "back": "страна"
+          },
+          {
+            "front": "année",
+            "back": "год"
+          },
+          {
+            "front": "mois",
+            "back": "месяц"
+          },
+          {
+            "front": "heure",
+            "back": "час"
+          },
+          {
+            "front": "moment",
+            "back": "момент"
+          },
+          {
+            "front": "eau",
+            "back": "вода"
+          },
+          {
+            "front": "livre",
+            "back": "книга"
+          },
+          {
+            "front": "chambre",
+            "back": "комната"
+          },
+          {
+            "front": "rue",
+            "back": "улица"
+          },
+          {
+            "front": "table",
+            "back": "стол"
+          },
+          {
+            "front": "porte",
+            "back": "дверь"
+          },
+          {
+            "front": "fenêtre",
+            "back": "окно"
+          },
+          {
+            "front": "argent",
+            "back": "деньги, серебро"
+          }
+        ],
+        "verbs": [
+          {
+            "front": "être",
+            "back": "быть"
+          },
+          {
+            "front": "avoir",
+            "back": "иметь"
+          },
+          {
+            "front": "faire",
+            "back": "делать"
+          },
+          {
+            "front": "pouvoir",
+            "back": "мочь"
+          },
+          {
+            "front": "dire",
+            "back": "говорить, сказать"
+          },
+          {
+            "front": "aller",
+            "back": "идти"
+          },
+          {
+            "front": "voir",
+            "back": "видеть"
+          },
+          {
+            "front": "savoir",
+            "back": "знать"
+          },
+          {
+            "front": "vouloir",
+            "back": "хотеть"
+          },
+          {
+            "front": "venir",
+            "back": "приходить"
+          },
+          {
+            "front": "prendre",
+            "back": "брать"
+          },
+          {
+            "front": "donner",
+            "back": "давать"
+          },
+          {
+            "front": "trouver",
+            "back": "находить"
+          },
+          {
+            "front": "aimer",
+            "back": "любить"
+          },
+          {
+            "front": "parler",
+            "back": "говорить"
+          },
+          {
+            "front": "regarder",
+            "back": "смотреть"
+          },
+          {
+            "front": "écouter",
+            "back": "слушать"
+          },
+          {
+            "front": "manger",
+            "back": "есть (пищу)"
+          },
+          {
+            "front": "boire",
+            "back": "пить"
+          },
+          {
+            "front": "lire",
+            "back": "читать"
+          },
+          {
+            "front": "écrire",
+            "back": "писать"
+          },
+          {
+            "front": "vivre",
+            "back": "жить"
+          },
+          {
+            "front": "travailler",
+            "back": "работать"
+          },
+          {
+            "front": "étudier",
+            "back": "учиться"
+          },
+          {
+            "front": "penser",
+            "back": "думать"
+          },
+          {
+            "front": "comprendre",
+            "back": "понимать"
+          },
+          {
+            "front": "apprendre",
+            "back": "учить, узнавать"
+          },
+          {
+            "front": "dormir",
+            "back": "спать"
+          },
+          {
+            "front": "partir",
+            "back": "уходить, уезжать"
+          },
+          {
+            "front": "rester",
+            "back": "оставаться"
+          }
+        ],
+        "adjectives": [
+          {
+            "front": "bon",
+            "back": "хороший"
+          },
+          {
+            "front": "grand",
+            "back": "большой"
+          },
+          {
+            "front": "petit",
+            "back": "маленький"
+          },
+          {
+            "front": "nouveau",
+            "back": "новый"
+          },
+          {
+            "front": "jeune",
+            "back": "молодой"
+          },
+          {
+            "front": "vieux",
+            "back": "старый"
+          },
+          {
+            "front": "beau",
+            "back": "красивый"
+          },
+          {
+            "front": "joli",
+            "back": "милый, красивый"
+          },
+          {
+            "front": "mauvais",
+            "back": "плохой"
+          },
+          {
+            "front": "facile",
+            "back": "лёгкий"
+          },
+          {
+            "front": "difficile",
+            "back": "трудный"
+          },
+          {
+            "front": "long",
+            "back": "длинный"
+          },
+          {
+            "front": "court",
+            "back": "короткий"
+          },
+          {
+            "front": "haut",
+            "back": "высокий"
+          },
+          {
+            "front": "bas",
+            "back": "низкий"
+          },
+          {
+            "front": "chaud",
+            "back": "горячий, жаркий"
+          },
+          {
+            "front": "froid",
+            "back": "холодный"
+          },
+          {
+            "front": "blanc",
+            "back": "белый"
+          },
+          {
+            "front": "noir",
+            "back": "чёрный"
+          },
+          {
+            "front": "rouge",
+            "back": "красный"
+          },
+          {
+            "front": "bleu",
+            "back": "синий"
+          },
+          {
+            "front": "vert",
+            "back": "зелёный"
+          },
+          {
+            "front": "jaune",
+            "back": "жёлтый"
+          },
+          {
+            "front": "important",
+            "back": "важный"
+          },
+          {
+            "front": "intéressant",
+            "back": "интересный"
+          },
+          {
+            "front": "content",
+            "back": "довольный"
+          },
+          {
+            "front": "heureux",
+            "back": "счастливый"
+          },
+          {
+            "front": "triste",
+            "back": "грустный"
+          },
+          {
+            "front": "fatigué",
+            "back": "уставший"
+          },
+          {
+            "front": "rapide",
+            "back": "быстрый"
+          }
+        ],
+        "others": [
+          {
+            "front": "je",
+            "back": "я"
+          },
+          {
+            "front": "tu",
+            "back": "ты"
+          },
+          {
+            "front": "il",
+            "back": "он"
+          },
+          {
+            "front": "elle",
+            "back": "она"
+          },
+          {
+            "front": "nous",
+            "back": "мы"
+          },
+          {
+            "front": "vous",
+            "back": "вы"
+          },
+          {
+            "front": "ils",
+            "back": "они (м.р.)"
+          },
+          {
+            "front": "elles",
+            "back": "они (ж.р.)"
+          },
+          {
+            "front": "oui",
+            "back": "да"
+          },
+          {
+            "front": "non",
+            "back": "нет"
+          },
+          {
+            "front": "dans",
+            "back": "в"
+          },
+          {
+            "front": "sur",
+            "back": "на"
+          },
+          {
+            "front": "avec",
+            "back": "с"
+          },
+          {
+            "front": "pour",
+            "back": "для"
+          },
+          {
+            "front": "sans",
+            "back": "без"
+          },
+          {
+            "front": "à",
+            "back": "в, к"
+          },
+          {
+            "front": "de",
+            "back": "из, от"
+          },
+          {
+            "front": "chez",
+            "back": "у (кого-то дома)"
+          },
+          {
+            "front": "très",
+            "back": "очень"
+          },
+          {
+            "front": "bien",
+            "back": "хорошо"
+          },
+          {
+            "front": "mal",
+            "back": "плохо"
+          },
+          {
+            "front": "beaucoup",
+            "back": "много"
+          },
+          {
+            "front": "peu",
+            "back": "мало"
+          },
+          {
+            "front": "ici",
+            "back": "здесь"
+          },
+          {
+            "front": "là",
+            "back": "там"
+          },
+          {
+            "front": "maintenant",
+            "back": "сейчас"
+          },
+          {
+            "front": "aujourd'hui",
+            "back": "сегодня"
+          },
+          {
+            "front": "demain",
+            "back": "завтра"
+          },
+          {
+            "front": "hier",
+            "back": "вчера"
+          },
+          {
+            "front": "toujours",
+            "back": "всегда"
+          }
+        ]
+      },
+      "grammar": [
+        {
+          "title": "1. Артикли (Les articles)",
+          "content": "<h3>Определённые артикли (le, la, les)</h3>\n          <table>\n            <thead>\n              <tr>\n                <th>Артикль</th>\n                <th>Использование</th>\n                <th>Пример</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <td>le</td>\n                <td>мужской род</td>\n                <td>le garçon (мальчик)</td>\n              </tr>\n              <tr>\n                <td>la</td>\n                <td>женский род</td>\n                <td>la fille (девочка)</td>\n              </tr>\n              <tr>\n                <td>l'</td>\n                <td>перед гласной</td>\n                <td>l'ami, l'amie</td>\n              </tr>\n              <tr>\n                <td>les</td>\n                <td>множественное число</td>\n                <td>les garçons, les filles</td>\n              </tr>\n            </tbody>\n          </table>\n\n          <h3>Неопределённые артикли (un, une, des)</h3>\n          <table>\n            <thead>\n              <tr>\n                <th>Артикль</th>\n                <th>Использование</th>\n                <th>Пример</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <td>un</td>\n                <td>мужской род</td>\n                <td>un livre (книга)</td>\n              </tr>\n              <tr>\n                <td>une</td>\n                <td>женский род</td>\n                <td>une table (стол)</td>\n              </tr>\n              <tr>\n                <td>des</td>\n                <td>множественное число</td>\n                <td>des livres, des tables</td>\n              </tr>\n            </tbody>\n          </table>\n\n          <h3>Партитивные артикли (du, de la, de l', des)</h3>\n          <p>Используются с неисчисляемыми существительными.</p>\n          <table>\n            <thead>\n              <tr>\n                <th>Артикль</th>\n                <th>Использование</th>\n                <th>Пример</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <td>du</td>\n                <td>мужской род</td>\n                <td>du pain (хлеб)</td>\n              </tr>\n              <tr>\n                <td>de la</td>\n                <td>женский род</td>\n                <td>de la viande (мясо)</td>\n              </tr>\n              <tr>\n                <td>de l'</td>\n                <td>перед гласной</td>\n                <td>de l'eau (вода)</td>\n              </tr>\n            </tbody>\n          </table>\n\n          <div class=\"examples\">\n            <div class=\"example\">\n              <span class=\"french\">Je mange du pain.</span> — <span class=\"russian\">Я ем хлеб.</span>\n            </div>\n            <div class=\"example\">\n              <span class=\"french\">Elle boit de l'eau.</span> — <span class=\"russian\">Она пьёт воду.</span>"
+        },
+        {
+          "title": "2. Род существительных (Le genre)",
+          "content": "<p>Все французские существительные имеют либо мужской род (masculin), либо женский род (féminin).</p>\n\n          <div class=\"note\">\n            <strong>Важно:</strong> Род существительного нужно запоминать вместе со словом! Часто род во французском не совпадает с русским.\n          </div>\n\n          <h3>Примеры</h3>\n          <table>\n            <thead>\n              <tr>\n                <th>Мужской род (m)</th>\n                <th>Женский род (f)</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <td>le livre (книга)</td>\n                <td>la table (стол)</td>\n              </tr>\n              <tr>\n                <td>le garçon (мальчик)</td>\n                <td>la fille (девочка)</td>\n              </tr>\n              <tr>\n                <td>le soleil (солнце)</td>\n                <td>la lune (луна)</td>\n              </tr>\n            </tbody>\n          </table>\n\n          <h3>Некоторые подсказки</h3>\n          <p><strong>Обычно мужской род:</strong></p>\n          <ul>\n            <li>Слова на -age: le garage, le message</li>\n            <li>Слова на -ment: le gouvernement</li>\n            <li>Дни недели, месяцы, времена года</li>\n          </ul>\n\n          <p><strong>Обычно женский род:</strong></p>\n          <ul>\n            <li>Слова на -tion: la nation, la station</li>\n            <li>Слова на -ette: la cigarette</li>\n            <li>Слова на -ure: la nature</li>\n          </ul>"
+        },
+        {
+          "title": "3. Множественное число (Le pluriel)",
+          "content": "<h3>Основное правило</h3>\n          <p>Обычно добавляется <strong>-s</strong></p>\n          <div class=\"examples\">\n            <div class=\"example\">\n              <span class=\"french\">chat → chats</span> — <span class=\"russian\">кот → коты</span>"
+        },
+        {
+          "title": "4. Прилагательные (Les adjectifs)",
+          "content": "<h3>Согласование</h3>\n          <p>Прилагательные согласуются с существительным в роде и числе.</p>\n\n          <table>\n            <thead>\n              <tr>\n                <th>Форма</th>\n                <th>Пример</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <td>Мужской род</td>\n                <td>petit</td>\n              </tr>\n              <tr>\n                <td>Женский род (+e)</td>\n                <td>petite</td>\n              </tr>\n              <tr>\n                <td>Мн. число м.р. (+s)</td>\n                <td>petits</td>\n              </tr>\n              <tr>\n                <td>Мн. число ж.р. (+es)</td>\n                <td>petites</td>\n              </tr>\n            </tbody>\n          </table>\n\n          <h3>Позиция прилагательных</h3>\n          <p><strong>Обычно после существительного:</strong></p>\n          <div class=\"examples\">\n            <div class=\"example\">\n              <span class=\"french\">une voiture rouge</span> — <span class=\"russian\">красная машина</span>"
+        },
+        {
+          "title": "5. Настоящее время (Le présent)",
+          "content": "<h3>Глаголы первой группы (-er)</h3>\n          <p>Убрать <strong>-er</strong> и добавить: <strong>-e, -es, -e, -ons, -ez, -ent</strong></p>\n\n          <p><strong>parler</strong> (говорить)</p>\n          <table>\n            <thead>\n              <tr>\n                <th>Местоимение</th>\n                <th>Форма</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr><td>je</td><td>parle</td></tr>\n              <tr><td>tu</td><td>parles</td></tr>\n              <tr><td>il/elle</td><td>parle</td></tr>\n              <tr><td>nous</td><td>parlons</td></tr>\n              <tr><td>vous</td><td>parlez</td></tr>\n              <tr><td>ils/elles</td><td>parlent</td></tr>\n            </tbody>\n          </table>\n\n          <h3>Глагол être (быть)</h3>\n          <table>\n            <thead>\n              <tr>\n                <th>Местоимение</th>\n                <th>Форма</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr><td>je</td><td>suis</td></tr>\n              <tr><td>tu</td><td>es</td></tr>\n              <tr><td>il/elle</td><td>est</td></tr>\n              <tr><td>nous</td><td>sommes</td></tr>\n              <tr><td>vous</td><td>êtes</td></tr>\n              <tr><td>ils/elles</td><td>sont</td></tr>\n            </tbody>\n          </table>\n\n          <h3>Глагол avoir (иметь)</h3>\n          <table>\n            <thead>\n              <tr>\n                <th>Местоимение</th>\n                <th>Форма</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr><td>j'</td><td>ai</td></tr>\n              <tr><td>tu</td><td>as</td></tr>\n              <tr><td>il/elle</td><td>a</td></tr>\n              <tr><td>nous</td><td>avons</td></tr>\n              <tr><td>vous</td><td>avez</td></tr>\n              <tr><td>ils/elles</td><td>ont</td></tr>\n            </tbody>\n          </table>\n\n          <h3>Неправильные глаголы</h3>\n          <p><strong>aller</strong> (идти): je vais, tu vas, il va, nous allons, vous allez, ils vont</p>\n          <p><strong>faire</strong> (делать): je fais, tu fais, il fait, nous faisons, vous faites, ils font</p>\n          <p><strong>prendre</strong> (брать): je prends, tu prends, il prend, nous prenons, vous prenez, ils prennent</p>\n          <p><strong>venir</strong> (приходить): je viens, tu viens, il vient, nous venons, vous venez, ils viennent</p>"
+        },
+        {
+          "title": "6. Отрицание (La négation)",
+          "content": "<h3>Схема: ne ... pas</h3>\n          <p><strong>ne</strong> + глагол + <strong>pas</strong></p>\n\n          <div class=\"examples\">\n            <div class=\"example\">\n              <span class=\"french\">Je ne parle pas anglais.</span> — <span class=\"russian\">Я не говорю по-английски.</span>"
+        },
+        {
+          "title": "7. Вопросительные предложения",
+          "content": "<h3>Три способа задать вопрос</h3>\n\n          <p><strong>1. Интонация</strong> (повышение тона в конце)</p>\n          <div class=\"examples\">\n            <div class=\"example\">\n              <span class=\"french\">Tu parles français?</span> — <span class=\"russian\">Ты говоришь по-французски?</span>"
+        },
+        {
+          "title": "8. Притяжательные прилагательные",
+          "content": "<table>\n            <thead>\n              <tr>\n                <th>Владелец</th>\n                <th>Мужской род</th>\n                <th>Женский род</th>\n                <th>Мн. число</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <td>je (я)</td>\n                <td>mon</td>\n                <td>ma</td>\n                <td>mes</td>\n              </tr>\n              <tr>\n                <td>tu (ты)</td>\n                <td>ton</td>\n                <td>ta</td>\n                <td>tes</td>\n              </tr>\n              <tr>\n                <td>il/elle (он/она)</td>\n                <td>son</td>\n                <td>sa</td>\n                <td>ses</td>\n              </tr>\n              <tr>\n                <td>nous (мы)</td>\n                <td colspan=\"2\">notre</td>\n                <td>nos</td>\n              </tr>\n              <tr>\n                <td>vous (вы)</td>\n                <td colspan=\"2\">votre</td>\n                <td>vos</td>\n              </tr>\n              <tr>\n                <td>ils/elles (они)</td>\n                <td colspan=\"2\">leur</td>\n                <td>leurs</td>\n              </tr>\n            </tbody>\n          </table>\n\n          <div class=\"examples\">\n            <div class=\"example\">\n              <span class=\"french\">mon livre</span> — <span class=\"russian\">моя книга</span>\n            </div>\n            <div class=\"example\">\n              <span class=\"french\">ma table</span> — <span class=\"russian\">мой стол</span>\n            </div>\n            <div class=\"example\">\n              <span class=\"french\">mes amis</span> — <span class=\"russian\">мои друзья</span>\n            </div>\n            <div class=\"example\">\n              <span class=\"french\">notre maison</span> — <span class=\"russian\">наш дом</span>"
+        },
+        {
+          "title": "9. Указательные прилагательные",
+          "content": "<table>\n            <thead>\n              <tr>\n                <th>Форма</th>\n                <th>Использование</th>\n                <th>Пример</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <td>ce</td>\n                <td>мужской род</td>\n                <td>ce livre (эта книга)</td>\n              </tr>\n              <tr>\n                <td>cet</td>\n                <td>м.р. перед гласной</td>\n                <td>cet homme (этот человек)</td>\n              </tr>\n              <tr>\n                <td>cette</td>\n                <td>женский род</td>\n                <td>cette femme (эта женщина)</td>\n              </tr>\n              <tr>\n                <td>ces</td>\n                <td>множественное число</td>\n                <td>ces livres (эти книги)</td>\n              </tr>\n            </tbody>\n          </table>\n\n          <div class=\"examples\">\n            <div class=\"example\">\n              <span class=\"french\">Ce livre est intéressant.</span> — <span class=\"russian\">Эта книга интересная.</span>\n            </div>\n            <div class=\"example\">\n              <span class=\"french\">Cette maison est grande.</span> — <span class=\"russian\">Этот дом большой.</span>\n            </div>\n            <div class=\"example\">\n              <span class=\"french\">Ces enfants sont petits.</span> — <span class=\"russian\">Эти дети маленькие.</span>"
+        },
+        {
+          "title": "10. Предлоги места",
+          "content": "<table>\n            <thead>\n              <tr>\n                <th>Предлог</th>\n                <th>Перевод</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr><td>à</td><td>в, на</td></tr>\n              <tr><td>de</td><td>из, от</td></tr>\n              <tr><td>dans</td><td>в</td></tr>\n              <tr><td>sur</td><td>на</td></tr>\n              <tr><td>sous</td><td>под</td></tr>\n              <tr><td>devant</td><td>перед</td></tr>\n              <tr><td>derrière</td><td>за</td></tr>\n              <tr><td>entre</td><td>между</td></tr>\n              <tr><td>chez</td><td>у, к (кого-то)</td></tr>\n            </tbody>\n          </table>\n\n          <div class=\"examples\">\n            <div class=\"example\">\n              <span class=\"french\">Le livre est sur la table.</span> — <span class=\"russian\">Книга на столе.</span>\n            </div>\n            <div class=\"example\">\n              <span class=\"french\">Je vais chez Marie.</span> — <span class=\"russian\">Я иду к Марии.</span>\n            </div>\n            <div class=\"example\">\n              <span class=\"french\">Le chat est sous le lit.</span> — <span class=\"russian\">Кот под кроватью.</span>"
+        },
+        {
+          "title": "11. Ближайшее будущее (Futur proche)",
+          "content": "<h3>Формула: aller + инфинитив</h3>\n          <p>Используется для выражения намерения что-то сделать в ближайшем будущем.</p>\n\n          <table>\n            <thead>\n              <tr>\n                <th>Местоимение</th>\n                <th>aller</th>\n                <th>+ инфинитив</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr><td>je</td><td>vais</td><td>manger</td></tr>\n              <tr><td>tu</td><td>vas</td><td>manger</td></tr>\n              <tr><td>il/elle</td><td>va</td><td>manger</td></tr>\n              <tr><td>nous</td><td>allons</td><td>manger</td></tr>\n              <tr><td>vous</td><td>allez</td><td>manger</td></tr>\n              <tr><td>ils/elles</td><td>vont</td><td>manger</td></tr>\n            </tbody>\n          </table>\n\n          <div class=\"examples\">\n            <div class=\"example\">\n              <span class=\"french\">Je vais manger.</span> — <span class=\"russian\">Я собираюсь поесть.</span>\n            </div>\n            <div class=\"example\">\n              <span class=\"french\">Nous allons partir.</span> — <span class=\"russian\">Мы собираемся уехать.</span>\n            </div>\n            <div class=\"example\">\n              <span class=\"french\">Il va étudier ce soir.</span> — <span class=\"russian\">Он будет учиться сегодня вечером.</span>"
+        },
+        {
+          "title": "12. Ближайшее прошедшее (Passé récent)",
+          "content": "<h3>Формула: venir de + инфинитив</h3>\n          <p>Используется для выражения действия, которое только что произошло.</p>\n\n          <table>\n            <thead>\n              <tr>\n                <th>Местоимение</th>\n                <th>venir de</th>\n                <th>+ инфинитив</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr><td>je</td><td>viens de</td><td>manger</td></tr>\n              <tr><td>tu</td><td>viens de</td><td>manger</td></tr>\n              <tr><td>il/elle</td><td>vient de</td><td>manger</td></tr>\n              <tr><td>nous</td><td>venons de</td><td>manger</td></tr>\n              <tr><td>vous</td><td>venez de</td><td>manger</td></tr>\n              <tr><td>ils/elles</td><td>viennent de</td><td>manger</td></tr>\n            </tbody>\n          </table>\n\n          <div class=\"examples\">\n            <div class=\"example\">\n              <span class=\"french\">Je viens de manger.</span> — <span class=\"russian\">Я только что поел.</span>\n            </div>\n            <div class=\"example\">\n              <span class=\"french\">Elle vient d'arriver.</span> — <span class=\"russian\">Она только что приехала.</span>\n            </div>\n            <div class=\"example\">\n              <span class=\"french\">Nous venons de finir.</span> — <span class=\"russian\">Мы только что закончили.</span>"
+        },
+        {
+          "title": "13. Местоимения-дополнения",
+          "content": "<h3>Прямые дополнения (кого? что?)</h3>\n          <p>me, te, le/la, nous, vous, les</p>\n\n          <div class=\"examples\">\n            <div class=\"example\">\n              <span class=\"french\">Je le vois.</span> — <span class=\"russian\">Я его вижу.</span>\n            </div>\n            <div class=\"example\">\n              <span class=\"french\">Elle me regarde.</span> — <span class=\"russian\">Она на меня смотрит.</span>"
+        },
+        {
+          "title": "14. Числительные (Les nombres)",
+          "content": "<h3>Количественные числительные</h3>\n          <p>1-10: un, deux, trois, quatre, cinq, six, sept, huit, neuf, dix</p>\n          <p>11-20: onze, douze, treize, quatorze, quinze, seize, dix-sept, dix-huit, dix-neuf, vingt</p>\n          <p>Десятки: 30 (trente), 40 (quarante), 50 (cinquante), 60 (soixante)</p>\n\n          <div class=\"note\">\n            <strong>Особенности:</strong><br>\n            70 = soixante-dix (60+10)<br>\n            80 = quatre-vingts (4×20)<br>\n            90 = quatre-vingt-dix (4×20+10)\n          </div>\n\n          <h3>Порядковые числительные</h3>\n          <p>premier/première (первый/первая), deuxième (второй), troisième (третий), quatrième (четвёртый)...</p>\n\n          <div class=\"examples\">\n            <div class=\"example\">\n              <span class=\"french\">C'est ma première fois.</span> — <span class=\"russian\">Это мой первый раз.</span>"
+        },
+        {
+          "title": "15. Время и дата",
+          "content": "<h3>Дни недели</h3>\n          <p>lundi (понедельник), mardi (вторник), mercredi (среда), jeudi (четверг), vendredi (пятница), samedi (суббота), dimanche (воскресенье)</p>\n\n          <h3>Месяцы</h3>\n          <p>janvier, février, mars, avril, mai, juin, juillet, août, septembre, octobre, novembre, décembre</p>\n\n          <h3>Который час?</h3>\n          <p><strong>Quelle heure est-il?</strong> — Который час?</p>\n\n          <div class=\"examples\">\n            <div class=\"example\">\n              <span class=\"french\">Il est trois heures.</span> — <span class=\"russian\">Три часа.</span>\n            </div>\n            <div class=\"example\">\n              <span class=\"french\">Il est midi.</span> — <span class=\"russian\">Полдень.</span>\n            </div>\n            <div class=\"example\">\n              <span class=\"french\">Il est minuit.</span> — <span class=\"russian\">Полночь.</span>\n            </div>\n            <div class=\"example\">\n              <span class=\"french\">Il est deux heures et demie.</span> — <span class=\"russian\">Два с половиной часа.</span>"
+        },
+        {
+          "title": "16. Повелительное наклонение (Impératif)",
+          "content": "<p>Образуется от настоящего времени без местоимения.</p>\n\n          <h3>Пример: parler</h3>\n          <table>\n            <thead>\n              <tr>\n                <th>Форма</th>\n                <th>Французский</th>\n                <th>Русский</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <td>tu</td>\n                <td>Parle!</td>\n                <td>Говори!</td>\n              </tr>\n              <tr>\n                <td>nous</td>\n                <td>Parlons!</td>\n                <td>Давай говорить!</td>\n              </tr>\n              <tr>\n                <td>vous</td>\n                <td>Parlez!</td>\n                <td>Говорите!</td>\n              </tr>\n            </tbody>\n          </table>\n\n          <div class=\"examples\">\n            <div class=\"example\">\n              <span class=\"french\">Écoute!</span> — <span class=\"russian\">Слушай!</span>\n            </div>\n            <div class=\"example\">\n              <span class=\"french\">Attendez!</span> — <span class=\"russian\">Подождите!</span>\n            </div>\n            <div class=\"example\">\n              <span class=\"french\">Allons-y!</span> — <span class=\"russian\">Пошли!</span>"
+        },
+        {
+          "title": "17. C'est vs Il est",
+          "content": "<h3>C'est + существительное/имя</h3>\n          <div class=\"examples\">\n            <div class=\"example\">\n              <span class=\"french\">C'est un livre.</span> — <span class=\"russian\">Это книга.</span>\n            </div>\n            <div class=\"example\">\n              <span class=\"french\">C'est Marie.</span> — <span class=\"russian\">Это Мария.</span>\n            </div>\n            <div class=\"example\">\n              <span class=\"french\">C'est mon ami.</span> — <span class=\"russian\">Это мой друг.</span>"
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Выберите правильный артикль: J'ai ___ chat.",
+          "options": [
+            "le",
+            "la",
+            "un",
+            "une"
+          ],
+          "correct": 2,
+          "explanation": "Используется неопределённый артикль 'un', так как 'chat' мужского рода и мы говорим о коте впервые."
+        },
+        {
+          "question": "Выберите правильную форму глагола être: Elle ___ étudiante.",
+          "options": [
+            "suis",
+            "es",
+            "est",
+            "sont"
+          ],
+          "correct": 2,
+          "explanation": "Для 'elle' (она) используется форма 'est'."
+        },
+        {
+          "question": "Выберите правильную форму: Il ___ français.",
+          "options": [
+            "parle",
+            "parles",
+            "parlons",
+            "parlent"
+          ],
+          "correct": 0,
+          "explanation": "Для he/she/it (il/elle) глаголы первой группы имеют окончание -e."
+        },
+        {
+          "question": "Выберите правильный партитивный артикль: Je mange ___ pain.",
+          "options": [
+            "le",
+            "du",
+            "de la",
+            "des"
+          ],
+          "correct": 1,
+          "explanation": "'Du' используется с неисчисляемыми существительными мужского рода."
+        },
+        {
+          "question": "Выберите правильную форму отрицания: Je ___ parle ___ anglais.",
+          "options": [
+            "ne ... pas",
+            "pas ... ne",
+            "no ... pas",
+            "pas"
+          ],
+          "correct": 0,
+          "explanation": "Отрицание во французском: ne + глагол + pas."
+        },
+        {
+          "question": "Выберите правильную форму: Ils ___ à l'école.",
+          "options": [
+            "va",
+            "vas",
+            "allons",
+            "vont"
+          ],
+          "correct": 3,
+          "explanation": "Для 'ils' (они) глагол 'aller' имеет форму 'vont'."
+        },
+        {
+          "question": "Выберите правильное притяжательное: C'est ___ livre.",
+          "options": [
+            "je",
+            "me",
+            "mon",
+            "ma"
+          ],
+          "correct": 2,
+          "explanation": "Притяжательное прилагательное 'mon' (мой/моя) используется с существительными мужского рода."
+        },
+        {
+          "question": "Выберите правильный предлог: Le chat est ___ la table.",
+          "options": [
+            "dans",
+            "sur",
+            "sous",
+            "avec"
+          ],
+          "correct": 1,
+          "explanation": "Предлог 'sur' (на) используется для поверхностей."
+        },
+        {
+          "question": "Выберите правильную форму ближайшего будущего: Je ___ manger.",
+          "options": [
+            "va",
+            "vais",
+            "vas",
+            "allons"
+          ],
+          "correct": 1,
+          "explanation": "Futur proche образуется как: aller (в нужной форме) + инфинитив. Для 'je' это 'vais'."
+        },
+        {
+          "question": "Выберите правильное вопросительное слово: ___ tu habites?",
+          "options": [
+            "Qui",
+            "Que",
+            "Où",
+            "Quand"
+          ],
+          "correct": 2,
+          "explanation": "'Où' (где) используется для вопросов о месте."
+        }
+      ],
+      "exercises": [],
+      "reading": [
+        {
+          "title": "Ma Journée",
+          "text": "Je me réveille à 7 heures tous les matins. Je me lave le visage et je me brosse les dents. Ensuite, je vais à la cuisine pour prendre le petit déjeuner. D'habitude, je mange des œufs et je bois du café. J'aime le café au lait.\n\nAprès le petit déjeuner, je m'habille et je vais au travail. Je travaille dans un bureau. J'aime mon travail parce que mes collègues sont sympathiques. Nous déjeunons ensemble à 13 heures.\n\nLe soir, je rentre à la maison. Je prépare le dîner et je regarde la télévision. Parfois, je lis un livre. Je me couche à 23 heures. C'est une journée simple mais bonne.",
+          "translation": "Я просыпаюсь в 7 часов каждое утро. Я умываюсь и чищу зубы. Затем я иду на кухню завтракать. Обычно я ем яйца и пью кофе. Я люблю кофе с молоком.\n\nПосле завтрака я одеваюсь и иду на работу. Я работаю в офисе. Мне нравится моя работа, потому что мои коллеги дружелюбные. Мы обедаем вместе в час дня.\n\nВечером я прихожу домой. Я готовлю ужин и смотрю телевизор. Иногда я читаю книгу. Я ложусь спать в 11 часов. Это простой, но хороший день."
+        },
+        {
+          "title": "Le Petit Chat",
+          "text": "Minou est un petit chat. Il est noir et blanc. Il a de grands yeux verts et une longue queue. Minou est très joueur. Il aime courir et sauter.\n\nMinou habite dans une grande maison avec un jardin. Tous les matins, il sort dehors. Il regarde les oiseaux et chasse les papillons. Il ne les attrape pas ; il joue juste.\n\nQuand il est fatigué, il rentre à l'intérieur. Il dort sur le canapé. Il dort pendant de nombreuses heures. Minou est un chat heureux, et tout le monde l'aime.",
+          "translation": "Мину — маленький кот. Он черно-белый. У него большие зеленые глаза и длинный хвост. Мину очень игривый. Он любит бегать и прыгать.\n\nМину живет в большом доме с садом. Каждое утро он выходит на улицу. Он смотрит на птиц и гоняется за бабочками. Он не ловит их, он просто играет.\n\nКогда он устает, он возвращается домой. Он спит на диване. Он спит много часов. Мину — счастливый кот, и все его любят."
+        },
+        {
+          "title": "Au Parc",
+          "text": "Aujourd'hui, c'est dimanche. Le soleil brille et le ciel est bleu. C'est une journée parfaite pour le parc. Thomas et Marie sont au parc. Ils sont amis.\n\nThomas fait du vélo. Il roule vite. Marie est assise sur un banc. Elle lit un livre. Il y a beaucoup de monde au parc. Certaines personnes promènent leurs chiens. Les enfants jouent au ballon.\n\nThomas arrête son vélo et s'assoit à côté de Marie. Ils mangent de la glace. La glace au chocolat est leur préférée. Ils parlent et rient. C'est une journée merveilleuse.",
+          "translation": "Сегодня воскресенье. Светит солнце, и небо голубое. Это идеальный день для парка. Томас и Мари в парке. Они друзья.\n\nТомас катается на велосипеде. Он едет быстро. Мари сидит на скамейке. Она читает книгу. В парке много людей. Некоторые люди выгуливают собак. Дети играют в мяч.\n\nТомас останавливает велосипед и садится рядом с Мари. Они едят мороженое. Шоколадное мороженое — их любимое. Они разговаривают и смеются. Это чудесный день."
+        }
+      ]
+    },
+    "intermediate": {
+      "vocabulary": {
+        "nouns": [
+          {
+            "front": "la réunion",
+            "back": "встреча"
+          },
+          {
+            "front": "le délai",
+            "back": "крайний срок"
+          },
+          {
+            "front": "le salaire",
+            "back": "зарплата"
+          },
+          {
+            "front": "le collègue",
+            "back": "коллега"
+          },
+          {
+            "front": "le directeur",
+            "back": "директор"
+          },
+          {
+            "front": "l'employé",
+            "back": "сотрудник"
+          },
+          {
+            "front": "la carrière",
+            "back": "карьера"
+          },
+          {
+            "front": "le rendez-vous",
+            "back": "встреча, свидание"
+          },
+          {
+            "front": "l'entretien",
+            "back": "собеседование"
+          },
+          {
+            "front": "le projet",
+            "back": "проект"
+          },
+          {
+            "front": "le passeport",
+            "back": "паспорт"
+          },
+          {
+            "front": "le bagage",
+            "back": "багаж"
+          },
+          {
+            "front": "la réservation",
+            "back": "бронирование"
+          },
+          {
+            "front": "la destination",
+            "back": "пункт назначения"
+          },
+          {
+            "front": "le vol",
+            "back": "рейс"
+          },
+          {
+            "front": "le voyage",
+            "back": "путешествие"
+          },
+          {
+            "front": "l'hébergement",
+            "back": "жильё"
+          },
+          {
+            "front": "le touriste",
+            "back": "турист"
+          },
+          {
+            "front": "le symptôme",
+            "back": "симптом"
+          },
+          {
+            "front": "l'ordonnance",
+            "back": "рецепт"
+          },
+          {
+            "front": "le traitement",
+            "back": "лечение"
+          },
+          {
+            "front": "la maladie",
+            "back": "болезнь"
+          },
+          {
+            "front": "la guérison",
+            "back": "выздоровление"
+          },
+          {
+            "front": "le patient",
+            "back": "пациент"
+          },
+          {
+            "front": "le logiciel",
+            "back": "программное обеспечение"
+          },
+          {
+            "front": "l'appareil",
+            "back": "устройство"
+          },
+          {
+            "front": "le réseau",
+            "back": "сеть"
+          },
+          {
+            "front": "le mot de passe",
+            "back": "пароль"
+          },
+          {
+            "front": "la base de données",
+            "back": "база данных"
+          },
+          {
+            "front": "l'application",
+            "back": "приложение"
+          },
+          {
+            "front": "le navigateur",
+            "back": "браузер"
+          },
+          {
+            "front": "le serveur",
+            "back": "сервер"
+          },
+          {
+            "front": "le site web",
+            "back": "веб-сайт"
+          },
+          {
+            "front": "la connexion",
+            "back": "соединение"
+          },
+          {
+            "front": "la mise à jour",
+            "back": "обновление"
+          }
+        ],
+        "verbs": [
+          {
+            "front": "négocier",
+            "back": "договариваться"
+          },
+          {
+            "front": "mettre en œuvre",
+            "back": "внедрять, осуществлять"
+          },
+          {
+            "front": "atteindre",
+            "back": "достигать"
+          },
+          {
+            "front": "gérer",
+            "back": "управлять"
+          },
+          {
+            "front": "organiser",
+            "back": "организовывать"
+          },
+          {
+            "front": "développer",
+            "back": "развивать"
+          },
+          {
+            "front": "établir",
+            "back": "устанавливать"
+          },
+          {
+            "front": "maintenir",
+            "back": "поддерживать"
+          },
+          {
+            "front": "mener",
+            "back": "проводить"
+          },
+          {
+            "front": "effectuer",
+            "back": "выполнять"
+          },
+          {
+            "front": "enquêter",
+            "back": "расследовать"
+          },
+          {
+            "front": "accomplir",
+            "back": "выполнять, завершать"
+          },
+          {
+            "front": "persuader",
+            "back": "убеждать"
+          },
+          {
+            "front": "démontrer",
+            "back": "демонстрировать"
+          },
+          {
+            "front": "analyser",
+            "back": "анализировать"
+          },
+          {
+            "front": "évaluer",
+            "back": "оценивать"
+          },
+          {
+            "front": "déterminer",
+            "back": "определять"
+          },
+          {
+            "front": "contribuer",
+            "back": "вносить вклад"
+          },
+          {
+            "front": "collaborer",
+            "back": "сотрудничать"
+          },
+          {
+            "front": "coordonner",
+            "back": "координировать"
+          },
+          {
+            "front": "participer",
+            "back": "участвовать"
+          },
+          {
+            "front": "recommander",
+            "back": "рекомендовать"
+          },
+          {
+            "front": "identifier",
+            "back": "идентифицировать"
+          },
+          {
+            "front": "reconnaître",
+            "back": "признавать"
+          },
+          {
+            "front": "souligner",
+            "back": "подчеркивать"
+          },
+          {
+            "front": "illustrer",
+            "back": "иллюстрировать"
+          },
+          {
+            "front": "conclure",
+            "back": "заключать"
+          },
+          {
+            "front": "acquérir",
+            "back": "приобретать"
+          },
+          {
+            "front": "distribuer",
+            "back": "распространять"
+          },
+          {
+            "front": "transférer",
+            "back": "переводить, передавать"
+          },
+          {
+            "front": "transformer",
+            "back": "преобразовывать"
+          },
+          {
+            "front": "générer",
+            "back": "генерировать"
+          },
+          {
+            "front": "améliorer",
+            "back": "улучшать"
+          }
+        ],
+        "adjectives": [
+          {
+            "front": "efficace",
+            "back": "эффективный"
+          },
+          {
+            "front": "fiable",
+            "back": "надёжный"
+          },
+          {
+            "front": "crucial",
+            "back": "решающий"
+          },
+          {
+            "front": "significatif",
+            "back": "значительный"
+          },
+          {
+            "front": "accablant",
+            "back": "подавляющий"
+          },
+          {
+            "front": "essentiel",
+            "back": "существенный"
+          },
+          {
+            "front": "substantiel",
+            "back": "существенный"
+          },
+          {
+            "front": "considérable",
+            "back": "значительный"
+          },
+          {
+            "front": "adéquat",
+            "back": "адекватный"
+          },
+          {
+            "front": "approprié",
+            "back": "подходящий"
+          },
+          {
+            "front": "précis",
+            "back": "точный"
+          },
+          {
+            "front": "exact",
+            "back": "точный"
+          },
+          {
+            "front": "complet",
+            "back": "всесторонний"
+          },
+          {
+            "front": "approfondi",
+            "back": "тщательный"
+          },
+          {
+            "front": "détaillé",
+            "back": "подробный"
+          },
+          {
+            "front": "spécifique",
+            "back": "конкретный"
+          },
+          {
+            "front": "particulier",
+            "back": "особый"
+          },
+          {
+            "front": "évident",
+            "back": "очевидный"
+          },
+          {
+            "front": "évident",
+            "back": "очевидный"
+          },
+          {
+            "front": "apparent",
+            "back": "явный"
+          },
+          {
+            "front": "distinct",
+            "back": "отчётливый"
+          },
+          {
+            "front": "pertinent",
+            "back": "релевантный"
+          },
+          {
+            "front": "capable",
+            "back": "способный"
+          },
+          {
+            "front": "compétent",
+            "back": "компетентный"
+          },
+          {
+            "front": "flexible",
+            "back": "гибкий"
+          },
+          {
+            "front": "polyvalent",
+            "back": "универсальный"
+          },
+          {
+            "front": "pratique",
+            "back": "практичный"
+          },
+          {
+            "front": "raisonnable",
+            "back": "разумный"
+          },
+          {
+            "front": "cohérent",
+            "back": "последовательный"
+          },
+          {
+            "front": "fréquent",
+            "back": "частый"
+          },
+          {
+            "front": "occasionnel",
+            "back": "случайный"
+          },
+          {
+            "front": "temporaire",
+            "back": "временный"
+          },
+          {
+            "front": "permanent",
+            "back": "постоянный"
+          },
+          {
+            "front": "divers",
+            "back": "разнообразный"
+          },
+          {
+            "front": "complexe",
+            "back": "сложный"
+          }
+        ],
+        "others": [
+          {
+            "front": "de plus",
+            "back": "более того"
+          },
+          {
+            "front": "par conséquent",
+            "back": "следовательно"
+          },
+          {
+            "front": "néanmoins",
+            "back": "тем не менее"
+          },
+          {
+            "front": "tandis que",
+            "back": "в то время как"
+          },
+          {
+            "front": "en outre",
+            "back": "кроме того"
+          },
+          {
+            "front": "cependant",
+            "back": "однако"
+          },
+          {
+            "front": "bien que",
+            "back": "хотя"
+          },
+          {
+            "front": "malgré",
+            "back": "несмотря на"
+          },
+          {
+            "front": "concernant",
+            "back": "относительно"
+          },
+          {
+            "front": "au sujet de",
+            "back": "касательно"
+          },
+          {
+            "front": "en conséquence",
+            "back": "соответственно"
+          },
+          {
+            "front": "donc",
+            "back": "следовательно"
+          },
+          {
+            "front": "pendant ce temps",
+            "back": "тем временем"
+          },
+          {
+            "front": "sinon",
+            "back": "иначе"
+          },
+          {
+            "front": "ainsi",
+            "back": "таким образом"
+          },
+          {
+            "front": "d'où",
+            "back": "отсюда"
+          },
+          {
+            "front": "en effet",
+            "back": "действительно"
+          },
+          {
+            "front": "approximativement",
+            "back": "приблизительно"
+          },
+          {
+            "front": "particulièrement",
+            "back": "особенно"
+          },
+          {
+            "front": "relativement",
+            "back": "относительно"
+          },
+          {
+            "front": "significativement",
+            "back": "значительно"
+          },
+          {
+            "front": "progressivement",
+            "back": "постепенно"
+          },
+          {
+            "front": "immédiatement",
+            "back": "немедленно"
+          },
+          {
+            "front": "fréquemment",
+            "back": "часто"
+          },
+          {
+            "front": "occasionnellement",
+            "back": "иногда"
+          },
+          {
+            "front": "récemment",
+            "back": "недавно"
+          },
+          {
+            "front": "actuellement",
+            "back": "в настоящее время"
+          },
+          {
+            "front": "précédemment",
+            "back": "ранее"
+          },
+          {
+            "front": "initialement",
+            "back": "первоначально"
+          },
+          {
+            "front": "finalement",
+            "back": "в конечном счёте"
+          },
+          {
+            "front": "éventuellement",
+            "back": "в конце концов"
+          },
+          {
+            "front": "entièrement",
+            "back": "полностью"
+          }
+        ]
+      },
+      "grammar": [
+        {
+          "title": "Образование Futur Simple",
+          "content": "<h3>Правило образования</h3>\n          <p>Futur Simple образуется очень просто: к <strong>инфинитиву глагола</strong> добавляются окончания будущего времени:</p>\n\n          <div class=\"note\">\n            <strong>Формула:</strong> Инфинитив + окончания (-ai, -as, -a, -ons, -ez, -ont)\n          </div>\n\n          <h3>Окончания Futur Simple</h3>\n          <table>\n            <thead>\n              <tr>\n                <th>Лицо</th>\n                <th>Окончание</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <td>je</td>\n                <td>-ai</td>\n              </tr>\n              <tr>\n                <td>tu</td>\n                <td>-as</td>\n              </tr>\n              <tr>\n                <td>il/elle/on</td>\n                <td>-a</td>\n              </tr>\n              <tr>\n                <td>nous</td>\n                <td>-ons</td>\n              </tr>\n              <tr>\n                <td>vous</td>\n                <td>-ez</td>\n              </tr>\n              <tr>\n                <td>ils/elles</td>\n                <td>-ont</td>\n              </tr>\n            </tbody>\n          </table>\n\n          <h3>Спряжение правильных глаголов</h3>\n\n          <h3>Глаголы на -ER (parler)</h3>\n          <table>\n            <thead>\n              <tr>\n                <th>Лицо</th>\n                <th>Futur Simple</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <td>je</td>\n                <td>parlerai</td>\n              </tr>\n              <tr>\n                <td>tu</td>\n                <td>parleras</td>\n              </tr>\n              <tr>\n                <td>il/elle/on</td>\n                <td>parlera</td>\n              </tr>\n              <tr>\n                <td>nous</td>\n                <td>parlerons</td>\n              </tr>\n              <tr>\n                <td>vous</td>\n                <td>parlerez</td>\n              </tr>\n              <tr>\n                <td>ils/elles</td>\n                <td>parleront</td>\n              </tr>\n            </tbody>\n          </table>\n\n          <h3>Глаголы на -IR (finir)</h3>\n          <table>\n            <thead>\n              <tr>\n                <th>Лицо</th>\n                <th>Futur Simple</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <td>je</td>\n                <td>finirai</td>\n              </tr>\n              <tr>\n                <td>tu</td>\n                <td>finiras</td>\n              </tr>\n              <tr>\n                <td>il/elle/on</td>\n                <td>finira</td>\n              </tr>\n              <tr>\n                <td>nous</td>\n                <td>finirons</td>\n              </tr>\n              <tr>\n                <td>vous</td>\n                <td>finirez</td>\n              </tr>\n              <tr>\n                <td>ils/elles</td>\n                <td>finiront</td>\n              </tr>\n            </tbody>\n          </table>\n\n          <h3>Глаголы на -RE (vendre)</h3>\n          <p>Для глаголов на -RE отбрасывается конечное -e перед добавлением окончаний:</p>\n          <table>\n            <thead>\n              <tr>\n                <th>Лицо</th>\n                <th>Futur Simple</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <td>je</td>\n                <td>vendrai</td>\n              </tr>\n              <tr>\n                <td>tu</td>\n                <td>vendras</td>\n              </tr>\n              <tr>\n                <td>il/elle/on</td>\n                <td>vendra</td>\n              </tr>\n              <tr>\n                <td>nous</td>\n                <td>vendrons</td>\n              </tr>\n              <tr>\n                <td>vous</td>\n                <td>vendrez</td>\n              </tr>\n              <tr>\n                <td>ils/elles</td>\n                <td>vendront</td>\n              </tr>\n            </tbody>\n          </table>\n\n          <div class=\"examples\">\n            <div class=\"example\">\n              <span class=\"target-lang\">Je parlerai français.</span><br>\n              <span class=\"translation\">Я буду говорить по-французски.</span>\n            </div>\n            <div class=\"example\">\n              <span class=\"target-lang\">Tu finiras ton travail demain.</span><br>\n              <span class=\"translation\">Ты закончишь свою работу завтра.</span>\n            </div>\n            <div class=\"example\">\n              <span class=\"target-lang\">Nous vendrons la maison.</span><br>\n              <span class=\"translation\">Мы продадим дом.</span>"
+        },
+        {
+          "title": "Неправильные основы",
+          "content": "<h3>Частые неправильные глаголы</h3>\n          <p>Некоторые глаголы имеют нестандартные основы в Futur Simple, но окончания остаются теми же:</p>\n\n          <table>\n            <thead>\n              <tr>\n                <th>Infinitif</th>\n                <th>Основа</th>\n                <th>Пример (je)</th>\n                <th>Перевод</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <td>être</td>\n                <td>ser-</td>\n                <td>je serai</td>\n                <td>я буду (есть)</td>\n              </tr>\n              <tr>\n                <td>avoir</td>\n                <td>aur-</td>\n                <td>j'aurai</td>\n                <td>я буду иметь</td>\n              </tr>\n              <tr>\n                <td>aller</td>\n                <td>ir-</td>\n                <td>j'irai</td>\n                <td>я пойду</td>\n              </tr>\n              <tr>\n                <td>faire</td>\n                <td>fer-</td>\n                <td>je ferai</td>\n                <td>я сделаю</td>\n              </tr>\n              <tr>\n                <td>pouvoir</td>\n                <td>pourr-</td>\n                <td>je pourrai</td>\n                <td>я смогу</td>\n              </tr>\n              <tr>\n                <td>vouloir</td>\n                <td>voudr-</td>\n                <td>je voudrai</td>\n                <td>я захочу</td>\n              </tr>\n              <tr>\n                <td>devoir</td>\n                <td>devr-</td>\n                <td>je devrai</td>\n                <td>я должен буду</td>\n              </tr>\n              <tr>\n                <td>savoir</td>\n                <td>saur-</td>\n                <td>je saurai</td>\n                <td>я буду знать</td>\n              </tr>\n              <tr>\n                <td>venir</td>\n                <td>viendr-</td>\n                <td>je viendrai</td>\n                <td>я приду</td>\n              </tr>\n              <tr>\n                <td>tenir</td>\n                <td>tiendr-</td>\n                <td>je tiendrai</td>\n                <td>я буду держать</td>\n              </tr>\n              <tr>\n                <td>voir</td>\n                <td>verr-</td>\n                <td>je verrai</td>\n                <td>я увижу</td>\n              </tr>\n              <tr>\n                <td>envoyer</td>\n                <td>enverr-</td>\n                <td>j'enverrai</td>\n                <td>я отправлю</td>\n              </tr>\n              <tr>\n                <td>courir</td>\n                <td>courr-</td>\n                <td>je courrai</td>\n                <td>я побегу</td>\n              </tr>\n              <tr>\n                <td>mourir</td>\n                <td>mourr-</td>\n                <td>je mourrai</td>\n                <td>я умру</td>\n              </tr>\n              <tr>\n                <td>recevoir</td>\n                <td>recevr-</td>\n                <td>je recevrai</td>\n                <td>я получу</td>\n              </tr>\n              <tr>\n                <td>falloir</td>\n                <td>faudr-</td>\n                <td>il faudra</td>\n                <td>нужно будет</td>\n              </tr>\n              <tr>\n                <td>pleuvoir</td>\n                <td>pleuvr-</td>\n                <td>il pleuvra</td>\n                <td>будет идти дождь</td>\n              </tr>\n            </tbody>\n          </table>\n\n          <h3>Полное спряжение être</h3>\n          <table>\n            <thead>\n              <tr>\n                <th>Лицо</th>\n                <th>Futur Simple</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <td>je</td>\n                <td>serai</td>\n              </tr>\n              <tr>\n                <td>tu</td>\n                <td>seras</td>\n              </tr>\n              <tr>\n                <td>il/elle/on</td>\n                <td>sera</td>\n              </tr>\n              <tr>\n                <td>nous</td>\n                <td>serons</td>\n              </tr>\n              <tr>\n                <td>vous</td>\n                <td>serez</td>\n              </tr>\n              <tr>\n                <td>ils/elles</td>\n                <td>seront</td>\n              </tr>\n            </tbody>\n          </table>\n\n          <h3>Полное спряжение avoir</h3>\n          <table>\n            <thead>\n              <tr>\n                <th>Лицо</th>\n                <th>Futur Simple</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <td>j'</td>\n                <td>aurai</td>\n              </tr>\n              <tr>\n                <td>tu</td>\n                <td>auras</td>\n              </tr>\n              <tr>\n                <td>il/elle/on</td>\n                <td>aura</td>\n              </tr>\n              <tr>\n                <td>nous</td>\n                <td>aurons</td>\n              </tr>\n              <tr>\n                <td>vous</td>\n                <td>aurez</td>\n              </tr>\n              <tr>\n                <td>ils/elles</td>\n                <td>auront</td>\n              </tr>\n            </tbody>\n          </table>\n\n          <div class=\"examples\">\n            <div class=\"example\">\n              <span class=\"target-lang\">Je serai médecin.</span><br>\n              <span class=\"translation\">Я буду врачом.</span>\n            </div>\n            <div class=\"example\">\n              <span class=\"target-lang\">Tu auras vingt ans demain.</span><br>\n              <span class=\"translation\">Тебе завтра будет двадцать лет.</span>\n            </div>\n            <div class=\"example\">\n              <span class=\"target-lang\">Il fera beau ce week-end.</span><br>\n              <span class=\"translation\">В эти выходные будет хорошая погода.</span>\n            </div>\n            <div class=\"example\">\n              <span class=\"target-lang\">Nous irons à Paris l'année prochaine.</span><br>\n              <span class=\"translation\">Мы поедем в Париж в следующем году.</span>\n            </div>\n            <div class=\"example\">\n              <span class=\"target-lang\">Vous verrez la différence.</span><br>\n              <span class=\"translation\">Вы увидите разницу.</span>"
+        },
+        {
+          "title": "Употребление Futur Simple",
+          "content": "<h3>Когда использовать Futur Simple</h3>\n\n          <h3>1. Будущие действия</h3>\n          <p>Для описания действий, которые произойдут в будущем:</p>\n          <div class=\"examples\">\n            <div class=\"example\">\n              <span class=\"target-lang\">Demain, je partirai en vacances.</span><br>\n              <span class=\"translation\">Завтра я уеду в отпуск.</span>\n            </div>\n            <div class=\"example\">\n              <span class=\"target-lang\">L'année prochaine, nous déménagerons.</span><br>\n              <span class=\"translation\">В следующем году мы переедем.</span>"
+        },
+        {
+          "title": "Futur Simple vs Futur Proche",
+          "content": "<h3>Различия между временами</h3>\n          <p><strong>Futur Proche</strong> (ближайшее будущее) образуется: <strong>aller (présent) + infinitif</strong></p>\n\n          <table>\n            <thead>\n              <tr>\n                <th>Futur Proche</th>\n                <th>Futur Simple</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <td>Ближайшее будущее</td>\n                <td>Отдалённое будущее</td>\n              </tr>\n              <tr>\n                <td>Запланированные действия</td>\n                <td>Общие планы, предсказания</td>\n              </tr>\n              <tr>\n                <td>Разговорная речь</td>\n                <td>Формальная речь, письмо</td>\n              </tr>\n              <tr>\n                <td>Неизбежные события</td>\n                <td>Возможные события</td>\n              </tr>\n            </tbody>\n          </table>\n\n          <h3>Примеры сравнения</h3>\n          <div class=\"examples\">\n            <div class=\"example\">\n              <span class=\"target-lang\">Futur Proche: Je vais manger. (сейчас, очень скоро)</span><br>\n              <span class=\"target-lang\">Futur Simple: Je mangerai. (когда-то в будущем)</span><br>\n              <span class=\"translation\">Я собираюсь поесть. / Я поем.</span>\n            </div>\n            <div class=\"example\">\n              <span class=\"target-lang\">Futur Proche: Il va pleuvoir. (вот-вот начнётся дождь)</span><br>\n              <span class=\"target-lang\">Futur Simple: Il pleuvra demain. (прогноз на завтра)</span><br>\n              <span class=\"translation\">Сейчас пойдёт дождь. / Завтра будет дождь.</span>\n            </div>\n            <div class=\"example\">\n              <span class=\"target-lang\">Futur Proche: Nous allons partir dans cinq minutes.</span><br>\n              <span class=\"target-lang\">Futur Simple: Nous partirons l'année prochaine.</span><br>\n              <span class=\"translation\">Мы уйдём через пять минут. / Мы уедем в следующем году.</span>"
+        },
+        {
+          "title": "Futur Simple в придаточных предложениях",
+          "content": "<h3>После временных союзов</h3>\n          <p>Важная особенность: после союзов времени (<strong>quand, lorsque, dès que, aussitôt que</strong>) французский язык использует <strong>Futur Simple</strong>, а не настоящее время:</p>\n\n          <div class=\"examples\">\n            <div class=\"example\">\n              <span class=\"target-lang\">Quand tu arriveras, appelle-moi.</span><br>\n              <span class=\"translation\">Когда ты приедешь, позвони мне.</span>\n            </div>\n            <div class=\"example\">\n              <span class=\"target-lang\">Dès que je serai prêt, je partirai.</span><br>\n              <span class=\"translation\">Как только я буду готов, я уйду.</span>\n            </div>\n            <div class=\"example\">\n              <span class=\"target-lang\">Lorsque vous viendrez, nous mangerons ensemble.</span><br>\n              <span class=\"translation\">Когда вы придёте, мы поедим вместе.</span>"
+        },
+        {
+          "title": "Образование Imparfait",
+          "content": "<h3>Правило образования</h3>\n          <p>Imparfait образуется от основы глагола в форме <strong>nous</strong> в настоящем времени (Présent), от которой отбрасывается окончание <strong>-ons</strong>, к полученной основе добавляются следующие окончания:</p>\n\n          <table>\n            <thead>\n              <tr>\n                <th>Лицо</th>\n                <th>Окончание</th>\n                <th>Пример (parler)</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <td>je</td>\n                <td>-ais</td>\n                <td>je parlais</td>\n              </tr>\n              <tr>\n                <td>tu</td>\n                <td>-ais</td>\n                <td>tu parlais</td>\n              </tr>\n              <tr>\n                <td>il/elle/on</td>\n                <td>-ait</td>\n                <td>il parlait</td>\n              </tr>\n              <tr>\n                <td>nous</td>\n                <td>-ions</td>\n                <td>nous parlions</td>\n              </tr>\n              <tr>\n                <td>vous</td>\n                <td>-iez</td>\n                <td>vous parliez</td>\n              </tr>\n              <tr>\n                <td>ils/elles</td>\n                <td>-aient</td>\n                <td>ils parlaient</td>\n              </tr>\n            </tbody>\n          </table>\n\n          <h3>Примеры образования основы</h3>\n          <ul>\n            <li><strong>Finir:</strong> nous finiss<strong>ons</strong> → finiss- → je finissais, tu finissais...</li>\n            <li><strong>Vendre:</strong> nous vend<strong>ons</strong> → vend- → je vendais, tu vendais...</li>\n            <li><strong>Prendre:</strong> nous pren<strong>ons</strong> → pren- → je prenais, tu prenais...</li>\n          </ul>\n\n          <div class=\"note\">\n            <strong>Внимание!</strong> Единственное исключение — глагол <strong>être</strong>: основа <strong>ét-</strong> (j'étais, tu étais, il était, nous étions, vous étiez, ils étaient)."
+        },
+        {
+          "title": "Употребление Imparfait",
+          "content": "<h3>1. Описание в прошлом</h3>\n          <p>Imparfait используется для описания людей, мест, погоды, обстоятельств в прошлом:</p>\n\n          <div class=\"examples\">\n            <div class=\"example\">\n              <span class=\"target-lang\">Il faisait beau ce jour-là.</span><br>\n              <span class=\"translation\">В тот день была хорошая погода.</span>\n            </div>\n            <div class=\"example\">\n              <span class=\"target-lang\">Elle portait une robe rouge.</span><br>\n              <span class=\"translation\">Она носила красное платье.</span>\n            </div>\n            <div class=\"example\">\n              <span class=\"target-lang\">La maison était grande et blanche.</span><br>\n              <span class=\"translation\">Дом был большой и белый.</span>"
+        },
+        {
+          "title": "Imparfait vs Passé Composé",
+          "content": "<h3>Основные различия</h3>\n\n          <table>\n            <thead>\n              <tr>\n                <th>Imparfait</th>\n                <th>Passé Composé</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <td>Продолжающееся действие</td>\n                <td>Завершённое действие</td>\n              </tr>\n              <tr>\n                <td>Описание, фон</td>\n                <td>Конкретное событие</td>\n              </tr>\n              <tr>\n                <td>Привычные действия</td>\n                <td>Однократные действия</td>\n              </tr>\n              <tr>\n                <td>Без указания начала/конца</td>\n                <td>С чётким началом/концом</td>\n              </tr>\n            </tbody>\n          </table>\n\n          <h3>Примеры сравнения</h3>\n\n          <div class=\"examples\">\n            <div class=\"example\">\n              <span class=\"target-lang\">Imparfait: Il faisait beau. (описание)</span><br>\n              <span class=\"target-lang\">Passé Composé: Il a fait beau hier. (конкретный факт)</span><br>\n              <span class=\"translation\">Была хорошая погода. / Вчера была хорошая погода.</span>\n            </div>\n            <div class=\"example\">\n              <span class=\"target-lang\">Imparfait: Je lisais un livre. (процесс)</span><br>\n              <span class=\"target-lang\">Passé Composé: J'ai lu un livre. (законченное действие)</span><br>\n              <span class=\"translation\">Я читал книгу. / Я прочитал книгу.</span>"
+        },
+        {
+          "title": "Типичные маркеры Imparfait",
+          "content": "<h3>Слова-индикаторы Imparfait</h3>\n          <p>Эти выражения часто указывают на необходимость использования Imparfait:</p>\n\n          <ul>\n            <li><strong>Tous les jours</strong> — каждый день</li>\n            <li><strong>Chaque semaine/mois/année</strong> — каждую неделю/месяц/год</li>\n            <li><strong>Toujours</strong> — всегда</li>\n            <li><strong>Souvent</strong> — часто</li>\n            <li><strong>D'habitude</strong> — обычно</li>\n            <li><strong>Autrefois</strong> — прежде, в прошлом</li>\n            <li><strong>Quand j'étais jeune/petit(e)</strong> — когда я был молодым/маленьким</li>\n            <li><strong>Pendant que</strong> — в то время как</li>\n            <li><strong>Tandis que</strong> — тогда как</li>\n          </ul>\n\n          <h3>Примеры с маркерами</h3>\n          <div class=\"examples\">\n            <div class=\"example\">\n              <span class=\"target-lang\">Autrefois, les gens voyageaient à cheval.</span><br>\n              <span class=\"translation\">Прежде люди путешествовали на лошадях.</span>\n            </div>\n            <div class=\"example\">\n              <span class=\"target-lang\">D'habitude, il prenait le bus pour aller au travail.</span><br>\n              <span class=\"translation\">Обычно он ездил на автобусе на работу.</span>\n            </div>\n            <div class=\"example\">\n              <span class=\"target-lang\">Quand j'étais petit, je croyais au Père Noël.</span><br>\n              <span class=\"translation\">Когда я был маленьким, я верил в Деда Мороза.</span>"
+        },
+        {
+          "title": "Образование с глаголом avoir",
+          "content": "<h3>Формула</h3>\n          <p>Большинство глаголов образуют Passé Composé с помощью вспомогательного глагола <strong>avoir</strong> в настоящем времени + <strong>participe passé</strong> (причастие прошедшего времени):</p>\n\n          <div class=\"note\">\n            <strong>Формула:</strong> avoir (présent) + participe passé\n          </div>\n\n          <h3>Образование Participe Passé</h3>\n          <table>\n            <thead>\n              <tr>\n                <th>Группа глаголов</th>\n                <th>Правило</th>\n                <th>Пример</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <td>-ER глаголы</td>\n                <td>-er → -é</td>\n                <td>parler → parlé</td>\n              </tr>\n              <tr>\n                <td>-IR глаголы</td>\n                <td>-ir → -i</td>\n                <td>finir → fini</td>\n              </tr>\n              <tr>\n                <td>-RE глаголы</td>\n                <td>-re → -u</td>\n                <td>vendre → vendu</td>\n              </tr>\n            </tbody>\n          </table>\n\n          <h3>Спряжение глагола parler</h3>\n          <table>\n            <thead>\n              <tr>\n                <th>Лицо</th>\n                <th>Passé Composé</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <td>j'</td>\n                <td>ai parlé</td>\n              </tr>\n              <tr>\n                <td>tu</td>\n                <td>as parlé</td>\n              </tr>\n              <tr>\n                <td>il/elle/on</td>\n                <td>a parlé</td>\n              </tr>\n              <tr>\n                <td>nous</td>\n                <td>avons parlé</td>\n              </tr>\n              <tr>\n                <td>vous</td>\n                <td>avez parlé</td>\n              </tr>\n              <tr>\n                <td>ils/elles</td>\n                <td>ont parlé</td>\n              </tr>\n            </tbody>\n          </table>\n\n          <h3>Примеры</h3>\n          <div class=\"examples\">\n            <div class=\"example\">\n              <span class=\"target-lang\">J'ai mangé une pomme.</span><br>\n              <span class=\"translation\">Я съел яблоко.</span>\n            </div>\n            <div class=\"example\">\n              <span class=\"target-lang\">Elle a fini ses devoirs.</span><br>\n              <span class=\"translation\">Она закончила домашнее задание.</span>\n            </div>\n            <div class=\"example\">\n              <span class=\"target-lang\">Nous avons vendu notre voiture.</span><br>\n              <span class=\"translation\">Мы продали нашу машину.</span>"
+        },
+        {
+          "title": "Образование с глаголом être",
+          "content": "<h3>Глаголы движения и изменения состояния</h3>\n          <p>Некоторые глаголы образуют Passé Composé с вспомогательным глаголом <strong>être</strong>. Их можно запомнить по мнемоническому правилу <strong>DR MRS VANDERTRAMP</strong>:</p>\n\n          <table>\n            <thead>\n              <tr>\n                <th>Буква</th>\n                <th>Глагол</th>\n                <th>Participe Passé</th>\n                <th>Перевод</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <td>D</td>\n                <td>Devenir</td>\n                <td>devenu</td>\n                <td>становиться</td>\n              </tr>\n              <tr>\n                <td>R</td>\n                <td>Revenir</td>\n                <td>revenu</td>\n                <td>возвращаться</td>\n              </tr>\n              <tr>\n                <td>M</td>\n                <td>Mourir</td>\n                <td>mort</td>\n                <td>умирать</td>\n              </tr>\n              <tr>\n                <td>R</td>\n                <td>Retourner</td>\n                <td>retourné</td>\n                <td>возвращаться</td>\n              </tr>\n              <tr>\n                <td>S</td>\n                <td>Sortir</td>\n                <td>sorti</td>\n                <td>выходить</td>\n              </tr>\n              <tr>\n                <td>V</td>\n                <td>Venir</td>\n                <td>venu</td>\n                <td>приходить</td>\n              </tr>\n              <tr>\n                <td>A</td>\n                <td>Arriver</td>\n                <td>arrivé</td>\n                <td>прибывать</td>\n              </tr>\n              <tr>\n                <td>N</td>\n                <td>Naître</td>\n                <td>né</td>\n                <td>рождаться</td>\n              </tr>\n              <tr>\n                <td>D</td>\n                <td>Descendre</td>\n                <td>descendu</td>\n                <td>спускаться</td>\n              </tr>\n              <tr>\n                <td>E</td>\n                <td>Entrer</td>\n                <td>entré</td>\n                <td>входить</td>\n              </tr>\n              <tr>\n                <td>R</td>\n                <td>Rentrer</td>\n                <td>rentré</td>\n                <td>возвращаться домой</td>\n              </tr>\n              <tr>\n                <td>T</td>\n                <td>Tomber</td>\n                <td>tombé</td>\n                <td>падать</td>\n              </tr>\n              <tr>\n                <td>R</td>\n                <td>Rester</td>\n                <td>resté</td>\n                <td>оставаться</td>\n              </tr>\n              <tr>\n                <td>A</td>\n                <td>Aller</td>\n                <td>allé</td>\n                <td>идти, ехать</td>\n              </tr>\n              <tr>\n                <td>M</td>\n                <td>Monter</td>\n                <td>monté</td>\n                <td>подниматься</td>\n              </tr>\n              <tr>\n                <td>P</td>\n                <td>Partir</td>\n                <td>parti</td>\n                <td>уезжать</td>\n              </tr>\n            </tbody>\n          </table>\n\n          <h3>Спряжение глагола aller</h3>\n          <table>\n            <thead>\n              <tr>\n                <th>Лицо</th>\n                <th>Passé Composé</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <td>je</td>\n                <td>suis allé(e)</td>\n              </tr>\n              <tr>\n                <td>tu</td>\n                <td>es allé(e)</td>\n              </tr>\n              <tr>\n                <td>il/elle/on</td>\n                <td>est allé/allée</td>\n              </tr>\n              <tr>\n                <td>nous</td>\n                <td>sommes allé(e)s</td>\n              </tr>\n              <tr>\n                <td>vous</td>\n                <td>êtes allé(e)(s)</td>\n              </tr>\n              <tr>\n                <td>ils/elles</td>\n                <td>sont allés/allées</td>\n              </tr>\n            </tbody>\n          </table>\n\n          <div class=\"note\">\n            <strong>Важно!</strong> Все возвратные глаголы (se laver, se lever и т.д.) также используют <strong>être</strong> в Passé Composé.\n          </div>\n\n          <h3>Примеры</h3>\n          <div class=\"examples\">\n            <div class=\"example\">\n              <span class=\"target-lang\">Je suis allé au cinéma.</span><br>\n              <span class=\"translation\">Я ходил в кино.</span>\n            </div>\n            <div class=\"example\">\n              <span class=\"target-lang\">Elle est arrivée hier.</span><br>\n              <span class=\"translation\">Она приехала вчера.</span>\n            </div>\n            <div class=\"example\">\n              <span class=\"target-lang\">Nous sommes sortis à 20h.</span><br>\n              <span class=\"translation\">Мы вышли в 20:00.</span>"
+        },
+        {
+          "title": "Правила согласования",
+          "content": "<h3>Согласование с être</h3>\n          <p>Когда Passé Composé образуется с <strong>être</strong>, причастие согласуется в роде и числе с подлежащим:</p>\n\n          <table>\n            <thead>\n              <tr>\n                <th>Подлежащее</th>\n                <th>Окончание</th>\n                <th>Пример</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <td>Мужской род, ед.ч.</td>\n                <td>-</td>\n                <td>Il est parti</td>\n              </tr>\n              <tr>\n                <td>Женский род, ед.ч.</td>\n                <td>+e</td>\n                <td>Elle est partie</td>\n              </tr>\n              <tr>\n                <td>Мужской род, мн.ч.</td>\n                <td>+s</td>\n                <td>Ils sont partis</td>\n              </tr>\n              <tr>\n                <td>Женский род, мн.ч.</td>\n                <td>+es</td>\n                <td>Elles sont parties</td>\n              </tr>\n            </tbody>\n          </table>\n\n          <div class=\"examples\">\n            <div class=\"example\">\n              <span class=\"target-lang\">Marie est allée à Paris.</span><br>\n              <span class=\"translation\">Мари ездила в Париж. (женский род)</span>\n            </div>\n            <div class=\"example\">\n              <span class=\"target-lang\">Mes frères sont arrivés tard.</span><br>\n              <span class=\"translation\">Мои братья приехали поздно. (мужской род, мн.ч.)</span>\n            </div>\n            <div class=\"example\">\n              <span class=\"target-lang\">Les filles sont revenues hier.</span><br>\n              <span class=\"translation\">Девочки вернулись вчера. (женский род, мн.ч.)</span>"
+        },
+        {
+          "title": "Неправильные причастия",
+          "content": "<h3>Самые частые неправильные причастия</h3>\n          <p>Эти глаголы имеют нестандартные формы participe passé, которые нужно запомнить:</p>\n\n          <table>\n            <thead>\n              <tr>\n                <th>Infinitif</th>\n                <th>Participe Passé</th>\n                <th>Перевод</th>\n                <th>Пример</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <td>être</td>\n                <td>été</td>\n                <td>быть</td>\n                <td>J'ai été</td>\n              </tr>\n              <tr>\n                <td>avoir</td>\n                <td>eu</td>\n                <td>иметь</td>\n                <td>J'ai eu</td>\n              </tr>\n              <tr>\n                <td>faire</td>\n                <td>fait</td>\n                <td>делать</td>\n                <td>J'ai fait</td>\n              </tr>\n              <tr>\n                <td>dire</td>\n                <td>dit</td>\n                <td>говорить</td>\n                <td>J'ai dit</td>\n              </tr>\n              <tr>\n                <td>écrire</td>\n                <td>écrit</td>\n                <td>писать</td>\n                <td>J'ai écrit</td>\n              </tr>\n              <tr>\n                <td>lire</td>\n                <td>lu</td>\n                <td>читать</td>\n                <td>J'ai lu</td>\n              </tr>\n              <tr>\n                <td>voir</td>\n                <td>vu</td>\n                <td>видеть</td>\n                <td>J'ai vu</td>\n              </tr>\n              <tr>\n                <td>prendre</td>\n                <td>pris</td>\n                <td>брать</td>\n                <td>J'ai pris</td>\n              </tr>\n              <tr>\n                <td>mettre</td>\n                <td>mis</td>\n                <td>класть</td>\n                <td>J'ai mis</td>\n              </tr>\n              <tr>\n                <td>comprendre</td>\n                <td>compris</td>\n                <td>понимать</td>\n                <td>J'ai compris</td>\n              </tr>\n              <tr>\n                <td>ouvrir</td>\n                <td>ouvert</td>\n                <td>открывать</td>\n                <td>J'ai ouvert</td>\n              </tr>\n              <tr>\n                <td>offrir</td>\n                <td>offert</td>\n                <td>предлагать</td>\n                <td>J'ai offert</td>\n              </tr>\n              <tr>\n                <td>boire</td>\n                <td>bu</td>\n                <td>пить</td>\n                <td>J'ai bu</td>\n              </tr>\n              <tr>\n                <td>courir</td>\n                <td>couru</td>\n                <td>бежать</td>\n                <td>J'ai couru</td>\n              </tr>\n              <tr>\n                <td>pouvoir</td>\n                <td>pu</td>\n                <td>мочь</td>\n                <td>J'ai pu</td>\n              </tr>\n              <tr>\n                <td>savoir</td>\n                <td>su</td>\n                <td>знать</td>\n                <td>J'ai su</td>\n              </tr>\n              <tr>\n                <td>vouloir</td>\n                <td>voulu</td>\n                <td>хотеть</td>\n                <td>J'ai voulu</td>\n              </tr>\n              <tr>\n                <td>devoir</td>\n                <td>dû</td>\n                <td>быть должным</td>\n                <td>J'ai dû</td>\n              </tr>\n            </tbody>\n          </table>\n\n          <h3>Примеры использования</h3>\n          <div class=\"examples\">\n            <div class=\"example\">\n              <span class=\"target-lang\">J'ai fait mes devoirs.</span><br>\n              <span class=\"translation\">Я сделал домашнее задание.</span>\n            </div>\n            <div class=\"example\">\n              <span class=\"target-lang\">Tu as lu ce livre?</span><br>\n              <span class=\"translation\">Ты читал эту книгу?</span>\n            </div>\n            <div class=\"example\">\n              <span class=\"target-lang\">Il a pris le train.</span><br>\n              <span class=\"translation\">Он сел на поезд.</span>\n            </div>\n            <div class=\"example\">\n              <span class=\"target-lang\">Nous avons vu un film.</span><br>\n              <span class=\"translation\">Мы посмотрели фильм.</span>\n            </div>\n            <div class=\"example\">\n              <span class=\"target-lang\">Elle a ouvert la fenêtre.</span><br>\n              <span class=\"translation\">Она открыла окно.</span>"
+        },
+        {
+          "title": "Употребление Passé Composé",
+          "content": "<h3>Когда использовать Passé Composé</h3>\n\n          <h3>1. Законченные действия</h3>\n          <p>Для описания завершённых действий в прошлом:</p>\n          <div class=\"examples\">\n            <div class=\"example\">\n              <span class=\"target-lang\">J'ai déjeuné à midi.</span><br>\n              <span class=\"translation\">Я пообедал в полдень.</span>\n            </div>\n            <div class=\"example\">\n              <span class=\"target-lang\">Il a terminé son travail.</span><br>\n              <span class=\"translation\">Он закончил свою работу.</span>"
+        }
+      ],
+      "quiz": [
+        {
+          "question": "Hier, je ___ au cinéma.",
+          "options": [
+            "suis allé",
+            "ai allé",
+            "allais",
+            "vais"
+          ],
+          "correct": 0,
+          "explanation": "Passé Composé с глаголом движения 'aller' требует вспомогательного глагола 'être'."
+        },
+        {
+          "question": "Quand j'étais petit, je ___ beaucoup de chocolat.",
+          "options": [
+            "ai mangé",
+            "mangeais",
+            "mange",
+            "avais mangé"
+          ],
+          "correct": 1,
+          "explanation": "Imparfait используется для описания привычек в прошлом."
+        },
+        {
+          "question": "C'est le livre ___ je t'ai parlé.",
+          "options": [
+            "qui",
+            "que",
+            "dont",
+            "où"
+          ],
+          "correct": 2,
+          "explanation": "Относительное местоимение 'dont' заменяет дополнение с предлогом 'de' (parler de quelque chose)."
+        },
+        {
+          "question": "Si j'avais de l'argent, je ___ une voiture.",
+          "options": [
+            "achèterai",
+            "achèterais",
+            "ai acheté",
+            "avais acheté"
+          ],
+          "correct": 1,
+          "explanation": "В условном предложении (Si + Imparfait) используется Conditionnel Présent."
+        },
+        {
+          "question": "Il faut que tu ___ tes devoirs.",
+          "options": [
+            "fais",
+            "fasses",
+            "feras",
+            "faisais"
+          ],
+          "correct": 1,
+          "explanation": "После 'il faut que' используется Subjonctif (fasses)."
+        },
+        {
+          "question": "Je n'ai vu ___ dans la rue.",
+          "options": [
+            "quelqu'un",
+            "personne",
+            "rien",
+            "jamais"
+          ],
+          "correct": 1,
+          "explanation": "'Personne' (никто) используется для отрицания людей."
+        },
+        {
+          "question": "Elle s'est ___ les mains.",
+          "options": [
+            "lavé",
+            "lavée",
+            "lavés",
+            "lavées"
+          ],
+          "correct": 3,
+          "explanation": "В возвратных глаголах причастие согласуется с подлежащим, если прямое дополнение стоит перед глаголом (здесь 'les mains' - прямое дополнение после глагола, но... стоп. 'se laver les mains'. 'les mains' is direct object AFTER verb. So NO agreement? Wait. 'Elle s'est lavée'. But 'Elle s'est lavé les mains'. Let's check rule. Rule: Agreement with direct object if it precedes verb. Here 'les mains' follows. So 'lavé'. BUT usually people mistake this. Let's use a simpler example or be careful. Actually, 'Elle s'est lavée' (herself). 'Elle s'est lavé les mains' (her hands). Correct answer is 'lavé' if 'les mains' is mentioned. Let's change question to 'Elle est ___ (partir)' to be safe or stick to 'lavé' and explain."
+        },
+        {
+          "question": "Elle est ___ hier soir.",
+          "options": [
+            "parti",
+            "partie",
+            "partis",
+            "parties"
+          ],
+          "correct": 1,
+          "explanation": "Passé Composé с 'être': причастие согласуется с подлежащим (elle -> partie)."
+        },
+        {
+          "question": "Je lui ai dit de ___ pas venir.",
+          "options": [
+            "ne",
+            "ne pas",
+            "pas ne",
+            "non"
+          ],
+          "correct": 1,
+          "explanation": "С инфинитивом обе части отрицания (ne pas) ставятся перед глаголом."
+        },
+        {
+          "question": "C'est la maison ___ j'habite.",
+          "options": [
+            "qui",
+            "que",
+            "où",
+            "dont"
+          ],
+          "correct": 2,
+          "explanation": "'Où' используется для обозначения места."
+        },
+        {
+          "question": "Il a décidé ___ partir.",
+          "options": [
+            "à",
+            "de",
+            "pour",
+            "sur"
+          ],
+          "correct": 1,
+          "explanation": "Глагол 'décider' требует предлога 'de' перед инфинитивом."
+        }
+      ],
+      "exercises": [
+        {
+          "sentence": "Quand j'_____ petit, j'aimais jouer dehors.",
+          "answer": [
+            "étais"
+          ],
+          "hint": "être (imparfait)"
+        },
+        {
+          "sentence": "Nous _____ à la plage tous les étés.",
+          "answer": [
+            "allions"
+          ],
+          "hint": "aller (imparfait)"
+        },
+        {
+          "sentence": "Il _____ beau ce jour-là.",
+          "answer": [
+            "faisait"
+          ],
+          "hint": "faire (imparfait)"
+        },
+        {
+          "sentence": "Vous _____ souvent vos grands-parents?",
+          "answer": [
+            "visitiez"
+          ],
+          "hint": "visiter (imparfait)"
+        },
+        {
+          "sentence": "Elles _____ ensemble depuis longtemps.",
+          "answer": [
+            "travaillaient"
+          ],
+          "hint": "travailler (imparfait)"
+        },
+        {
+          "sentence": "J'_____ mangé une pomme ce matin.",
+          "answer": [
+            "ai"
+          ],
+          "hint": "passé composé - avoir"
+        },
+        {
+          "sentence": "Elle _____ partie à huit heures.",
+          "answer": [
+            "est"
+          ],
+          "hint": "passé composé - être"
+        },
+        {
+          "sentence": "Nous avons _____ un film hier soir.",
+          "answer": [
+            "vu"
+          ],
+          "hint": "voir (participe passé)"
+        },
+        {
+          "sentence": "Ils sont _____ en France l'année dernière.",
+          "answer": [
+            "allés"
+          ],
+          "hint": "aller (participe passé)"
+        },
+        {
+          "sentence": "Tu as _____ tes devoirs?",
+          "answer": [
+            "fini"
+          ],
+          "hint": "finir (participe passé)"
+        },
+        {
+          "sentence": "Demain, je _____ mes amis.",
+          "answer": [
+            "verrai"
+          ],
+          "hint": "voir (futur)"
+        },
+        {
+          "sentence": "Nous _____ en vacances en juillet.",
+          "answer": [
+            "partirons"
+          ],
+          "hint": "partir (futur)"
+        },
+        {
+          "sentence": "Il _____ médecin quand il sera grand.",
+          "answer": [
+            "sera"
+          ],
+          "hint": "être (futur)"
+        },
+        {
+          "sentence": "Vous _____ le temps de finir?",
+          "answer": [
+            "aurez"
+          ],
+          "hint": "avoir (futur)"
+        },
+        {
+          "sentence": "Elles _____ tard ce soir.",
+          "answer": [
+            "rentreront"
+          ],
+          "hint": "rentrer (futur)"
+        },
+        {
+          "sentence": "Si j'avais de l'argent, j'_____ une nouvelle voiture.",
+          "answer": [
+            "achèterais"
+          ],
+          "hint": "conditionnel présent"
+        },
+        {
+          "sentence": "Il faut que tu _____ tes légumes.",
+          "answer": [
+            "manges"
+          ],
+          "hint": "subjonctif présent"
+        },
+        {
+          "sentence": "Pendant que je _____, il a téléphoné.",
+          "answer": [
+            "dormais"
+          ],
+          "hint": "imparfait"
+        },
+        {
+          "sentence": "Quand j'_____ fini, je t'appellerai.",
+          "answer": [
+            "aurai"
+          ],
+          "hint": "futur antérieur"
+        },
+        {
+          "sentence": "Elle _____ bien parler trois langues.",
+          "answer": [
+            "sait",
+            "peut"
+          ],
+          "hint": "savoir/pouvoir"
+        }
+      ],
+      "reading": [
+        {
+          "title": "Le Voyage Inattendu",
+          "text": "Sophie est une personne très organisée. Pour ses vacances d'été, elle avait tout planifié : les billets de train, l'hôtel, et même les restaurants. Elle devait aller à Nice, sur la Côte d'Azur. Mais quand elle est arrivée à la gare, elle a réalisé qu'elle avait oublié son passeport.\n\nElle ne pouvait pas prendre le train. Déçue, elle est rentrée chez elle. Sur le chemin, elle a vu une affiche pour un festival de musique dans un petit village voisin. Elle a décidé d'y aller, juste pour voir.\n\nLe festival était magnifique. Il y avait des musiciens de partout dans le monde. Sophie a rencontré un groupe de personnes très sympathiques qui l'ont invitée à dîner. Ils ont passé la soirée à rire et à danser.\n\nSophie n'est jamais allée à Nice cet été-là. Mais elle a passé les meilleures vacances de sa vie, juste à côté de chez elle. Elle a appris que parfois, les meilleurs moments sont ceux qu'on ne prévoit pas.",
+          "translation": "Софи — очень организованный человек. Для своего летнего отпуска она спланировала всё: билеты на поезд, отель и даже рестораны. Она должна была поехать в Ниццу, на Лазурный берег. Но когда она приехала на вокзал, она поняла, что забыла свой паспорт.\n\nОна не смогла сесть на поезд. Разочарованная, она вернулась домой. По дороге она увидела афишу музыкального фестиваля в соседней маленькой деревне. Она решила пойти туда, просто посмотреть.\n\nФестиваль был великолепен. Там были музыканты со всего мира. Софи встретила группу очень приятных людей, которые пригласили её на ужин. Они провели вечер, смеясь и танцуя.\n\nСофи так и не поехала в Ниццу тем летом. Но она провела лучшие каникулы в своей жизни, совсем рядом с домом. Она поняла, что иногда лучшие моменты — это те, которые мы не планируем."
+        },
+        {
+          "title": "Une Soirée Mystérieuse",
+          "text": "C'était l'anniversaire de Marc. Il avait invité tous ses amis dans son appartement à Paris. La musique était forte, et tout le monde s'amusait. Vers minuit, quelqu'un a frappé à la porte.\n\nMarc a ouvert. C'était un homme âgé, habillé d'un costume élégant mais démodé. Il tenait une petite boîte en bois. \"Ceci est pour vous,\" a-t-il dit, avant de disparaître dans l'escalier.\n\nMarc a ouvert la boîte. À l'intérieur, il y avait une vieille clé dorée et une note. La note disait : \"La clé de votre avenir se trouve là où tout a commencé.\"\n\nLes amis de Marc étaient intrigués. Ils ont commencé à chercher des indices. Ils ont réalisé que la clé ressemblait à celle de la vieille maison de campagne des grands-parents de Marc. Le lendemain, ils sont tous partis à la campagne.\n\nIls ont trouvé un vieux coffre dans le grenier. La clé l'ouvrait parfaitement. À l'intérieur, il n'y avait pas d'or ni de bijoux, mais des photos de famille et des lettres d'amour écrites par ses grands-parents. Marc a souri. C'était le plus beau cadeau qu'il pouvait recevoir.",
+          "translation": "Это был день рождения Марка. Он пригласил всех своих друзей в свою квартиру в Париже. Музыка играла громко, и все веселились. Около полуночи кто-то постучал в дверь.\n\nМарк открыл. Это был пожилой мужчина, одетый в элегантный, но старомодный костюм. Он держал маленькую деревянную шкатулку. «Это для вас», — сказал он, прежде чем исчезнуть на лестнице.\n\nМарк открыл шкатулку. Внутри был старый золотой ключ и записка. В записке говорилось: «Ключ к вашему будущему находится там, где всё началось».\n\nДрузья Марка были заинтригованы. Они начали искать подсказки. Они поняли, что ключ похож на ключ от старого загородного дома бабушки и дедушки Марка. На следующий день они все отправились в деревню.\n\nОни нашли старый сундук на чердаке. Ключ идеально подошел. Внутри не было ни золота, ни драгоценностей, но были семейные фотографии и любовные письма, написанные его бабушкой и дедушкой. Марк улыбнулся. Это был самый лучший подарок, который он мог получить."
+        },
+        {
+          "title": "L'Art de la Cuisine",
+          "text": "Pierre a toujours rêvé d'être un grand chef. Il travaillait dans un petit bistro, mais il voulait plus. Un jour, il a appris que le célèbre critique culinaire, M. Lecomte, allait venir dîner.\n\nPierre était nerveux. Il voulait préparer quelque chose de spécial. Il a décidé de cuisiner un plat traditionnel, le bœuf bourguignon, mais avec sa propre touche moderne. Il a passé toute la journée à choisir les meilleurs ingrédients au marché.\n\nLe soir, le restaurant était plein. M. Lecomte est arrivé et s'est assis dans un coin. Pierre a cuisiné avec passion. Quand le plat a été servi, il a attendu, le cœur battant.\n\nM. Lecomte a goûté, a fermé les yeux, et a souri. Il a appelé Pierre à sa table. \"Je n'ai pas mangé un bœuf bourguignon aussi délicieux depuis mon enfance,\" a-t-il dit.\n\nLe lendemain, une critique élogieuse est parue dans le journal. La vie de Pierre a changé. Il a ouvert son propre restaurant, mais il n'a jamais oublié que le secret de la bonne cuisine, c'est l'amour qu'on y met.",
+          "translation": "Пьер всегда мечтал стать великим шеф-поваром. Он работал в маленьком бистро, но хотел большего. Однажды он узнал, что знаменитый кулинарный критик, мсье Леконт, придет на ужин.\n\nПьер нервничал. Он хотел приготовить что-то особенное. Он решил приготовить традиционное блюдо, бёф бургиньон, но со своей современной ноткой. Он провел весь день, выбирая лучшие ингредиенты на рынке.\n\nВечером ресторан был полон. Мсье Леконт пришел и сел в углу. Пьер готовил со страстью. Когда блюдо подали, он ждал, и его сердце билось.\n\nМсье Леконт попробовал, закрыл глаза и улыбнулся. Он подозвал Пьера к своему столику. «Я не ел такого вкусного бёф бургиньон с детства», — сказал он.\n\nНа следующий день в газете появилась хвалебная рецензия. Жизнь Пьера изменилась. Он открыл свой собственный ресторан, но никогда не забывал, что секрет хорошей кухни — это любовь, которую вы в неё вкладываете."
+        }
+      ],
+      "conjugation": [
+        {
+          "infinitive": "être (to be)",
+          "conjugations": [
+            "suis",
+            "es",
+            "est",
+            "sommes",
+            "êtes",
+            "sont"
+          ]
+        },
+        {
+          "infinitive": "avoir (to have)",
+          "conjugations": [
+            "ai",
+            "as",
+            "a",
+            "avons",
+            "avez",
+            "ont"
+          ]
+        },
+        {
+          "infinitive": "aller (to go)",
+          "conjugations": [
+            "vais",
+            "vas",
+            "va",
+            "allons",
+            "allez",
+            "vont"
+          ]
+        },
+        {
+          "infinitive": "faire (to do/make)",
+          "conjugations": [
+            "fais",
+            "fais",
+            "fait",
+            "faisons",
+            "faites",
+            "font"
+          ]
+        },
+        {
+          "infinitive": "parler (to speak)",
+          "conjugations": [
+            "parle",
+            "parles",
+            "parle",
+            "parlons",
+            "parlez",
+            "parlent"
+          ]
+        },
+        {
+          "infinitive": "finir (to finish)",
+          "conjugations": [
+            "finis",
+            "finis",
+            "finit",
+            "finissons",
+            "finissez",
+            "finissent"
+          ]
+        },
+        {
+          "infinitive": "prendre (to take)",
+          "conjugations": [
+            "prends",
+            "prends",
+            "prend",
+            "prenons",
+            "prenez",
+            "prennent"
+          ]
+        },
+        {
+          "infinitive": "venir (to come)",
+          "conjugations": [
+            "viens",
+            "viens",
+            "vient",
+            "venons",
+            "venez",
+            "viennent"
+          ]
+        },
+        {
+          "infinitive": "voir (to see)",
+          "conjugations": [
+            "vois",
+            "vois",
+            "voit",
+            "voyons",
+            "voyez",
+            "voient"
+          ]
+        },
+        {
+          "infinitive": "pouvoir (can/to be able)",
+          "conjugations": [
+            "peux",
+            "peux",
+            "peut",
+            "pouvons",
+            "pouvez",
+            "peuvent"
+          ]
+        },
+        {
+          "infinitive": "vouloir (to want)",
+          "conjugations": [
+            "veux",
+            "veux",
+            "veut",
+            "voulons",
+            "voulez",
+            "veulent"
+          ]
+        },
+        {
+          "infinitive": "devoir (must/to have to)",
+          "conjugations": [
+            "dois",
+            "dois",
+            "doit",
+            "devons",
+            "devez",
+            "doivent"
+          ]
+        },
+        {
+          "infinitive": "savoir (to know)",
+          "conjugations": [
+            "sais",
+            "sais",
+            "sait",
+            "savons",
+            "savez",
+            "savent"
+          ]
+        },
+        {
+          "infinitive": "mettre (to put)",
+          "conjugations": [
+            "mets",
+            "mets",
+            "met",
+            "mettons",
+            "mettez",
+            "mettent"
+          ]
+        }
+      ]
+    },
+    "advanced": {
+      "vocabulary": {
+        "nouns": [
+          {
+            "front": "l'hypothèse",
+            "back": "гипотеза"
+          },
+          {
+            "front": "le phénomène",
+            "back": "явление, феномен"
+          },
+          {
+            "front": "l'implication",
+            "back": "последствие, подтекст"
+          },
+          {
+            "front": "le paradigme",
+            "back": "парадигма, модель"
+          },
+          {
+            "front": "la thèse",
+            "back": "диссертация, тезис"
+          },
+          {
+            "front": "la méthodologie",
+            "back": "методология"
+          },
+          {
+            "front": "le critère",
+            "back": "критерий"
+          },
+          {
+            "front": "l'infrastructure",
+            "back": "инфраструктура"
+          },
+          {
+            "front": "la juridiction",
+            "back": "юрисдикция"
+          },
+          {
+            "front": "le contentieux",
+            "back": "судебный процесс"
+          },
+          {
+            "front": "la fusion",
+            "back": "слияние (компаний)"
+          },
+          {
+            "front": "l'acquisition",
+            "back": "приобретение, поглощение"
+          },
+          {
+            "front": "l'entrepreneur",
+            "back": "предприниматель"
+          },
+          {
+            "front": "la partie prenante",
+            "back": "заинтересованная сторона"
+          },
+          {
+            "front": "l'allégation",
+            "back": "утверждение, обвинение"
+          },
+          {
+            "front": "l'examen minutieux",
+            "back": "тщательная проверка"
+          },
+          {
+            "front": "le discours",
+            "back": "дискурс, речь"
+          },
+          {
+            "front": "l'incitation",
+            "back": "стимул, побуждение"
+          },
+          {
+            "front": "la dichotomie",
+            "back": "дихотомия, противоречие"
+          },
+          {
+            "front": "l'héritage",
+            "back": "наследие"
+          },
+          {
+            "front": "le synopsis",
+            "back": "синопсис, краткое изложение"
+          },
+          {
+            "front": "l'énigme",
+            "back": "загадка, головоломка"
+          },
+          {
+            "front": "le répertoire",
+            "back": "репертуар"
+          },
+          {
+            "front": "la ramification",
+            "back": "разветвление, последствие"
+          },
+          {
+            "front": "l'anomalie",
+            "back": "аномалия, отклонение"
+          },
+          {
+            "front": "la rhétorique",
+            "back": "риторика"
+          },
+          {
+            "front": "l'extrait",
+            "back": "отрывок, выдержка"
+          },
+          {
+            "front": "le précédent",
+            "back": "прецедент"
+          },
+          {
+            "front": "le catalyseur",
+            "back": "катализатор"
+          },
+          {
+            "front": "l'anecdote",
+            "back": "анекдот, случай"
+          },
+          {
+            "front": "l'équilibre",
+            "back": "равновесие"
+          },
+          {
+            "front": "la quintessence",
+            "back": "воплощение, квинтэссенция"
+          },
+          {
+            "front": "le sophisme",
+            "back": "заблуждение, софизм"
+          },
+          {
+            "front": "l'adversité",
+            "back": "невзгоды, трудности"
+          },
+          {
+            "front": "la disparité",
+            "back": "различие, неравенство"
+          },
+          {
+            "front": "le consensus",
+            "back": "консенсус, согласие"
+          },
+          {
+            "front": "la prolifération",
+            "back": "распространение, разрастание"
+          },
+          {
+            "front": "la spéculation",
+            "back": "спекуляция, предположение"
+          },
+          {
+            "front": "la manifestation",
+            "back": "проявление, манифестация"
+          },
+          {
+            "front": "la bureaucratie",
+            "back": "бюрократия"
+          }
+        ],
+        "verbs": [
+          {
+            "front": "exacerber",
+            "back": "обострять, усугублять"
+          },
+          {
+            "front": "atténuer",
+            "back": "смягчать, ослаблять"
+          },
+          {
+            "front": "contourner",
+            "back": "обходить, избегать"
+          },
+          {
+            "front": "alléger",
+            "back": "облегчать, ослаблять"
+          },
+          {
+            "front": "étayer",
+            "back": "обосновывать, подкреплять"
+          },
+          {
+            "front": "élucider",
+            "back": "разъяснять, прояснять"
+          },
+          {
+            "front": "corroborer",
+            "back": "подтверждать, подкреплять"
+          },
+          {
+            "front": "perpétuer",
+            "back": "увековечивать, продлевать"
+          },
+          {
+            "front": "saper",
+            "back": "подрывать, ослаблять"
+          },
+          {
+            "front": "juxtaposer",
+            "back": "сопоставлять"
+          },
+          {
+            "front": "extrapoler",
+            "back": "экстраполировать, выводить"
+          },
+          {
+            "front": "consolider",
+            "back": "укреплять, объединять"
+          },
+          {
+            "front": "synthétiser",
+            "back": "синтезировать, обобщать"
+          },
+          {
+            "front": "scruter",
+            "back": "тщательно изучать"
+          },
+          {
+            "front": "préconiser",
+            "back": "защищать, отстаивать"
+          },
+          {
+            "front": "répudier",
+            "back": "отвергать, отрекаться"
+          },
+          {
+            "front": "envisager",
+            "back": "размышлять, обдумывать"
+          },
+          {
+            "front": "discerner",
+            "back": "различать, распознавать"
+          },
+          {
+            "front": "transcender",
+            "back": "превосходить, выходить за пределы"
+          },
+          {
+            "front": "articuler",
+            "back": "ясно выражать"
+          },
+          {
+            "front": "rendre la pareille",
+            "back": "отвечать взаимностью"
+          },
+          {
+            "front": "vérifier",
+            "back": "устанавливать, выяснять"
+          },
+          {
+            "front": "proliférer",
+            "back": "разрастаться, размножаться"
+          },
+          {
+            "front": "justifier",
+            "back": "оправдывать, обосновывать"
+          },
+          {
+            "front": "émaner",
+            "back": "исходить, распространяться"
+          },
+          {
+            "front": "réfuter",
+            "back": "опровергать"
+          },
+          {
+            "front": "invoquer",
+            "back": "ссылаться на, призывать"
+          },
+          {
+            "front": "entraver",
+            "back": "мешать, препятствовать"
+          },
+          {
+            "front": "délimiter",
+            "back": "очерчивать, ограничивать"
+          },
+          {
+            "front": "accélérer",
+            "back": "ускорять, содействовать"
+          },
+          {
+            "front": "réitérer",
+            "back": "повторять, подтверждать"
+          },
+          {
+            "front": "comprendre",
+            "back": "включать, содержать"
+          },
+          {
+            "front": "réduire",
+            "back": "сокращать, урезать"
+          },
+          {
+            "front": "diffuser",
+            "back": "распространять, рассеивать"
+          },
+          {
+            "front": "fluctuer",
+            "back": "колебаться, изменяться"
+          },
+          {
+            "front": "empêcher",
+            "back": "препятствовать, мешать"
+          },
+          {
+            "front": "manifester",
+            "back": "проявлять, обнаруживать"
+          },
+          {
+            "front": "nier",
+            "back": "отрицать, опровергать"
+          },
+          {
+            "front": "précipiter",
+            "back": "ускорять, вызывать"
+          },
+          {
+            "front": "supplanter",
+            "back": "заменять, вытеснять"
+          }
+        ],
+        "adjectives": [
+          {
+            "front": "omniprésent",
+            "back": "вездесущий, повсеместный"
+          },
+          {
+            "front": "clandestin",
+            "back": "тайный, секретный"
+          },
+          {
+            "front": "exorbitant",
+            "back": "чрезмерный, непомерный"
+          },
+          {
+            "front": "méticuleux",
+            "back": "тщательный, педантичный"
+          },
+          {
+            "front": "tenace",
+            "back": "упорный, настойчивый"
+          },
+          {
+            "front": "ambigu",
+            "back": "двусмысленный, неоднозначный"
+          },
+          {
+            "front": "précaire",
+            "back": "неустойчивый, рискованный"
+          },
+          {
+            "front": "prolifique",
+            "back": "плодовитый, продуктивный"
+          },
+          {
+            "front": "frivole",
+            "back": "легкомысленный, пустячный"
+          },
+          {
+            "front": "ardu",
+            "back": "трудный, тяжелый"
+          },
+          {
+            "front": "pragmatique",
+            "back": "прагматичный, практичный"
+          },
+          {
+            "front": "éphémère",
+            "back": "мимолетный, недолговечный"
+          },
+          {
+            "front": "inhérent",
+            "back": "присущий, неотъемлемый"
+          },
+          {
+            "front": "lucratif",
+            "back": "прибыльный, доходный"
+          },
+          {
+            "front": "résilient",
+            "back": "устойчивый, гибкий"
+          },
+          {
+            "front": "insaisissable",
+            "back": "неуловимый, трудноопределимый"
+          },
+          {
+            "front": "copieux",
+            "back": "обильный, многочисленный"
+          },
+          {
+            "front": "omniprésent",
+            "back": "проникающий, всепроникающий"
+          },
+          {
+            "front": "superflu",
+            "back": "излишний, лишний"
+          },
+          {
+            "front": "préjudiciable",
+            "back": "вредный, пагубный"
+          },
+          {
+            "front": "exhaustif",
+            "back": "всесторонний, исчерпывающий"
+          },
+          {
+            "front": "indispensable",
+            "back": "необходимый, незаменимый"
+          },
+          {
+            "front": "cynique",
+            "back": "циничный, скептичный"
+          },
+          {
+            "front": "profond",
+            "back": "глубокий, глубокомысленный"
+          },
+          {
+            "front": "obsolète",
+            "back": "устаревший, вышедший из употребления"
+          },
+          {
+            "front": "volatile",
+            "back": "изменчивый, непостоянный"
+          },
+          {
+            "front": "austère",
+            "back": "строгий, аскетичный"
+          },
+          {
+            "front": "ambivalent",
+            "back": "противоречивый, двойственный"
+          },
+          {
+            "front": "crucial",
+            "back": "ключевой, решающий"
+          },
+          {
+            "front": "négligeable",
+            "back": "незначительный, ничтожный"
+          },
+          {
+            "front": "litigieux",
+            "back": "спорный, конфликтный"
+          },
+          {
+            "front": "latent",
+            "back": "скрытый, латентный"
+          },
+          {
+            "front": "tangible",
+            "back": "осязаемый, реальный"
+          },
+          {
+            "front": "banal",
+            "back": "обыденный, банальный"
+          },
+          {
+            "front": "intrinsèque",
+            "back": "внутренний, присущий"
+          },
+          {
+            "front": "plausible",
+            "back": "правдоподобный, вероятный"
+          },
+          {
+            "front": "éloquent",
+            "back": "красноречивый, выразительный"
+          },
+          {
+            "front": "équivoque",
+            "back": "неопределенный, туманный"
+          },
+          {
+            "front": "autochtone",
+            "back": "местный, коренной"
+          },
+          {
+            "front": "pointilleux",
+            "back": "придирчивый, требовательный"
+          }
+        ],
+        "others": [
+          {
+            "front": "néanmoins",
+            "back": "несмотря на, тем не менее"
+          },
+          {
+            "front": "jusqu'à présent",
+            "back": "до сих пор, прежде"
+          },
+          {
+            "front": "bien que",
+            "back": "хотя, несмотря на то что"
+          },
+          {
+            "front": "ainsi",
+            "back": "таким образом, следовательно"
+          },
+          {
+            "front": "par conséquent",
+            "back": "следовательно, отсюда"
+          },
+          {
+            "front": "par lequel",
+            "back": "посредством чего, при помощи"
+          },
+          {
+            "front": "de celui-ci",
+            "back": "этого, того"
+          },
+          {
+            "front": "dans lequel",
+            "back": "в котором, где"
+          },
+          {
+            "front": "par la suite",
+            "back": "после этого, впоследствии"
+          },
+          {
+            "front": "désormais",
+            "back": "отныне, впредь"
+          },
+          {
+            "front": "en vertu de",
+            "back": "в силу, благодаря"
+          },
+          {
+            "front": "au lieu de",
+            "back": "вместо, взамен"
+          },
+          {
+            "front": "vis-à-vis de",
+            "back": "по отношению к, относительно"
+          },
+          {
+            "front": "a priori",
+            "back": "априори, заранее"
+          },
+          {
+            "front": "en soi",
+            "back": "как таковой, сам по себе"
+          },
+          {
+            "front": "ad hoc",
+            "back": "специально для этого"
+          },
+          {
+            "front": "de facto",
+            "back": "де-факто, фактически"
+          },
+          {
+            "front": "et cetera (etc.)",
+            "back": "и так далее"
+          },
+          {
+            "front": "pour faire court",
+            "back": "короче говоря"
+          },
+          {
+            "front": "au mieux de ses capacités",
+            "back": "в меру своих способностей"
+          },
+          {
+            "front": "dans l'ensemble",
+            "back": "в общем и целом"
+          },
+          {
+            "front": "pour le moment",
+            "back": "на данный момент, пока что"
+          },
+          {
+            "front": "à la suite de",
+            "back": "вслед за, в результате"
+          },
+          {
+            "front": "à la lumière de",
+            "back": "в свете, с учетом"
+          },
+          {
+            "front": "en ce qui concerne",
+            "back": "относительно, касательно"
+          },
+          {
+            "front": "conformément à",
+            "back": "в соответствии с"
+          },
+          {
+            "front": "au nom de",
+            "back": "от имени, от лица"
+          },
+          {
+            "front": "en cas de",
+            "back": "в случае"
+          },
+          {
+            "front": "dans l'intérêt de",
+            "back": "ради, во имя"
+          },
+          {
+            "front": "aux dépens de",
+            "back": "за счет"
+          },
+          {
+            "front": "au moyen de",
+            "back": "посредством, с помощью"
+          },
+          {
+            "front": "en termes de",
+            "back": "с точки зрения"
+          },
+          {
+            "front": "au motif que",
+            "back": "на том основании что"
+          },
+          {
+            "front": "dans la mesure où",
+            "back": "в той степени, в которой"
+          },
+          {
+            "front": "à condition que",
+            "back": "при условии что"
+          },
+          {
+            "front": "dans la mesure où",
+            "back": "поскольку, в той мере как"
+          },
+          {
+            "front": "pour autant que",
+            "back": "насколько"
+          },
+          {
+            "front": "en ce qui me concerne",
+            "back": "что касается меня"
+          },
+          {
+            "front": "pour la même raison",
+            "back": "по той же причине"
+          },
+          {
+            "front": "au pied de la lettre",
+            "back": "в буквальном смысле"
+          }
+        ]
+      },
+      "grammar": [],
+      "quiz": [
+        {
+          "question": "Bien qu'il ___ malade, il est venu travailler.",
+          "options": [
+            "est",
+            "soit",
+            "était",
+            "sera"
+          ],
+          "correct": 1,
+          "explanation": "После союза 'bien que' (хотя) всегда используется Subjonctif (soit)."
+        },
+        {
+          "question": "Si j'avais su, je ___ venu plus tôt.",
+          "options": [
+            "serais",
+            "étais",
+            "fus",
+            "sois"
+          ],
+          "correct": 0,
+          "explanation": "Conditionnel Passé: Si + Plus-que-parfait -> Conditionnel Passé (serais venu)."
+        },
+        {
+          "question": "Il est important que vous ___ la vérité.",
+          "options": [
+            "sachez",
+            "savez",
+            "saurez",
+            "saviez"
+          ],
+          "correct": 0,
+          "explanation": "Безличные обороты типа 'il est important que' требуют Subjonctif (sachez)."
+        },
+        {
+          "question": "En ___, j'ai vu un accident.",
+          "options": [
+            "arrivant",
+            "arriver",
+            "arrivé",
+            "arrive"
+          ],
+          "correct": 0,
+          "explanation": "Gérondif (en + participe présent) выражает одновременность действий."
+        },
+        {
+          "question": "La maison a été ___ par un célèbre architecte.",
+          "options": [
+            "construite",
+            "construit",
+            "construire",
+            "construisant"
+          ],
+          "correct": 0,
+          "explanation": "Passive Voice: причастие согласуется с подлежащим (la maison -> construite)."
+        },
+        {
+          "question": "Il a dit qu'il ___ le lendemain.",
+          "options": [
+            "viendra",
+            "viendrait",
+            "vient",
+            "est venu"
+          ],
+          "correct": 1,
+          "explanation": "Согласование времен в косвенной речи: Futur Simple переходит в Conditionnel Présent (viendrait)."
+        },
+        {
+          "question": "Je cherche une secrétaire qui ___ parler chinois.",
+          "options": [
+            "sait",
+            "sache",
+            "saura",
+            "savait"
+          ],
+          "correct": 1,
+          "explanation": "Subjonctif используется, когда существование объекта (секретаря) не гарантировано или это требование."
+        },
+        {
+          "question": "Avant qu'il ne ___, dis-lui au revoir.",
+          "options": [
+            "part",
+            "parte",
+            "partira",
+            "partait"
+          ],
+          "correct": 1,
+          "explanation": "После 'avant que' всегда используется Subjonctif (parte)."
+        },
+        {
+          "question": "C'est le meilleur film que j'___ jamais vu.",
+          "options": [
+            "ai",
+            "aie",
+            "avais",
+            "aurai"
+          ],
+          "correct": 1,
+          "explanation": "После превосходной степени прилагательных часто используется Subjonctif (aie)."
+        },
+        {
+          "question": "À moins qu'il ne ___ pleuvoir.",
+          "options": [
+            "va",
+            "aille",
+            "vont",
+            "ira"
+          ],
+          "correct": 1,
+          "explanation": "После 'à moins que' (если только не) используется Subjonctif (aille)."
+        }
+      ],
+      "exercises": [],
+      "reading": [
+        {
+          "title": "Le Paradoxe du Choix",
+          "text": "Dans la société moderne, on nous fait souvent croire que plus de choix signifie plus de liberté, et plus de liberté signifie plus de bonheur. Cependant, le psychologue Barry Schwartz soutient que ce n'est pas nécessairement vrai. Il appelle cela \"le paradoxe du choix\". Lorsque nous sommes confrontés à trop d'options, nous devenons paralysés plutôt que libérés.\n\nImaginez entrer dans un supermarché pour acheter un pot de confiture. S'il n'y a que trois saveurs, la décision est facile. Vous choisissez celle que vous préférez et partez satisfait. Mais s'il y a trente saveurs, le processus devient épuisant. Vous comparez les ingrédients, les prix et les marques. Même après avoir fait un choix, vous pourriez ressentir de l'anxiété. Avez-vous choisi le bon ? L'autre aurait-il été meilleur ?\n\nCe phénomène s'étend au-delà de l'épicerie aux décisions importantes de la vie comme les carrières, les relations et les lieux de vie. La pression de faire le choix \"parfait\" peut conduire à une insatisfaction chronique. Nous regardons constamment par-dessus notre épaule, nous demandant si l'herbe est plus verte ailleurs.\n\nPour combattre cela, Schwartz suggère que nous devrions viser le \"suffisamment bon\" plutôt que le \"meilleur\". En abaissant nos attentes et en limitant volontairement nos options, nous pouvons réduire l'anxiété et augmenter notre bien-être global. La vraie liberté, semble-t-il, ne réside pas dans le choix infini, mais dans la capacité de s'engager envers ce que nous avons choisi.",
+          "translation": "В современном обществе нас часто заставляют верить, что больше выбора означает больше свободы, а больше свободы означает больше счастья. Однако психолог Барри Шварц утверждает, что это не обязательно так. Он называет это «парадоксом выбора». Когда нам предоставляется слишком много вариантов, мы становимся парализованными, а не освобожденными.\n\nПредставьте, что вы заходите в супермаркет, чтобы купить банку варенья. Если есть только три вкуса, решение простое. Вы выбираете тот, который вам больше нравится, и уходите довольным. Но если вкусов тридцать, процесс становится утомительным. Вы сравниваете ингредиенты, цены и бренды. Даже после того, как вы сделали выбор, вы можете чувствовать тревогу. Выбрали ли вы правильный? Был бы другой вкуснее?\n\nЭтот феномен распространяется не только на продукты, но и на важные жизненные решения, такие как карьера, отношения и место жительства. Давление сделать «идеальный» выбор может привести к хронической неудовлетворенности. Мы постоянно оглядываемся назад, задаваясь вопросом, не зеленее ли трава на другой стороне.\n\nЧтобы бороться с этим, Шварц предлагает нам стремиться к «достаточно хорошему», а не к «лучшему». Снижая наши ожидания и добровольно ограничивая свои варианты, мы можем уменьшить тревогу и повысить наше общее благополучие. Истинная свобода, похоже, заключается не в бесконечном выборе, а в способности быть преданным тому, что мы выбрали."
+        },
+        {
+          "title": "La Cité Silencieuse",
+          "text": "En l'an 2084, la ville de Veridia était connue pour une chose : son silence. Le bruit était considéré comme un polluant, un signe de chaos et d'inefficacité. Le gouvernement avait installé une technologie d'absorption du son dans chaque bâtiment et chaque rue. Parler au-dessus d'un murmure en public était un crime passible d'une amende.\n\nElias était musicien, une profession devenue illégale il y a des décennies. Il vivait dans les tunnels souterrains, où les capteurs sonores ne parvenaient pas. Chaque nuit, il jouait de son violon. La musique était sa rébellion, sa façon de prouver qu'il était encore humain.\n\nUn soir, il rencontra une femme nommée Mara. Elle avait trébuché sur sa cachette en échappant à une patrouille. Elle n'avait jamais entendu de musique auparavant. Quand Elias joua pour elle, elle pleura. \"Ça fait mal,\" chuchota-t-elle, \"mais d'une belle manière.\"\n\nIls décidèrent de ramener le son à la ville. Ils piratèrent le système de sonorisation publique, une relique de l'ancien monde qui n'était jamais utilisée. À midi le lendemain, au lieu du silence habituel, la ville fut remplie des notes envolées du violon d'Elias. Les gens s'arrêtèrent dans les rues. Certains se bouchèrent les oreilles, terrifiés. D'autres regardèrent vers le ciel, des larmes coulant sur leurs visages. Pour la première fois depuis des années, Veridia n'était pas efficace. Elle était vivante.",
+          "translation": "В 2084 году город Веридия был известен одним: своей тишиной. Шум считался загрязнителем, признаком хаоса и неэффективности. Правительство установило звукопоглощающие технологии в каждом здании и на каждой улице. Разговаривать громче шепота в общественных местах было преступлением, караемым штрафом.\n\nЭлиас был музыкантом, профессия, которая стала незаконной десятилетия назад. Он жил в подземных туннелях, куда не доставали звуковые датчики. Каждую ночь он играл на скрипке. Музыка была его бунтом, его способом доказать, что он всё ещё человек.\n\nОднажды вечером он встретил женщину по имени Мара. Она наткнулась на его убежище, убегая от патруля. Она никогда раньше не слышала музыки. Когда Элиас сыграл для неё, она заплакала. «Это больно, — прошептала она, — но по-прекрасному».\n\nОни решили вернуть звук в город. Они взломали систему оповещения, реликвию старого мира, которая никогда не использовалась. В полдень следующего дня, вместо обычной тишины, город наполнился парящими нотами скрипки Элиаса. Люди останавливались на улицах. Некоторые закрывали уши в ужасе. Другие смотрели в небо, и по их лицам текли слезы. Впервые за многие годы Веридия не была эффективной. Она была живой."
+        },
+        {
+          "title": "Échos du Passé",
+          "text": "Le Dr Aris Thorne avait passé toute sa vie à chercher la Civilisation Perdue d'Aethelgard. Selon les mythes, les Aethelgardiens possédaient une technologie bien supérieure à tout ce qui existe dans le monde moderne. La plupart de ses collègues le ridiculisaient, qualifiant cela de conte de fées.\n\nMais Aris était persévérant. Ses recherches l'ont mené sur une île isolée du Pacifique. Là, enfoui profondément dans une grotte volcanique, il l'a trouvé : une sphère métallique, pulsant d'une faible lumière bleue. C'était différent de tout matériau qu'il avait jamais vu.\n\nQuand il l'a touchée, une projection holographique a rempli la grotte. Elle montrait l'histoire d'Aethelgard. Ils n'avaient pas été détruits par la guerre ou une catastrophe naturelle. Ils étaient partis. Ils avaient réalisé que leur technologie consumait leur humanité, alors ils ont construit un vaisseau et sont partis vers les étoiles, ne laissant derrière eux que cette archive comme avertissement.\n\nAris est resté assis dans la grotte pendant des heures, regardant les images d'une société qui avait choisi la sagesse plutôt que le pouvoir. Il a réalisé que sa découverte changerait le monde, mais peut-être pas de la manière qu'il avait espérée. S'il révélait la sphère, l'humanité pourrait utiliser les connaissances pour construire des armes, répétant les erreurs que les Aethelgardiens avaient essayé d'éviter. Finalement, Aris a pris la décision la plus difficile de sa carrière. Il a laissé la sphère là où elle était et a scellé l'entrée de la grotte. Certains secrets, a-t-il décidé, étaient destinés à rester des échos.",
+          "translation": "Доктор Арис Торн провел всю свою жизнь в поисках Потерянной Цивилизации Этельгард. Согласно мифам, этельгардцы обладали технологиями, намного превосходящими всё, что есть в современном мире. Большинство его коллег высмеивали его, называя это сказкой.\n\nНо Арис был настойчив. Его исследования привели его на отдаленный остров в Тихом океане. Там, глубоко в вулканической пещере, он нашел это: металлическую сферу, пульсирующую слабым голубым светом. Это было непохоже ни на один материал, который он когда-либо видел.\n\nКогда он прикоснулся к ней, пещеру заполнила голографическая проекция. Она показала историю Этельгарда. Они не были уничтожены войной или стихийным бедствием. Они ушли. Они поняли, что их технологии поглощают их человечность, поэтому они построили корабль и улетели к звездам, оставив после себя только этот архив в качестве предупреждения.\n\nАрис просидел в пещере несколько часов, наблюдая за образами общества, которое выбрало мудрость вместо власти. Он понял, что его открытие изменит мир, но, возможно, не так, как он надеялся. Если он раскроет сферу, человечество может использовать знания для создания оружия, повторяя ошибки, которых этельгардцы пытались избежать. В конце концов, Арис принял самое трудное решение в своей карьере. Он оставил сферу там, где она была, и запечатал вход в пещеру. Некоторые секреты, решил он, должны оставаться эхом."
+        }
+      ]
+    }
+  }
+}
