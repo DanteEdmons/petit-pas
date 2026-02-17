@@ -48,17 +48,24 @@ const Store = {
 
   getState() {
     if (this._state) return this._state;
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored) {
-      this._state = JSON.parse(stored);
-      // Migrate if needed
-      if (!this._state.stats.xp) this._state.stats.xp = 0;
-      if (!this._state.stats.perfectQuizzes) this._state.stats.perfectQuizzes = 0;
-      if (!this._state.stats.sessionsCompleted) this._state.stats.sessionsCompleted = 0;
-      if (!this._state.stats.totalReviews) this._state.stats.totalReviews = 0;
-      if (!this._state.achievements) this._state.achievements = [];
-      if (!this._state.settings) this._state.settings = { dailyGoal: 20, selectedLanguage: null };
-      return this._state;
+    try {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      if (stored) {
+        this._state = JSON.parse(stored);
+        // Migrate if needed
+        if (!this._state.stats) this._state.stats = {};
+        if (!this._state.stats.xp) this._state.stats.xp = 0;
+        if (!this._state.stats.perfectQuizzes) this._state.stats.perfectQuizzes = 0;
+        if (!this._state.stats.sessionsCompleted) this._state.stats.sessionsCompleted = 0;
+        if (!this._state.stats.totalReviews) this._state.stats.totalReviews = 0;
+        if (!this._state.achievements) this._state.achievements = [];
+        if (!this._state.settings) this._state.settings = { dailyGoal: 20, selectedLanguage: null };
+        if (!this._state.srs) this._state.srs = {};
+        if (!this._state.quizResults) this._state.quizResults = [];
+        return this._state;
+      }
+    } catch (e) {
+      console.error('Failed to parse stored state, reinitializing:', e);
     }
     return this._initState();
   },
@@ -330,7 +337,14 @@ const Store = {
 
   importData(json) {
     try {
-      this._state = JSON.parse(json);
+      const data = JSON.parse(json);
+      // Validate required structure
+      if (!data || typeof data !== 'object') return false;
+      if (!data.settings || typeof data.settings !== 'object') return false;
+      if (!data.stats || typeof data.stats !== 'object') return false;
+      if (!data.srs || typeof data.srs !== 'object') return false;
+      if (!Array.isArray(data.achievements)) return false;
+      this._state = data;
       this._save();
       return true;
     } catch { return false; }

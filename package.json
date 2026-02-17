@@ -1,0 +1,20 @@
+{
+  "name": "petit-pas",
+  "version": "2.0.0",
+  "description": "Language learning trainer with spaced repetition, gamification, and daily sessions",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "npx serve . -l 3000",
+    "lint": "npx eslint app/ assets/js/",
+    "format": "npx prettier --write 'app/**/*.{js,css}' 'assets/**/*.{js,css}'"
+  },
+  "keywords": [
+    "language-learning",
+    "spaced-repetition",
+    "srs",
+    "flashcards",
+    "gamification"
+  ],
+  "license": "MIT"
+}

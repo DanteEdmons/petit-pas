@@ -2,15 +2,48 @@
 import { Store, ACHIEVEMENTS, SRS_INTERVALS } from './store.js';
 import { speak, isSpeechSupported } from './audio.js';
 
+// ============ HTML ESCAPING (XSS protection) ============
+function escapeHTML(str) {
+  if (str == null) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
+// ============ EVENT LISTENER CLEANUP ============
+const globalListeners = [];
+
+function addGlobalListener(target, event, handler) {
+  target.addEventListener(event, handler);
+  globalListeners.push({ target, event, handler });
+}
+
+function cleanupGlobalListeners() {
+  while (globalListeners.length > 0) {
+    const { target, event, handler } = globalListeners.pop();
+    target.removeEventListener(event, handler);
+  }
+}
+
 // ============ DATA CACHE ============
 const dataCache = {};
 
+const VALID_LANGUAGES = ['english', 'french', 'japanese', 'serbian'];
+
 async function loadLanguageData(lang) {
+  if (!VALID_LANGUAGES.includes(lang)) return null;
   if (dataCache[lang]) return dataCache[lang];
   try {
     const resp = await fetch(`data/${lang}.json`);
     if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-    dataCache[lang] = await resp.json();
+    const data = await resp.json();
+    if (!data || typeof data !== 'object' || !data.levels) {
+      throw new Error('Invalid data format');
+    }
+    dataCache[lang] = data;
     return dataCache[lang];
   } catch (e) {
     console.error(`Failed to load data for ${lang}:`, e);
@@ -32,6 +65,7 @@ const Router = {
   },
 
   handleRoute() {
+    cleanupGlobalListeners();
     const hash = window.location.hash.slice(1) || '/';
     this.currentRoute = hash;
     const parts = hash.split('/').filter(Boolean);
@@ -86,17 +120,17 @@ function renderShell(content, { showHeader = true, backRoute = null, title = '' 
     headerHTML = `
       <header class="app-header">
         <div class="app-header-left">
-          ${backRoute ? `<button class="app-back-btn" data-nav="${backRoute}" aria-label="Назад">&#8592;</button>` : ''}
+          ${backRoute ? `<button class="app-back-btn" data-nav="${escapeHTML(backRoute)}" aria-label="Назад">&#8592;</button>` : ''}
           <span class="app-logo" data-nav="#/dashboard">Petit Pas</span>
         </div>
         <div class="app-header-right">
           <div class="header-stat header-streak">
             <span class="icon">&#128293;</span>
-            <span>${state.stats.streak}</span>
+            <span>${parseInt(state.stats.streak) || 0}</span>
           </div>
           <div class="header-stat header-xp">
             <span class="icon">&#9733;</span>
-            <span>${state.stats.xp} XP</span>
+            <span>${parseInt(state.stats.xp) || 0} XP</span>
           </div>
         </div>
       </header>
@@ -128,13 +162,25 @@ function showToast(icon, title, message, duration = 3000) {
 
   const toast = document.createElement('div');
   toast.className = 'toast';
-  toast.innerHTML = `
-    <span class="toast-icon">${icon}</span>
-    <div class="toast-text">
-      <div class="toast-title">${title}</div>
-      <div>${message}</div>
-    </div>
-  `;
+
+  const iconSpan = document.createElement('span');
+  iconSpan.className = 'toast-icon';
+  iconSpan.innerHTML = icon; // icon is always a trusted HTML entity
+
+  const textDiv = document.createElement('div');
+  textDiv.className = 'toast-text';
+
+  const titleDiv = document.createElement('div');
+  titleDiv.className = 'toast-title';
+  titleDiv.textContent = title;
+
+  const msgDiv = document.createElement('div');
+  msgDiv.textContent = message;
+
+  textDiv.appendChild(titleDiv);
+  textDiv.appendChild(msgDiv);
+  toast.appendChild(iconSpan);
+  toast.appendChild(textDiv);
   document.body.appendChild(toast);
 
   setTimeout(() => {
@@ -583,11 +629,11 @@ function showReadingModal(story, lang) {
   overlay.innerHTML = `
     <div class="modal">
       <button class="modal-close">&times;</button>
-      <h2>${story.title}</h2>
+      <h2>${escapeHTML(story.title)}</h2>
       ${isSpeechSupported() ? `<button class="btn btn-secondary btn-sm audio-read-btn">&#128264; Прослушать</button>` : ''}
-      <div class="reading-text">${story.text}</div>
+      <div class="reading-text">${escapeHTML(story.text)}</div>
       <button class="btn btn-secondary btn-sm toggle-translation">Показать перевод</button>
-      <div class="reading-translation hidden">${story.translation}</div>
+      <div class="reading-translation hidden">${escapeHTML(story.translation)}</div>
     </div>
   `;
   document.body.appendChild(overlay);
@@ -908,14 +954,14 @@ function initFlashcardSRS(containerId, words, lang, level, category) {
         <div class="flashcard-container" id="fc-flip">
           <div class="flashcard">
             <div class="flashcard-front">
-              <div class="flashcard-word">${word.front}</div>
-              ${word.frontHint ? `<div class="flashcard-hint">${word.frontHint}</div>` : ''}
+              <div class="flashcard-word">${escapeHTML(word.front)}</div>
+              ${word.frontHint ? `<div class="flashcard-hint">${escapeHTML(word.frontHint)}</div>` : ''}
               ${isSpeechSupported() ? `<button class="audio-btn" id="audio-front" title="Прослушать">&#128264;</button>` : ''}
             </div>
             <div class="flashcard-back">
-              <div class="flashcard-word">${word.back}</div>
-              ${word.backHint ? `<div class="flashcard-hint">${word.backHint}</div>` : ''}
-              ${word.example ? `<div class="flashcard-example">${word.example}</div>` : ''}
+              <div class="flashcard-word">${escapeHTML(word.back)}</div>
+              ${word.backHint ? `<div class="flashcard-hint">${escapeHTML(word.backHint)}</div>` : ''}
+              ${word.example ? `<div class="flashcard-example">${escapeHTML(word.example)}</div>` : ''}
             </div>
           </div>
         </div>
@@ -976,12 +1022,8 @@ function initFlashcardSRS(containerId, words, lang, level, category) {
       renderCard();
     });
 
-    // Keyboard
+    // Keyboard (uses global listener cleanup)
     const keyHandler = (e) => {
-      if (!document.getElementById(containerId)) {
-        document.removeEventListener('keydown', keyHandler);
-        return;
-      }
       if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); doFlip(); }
       if (e.key === 'ArrowRight') {
         if (isFlipped) {
@@ -992,7 +1034,7 @@ function initFlashcardSRS(containerId, words, lang, level, category) {
       }
       if (e.key === 'ArrowLeft' && currentIndex > 0) { currentIndex--; renderCard(); }
     };
-    document.addEventListener('keydown', keyHandler);
+    addGlobalListener(document, 'keydown', keyHandler);
   }
 
   renderCard();
@@ -1003,7 +1045,7 @@ function initTypeMode(containerId, words, lang, level, category) {
   const container = document.getElementById(containerId);
   let index = 0;
   let score = 0;
-  const shuffled = [...words].sort(() => Math.random() - 0.5);
+  const shuffled = shuffleArray([...words]);
 
   function render() {
     if (index >= shuffled.length) {
@@ -1027,7 +1069,7 @@ function initTypeMode(containerId, words, lang, level, category) {
     container.innerHTML = `
       <div class="type-answer">
         <div class="flashcard-progress-text">${index + 1} / ${shuffled.length} | Счёт: ${score}</div>
-        <div class="type-prompt">${word.back}</div>
+        <div class="type-prompt">${escapeHTML(word.back)}</div>
         <p class="text-dim" style="font-size:0.85rem">Напишите перевод на изучаемом языке</p>
         <input type="text" class="type-input" id="type-input" autocomplete="off" autofocus>
         <div class="quiz-feedback hidden" id="feedback"></div>
@@ -1060,7 +1102,7 @@ function initTypeMode(containerId, words, lang, level, category) {
       } else {
         input.classList.add('incorrect');
         feedback.className = 'quiz-feedback incorrect';
-        feedback.innerHTML = `Правильный ответ: <strong>${word.front}</strong>`;
+        feedback.innerHTML = `Правильный ответ: <strong>${escapeHTML(word.front)}</strong>`;
         Store.reviewWord(lang, level, category, word.front, false);
       }
       checkBtn.textContent = 'Далее →';
@@ -1079,7 +1121,7 @@ function initChooseMode(containerId, words, lang, level, category) {
   const container = document.getElementById(containerId);
   let index = 0;
   let score = 0;
-  const shuffled = [...words].sort(() => Math.random() - 0.5);
+  const shuffled = shuffleArray([...words]);
 
   function render() {
     if (index >= shuffled.length) {
@@ -1114,9 +1156,9 @@ function initChooseMode(containerId, words, lang, level, category) {
           </div>
           <span>Счёт: ${score}</span>
         </div>
-        <div class="quiz-question">Выберите перевод: <strong>${word.back}</strong></div>
+        <div class="quiz-question">Выберите перевод: <strong>${escapeHTML(word.back)}</strong></div>
         <div class="quiz-options">
-          ${options.map(opt => `<button class="quiz-option" data-answer="${opt}">${opt}</button>`).join('')}
+          ${options.map(opt => `<button class="quiz-option" data-answer="${escapeHTML(opt)}">${escapeHTML(opt)}</button>`).join('')}
         </div>
         <div class="quiz-feedback hidden" id="feedback"></div>
       </div>
@@ -1142,7 +1184,7 @@ function initChooseMode(containerId, words, lang, level, category) {
           Store.reviewWord(lang, level, category, word.front, true);
         } else {
           feedback.className = 'quiz-feedback incorrect';
-          feedback.innerHTML = `Правильный ответ: <strong>${word.front}</strong>`;
+          feedback.innerHTML = `Правильный ответ: <strong>${escapeHTML(word.front)}</strong>`;
           Store.reviewWord(lang, level, category, word.front, false);
         }
 
@@ -1158,7 +1200,7 @@ function initScrambleMode(containerId, words, lang, level, category) {
   const container = document.getElementById(containerId);
   let index = 0;
   let score = 0;
-  const shuffled = [...words].sort(() => Math.random() - 0.5);
+  const shuffled = shuffleArray([...words]);
 
   function render() {
     if (index >= shuffled.length) {
@@ -1187,14 +1229,14 @@ function initScrambleMode(containerId, words, lang, level, category) {
       container.innerHTML = `
         <div class="type-answer">
           <div class="flashcard-progress-text">${index + 1} / ${shuffled.length} | Счёт: ${score}</div>
-          <div class="type-prompt">${word.back}</div>
+          <div class="type-prompt">${escapeHTML(word.back)}</div>
           <p class="text-dim" style="font-size:0.85rem">Соберите слово из букв</p>
           <div class="scramble-answer" id="answer-area">
-            ${selected.map((s, i) => `<span class="scramble-answer-tile" data-idx="${i}">${s.letter}</span>`).join('')}
+            ${selected.map((s, i) => `<span class="scramble-answer-tile" data-idx="${i}">${escapeHTML(s.letter)}</span>`).join('')}
             ${selected.length === 0 ? '<span class="text-dim" style="padding:0.5rem">нажмите на буквы ниже</span>' : ''}
           </div>
           <div class="scramble-tiles">
-            ${available.map(a => `<span class="scramble-tile ${a.used ? 'used' : ''}" data-id="${a.id}">${a.letter}</span>`).join('')}
+            ${available.map(a => `<span class="scramble-tile ${a.used ? 'used' : ''}" data-id="${a.id}">${escapeHTML(a.letter)}</span>`).join('')}
           </div>
           <div class="quiz-feedback hidden" id="feedback"></div>
           <div class="btn-group">
@@ -1227,7 +1269,7 @@ function initScrambleMode(containerId, words, lang, level, category) {
                 Store.reviewWord(lang, level, category, word.front, true);
               } else {
                 feedback.className = 'quiz-feedback incorrect';
-                feedback.innerHTML = `Правильный ответ: <strong>${word.front}</strong>`;
+                feedback.innerHTML = `Правильный ответ: <strong>${escapeHTML(word.front)}</strong>`;
                 Store.reviewWord(lang, level, category, word.front, false);
               }
               setTimeout(() => { index++; render(); }, 1500);
@@ -1311,9 +1353,9 @@ function initQuiz(containerId, questions, path) {
           </div>
           <span>Счёт: ${score}</span>
         </div>
-        <div class="quiz-question">${q.question}</div>
+        <div class="quiz-question">${escapeHTML(q.question)}</div>
         <div class="quiz-options">
-          ${q.options.map((opt, i) => `<button class="quiz-option" data-index="${i}">${opt}</button>`).join('')}
+          ${q.options.map((opt, i) => `<button class="quiz-option" data-index="${i}">${escapeHTML(opt)}</button>`).join('')}
         </div>
         <div class="quiz-feedback hidden" id="feedback"></div>
         <button class="quiz-next-btn hidden" id="next-btn">${index === questions.length - 1 ? 'Результаты' : 'Далее →'}</button>
@@ -1339,7 +1381,7 @@ function initQuiz(containerId, questions, path) {
 
         feedback.classList.remove('hidden');
         feedback.className = `quiz-feedback ${isCorrect ? 'correct' : 'incorrect'}`;
-        feedback.textContent = isCorrect ? 'Правильно!' : `Неправильно. ${q.explanation || ''}`;
+        feedback.textContent = isCorrect ? 'Правильно!' : `Неправильно. ${q.explanation || ''}`;  // textContent is safe
         nextBtn.classList.remove('hidden');
       });
     });
@@ -1412,7 +1454,7 @@ function initFillBlank(containerId, exercises) {
       } else {
         input.classList.add('incorrect');
         feedback.className = 'quiz-feedback incorrect';
-        feedback.innerHTML = `Правильный ответ: <strong>${correctAnswers[0]}</strong>`;
+        feedback.innerHTML = `Правильный ответ: <strong>${escapeHTML(correctAnswers[0])}</strong>`;
       }
       feedback.classList.remove('hidden');
       input.disabled = true;
@@ -1444,8 +1486,8 @@ function initConjugation(containerId, verbs) {
     container.innerHTML = `
       <div class="conjugation-container">
         <div class="conjugation-prompt">
-          <div class="conjugation-verb">${verb.infinitive}</div>
-          <div class="conjugation-pronoun">${pronoun}</div>
+          <div class="conjugation-verb">${escapeHTML(verb.infinitive)}</div>
+          <div class="conjugation-pronoun">${escapeHTML(pronoun)}</div>
         </div>
         <input type="text" class="conjugation-input" id="conj-input" autocomplete="off" placeholder="...">
         <div class="conjugation-stats">
@@ -1471,7 +1513,7 @@ function initConjugation(containerId, verbs) {
       const feedback = container.querySelector('#feedback');
       feedback.classList.remove('hidden');
       feedback.className = `quiz-feedback ${isCorrect ? 'correct' : 'incorrect'}`;
-      feedback.innerHTML = isCorrect ? 'Правильно!' : `Правильный ответ: <strong>${verb.conjugations[pronounIndex]}</strong>`;
+      feedback.innerHTML = isCorrect ? 'Правильно!' : `Правильный ответ: <strong>${escapeHTML(verb.conjugations[pronounIndex])}</strong>`;
       input.disabled = true;
       input.classList.add(isCorrect ? 'correct' : 'incorrect');
 
@@ -1535,13 +1577,13 @@ function initReviewSession(containerId, words, lang, isSession = false) {
         <div class="flashcard-container" id="fc-flip">
           <div class="flashcard">
             <div class="flashcard-front">
-              <div class="flashcard-word">${word.front}</div>
-              ${word.frontHint ? `<div class="flashcard-hint">${word.frontHint}</div>` : ''}
+              <div class="flashcard-word">${escapeHTML(word.front)}</div>
+              ${word.frontHint ? `<div class="flashcard-hint">${escapeHTML(word.frontHint)}</div>` : ''}
               ${isSpeechSupported() ? '<button class="audio-btn" id="audio-btn" title="Прослушать">&#128264;</button>' : ''}
             </div>
             <div class="flashcard-back">
-              <div class="flashcard-word">${word.back}</div>
-              ${word.example ? `<div class="flashcard-example">${word.example}</div>` : ''}
+              <div class="flashcard-word">${escapeHTML(word.back)}</div>
+              ${word.example ? `<div class="flashcard-example">${escapeHTML(word.example)}</div>` : ''}
             </div>
           </div>
         </div>
@@ -1591,12 +1633,8 @@ function initReviewSession(containerId, words, lang, isSession = false) {
       render();
     });
 
-    // Keyboard
+    // Keyboard (uses global listener cleanup)
     const keyHandler = (e) => {
-      if (!document.getElementById(containerId)) {
-        document.removeEventListener('keydown', keyHandler);
-        return;
-      }
       if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); doFlip(); }
       if (e.key === 'ArrowRight' && isFlipped) {
         correctCount++;
@@ -1608,7 +1646,7 @@ function initReviewSession(containerId, words, lang, isSession = false) {
         index++; render();
       }
     };
-    document.addEventListener('keydown', keyHandler);
+    addGlobalListener(document, 'keydown', keyHandler);
   }
   render();
 }
