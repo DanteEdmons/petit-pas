@@ -93,6 +93,12 @@ const Router = {
       renderConjugation(parts[1]); // level
     } else if (parts[0] === 'declension' && parts[1]) {
       renderDeclension(parts[1]); // level
+    } else if (parts[0] === 'reorder' && parts[1]) {
+      renderReorder(parts[1]); // level
+    } else if (parts[0] === 'matching' && parts[1]) {
+      renderMatching(parts[1]); // level
+    } else if (parts[0] === 'dictation' && parts[1]) {
+      renderDictation(parts[1]); // level
     } else if (parts[0] === 'review') {
       renderReview();
     } else if (parts[0] === 'session') {
@@ -435,6 +441,15 @@ async function renderTopics(level) {
   if (lvl.declension && lvl.declension.length > 0) {
     sections.push({ title: 'Падежи', icon: '&#128218;', route: 'declension' });
   }
+  if (lvl.reorderExercises && lvl.reorderExercises.length > 0) {
+    sections.push({ title: 'Составь предложение', icon: '&#128260;', route: 'reorder' });
+  }
+  if (lvl.matchingExercises && lvl.matchingExercises.length > 0) {
+    sections.push({ title: 'Соедини пары', icon: '&#128279;', route: 'matching' });
+  }
+  if (lvl.dictationWords && lvl.dictationWords.length > 0) {
+    sections.push({ title: 'Аудио-диктант', icon: '&#127911;', route: 'dictation' });
+  }
 
   const catNames = { nouns: 'Существительные', verbs: 'Глаголы', adjectives: 'Прилагательные', others: 'Другие' };
 
@@ -738,6 +753,368 @@ function initDeclensionTrainer(containerId, items) {
     });
   }
   next();
+}
+
+// --- SENTENCE REORDER ---
+async function renderReorder(level) {
+  const lang = Store.getSelectedLanguage();
+  const data = await loadLanguageData(lang);
+  if (!data || !data.levels[level] || !data.levels[level].reorderExercises) return;
+
+  const content = `
+    <h1 class="page-title">Составь предложение</h1>
+    <div id="reorder-root"></div>
+  `;
+
+  renderShell(content, { backRoute: `#/topics/${level}` });
+  initReorderExercise('reorder-root', data.levels[level].reorderExercises);
+}
+
+function initReorderExercise(containerId, exercises) {
+  const container = document.getElementById(containerId);
+  let index = 0;
+  let score = 0;
+
+  function render() {
+    if (index >= exercises.length) {
+      const pct = Math.round((score / exercises.length) * 100);
+      container.innerHTML = `
+        <div class="quiz-results">
+          <div class="quiz-score">${score} / ${exercises.length}</div>
+          <div class="quiz-message">${pct}% правильных ответов</div>
+          <button class="btn btn-primary" id="restart-btn">Пройти ещё раз</button>
+        </div>
+      `;
+      container.querySelector('#restart-btn').addEventListener('click', () => {
+        index = 0; score = 0; render();
+      });
+      return;
+    }
+
+    const ex = exercises[index];
+    const shuffled = [...ex.words];
+    shuffleArray(shuffled);
+    const selected = [];
+
+    container.innerHTML = `
+      <div class="reorder-container">
+        <div class="quiz-progress">
+          <span>${index + 1} / ${exercises.length}</span>
+          <div class="quiz-progress-bar">
+            <div class="quiz-progress-fill" style="width: ${(index / exercises.length) * 100}%"></div>
+          </div>
+          <span>Счёт: ${score}</span>
+        </div>
+        <div class="reorder-translation">${escapeHTML(ex.translation)}</div>
+        <div class="reorder-assembled" id="assembled"></div>
+        <div class="reorder-words" id="word-bank"></div>
+        <div class="reorder-controls">
+          <button class="btn btn-secondary" id="reorder-clear">Сбросить</button>
+          <button class="btn btn-primary" id="reorder-check">Проверить</button>
+        </div>
+        <div class="quiz-feedback hidden" id="feedback"></div>
+      </div>
+    `;
+
+    const bank = container.querySelector('#word-bank');
+    const assembled = container.querySelector('#assembled');
+    const feedback = container.querySelector('#feedback');
+    const used = new Set(); // track used indices
+
+    function renderWords() {
+      bank.innerHTML = shuffled
+        .map((w, i) => used.has(i) ? '' : `<button class="reorder-word" data-idx="${i}">${escapeHTML(w)}</button>`)
+        .join('');
+      assembled.innerHTML = selected.length > 0
+        ? selected.map((idx, i) => `<button class="reorder-word selected" data-sel="${i}">${escapeHTML(shuffled[idx])}</button>`).join('')
+        : '<span class="text-dim">Нажмите на слова, чтобы составить предложение</span>';
+    }
+
+    renderWords();
+
+    bank.addEventListener('click', (e) => {
+      const btn = e.target.closest('.reorder-word');
+      if (!btn) return;
+      const idx = parseInt(btn.dataset.idx);
+      selected.push(idx);
+      used.add(idx);
+      renderWords();
+    });
+
+    assembled.addEventListener('click', (e) => {
+      const btn = e.target.closest('.reorder-word');
+      if (!btn) return;
+      const selIdx = parseInt(btn.dataset.sel);
+      const removedIdx = selected.splice(selIdx, 1)[0];
+      used.delete(removedIdx);
+      renderWords();
+    });
+
+    container.querySelector('#reorder-clear').addEventListener('click', () => {
+      selected.length = 0;
+      renderWords();
+    });
+
+    let answered = false;
+    container.querySelector('#reorder-check').addEventListener('click', () => {
+      if (answered) { index++; render(); return; }
+      answered = true;
+      const userAnswer = selected.map(idx => shuffled[idx]).join(' ');
+      const isCorrect = userAnswer === ex.correct;
+
+      if (isCorrect) {
+        score++;
+        feedback.className = 'quiz-feedback correct';
+        feedback.textContent = 'Правильно!';
+      } else {
+        feedback.className = 'quiz-feedback incorrect';
+        feedback.innerHTML = `Правильный ответ: <strong>${escapeHTML(ex.correct)}</strong>`;
+      }
+      feedback.classList.remove('hidden');
+
+      const controls = container.querySelector('.reorder-controls');
+      controls.innerHTML = '<button class="btn btn-primary" id="next-btn">Далее &rarr;</button>';
+      controls.querySelector('#next-btn').addEventListener('click', () => { index++; render(); });
+    });
+  }
+  render();
+}
+
+// --- MATCHING ---
+async function renderMatching(level) {
+  const lang = Store.getSelectedLanguage();
+  const data = await loadLanguageData(lang);
+  if (!data || !data.levels[level] || !data.levels[level].matchingExercises) return;
+
+  const content = `
+    <h1 class="page-title">Соедини пары</h1>
+    <div id="matching-root"></div>
+  `;
+
+  renderShell(content, { backRoute: `#/topics/${level}` });
+  initMatchingExercise('matching-root', data.levels[level].matchingExercises);
+}
+
+function initMatchingExercise(containerId, exercises) {
+  const container = document.getElementById(containerId);
+  let setIndex = 0;
+  let totalCorrect = 0;
+  let totalPairs = 0;
+
+  function renderSet() {
+    if (setIndex >= exercises.length) {
+      const pct = totalPairs > 0 ? Math.round((totalCorrect / totalPairs) * 100) : 0;
+      container.innerHTML = `
+        <div class="quiz-results">
+          <div class="quiz-score">${totalCorrect} / ${totalPairs}</div>
+          <div class="quiz-message">${pct}% правильных пар</div>
+          <button class="btn btn-primary" id="restart-btn">Пройти ещё раз</button>
+        </div>
+      `;
+      container.querySelector('#restart-btn').addEventListener('click', () => {
+        setIndex = 0; totalCorrect = 0; totalPairs = 0; renderSet();
+      });
+      return;
+    }
+
+    const ex = exercises[setIndex];
+    const pairs = ex.pairs;
+    totalPairs += pairs.length;
+
+    const leftItems = [...pairs].map((p, i) => ({ text: p.word, idx: i }));
+    const rightItems = [...pairs].map((p, i) => ({ text: p.translation, idx: i }));
+    shuffleArray(leftItems);
+    shuffleArray(rightItems);
+
+    let selectedLeft = null;
+    let selectedRight = null;
+    const matched = new Set();
+    let correctInSet = 0;
+
+    container.innerHTML = `
+      <div class="matching-container">
+        <div class="quiz-progress">
+          <span>Набор ${setIndex + 1} / ${exercises.length}</span>
+          <div class="quiz-progress-bar">
+            <div class="quiz-progress-fill" style="width: ${(setIndex / exercises.length) * 100}%"></div>
+          </div>
+        </div>
+        <div class="matching-grid">
+          <div class="matching-column" id="match-left">
+            ${leftItems.map(item => `<button class="matching-item" data-side="left" data-idx="${item.idx}">${escapeHTML(item.text)}</button>`).join('')}
+          </div>
+          <div class="matching-column" id="match-right">
+            ${rightItems.map(item => `<button class="matching-item" data-side="right" data-idx="${item.idx}">${escapeHTML(item.text)}</button>`).join('')}
+          </div>
+        </div>
+        <div class="quiz-feedback hidden" id="feedback"></div>
+      </div>
+    `;
+
+    function handleClick(e) {
+      const btn = e.target.closest('.matching-item');
+      if (!btn || btn.classList.contains('matched')) return;
+
+      const side = btn.dataset.side;
+      const idx = parseInt(btn.dataset.idx);
+
+      if (side === 'left') {
+        container.querySelectorAll('#match-left .matching-item').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        selectedLeft = idx;
+      } else {
+        container.querySelectorAll('#match-right .matching-item').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        selectedRight = idx;
+      }
+
+      if (selectedLeft !== null && selectedRight !== null) {
+        const isCorrect = selectedLeft === selectedRight;
+        const leftBtn = container.querySelector(`#match-left [data-idx="${selectedLeft}"]`);
+        const rightBtn = container.querySelector(`#match-right [data-idx="${selectedRight}"]`);
+
+        if (isCorrect) {
+          correctInSet++;
+          totalCorrect++;
+          leftBtn.classList.add('matched', 'correct');
+          rightBtn.classList.add('matched', 'correct');
+          leftBtn.classList.remove('active');
+          rightBtn.classList.remove('active');
+          matched.add(selectedLeft);
+        } else {
+          leftBtn.classList.add('incorrect');
+          rightBtn.classList.add('incorrect');
+          setTimeout(() => {
+            leftBtn.classList.remove('incorrect', 'active');
+            rightBtn.classList.remove('incorrect', 'active');
+          }, 600);
+        }
+        selectedLeft = null;
+        selectedRight = null;
+
+        if (matched.size === pairs.length) {
+          const feedback = container.querySelector('#feedback');
+          feedback.className = 'quiz-feedback correct';
+          feedback.textContent = `Отлично! ${correctInSet}/${pairs.length} пар`;
+          feedback.classList.remove('hidden');
+          setTimeout(() => { setIndex++; renderSet(); }, 1200);
+        }
+      }
+    }
+
+    container.querySelector('#match-left').addEventListener('click', handleClick);
+    container.querySelector('#match-right').addEventListener('click', handleClick);
+  }
+  renderSet();
+}
+
+// --- AUDIO DICTATION ---
+async function renderDictation(level) {
+  const lang = Store.getSelectedLanguage();
+  const data = await loadLanguageData(lang);
+  if (!data || !data.levels[level] || !data.levels[level].dictationWords) return;
+
+  const content = `
+    <h1 class="page-title">Аудио-диктант</h1>
+    ${isSpeechSupported() ? '' : '<div class="alert-warning" style="margin:1rem;padding:0.75rem;border-radius:8px;background:rgba(251,191,36,0.15);border:1px solid rgba(251,191,36,0.3)">&#9888; Ваш браузер не поддерживает синтез речи. Диктант может не работать.</div>'}
+    <div id="dictation-root"></div>
+  `;
+
+  renderShell(content, { backRoute: `#/topics/${level}` });
+  initDictation('dictation-root', data.levels[level].dictationWords, lang);
+}
+
+function initDictation(containerId, words, lang) {
+  const container = document.getElementById(containerId);
+  const shuffled = [...words];
+  shuffleArray(shuffled);
+  let index = 0;
+  let score = 0;
+
+  function render() {
+    if (index >= shuffled.length) {
+      const pct = Math.round((score / shuffled.length) * 100);
+      container.innerHTML = `
+        <div class="quiz-results">
+          <div class="quiz-score">${score} / ${shuffled.length}</div>
+          <div class="quiz-message">${pct}% правильно</div>
+          <button class="btn btn-primary" id="restart-btn">Пройти ещё раз</button>
+        </div>
+      `;
+      container.querySelector('#restart-btn').addEventListener('click', () => {
+        shuffleArray(shuffled);
+        index = 0; score = 0; render();
+      });
+      return;
+    }
+
+    const word = shuffled[index];
+
+    container.innerHTML = `
+      <div class="dictation-container">
+        <div class="quiz-progress">
+          <span>${index + 1} / ${shuffled.length}</span>
+          <div class="quiz-progress-bar">
+            <div class="quiz-progress-fill" style="width: ${(index / shuffled.length) * 100}%"></div>
+          </div>
+          <span>Счёт: ${score}</span>
+        </div>
+        <div class="dictation-hint">${escapeHTML(word.translation)}</div>
+        <div class="dictation-audio-area">
+          <button class="btn btn-primary dictation-play-btn" id="play-btn">&#128264; Прослушать</button>
+          <button class="btn btn-secondary dictation-play-btn" id="play-slow-btn">&#128268; Медленно</button>
+        </div>
+        <input type="text" class="dictation-input" id="dictation-input" autocomplete="off" placeholder="Напишите, что услышали...">
+        <div class="dictation-controls">
+          <button class="btn btn-primary" id="check-btn">Проверить</button>
+          <button class="btn btn-secondary" id="skip-btn">Пропустить</button>
+        </div>
+        <div class="quiz-feedback hidden" id="feedback"></div>
+      </div>
+    `;
+
+    const input = container.querySelector('#dictation-input');
+    const feedback = container.querySelector('#feedback');
+
+    // Auto-play on load
+    setTimeout(() => speak(word.text, lang, 0.9), 300);
+
+    container.querySelector('#play-btn').addEventListener('click', () => speak(word.text, lang, 0.9));
+    container.querySelector('#play-slow-btn').addEventListener('click', () => speak(word.text, lang, 0.6));
+
+    let answered = false;
+    function check() {
+      if (answered) { index++; render(); return; }
+      answered = true;
+      const val = input.value.trim();
+      // Normalize: case-insensitive, ignore punctuation at end
+      const normalize = s => s.toLowerCase().replace(/[?.!,;:]+$/g, '').trim();
+      const isCorrect = normalize(val) === normalize(word.text);
+
+      if (isCorrect) {
+        score++;
+        input.classList.add('correct');
+        feedback.className = 'quiz-feedback correct';
+        feedback.textContent = 'Правильно!';
+      } else {
+        input.classList.add('incorrect');
+        feedback.className = 'quiz-feedback incorrect';
+        feedback.innerHTML = `Правильный ответ: <strong>${escapeHTML(word.text)}</strong>`;
+      }
+      feedback.classList.remove('hidden');
+      input.disabled = true;
+
+      const controls = container.querySelector('.dictation-controls');
+      controls.innerHTML = '<button class="btn btn-primary" id="next-btn">Далее &rarr;</button>';
+      controls.querySelector('#next-btn').addEventListener('click', () => { index++; render(); });
+    }
+
+    container.querySelector('#check-btn').addEventListener('click', check);
+    input.addEventListener('keydown', (e) => { if (e.key === 'Enter') check(); });
+    container.querySelector('#skip-btn').addEventListener('click', () => { index++; render(); });
+    input.focus();
+  }
+  render();
 }
 
 // --- REVIEW (SRS) ---
