@@ -91,6 +91,8 @@ const Router = {
       renderReading(parts[1]); // level
     } else if (parts[0] === 'conjugation' && parts[1]) {
       renderConjugation(parts[1]); // level
+    } else if (parts[0] === 'declension' && parts[1]) {
+      renderDeclension(parts[1]); // level
     } else if (parts[0] === 'review') {
       renderReview();
     } else if (parts[0] === 'session') {
@@ -430,6 +432,9 @@ async function renderTopics(level) {
   if (lvl.conjugation && lvl.conjugation.length > 0) {
     sections.push({ title: 'Спряжение', icon: '&#128260;', route: 'conjugation' });
   }
+  if (lvl.declension && lvl.declension.length > 0) {
+    sections.push({ title: 'Падежи', icon: '&#128218;', route: 'declension' });
+  }
 
   const catNames = { nouns: 'Существительные', verbs: 'Глаголы', adjectives: 'Прилагательные', others: 'Другие' };
 
@@ -668,6 +673,71 @@ async function renderConjugation(level) {
   renderShell(content, { backRoute: `#/topics/${level}` });
   const pronouns = data.conjugationPronouns || ['je', 'tu', 'il/elle', 'nous', 'vous', 'ils/elles'];
   initConjugation('conjugation-root', data.levels[level].conjugation, pronouns);
+}
+
+// --- DECLENSION TRAINER ---
+async function renderDeclension(level) {
+  const lang = Store.getSelectedLanguage();
+  const data = await loadLanguageData(lang);
+  if (!data || !data.levels[level] || !data.levels[level].declension) return;
+
+  const content = `
+    <h1 class="page-title">Тренажёр падежей</h1>
+    <div id="declension-root"></div>
+  `;
+
+  renderShell(content, { backRoute: `#/topics/${level}` });
+  initDeclensionTrainer('declension-root', data.levels[level].declension);
+}
+
+function initDeclensionTrainer(containerId, items) {
+  const container = document.getElementById(containerId);
+  let correct = 0, incorrect = 0;
+
+  function next() {
+    const item = items[Math.floor(Math.random() * items.length)];
+    const caseIndex = Math.floor(Math.random() * item.forms.length);
+    const caseInfo = item.forms[caseIndex];
+
+    container.innerHTML = `
+      <div class="conjugation-container">
+        <div class="conjugation-prompt">
+          <div class="conjugation-verb">${escapeHTML(item.word)}</div>
+          <div class="conjugation-pronoun">${escapeHTML(caseInfo.caseName)}</div>
+          ${caseInfo.hint ? `<div class="fill-blank-hint">${escapeHTML(caseInfo.hint)}</div>` : ''}
+        </div>
+        <input type="text" class="conjugation-input" id="decl-input" autocomplete="off" placeholder="...">
+        <div class="conjugation-stats">
+          <span class="correct">Правильно: ${correct}</span>
+          <span class="incorrect">Ошибок: ${incorrect}</span>
+        </div>
+        <div class="quiz-feedback hidden" id="feedback"></div>
+      </div>
+    `;
+
+    const input = container.querySelector('#decl-input');
+    input.focus();
+
+    input.addEventListener('keydown', (e) => {
+      if (e.key !== 'Enter') return;
+      const answer = input.value.trim().toLowerCase();
+      const correctAnswers = Array.isArray(caseInfo.answer) ? caseInfo.answer : [caseInfo.answer];
+      const isCorrect = correctAnswers.some(a => answer === a.toLowerCase());
+
+      if (isCorrect) correct++;
+      else incorrect++;
+
+      const feedback = container.querySelector('#feedback');
+      feedback.classList.remove('hidden');
+      feedback.className = `quiz-feedback ${isCorrect ? 'correct' : 'incorrect'}`;
+      feedback.innerHTML = isCorrect ? 'Правильно!' : `Правильный ответ: <strong>${escapeHTML(correctAnswers[0])}</strong>`;
+      input.disabled = true;
+      input.classList.add(isCorrect ? 'correct' : 'incorrect');
+
+      setTimeout(next, 1500);
+    });
+  }
+  next();
 }
 
 // --- REVIEW (SRS) ---
