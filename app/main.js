@@ -666,7 +666,8 @@ async function renderConjugation(level) {
   `;
 
   renderShell(content, { backRoute: `#/topics/${level}` });
-  initConjugation('conjugation-root', data.levels[level].conjugation);
+  const pronouns = data.conjugationPronouns || ['je', 'tu', 'il/elle', 'nous', 'vous', 'ils/elles'];
+  initConjugation('conjugation-root', data.levels[level].conjugation, pronouns);
 }
 
 // --- REVIEW (SRS) ---
@@ -1473,9 +1474,9 @@ function initFillBlank(containerId, exercises) {
 }
 
 // --- CONJUGATION ---
-function initConjugation(containerId, verbs) {
+function initConjugation(containerId, verbs, pronouns) {
   const container = document.getElementById(containerId);
-  const pronouns = ['je', 'tu', 'il/elle', 'nous', 'vous', 'ils/elles'];
+  pronouns = pronouns || ['je', 'tu', 'il/elle', 'nous', 'vous', 'ils/elles'];
   let correct = 0, incorrect = 0;
 
   function next() {
