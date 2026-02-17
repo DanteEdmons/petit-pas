@@ -48,17 +48,24 @@ const Store = {
 
   getState() {
     if (this._state) return this._state;
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored) {
-      this._state = JSON.parse(stored);
-      // Migrate if needed
-      if (!this._state.stats.xp) this._state.stats.xp = 0;
-      if (!this._state.stats.perfectQuizzes) this._state.stats.perfectQuizzes = 0;
-      if (!this._state.stats.sessionsCompleted) this._state.stats.sessionsCompleted = 0;
-      if (!this._state.stats.totalReviews) this._state.stats.totalReviews = 0;
-      if (!this._state.achievements) this._state.achievements = [];
-      if (!this._state.settings) this._state.settings = { dailyGoal: 20, selectedLanguage: null };
-      return this._state;
+    try {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      if (stored) {
+        this._state = JSON.parse(stored);
+        // Migrate if needed
+        if (!this._state.stats) this._state.stats = {};
+        if (!this._state.stats.xp) this._state.stats.xp = 0;
+        if (!this._state.stats.perfectQuizzes) this._state.stats.perfectQuizzes = 0;
+        if (!this._state.stats.sessionsCompleted) this._state.stats.sessionsCompleted = 0;
+        if (!this._state.stats.totalReviews) this._state.stats.totalReviews = 0;
+        if (!this._state.achievements) this._state.achievements = [];
+        if (!this._state.settings) this._state.settings = { dailyGoal: 20, selectedLanguage: null };
+        if (!this._state.srs) this._state.srs = {};
+        if (!this._state.quizResults) this._state.quizResults = [];
+        return this._state;
+      }
+    } catch (e) {
+      console.error('Failed to parse stored state, reinitializing:', e);
     }
     return this._initState();
   },
@@ -148,31 +155,53 @@ const Store = {
     return state.srs[key];
   },
 
-  reviewWord(lang, level, category, word, correct) {
+  // quality: 'again' | 'hard' | 'good' | 'easy' (also accepts boolean for backward compat)
+  reviewWord(lang, level, category, word, quality) {
     const key = this._wordKey(lang, level, category, word);
     const state = this.getState();
     if (!state.srs[key]) {
-      state.srs[key] = { box: 0, nextReview: new Date().toISOString(), timesCorrect: 0, timesIncorrect: 0, lastReview: null };
+      state.srs[key] = { box: 0, nextReview: new Date().toISOString(), timesCorrect: 0, timesIncorrect: 0, lastReview: null, ease: 2.5 };
     }
 
     const srs = state.srs[key];
     const now = new Date();
     srs.lastReview = now.toISOString();
+    if (srs.ease === undefined) srs.ease = 2.5;
 
-    if (correct) {
-      srs.timesCorrect++;
-      srs.box = Math.min(srs.box + 1, SRS_INTERVALS.length - 1);
-      const isNew = srs.timesCorrect === 1 && srs.timesIncorrect === 0;
-      this.addXP(isNew ? XP_REWARDS.wordNew : XP_REWARDS.wordReview);
-      if (isNew) state.stats.totalWordsLearned++;
-    } else {
+    // Backward compat: boolean → quality string
+    if (quality === true) quality = 'good';
+    if (quality === false) quality = 'again';
+
+    if (quality === 'again') {
       srs.timesIncorrect++;
       srs.box = 0;
+      srs.ease = Math.max(1.3, srs.ease - 0.2);
+    } else if (quality === 'hard') {
+      srs.timesCorrect++;
+      // stay at same box, reduce ease slightly
+      srs.ease = Math.max(1.3, srs.ease - 0.15);
+    } else if (quality === 'good') {
+      srs.timesCorrect++;
+      srs.box = Math.min(srs.box + 1, SRS_INTERVALS.length - 1);
+    } else if (quality === 'easy') {
+      srs.timesCorrect++;
+      srs.box = Math.min(srs.box + 2, SRS_INTERVALS.length - 1);
+      srs.ease = Math.min(3.0, srs.ease + 0.15);
     }
 
-    const daysUntilNext = SRS_INTERVALS[srs.box];
+    const isNew = srs.timesCorrect === 1 && srs.timesIncorrect === 0;
+    if (quality !== 'again') {
+      this.addXP(isNew ? XP_REWARDS.wordNew : XP_REWARDS.wordReview);
+      if (isNew) state.stats.totalWordsLearned++;
+    }
+
+    // Apply ease factor to interval
+    const baseInterval = SRS_INTERVALS[srs.box];
+    const adjustedInterval = quality === 'hard'
+      ? Math.max(1, Math.round(baseInterval * 0.8))
+      : Math.round(baseInterval * (srs.ease / 2.5));
     const next = new Date(now);
-    next.setDate(next.getDate() + daysUntilNext);
+    next.setDate(next.getDate() + adjustedInterval);
     srs.nextReview = next.toISOString();
 
     state.stats.totalReviews++;
@@ -330,7 +359,14 @@ const Store = {
 
   importData(json) {
     try {
-      this._state = JSON.parse(json);
+      const data = JSON.parse(json);
+      // Validate required structure
+      if (!data || typeof data !== 'object') return false;
+      if (!data.settings || typeof data.settings !== 'object') return false;
+      if (!data.stats || typeof data.stats !== 'object') return false;
+      if (!data.srs || typeof data.srs !== 'object') return false;
+      if (!Array.isArray(data.achievements)) return false;
+      this._state = data;
       this._save();
       return true;
     } catch { return false; }

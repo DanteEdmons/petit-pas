@@ -2,15 +2,48 @@
 import { Store, ACHIEVEMENTS, SRS_INTERVALS } from './store.js';
 import { speak, isSpeechSupported } from './audio.js';
 
+// ============ HTML ESCAPING (XSS protection) ============
+function escapeHTML(str) {
+  if (str == null) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
+// ============ EVENT LISTENER CLEANUP ============
+const globalListeners = [];
+
+function addGlobalListener(target, event, handler) {
+  target.addEventListener(event, handler);
+  globalListeners.push({ target, event, handler });
+}
+
+function cleanupGlobalListeners() {
+  while (globalListeners.length > 0) {
+    const { target, event, handler } = globalListeners.pop();
+    target.removeEventListener(event, handler);
+  }
+}
+
 // ============ DATA CACHE ============
 const dataCache = {};
 
+const VALID_LANGUAGES = ['english', 'french', 'japanese', 'serbian'];
+
 async function loadLanguageData(lang) {
+  if (!VALID_LANGUAGES.includes(lang)) return null;
   if (dataCache[lang]) return dataCache[lang];
   try {
     const resp = await fetch(`data/${lang}.json`);
     if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-    dataCache[lang] = await resp.json();
+    const data = await resp.json();
+    if (!data || typeof data !== 'object' || !data.levels) {
+      throw new Error('Invalid data format');
+    }
+    dataCache[lang] = data;
     return dataCache[lang];
   } catch (e) {
     console.error(`Failed to load data for ${lang}:`, e);
@@ -32,6 +65,7 @@ const Router = {
   },
 
   handleRoute() {
+    cleanupGlobalListeners();
     const hash = window.location.hash.slice(1) || '/';
     this.currentRoute = hash;
     const parts = hash.split('/').filter(Boolean);
@@ -57,6 +91,14 @@ const Router = {
       renderReading(parts[1]); // level
     } else if (parts[0] === 'conjugation' && parts[1]) {
       renderConjugation(parts[1]); // level
+    } else if (parts[0] === 'declension' && parts[1]) {
+      renderDeclension(parts[1]); // level
+    } else if (parts[0] === 'reorder' && parts[1]) {
+      renderReorder(parts[1]); // level
+    } else if (parts[0] === 'matching' && parts[1]) {
+      renderMatching(parts[1]); // level
+    } else if (parts[0] === 'dictation' && parts[1]) {
+      renderDictation(parts[1]); // level
     } else if (parts[0] === 'review') {
       renderReview();
     } else if (parts[0] === 'session') {
@@ -86,17 +128,17 @@ function renderShell(content, { showHeader = true, backRoute = null, title = '' 
     headerHTML = `
       <header class="app-header">
         <div class="app-header-left">
-          ${backRoute ? `<button class="app-back-btn" data-nav="${backRoute}" aria-label="Назад">&#8592;</button>` : ''}
+          ${backRoute ? `<button class="app-back-btn" data-nav="${escapeHTML(backRoute)}" aria-label="Назад">&#8592;</button>` : ''}
           <span class="app-logo" data-nav="#/dashboard">Petit Pas</span>
         </div>
         <div class="app-header-right">
           <div class="header-stat header-streak">
             <span class="icon">&#128293;</span>
-            <span>${state.stats.streak}</span>
+            <span>${parseInt(state.stats.streak) || 0}</span>
           </div>
           <div class="header-stat header-xp">
             <span class="icon">&#9733;</span>
-            <span>${state.stats.xp} XP</span>
+            <span>${parseInt(state.stats.xp) || 0} XP</span>
           </div>
         </div>
       </header>
@@ -128,13 +170,25 @@ function showToast(icon, title, message, duration = 3000) {
 
   const toast = document.createElement('div');
   toast.className = 'toast';
-  toast.innerHTML = `
-    <span class="toast-icon">${icon}</span>
-    <div class="toast-text">
-      <div class="toast-title">${title}</div>
-      <div>${message}</div>
-    </div>
-  `;
+
+  const iconSpan = document.createElement('span');
+  iconSpan.className = 'toast-icon';
+  iconSpan.innerHTML = icon; // icon is always a trusted HTML entity
+
+  const textDiv = document.createElement('div');
+  textDiv.className = 'toast-text';
+
+  const titleDiv = document.createElement('div');
+  titleDiv.className = 'toast-title';
+  titleDiv.textContent = title;
+
+  const msgDiv = document.createElement('div');
+  msgDiv.textContent = message;
+
+  textDiv.appendChild(titleDiv);
+  textDiv.appendChild(msgDiv);
+  toast.appendChild(iconSpan);
+  toast.appendChild(textDiv);
   document.body.appendChild(toast);
 
   setTimeout(() => {
@@ -384,6 +438,18 @@ async function renderTopics(level) {
   if (lvl.conjugation && lvl.conjugation.length > 0) {
     sections.push({ title: 'Спряжение', icon: '&#128260;', route: 'conjugation' });
   }
+  if (lvl.declension && lvl.declension.length > 0) {
+    sections.push({ title: 'Падежи', icon: '&#128218;', route: 'declension' });
+  }
+  if (lvl.reorderExercises && lvl.reorderExercises.length > 0) {
+    sections.push({ title: 'Составь предложение', icon: '&#128260;', route: 'reorder' });
+  }
+  if (lvl.matchingExercises && lvl.matchingExercises.length > 0) {
+    sections.push({ title: 'Соедини пары', icon: '&#128279;', route: 'matching' });
+  }
+  if (lvl.dictationWords && lvl.dictationWords.length > 0) {
+    sections.push({ title: 'Аудио-диктант', icon: '&#127911;', route: 'dictation' });
+  }
 
   const catNames = { nouns: 'Существительные', verbs: 'Глаголы', adjectives: 'Прилагательные', others: 'Другие' };
 
@@ -583,11 +649,11 @@ function showReadingModal(story, lang) {
   overlay.innerHTML = `
     <div class="modal">
       <button class="modal-close">&times;</button>
-      <h2>${story.title}</h2>
+      <h2>${escapeHTML(story.title)}</h2>
       ${isSpeechSupported() ? `<button class="btn btn-secondary btn-sm audio-read-btn">&#128264; Прослушать</button>` : ''}
-      <div class="reading-text">${story.text}</div>
+      <div class="reading-text">${escapeHTML(story.text)}</div>
       <button class="btn btn-secondary btn-sm toggle-translation">Показать перевод</button>
-      <div class="reading-translation hidden">${story.translation}</div>
+      <div class="reading-translation hidden">${escapeHTML(story.translation)}</div>
     </div>
   `;
   document.body.appendChild(overlay);
@@ -620,7 +686,435 @@ async function renderConjugation(level) {
   `;
 
   renderShell(content, { backRoute: `#/topics/${level}` });
-  initConjugation('conjugation-root', data.levels[level].conjugation);
+  const pronouns = data.conjugationPronouns || ['je', 'tu', 'il/elle', 'nous', 'vous', 'ils/elles'];
+  initConjugation('conjugation-root', data.levels[level].conjugation, pronouns);
+}
+
+// --- DECLENSION TRAINER ---
+async function renderDeclension(level) {
+  const lang = Store.getSelectedLanguage();
+  const data = await loadLanguageData(lang);
+  if (!data || !data.levels[level] || !data.levels[level].declension) return;
+
+  const content = `
+    <h1 class="page-title">Тренажёр падежей</h1>
+    <div id="declension-root"></div>
+  `;
+
+  renderShell(content, { backRoute: `#/topics/${level}` });
+  initDeclensionTrainer('declension-root', data.levels[level].declension);
+}
+
+function initDeclensionTrainer(containerId, items) {
+  const container = document.getElementById(containerId);
+  let correct = 0, incorrect = 0;
+
+  function next() {
+    const item = items[Math.floor(Math.random() * items.length)];
+    const caseIndex = Math.floor(Math.random() * item.forms.length);
+    const caseInfo = item.forms[caseIndex];
+
+    container.innerHTML = `
+      <div class="conjugation-container">
+        <div class="conjugation-prompt">
+          <div class="conjugation-verb">${escapeHTML(item.word)}</div>
+          <div class="conjugation-pronoun">${escapeHTML(caseInfo.caseName)}</div>
+          ${caseInfo.hint ? `<div class="fill-blank-hint">${escapeHTML(caseInfo.hint)}</div>` : ''}
+        </div>
+        <input type="text" class="conjugation-input" id="decl-input" autocomplete="off" placeholder="...">
+        <div class="conjugation-stats">
+          <span class="correct">Правильно: ${correct}</span>
+          <span class="incorrect">Ошибок: ${incorrect}</span>
+        </div>
+        <div class="quiz-feedback hidden" id="feedback"></div>
+      </div>
+    `;
+
+    const input = container.querySelector('#decl-input');
+    input.focus();
+
+    input.addEventListener('keydown', (e) => {
+      if (e.key !== 'Enter') return;
+      const answer = input.value.trim().toLowerCase();
+      const correctAnswers = Array.isArray(caseInfo.answer) ? caseInfo.answer : [caseInfo.answer];
+      const isCorrect = correctAnswers.some(a => answer === a.toLowerCase());
+
+      if (isCorrect) correct++;
+      else incorrect++;
+
+      const feedback = container.querySelector('#feedback');
+      feedback.classList.remove('hidden');
+      feedback.className = `quiz-feedback ${isCorrect ? 'correct' : 'incorrect'}`;
+      feedback.innerHTML = isCorrect ? 'Правильно!' : `Правильный ответ: <strong>${escapeHTML(correctAnswers[0])}</strong>`;
+      input.disabled = true;
+      input.classList.add(isCorrect ? 'correct' : 'incorrect');
+
+      setTimeout(next, 1500);
+    });
+  }
+  next();
+}
+
+// --- SENTENCE REORDER ---
+async function renderReorder(level) {
+  const lang = Store.getSelectedLanguage();
+  const data = await loadLanguageData(lang);
+  if (!data || !data.levels[level] || !data.levels[level].reorderExercises) return;
+
+  const content = `
+    <h1 class="page-title">Составь предложение</h1>
+    <div id="reorder-root"></div>
+  `;
+
+  renderShell(content, { backRoute: `#/topics/${level}` });
+  initReorderExercise('reorder-root', data.levels[level].reorderExercises);
+}
+
+function initReorderExercise(containerId, exercises) {
+  const container = document.getElementById(containerId);
+  let index = 0;
+  let score = 0;
+
+  function render() {
+    if (index >= exercises.length) {
+      const pct = Math.round((score / exercises.length) * 100);
+      container.innerHTML = `
+        <div class="quiz-results">
+          <div class="quiz-score">${score} / ${exercises.length}</div>
+          <div class="quiz-message">${pct}% правильных ответов</div>
+          <button class="btn btn-primary" id="restart-btn">Пройти ещё раз</button>
+        </div>
+      `;
+      container.querySelector('#restart-btn').addEventListener('click', () => {
+        index = 0; score = 0; render();
+      });
+      return;
+    }
+
+    const ex = exercises[index];
+    const shuffled = [...ex.words];
+    shuffleArray(shuffled);
+    const selected = [];
+
+    container.innerHTML = `
+      <div class="reorder-container">
+        <div class="quiz-progress">
+          <span>${index + 1} / ${exercises.length}</span>
+          <div class="quiz-progress-bar">
+            <div class="quiz-progress-fill" style="width: ${(index / exercises.length) * 100}%"></div>
+          </div>
+          <span>Счёт: ${score}</span>
+        </div>
+        <div class="reorder-translation">${escapeHTML(ex.translation)}</div>
+        <div class="reorder-assembled" id="assembled"></div>
+        <div class="reorder-words" id="word-bank"></div>
+        <div class="reorder-controls">
+          <button class="btn btn-secondary" id="reorder-clear">Сбросить</button>
+          <button class="btn btn-primary" id="reorder-check">Проверить</button>
+        </div>
+        <div class="quiz-feedback hidden" id="feedback"></div>
+      </div>
+    `;
+
+    const bank = container.querySelector('#word-bank');
+    const assembled = container.querySelector('#assembled');
+    const feedback = container.querySelector('#feedback');
+    const used = new Set(); // track used indices
+
+    function renderWords() {
+      bank.innerHTML = shuffled
+        .map((w, i) => used.has(i) ? '' : `<button class="reorder-word" data-idx="${i}">${escapeHTML(w)}</button>`)
+        .join('');
+      assembled.innerHTML = selected.length > 0
+        ? selected.map((idx, i) => `<button class="reorder-word selected" data-sel="${i}">${escapeHTML(shuffled[idx])}</button>`).join('')
+        : '<span class="text-dim">Нажмите на слова, чтобы составить предложение</span>';
+    }
+
+    renderWords();
+
+    bank.addEventListener('click', (e) => {
+      const btn = e.target.closest('.reorder-word');
+      if (!btn) return;
+      const idx = parseInt(btn.dataset.idx);
+      selected.push(idx);
+      used.add(idx);
+      renderWords();
+    });
+
+    assembled.addEventListener('click', (e) => {
+      const btn = e.target.closest('.reorder-word');
+      if (!btn) return;
+      const selIdx = parseInt(btn.dataset.sel);
+      const removedIdx = selected.splice(selIdx, 1)[0];
+      used.delete(removedIdx);
+      renderWords();
+    });
+
+    container.querySelector('#reorder-clear').addEventListener('click', () => {
+      selected.length = 0;
+      renderWords();
+    });
+
+    let answered = false;
+    container.querySelector('#reorder-check').addEventListener('click', () => {
+      if (answered) { index++; render(); return; }
+      answered = true;
+      const userAnswer = selected.map(idx => shuffled[idx]).join(' ');
+      const isCorrect = userAnswer === ex.correct;
+
+      if (isCorrect) {
+        score++;
+        feedback.className = 'quiz-feedback correct';
+        feedback.textContent = 'Правильно!';
+      } else {
+        feedback.className = 'quiz-feedback incorrect';
+        feedback.innerHTML = `Правильный ответ: <strong>${escapeHTML(ex.correct)}</strong>`;
+      }
+      feedback.classList.remove('hidden');
+
+      const controls = container.querySelector('.reorder-controls');
+      controls.innerHTML = '<button class="btn btn-primary" id="next-btn">Далее &rarr;</button>';
+      controls.querySelector('#next-btn').addEventListener('click', () => { index++; render(); });
+    });
+  }
+  render();
+}
+
+// --- MATCHING ---
+async function renderMatching(level) {
+  const lang = Store.getSelectedLanguage();
+  const data = await loadLanguageData(lang);
+  if (!data || !data.levels[level] || !data.levels[level].matchingExercises) return;
+
+  const content = `
+    <h1 class="page-title">Соедини пары</h1>
+    <div id="matching-root"></div>
+  `;
+
+  renderShell(content, { backRoute: `#/topics/${level}` });
+  initMatchingExercise('matching-root', data.levels[level].matchingExercises);
+}
+
+function initMatchingExercise(containerId, exercises) {
+  const container = document.getElementById(containerId);
+  let setIndex = 0;
+  let totalCorrect = 0;
+  let totalPairs = 0;
+
+  function renderSet() {
+    if (setIndex >= exercises.length) {
+      const pct = totalPairs > 0 ? Math.round((totalCorrect / totalPairs) * 100) : 0;
+      container.innerHTML = `
+        <div class="quiz-results">
+          <div class="quiz-score">${totalCorrect} / ${totalPairs}</div>
+          <div class="quiz-message">${pct}% правильных пар</div>
+          <button class="btn btn-primary" id="restart-btn">Пройти ещё раз</button>
+        </div>
+      `;
+      container.querySelector('#restart-btn').addEventListener('click', () => {
+        setIndex = 0; totalCorrect = 0; totalPairs = 0; renderSet();
+      });
+      return;
+    }
+
+    const ex = exercises[setIndex];
+    const pairs = ex.pairs;
+    totalPairs += pairs.length;
+
+    const leftItems = [...pairs].map((p, i) => ({ text: p.word, idx: i }));
+    const rightItems = [...pairs].map((p, i) => ({ text: p.translation, idx: i }));
+    shuffleArray(leftItems);
+    shuffleArray(rightItems);
+
+    let selectedLeft = null;
+    let selectedRight = null;
+    const matched = new Set();
+    let correctInSet = 0;
+
+    container.innerHTML = `
+      <div class="matching-container">
+        <div class="quiz-progress">
+          <span>Набор ${setIndex + 1} / ${exercises.length}</span>
+          <div class="quiz-progress-bar">
+            <div class="quiz-progress-fill" style="width: ${(setIndex / exercises.length) * 100}%"></div>
+          </div>
+        </div>
+        <div class="matching-grid">
+          <div class="matching-column" id="match-left">
+            ${leftItems.map(item => `<button class="matching-item" data-side="left" data-idx="${item.idx}">${escapeHTML(item.text)}</button>`).join('')}
+          </div>
+          <div class="matching-column" id="match-right">
+            ${rightItems.map(item => `<button class="matching-item" data-side="right" data-idx="${item.idx}">${escapeHTML(item.text)}</button>`).join('')}
+          </div>
+        </div>
+        <div class="quiz-feedback hidden" id="feedback"></div>
+      </div>
+    `;
+
+    function handleClick(e) {
+      const btn = e.target.closest('.matching-item');
+      if (!btn || btn.classList.contains('matched')) return;
+
+      const side = btn.dataset.side;
+      const idx = parseInt(btn.dataset.idx);
+
+      if (side === 'left') {
+        container.querySelectorAll('#match-left .matching-item').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        selectedLeft = idx;
+      } else {
+        container.querySelectorAll('#match-right .matching-item').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        selectedRight = idx;
+      }
+
+      if (selectedLeft !== null && selectedRight !== null) {
+        const isCorrect = selectedLeft === selectedRight;
+        const leftBtn = container.querySelector(`#match-left [data-idx="${selectedLeft}"]`);
+        const rightBtn = container.querySelector(`#match-right [data-idx="${selectedRight}"]`);
+
+        if (isCorrect) {
+          correctInSet++;
+          totalCorrect++;
+          leftBtn.classList.add('matched', 'correct');
+          rightBtn.classList.add('matched', 'correct');
+          leftBtn.classList.remove('active');
+          rightBtn.classList.remove('active');
+          matched.add(selectedLeft);
+        } else {
+          leftBtn.classList.add('incorrect');
+          rightBtn.classList.add('incorrect');
+          setTimeout(() => {
+            leftBtn.classList.remove('incorrect', 'active');
+            rightBtn.classList.remove('incorrect', 'active');
+          }, 600);
+        }
+        selectedLeft = null;
+        selectedRight = null;
+
+        if (matched.size === pairs.length) {
+          const feedback = container.querySelector('#feedback');
+          feedback.className = 'quiz-feedback correct';
+          feedback.textContent = `Отлично! ${correctInSet}/${pairs.length} пар`;
+          feedback.classList.remove('hidden');
+          setTimeout(() => { setIndex++; renderSet(); }, 1200);
+        }
+      }
+    }
+
+    container.querySelector('#match-left').addEventListener('click', handleClick);
+    container.querySelector('#match-right').addEventListener('click', handleClick);
+  }
+  renderSet();
+}
+
+// --- AUDIO DICTATION ---
+async function renderDictation(level) {
+  const lang = Store.getSelectedLanguage();
+  const data = await loadLanguageData(lang);
+  if (!data || !data.levels[level] || !data.levels[level].dictationWords) return;
+
+  const content = `
+    <h1 class="page-title">Аудио-диктант</h1>
+    ${isSpeechSupported() ? '' : '<div class="alert-warning" style="margin:1rem;padding:0.75rem;border-radius:8px;background:rgba(251,191,36,0.15);border:1px solid rgba(251,191,36,0.3)">&#9888; Ваш браузер не поддерживает синтез речи. Диктант может не работать.</div>'}
+    <div id="dictation-root"></div>
+  `;
+
+  renderShell(content, { backRoute: `#/topics/${level}` });
+  initDictation('dictation-root', data.levels[level].dictationWords, lang);
+}
+
+function initDictation(containerId, words, lang) {
+  const container = document.getElementById(containerId);
+  const shuffled = [...words];
+  shuffleArray(shuffled);
+  let index = 0;
+  let score = 0;
+
+  function render() {
+    if (index >= shuffled.length) {
+      const pct = Math.round((score / shuffled.length) * 100);
+      container.innerHTML = `
+        <div class="quiz-results">
+          <div class="quiz-score">${score} / ${shuffled.length}</div>
+          <div class="quiz-message">${pct}% правильно</div>
+          <button class="btn btn-primary" id="restart-btn">Пройти ещё раз</button>
+        </div>
+      `;
+      container.querySelector('#restart-btn').addEventListener('click', () => {
+        shuffleArray(shuffled);
+        index = 0; score = 0; render();
+      });
+      return;
+    }
+
+    const word = shuffled[index];
+
+    container.innerHTML = `
+      <div class="dictation-container">
+        <div class="quiz-progress">
+          <span>${index + 1} / ${shuffled.length}</span>
+          <div class="quiz-progress-bar">
+            <div class="quiz-progress-fill" style="width: ${(index / shuffled.length) * 100}%"></div>
+          </div>
+          <span>Счёт: ${score}</span>
+        </div>
+        <div class="dictation-hint">${escapeHTML(word.translation)}</div>
+        <div class="dictation-audio-area">
+          <button class="btn btn-primary dictation-play-btn" id="play-btn">&#128264; Прослушать</button>
+          <button class="btn btn-secondary dictation-play-btn" id="play-slow-btn">&#128268; Медленно</button>
+        </div>
+        <input type="text" class="dictation-input" id="dictation-input" autocomplete="off" placeholder="Напишите, что услышали...">
+        <div class="dictation-controls">
+          <button class="btn btn-primary" id="check-btn">Проверить</button>
+          <button class="btn btn-secondary" id="skip-btn">Пропустить</button>
+        </div>
+        <div class="quiz-feedback hidden" id="feedback"></div>
+      </div>
+    `;
+
+    const input = container.querySelector('#dictation-input');
+    const feedback = container.querySelector('#feedback');
+
+    // Auto-play on load
+    setTimeout(() => speak(word.text, lang, 0.9), 300);
+
+    container.querySelector('#play-btn').addEventListener('click', () => speak(word.text, lang, 0.9));
+    container.querySelector('#play-slow-btn').addEventListener('click', () => speak(word.text, lang, 0.6));
+
+    let answered = false;
+    function check() {
+      if (answered) { index++; render(); return; }
+      answered = true;
+      const val = input.value.trim();
+      // Normalize: case-insensitive, ignore punctuation at end
+      const normalize = s => s.toLowerCase().replace(/[?.!,;:]+$/g, '').trim();
+      const isCorrect = normalize(val) === normalize(word.text);
+
+      if (isCorrect) {
+        score++;
+        input.classList.add('correct');
+        feedback.className = 'quiz-feedback correct';
+        feedback.textContent = 'Правильно!';
+      } else {
+        input.classList.add('incorrect');
+        feedback.className = 'quiz-feedback incorrect';
+        feedback.innerHTML = `Правильный ответ: <strong>${escapeHTML(word.text)}</strong>`;
+      }
+      feedback.classList.remove('hidden');
+      input.disabled = true;
+
+      const controls = container.querySelector('.dictation-controls');
+      controls.innerHTML = '<button class="btn btn-primary" id="next-btn">Далее &rarr;</button>';
+      controls.querySelector('#next-btn').addEventListener('click', () => { index++; render(); });
+    }
+
+    container.querySelector('#check-btn').addEventListener('click', check);
+    input.addEventListener('keydown', (e) => { if (e.key === 'Enter') check(); });
+    container.querySelector('#skip-btn').addEventListener('click', () => { index++; render(); });
+    input.focus();
+  }
+  render();
 }
 
 // --- REVIEW (SRS) ---
@@ -908,20 +1402,22 @@ function initFlashcardSRS(containerId, words, lang, level, category) {
         <div class="flashcard-container" id="fc-flip">
           <div class="flashcard">
             <div class="flashcard-front">
-              <div class="flashcard-word">${word.front}</div>
-              ${word.frontHint ? `<div class="flashcard-hint">${word.frontHint}</div>` : ''}
+              <div class="flashcard-word">${escapeHTML(word.front)}</div>
+              ${word.frontHint ? `<div class="flashcard-hint">${escapeHTML(word.frontHint)}</div>` : ''}
               ${isSpeechSupported() ? `<button class="audio-btn" id="audio-front" title="Прослушать">&#128264;</button>` : ''}
             </div>
             <div class="flashcard-back">
-              <div class="flashcard-word">${word.back}</div>
-              ${word.backHint ? `<div class="flashcard-hint">${word.backHint}</div>` : ''}
-              ${word.example ? `<div class="flashcard-example">${word.example}</div>` : ''}
+              <div class="flashcard-word">${escapeHTML(word.back)}</div>
+              ${word.backHint ? `<div class="flashcard-hint">${escapeHTML(word.backHint)}</div>` : ''}
+              ${word.example ? `<div class="flashcard-example">${escapeHTML(word.example)}</div>` : ''}
             </div>
           </div>
         </div>
         <div class="srs-buttons" id="srs-btns" style="display:none">
-          <button class="srs-btn srs-btn-wrong" id="srs-wrong">&#10060; Не знаю</button>
-          <button class="srs-btn srs-btn-right" id="srs-right">&#9989; Знаю</button>
+          <button class="srs-btn srs-btn-again" id="srs-again">&#10060; Снова</button>
+          <button class="srs-btn srs-btn-hard" id="srs-hard">&#128528; Трудно</button>
+          <button class="srs-btn srs-btn-good" id="srs-good">&#9989; Хорошо</button>
+          <button class="srs-btn srs-btn-easy" id="srs-easy">&#128171; Легко</button>
         </div>
         <div class="flashcard-controls">
           <button class="flashcard-btn" id="fc-prev" ${currentIndex === 0 ? 'disabled' : ''}>&#8592; Назад</button>
@@ -949,16 +1445,12 @@ function initFlashcardSRS(containerId, words, lang, level, category) {
       speak(word.front, lang);
     });
 
-    container.querySelector('#srs-right')?.addEventListener('click', () => {
-      Store.reviewWord(lang, level, category, word.front, true);
-      currentIndex++;
-      renderCard();
-    });
-
-    container.querySelector('#srs-wrong')?.addEventListener('click', () => {
-      Store.reviewWord(lang, level, category, word.front, false);
-      currentIndex++;
-      renderCard();
+    ['again', 'hard', 'good', 'easy'].forEach(quality => {
+      container.querySelector(`#srs-${quality}`)?.addEventListener('click', () => {
+        Store.reviewWord(lang, level, category, word.front, quality);
+        currentIndex++;
+        renderCard();
+      });
     });
 
     container.querySelector('#fc-prev')?.addEventListener('click', () => {
@@ -976,23 +1468,26 @@ function initFlashcardSRS(containerId, words, lang, level, category) {
       renderCard();
     });
 
-    // Keyboard
+    // Keyboard (uses global listener cleanup)
+    // 1=Again, 2=Hard, 3=Good, 4=Easy, Space/Enter=Flip, Arrow keys=nav
     const keyHandler = (e) => {
-      if (!document.getElementById(containerId)) {
-        document.removeEventListener('keydown', keyHandler);
-        return;
-      }
       if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); doFlip(); }
+      if (isFlipped && ['1','2','3','4'].includes(e.key)) {
+        const qualities = { '1': 'again', '2': 'hard', '3': 'good', '4': 'easy' };
+        Store.reviewWord(lang, level, category, shuffledWords[currentIndex].front, qualities[e.key]);
+        currentIndex++;
+        renderCard();
+      }
       if (e.key === 'ArrowRight') {
         if (isFlipped) {
-          Store.reviewWord(lang, level, category, shuffledWords[currentIndex].front, true);
+          Store.reviewWord(lang, level, category, shuffledWords[currentIndex].front, 'good');
           currentIndex++;
           renderCard();
         } else { currentIndex++; renderCard(); }
       }
       if (e.key === 'ArrowLeft' && currentIndex > 0) { currentIndex--; renderCard(); }
     };
-    document.addEventListener('keydown', keyHandler);
+    addGlobalListener(document, 'keydown', keyHandler);
   }
 
   renderCard();
@@ -1003,7 +1498,7 @@ function initTypeMode(containerId, words, lang, level, category) {
   const container = document.getElementById(containerId);
   let index = 0;
   let score = 0;
-  const shuffled = [...words].sort(() => Math.random() - 0.5);
+  const shuffled = shuffleArray([...words]);
 
   function render() {
     if (index >= shuffled.length) {
@@ -1027,7 +1522,7 @@ function initTypeMode(containerId, words, lang, level, category) {
     container.innerHTML = `
       <div class="type-answer">
         <div class="flashcard-progress-text">${index + 1} / ${shuffled.length} | Счёт: ${score}</div>
-        <div class="type-prompt">${word.back}</div>
+        <div class="type-prompt">${escapeHTML(word.back)}</div>
         <p class="text-dim" style="font-size:0.85rem">Напишите перевод на изучаемом языке</p>
         <input type="text" class="type-input" id="type-input" autocomplete="off" autofocus>
         <div class="quiz-feedback hidden" id="feedback"></div>
@@ -1060,7 +1555,7 @@ function initTypeMode(containerId, words, lang, level, category) {
       } else {
         input.classList.add('incorrect');
         feedback.className = 'quiz-feedback incorrect';
-        feedback.innerHTML = `Правильный ответ: <strong>${word.front}</strong>`;
+        feedback.innerHTML = `Правильный ответ: <strong>${escapeHTML(word.front)}</strong>`;
         Store.reviewWord(lang, level, category, word.front, false);
       }
       checkBtn.textContent = 'Далее →';
@@ -1079,7 +1574,7 @@ function initChooseMode(containerId, words, lang, level, category) {
   const container = document.getElementById(containerId);
   let index = 0;
   let score = 0;
-  const shuffled = [...words].sort(() => Math.random() - 0.5);
+  const shuffled = shuffleArray([...words]);
 
   function render() {
     if (index >= shuffled.length) {
@@ -1114,9 +1609,9 @@ function initChooseMode(containerId, words, lang, level, category) {
           </div>
           <span>Счёт: ${score}</span>
         </div>
-        <div class="quiz-question">Выберите перевод: <strong>${word.back}</strong></div>
+        <div class="quiz-question">Выберите перевод: <strong>${escapeHTML(word.back)}</strong></div>
         <div class="quiz-options">
-          ${options.map(opt => `<button class="quiz-option" data-answer="${opt}">${opt}</button>`).join('')}
+          ${options.map(opt => `<button class="quiz-option" data-answer="${escapeHTML(opt)}">${escapeHTML(opt)}</button>`).join('')}
         </div>
         <div class="quiz-feedback hidden" id="feedback"></div>
       </div>
@@ -1142,7 +1637,7 @@ function initChooseMode(containerId, words, lang, level, category) {
           Store.reviewWord(lang, level, category, word.front, true);
         } else {
           feedback.className = 'quiz-feedback incorrect';
-          feedback.innerHTML = `Правильный ответ: <strong>${word.front}</strong>`;
+          feedback.innerHTML = `Правильный ответ: <strong>${escapeHTML(word.front)}</strong>`;
           Store.reviewWord(lang, level, category, word.front, false);
         }
 
@@ -1158,7 +1653,7 @@ function initScrambleMode(containerId, words, lang, level, category) {
   const container = document.getElementById(containerId);
   let index = 0;
   let score = 0;
-  const shuffled = [...words].sort(() => Math.random() - 0.5);
+  const shuffled = shuffleArray([...words]);
 
   function render() {
     if (index >= shuffled.length) {
@@ -1187,14 +1682,14 @@ function initScrambleMode(containerId, words, lang, level, category) {
       container.innerHTML = `
         <div class="type-answer">
           <div class="flashcard-progress-text">${index + 1} / ${shuffled.length} | Счёт: ${score}</div>
-          <div class="type-prompt">${word.back}</div>
+          <div class="type-prompt">${escapeHTML(word.back)}</div>
           <p class="text-dim" style="font-size:0.85rem">Соберите слово из букв</p>
           <div class="scramble-answer" id="answer-area">
-            ${selected.map((s, i) => `<span class="scramble-answer-tile" data-idx="${i}">${s.letter}</span>`).join('')}
+            ${selected.map((s, i) => `<span class="scramble-answer-tile" data-idx="${i}">${escapeHTML(s.letter)}</span>`).join('')}
             ${selected.length === 0 ? '<span class="text-dim" style="padding:0.5rem">нажмите на буквы ниже</span>' : ''}
           </div>
           <div class="scramble-tiles">
-            ${available.map(a => `<span class="scramble-tile ${a.used ? 'used' : ''}" data-id="${a.id}">${a.letter}</span>`).join('')}
+            ${available.map(a => `<span class="scramble-tile ${a.used ? 'used' : ''}" data-id="${a.id}">${escapeHTML(a.letter)}</span>`).join('')}
           </div>
           <div class="quiz-feedback hidden" id="feedback"></div>
           <div class="btn-group">
@@ -1227,7 +1722,7 @@ function initScrambleMode(containerId, words, lang, level, category) {
                 Store.reviewWord(lang, level, category, word.front, true);
               } else {
                 feedback.className = 'quiz-feedback incorrect';
-                feedback.innerHTML = `Правильный ответ: <strong>${word.front}</strong>`;
+                feedback.innerHTML = `Правильный ответ: <strong>${escapeHTML(word.front)}</strong>`;
                 Store.reviewWord(lang, level, category, word.front, false);
               }
               setTimeout(() => { index++; render(); }, 1500);
@@ -1311,9 +1806,9 @@ function initQuiz(containerId, questions, path) {
           </div>
           <span>Счёт: ${score}</span>
         </div>
-        <div class="quiz-question">${q.question}</div>
+        <div class="quiz-question">${escapeHTML(q.question)}</div>
         <div class="quiz-options">
-          ${q.options.map((opt, i) => `<button class="quiz-option" data-index="${i}">${opt}</button>`).join('')}
+          ${q.options.map((opt, i) => `<button class="quiz-option" data-index="${i}">${escapeHTML(opt)}</button>`).join('')}
         </div>
         <div class="quiz-feedback hidden" id="feedback"></div>
         <button class="quiz-next-btn hidden" id="next-btn">${index === questions.length - 1 ? 'Результаты' : 'Далее →'}</button>
@@ -1339,7 +1834,7 @@ function initQuiz(containerId, questions, path) {
 
         feedback.classList.remove('hidden');
         feedback.className = `quiz-feedback ${isCorrect ? 'correct' : 'incorrect'}`;
-        feedback.textContent = isCorrect ? 'Правильно!' : `Неправильно. ${q.explanation || ''}`;
+        feedback.textContent = isCorrect ? 'Правильно!' : `Неправильно. ${q.explanation || ''}`;  // textContent is safe
         nextBtn.classList.remove('hidden');
       });
     });
@@ -1412,7 +1907,7 @@ function initFillBlank(containerId, exercises) {
       } else {
         input.classList.add('incorrect');
         feedback.className = 'quiz-feedback incorrect';
-        feedback.innerHTML = `Правильный ответ: <strong>${correctAnswers[0]}</strong>`;
+        feedback.innerHTML = `Правильный ответ: <strong>${escapeHTML(correctAnswers[0])}</strong>`;
       }
       feedback.classList.remove('hidden');
       input.disabled = true;
@@ -1431,9 +1926,9 @@ function initFillBlank(containerId, exercises) {
 }
 
 // --- CONJUGATION ---
-function initConjugation(containerId, verbs) {
+function initConjugation(containerId, verbs, pronouns) {
   const container = document.getElementById(containerId);
-  const pronouns = ['je', 'tu', 'il/elle', 'nous', 'vous', 'ils/elles'];
+  pronouns = pronouns || ['je', 'tu', 'il/elle', 'nous', 'vous', 'ils/elles'];
   let correct = 0, incorrect = 0;
 
   function next() {
@@ -1444,8 +1939,8 @@ function initConjugation(containerId, verbs) {
     container.innerHTML = `
       <div class="conjugation-container">
         <div class="conjugation-prompt">
-          <div class="conjugation-verb">${verb.infinitive}</div>
-          <div class="conjugation-pronoun">${pronoun}</div>
+          <div class="conjugation-verb">${escapeHTML(verb.infinitive)}</div>
+          <div class="conjugation-pronoun">${escapeHTML(pronoun)}</div>
         </div>
         <input type="text" class="conjugation-input" id="conj-input" autocomplete="off" placeholder="...">
         <div class="conjugation-stats">
@@ -1471,7 +1966,7 @@ function initConjugation(containerId, verbs) {
       const feedback = container.querySelector('#feedback');
       feedback.classList.remove('hidden');
       feedback.className = `quiz-feedback ${isCorrect ? 'correct' : 'incorrect'}`;
-      feedback.innerHTML = isCorrect ? 'Правильно!' : `Правильный ответ: <strong>${verb.conjugations[pronounIndex]}</strong>`;
+      feedback.innerHTML = isCorrect ? 'Правильно!' : `Правильный ответ: <strong>${escapeHTML(verb.conjugations[pronounIndex])}</strong>`;
       input.disabled = true;
       input.classList.add(isCorrect ? 'correct' : 'incorrect');
 
@@ -1535,20 +2030,22 @@ function initReviewSession(containerId, words, lang, isSession = false) {
         <div class="flashcard-container" id="fc-flip">
           <div class="flashcard">
             <div class="flashcard-front">
-              <div class="flashcard-word">${word.front}</div>
-              ${word.frontHint ? `<div class="flashcard-hint">${word.frontHint}</div>` : ''}
+              <div class="flashcard-word">${escapeHTML(word.front)}</div>
+              ${word.frontHint ? `<div class="flashcard-hint">${escapeHTML(word.frontHint)}</div>` : ''}
               ${isSpeechSupported() ? '<button class="audio-btn" id="audio-btn" title="Прослушать">&#128264;</button>' : ''}
             </div>
             <div class="flashcard-back">
-              <div class="flashcard-word">${word.back}</div>
-              ${word.example ? `<div class="flashcard-example">${word.example}</div>` : ''}
+              <div class="flashcard-word">${escapeHTML(word.back)}</div>
+              ${word.example ? `<div class="flashcard-example">${escapeHTML(word.example)}</div>` : ''}
             </div>
           </div>
         </div>
         <p class="text-dim text-center" style="font-size:0.85rem" id="flip-hint">Нажмите на карточку, чтобы увидеть ответ</p>
         <div class="srs-buttons hidden" id="srs-btns">
-          <button class="srs-btn srs-btn-wrong" id="srs-wrong">&#10060; Не знаю</button>
-          <button class="srs-btn srs-btn-right" id="srs-right">&#9989; Знаю</button>
+          <button class="srs-btn srs-btn-again" id="srs-again">&#10060; Снова</button>
+          <button class="srs-btn srs-btn-hard" id="srs-hard">&#128528; Трудно</button>
+          <button class="srs-btn srs-btn-good" id="srs-good">&#9989; Хорошо</button>
+          <button class="srs-btn srs-btn-easy" id="srs-easy">&#128171; Легко</button>
         </div>
       </div>
     `;
@@ -1578,37 +2075,27 @@ function initReviewSession(containerId, words, lang, isSession = false) {
       speak(word.front, lang);
     });
 
-    container.querySelector('#srs-right').addEventListener('click', () => {
-      correctCount++;
-      Store.reviewWord(lang, word.level, word.category, word.front, true);
-      index++;
-      render();
+    ['again', 'hard', 'good', 'easy'].forEach(quality => {
+      container.querySelector(`#srs-${quality}`)?.addEventListener('click', () => {
+        if (quality !== 'again') correctCount++;
+        Store.reviewWord(lang, word.level, word.category, word.front, quality);
+        index++;
+        render();
+      });
     });
 
-    container.querySelector('#srs-wrong').addEventListener('click', () => {
-      Store.reviewWord(lang, word.level, word.category, word.front, false);
-      index++;
-      render();
-    });
-
-    // Keyboard
+    // Keyboard: Space/Enter=flip, 1=Again, 2=Hard, 3=Good, 4=Easy
     const keyHandler = (e) => {
-      if (!document.getElementById(containerId)) {
-        document.removeEventListener('keydown', keyHandler);
-        return;
-      }
       if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); doFlip(); }
-      if (e.key === 'ArrowRight' && isFlipped) {
-        correctCount++;
-        Store.reviewWord(lang, word.level, word.category, word.front, true);
-        index++; render();
-      }
-      if (e.key === 'ArrowLeft' && isFlipped) {
-        Store.reviewWord(lang, word.level, word.category, word.front, false);
+      if (isFlipped && ['1','2','3','4'].includes(e.key)) {
+        const qualities = { '1': 'again', '2': 'hard', '3': 'good', '4': 'easy' };
+        const q = qualities[e.key];
+        if (q !== 'again') correctCount++;
+        Store.reviewWord(lang, word.level, word.category, word.front, q);
         index++; render();
       }
     };
-    document.addEventListener('keydown', keyHandler);
+    addGlobalListener(document, 'keydown', keyHandler);
   }
   render();
 }
