@@ -592,19 +592,33 @@ body {
   transition: all 0.25s ease;
 }
 
-.srs-btn-wrong {
+.srs-btn-again {
   background: rgba(248, 113, 113, 0.25);
   color: var(--color-error);
   border: 1px solid rgba(248, 113, 113, 0.3);
 }
-.srs-btn-wrong:hover { background: rgba(248, 113, 113, 0.4); transform: translateY(-2px); }
+.srs-btn-again:hover { background: rgba(248, 113, 113, 0.4); transform: translateY(-2px); }
 
-.srs-btn-right {
+.srs-btn-hard {
+  background: rgba(251, 191, 36, 0.2);
+  color: #fbbf24;
+  border: 1px solid rgba(251, 191, 36, 0.3);
+}
+.srs-btn-hard:hover { background: rgba(251, 191, 36, 0.35); transform: translateY(-2px); }
+
+.srs-btn-good {
   background: rgba(74, 222, 128, 0.25);
   color: var(--color-success);
   border: 1px solid rgba(74, 222, 128, 0.3);
 }
-.srs-btn-right:hover { background: rgba(74, 222, 128, 0.4); transform: translateY(-2px); }
+.srs-btn-good:hover { background: rgba(74, 222, 128, 0.4); transform: translateY(-2px); }
+
+.srs-btn-easy {
+  background: rgba(96, 165, 250, 0.25);
+  color: #60a5fa;
+  border: 1px solid rgba(96, 165, 250, 0.3);
+}
+.srs-btn-easy:hover { background: rgba(96, 165, 250, 0.4); transform: translateY(-2px); }
 
 .srs-btn-skip {
   background: rgba(255, 255, 255, 0.08);

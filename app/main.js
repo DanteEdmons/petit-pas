@@ -1037,8 +1037,10 @@ function initFlashcardSRS(containerId, words, lang, level, category) {
           </div>
         </div>
         <div class="srs-buttons" id="srs-btns" style="display:none">
-          <button class="srs-btn srs-btn-wrong" id="srs-wrong">&#10060; Не знаю</button>
-          <button class="srs-btn srs-btn-right" id="srs-right">&#9989; Знаю</button>
+          <button class="srs-btn srs-btn-again" id="srs-again">&#10060; Снова</button>
+          <button class="srs-btn srs-btn-hard" id="srs-hard">&#128528; Трудно</button>
+          <button class="srs-btn srs-btn-good" id="srs-good">&#9989; Хорошо</button>
+          <button class="srs-btn srs-btn-easy" id="srs-easy">&#128171; Легко</button>
         </div>
         <div class="flashcard-controls">
           <button class="flashcard-btn" id="fc-prev" ${currentIndex === 0 ? 'disabled' : ''}>&#8592; Назад</button>
@@ -1066,16 +1068,12 @@ function initFlashcardSRS(containerId, words, lang, level, category) {
       speak(word.front, lang);
     });
 
-    container.querySelector('#srs-right')?.addEventListener('click', () => {
-      Store.reviewWord(lang, level, category, word.front, true);
-      currentIndex++;
-      renderCard();
-    });
-
-    container.querySelector('#srs-wrong')?.addEventListener('click', () => {
-      Store.reviewWord(lang, level, category, word.front, false);
-      currentIndex++;
-      renderCard();
+    ['again', 'hard', 'good', 'easy'].forEach(quality => {
+      container.querySelector(`#srs-${quality}`)?.addEventListener('click', () => {
+        Store.reviewWord(lang, level, category, word.front, quality);
+        currentIndex++;
+        renderCard();
+      });
     });
 
     container.querySelector('#fc-prev')?.addEventListener('click', () => {
@@ -1094,11 +1092,18 @@ function initFlashcardSRS(containerId, words, lang, level, category) {
     });
 
     // Keyboard (uses global listener cleanup)
+    // 1=Again, 2=Hard, 3=Good, 4=Easy, Space/Enter=Flip, Arrow keys=nav
     const keyHandler = (e) => {
       if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); doFlip(); }
+      if (isFlipped && ['1','2','3','4'].includes(e.key)) {
+        const qualities = { '1': 'again', '2': 'hard', '3': 'good', '4': 'easy' };
+        Store.reviewWord(lang, level, category, shuffledWords[currentIndex].front, qualities[e.key]);
+        currentIndex++;
+        renderCard();
+      }
       if (e.key === 'ArrowRight') {
         if (isFlipped) {
-          Store.reviewWord(lang, level, category, shuffledWords[currentIndex].front, true);
+          Store.reviewWord(lang, level, category, shuffledWords[currentIndex].front, 'good');
           currentIndex++;
           renderCard();
         } else { currentIndex++; renderCard(); }
@@ -1660,8 +1665,10 @@ function initReviewSession(containerId, words, lang, isSession = false) {
         </div>
         <p class="text-dim text-center" style="font-size:0.85rem" id="flip-hint">Нажмите на карточку, чтобы увидеть ответ</p>
         <div class="srs-buttons hidden" id="srs-btns">
-          <button class="srs-btn srs-btn-wrong" id="srs-wrong">&#10060; Не знаю</button>
-          <button class="srs-btn srs-btn-right" id="srs-right">&#9989; Знаю</button>
+          <button class="srs-btn srs-btn-again" id="srs-again">&#10060; Снова</button>
+          <button class="srs-btn srs-btn-hard" id="srs-hard">&#128528; Трудно</button>
+          <button class="srs-btn srs-btn-good" id="srs-good">&#9989; Хорошо</button>
+          <button class="srs-btn srs-btn-easy" id="srs-easy">&#128171; Легко</button>
         </div>
       </div>
     `;
@@ -1691,29 +1698,23 @@ function initReviewSession(containerId, words, lang, isSession = false) {
       speak(word.front, lang);
     });
 
-    container.querySelector('#srs-right').addEventListener('click', () => {
-      correctCount++;
-      Store.reviewWord(lang, word.level, word.category, word.front, true);
-      index++;
-      render();
+    ['again', 'hard', 'good', 'easy'].forEach(quality => {
+      container.querySelector(`#srs-${quality}`)?.addEventListener('click', () => {
+        if (quality !== 'again') correctCount++;
+        Store.reviewWord(lang, word.level, word.category, word.front, quality);
+        index++;
+        render();
+      });
     });
 
-    container.querySelector('#srs-wrong').addEventListener('click', () => {
-      Store.reviewWord(lang, word.level, word.category, word.front, false);
-      index++;
-      render();
-    });
-
-    // Keyboard (uses global listener cleanup)
+    // Keyboard: Space/Enter=flip, 1=Again, 2=Hard, 3=Good, 4=Easy
     const keyHandler = (e) => {
       if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); doFlip(); }
-      if (e.key === 'ArrowRight' && isFlipped) {
-        correctCount++;
-        Store.reviewWord(lang, word.level, word.category, word.front, true);
-        index++; render();
-      }
-      if (e.key === 'ArrowLeft' && isFlipped) {
-        Store.reviewWord(lang, word.level, word.category, word.front, false);
+      if (isFlipped && ['1','2','3','4'].includes(e.key)) {
+        const qualities = { '1': 'again', '2': 'hard', '3': 'good', '4': 'easy' };
+        const q = qualities[e.key];
+        if (q !== 'again') correctCount++;
+        Store.reviewWord(lang, word.level, word.category, word.front, q);
         index++; render();
       }
     };
