@@ -1,173 +1,223 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="sr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Petit Pas — Пассив</title>
+  <title>Petit Pas — Пасив</title>
   <link rel="stylesheet" href="../../../../assets/css/styles.css" />
 </head>
 <body>
   <main class="main-container">
-    <h1>Пассив (Страдательный залог)</h1>
-    <p class="intro">Страдательный залог (Pasiv / Пасив) используется для выражения действия, направленного на подлежащее. В сербском языке пассив образуется с помощью глагола "бити" (biti) и страдательного причастия.</p>
+    <h1>Пасив (Страдательный залог)</h1>
+    <p class="intro">Страдательный залог (Pasiv / Пасив) выражает действие, направленное на подлежащее. Образуется с помощью глагола <strong>бити</strong> (biti) и страдательного причастия.</p>
 
     <div class="accordion">
       <!-- Section 1: Formation -->
       <div class="accordion-item">
-        <button class="accordion-header">
+        <button class="accordion-header" aria-expanded="false">
           Образование страдательного залога
-          <span class="accordion-icon">+</span>
+          <span class="accordion-icon">&#9660;</span>
         </button>
         <div class="accordion-content">
-          <p><strong>Формула:</strong> бити (biti) в нужном времени + страдательное причастие</p>
+          <div class="grammar-formula">бити (biti) в нужном времени + страдательное причастие</div>
 
-          <h3>Страдательное причастие</h3>
-          <p>Образуется от основы инфинитива + суффикс <strong>-н/-т/-ен</strong> + родовое/числовое окончание:</p>
-          <ul>
-            <li><strong>-н</strong>: писати → писан (написан) / pisati → pisan</li>
-            <li><strong>-т</strong>: пећи → печен (испечен) / peći → pečen</li>
-            <li><strong>-ен</strong>: видети → виђен (увиђен) / videti → viđen</li>
-          </ul>
+          <h3>Суффиксы страдательного причастия</h3>
+          <div class="ending-group">
+            <span class="ending-chip"><span class="ending-label">тип 1</span> <span class="ending-value">-н (-an)</span></span>
+            <span class="ending-chip"><span class="ending-label">тип 2</span> <span class="ending-value">-т (-t)</span></span>
+            <span class="ending-chip"><span class="ending-label">тип 3</span> <span class="ending-value">-ен (-en)</span></span>
+          </div>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">писати → писа<mark>н</mark> / pisati → pisa<mark>n</mark></span>
+              <span class="translation">писать → написанный</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">пећи → пече<mark>н</mark> / peći → peče<mark>n</mark></span>
+              <span class="translation">печь → испечённый</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">видети → виђе<mark>н</mark> / videti → viđe<mark>n</mark></span>
+              <span class="translation">видеть → увиденный</span>
+            </div>
+          </div>
 
           <h3>Согласование по роду и числу</h3>
-          <div class="example-box">
-            <p><strong>Мужской род:</strong></p>
-            <p>Књига је <strong>написана</strong>. / Knjiga je <strong>napisana</strong>.</p>
-            <p>(Книга написана.)</p>
-
-            <p><strong>Женский род:</strong></p>
-            <p>Писмо је <strong>написано</strong>. / Pismo je <strong>napisano</strong>.</p>
-            <p>(Письмо написано.)</p>
-
-            <p><strong>Множественное число:</strong></p>
-            <p>Књиге су <strong>написане</strong>. / Knjige su <strong>napisane</strong>.</p>
-            <p>(Книги написаны.)</p>
+          <div class="ending-group">
+            <span class="ending-chip"><span class="ending-label">м.р.</span> <span class="ending-value">-н / -т / -ен</span></span>
+            <span class="ending-chip"><span class="ending-label">ж.р.</span> <span class="ending-value">-на / -та / -ена</span></span>
+            <span class="ending-chip"><span class="ending-label">ср.р.</span> <span class="ending-value">-но / -то / -ено</span></span>
+            <span class="ending-chip"><span class="ending-label">мн.ч.</span> <span class="ending-value">-ни / -ти / -ени</span></span>
+          </div>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">Књига је <strong>написана</strong>. / Knjiga je <strong>napisana</strong>.</span>
+              <span class="translation">Книга написана. (ж.р.)</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Писмо је <strong>написано</strong>. / Pismo je <strong>napisano</strong>.</span>
+              <span class="translation">Письмо написано. (ср.р.)</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Књиге су <strong>написане</strong>. / Knjige su <strong>napisane</strong>.</span>
+              <span class="translation">Книги написаны. (мн.ч.)</span>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Section 2: Tenses -->
       <div class="accordion-item">
-        <button class="accordion-header">
+        <button class="accordion-header" aria-expanded="false">
           Времена страдательного залога
-          <span class="accordion-icon">+</span>
+          <span class="accordion-icon">&#9660;</span>
         </button>
         <div class="accordion-content">
-          <h3>Настоящее время (Презент)</h3>
-          <div class="example-box">
-            <p>Кућа <strong>је грађена</strong> сваке године. / Kuća <strong>je građena</strong> svake godine.</p>
-            <p>(Дом строится каждый год.)</p>
-          </div>
+          <div class="tabs">
+            <div class="tab-nav">
+              <button class="tab-btn active" data-tab="present">Презент</button>
+              <button class="tab-btn" data-tab="perfect">Перфект</button>
+              <button class="tab-btn" data-tab="future">Футур</button>
+              <button class="tab-btn" data-tab="pluperfect">Плюсквамперфект</button>
+            </div>
 
-          <h3>Прошедшее время (Перфект)</h3>
-          <div class="example-box">
-            <p>Кућа <strong>је била грађена</strong> прошле године. / Kuća <strong>je bila građena</strong> prošle godine.</p>
-            <p>(Дом был построен в прошлом году.)</p>
+            <div class="tab-panel active" data-tab="present">
+              <div class="grammar-formula">јесам/си/је/смо/сте/су + причастие</div>
+              <div class="examples">
+                <div class="example">
+                  <span class="target-lang">Кућа <strong>је грађена</strong> сваке године. / Kuća <strong>je građena</strong> svake godine.</span>
+                  <span class="translation">Дом строится каждый год.</span>
+                </div>
+              </div>
+            </div>
 
-            <p>Писмо <strong>је било написано</strong> јуче. / Pismo <strong>je bilo napisano</strong> juče.</p>
-            <p>(Письмо было написано вчера.)</p>
-          </div>
+            <div class="tab-panel" data-tab="perfect">
+              <div class="grammar-formula">јесам/си/је/… + био/била/било + причастие</div>
+              <div class="examples">
+                <div class="example">
+                  <span class="target-lang">Кућа <strong>је била грађена</strong> прошле године. / Kuća <strong>je bila građena</strong> prošle godine.</span>
+                  <span class="translation">Дом был построен в прошлом году.</span>
+                </div>
+                <div class="example">
+                  <span class="target-lang">Писмо <strong>је било написано</strong> јуче. / Pismo <strong>je bilo napisano</strong> juče.</span>
+                  <span class="translation">Письмо было написано вчера.</span>
+                </div>
+              </div>
+            </div>
 
-          <h3>Будущее время (Футур)</h3>
-          <div class="example-box">
-            <p>Кућа <strong>ће бити грађена</strong> следеће године. / Kuća <strong>će biti građena</strong> sledeće godine.</p>
-            <p>(Дом будет построен в следующем году.)</p>
+            <div class="tab-panel" data-tab="future">
+              <div class="grammar-formula">ће + бити + причастие</div>
+              <div class="examples">
+                <div class="example">
+                  <span class="target-lang">Кућа <strong>ће бити грађена</strong> следеће године. / Kuća <strong>će biti građena</strong> sledeće godine.</span>
+                  <span class="translation">Дом будет построен в следующем году.</span>
+                </div>
+                <div class="example">
+                  <span class="target-lang">Задатак <strong>ће бити завршен</strong> сутра. / Zadatak <strong>će biti završen</strong> sutra.</span>
+                  <span class="translation">Задание будет завершено завтра.</span>
+                </div>
+              </div>
+            </div>
 
-            <p>Задатак <strong>ће бити завршен</strong> сутра. / Zadatak <strong>će biti završen</strong> sutra.</p>
-            <p>(Задание будет завершено завтра.)</p>
-          </div>
-
-          <h3>Плюсквамперфект</h3>
-          <div class="example-box">
-            <p>Кућа <strong>беше грађена</strong> када сам стигао. / Kuća <strong>beše građena</strong> kada sam stigao.</p>
-            <p>(Дом строился, когда я приехал.)</p>
+            <div class="tab-panel" data-tab="pluperfect">
+              <div class="grammar-formula">беше/бејаше + причастие</div>
+              <div class="examples">
+                <div class="example">
+                  <span class="target-lang">Кућа <strong>беше грађена</strong> када сам стигао. / Kuća <strong>beše građena</strong> kada sam stigao.</span>
+                  <span class="translation">Дом строился, когда я приехал.</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Section 3: Usage -->
       <div class="accordion-item">
-        <button class="accordion-header">
+        <button class="accordion-header" aria-expanded="false">
           Употребление пассива
-          <span class="accordion-icon">+</span>
+          <span class="accordion-icon">&#9660;</span>
         </button>
         <div class="accordion-content">
-          <h3>Когда используется пассив</h3>
-          <ul>
-            <li><strong>Когда неизвестен или неважен деятель:</strong></li>
-          </ul>
-          <div class="example-box">
-            <p>Прозор је <strong>разбијен</strong>. / Prozor je <strong>razbijen</strong>.</p>
-            <p>(Окно разбито.) [Неважно, кем]</p>
+          <h3>Неизвестен или неважен деятель</h3>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">Прозор је <strong>разбијен</strong>. / Prozor je <strong>razbijen</strong>.</span>
+              <span class="translation">Окно разбито. (неважно, кем)</span>
+            </div>
           </div>
 
-          <ul>
-            <li><strong>Когда акцент на действии, а не на деятеле:</strong></li>
-          </ul>
-          <div class="example-box">
-            <p>Нови закон је <strong>усвојен</strong> јуче. / Novi zakon je <strong>usvojen</strong> juče.</p>
-            <p>(Новый закон был принят вчера.)</p>
+          <h3>Акцент на действии, а не на деятеле</h3>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">Нови закон је <strong>усвојен</strong> јуче. / Novi zakon je <strong>usvojen</strong> juče.</span>
+              <span class="translation">Новый закон был принят вчера.</span>
+            </div>
           </div>
 
-          <ul>
-            <li><strong>Для указания на деятеля используется предлог "од" (от):</strong></li>
-          </ul>
-          <div class="example-box">
-            <p>Роман је написан <strong>од стране</strong>poznatog писца. / Roman je napisan <strong>od strane</strong> poznatog pisca.</p>
-            <p>(Роман написан известным писателем.)</p>
-
-            <p>Кућа је саграђена <strong>од</strong> мог оца. / Kuća je sagrađena <strong>od</strong> mog oca.</p>
-            <p>(Дом построен моим отцом.)</p>
+          <h3>Указание на деятеля: «од стране» / «од»</h3>
+          <div class="note">Для указания на деятеля используется предлог <strong>од</strong> (od) или <strong>од стране</strong> (od strane).</div>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">Роман је написан <strong>од стране</strong> позnatog писца. / Roman je napisan <strong>od strane</strong> poznatog pisca.</span>
+              <span class="translation">Роман написан известным писателем.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Кућа је саграђена <strong>од</strong> мог оца. / Kuća je sagrađena <strong>od</strong> mog oca.</span>
+              <span class="translation">Дом построен моим отцом.</span>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Section 4: Active to Passive Transformation -->
       <div class="accordion-item">
-        <button class="accordion-header">
-          Преобразование из активного в страдательный залог
-          <span class="accordion-icon">+</span>
+        <button class="accordion-header" aria-expanded="false">
+          Преобразование: актив → пасив
+          <span class="accordion-icon">&#9660;</span>
         </button>
         <div class="accordion-content">
-          <h3>Схема преобразования</h3>
-          <p>Подлежащее (активный) → Дополнение (пассивный) с предлогом "од"</p>
-          <p>Дополнение (активный) → Подлежащее (пассивный)</p>
+          <div class="grammar-formula">Подлежащее (актив) → «од» + дополнение (пасив)<br>Дополнение (актив) → Подлежащее (пасив)</div>
 
-          <div class="example-box">
-            <p><strong>Активный залог:</strong></p>
-            <p>Марија пише писмо. / Marija piše pismo.</p>
-            <p>(Мария пишет письмо.)</p>
-
-            <p><strong>Страдательный залог:</strong></p>
-            <p>Писмо је написано од Марије. / Pismo je napisano od Marije.</p>
-            <p>(Письмо написано Марией.)</p>
+          <h3>Пример 1</h3>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang"><strong>Актив:</strong> Марија пише писмо. / Marija piše pismo.</span>
+              <span class="translation">Мария пишет письмо.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang"><strong>Пасив:</strong> Писмо је написано од Марије. / Pismo je napisano od Marije.</span>
+              <span class="translation">Письмо написано Марией.</span>
+            </div>
           </div>
 
-          <div class="example-box">
-            <p><strong>Активный залог:</strong></p>
-            <p>Ученици су решили задатке. / Učenici su rešili zadatke.</p>
-            <p>(Ученики решили задачи.)</p>
-
-            <p><strong>Страдательный залог:</strong></p>
-            <p>Задаци су решени од ученика. / Zadaci su rešeni od učenika.</p>
-            <p>(Задачи решены учениками.)</p>
+          <h3>Пример 2</h3>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang"><strong>Актив:</strong> Ученици су решили задатке. / Učenici su rešili zadatke.</span>
+              <span class="translation">Ученики решили задачи.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang"><strong>Пасив:</strong> Задаци су решени од ученика. / Zadaci su rešeni od učenika.</span>
+              <span class="translation">Задачи решены учениками.</span>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Section 5: Common Passive Participles -->
       <div class="accordion-item">
-        <button class="accordion-header">
+        <button class="accordion-header" aria-expanded="false">
           Часто употребляемые страдательные причастия
-          <span class="accordion-icon">+</span>
+          <span class="accordion-icon">&#9660;</span>
         </button>
         <div class="accordion-content">
           <div class="table-responsive">
-            <table>
+            <table class="compact-table">
               <thead>
                 <tr>
-                  <th>Инфинитив (Cyrillic)</th>
-                  <th>Инфинитив (Latin)</th>
+                  <th>Инфинитив (ћир.)</th>
+                  <th>Инфинитив (лат.)</th>
                   <th>Причастие (м.р.)</th>
                   <th>Перевод</th>
                 </tr>
@@ -176,61 +226,61 @@
                 <tr>
                   <td>писати</td>
                   <td>pisati</td>
-                  <td>написан / napisan</td>
+                  <td>написа<mark>н</mark> / napisa<mark>n</mark></td>
                   <td>написанный</td>
                 </tr>
                 <tr>
                   <td>читати</td>
                   <td>čitati</td>
-                  <td>читан / čitan</td>
+                  <td>чита<mark>н</mark> / čita<mark>n</mark></td>
                   <td>читанный</td>
                 </tr>
                 <tr>
                   <td>градити</td>
                   <td>graditi</td>
-                  <td>грађен / građen</td>
+                  <td>грађе<mark>н</mark> / građe<mark>n</mark></td>
                   <td>построенный</td>
                 </tr>
                 <tr>
                   <td>правити</td>
                   <td>praviti</td>
-                  <td>направљен / napravljen</td>
+                  <td>направље<mark>н</mark> / napravlje<mark>n</mark></td>
                   <td>сделанный</td>
                 </tr>
                 <tr>
                   <td>видети</td>
                   <td>videti</td>
-                  <td>виђен / viđen</td>
+                  <td>виђе<mark>н</mark> / viđe<mark>n</mark></td>
                   <td>увиденный</td>
                 </tr>
                 <tr>
                   <td>продати</td>
                   <td>prodati</td>
-                  <td>продат / prodat</td>
+                  <td>прода<mark>т</mark> / proda<mark>t</mark></td>
                   <td>проданный</td>
                 </tr>
                 <tr>
                   <td>узети</td>
                   <td>uzeti</td>
-                  <td>узет / uzet</td>
+                  <td>узе<mark>т</mark> / uze<mark>t</mark></td>
                   <td>взятый</td>
                 </tr>
                 <tr>
                   <td>отворити</td>
                   <td>otvoriti</td>
-                  <td>отворен / otvoren</td>
+                  <td>отворе<mark>н</mark> / otvore<mark>n</mark></td>
                   <td>открытый</td>
                 </tr>
                 <tr>
                   <td>затворити</td>
                   <td>zatvoriti</td>
-                  <td>затворен / zatvoren</td>
+                  <td>затворе<mark>н</mark> / zatvore<mark>n</mark></td>
                   <td>закрытый</td>
                 </tr>
                 <tr>
                   <td>изабрати</td>
                   <td>izabrati</td>
-                  <td>изабран / izabran</td>
+                  <td>изабра<mark>н</mark> / izabra<mark>n</mark></td>
                   <td>выбранный</td>
                 </tr>
               </tbody>
@@ -241,53 +291,42 @@
 
       <!-- Section 6: Practice Examples -->
       <div class="accordion-item">
-        <button class="accordion-header">
+        <button class="accordion-header" aria-expanded="false">
           Примеры для практики
-          <span class="accordion-icon">+</span>
+          <span class="accordion-icon">&#9660;</span>
         </button>
         <div class="accordion-content">
-          <div class="example-box">
-            <p><strong>Пример 1:</strong></p>
-            <p>Аутомобил је купљен прошле недеље. / Automobil je kupljen prošle nedelje.</p>
-            <p>(Автомобиль был куплен на прошлой неделе.)</p>
-          </div>
-
-          <div class="example-box">
-            <p><strong>Пример 2:</strong></p>
-            <p>Вечера је спремљена од мајке. / Večera je spremljena od majke.</p>
-            <p>(Ужин приготовлен мамой.)</p>
-          </div>
-
-          <div class="example-box">
-            <p><strong>Пример 3:</strong></p>
-            <p>Сва врата су затворена. / Sva vrata su zatvorena.</p>
-            <p>(Все двери закрыты.)</p>
-          </div>
-
-          <div class="example-box">
-            <p><strong>Пример 4:</strong></p>
-            <p>Књиге ће бити враћене до петка. / Knjige će biti vraćene do petka.</p>
-            <p>(Книги будут возвращены до пятницы.)</p>
-          </div>
-
-          <div class="example-box">
-            <p><strong>Пример 5:</strong></p>
-            <p>Филм је снимљен у Београду. / Film je snimljen u Beogradu.</p>
-            <p>(Фильм был снят в Белграде.)</p>
-          </div>
-
-          <div class="example-box">
-            <p><strong>Пример 6:</strong></p>
-            <p>Резултати су објављени јутрос. / Rezultati su objavljeni jutros.</p>
-            <p>(Результаты были объявлены этим утром.)</p>
+          <div class="examples">
+            <div class="example">
+              <span class="target-lang">Аутомобил је купљен прошле недеље. / Automobil je kupljen prošle nedelje.</span>
+              <span class="translation">Автомобиль был куплен на прошлой неделе.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Вечера је спремљена од мајке. / Večera je spremljena od majke.</span>
+              <span class="translation">Ужин приготовлен мамой.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Сва врата су затворена. / Sva vrata su zatvorena.</span>
+              <span class="translation">Все двери закрыты.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Књиге ће бити враћене до петка. / Knjige će biti vraćene do petka.</span>
+              <span class="translation">Книги будут возвращены до пятницы.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Филм је снимљен у Београду. / Film je snimljen u Beogradu.</span>
+              <span class="translation">Фильм был снят в Белграде.</span>
+            </div>
+            <div class="example">
+              <span class="target-lang">Резултати су објављени јутрос. / Rezultati su objavljeni jutros.</span>
+              <span class="translation">Результаты были объявлены этим утром.</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="back-link">
-      <a href="../">← Вернуться к выбору темы</a>
-    </div>
+    <div class="back-link"><a href="../">← Вернуться к выбору темы</a></div>
   </main>
   <script src="../../../../assets/js/components.js"></script>
 </body>
