@@ -9,6 +9,11 @@ function initAccordion() {
   accordionItems.forEach(item => {
     const header = item.querySelector('.accordion-header');
 
+    // Ensure aria-expanded is set initially
+    if (!header.hasAttribute('aria-expanded')) {
+      header.setAttribute('aria-expanded', 'false');
+    }
+
     header.addEventListener('click', () => {
       const isActive = item.classList.contains('active');
 
@@ -31,6 +36,29 @@ function initAccordion() {
         e.preventDefault();
         header.click();
       }
+    });
+  });
+}
+
+// ============================================
+// TABS COMPONENT
+// ============================================
+function initTabs() {
+  document.querySelectorAll('.tabs').forEach(tabContainer => {
+    const buttons = tabContainer.querySelectorAll('.tab-btn');
+    const panels = tabContainer.querySelectorAll('.tab-panel');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.tab;
+
+        buttons.forEach(b => b.classList.remove('active'));
+        panels.forEach(p => p.classList.remove('active'));
+
+        btn.classList.add('active');
+        const panel = tabContainer.querySelector('.tab-panel[data-tab="' + target + '"]');
+        if (panel) panel.classList.add('active');
+      });
     });
   });
 }
@@ -524,8 +552,10 @@ class ConjugationTrainer {
 // AUTO-INIT ON DOM LOAD
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
-  // Auto-init accordion if present
   if (document.querySelector('.accordion')) {
     initAccordion();
+  }
+  if (document.querySelector('.tabs')) {
+    initTabs();
   }
 });

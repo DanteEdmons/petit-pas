@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="sr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,754 +8,343 @@
 </head>
 <body>
   <main class="main-container">
-    <h1>Падежи в сербском языке (Падежи / Padeži)</h1>
-    <p class="intro">В сербском языке 7 падежей, аналогично русскому, но с некоторыми отличиями. Изучение падежных окончаний - ключ к правильному построению предложений.</p>
+    <h1>Падежи (Padeži)</h1>
+    <p class="intro">В сербском 7 падежей — как в русском, но с другими окончаниями. Раскройте тему, чтобы увидеть окончания, склонение и примеры.</p>
 
     <div class="accordion">
 
-      <!-- Nominativ -->
+      <!-- 1. Nominativ -->
       <div class="accordion-item">
         <button class="accordion-header" aria-expanded="false">
-          <span>1. Номинатив (Nominativ) - Именительный падеж</span>
-          <span class="accordion-icon">▼</span>
+          <span>1. Номинатив (Nominativ) — Именительный</span>
+          <span class="accordion-icon">&#9660;</span>
         </button>
         <div class="accordion-content">
-          <h3>Вопросы: ко? / што? (ko? / što?) - кто? / что?</h3>
-          <p>Именительный падеж - это основная форма существительного. Используется для подлежащего.</p>
+          <h3>Вопросы: ко? / што? (кто? / что?)</h3>
+          <p>Основная, словарная форма. Используется для подлежащего.</p>
 
-          <h3>Окончания существительных в номинативе:</h3>
-          <table>
-            <thead>
-              <tr>
-                <th>Род</th>
-                <th>Единственное число</th>
-                <th>Множественное число</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Мужской</td>
-                <td>согласный, -о, -е</td>
-                <td>-и, -ови, -еви</td>
-              </tr>
-              <tr>
-                <td>Женский</td>
-                <td>-а, согласный</td>
-                <td>-е, -и</td>
-              </tr>
-              <tr>
-                <td>Средний</td>
-                <td>-о, -е</td>
-                <td>-а</td>
-              </tr>
-            </tbody>
-          </table>
+          <h3>Окончания</h3>
+          <div class="tabs">
+            <div class="tab-nav">
+              <button class="tab-btn active" data-tab="nom-sg">Ед. число</button>
+              <button class="tab-btn" data-tab="nom-pl">Мн. число</button>
+            </div>
+            <div class="tab-panel active" data-tab="nom-sg">
+              <div class="ending-group">
+                <span class="ending-chip"><span class="ending-label">м.р.</span><span class="ending-value">согласный, -о, -е</span></span>
+                <span class="ending-chip"><span class="ending-label">ж.р.</span><span class="ending-value">-а, согласный</span></span>
+                <span class="ending-chip"><span class="ending-label">ср.р.</span><span class="ending-value">-о, -е</span></span>
+              </div>
+            </div>
+            <div class="tab-panel" data-tab="nom-pl">
+              <div class="ending-group">
+                <span class="ending-chip"><span class="ending-label">м.р.</span><span class="ending-value">-и, -ови, -еви</span></span>
+                <span class="ending-chip"><span class="ending-label">ж.р.</span><span class="ending-value">-е, -и</span></span>
+                <span class="ending-chip"><span class="ending-label">ср.р.</span><span class="ending-value">-а</span></span>
+              </div>
+            </div>
+          </div>
 
           <div class="examples">
-            <div class="example">
-              <div class="target-lang">Човек ради. / Čovek radi.</div>
-              <div class="translation">Человек работает.</div>
-            </div>
-            <div class="example">
-              <div class="target-lang">Жена пева. / Žena peva.</div>
-              <div class="translation">Женщина поет.</div>
-            </div>
-            <div class="example">
-              <div class="target-lang">Дете игра. / Dete igra.</div>
-              <div class="translation">Ребенок играет.</div>
-            </div>
+            <div class="example"><div class="target-lang">Човек ради. / Čovek radi.</div><div class="translation">Человек работает.</div></div>
+            <div class="example"><div class="target-lang">Жена пева. / Žena peva.</div><div class="translation">Женщина поет.</div></div>
+            <div class="example"><div class="target-lang">Дете игра. / Dete igra.</div><div class="translation">Ребенок играет.</div></div>
           </div>
         </div>
       </div>
 
-      <!-- Genitiv -->
+      <!-- 2. Genitiv -->
       <div class="accordion-item">
         <button class="accordion-header" aria-expanded="false">
-          <span>2. Генитив (Genitiv) - Родительный падеж</span>
-          <span class="accordion-icon">▼</span>
+          <span>2. Генитив (Genitiv) — Родительный</span>
+          <span class="accordion-icon">&#9660;</span>
         </button>
         <div class="accordion-content">
-          <h3>Вопросы: кога? / чега? (koga? / čega?) - кого? / чего?</h3>
-          <p>Используется для выражения принадлежности, отрицания, после предлогов (од, из, без, до, код, поред и др.).</p>
+          <h3>Вопросы: кога? / чега? (кого? / чего?)</h3>
+          <p>Принадлежность, отрицание, после предлогов: од, из, без, до, код, поред.</p>
 
-          <h3>Окончания в генитиве:</h3>
-          <table>
-            <thead>
-              <tr>
-                <th>Род</th>
-                <th>Единственное число</th>
-                <th>Множественное число</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Мужской</td>
-                <td>-а, -у</td>
-                <td>-а</td>
-              </tr>
-              <tr>
-                <td>Женский</td>
-                <td>-е, -и</td>
-                <td>нулевое окончание</td>
-              </tr>
-              <tr>
-                <td>Средний</td>
-                <td>-а</td>
-                <td>нулевое окончание</td>
-              </tr>
-            </tbody>
-          </table>
+          <h3>Окончания</h3>
+          <div class="ending-group">
+            <span class="ending-chip"><span class="ending-label">м.р. ед.</span><span class="ending-value">-а</span></span>
+            <span class="ending-chip"><span class="ending-label">ж.р. ед.</span><span class="ending-value">-е, -и</span></span>
+            <span class="ending-chip"><span class="ending-label">ср.р. ед.</span><span class="ending-value">-а</span></span>
+            <span class="ending-chip"><span class="ending-label">м.р. мн.</span><span class="ending-value">-а, -ова</span></span>
+            <span class="ending-chip"><span class="ending-label">ж.р. мн.</span><span class="ending-value">-а / ∅</span></span>
+            <span class="ending-chip"><span class="ending-label">ср.р. мн.</span><span class="ending-value">-а / ∅</span></span>
+          </div>
 
-          <h3>Примеры склонения:</h3>
-          <table>
-            <thead>
-              <tr>
-                <th>Nominativ</th>
-                <th>Genitiv ед.ч.</th>
-                <th>Genitiv мн.ч.</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>град / grad (город)</td>
-                <td>града / grada</td>
-                <td>градова / gradova</td>
-              </tr>
-              <tr>
-                <td>жена / žena (женщина)</td>
-                <td>жене / žene</td>
-                <td>жена / žena</td>
-              </tr>
-              <tr>
-                <td>село / selo (деревня)</td>
-                <td>села / sela</td>
-                <td>села / sela</td>
-              </tr>
-            </tbody>
-          </table>
+          <h3>Примеры склонения</h3>
+          <div class="conj-grid">
+            <div class="conj-cell"><span class="conj-person">град → генитив</span><span class="conj-form">град<mark>а</mark> <span class="latin">/ grada</span></span></div>
+            <div class="conj-cell"><span class="conj-person">мн.ч.</span><span class="conj-form">град<mark>ова</mark> <span class="latin">/ gradova</span></span></div>
+            <div class="conj-cell"><span class="conj-person">жена → генитив</span><span class="conj-form">жен<mark>е</mark> <span class="latin">/ žene</span></span></div>
+            <div class="conj-cell"><span class="conj-person">мн.ч.</span><span class="conj-form">жен<mark>а</mark> <span class="latin">/ žena</span></span></div>
+            <div class="conj-cell"><span class="conj-person">село → генитив</span><span class="conj-form">сел<mark>а</mark> <span class="latin">/ sela</span></span></div>
+            <div class="conj-cell"><span class="conj-person">мн.ч.</span><span class="conj-form">сел<mark>а</mark> <span class="latin">/ sela</span></span></div>
+          </div>
 
           <div class="examples">
-            <div class="example">
-              <div class="target-lang">Нема воде. / Nema vode.</div>
-              <div class="translation">Нет воды.</div>
-            </div>
-            <div class="example">
-              <div class="target-lang">Књига мог брата. / Knjiga mog brata.</div>
-              <div class="translation">Книга моего брата.</div>
-            </div>
-            <div class="example">
-              <div class="target-lang">Из Београда сам. / Iz Beograda sam.</div>
-              <div class="translation">Я из Белграда.</div>
-            </div>
+            <div class="example"><div class="target-lang">Нема воде. / Nema vode.</div><div class="translation">Нет воды.</div></div>
+            <div class="example"><div class="target-lang">Књига мог брата. / Knjiga mog brata.</div><div class="translation">Книга моего брата.</div></div>
+            <div class="example"><div class="target-lang">Из Београда сам. / Iz Beograda sam.</div><div class="translation">Я из Белграда.</div></div>
           </div>
 
           <div class="note">
-            <strong>Важно:</strong> В сербском языке генитив используется при отрицании глаголов (как в русском): Немам времена (нет времени), а не *немам време.
+            <strong>Как в русском:</strong> Генитив используется при отрицании — Немам времен<mark>а</mark> (нет времени).
           </div>
         </div>
       </div>
 
-      <!-- Dativ -->
+      <!-- 3. Dativ -->
       <div class="accordion-item">
         <button class="accordion-header" aria-expanded="false">
-          <span>3. Датив (Dativ) - Дательный падеж</span>
-          <span class="accordion-icon">▼</span>
+          <span>3. Датив (Dativ) — Дательный</span>
+          <span class="accordion-icon">&#9660;</span>
         </button>
         <div class="accordion-content">
-          <h3>Вопросы: коме? / чему? (kome? / čemu?) - кому? / чему?</h3>
-          <p>Используется для непрямого дополнения, после предлогов к, према, благодаря.</p>
+          <h3>Вопросы: коме? / чему? (кому? / чему?)</h3>
+          <p>Непрямое дополнение. Предлоги: ка, према.</p>
 
-          <h3>Окончания в дативе:</h3>
-          <table>
-            <thead>
-              <tr>
-                <th>Род</th>
-                <th>Единственное число</th>
-                <th>Множественное число</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Мужской</td>
-                <td>-у</td>
-                <td>-има</td>
-              </tr>
-              <tr>
-                <td>Женский</td>
-                <td>-и</td>
-                <td>-ама</td>
-              </tr>
-              <tr>
-                <td>Средний</td>
-                <td>-у</td>
-                <td>-има</td>
-              </tr>
-            </tbody>
-          </table>
+          <h3>Окончания</h3>
+          <div class="ending-group">
+            <span class="ending-chip"><span class="ending-label">м.р. ед.</span><span class="ending-value">-у</span></span>
+            <span class="ending-chip"><span class="ending-label">ж.р. ед.</span><span class="ending-value">-и</span></span>
+            <span class="ending-chip"><span class="ending-label">ср.р. ед.</span><span class="ending-value">-у</span></span>
+            <span class="ending-chip"><span class="ending-label">м./ср. мн.</span><span class="ending-value">-има</span></span>
+            <span class="ending-chip"><span class="ending-label">ж.р. мн.</span><span class="ending-value">-ама</span></span>
+          </div>
 
-          <h3>Примеры склонения:</h3>
-          <table>
-            <thead>
-              <tr>
-                <th>Nominativ</th>
-                <th>Dativ ед.ч.</th>
-                <th>Dativ мн.ч.</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>пријатељ / prijatelj (друг)</td>
-                <td>пријатељу / prijatelju</td>
-                <td>пријатељима / prijateljima</td>
-              </tr>
-              <tr>
-                <td>сестра / sestra (сестра)</td>
-                <td>сестри / sestri</td>
-                <td>сестрама / sestrama</td>
-              </tr>
-              <tr>
-                <td>дете / dete (ребенок)</td>
-                <td>детету / detetu</td>
-                <td>деци / deci</td>
-              </tr>
-            </tbody>
-          </table>
+          <h3>Примеры склонения</h3>
+          <div class="conj-grid">
+            <div class="conj-cell"><span class="conj-person">пријатељ → датив</span><span class="conj-form">пријатељ<mark>у</mark> <span class="latin">/ prijatelju</span></span></div>
+            <div class="conj-cell"><span class="conj-person">мн.ч.</span><span class="conj-form">пријатељ<mark>има</mark> <span class="latin">/ prijateljima</span></span></div>
+            <div class="conj-cell"><span class="conj-person">сестра → датив</span><span class="conj-form">сестр<mark>и</mark> <span class="latin">/ sestri</span></span></div>
+            <div class="conj-cell"><span class="conj-person">мн.ч.</span><span class="conj-form">сестр<mark>ама</mark> <span class="latin">/ sestrama</span></span></div>
+            <div class="conj-cell"><span class="conj-person">дете → датив</span><span class="conj-form">детет<mark>у</mark> <span class="latin">/ detetu</span></span></div>
+            <div class="conj-cell"><span class="conj-person">мн.ч.</span><span class="conj-form">дец<mark>и</mark> <span class="latin">/ deci</span></span></div>
+          </div>
 
           <div class="examples">
-            <div class="example">
-              <div class="target-lang">Дајем књигу брату. / Dajem knjigu bratu.</div>
-              <div class="translation">Даю книгу брату.</div>
-            </div>
-            <div class="example">
-              <div class="target-lang">Иде ми добро. / Ide mi dobro.</div>
-              <div class="translation">У меня идет хорошо.</div>
-            </div>
-            <div class="example">
-              <div class="target-lang">Према мени... / Prema meni...</div>
-              <div class="translation">По отношению ко мне...</div>
-            </div>
+            <div class="example"><div class="target-lang">Дајем књигу брату. / Dajem knjigu bratu.</div><div class="translation">Даю книгу брату.</div></div>
+            <div class="example"><div class="target-lang">Иде ми добро. / Ide mi dobro.</div><div class="translation">У меня хорошо.</div></div>
+            <div class="example"><div class="target-lang">Према мени... / Prema meni...</div><div class="translation">По отношению ко мне...</div></div>
           </div>
         </div>
       </div>
 
-      <!-- Akuzativ -->
+      <!-- 4. Akuzativ -->
       <div class="accordion-item">
         <button class="accordion-header" aria-expanded="false">
-          <span>4. Акузатив (Akuzativ) - Винительный падеж</span>
-          <span class="accordion-icon">▼</span>
+          <span>4. Акузатив (Akuzativ) — Винительный</span>
+          <span class="accordion-icon">&#9660;</span>
         </button>
         <div class="accordion-content">
-          <h3>Вопросы: кога? / што? (koga? / što?) - кого? / что?</h3>
-          <p>Используется для прямого дополнения, после предлогов движения (у, на, за, кроз, низ, уз).</p>
+          <h3>Вопросы: кога? / шта? (кого? / что?)</h3>
+          <p>Прямое дополнение. Предлоги движения: у, на, за, кроз, низ, уз.</p>
 
-          <h3>Окончания в акузативе:</h3>
-          <table>
-            <thead>
-              <tr>
-                <th>Род</th>
-                <th>Единственное число</th>
-                <th>Множественное число</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Мужской (одуш.)</td>
-                <td>-а</td>
-                <td>-е</td>
-              </tr>
-              <tr>
-                <td>Мужской (неодуш.)</td>
-                <td>= Nominativ</td>
-                <td>-е</td>
-              </tr>
-              <tr>
-                <td>Женский (-а)</td>
-                <td>-у</td>
-                <td>-е</td>
-              </tr>
-              <tr>
-                <td>Женский (согл.)</td>
-                <td>= Nominativ</td>
-                <td>-и</td>
-              </tr>
-              <tr>
-                <td>Средний</td>
-                <td>= Nominativ</td>
-                <td>-а</td>
-              </tr>
-            </tbody>
-          </table>
+          <h3>Окончания</h3>
+          <div class="ending-group">
+            <span class="ending-chip"><span class="ending-label">м.р. одуш.</span><span class="ending-value">-а</span></span>
+            <span class="ending-chip"><span class="ending-label">м.р. неодуш.</span><span class="ending-value">= Ном.</span></span>
+            <span class="ending-chip"><span class="ending-label">ж.р. (-а)</span><span class="ending-value">-у</span></span>
+            <span class="ending-chip"><span class="ending-label">ж.р. (согл.)</span><span class="ending-value">= Ном.</span></span>
+            <span class="ending-chip"><span class="ending-label">ср.р.</span><span class="ending-value">= Ном.</span></span>
+          </div>
 
-          <h3>Примеры склонения:</h3>
-          <table>
-            <thead>
-              <tr>
-                <th>Nominativ</th>
-                <th>Akuzativ ед.ч.</th>
-                <th>Akuzativ мн.ч.</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>брат / brat (брат)</td>
-                <td>брата / brata</td>
-                <td>браћу / braću</td>
-              </tr>
-              <tr>
-                <td>стол / sto (стол)</td>
-                <td>сто / sto</td>
-                <td>столове / stolove</td>
-              </tr>
-              <tr>
-                <td>кућа / kuća (дом)</td>
-                <td>кућу / kuću</td>
-                <td>куће / kuće</td>
-              </tr>
-            </tbody>
-          </table>
+          <h3>Примеры склонения</h3>
+          <div class="conj-grid">
+            <div class="conj-cell"><span class="conj-person">брат → акузатив</span><span class="conj-form">брат<mark>а</mark> <span class="latin">/ brata</span></span></div>
+            <div class="conj-cell"><span class="conj-person">сто (стол) → акуз.</span><span class="conj-form">сто <span class="latin">/ sto</span></span></div>
+            <div class="conj-cell"><span class="conj-person">кућа → акузатив</span><span class="conj-form">кућ<mark>у</mark> <span class="latin">/ kuću</span></span></div>
+            <div class="conj-cell"><span class="conj-person">село → акузатив</span><span class="conj-form">село <span class="latin">/ selo</span></span></div>
+          </div>
 
           <div class="examples">
-            <div class="example">
-              <div class="target-lang">Видим брата. / Vidim brata.</div>
-              <div class="translation">Вижу брата.</div>
-            </div>
-            <div class="example">
-              <div class="target-lang">Читам књигу. / Čitam knjigu.</div>
-              <div class="translation">Читаю книгу.</div>
-            </div>
-            <div class="example">
-              <div class="target-lang">Идем у школу. / Idem u školu.</div>
-              <div class="translation">Иду в школу (направление).</div>
-            </div>
+            <div class="example"><div class="target-lang">Видим брата. / Vidim brata.</div><div class="translation">Вижу брата.</div></div>
+            <div class="example"><div class="target-lang">Читам књигу. / Čitam knjigu.</div><div class="translation">Читаю книгу.</div></div>
+            <div class="example"><div class="target-lang">Идем у школу. / Idem u školu.</div><div class="translation">Иду в школу (направление).</div></div>
           </div>
 
           <div class="note">
-            <strong>Важно:</strong> Различие одушевленности/неодушевленности важно только для мужского рода!
+            <strong>Важно:</strong> Одушевленность важна только для мужского рода! Видим брат<mark>а</mark> (одуш.) но: Видим град (неодуш.).
           </div>
         </div>
       </div>
 
-      <!-- Vokativ -->
+      <!-- 5. Vokativ -->
       <div class="accordion-item">
         <button class="accordion-header" aria-expanded="false">
-          <span>5. Вокатив (Vokativ) - Звательный падеж</span>
-          <span class="accordion-icon">▼</span>
+          <span>5. Вокатив (Vokativ) — Звательный</span>
+          <span class="accordion-icon">&#9660;</span>
         </button>
         <div class="accordion-content">
           <h3>Используется для обращения</h3>
-          <p>В отличие от русского языка, где звательный падеж практически исчез, в сербском он активно используется.</p>
+          <p>В отличие от русского, в сербском звательный падеж активно используется!</p>
 
-          <h3>Окончания в вокативе:</h3>
-          <table>
-            <thead>
-              <tr>
-                <th>Род</th>
-                <th>Единственное число</th>
-                <th>Множественное число</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Мужской</td>
-                <td>-е, -у, -о</td>
-                <td>-и</td>
-              </tr>
-              <tr>
-                <td>Женский (-а)</td>
-                <td>-о, -е</td>
-                <td>-е</td>
-              </tr>
-              <tr>
-                <td>Средний</td>
-                <td>-е, -о</td>
-                <td>-а</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <h3>Примеры склонения:</h3>
-          <table>
-            <thead>
-              <tr>
-                <th>Nominativ</th>
-                <th>Vokativ ед.ч.</th>
-                <th>Vokativ мн.ч.</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Милан / Milan</td>
-                <td>Милане / Milane</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td>Марко / Marko</td>
-                <td>Марко / Marko</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td>Ана / Ana</td>
-                <td>Ано / Ano</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td>господин / gospodin</td>
-                <td>господине / gospodine</td>
-                <td>господо / gospodo</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <div class="examples">
-            <div class="example">
-              <div class="target-lang">Марко, дођи овамо! / Marko, dođi ovamo!</div>
-              <div class="translation">Марко, иди сюда!</div>
-            </div>
-            <div class="example">
-              <div class="target-lang">Добар дан, господине! / Dobar dan, gospodine!</div>
-              <div class="translation">Добрый день, господин!</div>
-            </div>
-            <div class="example">
-              <div class="target-lang">Мајко, где си? / Majko, gde si?</div>
-              <div class="translation">Мама, где ты?</div>
-            </div>
+          <h3>Окончания</h3>
+          <div class="ending-group">
+            <span class="ending-chip"><span class="ending-label">м.р.</span><span class="ending-value">-е, -у</span></span>
+            <span class="ending-chip"><span class="ending-label">ж.р. (-а)</span><span class="ending-value">-о</span></span>
+            <span class="ending-chip"><span class="ending-label">имена на -о, -е</span><span class="ending-value">= Ном.</span></span>
           </div>
 
-          <div class="note">
-            <strong>Правило:</strong> Имена на -о, -е обычно не меняются в вокативе. Имена на согласный получают окончание -е.
+          <h3>Примеры</h3>
+          <div class="conj-grid">
+            <div class="conj-cell"><span class="conj-person">Милан →</span><span class="conj-form">Милан<mark>е</mark>! <span class="latin">/ Milane!</span></span></div>
+            <div class="conj-cell"><span class="conj-person">Марко →</span><span class="conj-form">Марко! <span class="latin">/ Marko!</span></span></div>
+            <div class="conj-cell"><span class="conj-person">Ана →</span><span class="conj-form">Ан<mark>о</mark>! <span class="latin">/ Ano!</span></span></div>
+            <div class="conj-cell"><span class="conj-person">господин →</span><span class="conj-form">господин<mark>е</mark>! <span class="latin">/ gospodine!</span></span></div>
+          </div>
+
+          <div class="examples">
+            <div class="example"><div class="target-lang">Марко, дођи овамо! / Marko, dođi ovamo!</div><div class="translation">Марко, иди сюда!</div></div>
+            <div class="example"><div class="target-lang">Добар дан, господине! / Dobar dan, gospodine!</div><div class="translation">Добрый день, господин!</div></div>
+            <div class="example"><div class="target-lang">Мајко, где си? / Majko, gde si?</div><div class="translation">Мама, где ты?</div></div>
           </div>
         </div>
       </div>
 
-      <!-- Instrumental -->
+      <!-- 6. Instrumental -->
       <div class="accordion-item">
         <button class="accordion-header" aria-expanded="false">
-          <span>6. Инструментал (Instrumental) - Творительный падеж</span>
-          <span class="accordion-icon">▼</span>
+          <span>6. Инструментал (Instrumental) — Творительный</span>
+          <span class="accordion-icon">&#9660;</span>
         </button>
         <div class="accordion-content">
-          <h3>Вопросы: ким? / чим? (kim? / čim?) - кем? / чем?</h3>
-          <p>Используется для обозначения инструмента, средства действия, после предлогов (с, са, између, над, под, пред, за).</p>
+          <h3>Вопросы: ким? / чим? (кем? / чем?)</h3>
+          <p>Инструмент, средство, совместность. Предлоги: с(а), између, над, под, пред.</p>
 
-          <h3>Окончания в инструментале:</h3>
-          <table>
-            <thead>
-              <tr>
-                <th>Род</th>
-                <th>Единственное число</th>
-                <th>Множественное число</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Мужской</td>
-                <td>-ом, -ем</td>
-                <td>-има</td>
-              </tr>
-              <tr>
-                <td>Женский</td>
-                <td>-ом, -ом</td>
-                <td>-ама</td>
-              </tr>
-              <tr>
-                <td>Средний</td>
-                <td>-ом, -ем</td>
-                <td>-има</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <h3>Примеры склонения:</h3>
-          <table>
-            <thead>
-              <tr>
-                <th>Nominativ</th>
-                <th>Instrumental ед.ч.</th>
-                <th>Instrumental мн.ч.</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>нож / nož (нож)</td>
-                <td>ножем / nožem</td>
-                <td>ножевима / noževima</td>
-              </tr>
-              <tr>
-                <td>рука / ruka (рука)</td>
-                <td>руком / rukom</td>
-                <td>рукама / rukama</td>
-              </tr>
-              <tr>
-                <td>перо / pero (перо)</td>
-                <td>пером / perom</td>
-                <td>перима / perima</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <div class="examples">
-            <div class="example">
-              <div class="target-lang">Пишем оловком. / Pišem olovkom.</div>
-              <div class="translation">Пишу карандашом.</div>
-            </div>
-            <div class="example">
-              <div class="target-lang">Идем са братом. / Idem sa bratom.</div>
-              <div class="translation">Иду с братом.</div>
-            </div>
-            <div class="example">
-              <div class="target-lang">Он је учитељ. / On je učitelj.</div>
-              <div class="translation">Он учитель. (профессия в инструментале)</div>
-            </div>
+          <h3>Окончания</h3>
+          <div class="ending-group">
+            <span class="ending-chip"><span class="ending-label">м./ср. ед.</span><span class="ending-value">-ом, -ем</span></span>
+            <span class="ending-chip"><span class="ending-label">ж.р. ед.</span><span class="ending-value">-ом</span></span>
+            <span class="ending-chip"><span class="ending-label">м./ср. мн.</span><span class="ending-value">-има</span></span>
+            <span class="ending-chip"><span class="ending-label">ж.р. мн.</span><span class="ending-value">-ама</span></span>
           </div>
 
-          <div class="note">
-            <strong>Важно:</strong> При обозначении профессии в сербском часто используется номинатив, но инструментал также возможен, особенно после глагола "постати" (стать).
+          <h3>Примеры склонения</h3>
+          <div class="conj-grid">
+            <div class="conj-cell"><span class="conj-person">нож → инстр.</span><span class="conj-form">нож<mark>ем</mark> <span class="latin">/ nožem</span></span></div>
+            <div class="conj-cell"><span class="conj-person">мн.ч.</span><span class="conj-form">ножев<mark>има</mark> <span class="latin">/ noževima</span></span></div>
+            <div class="conj-cell"><span class="conj-person">рука → инстр.</span><span class="conj-form">рук<mark>ом</mark> <span class="latin">/ rukom</span></span></div>
+            <div class="conj-cell"><span class="conj-person">мн.ч.</span><span class="conj-form">рук<mark>ама</mark> <span class="latin">/ rukama</span></span></div>
+          </div>
+
+          <div class="examples">
+            <div class="example"><div class="target-lang">Пишем оловком. / Pišem olovkom.</div><div class="translation">Пишу карандашом.</div></div>
+            <div class="example"><div class="target-lang">Идем са братом. / Idem sa bratom.</div><div class="translation">Иду с братом.</div></div>
           </div>
         </div>
       </div>
 
-      <!-- Lokativ -->
+      <!-- 7. Lokativ -->
       <div class="accordion-item">
         <button class="accordion-header" aria-expanded="false">
-          <span>7. Локатив (Lokativ) - Предложный падеж</span>
-          <span class="accordion-icon">▼</span>
+          <span>7. Локатив (Lokativ) — Предложный</span>
+          <span class="accordion-icon">&#9660;</span>
         </button>
         <div class="accordion-content">
-          <h3>Вопросы: где? / о коме? / о чему? (gde? / o kome? / o čemu?)</h3>
-          <p>Используется для обозначения места (где?), после предлогов у, на, о, по, при.</p>
+          <h3>Вопросы: где? / о коме? / о чему?</h3>
+          <p>Место, тема разговора. Предлоги: у, на, о, по, при.</p>
 
-          <h3>Окончания в локативе:</h3>
-          <table>
-            <thead>
-              <tr>
-                <th>Род</th>
-                <th>Единственное число</th>
-                <th>Множественное число</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Мужской</td>
-                <td>-у</td>
-                <td>-има</td>
-              </tr>
-              <tr>
-                <td>Женский</td>
-                <td>-и</td>
-                <td>-ама</td>
-              </tr>
-              <tr>
-                <td>Средний</td>
-                <td>-у</td>
-                <td>-има</td>
-              </tr>
-            </tbody>
-          </table>
+          <h3>Окончания</h3>
+          <div class="ending-group">
+            <span class="ending-chip"><span class="ending-label">м./ср. ед.</span><span class="ending-value">-у</span></span>
+            <span class="ending-chip"><span class="ending-label">ж.р. ед.</span><span class="ending-value">-и</span></span>
+            <span class="ending-chip"><span class="ending-label">м./ср. мн.</span><span class="ending-value">-има</span></span>
+            <span class="ending-chip"><span class="ending-label">ж.р. мн.</span><span class="ending-value">-ама</span></span>
+          </div>
 
-          <h3>Примеры склонения:</h3>
-          <table>
-            <thead>
-              <tr>
-                <th>Nominativ</th>
-                <th>Lokativ ед.ч.</th>
-                <th>Lokativ мн.ч.</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>град / grad (город)</td>
-                <td>граду / gradu</td>
-                <td>градовима / gradovima</td>
-              </tr>
-              <tr>
-                <td>школа / škola (школа)</td>
-                <td>школи / školi</td>
-                <td>школама / školama</td>
-              </tr>
-              <tr>
-                <td>село / selo (деревня)</td>
-                <td>селу / selu</td>
-                <td>селима / selima</td>
-              </tr>
-            </tbody>
-          </table>
+          <h3>Примеры склонения</h3>
+          <div class="conj-grid">
+            <div class="conj-cell"><span class="conj-person">град → локатив</span><span class="conj-form">град<mark>у</mark> <span class="latin">/ gradu</span></span></div>
+            <div class="conj-cell"><span class="conj-person">мн.ч.</span><span class="conj-form">градов<mark>има</mark> <span class="latin">/ gradovima</span></span></div>
+            <div class="conj-cell"><span class="conj-person">школа → локатив</span><span class="conj-form">школ<mark>и</mark> <span class="latin">/ školi</span></span></div>
+            <div class="conj-cell"><span class="conj-person">мн.ч.</span><span class="conj-form">школ<mark>ама</mark> <span class="latin">/ školama</span></span></div>
+          </div>
 
           <div class="examples">
-            <div class="example">
-              <div class="target-lang">Живим у Београду. / Živim u Beogradu.</div>
-              <div class="translation">Живу в Белграде.</div>
-            </div>
-            <div class="example">
-              <div class="target-lang">Причамо о филму. / Pričamo o filmu.</div>
-              <div class="translation">Говорим о фильме.</div>
-            </div>
-            <div class="example">
-              <div class="target-lang">Књига је на столу. / Knjiga je na stolu.</div>
-              <div class="translation">Книга на столе.</div>
-            </div>
+            <div class="example"><div class="target-lang">Живим у Београду. / Živim u Beogradu.</div><div class="translation">Живу в Белграде.</div></div>
+            <div class="example"><div class="target-lang">Причамо о филму. / Pričamo o filmu.</div><div class="translation">Говорим о фильме.</div></div>
+            <div class="example"><div class="target-lang">Књига је на столу. / Knjiga je na stolu.</div><div class="translation">Книга на столе.</div></div>
           </div>
 
           <div class="note">
-            <strong>Важно:</strong> Предлоги У и НА с локативом означают местонахождение (где?), а с акузативом - направление (куда?). Сравните: У ШКОЛИ (в школе - где?) vs. У ШКОЛУ (в школу - куда?).
+            <strong>Важно:</strong> «У» и «на» с <strong>локативом</strong> = где? (у школ<mark>и</mark>). С <strong>акузативом</strong> = куда? (у школ<mark>у</mark>).
           </div>
         </div>
       </div>
 
-      <!-- Обобщение -->
+      <!-- 8. Обобщающая таблица -->
       <div class="accordion-item">
         <button class="accordion-header" aria-expanded="false">
-          <span>Обобщающая таблица падежей</span>
-          <span class="accordion-icon">▼</span>
+          <span>Сводная таблица склонений</span>
+          <span class="accordion-icon">&#9660;</span>
         </button>
         <div class="accordion-content">
-          <h3>Полная таблица склонения существительных</h3>
+          <p>Полное склонение в единственном и множественном числе. Переключайтесь между родами.</p>
 
-          <h3>Мужской род: ГРАД (город) / GRAD</h3>
-          <table>
-            <thead>
-              <tr>
-                <th>Падеж</th>
-                <th>Единственное</th>
-                <th>Множественное</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Nominativ</td>
-                <td>град / grad</td>
-                <td>градови / gradovi</td>
-              </tr>
-              <tr>
-                <td>Genitiv</td>
-                <td>града / grada</td>
-                <td>градова / gradova</td>
-              </tr>
-              <tr>
-                <td>Dativ</td>
-                <td>граду / gradu</td>
-                <td>градовима / gradovima</td>
-              </tr>
-              <tr>
-                <td>Akuzativ</td>
-                <td>град / grad</td>
-                <td>градове / gradove</td>
-              </tr>
-              <tr>
-                <td>Vokativ</td>
-                <td>граде / grade</td>
-                <td>градови / gradovi</td>
-              </tr>
-              <tr>
-                <td>Instrumental</td>
-                <td>градом / gradom</td>
-                <td>градовима / gradovima</td>
-              </tr>
-              <tr>
-                <td>Lokativ</td>
-                <td>граду / gradu</td>
-                <td>градовима / gradovima</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="tabs">
+            <div class="tab-nav">
+              <button class="tab-btn active" data-tab="case-masc">Муж. род: ГРАД</button>
+              <button class="tab-btn" data-tab="case-fem">Жен. род: ЖЕНА</button>
+              <button class="tab-btn" data-tab="case-neut">Ср. род: СЕЛО</button>
+            </div>
 
-          <h3>Женский род: ЖЕНА (женщина) / ŽENA</h3>
-          <table>
-            <thead>
-              <tr>
-                <th>Падеж</th>
-                <th>Единственное</th>
-                <th>Множественное</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Nominativ</td>
-                <td>жена / žena</td>
-                <td>жене / žene</td>
-              </tr>
-              <tr>
-                <td>Genitiv</td>
-                <td>жене / žene</td>
-                <td>жена / žena</td>
-              </tr>
-              <tr>
-                <td>Dativ</td>
-                <td>жени / ženi</td>
-                <td>женама / ženama</td>
-              </tr>
-              <tr>
-                <td>Akuzativ</td>
-                <td>жену / ženu</td>
-                <td>жене / žene</td>
-              </tr>
-              <tr>
-                <td>Vokativ</td>
-                <td>жено / ženo</td>
-                <td>жене / žene</td>
-              </tr>
-              <tr>
-                <td>Instrumental</td>
-                <td>женом / ženom</td>
-                <td>женама / ženama</td>
-              </tr>
-              <tr>
-                <td>Lokativ</td>
-                <td>жени / ženi</td>
-                <td>женама / ženama</td>
-              </tr>
-            </tbody>
-          </table>
+            <div class="tab-panel active" data-tab="case-masc">
+              <div class="table-responsive">
+                <table class="compact-table">
+                  <thead><tr><th>Падеж</th><th>Ед. число</th><th>Мн. число</th></tr></thead>
+                  <tbody>
+                    <tr><td>Nominativ</td><td>град / grad</td><td>градов<mark>и</mark> / gradovi</td></tr>
+                    <tr><td>Genitiv</td><td>град<mark>а</mark> / grada</td><td>градов<mark>а</mark> / gradova</td></tr>
+                    <tr><td>Dativ</td><td>град<mark>у</mark> / gradu</td><td>градов<mark>има</mark> / gradovima</td></tr>
+                    <tr><td>Akuzativ</td><td>град / grad</td><td>градов<mark>е</mark> / gradove</td></tr>
+                    <tr><td>Vokativ</td><td>град<mark>е</mark> / grade</td><td>градов<mark>и</mark> / gradovi</td></tr>
+                    <tr><td>Instrumental</td><td>град<mark>ом</mark> / gradom</td><td>градов<mark>има</mark> / gradovima</td></tr>
+                    <tr><td>Lokativ</td><td>град<mark>у</mark> / gradu</td><td>градов<mark>има</mark> / gradovima</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
 
-          <h3>Средний род: СЕЛО (деревня) / SELO</h3>
-          <table>
-            <thead>
-              <tr>
-                <th>Падеж</th>
-                <th>Единственное</th>
-                <th>Множественное</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Nominativ</td>
-                <td>село / selo</td>
-                <td>села / sela</td>
-              </tr>
-              <tr>
-                <td>Genitiv</td>
-                <td>села / sela</td>
-                <td>села / sela</td>
-              </tr>
-              <tr>
-                <td>Dativ</td>
-                <td>селу / selu</td>
-                <td>селима / selima</td>
-              </tr>
-              <tr>
-                <td>Akuzativ</td>
-                <td>село / selo</td>
-                <td>села / sela</td>
-              </tr>
-              <tr>
-                <td>Vokativ</td>
-                <td>село / selo</td>
-                <td>села / sela</td>
-              </tr>
-              <tr>
-                <td>Instrumental</td>
-                <td>селом / selom</td>
-                <td>селима / selima</td>
-              </tr>
-              <tr>
-                <td>Lokativ</td>
-                <td>селу / selu</td>
-                <td>селима / selima</td>
-              </tr>
-            </tbody>
-          </table>
+            <div class="tab-panel" data-tab="case-fem">
+              <div class="table-responsive">
+                <table class="compact-table">
+                  <thead><tr><th>Падеж</th><th>Ед. число</th><th>Мн. число</th></tr></thead>
+                  <tbody>
+                    <tr><td>Nominativ</td><td>жен<mark>а</mark> / žena</td><td>жен<mark>е</mark> / žene</td></tr>
+                    <tr><td>Genitiv</td><td>жен<mark>е</mark> / žene</td><td>жен<mark>а</mark> / žena</td></tr>
+                    <tr><td>Dativ</td><td>жен<mark>и</mark> / ženi</td><td>жен<mark>ама</mark> / ženama</td></tr>
+                    <tr><td>Akuzativ</td><td>жен<mark>у</mark> / ženu</td><td>жен<mark>е</mark> / žene</td></tr>
+                    <tr><td>Vokativ</td><td>жен<mark>о</mark> / ženo</td><td>жен<mark>е</mark> / žene</td></tr>
+                    <tr><td>Instrumental</td><td>жен<mark>ом</mark> / ženom</td><td>жен<mark>ама</mark> / ženama</td></tr>
+                    <tr><td>Lokativ</td><td>жен<mark>и</mark> / ženi</td><td>жен<mark>ама</mark> / ženama</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="tab-panel" data-tab="case-neut">
+              <div class="table-responsive">
+                <table class="compact-table">
+                  <thead><tr><th>Падеж</th><th>Ед. число</th><th>Мн. число</th></tr></thead>
+                  <tbody>
+                    <tr><td>Nominativ</td><td>сел<mark>о</mark> / selo</td><td>сел<mark>а</mark> / sela</td></tr>
+                    <tr><td>Genitiv</td><td>сел<mark>а</mark> / sela</td><td>сел<mark>а</mark> / sela</td></tr>
+                    <tr><td>Dativ</td><td>сел<mark>у</mark> / selu</td><td>сел<mark>има</mark> / selima</td></tr>
+                    <tr><td>Akuzativ</td><td>сел<mark>о</mark> / selo</td><td>сел<mark>а</mark> / sela</td></tr>
+                    <tr><td>Vokativ</td><td>сел<mark>о</mark> / selo</td><td>сел<mark>а</mark> / sela</td></tr>
+                    <tr><td>Instrumental</td><td>сел<mark>ом</mark> / selom</td><td>сел<mark>има</mark> / selima</td></tr>
+                    <tr><td>Lokativ</td><td>сел<mark>у</mark> / selu</td><td>сел<mark>има</mark> / selima</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
 
           <div class="note">
-            <strong>Сходство с русским:</strong> Система падежей очень похожа на русскую, но есть отличия в окончаниях и употреблении некоторых предлогов. Звательный падеж активно используется в сербском, тогда как в русском почти исчез.
+            <strong>Сходство с русским:</strong> Система очень близка к русской, но окончания отличаются. Звательный падеж — главное отличие: он активно используется в сербском.
           </div>
         </div>
       </div>
