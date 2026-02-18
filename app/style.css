@@ -935,6 +935,150 @@ body {
 
 .fill-blank-controls { display: flex; justify-content: center; gap: 0.75rem; }
 
+/* ========== GRAMMAR INDEX & TOPIC PAGES ========== */
+.grammar-section { margin-bottom: 1.5rem; }
+
+.grammar-topic-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.grammar-topic-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9rem 1rem;
+  background: #fff;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.grammar-topic-card:hover {
+  background: #f0fce8;
+  border-color: var(--color-primary);
+  transform: translateX(4px);
+}
+
+.grammar-topic-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--color-border);
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.grammar-topic-card:hover .grammar-topic-num {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.grammar-topic-title {
+  flex: 1;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.grammar-topic-arrow {
+  font-size: 1.4rem;
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+/* Grammar topic page */
+.grammar-breadcrumb {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.grammar-topic-body {
+  margin: 1rem 0 1.5rem;
+  line-height: 1.8;
+}
+
+.grammar-topic-body h3 { margin: 1.25rem 0 0.5rem; font-size: 1.05rem; }
+.grammar-topic-body p { font-size: 0.95rem; line-height: 1.8; margin-bottom: 0.75rem; }
+
+.grammar-topic-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+  font-size: 0.9rem;
+}
+
+.grammar-topic-body th, .grammar-topic-body td {
+  padding: 0.6rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.grammar-topic-body th {
+  background: #f5f5f5;
+  color: var(--color-primary-dark);
+  font-weight: 700;
+}
+
+.grammar-topic-body td { color: var(--color-text-muted); }
+.grammar-topic-body td:first-child { color: var(--color-text); font-weight: 600; }
+
+/* Prev / Next navigation */
+.grammar-topic-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.grammar-nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: #fff;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  color: var(--color-text);
+  transition: all 0.2s ease;
+  max-width: 48%;
+}
+
+.grammar-nav-btn:hover {
+  border-color: var(--color-primary);
+  background: #f0fce8;
+}
+
+.grammar-nav-prev { text-align: left; }
+.grammar-nav-next { text-align: right; margin-left: auto; }
+
+.grammar-nav-arrow {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.grammar-nav-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 /* ========== GRAMMAR (Accordion) ========== */
 .accordion { display: flex; flex-direction: column; gap: 0.75rem; }
 
