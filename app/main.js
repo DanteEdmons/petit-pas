@@ -81,8 +81,10 @@ const Router = {
       renderTopics(parts[1]); // level
     } else if (parts[0] === 'vocab' && parts[1] && parts[2]) {
       renderVocab(parts[1], parts[2]); // level, category
+    } else if (parts[0] === 'grammar' && parts[1] && parts[2] !== undefined) {
+      renderGrammarTopic(parts[1], parseInt(parts[2], 10)); // level, topicIndex
     } else if (parts[0] === 'grammar' && parts[1]) {
-      renderGrammar(parts[1]); // level
+      renderGrammar(parts[1]); // level — index page
     } else if (parts[0] === 'quiz' && parts[1]) {
       renderQuiz(parts[1]); // level
     } else if (parts[0] === 'exercises' && parts[1]) {
@@ -553,31 +555,104 @@ async function renderVocab(level, category) {
   Router.navigate(`#/practice-mode/${level}/${category}/flashcard`);
 }
 
-// --- GRAMMAR ---
+// --- GRAMMAR INDEX ---
+function getGrammarSections(data, level) {
+  const lvl = data.levels[level];
+  const topics = lvl.grammar;
+  if (lvl.grammarSections && lvl.grammarSections.length > 0) {
+    return lvl.grammarSections.map(s => ({
+      title: s.title,
+      topics: topics.slice(s.from, s.to + 1).map((t, i) => ({ ...t, globalIndex: s.from + i }))
+    }));
+  }
+  // Fallback: one section with all topics
+  return [{ title: 'Все темы', topics: topics.map((t, i) => ({ ...t, globalIndex: i })) }];
+}
+
 async function renderGrammar(level) {
   const lang = Store.getSelectedLanguage();
   const data = await loadLanguageData(lang);
   if (!data || !data.levels[level] || !data.levels[level].grammar) return;
 
-  const topics = data.levels[level].grammar;
+  const sections = getGrammarSections(data, level);
+  const levelNames = { beginner: 'Начальный', intermediate: 'Средний', advanced: 'Продвинутый' };
+
+  const sectionsHTML = sections.map(section => `
+    <div class="grammar-section">
+      <div class="section-title">${escapeHTML(section.title)}</div>
+      <div class="grammar-topic-list">
+        ${section.topics.map((topic, i) => `
+          <div class="grammar-topic-card" data-nav="#/grammar/${level}/${topic.globalIndex}">
+            <span class="grammar-topic-num">${topic.globalIndex + 1}</span>
+            <span class="grammar-topic-title">${escapeHTML(topic.title)}</span>
+            <span class="grammar-topic-arrow">&#8250;</span>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `).join('');
 
   const content = `
-    <h1 class="page-title">Грамматика</h1>
-    <div class="accordion">
-      ${topics.map((topic, i) => `
-        <div class="accordion-item">
-          <button class="accordion-header" aria-expanded="false">
-            <span>${topic.title}</span>
-            <span class="accordion-icon">&#9660;</span>
-          </button>
-          <div class="accordion-content">${topic.content}</div>
-        </div>
-      `).join('')}
-    </div>
+    <h1 class="page-title">Грамматика — ${levelNames[level] || level}</h1>
+    <p class="page-subtitle">${data.levels[level].grammar.length} тем</p>
+    ${sectionsHTML}
   `;
 
   renderShell(content, { backRoute: `#/topics/${level}` });
-  initAccordion();
+}
+
+// --- GRAMMAR TOPIC (individual page) ---
+async function renderGrammarTopic(level, topicIndex) {
+  const lang = Store.getSelectedLanguage();
+  const data = await loadLanguageData(lang);
+  if (!data || !data.levels[level] || !data.levels[level].grammar) return;
+
+  const topics = data.levels[level].grammar;
+  if (topicIndex < 0 || topicIndex >= topics.length) return;
+
+  const topic = topics[topicIndex];
+  const prevIndex = topicIndex > 0 ? topicIndex - 1 : null;
+  const nextIndex = topicIndex < topics.length - 1 ? topicIndex + 1 : null;
+
+  // Find which section this topic belongs to
+  const sections = getGrammarSections(data, level);
+  let sectionTitle = '';
+  for (const s of sections) {
+    if (s.topics.some(t => t.globalIndex === topicIndex)) {
+      sectionTitle = s.title;
+      break;
+    }
+  }
+
+  const navHTML = `
+    <div class="grammar-topic-nav">
+      ${prevIndex !== null
+        ? `<button class="grammar-nav-btn grammar-nav-prev" data-nav="#/grammar/${level}/${prevIndex}">
+            <span class="grammar-nav-arrow">&#8249;</span>
+            <span class="grammar-nav-label">${escapeHTML(topics[prevIndex].title)}</span>
+          </button>`
+        : '<div></div>'}
+      ${nextIndex !== null
+        ? `<button class="grammar-nav-btn grammar-nav-next" data-nav="#/grammar/${level}/${nextIndex}">
+            <span class="grammar-nav-label">${escapeHTML(topics[nextIndex].title)}</span>
+            <span class="grammar-nav-arrow">&#8250;</span>
+          </button>`
+        : '<div></div>'}
+    </div>
+  `;
+
+  const breadcrumb = sectionTitle
+    ? `<div class="grammar-breadcrumb">${escapeHTML(sectionTitle)} &middot; ${topicIndex + 1} / ${topics.length}</div>`
+    : `<div class="grammar-breadcrumb">${topicIndex + 1} / ${topics.length}</div>`;
+
+  const content = `
+    ${breadcrumb}
+    <h1 class="page-title">${escapeHTML(topic.title)}</h1>
+    <div class="grammar-topic-body">${topic.content}</div>
+    ${navHTML}
+  `;
+
+  renderShell(content, { backRoute: `#/grammar/${level}` });
 }
 
 // --- QUIZ ---
