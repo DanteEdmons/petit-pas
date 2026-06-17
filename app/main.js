@@ -33,6 +33,26 @@ const dataCache = {};
 
 const VALID_LANGUAGES = ['english', 'french', 'japanese', 'serbian'];
 
+// Fallback display metadata so every language renders correctly even if its
+// JSON keeps meta in a wrapper (e.g. english.json) or omits fields entirely.
+const LANG_META = {
+  english: { name: 'Английский', flag: '🇬🇧', speechLang: 'en-US' },
+  french: { name: 'Французский', flag: '🇫🇷', speechLang: 'fr-FR' },
+  japanese: { name: 'Японский', flag: '🇯🇵', speechLang: 'ja-JP' },
+  serbian: { name: 'Сербский', flag: '🇷🇸', speechLang: 'sr-RS' },
+};
+
+// Normalize metadata: some files nest it under `meta`, others put it top-level.
+function normalizeLanguageData(data, lang) {
+  const meta = data.meta || {};
+  const fallback = LANG_META[lang] || {};
+  data.name = data.name || meta.name || fallback.name || lang;
+  data.flag = data.flag || meta.flag || fallback.flag || '';
+  data.code = data.code || meta.code || lang;
+  data.speechLang = data.speechLang || meta.speechLang || fallback.speechLang || 'en-US';
+  return data;
+}
+
 async function loadLanguageData(lang) {
   if (!VALID_LANGUAGES.includes(lang)) return null;
   if (dataCache[lang]) return dataCache[lang];
@@ -43,7 +63,7 @@ async function loadLanguageData(lang) {
     if (!data || typeof data !== 'object' || !data.levels) {
       throw new Error('Invalid data format');
     }
-    dataCache[lang] = data;
+    dataCache[lang] = normalizeLanguageData(data, lang);
     return dataCache[lang];
   } catch (e) {
     console.error(`Failed to load data for ${lang}:`, e);
