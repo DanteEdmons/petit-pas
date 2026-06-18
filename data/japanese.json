@@ -6,12 +6,375 @@
   "levels": {
     "beginner": {
       "vocabulary": {
-        "nouns": [],
-        "verbs": [],
-        "adjectives": [],
-        "others": []
+        "nouns": [
+          {
+            "front": "水",
+            "frontHint": "mizu",
+            "back": "вода",
+            "example": "水を ください。— Воду, пожалуйста。"
+          },
+          {
+            "front": "魚",
+            "frontHint": "sakana",
+            "back": "рыба"
+          },
+          {
+            "front": "猫",
+            "frontHint": "neko",
+            "back": "кошка",
+            "example": "猫が すきです。— Я люблю кошек。"
+          },
+          {
+            "front": "犬",
+            "frontHint": "inu",
+            "back": "собака"
+          },
+          {
+            "front": "本",
+            "frontHint": "hon",
+            "back": "книга",
+            "example": "これは 本です。— Это книга。"
+          },
+          {
+            "front": "学校",
+            "frontHint": "gakkou",
+            "back": "школа"
+          },
+          {
+            "front": "先生",
+            "frontHint": "sensei",
+            "back": "учитель"
+          },
+          {
+            "front": "友達",
+            "frontHint": "tomodachi",
+            "back": "друг"
+          },
+          {
+            "front": "家",
+            "frontHint": "ie",
+            "back": "дом"
+          },
+          {
+            "front": "車",
+            "frontHint": "kuruma",
+            "back": "машина"
+          },
+          {
+            "front": "駅",
+            "frontHint": "eki",
+            "back": "станция, вокзал"
+          },
+          {
+            "front": "お金",
+            "frontHint": "okane",
+            "back": "деньги"
+          },
+          {
+            "front": "時間",
+            "frontHint": "jikan",
+            "back": "время"
+          },
+          {
+            "front": "名前",
+            "frontHint": "namae",
+            "back": "имя",
+            "example": "名前は なんですか。— Как вас зовут?"
+          },
+          {
+            "front": "日本",
+            "frontHint": "nihon",
+            "back": "Япония"
+          },
+          {
+            "front": "人",
+            "frontHint": "hito",
+            "back": "человек"
+          },
+          {
+            "front": "山",
+            "frontHint": "yama",
+            "back": "гора"
+          },
+          {
+            "front": "川",
+            "frontHint": "kawa",
+            "back": "река"
+          },
+          {
+            "front": "空",
+            "frontHint": "sora",
+            "back": "небо"
+          },
+          {
+            "front": "花",
+            "frontHint": "hana",
+            "back": "цветок"
+          }
+        ],
+        "verbs": [
+          {
+            "front": "食べる",
+            "frontHint": "taberu",
+            "back": "есть, кушать",
+            "example": "パンを 食べる。— Есть хлеб。"
+          },
+          {
+            "front": "飲む",
+            "frontHint": "nomu",
+            "back": "пить",
+            "example": "水を 飲む。— Пить воду。"
+          },
+          {
+            "front": "行く",
+            "frontHint": "iku",
+            "back": "идти, ехать",
+            "example": "学校に 行く。— Идти в школу。"
+          },
+          {
+            "front": "来る",
+            "frontHint": "kuru",
+            "back": "приходить"
+          },
+          {
+            "front": "見る",
+            "frontHint": "miru",
+            "back": "смотреть, видеть"
+          },
+          {
+            "front": "読む",
+            "frontHint": "yomu",
+            "back": "читать",
+            "example": "本を 読む。— Читать книгу。"
+          },
+          {
+            "front": "書く",
+            "frontHint": "kaku",
+            "back": "писать"
+          },
+          {
+            "front": "話す",
+            "frontHint": "hanasu",
+            "back": "говорить"
+          },
+          {
+            "front": "聞く",
+            "frontHint": "kiku",
+            "back": "слушать, спрашивать"
+          },
+          {
+            "front": "する",
+            "frontHint": "suru",
+            "back": "делать"
+          },
+          {
+            "front": "買う",
+            "frontHint": "kau",
+            "back": "покупать"
+          },
+          {
+            "front": "寝る",
+            "frontHint": "neru",
+            "back": "спать"
+          }
+        ],
+        "adjectives": [
+          {
+            "front": "大きい",
+            "frontHint": "ookii",
+            "back": "большой"
+          },
+          {
+            "front": "小さい",
+            "frontHint": "chiisai",
+            "back": "маленький"
+          },
+          {
+            "front": "新しい",
+            "frontHint": "atarashii",
+            "back": "новый"
+          },
+          {
+            "front": "古い",
+            "frontHint": "furui",
+            "back": "старый (о вещах)"
+          },
+          {
+            "front": "高い",
+            "frontHint": "takai",
+            "back": "высокий, дорогой"
+          },
+          {
+            "front": "安い",
+            "frontHint": "yasui",
+            "back": "дешёвый"
+          },
+          {
+            "front": "いい",
+            "frontHint": "ii",
+            "back": "хороший",
+            "example": "いい 天気ですね。— Хорошая погода, правда?"
+          },
+          {
+            "front": "悪い",
+            "frontHint": "warui",
+            "back": "плохой"
+          },
+          {
+            "front": "暑い",
+            "frontHint": "atsui",
+            "back": "жаркий"
+          },
+          {
+            "front": "寒い",
+            "frontHint": "samui",
+            "back": "холодный"
+          },
+          {
+            "front": "美味しい",
+            "frontHint": "oishii",
+            "back": "вкусный",
+            "example": "美味しいです。— Вкусно。"
+          },
+          {
+            "front": "楽しい",
+            "frontHint": "tanoshii",
+            "back": "весёлый, приятный"
+          }
+        ],
+        "others": [
+          {
+            "front": "こんにちは",
+            "frontHint": "konnichiwa",
+            "back": "здравствуйте"
+          },
+          {
+            "front": "おはよう",
+            "frontHint": "ohayou",
+            "back": "доброе утро"
+          },
+          {
+            "front": "こんばんは",
+            "frontHint": "konbanwa",
+            "back": "добрый вечер"
+          },
+          {
+            "front": "ありがとう",
+            "frontHint": "arigatou",
+            "back": "спасибо"
+          },
+          {
+            "front": "すみません",
+            "frontHint": "sumimasen",
+            "back": "извините, простите"
+          },
+          {
+            "front": "はい",
+            "frontHint": "hai",
+            "back": "да"
+          },
+          {
+            "front": "いいえ",
+            "frontHint": "iie",
+            "back": "нет"
+          },
+          {
+            "front": "私",
+            "frontHint": "watashi",
+            "back": "я"
+          },
+          {
+            "front": "あなた",
+            "frontHint": "anata",
+            "back": "ты, вы"
+          },
+          {
+            "front": "これ",
+            "frontHint": "kore",
+            "back": "это (рядом со мной)"
+          },
+          {
+            "front": "それ",
+            "frontHint": "sore",
+            "back": "то (рядом с тобой)"
+          },
+          {
+            "front": "一",
+            "frontHint": "ichi",
+            "back": "один"
+          },
+          {
+            "front": "二",
+            "frontHint": "ni",
+            "back": "два"
+          },
+          {
+            "front": "三",
+            "frontHint": "san",
+            "back": "три"
+          },
+          {
+            "front": "四",
+            "frontHint": "yon / shi",
+            "back": "четыре"
+          },
+          {
+            "front": "五",
+            "frontHint": "go",
+            "back": "пять"
+          },
+          {
+            "front": "今日",
+            "frontHint": "kyou",
+            "back": "сегодня"
+          },
+          {
+            "front": "明日",
+            "frontHint": "ashita",
+            "back": "завтра"
+          },
+          {
+            "front": "今",
+            "frontHint": "ima",
+            "back": "сейчас"
+          },
+          {
+            "front": "どこ",
+            "frontHint": "doko",
+            "back": "где"
+          }
+        ]
       },
-      "grammar": [],
+      "grammar": [
+        {
+          "title": "Хирагана: первая азбука",
+          "content": "\n<p>Японский использует три письменности. Начинаем с <strong>хираганы</strong> — слоговой азбуки из 46 знаков. Каждый знак — это слог (звук), а не буква.</p>\n<h3>Пять гласных — фундамент</h3>\n<table><thead><tr><th>Знак</th><th>Чтение</th></tr></thead><tbody>\n<tr><td>あ</td><td>a</td></tr><tr><td>い</td><td>i</td></tr><tr><td>う</td><td>u</td></tr><tr><td>え</td><td>e</td></tr><tr><td>お</td><td>o</td></tr>\n</tbody></table>\n<h3>Ряд K (согласная + гласная)</h3>\n<table><thead><tr><th>か</th><th>き</th><th>く</th><th>け</th><th>こ</th></tr></thead>\n<tbody><tr><td>ka</td><td>ki</td><td>ku</td><td>ke</td><td>ko</td></tr></tbody></table>\n<p>Так же строятся ряды S (さしすせそ), T (たちつてと), N (なにぬねの) и далее. Учите по 1–2 ряда в день — и через две недели вы читаете хирагану.</p>\n"
+        },
+        {
+          "title": "Базовое предложение: А は Б です",
+          "content": "\n<p>Самая важная конструкция японского: <strong>A は B です</strong> — «A есть B». Частица <strong>は</strong> (читается <em>wa</em>!) отмечает тему, <strong>です</strong> — вежливая связка «есть/является».</p>\n<table><thead><tr><th>Японский</th><th>Перевод</th></tr></thead><tbody>\n<tr><td>私は 学生です。<br><small>watashi wa gakusei desu</small></td><td>Я — студент.</td></tr>\n<tr><td>これは 本です。<br><small>kore wa hon desu</small></td><td>Это книга.</td></tr>\n<tr><td>田中さんは 先生です。</td><td>Танака-сан — учитель.</td></tr>\n</tbody></table>\n<p>Обратите внимание: в японском нет артиклей и часто опускается подлежащее, если оно понятно из контекста.</p>\n"
+        },
+        {
+          "title": "Вопрос с частицей か",
+          "content": "\n<p>Чтобы превратить утверждение в вопрос, добавьте <strong>か</strong> в конец. Порядок слов не меняется, вопросительный знак не обязателен.</p>\n<table><thead><tr><th>Утверждение</th><th>Вопрос</th></tr></thead><tbody>\n<tr><td>学生です。— Студент.</td><td>学生です<strong>か</strong>。— Вы студент?</td></tr>\n<tr><td>これは 水です。</td><td>これは 水です<strong>か</strong>。— Это вода?</td></tr>\n</tbody></table>\n<p>Краткие ответы: <strong>はい</strong> (да) / <strong>いいえ</strong> (нет).</p>\n"
+        },
+        {
+          "title": "Указательные: これ・それ・あれ",
+          "content": "\n<p>Японский различает расстояние до предмета:</p>\n<table><thead><tr><th>Слово</th><th>Значение</th></tr></thead><tbody>\n<tr><td>これ (kore)</td><td>это — рядом с говорящим</td></tr>\n<tr><td>それ (sore)</td><td>то — рядом с собеседником</td></tr>\n<tr><td>あれ (are)</td><td>вон то — далеко от обоих</td></tr>\n</tbody></table>\n<p>Пример: <strong>それは 何ですか。</strong> (sore wa nan desu ka) — «Что это (у тебя)?»</p>\n"
+        },
+        {
+          "title": "Частица の — принадлежность",
+          "content": "\n<p><strong>の</strong> связывает два существительных, как «'s» в английском или родительный падеж: <em>A の B</em> = «B, принадлежащее A».</p>\n<table><thead><tr><th>Японский</th><th>Перевод</th></tr></thead><tbody>\n<tr><td>私の 本</td><td>моя книга</td></tr>\n<tr><td>先生の 車</td><td>машина учителя</td></tr>\n<tr><td>日本の 花</td><td>цветок Японии (японский цветок)</td></tr>\n</tbody></table>\n"
+        },
+        {
+          "title": "Числа 1–10",
+          "content": "\n<p>Базовый счёт. У 4, 7, 9 есть по два чтения — запомните оба.</p>\n<table><thead><tr><th>Цифра</th><th>Кандзи</th><th>Чтение</th></tr></thead><tbody>\n<tr><td>1</td><td>一</td><td>ichi</td></tr><tr><td>2</td><td>二</td><td>ni</td></tr>\n<tr><td>3</td><td>三</td><td>san</td></tr><tr><td>4</td><td>四</td><td>yon / shi</td></tr>\n<tr><td>5</td><td>五</td><td>go</td></tr><tr><td>6</td><td>六</td><td>roku</td></tr>\n<tr><td>7</td><td>七</td><td>nana / shichi</td></tr><tr><td>8</td><td>八</td><td>hachi</td></tr>\n<tr><td>9</td><td>九</td><td>kyuu / ku</td></tr><tr><td>10</td><td>十</td><td>juu</td></tr>\n</tbody></table>\n"
+        },
+        {
+          "title": "Приветствия и вежливость",
+          "content": "\n<p>Японская вежливость зависит от времени суток и ситуации.</p>\n<table><thead><tr><th>Фраза</th><th>Когда</th></tr></thead><tbody>\n<tr><td>おはようございます</td><td>Доброе утро (вежливо)</td></tr>\n<tr><td>こんにちは</td><td>Добрый день / здравствуйте</td></tr>\n<tr><td>こんばんは</td><td>Добрый вечер</td></tr>\n<tr><td>ありがとうございます</td><td>Спасибо (вежливо)</td></tr>\n<tr><td>すみません</td><td>Извините / простите (и «эй, можно вас?»)</td></tr>\n</tbody></table>\n"
+        }
+      ],
       "quiz": [
         {
           "question": "Watashi ___ Tanaka desu. (Я — Танака)",
@@ -129,7 +492,39 @@
         {
           "title": "Momotaro (Мальчик-Персик)",
           "text": "Mukashi mukashi, aru tokoro ni, ojiisan to obaasan ga imashita.\n(Давным-давно, в одном месте, жили дедушка и бабушка.)\n\nAru hi, obaasan wa kawa e sentaku ni ikimashita.\n(Однажды бабушка пошла на реку стирать.)\n\nSuruto, kawa kara ookina momo ga donburako, donburako to nagarete kimashita.\n(Вдруг по реке приплыл большой персик.)\n\nObaasan wa momo o hirotte, ie ni kaerimashita.\n(Бабушка подобрала персик и вернулась домой.)\n\nMomo o kirou to suru to, naka kara otokonoko ga dete kimashita.\n(Когда они попытались разрезать персик, изнутри вышел мальчик.)\n\nFutari wa sono ko ni \"Momotaro\" to namae o tsukemashita.\n(Они назвали ребенка \"Момотаро\".)\n\nMomotaro wa sukusuku to sodachimashita.\n(Момотаро рос здоровым и сильным.)",
-          "translation": "Давным-давно жили-были дедушка и бабушка.\nОднажды бабушка пошла на реку стирать белье.\nВдруг по реке приплыл огромный персик.\nБабушка взяла персик и принесла его домой.\nКогда они хотели разрезать персик, из него вышел мальчик.\nОни назвали его Момотаро (Персиковый мальчик).\nМомотаро рос очень быстро и стал сильным."
+          "translation": "Давным-давно жили-были дедушка и бабушка.\nОднажды бабушка пошла на реку стирать белье.\nВдруг по реке приплыл огромный персик.\nБабушка взяла персик и принесла его домой.\nКогда они хотели разрезать персик, из него вышел мальчик.\nОни назвали его Момотаро (Персиковый мальчик).\nМомотаро рос очень быстро и стал сильным.",
+          "questions": [
+            {
+              "question": "Откуда приплыл большой персик?",
+              "options": [
+                "С неба",
+                "По реке",
+                "Из леса",
+                "С горы"
+              ],
+              "correct": 1
+            },
+            {
+              "question": "Кто жил вместе в начале сказки?",
+              "options": [
+                "Дедушка и бабушка",
+                "Мать и сын",
+                "Два брата",
+                "Король и королева"
+              ],
+              "correct": 0
+            },
+            {
+              "question": "Как назвали мальчика?",
+              "options": [
+                "Биберче",
+                "Момотаро",
+                "Таро",
+                "Кинтаро"
+              ],
+              "correct": 1
+            }
+          ]
         },
         {
           "title": "Tanabata (Звездный фестиваль)",
@@ -140,6 +535,23 @@
           "title": "Urashima Taro",
           "text": "Urashima Taro wa, kodomotachi ni ijimerarete ita kame o tasukemashita.\n(Урашима Таро спас черепаху, которую мучили дети.)\n\nKame wa \"Arigatou gozaimasu. Ryuuguujou e tsurete ikimasu\" to iimashita.\n(Черепаха сказала: \"Спасибо. Я отвезу вас в Дворец Дракона\".)\n\nRyuuguujou wa totemo kirei deshita.\n(Дворец Дракона был очень красивым.)\n\nOtohime-sama ga gochisou o shite kuremashita.\n(Принцесса Отохимэ угощала его.)\n\nTaro wa tanoshikute, mikkakan imashita.\n(Таро было весело, и он пробыл там три дня.)\n\nKaeru toki, Otohime-sama wa tamatebako o kuremashita.\n(Когда он уходил, принцесса дала ему шкатулку.)\n\n\"Kesshite akete wa ikemasen\" to iimashita.\n(Она сказала: \"Никогда не открывай её\".)",
           "translation": "Урашима Таро спас черепаху, которую обижали дети.\nЧерепаха сказала: \"Спасибо. Я отвезу тебя в Дворец Дракона\".\nДворец Дракона был прекрасен.\nПринцесса Отохимэ устроила пир.\nТаро так понравилось, что он остался на три дня.\nКогда он уезжал, принцесса подарила ему шкатулку.\n\"Никогда не открывай её\", — сказала она."
+        }
+      ],
+      "grammarSections": [
+        {
+          "title": "Письменность",
+          "from": 0,
+          "to": 0
+        },
+        {
+          "title": "Основа предложения",
+          "from": 1,
+          "to": 4
+        },
+        {
+          "title": "Числа и фразы",
+          "from": 5,
+          "to": 6
         }
       ]
     },

@@ -61,6 +61,7 @@ const Store = {
         if (!this._state.achievements) this._state.achievements = [];
         if (!this._state.settings) this._state.settings = { dailyGoal: 20, selectedLanguage: null };
         if (!this._state.srs) this._state.srs = {};
+        if (!this._state.langStats) this._state.langStats = {};
         if (!this._state.quizResults) this._state.quizResults = [];
         return this._state;
       }
@@ -77,6 +78,7 @@ const Store = {
         dailyGoal: 20, // words per day
       },
       srs: {}, // { "english:beginner:nouns:time": { box: 0, nextReview: "2025-...", ... } }
+      langStats: {}, // per-language streak & daily progress: { english: { streak, bestStreak, lastVisit, todayDate, todayWordsReviewed } }
       stats: {
         xp: 0,
         totalWordsLearned: 0,
@@ -123,15 +125,41 @@ const Store = {
     this._save();
   },
 
-  getTodayProgress() {
+  // --- Per-language stats (streak + daily progress) ---
+  _langStat(lang) {
     const state = this.getState();
+    if (!state.langStats) state.langStats = {};
+    if (!state.langStats[lang]) {
+      state.langStats[lang] = { streak: 0, bestStreak: 0, lastVisit: null, todayDate: null, todayWordsReviewed: 0 };
+    }
+    return state.langStats[lang];
+  },
+
+  getLangStreak(lang) {
+    if (!lang) return 0;
+    const ls = this.getState().langStats?.[lang];
+    return ls ? (ls.streak || 0) : 0;
+  },
+
+  getTodayProgress(lang = this.getSelectedLanguage()) {
     const today = new Date().toISOString().slice(0, 10);
-    if (state.stats.todayDate !== today) {
-      state.stats.todayDate = today;
-      state.stats.todayWordsReviewed = 0;
+    if (!lang) {
+      // Legacy global fallback (no language selected)
+      const state = this.getState();
+      if (state.stats.todayDate !== today) {
+        state.stats.todayDate = today;
+        state.stats.todayWordsReviewed = 0;
+        this._save();
+      }
+      return state.stats.todayWordsReviewed;
+    }
+    const ls = this._langStat(lang);
+    if (ls.todayDate !== today) {
+      ls.todayDate = today;
+      ls.todayWordsReviewed = 0;
       this._save();
     }
-    return state.stats.todayWordsReviewed;
+    return ls.todayWordsReviewed;
   },
 
   // --- SRS ---
@@ -206,6 +234,13 @@ const Store = {
 
     state.stats.totalReviews++;
     state.stats.todayWordsReviewed++;
+
+    // Per-language daily progress
+    const today = now.toISOString().slice(0, 10);
+    const ls = this._langStat(lang);
+    if (ls.todayDate !== today) { ls.todayDate = today; ls.todayWordsReviewed = 0; }
+    ls.todayWordsReviewed++;
+
     this._save();
     this.checkAchievements();
   },
@@ -223,6 +258,23 @@ const Store = {
     // Sort: lower box first (harder words first)
     due.sort((a, b) => a.srs.box - b.srs.box);
     return due;
+  },
+
+  // "Leeches": words the learner keeps getting wrong — surfaced for focused drill.
+  getLeechWords(lang) {
+    const state = this.getState();
+    const leeches = [];
+    for (const [key, srs] of Object.entries(state.srs)) {
+      if (!key.startsWith(lang + ':')) continue;
+      const wrong = srs.timesIncorrect || 0;
+      const right = srs.timesCorrect || 0;
+      if (wrong >= 3 || (wrong >= 2 && wrong > right)) {
+        const [, level, category, ...wordParts] = key.split(':');
+        leeches.push({ key, level, category, word: wordParts.join(':'), srs });
+      }
+    }
+    leeches.sort((a, b) => (b.srs.timesIncorrect || 0) - (a.srs.timesIncorrect || 0));
+    return leeches;
   },
 
   getWordStats(lang) {
@@ -272,7 +324,9 @@ const Store = {
   },
 
   // --- Streak ---
-  updateStreak() {
+  // Global streak is the "polyglot" streak (any study counts). When a language
+  // is given, its own streak is updated too.
+  updateStreak(lang = this.getSelectedLanguage()) {
     const state = this.getState();
     const lastVisit = state.stats.lastVisit;
     const now = new Date();
@@ -298,6 +352,25 @@ const Store = {
 
     state.stats.lastVisit = now.toISOString();
     state.stats.todayDate = today;
+
+    // Per-language streak
+    if (lang) {
+      const ls = this._langStat(lang);
+      if (!ls.lastVisit) {
+        ls.streak = 1;
+      } else {
+        const lastDate = ls.lastVisit.slice(0, 10);
+        if (lastDate !== today) {
+          const diff = Math.floor((now - new Date(lastDate)) / (1000 * 60 * 60 * 24));
+          if (diff === 1) ls.streak++;
+          else if (diff > 1) ls.streak = 1;
+        }
+      }
+      ls.lastVisit = now.toISOString();
+      ls.todayDate = today;
+      ls.bestStreak = Math.max(ls.bestStreak || 0, ls.streak);
+    }
+
     this._save();
     this.checkAchievements();
     return state.stats.streak;

@@ -678,7 +678,39 @@
           "text": "I wake up at 7 o'clock every morning. I wash my face and brush my teeth. Then, I go to the kitchen to have breakfast. I usually eat eggs and drink coffee. I like coffee with milk.\n\nAfter breakfast, I get dressed and go to work. I work in an office. I like my job because my colleagues are friendly. We have lunch together at 1 o'clock.\n\nIn the evening, I come home. I cook dinner and watch TV. Sometimes I read a book. I go to bed at 11 o'clock. It is a simple but good day.",
           "translation": "Я просыпаюсь в 7 часов каждое утро. Я умываюсь и чищу зубы. Затем я иду на кухню завтракать. Обычно я ем яйца и пью кофе. Я люблю кофе с молоком.\n\nПосле завтрака я одеваюсь и иду на работу. Я работаю в офисе. Мне нравится моя работа, потому что мои коллеги дружелюбные. Мы обедаем вместе в час дня.\n\nВечером я прихожу домой. Я готовлю ужин и смотрю телевизор. Иногда я читаю книгу. Я ложусь спать в 11 часов. Это простой, но хороший день.",
           "difficulty": "A2",
-          "readingTime": ""
+          "readingTime": "",
+          "questions": [
+            {
+              "question": "Во сколько просыпается рассказчик?",
+              "options": [
+                "В 6 часов",
+                "В 7 часов",
+                "В 8 часов",
+                "В 9 часов"
+              ],
+              "correct": 1
+            },
+            {
+              "question": "Что он обычно ест на завтрак?",
+              "options": [
+                "Хлопья и сок",
+                "Яйца и кофе",
+                "Тосты и чай",
+                "Только фрукты"
+              ],
+              "correct": 1
+            },
+            {
+              "question": "Где он работает?",
+              "options": [
+                "В магазине",
+                "В школе",
+                "В офисе",
+                "Дома"
+              ],
+              "correct": 2
+            }
+          ]
         },
         {
           "title": "The Little Cat",
