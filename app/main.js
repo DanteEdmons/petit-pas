@@ -2287,6 +2287,7 @@ function initConjugation(containerId, verbs, pronouns) {
 
     container.innerHTML = `
       <div class="conjugation-container">
+        ${verb.tense ? `<div class="conjugation-tense">${escapeHTML(verb.tense)}</div>` : ''}
         <div class="conjugation-prompt">
           <div class="conjugation-verb">${escapeHTML(verb.infinitive)}</div>
           <div class="conjugation-pronoun">${escapeHTML(pronoun)}</div>

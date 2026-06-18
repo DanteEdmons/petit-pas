@@ -1372,6 +1372,18 @@ body {
 
 .conjugation-prompt { text-align: center; }
 
+.conjugation-tense {
+  align-self: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-primary-dark);
+  background: var(--color-bg-card-hover);
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+}
+
 .conjugation-verb {
   font-size: clamp(1.4rem, 3.5vw, 1.8rem);
   font-weight: 800;

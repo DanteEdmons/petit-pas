@@ -63,6 +63,13 @@ for (const r of ['#/topics/beginner', '#/grammar/beginner', '#/matching/beginner
   '#/dictation/beginner', '#/cloze/beginner', '#/practice-mode/beginner/nouns/flashcard'])
   await go(r);
 
+console.log('— french (expanded to parity) —');
+store.Store.setSelectedLanguage('french');
+for (const r of ['#/topics/advanced', '#/grammar/advanced', '#/grammar/advanced/0',
+  '#/conjugation/beginner', '#/conjugation/advanced', '#/exercises/advanced',
+  '#/reorder/beginner', '#/reorder/advanced', '#/matching/advanced'])
+  await go(r);
+
 console.log('— english (meta-wrapper normalization) —');
 store.Store.setSelectedLanguage('english');
 const eh = await go('#/dashboard');
