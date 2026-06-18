@@ -225,6 +225,23 @@ const Store = {
     return due;
   },
 
+  // "Leeches": words the learner keeps getting wrong — surfaced for focused drill.
+  getLeechWords(lang) {
+    const state = this.getState();
+    const leeches = [];
+    for (const [key, srs] of Object.entries(state.srs)) {
+      if (!key.startsWith(lang + ':')) continue;
+      const wrong = srs.timesIncorrect || 0;
+      const right = srs.timesCorrect || 0;
+      if (wrong >= 3 || (wrong >= 2 && wrong > right)) {
+        const [, level, category, ...wordParts] = key.split(':');
+        leeches.push({ key, level, category, word: wordParts.join(':'), srs });
+      }
+    }
+    leeches.sort((a, b) => (b.srs.timesIncorrect || 0) - (a.srs.timesIncorrect || 0));
+    return leeches;
+  },
+
   getWordStats(lang) {
     const state = this.getState();
     let total = 0, learning = 0, mastered = 0;

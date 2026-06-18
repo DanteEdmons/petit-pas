@@ -121,6 +121,10 @@ const Router = {
       renderMatching(parts[1]); // level
     } else if (parts[0] === 'dictation' && parts[1]) {
       renderDictation(parts[1]); // level
+    } else if (parts[0] === 'cloze' && parts[1]) {
+      renderCloze(parts[1]); // level
+    } else if (parts[0] === 'mistakes') {
+      renderMistakes();
     } else if (parts[0] === 'review') {
       renderReview();
     } else if (parts[0] === 'session') {
@@ -291,6 +295,7 @@ async function renderDashboard() {
   const level = Store.getLevel(state.stats.xp);
   const wordStats = Store.getWordStats(lang);
   const dueWords = Store.getDueWords(lang);
+  const leeches = Store.getLeechWords(lang);
   const todayProgress = Store.getTodayProgress();
   const dailyGoal = Store.getDailyGoal();
   const goalPercent = Math.min((todayProgress / dailyGoal) * 100, 100);
@@ -366,6 +371,12 @@ async function renderDashboard() {
           <div class="action-title">&#9889; Дневная сессия</div>
           <div class="action-desc">Микс из новых слов и повторений — оптимальная тренировка на сегодня</div>
         </div>
+        ${leeches.length > 0 ? `
+          <div class="action-card" data-nav="#/mistakes">
+            <div class="action-title">&#129488; Разбор ошибок <span class="action-badge">${leeches.length}</span></div>
+            <div class="action-desc">Слова, которые чаще всего даются с трудом — отработайте их отдельно</div>
+          </div>
+        ` : ''}
         <div class="action-card" data-nav="#/levels">
           <div class="action-title">&#128218; Учить по уровням</div>
           <div class="action-desc">Словарь, грамматика и практика по уровням сложности</div>
@@ -441,6 +452,7 @@ async function renderTopics(level) {
 
   const sections = [];
 
+  const vocabList = collectVocab(lvl);
   const hasVocab = lvl.vocabulary && Object.values(lvl.vocabulary).some(arr => arr.length > 0);
   if (hasVocab) {
     sections.push({ title: 'Словарный запас', icon: '&#128214;', route: 'vocab', items: Object.keys(lvl.vocabulary) });
@@ -466,11 +478,16 @@ async function renderTopics(level) {
   if (lvl.reorderExercises && lvl.reorderExercises.length > 0) {
     sections.push({ title: 'Составь предложение', icon: '&#128260;', route: 'reorder' });
   }
-  if (lvl.matchingExercises && lvl.matchingExercises.length > 0) {
+  // Matching, dictation and cloze auto-generate from vocabulary when there is
+  // no curated set, so every language gets them for free.
+  if ((lvl.matchingExercises && lvl.matchingExercises.length > 0) || vocabList.length >= 4) {
     sections.push({ title: 'Соедини пары', icon: '&#128279;', route: 'matching' });
   }
-  if (lvl.dictationWords && lvl.dictationWords.length > 0) {
+  if ((lvl.dictationWords && lvl.dictationWords.length > 0) || vocabList.length >= 4) {
     sections.push({ title: 'Аудио-диктант', icon: '&#127911;', route: 'dictation' });
+  }
+  if (vocabList.some(w => w.example)) {
+    sections.push({ title: 'Слово в контексте', icon: '&#9999;', route: 'cloze' });
   }
 
   const catNames = { nouns: 'Существительные', verbs: 'Глаголы', adjectives: 'Прилагательные', others: 'Другие' };
@@ -738,7 +755,17 @@ async function renderReading(level) {
   });
 }
 
+// Wrap each word in a tappable span so the learner can hear any word on click.
+function tappableText(text) {
+  return String(text).split(/(\s+)/).map(tok =>
+    /^\s+$/.test(tok) || tok === ''
+      ? tok
+      : `<span class="read-word">${escapeHTML(tok)}</span>`
+  ).join('');
+}
+
 function showReadingModal(story, lang) {
+  const hasQuestions = Array.isArray(story.questions) && story.questions.length > 0;
   const overlay = document.createElement('div');
   overlay.className = 'modal-overlay';
   overlay.innerHTML = `
@@ -746,15 +773,24 @@ function showReadingModal(story, lang) {
       <button class="modal-close">&times;</button>
       <h2>${escapeHTML(story.title)}</h2>
       ${isSpeechSupported() ? `<button class="btn btn-secondary btn-sm audio-read-btn">&#128264; Прослушать</button>` : ''}
-      <div class="reading-text">${escapeHTML(story.text)}</div>
+      <p class="reading-hint-tip text-dim" style="font-size:0.8rem;margin:0.25rem 0">Нажмите на слово, чтобы услышать его</p>
+      <div class="reading-text">${tappableText(story.text)}</div>
       <button class="btn btn-secondary btn-sm toggle-translation">Показать перевод</button>
       <div class="reading-translation hidden">${escapeHTML(story.translation)}</div>
+      ${hasQuestions ? '<div class="reading-questions" id="reading-questions"></div>' : ''}
     </div>
   `;
   document.body.appendChild(overlay);
 
   overlay.querySelector('.modal-close').addEventListener('click', () => overlay.remove());
   overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.remove(); });
+
+  // Tap any word to hear it
+  overlay.querySelector('.reading-text').addEventListener('click', (e) => {
+    const w = e.target.closest('.read-word');
+    if (!w) return;
+    speak(w.textContent.replace(/[.,!?;:"»«()]+$/g, '').trim(), lang, 0.85);
+  });
 
   const toggleBtn = overlay.querySelector('.toggle-translation');
   const translationDiv = overlay.querySelector('.reading-translation');
@@ -767,6 +803,55 @@ function showReadingModal(story, lang) {
   if (audioBtn) {
     audioBtn.addEventListener('click', () => speak(story.text, lang, 0.85));
   }
+
+  if (hasQuestions) {
+    renderReadingQuestions(overlay.querySelector('#reading-questions'), story.questions);
+  }
+}
+
+// Interactive comprehension questions shown under a reading text.
+function renderReadingQuestions(container, questions) {
+  let answered = 0;
+  let correct = 0;
+
+  container.innerHTML = `
+    <h3 class="reading-questions-title">&#10067; Проверь понимание</h3>
+    ${questions.map((q, qi) => `
+      <div class="reading-question" data-q="${qi}">
+        <div class="reading-question-text">${escapeHTML(q.question)}</div>
+        <div class="reading-question-options">
+          ${q.options.map((opt, oi) => `<button class="quiz-option" data-q="${qi}" data-o="${oi}">${escapeHTML(opt)}</button>`).join('')}
+        </div>
+      </div>
+    `).join('')}
+    <div class="reading-questions-score hidden" id="rq-score"></div>
+  `;
+
+  container.querySelectorAll('.quiz-option').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const qi = parseInt(btn.dataset.q, 10);
+      const oi = parseInt(btn.dataset.o, 10);
+      const q = questions[qi];
+      const block = container.querySelector(`.reading-question[data-q="${qi}"]`);
+      if (block.classList.contains('done')) return;
+      block.classList.add('done');
+
+      block.querySelectorAll('.quiz-option').forEach((b, i) => {
+        b.disabled = true;
+        if (i === q.correct) b.classList.add('correct');
+        else if (i === oi) b.classList.add('incorrect');
+      });
+
+      answered++;
+      if (oi === q.correct) correct++;
+
+      if (answered === questions.length) {
+        const score = container.querySelector('#rq-score');
+        score.classList.remove('hidden');
+        score.textContent = `Результат: ${correct} / ${questions.length}`;
+      }
+    });
+  });
 }
 
 // --- CONJUGATION ---
@@ -979,7 +1064,13 @@ function initReorderExercise(containerId, exercises) {
 async function renderMatching(level) {
   const lang = Store.getSelectedLanguage();
   const data = await loadLanguageData(lang);
-  if (!data || !data.levels[level] || !data.levels[level].matchingExercises) return;
+  if (!data || !data.levels[level]) return;
+
+  const lvl = data.levels[level];
+  const sets = (lvl.matchingExercises && lvl.matchingExercises.length > 0)
+    ? lvl.matchingExercises
+    : buildMatchingFromVocab(collectVocab(lvl));
+  if (!sets.length) return;
 
   const content = `
     <h1 class="page-title">Соедини пары</h1>
@@ -987,7 +1078,7 @@ async function renderMatching(level) {
   `;
 
   renderShell(content, { backRoute: `#/topics/${level}` });
-  initMatchingExercise('matching-root', data.levels[level].matchingExercises);
+  initMatchingExercise('matching-root', sets);
 }
 
 function initMatchingExercise(containerId, exercises) {
@@ -1107,7 +1198,13 @@ function initMatchingExercise(containerId, exercises) {
 async function renderDictation(level) {
   const lang = Store.getSelectedLanguage();
   const data = await loadLanguageData(lang);
-  if (!data || !data.levels[level] || !data.levels[level].dictationWords) return;
+  if (!data || !data.levels[level]) return;
+
+  const lvl = data.levels[level];
+  const words = (lvl.dictationWords && lvl.dictationWords.length > 0)
+    ? lvl.dictationWords
+    : buildDictationFromVocab(collectVocab(lvl));
+  if (!words.length) return;
 
   const content = `
     <h1 class="page-title">Аудио-диктант</h1>
@@ -1116,7 +1213,7 @@ async function renderDictation(level) {
   `;
 
   renderShell(content, { backRoute: `#/topics/${level}` });
-  initDictation('dictation-root', data.levels[level].dictationWords, lang);
+  initDictation('dictation-root', words, lang);
 }
 
 function initDictation(containerId, words, lang) {
@@ -1212,6 +1309,28 @@ function initDictation(containerId, words, lang) {
   render();
 }
 
+// --- CLOZE (word in context, auto-generated from examples) ---
+async function renderCloze(level) {
+  const lang = Store.getSelectedLanguage();
+  const data = await loadLanguageData(lang);
+  if (!data || !data.levels[level]) return;
+
+  const items = buildClozeFromVocab(collectVocab(data.levels[level]));
+  if (!items.length) {
+    renderShell(`<div class="empty-state"><div class="empty-icon">&#129300;</div><p>Пока нет примеров для этого режима.</p></div>`, { backRoute: `#/topics/${level}` });
+    return;
+  }
+
+  const content = `
+    <h1 class="page-title">Слово в контексте</h1>
+    <p class="page-subtitle">Вставьте пропущенное слово в предложение</p>
+    <div id="cloze-root"></div>
+  `;
+
+  renderShell(content, { backRoute: `#/topics/${level}` });
+  initFillBlank('cloze-root', items);
+}
+
 // --- REVIEW (SRS) ---
 async function renderReview() {
   const lang = Store.getSelectedLanguage();
@@ -1256,6 +1375,35 @@ async function renderReview() {
 
   renderShell(content, { backRoute: '#/dashboard' });
   initReviewSession('review-root', reviewWords, lang);
+}
+
+// --- MISTAKES / LEECHES ("Разбор ошибок") ---
+async function renderMistakes() {
+  const lang = Store.getSelectedLanguage();
+  const data = await loadLanguageData(lang);
+  if (!data) return;
+
+  const leeches = Store.getLeechWords(lang);
+  const reviewWords = [];
+  for (const it of leeches) {
+    const levelData = data.levels[it.level];
+    if (!levelData?.vocabulary?.[it.category]) continue;
+    const wordObj = levelData.vocabulary[it.category].find(w => w.front === it.word);
+    if (wordObj) reviewWords.push({ ...wordObj, level: it.level, category: it.category, srs: it.srs });
+  }
+
+  if (reviewWords.length === 0) {
+    renderShell(`<div class="empty-state"><div class="empty-icon">&#127881;</div><p>Сложных слов нет — вы хорошо справляетесь!</p><button class="btn btn-primary mt-2" data-nav="#/dashboard">На главную</button></div>`, { backRoute: '#/dashboard' });
+    return;
+  }
+
+  const content = `
+    <h1 class="page-title">&#129488; Разбор ошибок</h1>
+    <p class="page-subtitle">${reviewWords.length} ${pluralize(reviewWords.length, 'трудное слово', 'трудных слова', 'трудных слов')} — отработаем их</p>
+    <div id="mistakes-root"></div>
+  `;
+  renderShell(content, { backRoute: '#/dashboard' });
+  initReviewSession('mistakes-root', reviewWords, lang);
 }
 
 // --- DAILY SESSION ---
@@ -2193,6 +2341,63 @@ function initReviewSession(containerId, words, lang, isSession = false) {
     addGlobalListener(document, 'keydown', keyHandler);
   }
   render();
+}
+
+// ============ AUTO-GENERATED TRAINERS (from vocabulary) ============
+// These let every language reuse the matching/dictation/cloze trainers
+// even without hand-authored sets — as soon as it has a vocabulary.
+
+function collectVocab(levelData) {
+  const out = [];
+  if (!levelData || !levelData.vocabulary) return out;
+  for (const arr of Object.values(levelData.vocabulary)) {
+    if (Array.isArray(arr)) out.push(...arr);
+  }
+  return out;
+}
+
+// Primary token of a word's front: drop "cyrillic / latin" duplicates and hints.
+function primaryToken(front) {
+  if (!front) return '';
+  return String(front).split('/')[0].replace(/\(.*?\)/g, '').trim();
+}
+
+function buildMatchingFromVocab(words, perSet = 6, maxSets = 6) {
+  const pool = shuffleArray(words.filter(w => w.front && w.back));
+  const sets = [];
+  for (let i = 0; i < pool.length && sets.length < maxSets; i += perSet) {
+    const chunk = pool.slice(i, i + perSet);
+    if (chunk.length < 2) break;
+    sets.push({ pairs: chunk.map(w => ({ word: w.front, translation: w.back })) });
+  }
+  return sets;
+}
+
+function buildDictationFromVocab(words, max = 20) {
+  return shuffleArray(words.filter(w => w.front && w.back))
+    .slice(0, max)
+    .map(w => ({ text: primaryToken(w.front), translation: w.back }));
+}
+
+// Turn words that carry an `example` ("Sentence — Translation") into
+// fill-in-the-blank cloze items where the headword is blanked out.
+function buildClozeFromVocab(words, max = 20) {
+  const items = [];
+  for (const w of words) {
+    if (!w.example) continue;
+    const token = primaryToken(w.front);
+    if (!token) continue;
+    const parts = w.example.split(/\s[—–-]\s/);
+    const sentence = parts[0].trim();
+    const translation = (parts[1] || '').trim();
+    if (!sentence.includes(token)) continue;
+    items.push({
+      sentence: sentence.replace(token, '_____'),
+      answer: [token],
+      hint: translation || w.back,
+    });
+  }
+  return shuffleArray(items).slice(0, max);
 }
 
 // ============ UTILITIES ============

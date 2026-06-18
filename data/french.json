@@ -682,7 +682,39 @@
         {
           "title": "Ma Journée",
           "text": "Je me réveille à 7 heures tous les matins. Je me lave le visage et je me brosse les dents. Ensuite, je vais à la cuisine pour prendre le petit déjeuner. D'habitude, je mange des œufs et je bois du café. J'aime le café au lait.\n\nAprès le petit déjeuner, je m'habille et je vais au travail. Je travaille dans un bureau. J'aime mon travail parce que mes collègues sont sympathiques. Nous déjeunons ensemble à 13 heures.\n\nLe soir, je rentre à la maison. Je prépare le dîner et je regarde la télévision. Parfois, je lis un livre. Je me couche à 23 heures. C'est une journée simple mais bonne.",
-          "translation": "Я просыпаюсь в 7 часов каждое утро. Я умываюсь и чищу зубы. Затем я иду на кухню завтракать. Обычно я ем яйца и пью кофе. Я люблю кофе с молоком.\n\nПосле завтрака я одеваюсь и иду на работу. Я работаю в офисе. Мне нравится моя работа, потому что мои коллеги дружелюбные. Мы обедаем вместе в час дня.\n\nВечером я прихожу домой. Я готовлю ужин и смотрю телевизор. Иногда я читаю книгу. Я ложусь спать в 11 часов. Это простой, но хороший день."
+          "translation": "Я просыпаюсь в 7 часов каждое утро. Я умываюсь и чищу зубы. Затем я иду на кухню завтракать. Обычно я ем яйца и пью кофе. Я люблю кофе с молоком.\n\nПосле завтрака я одеваюсь и иду на работу. Я работаю в офисе. Мне нравится моя работа, потому что мои коллеги дружелюбные. Мы обедаем вместе в час дня.\n\nВечером я прихожу домой. Я готовлю ужин и смотрю телевизор. Иногда я читаю книгу. Я ложусь спать в 11 часов. Это простой, но хороший день.",
+          "questions": [
+            {
+              "question": "Во сколько просыпается герой?",
+              "options": [
+                "В 5 часов",
+                "В 6 часов",
+                "В 7 часов",
+                "В 8 часов"
+              ],
+              "correct": 2
+            },
+            {
+              "question": "Что он пьёт на завтрак?",
+              "options": [
+                "Чай",
+                "Кофе",
+                "Сок",
+                "Воду"
+              ],
+              "correct": 1
+            },
+            {
+              "question": "Где он работает?",
+              "options": [
+                "В офисе",
+                "На заводе",
+                "В кафе",
+                "В банке"
+              ],
+              "correct": 0
+            }
+          ]
         },
         {
           "title": "Le Petit Chat",
