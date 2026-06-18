@@ -93,6 +93,8 @@ const Router = {
     // Route matching
     if (hash === '/' || hash === '') {
       renderHome();
+    } else if (parts[0] === 'overview') {
+      renderOverview();
     } else if (parts[0] === 'dashboard') {
       renderDashboard();
     } else if (parts[0] === 'levels') {
@@ -160,7 +162,7 @@ function renderShell(content, { showHeader = true, backRoute = null, title = '' 
         <div class="app-header-right">
           <div class="header-stat header-streak">
             <span class="icon">&#128293;</span>
-            <span>${parseInt(state.stats.streak) || 0}</span>
+            <span>${parseInt(Store.getLangStreak(lang)) || parseInt(state.stats.streak) || 0}</span>
           </div>
           <div class="header-stat header-xp">
             <span class="icon">&#9733;</span>
@@ -271,11 +273,72 @@ function renderHome() {
   app.querySelectorAll('.language-card').forEach(card => {
     const handler = () => {
       Store.setSelectedLanguage(card.dataset.lang);
-      Store.updateStreak();
+      Store.updateStreak(card.dataset.lang);
       Router.navigate('#/dashboard');
     };
     card.addEventListener('click', handler);
     card.addEventListener('keydown', (e) => { if (e.key === 'Enter') handler(); });
+  });
+}
+
+// --- MULTILINGUAL OVERVIEW ("Мои языки") ---
+function renderOverview() {
+  const state = Store.getState();
+  const polyglot = Store.getLevel(state.stats.xp);
+  const selected = Store.getSelectedLanguage();
+  const goal = Store.getDailyGoal();
+  const langs = [
+    { code: 'english', name: 'Английский', flag: '&#127468;&#127463;' },
+    { code: 'french', name: 'Французский', flag: '&#127467;&#127479;' },
+    { code: 'japanese', name: 'Японский', flag: '&#127471;&#127477;' },
+    { code: 'serbian', name: 'Сербский', flag: '&#127479;&#127480;' },
+  ];
+
+  const cards = langs.map(l => {
+    const due = Store.getDueWords(l.code).length;
+    const stats = Store.getWordStats(l.code);
+    const streak = Store.getLangStreak(l.code);
+    const today = Store.getTodayProgress(l.code);
+    const pct = Math.min((today / goal) * 100, 100);
+    return `
+      <div class="lang-overview-card ${selected === l.code ? 'active' : ''}" data-lang="${l.code}" tabindex="0">
+        <div class="lang-overview-head">
+          <span class="flag">${l.flag}</span>
+          <strong>${l.name}</strong>
+          ${selected === l.code ? '<span class="lang-overview-current">сейчас</span>' : ''}
+        </div>
+        <div class="lang-overview-stats">
+          <span class="lang-overview-streak">&#128293; ${streak}</span>
+          <span>&#128218; ${stats.total} в работе</span>
+          ${due > 0
+            ? `<span class="lang-overview-due">&#128257; ${due} на повтор</span>`
+            : '<span class="text-dim">всё повторено</span>'}
+        </div>
+        <div class="daily-goal-bar">
+          <div class="daily-goal-fill ${today >= goal ? 'complete' : ''}" style="width:${pct}%"></div>
+        </div>
+        <div class="lang-overview-today">${today} / ${goal} слов сегодня</div>
+      </div>
+    `;
+  }).join('');
+
+  const content = `
+    <h1 class="page-title">&#127760; Мои языки</h1>
+    <p class="page-subtitle">Полиглот-уровень: ${polyglot.name} &middot; ${state.stats.xp} XP &middot; общий стрик &#128293; ${state.stats.streak}</p>
+    <div class="lang-overview-grid">${cards}</div>
+    <p class="text-dim text-center" style="font-size:0.85rem;margin-top:1rem">Учите несколько языков параллельно — заглядывайте туда, где сегодня больше всего слов на повторение.</p>
+  `;
+
+  renderShell(content, { showHeader: !!selected, backRoute: selected ? '#/dashboard' : null });
+
+  app.querySelectorAll('.lang-overview-card').forEach(card => {
+    const go = () => {
+      Store.setSelectedLanguage(card.dataset.lang);
+      Store.updateStreak(card.dataset.lang);
+      Router.navigate('#/dashboard');
+    };
+    card.addEventListener('click', go);
+    card.addEventListener('keydown', (e) => { if (e.key === 'Enter') go(); });
   });
 }
 
@@ -291,7 +354,7 @@ async function renderDashboard() {
   }
 
   const state = Store.getState();
-  const streak = state.stats.streak;
+  const streak = Store.getLangStreak(lang) || state.stats.streak;
   const level = Store.getLevel(state.stats.xp);
   const wordStats = Store.getWordStats(lang);
   const dueWords = Store.getDueWords(lang);
@@ -388,20 +451,13 @@ async function renderDashboard() {
       </div>
 
       <div class="btn-group mt-2">
-        <button class="btn btn-secondary btn-sm" data-nav="#/">&#127760; Сменить язык</button>
+        <button class="btn btn-secondary btn-sm" data-nav="#/overview">&#127760; Мои языки</button>
         <button class="btn btn-secondary btn-sm" data-nav="#/settings">&#9881; Настройки</button>
       </div>
     </div>
   `;
 
   renderShell(content, { showHeader: true });
-  // Make "сменить язык" also clear selection
-  app.querySelector('[data-nav="#/"]')?.addEventListener('click', (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    Store.setSelectedLanguage(null);
-    Router.navigate('#/');
-  });
 }
 
 // --- LEVEL SELECTOR ---
