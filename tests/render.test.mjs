@@ -57,10 +57,11 @@ const routes = [
 console.log('— serbian —');
 for (const r of routes) await go(r);
 
-console.log('— japanese (formerly empty beginner) —');
+console.log('— japanese (formerly empty beginner + kana/particles/verb-forms) —');
 store.Store.setSelectedLanguage('japanese');
 for (const r of ['#/topics/beginner', '#/grammar/beginner', '#/matching/beginner',
-  '#/dictation/beginner', '#/cloze/beginner', '#/practice-mode/beginner/nouns/flashcard'])
+  '#/dictation/beginner', '#/cloze/beginner', '#/practice-mode/beginner/nouns/flashcard',
+  '#/kana', '#/kana/katakana', '#/kana/mix', '#/exercises/beginner', '#/conjugation/intermediate'])
   await go(r);
 
 console.log('— french (expanded to parity) —');

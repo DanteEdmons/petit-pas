@@ -125,6 +125,8 @@ const Router = {
       renderDictation(parts[1]); // level
     } else if (parts[0] === 'cloze' && parts[1]) {
       renderCloze(parts[1]); // level
+    } else if (parts[0] === 'kana') {
+      renderKana(parts[1] || 'hiragana');
     } else if (parts[0] === 'mistakes') {
       renderMistakes();
     } else if (parts[0] === 'review') {
@@ -565,10 +567,12 @@ async function renderTopics(level) {
 
   let practiceHTML = '';
   const practiceItems = sections.filter(s => !['vocab'].includes(s.route));
-  if (practiceItems.length > 0) {
+  const kanaCard = data.kana ? `<div class="nav-card" data-nav="#/kana"><strong>&#12354; Азбука (кана)</strong></div>` : '';
+  if (practiceItems.length > 0 || kanaCard) {
     practiceHTML = `
       <div class="section-title">&#127919; Практика и теория</div>
       <div class="card-grid">
+        ${kanaCard}
         ${practiceItems.map(s => `
           <div class="nav-card" data-nav="#/${s.route}/${level}">
             <strong>${s.title}</strong>
@@ -1385,6 +1389,109 @@ async function renderCloze(level) {
 
   renderShell(content, { backRoute: `#/topics/${level}` });
   initFillBlank('cloze-root', items);
+}
+
+// --- KANA TRAINER (Japanese syllabary) ---
+async function renderKana(mode) {
+  const lang = Store.getSelectedLanguage();
+  const data = await loadLanguageData(lang);
+  if (!data || !data.kana) {
+    renderShell(`<div class="empty-state"><div class="empty-icon">&#128305;</div><p>Тренажёр азбуки доступен только для японского.</p><button class="btn btn-primary mt-2" data-nav="#/dashboard">На главную</button></div>`, { backRoute: '#/dashboard' });
+    return;
+  }
+
+  const modes = [
+    { id: 'hiragana', name: 'Хирагана' },
+    { id: 'katakana', name: 'Катакана' },
+    { id: 'mix', name: 'Микс' },
+  ];
+  if (!modes.some(m => m.id === mode)) mode = 'hiragana';
+
+  const selector = `
+    <div class="mode-selector">
+      ${modes.map(m => `<button class="mode-btn ${mode === m.id ? 'active' : ''}" data-nav="#/kana/${m.id}">${m.name}</button>`).join('')}
+    </div>`;
+
+  const content = `
+    <h1 class="page-title">&#12354; Азбука (кана)</h1>
+    ${selector}
+    <div id="kana-root"></div>
+  `;
+
+  renderShell(content, { backRoute: '#/topics/beginner' });
+
+  const pool = mode === 'katakana'
+    ? data.kana.katakana
+    : mode === 'mix'
+      ? [...data.kana.hiragana, ...data.kana.katakana]
+      : data.kana.hiragana;
+  initKanaQuiz('kana-root', pool);
+}
+
+function initKanaQuiz(containerId, pool) {
+  const container = document.getElementById(containerId);
+  const questions = shuffleArray([...pool]).slice(0, Math.min(20, pool.length));
+  let index = 0;
+  let score = 0;
+
+  function render() {
+    if (index >= questions.length) {
+      const pct = Math.round((score / questions.length) * 100);
+      container.innerHTML = `
+        <div class="quiz-results">
+          <div class="quiz-score">${score} / ${questions.length}</div>
+          <div class="quiz-message">${pct}% верно</div>
+          <button class="btn btn-primary" id="restart-btn">Ещё раз</button>
+        </div>`;
+      container.querySelector('#restart-btn').addEventListener('click', () => {
+        index = 0; score = 0; shuffleArray(questions); render();
+      });
+      return;
+    }
+
+    const q = questions[index];
+    const others = shuffleArray(pool.filter(k => k.romaji !== q.romaji)).slice(0, 3).map(k => k.romaji);
+    const options = shuffleArray([q.romaji, ...others]);
+
+    container.innerHTML = `
+      <div class="quiz-container">
+        <div class="quiz-progress">
+          <span>${index + 1} / ${questions.length}</span>
+          <div class="quiz-progress-bar"><div class="quiz-progress-fill" style="width:${(index / questions.length) * 100}%"></div></div>
+          <span>Счёт: ${score}</span>
+        </div>
+        <div class="kana-char" id="kana-char">${escapeHTML(q.char)}</div>
+        <p class="text-dim text-center" style="font-size:0.85rem">Какое чтение (ромадзи)?</p>
+        <div class="quiz-options kana-options">
+          ${options.map(o => `<button class="quiz-option" data-romaji="${escapeHTML(o)}">${escapeHTML(o)}</button>`).join('')}
+        </div>
+        <div class="quiz-feedback hidden" id="feedback"></div>
+      </div>`;
+
+    const feedback = container.querySelector('#feedback');
+    container.querySelectorAll('.quiz-option').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const correct = btn.dataset.romaji === q.romaji;
+        container.querySelectorAll('.quiz-option').forEach(b => {
+          b.disabled = true;
+          if (b.dataset.romaji === q.romaji) b.classList.add('correct');
+          else if (b === btn && !correct) b.classList.add('incorrect');
+        });
+        feedback.classList.remove('hidden');
+        if (correct) {
+          score++;
+          feedback.className = 'quiz-feedback correct';
+          feedback.textContent = 'Правильно!';
+        } else {
+          feedback.className = 'quiz-feedback incorrect';
+          feedback.innerHTML = `Правильный ответ: <strong>${escapeHTML(q.romaji)}</strong>`;
+        }
+        if (isSpeechSupported()) speak(q.char, 'japanese', 0.8);
+        setTimeout(() => { index++; render(); }, 1100);
+      });
+    });
+  }
+  render();
 }
 
 // --- REVIEW (SRS) ---
