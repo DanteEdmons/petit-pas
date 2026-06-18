@@ -6,8 +6,9 @@
   "type": "module",
   "scripts": {
     "start": "npx serve . -l 3000",
-    "lint": "npx eslint app/ assets/js/",
-    "format": "npx prettier --write 'app/**/*.{js,css}' 'assets/**/*.{js,css}'"
+    "test": "node tests/store.test.mjs && node tests/render.test.mjs",
+    "lint": "npx eslint app/ tests/",
+    "format": "npx prettier --write 'app/**/*.{js,css}' 'tests/**/*.mjs'"
   },
   "keywords": [
     "language-learning",
@@ -16,5 +17,8 @@
     "flashcards",
     "gamification"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "jsdom": "^29.1.1"
+  }
 }
