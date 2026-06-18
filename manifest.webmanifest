@@ -1,0 +1,15 @@
+{
+  "name": "Petit Pas — тренажёр языков",
+  "short_name": "Petit Pas",
+  "description": "Тренажёр иностранных языков с интервальным повторением, геймификацией и ежедневными сессиями",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "lang": "ru",
+  "background_color": "#f7f7f7",
+  "theme_color": "#58cc02",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

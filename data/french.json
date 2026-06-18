@@ -9,367 +9,457 @@
         "nouns": [
           {
             "front": "temps",
-            "back": "время"
+            "back": "время",
+            "example": "Je n'ai pas le temps. — У меня нет времени."
           },
           {
             "front": "personne",
-            "back": "человек, персона"
+            "back": "человек, персона",
+            "example": "C'est une personne gentille. — Это добрый человек."
           },
           {
             "front": "jour",
-            "back": "день"
+            "back": "день",
+            "example": "Quel beau jour ! — Какой прекрасный день!"
           },
           {
             "front": "homme",
-            "back": "мужчина, человек"
+            "back": "мужчина, человек",
+            "example": "Cet homme est mon père. — Этот мужчина — мой отец."
           },
           {
             "front": "chose",
-            "back": "вещь"
+            "back": "вещь",
+            "example": "C'est une chose importante. — Это важная вещь."
           },
           {
             "front": "femme",
-            "back": "женщина"
+            "back": "женщина",
+            "example": "Cette femme est médecin. — Эта женщина — врач."
           },
           {
             "front": "vie",
-            "back": "жизнь"
+            "back": "жизнь",
+            "example": "La vie est belle. — Жизнь прекрасна."
           },
           {
             "front": "enfant",
-            "back": "ребёнок"
+            "back": "ребёнок",
+            "example": "L'enfant joue dans le parc. — Ребёнок играет в парке."
           },
           {
             "front": "monde",
-            "back": "мир"
+            "back": "мир",
+            "example": "Le monde est grand. — Мир большой."
           },
           {
             "front": "école",
-            "back": "школа"
+            "back": "школа",
+            "example": "Les enfants vont à l'école. — Дети идут в школу."
           },
           {
             "front": "main",
-            "back": "рука (кисть)"
+            "back": "рука (кисть)",
+            "example": "Il lève la main. — Он поднимает руку."
           },
           {
             "front": "travail",
-            "back": "работа"
+            "back": "работа",
+            "example": "J'ai beaucoup de travail. — У меня много работы."
           },
           {
             "front": "semaine",
-            "back": "неделя"
+            "back": "неделя",
+            "example": "La semaine prochaine, je pars. — На следующей неделе я уезжаю."
           },
           {
             "front": "maison",
-            "back": "дом"
+            "back": "дом",
+            "example": "Notre maison est grande. — Наш дом большой."
           },
           {
             "front": "famille",
-            "back": "семья"
+            "back": "семья",
+            "example": "J'aime ma famille. — Я люблю свою семью."
           },
           {
             "front": "ami",
-            "back": "друг"
+            "back": "друг",
+            "example": "C'est mon meilleur ami. — Это мой лучший друг."
           },
           {
             "front": "ville",
-            "back": "город"
+            "back": "город",
+            "example": "Paris est une grande ville. — Париж — большой город."
           },
           {
             "front": "pays",
-            "back": "страна"
+            "back": "страна",
+            "example": "La France est un beau pays. — Франция — красивая страна."
           },
           {
             "front": "année",
-            "back": "год"
+            "back": "год",
+            "example": "Bonne année ! — С Новым годом!"
           },
           {
             "front": "mois",
-            "back": "месяц"
+            "back": "месяц",
+            "example": "Le mois de mai est agréable. — Месяц май приятный."
           },
           {
             "front": "heure",
-            "back": "час"
+            "back": "час",
+            "example": "Quelle heure est-il ? — Который час?"
           },
           {
             "front": "moment",
-            "back": "момент"
+            "back": "момент",
+            "example": "Attends un moment. — Подожди минутку."
           },
           {
             "front": "eau",
-            "back": "вода"
+            "back": "вода",
+            "example": "Je bois de l'eau. — Я пью воду."
           },
           {
             "front": "livre",
-            "back": "книга"
+            "back": "книга",
+            "example": "Ce livre est intéressant. — Эта книга интересная."
           },
           {
             "front": "chambre",
-            "back": "комната"
+            "back": "комната",
+            "example": "Ma chambre est petite. — Моя комната маленькая."
           },
           {
             "front": "rue",
-            "back": "улица"
+            "back": "улица",
+            "example": "La rue est calme. — Улица тихая."
           },
           {
             "front": "table",
-            "back": "стол"
+            "back": "стол",
+            "example": "Le repas est sur la table. — Еда на столе."
           },
           {
             "front": "porte",
-            "back": "дверь"
+            "back": "дверь",
+            "example": "Ferme la porte, s'il te plaît. — Закрой дверь, пожалуйста."
           },
           {
             "front": "fenêtre",
-            "back": "окно"
+            "back": "окно",
+            "example": "Ouvre la fenêtre. — Открой окно."
           },
           {
             "front": "argent",
-            "back": "деньги, серебро"
+            "back": "деньги, серебро",
+            "example": "Je n'ai pas d'argent. — У меня нет денег."
           }
         ],
         "verbs": [
           {
             "front": "être",
-            "back": "быть"
+            "back": "быть",
+            "example": "Je vais être à l'heure. — Я буду вовремя."
           },
           {
             "front": "avoir",
-            "back": "иметь"
+            "back": "иметь",
+            "example": "Il veut avoir un chien. — Он хочет иметь собаку."
           },
           {
             "front": "faire",
-            "back": "делать"
+            "back": "делать",
+            "example": "Je dois faire mes devoirs. — Я должен сделать уроки."
           },
           {
             "front": "pouvoir",
-            "back": "мочь"
+            "back": "мочь",
+            "example": "Tu vas pouvoir venir ? — Ты сможешь прийти?"
           },
           {
             "front": "dire",
-            "back": "говорить, сказать"
+            "back": "говорить, сказать",
+            "example": "Je veux te dire la vérité. — Я хочу сказать тебе правду."
           },
           {
             "front": "aller",
-            "back": "идти"
+            "back": "идти",
+            "example": "Je dois aller à l'école. — Я должен идти в школу."
           },
           {
             "front": "voir",
-            "back": "видеть"
+            "back": "видеть",
+            "example": "J'aimerais voir ce film. — Я хотел бы посмотреть этот фильм."
           },
           {
             "front": "savoir",
-            "back": "знать"
+            "back": "знать",
+            "example": "Je veux savoir la réponse. — Я хочу знать ответ."
           },
           {
             "front": "vouloir",
-            "back": "хотеть"
+            "back": "хотеть",
+            "example": "Tu dois vouloir apprendre. — Ты должен хотеть учиться."
           },
           {
             "front": "venir",
-            "back": "приходить"
+            "back": "приходить",
+            "example": "Tu peux venir avec moi ? — Ты можешь прийти со мной?"
           },
           {
             "front": "prendre",
-            "back": "брать"
+            "back": "брать",
+            "example": "Je vais prendre un café. — Я возьму кофе."
           },
           {
             "front": "donner",
-            "back": "давать"
+            "back": "давать",
+            "example": "Peux-tu me donner ton stylo ? — Можешь дать мне ручку?"
           },
           {
             "front": "trouver",
-            "back": "находить"
+            "back": "находить",
+            "example": "Je dois trouver mes clés. — Я должен найти ключи."
           },
           {
             "front": "aimer",
-            "back": "любить"
+            "back": "любить",
+            "example": "Elle va aimer ce cadeau. — Ей понравится этот подарок."
           },
           {
             "front": "parler",
-            "back": "говорить"
+            "back": "говорить",
+            "example": "Je veux parler français. — Я хочу говорить по-французски."
           },
           {
             "front": "regarder",
-            "back": "смотреть"
+            "back": "смотреть",
+            "example": "Nous allons regarder un film. — Мы будем смотреть фильм."
           },
           {
             "front": "écouter",
-            "back": "слушать"
+            "back": "слушать",
+            "example": "J'aime écouter de la musique. — Я люблю слушать музыку."
           },
           {
             "front": "manger",
-            "back": "есть (пищу)"
+            "back": "есть (пищу)",
+            "example": "Je vais manger une pomme. — Я съем яблоко."
           },
           {
             "front": "boire",
-            "back": "пить"
+            "back": "пить",
+            "example": "Tu veux boire de l'eau ? — Хочешь попить воды?"
           },
           {
             "front": "lire",
-            "back": "читать"
+            "back": "читать",
+            "example": "J'aime lire le soir. — Я люблю читать вечером."
           },
           {
             "front": "écrire",
-            "back": "писать"
+            "back": "писать",
+            "example": "Je dois écrire une lettre. — Я должен написать письмо."
           },
           {
             "front": "vivre",
-            "back": "жить"
+            "back": "жить",
+            "example": "Il veut vivre à Paris. — Он хочет жить в Париже."
           },
           {
             "front": "travailler",
-            "back": "работать"
+            "back": "работать",
+            "example": "Je dois travailler demain. — Я должен работать завтра."
           },
           {
             "front": "étudier",
-            "back": "учиться"
+            "back": "учиться",
+            "example": "Elle aime étudier les langues. — Она любит изучать языки."
           },
           {
             "front": "penser",
-            "back": "думать"
+            "back": "думать",
+            "example": "Je dois penser à mon avenir. — Я должен думать о будущем."
           },
           {
             "front": "comprendre",
-            "back": "понимать"
+            "back": "понимать",
+            "example": "Je veux comprendre la leçon. — Я хочу понять урок."
           },
           {
             "front": "apprendre",
-            "back": "учить, узнавать"
+            "back": "учить, узнавать",
+            "example": "J'aime apprendre de nouvelles choses. — Я люблю узнавать новое."
           },
           {
             "front": "dormir",
-            "back": "спать"
+            "back": "спать",
+            "example": "Je vais dormir tôt. — Я лягу спать рано."
           },
           {
             "front": "partir",
-            "back": "уходить, уезжать"
+            "back": "уходить, уезжать",
+            "example": "Nous devons partir maintenant. — Мы должны уходить сейчас."
           },
           {
             "front": "rester",
-            "back": "оставаться"
+            "back": "оставаться",
+            "example": "Je veux rester ici. — Я хочу остаться здесь."
           }
         ],
         "adjectives": [
           {
             "front": "bon",
-            "back": "хороший"
+            "back": "хороший",
+            "example": "C'est un bon restaurant. — Это хороший ресторан."
           },
           {
             "front": "grand",
-            "back": "большой"
+            "back": "большой",
+            "example": "C'est un grand homme. — Это великий человек."
           },
           {
             "front": "petit",
-            "back": "маленький"
+            "back": "маленький",
+            "example": "J'ai un petit chien. — У меня маленькая собака."
           },
           {
             "front": "nouveau",
-            "back": "новый"
+            "back": "новый",
+            "example": "J'ai un nouveau téléphone. — У меня новый телефон."
           },
           {
             "front": "jeune",
-            "back": "молодой"
+            "back": "молодой",
+            "example": "Il est encore jeune. — Он ещё молод."
           },
           {
             "front": "vieux",
-            "back": "старый"
+            "back": "старый",
+            "example": "Mon grand-père est vieux. — Мой дедушка стар."
           },
           {
             "front": "beau",
-            "back": "красивый"
+            "back": "красивый",
+            "example": "Quel beau paysage ! — Какой красивый пейзаж!"
           },
           {
             "front": "joli",
-            "back": "милый, красивый"
+            "back": "милый, красивый",
+            "example": "Tu portes un joli chapeau. — На тебе красивая шляпа."
           },
           {
             "front": "mauvais",
-            "back": "плохой"
+            "back": "плохой",
+            "example": "Il fait mauvais temps. — Плохая погода."
           },
           {
             "front": "facile",
-            "back": "лёгкий"
+            "back": "лёгкий",
+            "example": "Cet exercice est facile. — Это упражнение лёгкое."
           },
           {
             "front": "difficile",
-            "back": "трудный"
+            "back": "трудный",
+            "example": "Le français n'est pas difficile. — Французский не труден."
           },
           {
             "front": "long",
-            "back": "длинный"
+            "back": "длинный",
+            "example": "Le voyage est long. — Путешествие долгое."
           },
           {
             "front": "court",
-            "back": "короткий"
+            "back": "короткий",
+            "example": "Le film est court. — Фильм короткий."
           },
           {
             "front": "haut",
-            "back": "высокий"
+            "back": "высокий",
+            "example": "Le mur est haut. — Стена высокая."
           },
           {
             "front": "bas",
-            "back": "низкий"
+            "back": "низкий",
+            "example": "Le plafond est bas. — Потолок низкий."
           },
           {
             "front": "chaud",
-            "back": "горячий, жаркий"
+            "back": "горячий, жаркий",
+            "example": "Le café est chaud. — Кофе горячий."
           },
           {
             "front": "froid",
-            "back": "холодный"
+            "back": "холодный",
+            "example": "L'hiver est froid. — Зима холодная."
           },
           {
             "front": "blanc",
-            "back": "белый"
+            "back": "белый",
+            "example": "Le lait est blanc. — Молоко белое."
           },
           {
             "front": "noir",
-            "back": "чёрный"
+            "back": "чёрный",
+            "example": "Le chat est noir. — Кот чёрный."
           },
           {
             "front": "rouge",
-            "back": "красный"
+            "back": "красный",
+            "example": "J'aime le vin rouge. — Я люблю красное вино."
           },
           {
             "front": "bleu",
-            "back": "синий"
+            "back": "синий",
+            "example": "Le ciel est bleu. — Небо голубое."
           },
           {
             "front": "vert",
-            "back": "зелёный"
+            "back": "зелёный",
+            "example": "Le feu est vert. — Светофор зелёный."
           },
           {
             "front": "jaune",
-            "back": "жёлтый"
+            "back": "жёлтый",
+            "example": "Le soleil est jaune. — Солнце жёлтое."
           },
           {
             "front": "important",
-            "back": "важный"
+            "back": "важный",
+            "example": "C'est un message important. — Это важное сообщение."
           },
           {
             "front": "intéressant",
-            "back": "интересный"
+            "back": "интересный",
+            "example": "Le livre est intéressant. — Книга интересная."
           },
           {
             "front": "content",
-            "back": "довольный"
+            "back": "довольный",
+            "example": "Je suis content de te voir. — Я рад тебя видеть."
           },
           {
             "front": "heureux",
-            "back": "счастливый"
+            "back": "счастливый",
+            "example": "Il est heureux. — Он счастлив."
           },
           {
             "front": "triste",
-            "back": "грустный"
+            "back": "грустный",
+            "example": "Pourquoi es-tu triste ? — Почему ты грустный?"
           },
           {
             "front": "fatigué",
-            "back": "уставший"
+            "back": "уставший",
+            "example": "Je suis fatigué ce soir. — Я устал сегодня вечером."
           },
           {
             "front": "rapide",
-            "back": "быстрый"
+            "back": "быстрый",
+            "example": "Le train est rapide. — Поезд быстрый."
           }
         ],
         "others": [
@@ -492,6 +582,92 @@
           {
             "front": "toujours",
             "back": "всегда"
+          }
+        ],
+        "phrases": [
+          {
+            "front": "Bonjour",
+            "back": "Здравствуйте"
+          },
+          {
+            "front": "Bonsoir",
+            "back": "Добрый вечер"
+          },
+          {
+            "front": "Salut",
+            "back": "Привет / Пока"
+          },
+          {
+            "front": "Au revoir",
+            "back": "До свидания"
+          },
+          {
+            "front": "Merci beaucoup",
+            "back": "Большое спасибо"
+          },
+          {
+            "front": "S'il vous plaît",
+            "back": "Пожалуйста (просьба)"
+          },
+          {
+            "front": "De rien",
+            "back": "Не за что"
+          },
+          {
+            "front": "Excusez-moi",
+            "back": "Извините"
+          },
+          {
+            "front": "Pardon",
+            "back": "Простите"
+          },
+          {
+            "front": "Comment ça va ?",
+            "back": "Как дела?"
+          },
+          {
+            "front": "Ça va bien",
+            "back": "Всё хорошо"
+          },
+          {
+            "front": "Comment vous appelez-vous ?",
+            "back": "Как вас зовут?"
+          },
+          {
+            "front": "Je m'appelle...",
+            "back": "Меня зовут..."
+          },
+          {
+            "front": "Enchanté",
+            "back": "Приятно познакомиться"
+          },
+          {
+            "front": "Je ne comprends pas",
+            "back": "Я не понимаю"
+          },
+          {
+            "front": "Parlez-vous anglais ?",
+            "back": "Вы говорите по-английски?"
+          },
+          {
+            "front": "Combien ça coûte ?",
+            "back": "Сколько это стоит?"
+          },
+          {
+            "front": "Où sont les toilettes ?",
+            "back": "Где туалет?"
+          },
+          {
+            "front": "Je voudrais...",
+            "back": "Я хотел бы..."
+          },
+          {
+            "front": "Bonne journée",
+            "back": "Хорошего дня"
+          },
+          {
+            "front": "À bientôt",
+            "back": "До скорого"
           }
         ]
       },
@@ -677,7 +853,113 @@
           "explanation": "'Où' (где) используется для вопросов о месте."
         }
       ],
-      "exercises": [],
+      "exercises": [
+        {
+          "sentence": "Je _____ étudiant.",
+          "answer": [
+            "suis"
+          ],
+          "hint": "глагол être"
+        },
+        {
+          "sentence": "Tu _____ un chien.",
+          "answer": [
+            "as"
+          ],
+          "hint": "глагол avoir"
+        },
+        {
+          "sentence": "Nous _____ au cinéma.",
+          "answer": [
+            "allons"
+          ],
+          "hint": "глагол aller"
+        },
+        {
+          "sentence": "Elle _____ française.",
+          "answer": [
+            "est"
+          ],
+          "hint": "глагол être"
+        },
+        {
+          "sentence": "Vous _____ français ?",
+          "answer": [
+            "parlez"
+          ],
+          "hint": "глагол parler"
+        },
+        {
+          "sentence": "Je ne _____ pas anglais.",
+          "answer": [
+            "parle"
+          ],
+          "hint": "présent, отрицание"
+        },
+        {
+          "sentence": "_____ livre est intéressant.",
+          "answer": [
+            "Ce"
+          ],
+          "hint": "указательное прилагательное, м.р."
+        },
+        {
+          "sentence": "J'ai _____ pomme.",
+          "answer": [
+            "une"
+          ],
+          "hint": "неопределённый артикль, ж.р."
+        },
+        {
+          "sentence": "Le contraire de « grand » est _____.",
+          "answer": [
+            "petit"
+          ],
+          "hint": "антоним"
+        },
+        {
+          "sentence": "Nous _____ une voiture.",
+          "answer": [
+            "avons"
+          ],
+          "hint": "глагол avoir"
+        },
+        {
+          "sentence": "Il _____ ses devoirs.",
+          "answer": [
+            "fait"
+          ],
+          "hint": "глагол faire"
+        },
+        {
+          "sentence": "Je vais _____ supermarché.",
+          "answer": [
+            "au"
+          ],
+          "hint": "à + le"
+        },
+        {
+          "sentence": "Elle a _____ frères.",
+          "answer": [
+            "deux"
+          ],
+          "hint": "число 2"
+        },
+        {
+          "sentence": "_____ heure est-il ?",
+          "answer": [
+            "Quelle"
+          ],
+          "hint": "вопросительное слово, ж.р."
+        },
+        {
+          "sentence": "Ils _____ à Paris.",
+          "answer": [
+            "habitent"
+          ],
+          "hint": "глагол habiter, 3 л. мн.ч."
+        }
+      ],
       "reading": [
         {
           "title": "Ma Journée",
@@ -726,6 +1008,279 @@
           "text": "Aujourd'hui, c'est dimanche. Le soleil brille et le ciel est bleu. C'est une journée parfaite pour le parc. Thomas et Marie sont au parc. Ils sont amis.\n\nThomas fait du vélo. Il roule vite. Marie est assise sur un banc. Elle lit un livre. Il y a beaucoup de monde au parc. Certaines personnes promènent leurs chiens. Les enfants jouent au ballon.\n\nThomas arrête son vélo et s'assoit à côté de Marie. Ils mangent de la glace. La glace au chocolat est leur préférée. Ils parlent et rient. C'est une journée merveilleuse.",
           "translation": "Сегодня воскресенье. Светит солнце, и небо голубое. Это идеальный день для парка. Томас и Мари в парке. Они друзья.\n\nТомас катается на велосипеде. Он едет быстро. Мари сидит на скамейке. Она читает книгу. В парке много людей. Некоторые люди выгуливают собак. Дети играют в мяч.\n\nТомас останавливает велосипед и садится рядом с Мари. Они едят мороженое. Шоколадное мороженое — их любимое. Они разговаривают и смеются. Это чудесный день."
         }
+      ],
+      "grammarSections": [
+        {
+          "title": "Существительные, артикли, прилагательные",
+          "from": 0,
+          "to": 3
+        },
+        {
+          "title": "Настоящее время, отрицание, вопрос",
+          "from": 4,
+          "to": 6
+        },
+        {
+          "title": "Притяжательные, указательные, предлоги",
+          "from": 7,
+          "to": 9
+        },
+        {
+          "title": "Время глагола и местоимения-дополнения",
+          "from": 10,
+          "to": 12
+        },
+        {
+          "title": "Числа, время, императив, c'est/il est",
+          "from": 13,
+          "to": 16
+        }
+      ],
+      "conjugation": [
+        {
+          "infinitive": "être",
+          "conjugations": [
+            "suis",
+            "es",
+            "est",
+            "sommes",
+            "êtes",
+            "sont"
+          ],
+          "tense": "Présent"
+        },
+        {
+          "infinitive": "avoir",
+          "conjugations": [
+            "ai",
+            "as",
+            "a",
+            "avons",
+            "avez",
+            "ont"
+          ],
+          "tense": "Présent"
+        },
+        {
+          "infinitive": "aller",
+          "conjugations": [
+            "vais",
+            "vas",
+            "va",
+            "allons",
+            "allez",
+            "vont"
+          ],
+          "tense": "Présent"
+        },
+        {
+          "infinitive": "faire",
+          "conjugations": [
+            "fais",
+            "fais",
+            "fait",
+            "faisons",
+            "faites",
+            "font"
+          ],
+          "tense": "Présent"
+        },
+        {
+          "infinitive": "parler",
+          "conjugations": [
+            "parle",
+            "parles",
+            "parle",
+            "parlons",
+            "parlez",
+            "parlent"
+          ],
+          "tense": "Présent"
+        },
+        {
+          "infinitive": "finir",
+          "conjugations": [
+            "finis",
+            "finis",
+            "finit",
+            "finissons",
+            "finissez",
+            "finissent"
+          ],
+          "tense": "Présent"
+        },
+        {
+          "infinitive": "prendre",
+          "conjugations": [
+            "prends",
+            "prends",
+            "prend",
+            "prenons",
+            "prenez",
+            "prennent"
+          ],
+          "tense": "Présent"
+        },
+        {
+          "infinitive": "venir",
+          "conjugations": [
+            "viens",
+            "viens",
+            "vient",
+            "venons",
+            "venez",
+            "viennent"
+          ],
+          "tense": "Présent"
+        },
+        {
+          "infinitive": "pouvoir",
+          "conjugations": [
+            "peux",
+            "peux",
+            "peut",
+            "pouvons",
+            "pouvez",
+            "peuvent"
+          ],
+          "tense": "Présent"
+        },
+        {
+          "infinitive": "vouloir",
+          "conjugations": [
+            "veux",
+            "veux",
+            "veut",
+            "voulons",
+            "voulez",
+            "veulent"
+          ],
+          "tense": "Présent"
+        },
+        {
+          "infinitive": "devoir",
+          "conjugations": [
+            "dois",
+            "dois",
+            "doit",
+            "devons",
+            "devez",
+            "doivent"
+          ],
+          "tense": "Présent"
+        },
+        {
+          "infinitive": "manger",
+          "conjugations": [
+            "mange",
+            "manges",
+            "mange",
+            "mangeons",
+            "mangez",
+            "mangent"
+          ],
+          "tense": "Présent"
+        }
+      ],
+      "reorderExercises": [
+        {
+          "words": [
+            "Je",
+            "suis",
+            "étudiant"
+          ],
+          "correct": "Je suis étudiant",
+          "translation": "Я студент"
+        },
+        {
+          "words": [
+            "Elle",
+            "mange",
+            "une",
+            "pomme"
+          ],
+          "correct": "Elle mange une pomme",
+          "translation": "Она ест яблоко"
+        },
+        {
+          "words": [
+            "Nous",
+            "allons",
+            "au",
+            "cinéma"
+          ],
+          "correct": "Nous allons au cinéma",
+          "translation": "Мы идём в кино"
+        },
+        {
+          "words": [
+            "Il",
+            "a",
+            "un",
+            "chien"
+          ],
+          "correct": "Il a un chien",
+          "translation": "У него есть собака"
+        },
+        {
+          "words": [
+            "Tu",
+            "parles",
+            "français"
+          ],
+          "correct": "Tu parles français",
+          "translation": "Ты говоришь по-французски"
+        },
+        {
+          "words": [
+            "Le",
+            "chat",
+            "est",
+            "noir"
+          ],
+          "correct": "Le chat est noir",
+          "translation": "Кот чёрный"
+        },
+        {
+          "words": [
+            "Je",
+            "ne",
+            "comprends",
+            "pas"
+          ],
+          "correct": "Je ne comprends pas",
+          "translation": "Я не понимаю"
+        },
+        {
+          "words": [
+            "Vous",
+            "habitez",
+            "à",
+            "Paris"
+          ],
+          "correct": "Vous habitez à Paris",
+          "translation": "Вы живёте в Париже"
+        },
+        {
+          "words": [
+            "Elle",
+            "a",
+            "deux",
+            "frères"
+          ],
+          "correct": "Elle a deux frères",
+          "translation": "У неё два брата"
+        },
+        {
+          "words": [
+            "Nous",
+            "aimons",
+            "le",
+            "café"
+          ],
+          "correct": "Nous aimons le café",
+          "translation": "Мы любим кофе"
+        }
       ]
     },
     "intermediate": {
@@ -733,15 +1288,18 @@
         "nouns": [
           {
             "front": "la réunion",
-            "back": "встреча"
+            "back": "встреча",
+            "example": "J'organise la réunion demain. — Я организую встречу завтра."
           },
           {
             "front": "le délai",
-            "back": "крайний срок"
+            "back": "крайний срок",
+            "example": "Nous devons respecter le délai. — Мы должны соблюсти срок."
           },
           {
             "front": "le salaire",
-            "back": "зарплата"
+            "back": "зарплата",
+            "example": "Il négocie le salaire. — Он договаривается о зарплате."
           },
           {
             "front": "le collègue",
@@ -769,11 +1327,13 @@
           },
           {
             "front": "le projet",
-            "back": "проект"
+            "back": "проект",
+            "example": "Toute l'équipe soutient le projet. — Вся команда поддерживает проект."
           },
           {
             "front": "le passeport",
-            "back": "паспорт"
+            "back": "паспорт",
+            "example": "N'oublie pas le passeport. — Не забудь паспорт."
           },
           {
             "front": "le bagage",
@@ -793,7 +1353,8 @@
           },
           {
             "front": "le voyage",
-            "back": "путешествие"
+            "back": "путешествие",
+            "example": "J'adore le voyage en train. — Я обожаю путешествие на поезде."
           },
           {
             "front": "l'hébergement",
@@ -813,7 +1374,8 @@
           },
           {
             "front": "le traitement",
-            "back": "лечение"
+            "back": "лечение",
+            "example": "Le médecin prescrit le traitement. — Врач назначает лечение."
           },
           {
             "front": "la maladie",
@@ -825,7 +1387,8 @@
           },
           {
             "front": "le patient",
-            "back": "пациент"
+            "back": "пациент",
+            "example": "Le médecin examine le patient. — Врач осматривает пациента."
           },
           {
             "front": "le logiciel",
@@ -875,7 +1438,8 @@
         "verbs": [
           {
             "front": "négocier",
-            "back": "договариваться"
+            "back": "договариваться",
+            "example": "Nous devons négocier le contrat. — Мы должны договориться о контракте."
           },
           {
             "front": "mettre en œuvre",
@@ -883,19 +1447,23 @@
           },
           {
             "front": "atteindre",
-            "back": "достигать"
+            "back": "достигать",
+            "example": "Il veut atteindre son objectif. — Он хочет достичь своей цели."
           },
           {
             "front": "gérer",
-            "back": "управлять"
+            "back": "управлять",
+            "example": "Je dois gérer mon temps. — Я должен управлять своим временем."
           },
           {
             "front": "organiser",
-            "back": "организовывать"
+            "back": "организовывать",
+            "example": "Nous allons organiser une réunion. — Мы организуем встречу."
           },
           {
             "front": "développer",
-            "back": "развивать"
+            "back": "развивать",
+            "example": "L'entreprise veut développer ses produits. — Компания хочет развивать продукты."
           },
           {
             "front": "établir",
@@ -931,11 +1499,13 @@
           },
           {
             "front": "analyser",
-            "back": "анализировать"
+            "back": "анализировать",
+            "example": "Il faut analyser les données. — Нужно проанализировать данные."
           },
           {
             "front": "évaluer",
-            "back": "оценивать"
+            "back": "оценивать",
+            "example": "Nous devons évaluer les risques. — Мы должны оценить риски."
           },
           {
             "front": "déterminer",
@@ -947,7 +1517,8 @@
           },
           {
             "front": "collaborer",
-            "back": "сотрудничать"
+            "back": "сотрудничать",
+            "example": "J'aime collaborer avec mon équipe. — Я люблю сотрудничать с командой."
           },
           {
             "front": "coordonner",
@@ -955,11 +1526,13 @@
           },
           {
             "front": "participer",
-            "back": "участвовать"
+            "back": "участвовать",
+            "example": "Je veux participer au projet. — Я хочу участвовать в проекте."
           },
           {
             "front": "recommander",
-            "back": "рекомендовать"
+            "back": "рекомендовать",
+            "example": "Je peux te recommander ce livre. — Я могу порекомендовать тебе эту книгу."
           },
           {
             "front": "identifier",
@@ -967,11 +1540,13 @@
           },
           {
             "front": "reconnaître",
-            "back": "признавать"
+            "back": "признавать",
+            "example": "Il faut reconnaître ses erreurs. — Нужно признавать свои ошибки."
           },
           {
             "front": "souligner",
-            "back": "подчеркивать"
+            "back": "подчеркивать",
+            "example": "Je veux souligner ce point. — Я хочу подчеркнуть этот момент."
           },
           {
             "front": "illustrer",
@@ -979,7 +1554,8 @@
           },
           {
             "front": "conclure",
-            "back": "заключать"
+            "back": "заключать",
+            "example": "Nous pouvons conclure l'accord. — Мы можем заключить соглашение."
           },
           {
             "front": "acquérir",
@@ -1003,7 +1579,8 @@
           },
           {
             "front": "améliorer",
-            "back": "улучшать"
+            "back": "улучшать",
+            "example": "Nous voulons améliorer le service. — Мы хотим улучшить сервис."
           }
         ],
         "adjectives": [
@@ -1607,7 +2184,49 @@
         {
           "title": "Le Voyage Inattendu",
           "text": "Sophie est une personne très organisée. Pour ses vacances d'été, elle avait tout planifié : les billets de train, l'hôtel, et même les restaurants. Elle devait aller à Nice, sur la Côte d'Azur. Mais quand elle est arrivée à la gare, elle a réalisé qu'elle avait oublié son passeport.\n\nElle ne pouvait pas prendre le train. Déçue, elle est rentrée chez elle. Sur le chemin, elle a vu une affiche pour un festival de musique dans un petit village voisin. Elle a décidé d'y aller, juste pour voir.\n\nLe festival était magnifique. Il y avait des musiciens de partout dans le monde. Sophie a rencontré un groupe de personnes très sympathiques qui l'ont invitée à dîner. Ils ont passé la soirée à rire et à danser.\n\nSophie n'est jamais allée à Nice cet été-là. Mais elle a passé les meilleures vacances de sa vie, juste à côté de chez elle. Elle a appris que parfois, les meilleurs moments sont ceux qu'on ne prévoit pas.",
-          "translation": "Софи — очень организованный человек. Для своего летнего отпуска она спланировала всё: билеты на поезд, отель и даже рестораны. Она должна была поехать в Ниццу, на Лазурный берег. Но когда она приехала на вокзал, она поняла, что забыла свой паспорт.\n\nОна не смогла сесть на поезд. Разочарованная, она вернулась домой. По дороге она увидела афишу музыкального фестиваля в соседней маленькой деревне. Она решила пойти туда, просто посмотреть.\n\nФестиваль был великолепен. Там были музыканты со всего мира. Софи встретила группу очень приятных людей, которые пригласили её на ужин. Они провели вечер, смеясь и танцуя.\n\nСофи так и не поехала в Ниццу тем летом. Но она провела лучшие каникулы в своей жизни, совсем рядом с домом. Она поняла, что иногда лучшие моменты — это те, которые мы не планируем."
+          "translation": "Софи — очень организованный человек. Для своего летнего отпуска она спланировала всё: билеты на поезд, отель и даже рестораны. Она должна была поехать в Ниццу, на Лазурный берег. Но когда она приехала на вокзал, она поняла, что забыла свой паспорт.\n\nОна не смогла сесть на поезд. Разочарованная, она вернулась домой. По дороге она увидела афишу музыкального фестиваля в соседней маленькой деревне. Она решила пойти туда, просто посмотреть.\n\nФестиваль был великолепен. Там были музыканты со всего мира. Софи встретила группу очень приятных людей, которые пригласили её на ужин. Они провели вечер, смеясь и танцуя.\n\nСофи так и не поехала в Ниццу тем летом. Но она провела лучшие каникулы в своей жизни, совсем рядом с домом. Она поняла, что иногда лучшие моменты — это те, которые мы не планируем.",
+          "questions": [
+            {
+              "question": "Куда Софи планировала поехать в отпуск?",
+              "options": [
+                "В Париж",
+                "В Ниццу",
+                "В Лион",
+                "В Марсель"
+              ],
+              "correct": 1
+            },
+            {
+              "question": "Почему она не смогла сесть на поезд?",
+              "options": [
+                "Опоздала",
+                "Забыла паспорт",
+                "Потеряла билет",
+                "Поезд отменили"
+              ],
+              "correct": 1
+            },
+            {
+              "question": "Что она нашла вместо поездки?",
+              "options": [
+                "Музыкальный фестиваль",
+                "Новую работу",
+                "Старого друга",
+                "Море"
+              ],
+              "correct": 0
+            },
+            {
+              "question": "Какой урок она вынесла?",
+              "options": [
+                "Нужно всё планировать заранее",
+                "Лучшие моменты — те, что не планируешь",
+                "Путешествовать дорого",
+                "Нельзя доверять людям"
+              ],
+              "correct": 1
+            }
+          ]
         },
         {
           "title": "Une Soirée Mystérieuse",
@@ -1630,7 +2249,8 @@
             "sommes",
             "êtes",
             "sont"
-          ]
+          ],
+          "tense": "Présent"
         },
         {
           "infinitive": "avoir (to have)",
@@ -1641,7 +2261,8 @@
             "avons",
             "avez",
             "ont"
-          ]
+          ],
+          "tense": "Présent"
         },
         {
           "infinitive": "aller (to go)",
@@ -1652,7 +2273,8 @@
             "allons",
             "allez",
             "vont"
-          ]
+          ],
+          "tense": "Présent"
         },
         {
           "infinitive": "faire (to do/make)",
@@ -1663,7 +2285,8 @@
             "faisons",
             "faites",
             "font"
-          ]
+          ],
+          "tense": "Présent"
         },
         {
           "infinitive": "parler (to speak)",
@@ -1674,7 +2297,8 @@
             "parlons",
             "parlez",
             "parlent"
-          ]
+          ],
+          "tense": "Présent"
         },
         {
           "infinitive": "finir (to finish)",
@@ -1685,7 +2309,8 @@
             "finissons",
             "finissez",
             "finissent"
-          ]
+          ],
+          "tense": "Présent"
         },
         {
           "infinitive": "prendre (to take)",
@@ -1696,7 +2321,8 @@
             "prenons",
             "prenez",
             "prennent"
-          ]
+          ],
+          "tense": "Présent"
         },
         {
           "infinitive": "venir (to come)",
@@ -1707,7 +2333,8 @@
             "venons",
             "venez",
             "viennent"
-          ]
+          ],
+          "tense": "Présent"
         },
         {
           "infinitive": "voir (to see)",
@@ -1718,7 +2345,8 @@
             "voyons",
             "voyez",
             "voient"
-          ]
+          ],
+          "tense": "Présent"
         },
         {
           "infinitive": "pouvoir (can/to be able)",
@@ -1729,7 +2357,8 @@
             "pouvons",
             "pouvez",
             "peuvent"
-          ]
+          ],
+          "tense": "Présent"
         },
         {
           "infinitive": "vouloir (to want)",
@@ -1740,7 +2369,8 @@
             "voulons",
             "voulez",
             "veulent"
-          ]
+          ],
+          "tense": "Présent"
         },
         {
           "infinitive": "devoir (must/to have to)",
@@ -1751,7 +2381,8 @@
             "devons",
             "devez",
             "doivent"
-          ]
+          ],
+          "tense": "Présent"
         },
         {
           "infinitive": "savoir (to know)",
@@ -1762,7 +2393,8 @@
             "savons",
             "savez",
             "savent"
-          ]
+          ],
+          "tense": "Présent"
         },
         {
           "infinitive": "mettre (to put)",
@@ -1773,7 +2405,138 @@
             "mettons",
             "mettez",
             "mettent"
-          ]
+          ],
+          "tense": "Présent"
+        }
+      ],
+      "grammarSections": [
+        {
+          "title": "Futur Simple",
+          "from": 0,
+          "to": 4
+        },
+        {
+          "title": "Imparfait",
+          "from": 5,
+          "to": 8
+        },
+        {
+          "title": "Passé Composé",
+          "from": 9,
+          "to": 13
+        }
+      ],
+      "reorderExercises": [
+        {
+          "words": [
+            "J'ai",
+            "mangé",
+            "au",
+            "restaurant"
+          ],
+          "correct": "J'ai mangé au restaurant",
+          "translation": "Я поел в ресторане"
+        },
+        {
+          "words": [
+            "Hier",
+            "il",
+            "a",
+            "plu"
+          ],
+          "correct": "Hier il a plu",
+          "translation": "Вчера шёл дождь"
+        },
+        {
+          "words": [
+            "Nous",
+            "sommes",
+            "allés",
+            "à",
+            "la",
+            "plage"
+          ],
+          "correct": "Nous sommes allés à la plage",
+          "translation": "Мы ходили на пляж"
+        },
+        {
+          "words": [
+            "Elle",
+            "a",
+            "fini",
+            "ses",
+            "devoirs"
+          ],
+          "correct": "Elle a fini ses devoirs",
+          "translation": "Она закончила уроки"
+        },
+        {
+          "words": [
+            "Demain",
+            "je",
+            "partirai",
+            "en",
+            "vacances"
+          ],
+          "correct": "Demain je partirai en vacances",
+          "translation": "Завтра я уеду в отпуск"
+        },
+        {
+          "words": [
+            "Ils",
+            "ont",
+            "visité",
+            "le",
+            "musée"
+          ],
+          "correct": "Ils ont visité le musée",
+          "translation": "Они посетили музей"
+        },
+        {
+          "words": [
+            "Il",
+            "faisait",
+            "froid",
+            "ce",
+            "matin"
+          ],
+          "correct": "Il faisait froid ce matin",
+          "translation": "Сегодня утром было холодно"
+        },
+        {
+          "words": [
+            "Tu",
+            "as",
+            "vu",
+            "ce",
+            "film"
+          ],
+          "correct": "Tu as vu ce film",
+          "translation": "Ты видел этот фильм"
+        },
+        {
+          "words": [
+            "Quand",
+            "j'étais",
+            "petit",
+            "je",
+            "jouais",
+            "au",
+            "foot"
+          ],
+          "correct": "Quand j'étais petit je jouais au foot",
+          "translation": "Когда я был маленьким, я играл в футбол"
+        },
+        {
+          "words": [
+            "Nous",
+            "mangerons",
+            "ensemble",
+            "ce",
+            "soir"
+          ],
+          "correct": "Nous mangerons ensemble ce soir",
+          "translation": "Мы поужинаем вместе сегодня вечером"
         }
       ]
     },
@@ -1782,11 +2545,13 @@
         "nouns": [
           {
             "front": "l'hypothèse",
-            "back": "гипотеза"
+            "back": "гипотеза",
+            "example": "Il faut vérifier l'hypothèse. — Нужно проверить гипотезу."
           },
           {
             "front": "le phénomène",
-            "back": "явление, феномен"
+            "back": "явление, феномен",
+            "example": "Les chercheurs étudient le phénomène. — Учёные изучают это явление."
           },
           {
             "front": "l'implication",
@@ -1794,7 +2559,8 @@
           },
           {
             "front": "le paradigme",
-            "back": "парадигма, модель"
+            "back": "парадигма, модель",
+            "example": "Les scientifiques remettent en question le paradigme. — Учёные ставят под сомнение парадигму."
           },
           {
             "front": "la thèse",
@@ -1846,7 +2612,8 @@
           },
           {
             "front": "le discours",
-            "back": "дискурс, речь"
+            "back": "дискурс, речь",
+            "example": "J'ai écouté le discours du président. — Я слушал речь президента."
           },
           {
             "front": "l'incitation",
@@ -1858,7 +2625,8 @@
           },
           {
             "front": "l'héritage",
-            "back": "наследие"
+            "back": "наследие",
+            "example": "Il défend l'héritage culturel. — Он защищает культурное наследие."
           },
           {
             "front": "le synopsis",
@@ -1922,7 +2690,8 @@
           },
           {
             "front": "le consensus",
-            "back": "консенсус, согласие"
+            "back": "консенсус, согласие",
+            "example": "Nous cherchons le consensus. — Мы ищем согласие."
           },
           {
             "front": "la prolifération",
@@ -1948,7 +2717,8 @@
           },
           {
             "front": "atténuer",
-            "back": "смягчать, ослаблять"
+            "back": "смягчать, ослаблять",
+            "example": "Ce médicament peut atténuer la douleur. — Это лекарство может смягчить боль."
           },
           {
             "front": "contourner",
@@ -1988,7 +2758,8 @@
           },
           {
             "front": "consolider",
-            "back": "укреплять, объединять"
+            "back": "укреплять, объединять",
+            "example": "L'entreprise cherche à consolider sa position. — Компания стремится укрепить позицию."
           },
           {
             "front": "synthétiser",
@@ -2008,11 +2779,13 @@
           },
           {
             "front": "envisager",
-            "back": "размышлять, обдумывать"
+            "back": "размышлять, обдумывать",
+            "example": "Nous devons envisager toutes les options. — Мы должны рассмотреть все варианты."
           },
           {
             "front": "discerner",
-            "back": "различать, распознавать"
+            "back": "различать, распознавать",
+            "example": "Il faut discerner le vrai du faux. — Нужно отличать правду от лжи."
           },
           {
             "front": "transcender",
@@ -2036,7 +2809,8 @@
           },
           {
             "front": "justifier",
-            "back": "оправдывать, обосновывать"
+            "back": "оправдывать, обосновывать",
+            "example": "Tu dois justifier ta décision. — Ты должен обосновать своё решение."
           },
           {
             "front": "émaner",
@@ -2044,7 +2818,8 @@
           },
           {
             "front": "réfuter",
-            "back": "опровергать"
+            "back": "опровергать",
+            "example": "Il est difficile de réfuter cet argument. — Трудно опровергнуть этот аргумент."
           },
           {
             "front": "invoquer",
@@ -2060,7 +2835,8 @@
           },
           {
             "front": "accélérer",
-            "back": "ускорять, содействовать"
+            "back": "ускорять, содействовать",
+            "example": "La technologie peut accélérer le processus. — Технология может ускорить процесс."
           },
           {
             "front": "réitérer",
@@ -2072,11 +2848,13 @@
           },
           {
             "front": "réduire",
-            "back": "сокращать, урезать"
+            "back": "сокращать, урезать",
+            "example": "Il faut réduire les dépenses. — Нужно сократить расходы."
           },
           {
             "front": "diffuser",
-            "back": "распространять, рассеивать"
+            "back": "распространять, рассеивать",
+            "example": "Les médias vont diffuser l'information. — СМИ распространят информацию."
           },
           {
             "front": "fluctuer",
@@ -2084,7 +2862,8 @@
           },
           {
             "front": "empêcher",
-            "back": "препятствовать, мешать"
+            "back": "препятствовать, мешать",
+            "example": "Rien ne peut empêcher le progrès. — Ничто не может остановить прогресс."
           },
           {
             "front": "manifester",
@@ -2092,7 +2871,8 @@
           },
           {
             "front": "nier",
-            "back": "отрицать, опровергать"
+            "back": "отрицать, опровергать",
+            "example": "On ne peut pas nier les faits. — Нельзя отрицать факты."
           },
           {
             "front": "précipiter",
@@ -2146,7 +2926,8 @@
           },
           {
             "front": "pragmatique",
-            "back": "прагматичный, практичный"
+            "back": "прагматичный, практичный",
+            "example": "Il a une approche pragmatique. — У него прагматичный подход."
           },
           {
             "front": "éphémère",
@@ -2190,7 +2971,8 @@
           },
           {
             "front": "indispensable",
-            "back": "необходимый, незаменимый"
+            "back": "необходимый, незаменимый",
+            "example": "Ton aide est indispensable. — Твоя помощь незаменима."
           },
           {
             "front": "cynique",
@@ -2198,11 +2980,13 @@
           },
           {
             "front": "profond",
-            "back": "глубокий, глубокомысленный"
+            "back": "глубокий, глубокомысленный",
+            "example": "C'est un sujet profond. — Это глубокая тема."
           },
           {
             "front": "obsolète",
-            "back": "устаревший, вышедший из употребления"
+            "back": "устаревший, вышедший из употребления",
+            "example": "Ce logiciel est obsolète. — Это ПО устарело."
           },
           {
             "front": "volatile",
@@ -2218,7 +3002,8 @@
           },
           {
             "front": "crucial",
-            "back": "ключевой, решающий"
+            "back": "ключевой, решающий",
+            "example": "C'est un moment crucial. — Это решающий момент."
           },
           {
             "front": "négligeable",
@@ -2234,11 +3019,13 @@
           },
           {
             "front": "tangible",
-            "back": "осязаемый, реальный"
+            "back": "осязаемый, реальный",
+            "example": "Nous voulons un résultat tangible. — Мы хотим осязаемый результат."
           },
           {
             "front": "banal",
-            "back": "обыденный, банальный"
+            "back": "обыденный, банальный",
+            "example": "Ce film est banal. — Этот фильм банален."
           },
           {
             "front": "intrinsèque",
@@ -2246,7 +3033,8 @@
           },
           {
             "front": "plausible",
-            "back": "правдоподобный, вероятный"
+            "back": "правдоподобный, вероятный",
+            "example": "C'est une explication plausible. — Это правдоподобное объяснение."
           },
           {
             "front": "éloquent",
@@ -2428,7 +3216,36 @@
           }
         ]
       },
-      "grammar": [],
+      "grammar": [
+        {
+          "title": "Le Subjonctif présent (Сослагательное наклонение)",
+          "content": "\n<p>Сюбжонктив выражает не факт, а отношение к нему: желание, необходимость, эмоцию, сомнение. Почти всегда стоит после <strong>que</strong>.</p>\n<h3>Образование</h3>\n<p>Берём основу 3-го лица мн. ч. настоящего времени (<em>ils</em>) и добавляем окончания: <strong>-e, -es, -e, -ions, -iez, -ent</strong>.</p>\n<table><thead><tr><th>parler → ils parl-</th><th>finir → ils finiss-</th></tr></thead><tbody>\n<tr><td>que je parl<strong>e</strong></td><td>que je finiss<strong>e</strong></td></tr>\n<tr><td>que tu parl<strong>es</strong></td><td>que tu finiss<strong>es</strong></td></tr>\n<tr><td>qu'il parl<strong>e</strong></td><td>qu'il finiss<strong>e</strong></td></tr>\n<tr><td>que nous parl<strong>ions</strong></td><td>que nous finiss<strong>ions</strong></td></tr>\n</tbody></table>\n<h3>Когда употребляется</h3>\n<p>После выражений необходимости и желания: <em>il faut que, vouloir que, souhaiter que</em>; эмоций: <em>être content que, avoir peur que</em>; сомнения: <em>douter que, ne pas penser que</em>; союзов: <em>bien que, pour que, avant que, jusqu'à ce que</em>.</p>\n<p><strong>Il faut que tu <u>fasses</u> tes devoirs.</strong> — Нужно, чтобы ты сделал уроки.</p>\n<h3>Неправильные</h3>\n<p>être (que je sois), avoir (que j'aie), aller (que j'aille), faire (que je fasse), pouvoir (que je puisse), savoir (que je sache), vouloir (que je veuille).</p>\n"
+        },
+        {
+          "title": "Le Conditionnel présent (Условное наклонение)",
+          "content": "\n<p>Кондисьонель выражает вежливость, желание и гипотезу («бы»).</p>\n<h3>Образование</h3>\n<p><strong>Основа будущего времени (Futur) + окончания Imparfait</strong> (-ais, -ais, -ait, -ions, -iez, -aient).</p>\n<table><thead><tr><th>Инфинитив</th><th>Conditionnel (je)</th><th>Перевод</th></tr></thead><tbody>\n<tr><td>parler</td><td>je parlerais</td><td>я говорил бы</td></tr>\n<tr><td>finir</td><td>je finirais</td><td>я закончил бы</td></tr>\n<tr><td>être</td><td>je serais</td><td>я был бы</td></tr>\n<tr><td>avoir</td><td>j'aurais</td><td>у меня было бы</td></tr>\n<tr><td>aller</td><td>j'irais</td><td>я пошёл бы</td></tr>\n</tbody></table>\n<h3>Употребление</h3>\n<p>Вежливость: <em>Je <u>voudrais</u> un café.</em> — Я хотел бы кофе.<br>\nГипотеза (Si + imparfait → conditionnel présent): <em>Si j'avais le temps, je <u>voyagerais</u>.</em> — Если бы у меня было время, я бы путешествовал.</p>\n"
+        },
+        {
+          "title": "Le Conditionnel passé (Прошедшее условное)",
+          "content": "\n<p>Выражает действие, которое <strong>могло бы произойти</strong> в прошлом, но не произошло — сожаление или упрёк.</p>\n<h3>Образование</h3>\n<p><strong>avoir/être в Conditionnel présent + participe passé.</strong></p>\n<table><thead><tr><th>Французский</th><th>Перевод</th></tr></thead><tbody>\n<tr><td>j'aurais aimé</td><td>я хотел бы (тогда)</td></tr>\n<tr><td>tu aurais dû</td><td>ты должен был бы</td></tr>\n<tr><td>il serait venu</td><td>он пришёл бы</td></tr>\n</tbody></table>\n<h3>Гипотеза в прошлом</h3>\n<p>Si + plus-que-parfait → conditionnel passé:<br>\n<strong>Si tu avais étudié, tu <u>aurais réussi</u> l'examen.</strong> — Если бы ты учился, ты бы сдал экзамен.</p>\n"
+        },
+        {
+          "title": "Le Plus-que-parfait (Предпрошедшее)",
+          "content": "\n<p>Обозначает действие, случившееся <strong>раньше</strong> другого прошедшего действия («сделал к тому моменту»).</p>\n<h3>Образование</h3>\n<p><strong>avoir/être в Imparfait + participe passé.</strong></p>\n<table><thead><tr><th>Французский</th><th>Перевод</th></tr></thead><tbody>\n<tr><td>j'avais mangé</td><td>я (уже) поел</td></tr>\n<tr><td>tu avais fini</td><td>ты (уже) закончил</td></tr>\n<tr><td>elle était partie</td><td>она (уже) ушла</td></tr>\n</tbody></table>\n<p><strong>Quand je suis arrivé, le train <u>était déjà parti</u>.</strong> — Когда я пришёл, поезд уже ушёл.</p>\n"
+        },
+        {
+          "title": "Le Discours indirect (Косвенная речь)",
+          "content": "\n<p>При передаче чужих слов меняются местоимения и — если вводящий глагол в прошедшем — времена (согласование времён).</p>\n<h3>Согласование времён</h3>\n<table><thead><tr><th>Прямая речь</th><th>Косвенная (в прошлом)</th></tr></thead><tbody>\n<tr><td>présent</td><td>imparfait</td></tr>\n<tr><td>passé composé</td><td>plus-que-parfait</td></tr>\n<tr><td>futur</td><td>conditionnel présent</td></tr>\n</tbody></table>\n<p>«Je <u>suis</u> fatigué» → Il a dit qu'il <u>était</u> fatigué.<br>\n«J'<u>ai fini</u>» → Il a dit qu'il <u>avait fini</u>.</p>\n<p>Вопросы вводятся через <em>si</em> (да/нет) или <em>ce que</em> (что): <em>Il m'a demandé si je venais.</em></p>\n"
+        },
+        {
+          "title": "Le Gérondif (Деепричастие)",
+          "content": "\n<p>Герундив = <strong>en + participe présent</strong>. Выражает одновременность, способ или условие; подлежащее у обоих действий одно.</p>\n<h3>Образование</h3>\n<p>Основа <em>nous</em> настоящего времени + <strong>-ant</strong>, с <strong>en</strong>: parler → en parlant, finir → en finissant, faire → en faisant.</p>\n<table><thead><tr><th>Французский</th><th>Значение</th></tr></thead><tbody>\n<tr><td>Il chante <strong>en travaillant</strong>.</td><td>одновременность: поёт, работая</td></tr>\n<tr><td>J'ai appris <strong>en pratiquant</strong>.</td><td>способ: научился, практикуясь</td></tr>\n<tr><td><strong>En partant</strong> tôt, tu éviteras les embouteillages.</td><td>условие: уехав рано…</td></tr>\n</tbody></table>\n<p>Исключения: être → en étant, avoir → en ayant, savoir → en sachant.</p>\n"
+        },
+        {
+          "title": "La Voix passive (Пассивный залог)",
+          "content": "\n<p>В пассиве объект становится подлежащим. Образуется: <strong>être (в нужном времени) + participe passé</strong>, который согласуется в роде и числе. Исполнитель вводится через <strong>par</strong>.</p>\n<table><thead><tr><th>Актив</th><th>Пассив</th></tr></thead><tbody>\n<tr><td>Le chef prépare le plat.</td><td>Le plat <strong>est préparé</strong> par le chef.</td></tr>\n<tr><td>Molière a écrit cette pièce.</td><td>Cette pièce <strong>a été écrite</strong> par Molière.</td></tr>\n<tr><td>On construira un pont.</td><td>Un pont <strong>sera construit</strong>.</td></tr>\n</tbody></table>\n<p>Согласование: <em>La lettre est écri<strong>te</strong></em> (ж.р.), <em>Les livres sont vend<strong>us</strong></em> (мн.ч.).</p>\n"
+        }
+      ],
       "quiz": [
         {
           "question": "Bien qu'il ___ malade, il est venu travailler.",
@@ -2541,12 +3358,160 @@
           "explanation": "После 'à moins que' (если только не) используется Subjonctif (aille)."
         }
       ],
-      "exercises": [],
+      "exercises": [
+        {
+          "sentence": "Il faut que tu _____ tes devoirs.",
+          "answer": [
+            "fasses"
+          ],
+          "hint": "subjonctif, faire"
+        },
+        {
+          "sentence": "Je voudrais que vous _____ à l'heure.",
+          "answer": [
+            "soyez"
+          ],
+          "hint": "subjonctif, être"
+        },
+        {
+          "sentence": "Si j'avais le temps, je _____.",
+          "answer": [
+            "voyagerais"
+          ],
+          "hint": "conditionnel, voyager"
+        },
+        {
+          "sentence": "Quand je suis arrivé, le train était déjà _____.",
+          "answer": [
+            "parti"
+          ],
+          "hint": "plus-que-parfait, partir"
+        },
+        {
+          "sentence": "Bien qu'il _____, nous sortons.",
+          "answer": [
+            "pleuve"
+          ],
+          "hint": "subjonctif, pleuvoir"
+        },
+        {
+          "sentence": "Si tu avais étudié, tu _____ l'examen.",
+          "answer": [
+            "aurais réussi"
+          ],
+          "hint": "conditionnel passé, réussir"
+        },
+        {
+          "sentence": "Cette maison _____ par mon grand-père.",
+          "answer": [
+            "a été construite"
+          ],
+          "hint": "passif passé, construire (ж.р.)"
+        },
+        {
+          "sentence": "_____ tôt, tu éviteras les embouteillages.",
+          "answer": [
+            "En partant"
+          ],
+          "hint": "gérondif, partir"
+        },
+        {
+          "sentence": "Je doute qu'il _____.",
+          "answer": [
+            "vienne"
+          ],
+          "hint": "subjonctif, venir"
+        },
+        {
+          "sentence": "Il a dit qu'il _____ fatigué.",
+          "answer": [
+            "était"
+          ],
+          "hint": "косвенная речь: présent → imparfait"
+        },
+        {
+          "sentence": "Nous _____ visiter Paris.",
+          "answer": [
+            "aimerions"
+          ],
+          "hint": "conditionnel, aimer"
+        },
+        {
+          "sentence": "Le livre _____ par Camus.",
+          "answer": [
+            "a été écrit"
+          ],
+          "hint": "passif passé, écrire (м.р.)"
+        },
+        {
+          "sentence": "Pour que tu _____, je répète.",
+          "answer": [
+            "comprennes"
+          ],
+          "hint": "subjonctif, comprendre"
+        },
+        {
+          "sentence": "Elle a appris le français _____ des films.",
+          "answer": [
+            "en regardant"
+          ],
+          "hint": "gérondif, regarder"
+        },
+        {
+          "sentence": "Il a dit qu'il _____ fini.",
+          "answer": [
+            "avait"
+          ],
+          "hint": "косвенная речь: passé composé → plus-que-parfait"
+        }
+      ],
       "reading": [
         {
           "title": "Le Paradoxe du Choix",
           "text": "Dans la société moderne, on nous fait souvent croire que plus de choix signifie plus de liberté, et plus de liberté signifie plus de bonheur. Cependant, le psychologue Barry Schwartz soutient que ce n'est pas nécessairement vrai. Il appelle cela \"le paradoxe du choix\". Lorsque nous sommes confrontés à trop d'options, nous devenons paralysés plutôt que libérés.\n\nImaginez entrer dans un supermarché pour acheter un pot de confiture. S'il n'y a que trois saveurs, la décision est facile. Vous choisissez celle que vous préférez et partez satisfait. Mais s'il y a trente saveurs, le processus devient épuisant. Vous comparez les ingrédients, les prix et les marques. Même après avoir fait un choix, vous pourriez ressentir de l'anxiété. Avez-vous choisi le bon ? L'autre aurait-il été meilleur ?\n\nCe phénomène s'étend au-delà de l'épicerie aux décisions importantes de la vie comme les carrières, les relations et les lieux de vie. La pression de faire le choix \"parfait\" peut conduire à une insatisfaction chronique. Nous regardons constamment par-dessus notre épaule, nous demandant si l'herbe est plus verte ailleurs.\n\nPour combattre cela, Schwartz suggère que nous devrions viser le \"suffisamment bon\" plutôt que le \"meilleur\". En abaissant nos attentes et en limitant volontairement nos options, nous pouvons réduire l'anxiété et augmenter notre bien-être global. La vraie liberté, semble-t-il, ne réside pas dans le choix infini, mais dans la capacité de s'engager envers ce que nous avons choisi.",
-          "translation": "В современном обществе нас часто заставляют верить, что больше выбора означает больше свободы, а больше свободы означает больше счастья. Однако психолог Барри Шварц утверждает, что это не обязательно так. Он называет это «парадоксом выбора». Когда нам предоставляется слишком много вариантов, мы становимся парализованными, а не освобожденными.\n\nПредставьте, что вы заходите в супермаркет, чтобы купить банку варенья. Если есть только три вкуса, решение простое. Вы выбираете тот, который вам больше нравится, и уходите довольным. Но если вкусов тридцать, процесс становится утомительным. Вы сравниваете ингредиенты, цены и бренды. Даже после того, как вы сделали выбор, вы можете чувствовать тревогу. Выбрали ли вы правильный? Был бы другой вкуснее?\n\nЭтот феномен распространяется не только на продукты, но и на важные жизненные решения, такие как карьера, отношения и место жительства. Давление сделать «идеальный» выбор может привести к хронической неудовлетворенности. Мы постоянно оглядываемся назад, задаваясь вопросом, не зеленее ли трава на другой стороне.\n\nЧтобы бороться с этим, Шварц предлагает нам стремиться к «достаточно хорошему», а не к «лучшему». Снижая наши ожидания и добровольно ограничивая свои варианты, мы можем уменьшить тревогу и повысить наше общее благополучие. Истинная свобода, похоже, заключается не в бесконечном выборе, а в способности быть преданным тому, что мы выбрали."
+          "translation": "В современном обществе нас часто заставляют верить, что больше выбора означает больше свободы, а больше свободы означает больше счастья. Однако психолог Барри Шварц утверждает, что это не обязательно так. Он называет это «парадоксом выбора». Когда нам предоставляется слишком много вариантов, мы становимся парализованными, а не освобожденными.\n\nПредставьте, что вы заходите в супермаркет, чтобы купить банку варенья. Если есть только три вкуса, решение простое. Вы выбираете тот, который вам больше нравится, и уходите довольным. Но если вкусов тридцать, процесс становится утомительным. Вы сравниваете ингредиенты, цены и бренды. Даже после того, как вы сделали выбор, вы можете чувствовать тревогу. Выбрали ли вы правильный? Был бы другой вкуснее?\n\nЭтот феномен распространяется не только на продукты, но и на важные жизненные решения, такие как карьера, отношения и место жительства. Давление сделать «идеальный» выбор может привести к хронической неудовлетворенности. Мы постоянно оглядываемся назад, задаваясь вопросом, не зеленее ли трава на другой стороне.\n\nЧтобы бороться с этим, Шварц предлагает нам стремиться к «достаточно хорошему», а не к «лучшему». Снижая наши ожидания и добровольно ограничивая свои варианты, мы можем уменьшить тревогу и повысить наше общее благополучие. Истинная свобода, похоже, заключается не в бесконечном выборе, а в способности быть преданным тому, что мы выбрали.",
+          "questions": [
+            {
+              "question": "Кому принадлежит идея «парадокса выбора»?",
+              "options": [
+                "Психологу Барри Шварцу",
+                "Философу Сартру",
+                "Никому конкретно",
+                "Автору текста"
+              ],
+              "correct": 0
+            },
+            {
+              "question": "Что, по мнению автора, происходит при слишком большом числе вариантов?",
+              "options": [
+                "Мы становимся счастливее",
+                "Мы парализованы, а не свободны",
+                "Мы решаем быстрее",
+                "Мы экономим деньги"
+              ],
+              "correct": 1
+            },
+            {
+              "question": "Какой бытовой пример приводится в тексте?",
+              "options": [
+                "Покупка машины",
+                "Покупка банки варенья",
+                "Выбор книги",
+                "Выбор телефона"
+              ],
+              "correct": 1
+            },
+            {
+              "question": "Что советует Шварц для борьбы с этим?",
+              "options": [
+                "Всегда искать лучшее",
+                "Стремиться к «достаточно хорошему»",
+                "Вообще не выбирать",
+                "Сравнивать все цены"
+              ],
+              "correct": 1
+            }
+          ]
         },
         {
           "title": "La Cité Silencieuse",
@@ -2558,7 +3523,346 @@
           "text": "Le Dr Aris Thorne avait passé toute sa vie à chercher la Civilisation Perdue d'Aethelgard. Selon les mythes, les Aethelgardiens possédaient une technologie bien supérieure à tout ce qui existe dans le monde moderne. La plupart de ses collègues le ridiculisaient, qualifiant cela de conte de fées.\n\nMais Aris était persévérant. Ses recherches l'ont mené sur une île isolée du Pacifique. Là, enfoui profondément dans une grotte volcanique, il l'a trouvé : une sphère métallique, pulsant d'une faible lumière bleue. C'était différent de tout matériau qu'il avait jamais vu.\n\nQuand il l'a touchée, une projection holographique a rempli la grotte. Elle montrait l'histoire d'Aethelgard. Ils n'avaient pas été détruits par la guerre ou une catastrophe naturelle. Ils étaient partis. Ils avaient réalisé que leur technologie consumait leur humanité, alors ils ont construit un vaisseau et sont partis vers les étoiles, ne laissant derrière eux que cette archive comme avertissement.\n\nAris est resté assis dans la grotte pendant des heures, regardant les images d'une société qui avait choisi la sagesse plutôt que le pouvoir. Il a réalisé que sa découverte changerait le monde, mais peut-être pas de la manière qu'il avait espérée. S'il révélait la sphère, l'humanité pourrait utiliser les connaissances pour construire des armes, répétant les erreurs que les Aethelgardiens avaient essayé d'éviter. Finalement, Aris a pris la décision la plus difficile de sa carrière. Il a laissé la sphère là où elle était et a scellé l'entrée de la grotte. Certains secrets, a-t-il décidé, étaient destinés à rester des échos.",
           "translation": "Доктор Арис Торн провел всю свою жизнь в поисках Потерянной Цивилизации Этельгард. Согласно мифам, этельгардцы обладали технологиями, намного превосходящими всё, что есть в современном мире. Большинство его коллег высмеивали его, называя это сказкой.\n\nНо Арис был настойчив. Его исследования привели его на отдаленный остров в Тихом океане. Там, глубоко в вулканической пещере, он нашел это: металлическую сферу, пульсирующую слабым голубым светом. Это было непохоже ни на один материал, который он когда-либо видел.\n\nКогда он прикоснулся к ней, пещеру заполнила голографическая проекция. Она показала историю Этельгарда. Они не были уничтожены войной или стихийным бедствием. Они ушли. Они поняли, что их технологии поглощают их человечность, поэтому они построили корабль и улетели к звездам, оставив после себя только этот архив в качестве предупреждения.\n\nАрис просидел в пещере несколько часов, наблюдая за образами общества, которое выбрало мудрость вместо власти. Он понял, что его открытие изменит мир, но, возможно, не так, как он надеялся. Если он раскроет сферу, человечество может использовать знания для создания оружия, повторяя ошибки, которых этельгардцы пытались избежать. В конце концов, Арис принял самое трудное решение в своей карьере. Он оставил сферу там, где она была, и запечатал вход в пещеру. Некоторые секреты, решил он, должны оставаться эхом."
         }
+      ],
+      "grammarSections": [
+        {
+          "title": "Наклонения",
+          "from": 0,
+          "to": 2
+        },
+        {
+          "title": "Прошедшее и согласование времён",
+          "from": 3,
+          "to": 4
+        },
+        {
+          "title": "Особые конструкции",
+          "from": 5,
+          "to": 6
+        }
+      ],
+      "conjugation": [
+        {
+          "infinitive": "être",
+          "conjugations": [
+            "serais",
+            "serais",
+            "serait",
+            "serions",
+            "seriez",
+            "seraient"
+          ],
+          "tense": "Conditionnel"
+        },
+        {
+          "infinitive": "avoir",
+          "conjugations": [
+            "aurais",
+            "aurais",
+            "aurait",
+            "aurions",
+            "auriez",
+            "auraient"
+          ],
+          "tense": "Conditionnel"
+        },
+        {
+          "infinitive": "aller",
+          "conjugations": [
+            "irais",
+            "irais",
+            "irait",
+            "irions",
+            "iriez",
+            "iraient"
+          ],
+          "tense": "Conditionnel"
+        },
+        {
+          "infinitive": "faire",
+          "conjugations": [
+            "ferais",
+            "ferais",
+            "ferait",
+            "ferions",
+            "feriez",
+            "feraient"
+          ],
+          "tense": "Conditionnel"
+        },
+        {
+          "infinitive": "vouloir",
+          "conjugations": [
+            "voudrais",
+            "voudrais",
+            "voudrait",
+            "voudrions",
+            "voudriez",
+            "voudraient"
+          ],
+          "tense": "Conditionnel"
+        },
+        {
+          "infinitive": "pouvoir",
+          "conjugations": [
+            "pourrais",
+            "pourrais",
+            "pourrait",
+            "pourrions",
+            "pourriez",
+            "pourraient"
+          ],
+          "tense": "Conditionnel"
+        },
+        {
+          "infinitive": "venir",
+          "conjugations": [
+            "viendrais",
+            "viendrais",
+            "viendrait",
+            "viendrions",
+            "viendriez",
+            "viendraient"
+          ],
+          "tense": "Conditionnel"
+        },
+        {
+          "infinitive": "voir",
+          "conjugations": [
+            "verrais",
+            "verrais",
+            "verrait",
+            "verrions",
+            "verriez",
+            "verraient"
+          ],
+          "tense": "Conditionnel"
+        },
+        {
+          "infinitive": "être",
+          "conjugations": [
+            "sois",
+            "sois",
+            "soit",
+            "soyons",
+            "soyez",
+            "soient"
+          ],
+          "tense": "Subjonctif"
+        },
+        {
+          "infinitive": "avoir",
+          "conjugations": [
+            "aie",
+            "aies",
+            "ait",
+            "ayons",
+            "ayez",
+            "aient"
+          ],
+          "tense": "Subjonctif"
+        },
+        {
+          "infinitive": "faire",
+          "conjugations": [
+            "fasse",
+            "fasses",
+            "fasse",
+            "fassions",
+            "fassiez",
+            "fassent"
+          ],
+          "tense": "Subjonctif"
+        },
+        {
+          "infinitive": "aller",
+          "conjugations": [
+            "aille",
+            "ailles",
+            "aille",
+            "allions",
+            "alliez",
+            "aillent"
+          ],
+          "tense": "Subjonctif"
+        },
+        {
+          "infinitive": "pouvoir",
+          "conjugations": [
+            "puisse",
+            "puisses",
+            "puisse",
+            "puissions",
+            "puissiez",
+            "puissent"
+          ],
+          "tense": "Subjonctif"
+        },
+        {
+          "infinitive": "savoir",
+          "conjugations": [
+            "sache",
+            "saches",
+            "sache",
+            "sachions",
+            "sachiez",
+            "sachent"
+          ],
+          "tense": "Subjonctif"
+        },
+        {
+          "infinitive": "prendre",
+          "conjugations": [
+            "prenne",
+            "prennes",
+            "prenne",
+            "prenions",
+            "preniez",
+            "prennent"
+          ],
+          "tense": "Subjonctif"
+        },
+        {
+          "infinitive": "venir",
+          "conjugations": [
+            "vienne",
+            "viennes",
+            "vienne",
+            "venions",
+            "veniez",
+            "viennent"
+          ],
+          "tense": "Subjonctif"
+        }
+      ],
+      "reorderExercises": [
+        {
+          "words": [
+            "Il",
+            "faut",
+            "que",
+            "tu",
+            "fasses",
+            "attention"
+          ],
+          "correct": "Il faut que tu fasses attention",
+          "translation": "Нужно, чтобы ты был внимателен"
+        },
+        {
+          "words": [
+            "Je",
+            "voudrais",
+            "visiter",
+            "Paris"
+          ],
+          "correct": "Je voudrais visiter Paris",
+          "translation": "Я хотел бы посетить Париж"
+        },
+        {
+          "words": [
+            "Si",
+            "j'avais",
+            "le",
+            "temps",
+            "je",
+            "voyagerais"
+          ],
+          "correct": "Si j'avais le temps je voyagerais",
+          "translation": "Если бы у меня было время, я бы путешествовал"
+        },
+        {
+          "words": [
+            "Cette",
+            "lettre",
+            "a",
+            "été",
+            "écrite",
+            "par",
+            "Marie"
+          ],
+          "correct": "Cette lettre a été écrite par Marie",
+          "translation": "Это письмо было написано Мари"
+        },
+        {
+          "words": [
+            "Bien",
+            "qu'il",
+            "pleuve",
+            "nous",
+            "sortons"
+          ],
+          "correct": "Bien qu'il pleuve nous sortons",
+          "translation": "Хотя идёт дождь, мы выходим"
+        },
+        {
+          "words": [
+            "En",
+            "partant",
+            "tôt",
+            "tu",
+            "éviteras",
+            "les",
+            "embouteillages"
+          ],
+          "correct": "En partant tôt tu éviteras les embouteillages",
+          "translation": "Уехав рано, ты избежишь пробок"
+        },
+        {
+          "words": [
+            "Je",
+            "doute",
+            "qu'il",
+            "vienne",
+            "ce",
+            "soir"
+          ],
+          "correct": "Je doute qu'il vienne ce soir",
+          "translation": "Сомневаюсь, что он придёт сегодня вечером"
+        },
+        {
+          "words": [
+            "Le",
+            "pont",
+            "sera",
+            "construit",
+            "l'année",
+            "prochaine"
+          ],
+          "correct": "Le pont sera construit l'année prochaine",
+          "translation": "Мост построят в следующем году"
+        },
+        {
+          "words": [
+            "Il",
+            "a",
+            "dit",
+            "qu'il",
+            "était",
+            "fatigué"
+          ],
+          "correct": "Il a dit qu'il était fatigué",
+          "translation": "Он сказал, что устал"
+        },
+        {
+          "words": [
+            "Nous",
+            "aimerions",
+            "que",
+            "vous",
+            "veniez"
+          ],
+          "correct": "Nous aimerions que vous veniez",
+          "translation": "Мы хотели бы, чтобы вы пришли"
+        }
       ]
     }
-  }
+  },
+  "conjugationPronouns": [
+    "je",
+    "tu",
+    "il/elle",
+    "nous",
+    "vous",
+    "ils/elles"
+  ]
 }

@@ -1,6 +1,6 @@
 /* Petit Pas v2 — Main Application (SPA) */
 import { Store, ACHIEVEMENTS, SRS_INTERVALS } from './store.js';
-import { speak, isSpeechSupported } from './audio.js';
+import { speak, isSpeechSupported, getVoicesForLang, getPreferredVoiceURI, setPreferredVoice, onVoicesReady } from './audio.js';
 
 // ============ HTML ESCAPING (XSS protection) ============
 function escapeHTML(str) {
@@ -125,6 +125,8 @@ const Router = {
       renderDictation(parts[1]); // level
     } else if (parts[0] === 'cloze' && parts[1]) {
       renderCloze(parts[1]); // level
+    } else if (parts[0] === 'kana') {
+      renderKana(parts[1] || 'hiragana');
     } else if (parts[0] === 'mistakes') {
       renderMistakes();
     } else if (parts[0] === 'review') {
@@ -546,7 +548,7 @@ async function renderTopics(level) {
     sections.push({ title: 'Слово в контексте', icon: '&#9999;', route: 'cloze' });
   }
 
-  const catNames = { nouns: 'Существительные', verbs: 'Глаголы', adjectives: 'Прилагательные', others: 'Другие' };
+  const catNames = { nouns: 'Существительные', verbs: 'Глаголы', adjectives: 'Прилагательные', phrases: 'Фразы', numbers_time: 'Числа и время', idioms: 'Идиомы', others: 'Другие' };
 
   let vocabHTML = '';
   if (hasVocab) {
@@ -565,10 +567,12 @@ async function renderTopics(level) {
 
   let practiceHTML = '';
   const practiceItems = sections.filter(s => !['vocab'].includes(s.route));
-  if (practiceItems.length > 0) {
+  const kanaCard = data.kana ? `<div class="nav-card" data-nav="#/kana"><strong>&#12354; Азбука (кана)</strong></div>` : '';
+  if (practiceItems.length > 0 || kanaCard) {
     practiceHTML = `
       <div class="section-title">&#127919; Практика и теория</div>
       <div class="card-grid">
+        ${kanaCard}
         ${practiceItems.map(s => `
           <div class="nav-card" data-nav="#/${s.route}/${level}">
             <strong>${s.title}</strong>
@@ -595,7 +599,7 @@ async function renderPracticeMode(level, category, mode) {
   if (!data || !data.levels[level] || !data.levels[level].vocabulary[category]) return;
 
   const words = data.levels[level].vocabulary[category];
-  const catNames = { nouns: 'Существительные', verbs: 'Глаголы', adjectives: 'Прилагательные', others: 'Другие' };
+  const catNames = { nouns: 'Существительные', verbs: 'Глаголы', adjectives: 'Прилагательные', phrases: 'Фразы', numbers_time: 'Числа и время', idioms: 'Идиомы', others: 'Другие' };
 
   const modes = [
     { id: 'flashcard', name: 'Карточки' },
@@ -1387,6 +1391,109 @@ async function renderCloze(level) {
   initFillBlank('cloze-root', items);
 }
 
+// --- KANA TRAINER (Japanese syllabary) ---
+async function renderKana(mode) {
+  const lang = Store.getSelectedLanguage();
+  const data = await loadLanguageData(lang);
+  if (!data || !data.kana) {
+    renderShell(`<div class="empty-state"><div class="empty-icon">&#128305;</div><p>Тренажёр азбуки доступен только для японского.</p><button class="btn btn-primary mt-2" data-nav="#/dashboard">На главную</button></div>`, { backRoute: '#/dashboard' });
+    return;
+  }
+
+  const modes = [
+    { id: 'hiragana', name: 'Хирагана' },
+    { id: 'katakana', name: 'Катакана' },
+    { id: 'mix', name: 'Микс' },
+  ];
+  if (!modes.some(m => m.id === mode)) mode = 'hiragana';
+
+  const selector = `
+    <div class="mode-selector">
+      ${modes.map(m => `<button class="mode-btn ${mode === m.id ? 'active' : ''}" data-nav="#/kana/${m.id}">${m.name}</button>`).join('')}
+    </div>`;
+
+  const content = `
+    <h1 class="page-title">&#12354; Азбука (кана)</h1>
+    ${selector}
+    <div id="kana-root"></div>
+  `;
+
+  renderShell(content, { backRoute: '#/topics/beginner' });
+
+  const pool = mode === 'katakana'
+    ? data.kana.katakana
+    : mode === 'mix'
+      ? [...data.kana.hiragana, ...data.kana.katakana]
+      : data.kana.hiragana;
+  initKanaQuiz('kana-root', pool);
+}
+
+function initKanaQuiz(containerId, pool) {
+  const container = document.getElementById(containerId);
+  const questions = shuffleArray([...pool]).slice(0, Math.min(20, pool.length));
+  let index = 0;
+  let score = 0;
+
+  function render() {
+    if (index >= questions.length) {
+      const pct = Math.round((score / questions.length) * 100);
+      container.innerHTML = `
+        <div class="quiz-results">
+          <div class="quiz-score">${score} / ${questions.length}</div>
+          <div class="quiz-message">${pct}% верно</div>
+          <button class="btn btn-primary" id="restart-btn">Ещё раз</button>
+        </div>`;
+      container.querySelector('#restart-btn').addEventListener('click', () => {
+        index = 0; score = 0; shuffleArray(questions); render();
+      });
+      return;
+    }
+
+    const q = questions[index];
+    const others = shuffleArray(pool.filter(k => k.romaji !== q.romaji)).slice(0, 3).map(k => k.romaji);
+    const options = shuffleArray([q.romaji, ...others]);
+
+    container.innerHTML = `
+      <div class="quiz-container">
+        <div class="quiz-progress">
+          <span>${index + 1} / ${questions.length}</span>
+          <div class="quiz-progress-bar"><div class="quiz-progress-fill" style="width:${(index / questions.length) * 100}%"></div></div>
+          <span>Счёт: ${score}</span>
+        </div>
+        <div class="kana-char" id="kana-char">${escapeHTML(q.char)}</div>
+        <p class="text-dim text-center" style="font-size:0.85rem">Какое чтение (ромадзи)?</p>
+        <div class="quiz-options kana-options">
+          ${options.map(o => `<button class="quiz-option" data-romaji="${escapeHTML(o)}">${escapeHTML(o)}</button>`).join('')}
+        </div>
+        <div class="quiz-feedback hidden" id="feedback"></div>
+      </div>`;
+
+    const feedback = container.querySelector('#feedback');
+    container.querySelectorAll('.quiz-option').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const correct = btn.dataset.romaji === q.romaji;
+        container.querySelectorAll('.quiz-option').forEach(b => {
+          b.disabled = true;
+          if (b.dataset.romaji === q.romaji) b.classList.add('correct');
+          else if (b === btn && !correct) b.classList.add('incorrect');
+        });
+        feedback.classList.remove('hidden');
+        if (correct) {
+          score++;
+          feedback.className = 'quiz-feedback correct';
+          feedback.textContent = 'Правильно!';
+        } else {
+          feedback.className = 'quiz-feedback incorrect';
+          feedback.innerHTML = `Правильный ответ: <strong>${escapeHTML(q.romaji)}</strong>`;
+        }
+        if (isSpeechSupported()) speak(q.char, 'japanese', 0.8);
+        setTimeout(() => { index++; render(); }, 1100);
+      });
+    });
+  }
+  render();
+}
+
 // --- REVIEW (SRS) ---
 async function renderReview() {
   const lang = Store.getSelectedLanguage();
@@ -1561,6 +1668,13 @@ function renderSettings() {
       </div>
     </div>
 
+    ${isSpeechSupported() ? `
+    <div class="settings-section">
+      <h3>Озвучка</h3>
+      <p class="text-dim" style="font-size:0.82rem;margin-bottom:0.5rem">Выберите голос для каждого языка. Список зависит от голосов, установленных в вашей системе/браузере — нейросетевые («Google», «Natural») звучат заметно лучше.</p>
+      <div id="voice-settings"></div>
+    </div>` : ''}
+
     <div class="settings-section">
       <h3>Данные</h3>
       <div class="btn-group">
@@ -1589,6 +1703,49 @@ function renderSettings() {
     Store.setDailyGoal(parseInt(e.target.value) || 20);
     showToast('&#9989;', 'Сохранено', 'Дневная цель обновлена');
   });
+
+  // Voice picker
+  if (isSpeechSupported()) {
+    const voiceLangs = [
+      { code: 'english', name: 'Английский', sample: 'Hello, how are you today?' },
+      { code: 'french', name: 'Французский', sample: 'Bonjour, comment ça va ?' },
+      { code: 'japanese', name: 'Японский', sample: 'こんにちは、お元気ですか。' },
+      { code: 'serbian', name: 'Сербский', sample: 'Добар дан, како сте?' },
+    ];
+    const populateVoices = () => {
+      const root = document.getElementById('voice-settings');
+      if (!root) return;
+      root.innerHTML = voiceLangs.map(l => {
+        const vs = getVoicesForLang(l.code);
+        const pref = getPreferredVoiceURI(l.code);
+        const opts = vs.length
+          ? '<option value="">Авто (лучший доступный)</option>' + vs.map(v =>
+              `<option value="${escapeHTML(v.voiceURI)}" ${v.voiceURI === pref ? 'selected' : ''}>${escapeHTML(v.name)} (${escapeHTML(v.lang)})</option>`).join('')
+          : '<option value="">Голоса не найдены</option>';
+        return `
+          <div class="settings-row voice-row">
+            <label>${l.name}</label>
+            <div class="voice-controls">
+              <select class="voice-select" data-lang="${l.code}" ${vs.length ? '' : 'disabled'}>${opts}</select>
+              <button class="btn btn-secondary btn-sm voice-test" data-lang="${l.code}" data-sample="${escapeHTML(l.sample)}" ${vs.length ? '' : 'disabled'} title="Прослушать">&#128264;</button>
+            </div>
+          </div>`;
+      }).join('');
+
+      root.querySelectorAll('.voice-select').forEach(sel => {
+        sel.addEventListener('change', () => {
+          setPreferredVoice(sel.dataset.lang, sel.value || null);
+          const l = voiceLangs.find(x => x.code === sel.dataset.lang);
+          if (l) speak(l.sample, l.code, 0.9);
+        });
+      });
+      root.querySelectorAll('.voice-test').forEach(btn => {
+        btn.addEventListener('click', () => speak(btn.dataset.sample, btn.dataset.lang, 0.9));
+      });
+    };
+    populateVoices();
+    onVoicesReady(populateVoices);
+  }
 
   // Export
   document.getElementById('export-btn')?.addEventListener('click', () => {
@@ -2237,6 +2394,7 @@ function initConjugation(containerId, verbs, pronouns) {
 
     container.innerHTML = `
       <div class="conjugation-container">
+        ${verb.tense ? `<div class="conjugation-tense">${escapeHTML(verb.tense)}</div>` : ''}
         <div class="conjugation-prompt">
           <div class="conjugation-verb">${escapeHTML(verb.infinitive)}</div>
           <div class="conjugation-pronoun">${escapeHTML(pronoun)}</div>

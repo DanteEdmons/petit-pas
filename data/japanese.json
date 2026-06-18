@@ -343,6 +343,108 @@
             "frontHint": "doko",
             "back": "где"
           }
+        ],
+        "phrases": [
+          {
+            "front": "はじめまして",
+            "back": "Приятно познакомиться (впервые)",
+            "frontHint": "hajimemashite"
+          },
+          {
+            "front": "よろしくお願いします",
+            "back": "Будем знакомы / прошу любить и жаловать",
+            "frontHint": "yoroshiku onegai shimasu"
+          },
+          {
+            "front": "お名前は？",
+            "back": "Как вас зовут?",
+            "frontHint": "onamae wa?"
+          },
+          {
+            "front": "元気ですか",
+            "back": "Как дела?",
+            "frontHint": "genki desu ka"
+          },
+          {
+            "front": "元気です",
+            "back": "У меня всё хорошо",
+            "frontHint": "genki desu"
+          },
+          {
+            "front": "分かりません",
+            "back": "Я не понимаю",
+            "frontHint": "wakarimasen"
+          },
+          {
+            "front": "もう一度お願いします",
+            "back": "Повторите ещё раз, пожалуйста",
+            "frontHint": "mou ichido onegai shimasu"
+          },
+          {
+            "front": "英語が話せますか",
+            "back": "Вы говорите по-английски?",
+            "frontHint": "eigo ga hanasemasu ka"
+          },
+          {
+            "front": "いくらですか",
+            "back": "Сколько стоит?",
+            "frontHint": "ikura desu ka"
+          },
+          {
+            "front": "トイレはどこですか",
+            "back": "Где туалет?",
+            "frontHint": "toire wa doko desu ka"
+          },
+          {
+            "front": "これをください",
+            "back": "Дайте это, пожалуйста",
+            "frontHint": "kore o kudasai"
+          },
+          {
+            "front": "大丈夫です",
+            "back": "Всё в порядке",
+            "frontHint": "daijoubu desu"
+          },
+          {
+            "front": "ありがとうございます",
+            "back": "Спасибо (вежливо)",
+            "frontHint": "arigatou gozaimasu"
+          },
+          {
+            "front": "どういたしまして",
+            "back": "Не за что",
+            "frontHint": "dou itashimashite"
+          },
+          {
+            "front": "おはようございます",
+            "back": "Доброе утро (вежливо)",
+            "frontHint": "ohayou gozaimasu"
+          },
+          {
+            "front": "おやすみなさい",
+            "back": "Спокойной ночи",
+            "frontHint": "oyasuminasai"
+          },
+          {
+            "front": "いただきます",
+            "back": "«Приятного аппетита» (перед едой)",
+            "frontHint": "itadakimasu"
+          },
+          {
+            "front": "ごちそうさまでした",
+            "back": "Спасибо за еду (после еды)",
+            "frontHint": "gochisousama deshita"
+          },
+          {
+            "front": "またね",
+            "back": "Пока, до встречи",
+            "frontHint": "mata ne"
+          },
+          {
+            "front": "すみません",
+            "back": "Извините / простите",
+            "frontHint": "sumimasen"
+          }
         ]
       },
       "grammar": [
@@ -487,7 +589,113 @@
           "explanation": "'Takai' (дорогой) — и-прилагательное."
         }
       ],
-      "exercises": [],
+      "exercises": [
+        {
+          "sentence": "わたし_____がくせいです。",
+          "answer": [
+            "は"
+          ],
+          "hint": "тема предложения (wa)"
+        },
+        {
+          "sentence": "これ_____ほんです。",
+          "answer": [
+            "は"
+          ],
+          "hint": "тема: «это —»"
+        },
+        {
+          "sentence": "ほん_____よみます。",
+          "answer": [
+            "を"
+          ],
+          "hint": "прямое дополнение (o)"
+        },
+        {
+          "sentence": "みず_____のみます。",
+          "answer": [
+            "を"
+          ],
+          "hint": "что пьём — дополнение"
+        },
+        {
+          "sentence": "がっこう_____いきます。",
+          "answer": [
+            "に"
+          ],
+          "hint": "направление (ni)"
+        },
+        {
+          "sentence": "いえ_____かえります。",
+          "answer": [
+            "に"
+          ],
+          "hint": "куда возвращаюсь"
+        },
+        {
+          "sentence": "こうえん_____あそびます。",
+          "answer": [
+            "で"
+          ],
+          "hint": "место действия (de)"
+        },
+        {
+          "sentence": "ペン_____かきます。",
+          "answer": [
+            "で"
+          ],
+          "hint": "инструмент: чем пишу"
+        },
+        {
+          "sentence": "ともだち_____はなします。",
+          "answer": [
+            "と"
+          ],
+          "hint": "с кем (to)"
+        },
+        {
+          "sentence": "せんせい_____くるま。",
+          "answer": [
+            "の"
+          ],
+          "hint": "принадлежность: машина учителя"
+        },
+        {
+          "sentence": "ねこ_____すきです。",
+          "answer": [
+            "が"
+          ],
+          "hint": "объект симпатии (ga)"
+        },
+        {
+          "sentence": "わたし_____いきます。",
+          "answer": [
+            "も"
+          ],
+          "hint": "«тоже» (mo)"
+        },
+        {
+          "sentence": "くじ_____べんきょうします。",
+          "answer": [
+            "から"
+          ],
+          "hint": "«с/от» — начало"
+        },
+        {
+          "sentence": "ごじ_____はたらきます。",
+          "answer": [
+            "まで"
+          ],
+          "hint": "«до» — конец"
+        },
+        {
+          "sentence": "にほん_____きました。",
+          "answer": [
+            "へ"
+          ],
+          "hint": "направление (e/he)"
+        }
+      ],
       "reading": [
         {
           "title": "Momotaro (Мальчик-Персик)",
@@ -1594,6 +1802,148 @@
           "text": "Hachiko wa, Ueno-sensei no inu deshita.\n(Хатико был собакой профессора Уэно.)\n\nMainichi, Hachiko wa Shibuya-eki made sensei o okuri, yuugata ni mukae ni ikimashita.\n(Каждый день Хатико провожал профессора до станции Сибуя и встречал его вечером.)\n\nShikashi, aru hi, sensei wa daigaku de taorete, nakunarimashita.\n(Однако однажды профессор упал в университете и умер.)\n\nHachiko wa sore o shirimasen deshita.\n(Хатико этого не знал.)\n\nJuunenkan, Hachiko wa mainichi eki ni itte, sensei o machitsuzukemashita.\n(В течение десяти лет Хатико каждый день ходил на станцию и продолжал ждать профессора.)\n\nHitobito wa Hachiko no sugata ni kandou shimashita.\n(Люди были тронуты видом Хатико.)\n\nIma, Shibuya-eki ni wa Hachiko no douzou ga arimasu.\n(Сейчас на станции Сибуя стоит статуя Хатико.)",
           "translation": "Хатико был собакой профессора Уэно.\nКаждый день Хатико провожал профессора до станции Сибуя и встречал его вечером.\nНо однажды профессор умер в университете.\nХатико этого не знал.\nВ течение десяти лет Хатико каждый день приходил на станцию и ждал профессора.\nЛюди были тронуты преданностью Хатико.\nСейчас на станции Сибуя стоит статуя Хатико."
         }
+      ],
+      "conjugation": [
+        {
+          "infinitive": "食べる",
+          "conjugations": [
+            "食べます",
+            "食べて",
+            "食べた",
+            "食べない"
+          ],
+          "tense": "Формы глагола"
+        },
+        {
+          "infinitive": "飲む",
+          "conjugations": [
+            "飲みます",
+            "飲んで",
+            "飲んだ",
+            "飲まない"
+          ],
+          "tense": "Формы глагола"
+        },
+        {
+          "infinitive": "行く",
+          "conjugations": [
+            "行きます",
+            "行って",
+            "行った",
+            "行かない"
+          ],
+          "tense": "Формы глагола"
+        },
+        {
+          "infinitive": "来る",
+          "conjugations": [
+            "来ます",
+            "来て",
+            "来た",
+            "来ない"
+          ],
+          "tense": "Формы глагола"
+        },
+        {
+          "infinitive": "見る",
+          "conjugations": [
+            "見ます",
+            "見て",
+            "見た",
+            "見ない"
+          ],
+          "tense": "Формы глагола"
+        },
+        {
+          "infinitive": "読む",
+          "conjugations": [
+            "読みます",
+            "読んで",
+            "読んだ",
+            "読まない"
+          ],
+          "tense": "Формы глагола"
+        },
+        {
+          "infinitive": "書く",
+          "conjugations": [
+            "書きます",
+            "書いて",
+            "書いた",
+            "書かない"
+          ],
+          "tense": "Формы глагола"
+        },
+        {
+          "infinitive": "話す",
+          "conjugations": [
+            "話します",
+            "話して",
+            "話した",
+            "話さない"
+          ],
+          "tense": "Формы глагола"
+        },
+        {
+          "infinitive": "聞く",
+          "conjugations": [
+            "聞きます",
+            "聞いて",
+            "聞いた",
+            "聞かない"
+          ],
+          "tense": "Формы глагола"
+        },
+        {
+          "infinitive": "する",
+          "conjugations": [
+            "します",
+            "して",
+            "した",
+            "しない"
+          ],
+          "tense": "Формы глагола"
+        },
+        {
+          "infinitive": "買う",
+          "conjugations": [
+            "買います",
+            "買って",
+            "買った",
+            "買わない"
+          ],
+          "tense": "Формы глагола"
+        },
+        {
+          "infinitive": "寝る",
+          "conjugations": [
+            "寝ます",
+            "寝て",
+            "寝た",
+            "寝ない"
+          ],
+          "tense": "Формы глагола"
+        },
+        {
+          "infinitive": "待つ",
+          "conjugations": [
+            "待ちます",
+            "待って",
+            "待った",
+            "待たない"
+          ],
+          "tense": "Формы глагола"
+        },
+        {
+          "infinitive": "帰る",
+          "conjugations": [
+            "帰ります",
+            "帰って",
+            "帰った",
+            "帰らない"
+          ],
+          "tense": "Формы глагола"
+        }
       ]
     },
     "advanced": {
@@ -2551,5 +2901,385 @@
         }
       ]
     }
-  }
+  },
+  "kana": {
+    "hiragana": [
+      {
+        "char": "あ",
+        "romaji": "a"
+      },
+      {
+        "char": "い",
+        "romaji": "i"
+      },
+      {
+        "char": "う",
+        "romaji": "u"
+      },
+      {
+        "char": "え",
+        "romaji": "e"
+      },
+      {
+        "char": "お",
+        "romaji": "o"
+      },
+      {
+        "char": "か",
+        "romaji": "ka"
+      },
+      {
+        "char": "き",
+        "romaji": "ki"
+      },
+      {
+        "char": "く",
+        "romaji": "ku"
+      },
+      {
+        "char": "け",
+        "romaji": "ke"
+      },
+      {
+        "char": "こ",
+        "romaji": "ko"
+      },
+      {
+        "char": "さ",
+        "romaji": "sa"
+      },
+      {
+        "char": "し",
+        "romaji": "shi"
+      },
+      {
+        "char": "す",
+        "romaji": "su"
+      },
+      {
+        "char": "せ",
+        "romaji": "se"
+      },
+      {
+        "char": "そ",
+        "romaji": "so"
+      },
+      {
+        "char": "た",
+        "romaji": "ta"
+      },
+      {
+        "char": "ち",
+        "romaji": "chi"
+      },
+      {
+        "char": "つ",
+        "romaji": "tsu"
+      },
+      {
+        "char": "て",
+        "romaji": "te"
+      },
+      {
+        "char": "と",
+        "romaji": "to"
+      },
+      {
+        "char": "な",
+        "romaji": "na"
+      },
+      {
+        "char": "に",
+        "romaji": "ni"
+      },
+      {
+        "char": "ぬ",
+        "romaji": "nu"
+      },
+      {
+        "char": "ね",
+        "romaji": "ne"
+      },
+      {
+        "char": "の",
+        "romaji": "no"
+      },
+      {
+        "char": "は",
+        "romaji": "ha"
+      },
+      {
+        "char": "ひ",
+        "romaji": "hi"
+      },
+      {
+        "char": "ふ",
+        "romaji": "fu"
+      },
+      {
+        "char": "へ",
+        "romaji": "he"
+      },
+      {
+        "char": "ほ",
+        "romaji": "ho"
+      },
+      {
+        "char": "ま",
+        "romaji": "ma"
+      },
+      {
+        "char": "み",
+        "romaji": "mi"
+      },
+      {
+        "char": "む",
+        "romaji": "mu"
+      },
+      {
+        "char": "め",
+        "romaji": "me"
+      },
+      {
+        "char": "も",
+        "romaji": "mo"
+      },
+      {
+        "char": "や",
+        "romaji": "ya"
+      },
+      {
+        "char": "ゆ",
+        "romaji": "yu"
+      },
+      {
+        "char": "よ",
+        "romaji": "yo"
+      },
+      {
+        "char": "ら",
+        "romaji": "ra"
+      },
+      {
+        "char": "り",
+        "romaji": "ri"
+      },
+      {
+        "char": "る",
+        "romaji": "ru"
+      },
+      {
+        "char": "れ",
+        "romaji": "re"
+      },
+      {
+        "char": "ろ",
+        "romaji": "ro"
+      },
+      {
+        "char": "わ",
+        "romaji": "wa"
+      },
+      {
+        "char": "を",
+        "romaji": "wo"
+      },
+      {
+        "char": "ん",
+        "romaji": "n"
+      }
+    ],
+    "katakana": [
+      {
+        "char": "ア",
+        "romaji": "a"
+      },
+      {
+        "char": "イ",
+        "romaji": "i"
+      },
+      {
+        "char": "ウ",
+        "romaji": "u"
+      },
+      {
+        "char": "エ",
+        "romaji": "e"
+      },
+      {
+        "char": "オ",
+        "romaji": "o"
+      },
+      {
+        "char": "カ",
+        "romaji": "ka"
+      },
+      {
+        "char": "キ",
+        "romaji": "ki"
+      },
+      {
+        "char": "ク",
+        "romaji": "ku"
+      },
+      {
+        "char": "ケ",
+        "romaji": "ke"
+      },
+      {
+        "char": "コ",
+        "romaji": "ko"
+      },
+      {
+        "char": "サ",
+        "romaji": "sa"
+      },
+      {
+        "char": "シ",
+        "romaji": "shi"
+      },
+      {
+        "char": "ス",
+        "romaji": "su"
+      },
+      {
+        "char": "セ",
+        "romaji": "se"
+      },
+      {
+        "char": "ソ",
+        "romaji": "so"
+      },
+      {
+        "char": "タ",
+        "romaji": "ta"
+      },
+      {
+        "char": "チ",
+        "romaji": "chi"
+      },
+      {
+        "char": "ツ",
+        "romaji": "tsu"
+      },
+      {
+        "char": "テ",
+        "romaji": "te"
+      },
+      {
+        "char": "ト",
+        "romaji": "to"
+      },
+      {
+        "char": "ナ",
+        "romaji": "na"
+      },
+      {
+        "char": "ニ",
+        "romaji": "ni"
+      },
+      {
+        "char": "ヌ",
+        "romaji": "nu"
+      },
+      {
+        "char": "ネ",
+        "romaji": "ne"
+      },
+      {
+        "char": "ノ",
+        "romaji": "no"
+      },
+      {
+        "char": "ハ",
+        "romaji": "ha"
+      },
+      {
+        "char": "ヒ",
+        "romaji": "hi"
+      },
+      {
+        "char": "フ",
+        "romaji": "fu"
+      },
+      {
+        "char": "ヘ",
+        "romaji": "he"
+      },
+      {
+        "char": "ホ",
+        "romaji": "ho"
+      },
+      {
+        "char": "マ",
+        "romaji": "ma"
+      },
+      {
+        "char": "ミ",
+        "romaji": "mi"
+      },
+      {
+        "char": "ム",
+        "romaji": "mu"
+      },
+      {
+        "char": "メ",
+        "romaji": "me"
+      },
+      {
+        "char": "モ",
+        "romaji": "mo"
+      },
+      {
+        "char": "ヤ",
+        "romaji": "ya"
+      },
+      {
+        "char": "ユ",
+        "romaji": "yu"
+      },
+      {
+        "char": "ヨ",
+        "romaji": "yo"
+      },
+      {
+        "char": "ラ",
+        "romaji": "ra"
+      },
+      {
+        "char": "リ",
+        "romaji": "ri"
+      },
+      {
+        "char": "ル",
+        "romaji": "ru"
+      },
+      {
+        "char": "レ",
+        "romaji": "re"
+      },
+      {
+        "char": "ロ",
+        "romaji": "ro"
+      },
+      {
+        "char": "ワ",
+        "romaji": "wa"
+      },
+      {
+        "char": "ヲ",
+        "romaji": "wo"
+      },
+      {
+        "char": "ン",
+        "romaji": "n"
+      }
+    ]
+  },
+  "conjugationPronouns": [
+    "ます (masu)",
+    "て (te)",
+    "た (ta)",
+    "ない (nai)"
+  ]
 }
