@@ -1,6 +1,6 @@
 /* Petit Pas v2 — Main Application (SPA) */
 import { Store, ACHIEVEMENTS, SRS_INTERVALS } from './store.js';
-import { speak, isSpeechSupported } from './audio.js';
+import { speak, isSpeechSupported, getVoicesForLang, getPreferredVoiceURI, setPreferredVoice, onVoicesReady } from './audio.js';
 
 // ============ HTML ESCAPING (XSS protection) ============
 function escapeHTML(str) {
@@ -1561,6 +1561,13 @@ function renderSettings() {
       </div>
     </div>
 
+    ${isSpeechSupported() ? `
+    <div class="settings-section">
+      <h3>Озвучка</h3>
+      <p class="text-dim" style="font-size:0.82rem;margin-bottom:0.5rem">Выберите голос для каждого языка. Список зависит от голосов, установленных в вашей системе/браузере — нейросетевые («Google», «Natural») звучат заметно лучше.</p>
+      <div id="voice-settings"></div>
+    </div>` : ''}
+
     <div class="settings-section">
       <h3>Данные</h3>
       <div class="btn-group">
@@ -1589,6 +1596,49 @@ function renderSettings() {
     Store.setDailyGoal(parseInt(e.target.value) || 20);
     showToast('&#9989;', 'Сохранено', 'Дневная цель обновлена');
   });
+
+  // Voice picker
+  if (isSpeechSupported()) {
+    const voiceLangs = [
+      { code: 'english', name: 'Английский', sample: 'Hello, how are you today?' },
+      { code: 'french', name: 'Французский', sample: 'Bonjour, comment ça va ?' },
+      { code: 'japanese', name: 'Японский', sample: 'こんにちは、お元気ですか。' },
+      { code: 'serbian', name: 'Сербский', sample: 'Добар дан, како сте?' },
+    ];
+    const populateVoices = () => {
+      const root = document.getElementById('voice-settings');
+      if (!root) return;
+      root.innerHTML = voiceLangs.map(l => {
+        const vs = getVoicesForLang(l.code);
+        const pref = getPreferredVoiceURI(l.code);
+        const opts = vs.length
+          ? '<option value="">Авто (лучший доступный)</option>' + vs.map(v =>
+              `<option value="${escapeHTML(v.voiceURI)}" ${v.voiceURI === pref ? 'selected' : ''}>${escapeHTML(v.name)} (${escapeHTML(v.lang)})</option>`).join('')
+          : '<option value="">Голоса не найдены</option>';
+        return `
+          <div class="settings-row voice-row">
+            <label>${l.name}</label>
+            <div class="voice-controls">
+              <select class="voice-select" data-lang="${l.code}" ${vs.length ? '' : 'disabled'}>${opts}</select>
+              <button class="btn btn-secondary btn-sm voice-test" data-lang="${l.code}" data-sample="${escapeHTML(l.sample)}" ${vs.length ? '' : 'disabled'} title="Прослушать">&#128264;</button>
+            </div>
+          </div>`;
+      }).join('');
+
+      root.querySelectorAll('.voice-select').forEach(sel => {
+        sel.addEventListener('change', () => {
+          setPreferredVoice(sel.dataset.lang, sel.value || null);
+          const l = voiceLangs.find(x => x.code === sel.dataset.lang);
+          if (l) speak(l.sample, l.code, 0.9);
+        });
+      });
+      root.querySelectorAll('.voice-test').forEach(btn => {
+        btn.addEventListener('click', () => speak(btn.dataset.sample, btn.dataset.lang, 0.9));
+      });
+    };
+    populateVoices();
+    onVoicesReady(populateVoices);
+  }
 
   // Export
   document.getElementById('export-btn')?.addEventListener('click', () => {

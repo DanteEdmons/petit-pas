@@ -1558,6 +1558,11 @@ body {
   font-size: 0.9rem;
 }
 
+.voice-row { flex-wrap: wrap; gap: 0.4rem; }
+.voice-controls { display: flex; align-items: center; gap: 0.4rem; }
+.voice-controls .voice-select { max-width: 60vw; }
+.voice-controls .voice-test { padding: 0.4rem 0.7rem; }
+
 /* ========== BUTTONS ========== */
 .btn {
   padding: 0.7rem 1.5rem;
