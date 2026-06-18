@@ -9,367 +9,457 @@
         "nouns": [
           {
             "front": "temps",
-            "back": "время"
+            "back": "время",
+            "example": "Je n'ai pas le temps. — У меня нет времени."
           },
           {
             "front": "personne",
-            "back": "человек, персона"
+            "back": "человек, персона",
+            "example": "C'est une personne gentille. — Это добрый человек."
           },
           {
             "front": "jour",
-            "back": "день"
+            "back": "день",
+            "example": "Quel beau jour ! — Какой прекрасный день!"
           },
           {
             "front": "homme",
-            "back": "мужчина, человек"
+            "back": "мужчина, человек",
+            "example": "Cet homme est mon père. — Этот мужчина — мой отец."
           },
           {
             "front": "chose",
-            "back": "вещь"
+            "back": "вещь",
+            "example": "C'est une chose importante. — Это важная вещь."
           },
           {
             "front": "femme",
-            "back": "женщина"
+            "back": "женщина",
+            "example": "Cette femme est médecin. — Эта женщина — врач."
           },
           {
             "front": "vie",
-            "back": "жизнь"
+            "back": "жизнь",
+            "example": "La vie est belle. — Жизнь прекрасна."
           },
           {
             "front": "enfant",
-            "back": "ребёнок"
+            "back": "ребёнок",
+            "example": "L'enfant joue dans le parc. — Ребёнок играет в парке."
           },
           {
             "front": "monde",
-            "back": "мир"
+            "back": "мир",
+            "example": "Le monde est grand. — Мир большой."
           },
           {
             "front": "école",
-            "back": "школа"
+            "back": "школа",
+            "example": "Les enfants vont à l'école. — Дети идут в школу."
           },
           {
             "front": "main",
-            "back": "рука (кисть)"
+            "back": "рука (кисть)",
+            "example": "Il lève la main. — Он поднимает руку."
           },
           {
             "front": "travail",
-            "back": "работа"
+            "back": "работа",
+            "example": "J'ai beaucoup de travail. — У меня много работы."
           },
           {
             "front": "semaine",
-            "back": "неделя"
+            "back": "неделя",
+            "example": "La semaine prochaine, je pars. — На следующей неделе я уезжаю."
           },
           {
             "front": "maison",
-            "back": "дом"
+            "back": "дом",
+            "example": "Notre maison est grande. — Наш дом большой."
           },
           {
             "front": "famille",
-            "back": "семья"
+            "back": "семья",
+            "example": "J'aime ma famille. — Я люблю свою семью."
           },
           {
             "front": "ami",
-            "back": "друг"
+            "back": "друг",
+            "example": "C'est mon meilleur ami. — Это мой лучший друг."
           },
           {
             "front": "ville",
-            "back": "город"
+            "back": "город",
+            "example": "Paris est une grande ville. — Париж — большой город."
           },
           {
             "front": "pays",
-            "back": "страна"
+            "back": "страна",
+            "example": "La France est un beau pays. — Франция — красивая страна."
           },
           {
             "front": "année",
-            "back": "год"
+            "back": "год",
+            "example": "Bonne année ! — С Новым годом!"
           },
           {
             "front": "mois",
-            "back": "месяц"
+            "back": "месяц",
+            "example": "Le mois de mai est agréable. — Месяц май приятный."
           },
           {
             "front": "heure",
-            "back": "час"
+            "back": "час",
+            "example": "Quelle heure est-il ? — Который час?"
           },
           {
             "front": "moment",
-            "back": "момент"
+            "back": "момент",
+            "example": "Attends un moment. — Подожди минутку."
           },
           {
             "front": "eau",
-            "back": "вода"
+            "back": "вода",
+            "example": "Je bois de l'eau. — Я пью воду."
           },
           {
             "front": "livre",
-            "back": "книга"
+            "back": "книга",
+            "example": "Ce livre est intéressant. — Эта книга интересная."
           },
           {
             "front": "chambre",
-            "back": "комната"
+            "back": "комната",
+            "example": "Ma chambre est petite. — Моя комната маленькая."
           },
           {
             "front": "rue",
-            "back": "улица"
+            "back": "улица",
+            "example": "La rue est calme. — Улица тихая."
           },
           {
             "front": "table",
-            "back": "стол"
+            "back": "стол",
+            "example": "Le repas est sur la table. — Еда на столе."
           },
           {
             "front": "porte",
-            "back": "дверь"
+            "back": "дверь",
+            "example": "Ferme la porte, s'il te plaît. — Закрой дверь, пожалуйста."
           },
           {
             "front": "fenêtre",
-            "back": "окно"
+            "back": "окно",
+            "example": "Ouvre la fenêtre. — Открой окно."
           },
           {
             "front": "argent",
-            "back": "деньги, серебро"
+            "back": "деньги, серебро",
+            "example": "Je n'ai pas d'argent. — У меня нет денег."
           }
         ],
         "verbs": [
           {
             "front": "être",
-            "back": "быть"
+            "back": "быть",
+            "example": "Je vais être à l'heure. — Я буду вовремя."
           },
           {
             "front": "avoir",
-            "back": "иметь"
+            "back": "иметь",
+            "example": "Il veut avoir un chien. — Он хочет иметь собаку."
           },
           {
             "front": "faire",
-            "back": "делать"
+            "back": "делать",
+            "example": "Je dois faire mes devoirs. — Я должен сделать уроки."
           },
           {
             "front": "pouvoir",
-            "back": "мочь"
+            "back": "мочь",
+            "example": "Tu vas pouvoir venir ? — Ты сможешь прийти?"
           },
           {
             "front": "dire",
-            "back": "говорить, сказать"
+            "back": "говорить, сказать",
+            "example": "Je veux te dire la vérité. — Я хочу сказать тебе правду."
           },
           {
             "front": "aller",
-            "back": "идти"
+            "back": "идти",
+            "example": "Je dois aller à l'école. — Я должен идти в школу."
           },
           {
             "front": "voir",
-            "back": "видеть"
+            "back": "видеть",
+            "example": "J'aimerais voir ce film. — Я хотел бы посмотреть этот фильм."
           },
           {
             "front": "savoir",
-            "back": "знать"
+            "back": "знать",
+            "example": "Je veux savoir la réponse. — Я хочу знать ответ."
           },
           {
             "front": "vouloir",
-            "back": "хотеть"
+            "back": "хотеть",
+            "example": "Tu dois vouloir apprendre. — Ты должен хотеть учиться."
           },
           {
             "front": "venir",
-            "back": "приходить"
+            "back": "приходить",
+            "example": "Tu peux venir avec moi ? — Ты можешь прийти со мной?"
           },
           {
             "front": "prendre",
-            "back": "брать"
+            "back": "брать",
+            "example": "Je vais prendre un café. — Я возьму кофе."
           },
           {
             "front": "donner",
-            "back": "давать"
+            "back": "давать",
+            "example": "Peux-tu me donner ton stylo ? — Можешь дать мне ручку?"
           },
           {
             "front": "trouver",
-            "back": "находить"
+            "back": "находить",
+            "example": "Je dois trouver mes clés. — Я должен найти ключи."
           },
           {
             "front": "aimer",
-            "back": "любить"
+            "back": "любить",
+            "example": "Elle va aimer ce cadeau. — Ей понравится этот подарок."
           },
           {
             "front": "parler",
-            "back": "говорить"
+            "back": "говорить",
+            "example": "Je veux parler français. — Я хочу говорить по-французски."
           },
           {
             "front": "regarder",
-            "back": "смотреть"
+            "back": "смотреть",
+            "example": "Nous allons regarder un film. — Мы будем смотреть фильм."
           },
           {
             "front": "écouter",
-            "back": "слушать"
+            "back": "слушать",
+            "example": "J'aime écouter de la musique. — Я люблю слушать музыку."
           },
           {
             "front": "manger",
-            "back": "есть (пищу)"
+            "back": "есть (пищу)",
+            "example": "Je vais manger une pomme. — Я съем яблоко."
           },
           {
             "front": "boire",
-            "back": "пить"
+            "back": "пить",
+            "example": "Tu veux boire de l'eau ? — Хочешь попить воды?"
           },
           {
             "front": "lire",
-            "back": "читать"
+            "back": "читать",
+            "example": "J'aime lire le soir. — Я люблю читать вечером."
           },
           {
             "front": "écrire",
-            "back": "писать"
+            "back": "писать",
+            "example": "Je dois écrire une lettre. — Я должен написать письмо."
           },
           {
             "front": "vivre",
-            "back": "жить"
+            "back": "жить",
+            "example": "Il veut vivre à Paris. — Он хочет жить в Париже."
           },
           {
             "front": "travailler",
-            "back": "работать"
+            "back": "работать",
+            "example": "Je dois travailler demain. — Я должен работать завтра."
           },
           {
             "front": "étudier",
-            "back": "учиться"
+            "back": "учиться",
+            "example": "Elle aime étudier les langues. — Она любит изучать языки."
           },
           {
             "front": "penser",
-            "back": "думать"
+            "back": "думать",
+            "example": "Je dois penser à mon avenir. — Я должен думать о будущем."
           },
           {
             "front": "comprendre",
-            "back": "понимать"
+            "back": "понимать",
+            "example": "Je veux comprendre la leçon. — Я хочу понять урок."
           },
           {
             "front": "apprendre",
-            "back": "учить, узнавать"
+            "back": "учить, узнавать",
+            "example": "J'aime apprendre de nouvelles choses. — Я люблю узнавать новое."
           },
           {
             "front": "dormir",
-            "back": "спать"
+            "back": "спать",
+            "example": "Je vais dormir tôt. — Я лягу спать рано."
           },
           {
             "front": "partir",
-            "back": "уходить, уезжать"
+            "back": "уходить, уезжать",
+            "example": "Nous devons partir maintenant. — Мы должны уходить сейчас."
           },
           {
             "front": "rester",
-            "back": "оставаться"
+            "back": "оставаться",
+            "example": "Je veux rester ici. — Я хочу остаться здесь."
           }
         ],
         "adjectives": [
           {
             "front": "bon",
-            "back": "хороший"
+            "back": "хороший",
+            "example": "C'est un bon restaurant. — Это хороший ресторан."
           },
           {
             "front": "grand",
-            "back": "большой"
+            "back": "большой",
+            "example": "C'est un grand homme. — Это великий человек."
           },
           {
             "front": "petit",
-            "back": "маленький"
+            "back": "маленький",
+            "example": "J'ai un petit chien. — У меня маленькая собака."
           },
           {
             "front": "nouveau",
-            "back": "новый"
+            "back": "новый",
+            "example": "J'ai un nouveau téléphone. — У меня новый телефон."
           },
           {
             "front": "jeune",
-            "back": "молодой"
+            "back": "молодой",
+            "example": "Il est encore jeune. — Он ещё молод."
           },
           {
             "front": "vieux",
-            "back": "старый"
+            "back": "старый",
+            "example": "Mon grand-père est vieux. — Мой дедушка стар."
           },
           {
             "front": "beau",
-            "back": "красивый"
+            "back": "красивый",
+            "example": "Quel beau paysage ! — Какой красивый пейзаж!"
           },
           {
             "front": "joli",
-            "back": "милый, красивый"
+            "back": "милый, красивый",
+            "example": "Tu portes un joli chapeau. — На тебе красивая шляпа."
           },
           {
             "front": "mauvais",
-            "back": "плохой"
+            "back": "плохой",
+            "example": "Il fait mauvais temps. — Плохая погода."
           },
           {
             "front": "facile",
-            "back": "лёгкий"
+            "back": "лёгкий",
+            "example": "Cet exercice est facile. — Это упражнение лёгкое."
           },
           {
             "front": "difficile",
-            "back": "трудный"
+            "back": "трудный",
+            "example": "Le français n'est pas difficile. — Французский не труден."
           },
           {
             "front": "long",
-            "back": "длинный"
+            "back": "длинный",
+            "example": "Le voyage est long. — Путешествие долгое."
           },
           {
             "front": "court",
-            "back": "короткий"
+            "back": "короткий",
+            "example": "Le film est court. — Фильм короткий."
           },
           {
             "front": "haut",
-            "back": "высокий"
+            "back": "высокий",
+            "example": "Le mur est haut. — Стена высокая."
           },
           {
             "front": "bas",
-            "back": "низкий"
+            "back": "низкий",
+            "example": "Le plafond est bas. — Потолок низкий."
           },
           {
             "front": "chaud",
-            "back": "горячий, жаркий"
+            "back": "горячий, жаркий",
+            "example": "Le café est chaud. — Кофе горячий."
           },
           {
             "front": "froid",
-            "back": "холодный"
+            "back": "холодный",
+            "example": "L'hiver est froid. — Зима холодная."
           },
           {
             "front": "blanc",
-            "back": "белый"
+            "back": "белый",
+            "example": "Le lait est blanc. — Молоко белое."
           },
           {
             "front": "noir",
-            "back": "чёрный"
+            "back": "чёрный",
+            "example": "Le chat est noir. — Кот чёрный."
           },
           {
             "front": "rouge",
-            "back": "красный"
+            "back": "красный",
+            "example": "J'aime le vin rouge. — Я люблю красное вино."
           },
           {
             "front": "bleu",
-            "back": "синий"
+            "back": "синий",
+            "example": "Le ciel est bleu. — Небо голубое."
           },
           {
             "front": "vert",
-            "back": "зелёный"
+            "back": "зелёный",
+            "example": "Le feu est vert. — Светофор зелёный."
           },
           {
             "front": "jaune",
-            "back": "жёлтый"
+            "back": "жёлтый",
+            "example": "Le soleil est jaune. — Солнце жёлтое."
           },
           {
             "front": "important",
-            "back": "важный"
+            "back": "важный",
+            "example": "C'est un message important. — Это важное сообщение."
           },
           {
             "front": "intéressant",
-            "back": "интересный"
+            "back": "интересный",
+            "example": "Le livre est intéressant. — Книга интересная."
           },
           {
             "front": "content",
-            "back": "довольный"
+            "back": "довольный",
+            "example": "Je suis content de te voir. — Я рад тебя видеть."
           },
           {
             "front": "heureux",
-            "back": "счастливый"
+            "back": "счастливый",
+            "example": "Il est heureux. — Он счастлив."
           },
           {
             "front": "triste",
-            "back": "грустный"
+            "back": "грустный",
+            "example": "Pourquoi es-tu triste ? — Почему ты грустный?"
           },
           {
             "front": "fatigué",
-            "back": "уставший"
+            "back": "уставший",
+            "example": "Je suis fatigué ce soir. — Я устал сегодня вечером."
           },
           {
             "front": "rapide",
-            "back": "быстрый"
+            "back": "быстрый",
+            "example": "Le train est rapide. — Поезд быстрый."
           }
         ],
         "others": [
@@ -1112,15 +1202,18 @@
         "nouns": [
           {
             "front": "la réunion",
-            "back": "встреча"
+            "back": "встреча",
+            "example": "J'organise la réunion demain. — Я организую встречу завтра."
           },
           {
             "front": "le délai",
-            "back": "крайний срок"
+            "back": "крайний срок",
+            "example": "Nous devons respecter le délai. — Мы должны соблюсти срок."
           },
           {
             "front": "le salaire",
-            "back": "зарплата"
+            "back": "зарплата",
+            "example": "Il négocie le salaire. — Он договаривается о зарплате."
           },
           {
             "front": "le collègue",
@@ -1148,11 +1241,13 @@
           },
           {
             "front": "le projet",
-            "back": "проект"
+            "back": "проект",
+            "example": "Toute l'équipe soutient le projet. — Вся команда поддерживает проект."
           },
           {
             "front": "le passeport",
-            "back": "паспорт"
+            "back": "паспорт",
+            "example": "N'oublie pas le passeport. — Не забудь паспорт."
           },
           {
             "front": "le bagage",
@@ -1172,7 +1267,8 @@
           },
           {
             "front": "le voyage",
-            "back": "путешествие"
+            "back": "путешествие",
+            "example": "J'adore le voyage en train. — Я обожаю путешествие на поезде."
           },
           {
             "front": "l'hébergement",
@@ -1192,7 +1288,8 @@
           },
           {
             "front": "le traitement",
-            "back": "лечение"
+            "back": "лечение",
+            "example": "Le médecin prescrit le traitement. — Врач назначает лечение."
           },
           {
             "front": "la maladie",
@@ -1204,7 +1301,8 @@
           },
           {
             "front": "le patient",
-            "back": "пациент"
+            "back": "пациент",
+            "example": "Le médecin examine le patient. — Врач осматривает пациента."
           },
           {
             "front": "le logiciel",
@@ -1254,7 +1352,8 @@
         "verbs": [
           {
             "front": "négocier",
-            "back": "договариваться"
+            "back": "договариваться",
+            "example": "Nous devons négocier le contrat. — Мы должны договориться о контракте."
           },
           {
             "front": "mettre en œuvre",
@@ -1262,19 +1361,23 @@
           },
           {
             "front": "atteindre",
-            "back": "достигать"
+            "back": "достигать",
+            "example": "Il veut atteindre son objectif. — Он хочет достичь своей цели."
           },
           {
             "front": "gérer",
-            "back": "управлять"
+            "back": "управлять",
+            "example": "Je dois gérer mon temps. — Я должен управлять своим временем."
           },
           {
             "front": "organiser",
-            "back": "организовывать"
+            "back": "организовывать",
+            "example": "Nous allons organiser une réunion. — Мы организуем встречу."
           },
           {
             "front": "développer",
-            "back": "развивать"
+            "back": "развивать",
+            "example": "L'entreprise veut développer ses produits. — Компания хочет развивать продукты."
           },
           {
             "front": "établir",
@@ -1310,11 +1413,13 @@
           },
           {
             "front": "analyser",
-            "back": "анализировать"
+            "back": "анализировать",
+            "example": "Il faut analyser les données. — Нужно проанализировать данные."
           },
           {
             "front": "évaluer",
-            "back": "оценивать"
+            "back": "оценивать",
+            "example": "Nous devons évaluer les risques. — Мы должны оценить риски."
           },
           {
             "front": "déterminer",
@@ -1326,7 +1431,8 @@
           },
           {
             "front": "collaborer",
-            "back": "сотрудничать"
+            "back": "сотрудничать",
+            "example": "J'aime collaborer avec mon équipe. — Я люблю сотрудничать с командой."
           },
           {
             "front": "coordonner",
@@ -1334,11 +1440,13 @@
           },
           {
             "front": "participer",
-            "back": "участвовать"
+            "back": "участвовать",
+            "example": "Je veux participer au projet. — Я хочу участвовать в проекте."
           },
           {
             "front": "recommander",
-            "back": "рекомендовать"
+            "back": "рекомендовать",
+            "example": "Je peux te recommander ce livre. — Я могу порекомендовать тебе эту книгу."
           },
           {
             "front": "identifier",
@@ -1346,11 +1454,13 @@
           },
           {
             "front": "reconnaître",
-            "back": "признавать"
+            "back": "признавать",
+            "example": "Il faut reconnaître ses erreurs. — Нужно признавать свои ошибки."
           },
           {
             "front": "souligner",
-            "back": "подчеркивать"
+            "back": "подчеркивать",
+            "example": "Je veux souligner ce point. — Я хочу подчеркнуть этот момент."
           },
           {
             "front": "illustrer",
@@ -1358,7 +1468,8 @@
           },
           {
             "front": "conclure",
-            "back": "заключать"
+            "back": "заключать",
+            "example": "Nous pouvons conclure l'accord. — Мы можем заключить соглашение."
           },
           {
             "front": "acquérir",
@@ -1382,7 +1493,8 @@
           },
           {
             "front": "améliorer",
-            "back": "улучшать"
+            "back": "улучшать",
+            "example": "Nous voulons améliorer le service. — Мы хотим улучшить сервис."
           }
         ],
         "adjectives": [
@@ -2347,11 +2459,13 @@
         "nouns": [
           {
             "front": "l'hypothèse",
-            "back": "гипотеза"
+            "back": "гипотеза",
+            "example": "Il faut vérifier l'hypothèse. — Нужно проверить гипотезу."
           },
           {
             "front": "le phénomène",
-            "back": "явление, феномен"
+            "back": "явление, феномен",
+            "example": "Les chercheurs étudient le phénomène. — Учёные изучают это явление."
           },
           {
             "front": "l'implication",
@@ -2359,7 +2473,8 @@
           },
           {
             "front": "le paradigme",
-            "back": "парадигма, модель"
+            "back": "парадигма, модель",
+            "example": "Les scientifiques remettent en question le paradigme. — Учёные ставят под сомнение парадигму."
           },
           {
             "front": "la thèse",
@@ -2411,7 +2526,8 @@
           },
           {
             "front": "le discours",
-            "back": "дискурс, речь"
+            "back": "дискурс, речь",
+            "example": "J'ai écouté le discours du président. — Я слушал речь президента."
           },
           {
             "front": "l'incitation",
@@ -2423,7 +2539,8 @@
           },
           {
             "front": "l'héritage",
-            "back": "наследие"
+            "back": "наследие",
+            "example": "Il défend l'héritage culturel. — Он защищает культурное наследие."
           },
           {
             "front": "le synopsis",
@@ -2487,7 +2604,8 @@
           },
           {
             "front": "le consensus",
-            "back": "консенсус, согласие"
+            "back": "консенсус, согласие",
+            "example": "Nous cherchons le consensus. — Мы ищем согласие."
           },
           {
             "front": "la prolifération",
@@ -2513,7 +2631,8 @@
           },
           {
             "front": "atténuer",
-            "back": "смягчать, ослаблять"
+            "back": "смягчать, ослаблять",
+            "example": "Ce médicament peut atténuer la douleur. — Это лекарство может смягчить боль."
           },
           {
             "front": "contourner",
@@ -2553,7 +2672,8 @@
           },
           {
             "front": "consolider",
-            "back": "укреплять, объединять"
+            "back": "укреплять, объединять",
+            "example": "L'entreprise cherche à consolider sa position. — Компания стремится укрепить позицию."
           },
           {
             "front": "synthétiser",
@@ -2573,11 +2693,13 @@
           },
           {
             "front": "envisager",
-            "back": "размышлять, обдумывать"
+            "back": "размышлять, обдумывать",
+            "example": "Nous devons envisager toutes les options. — Мы должны рассмотреть все варианты."
           },
           {
             "front": "discerner",
-            "back": "различать, распознавать"
+            "back": "различать, распознавать",
+            "example": "Il faut discerner le vrai du faux. — Нужно отличать правду от лжи."
           },
           {
             "front": "transcender",
@@ -2601,7 +2723,8 @@
           },
           {
             "front": "justifier",
-            "back": "оправдывать, обосновывать"
+            "back": "оправдывать, обосновывать",
+            "example": "Tu dois justifier ta décision. — Ты должен обосновать своё решение."
           },
           {
             "front": "émaner",
@@ -2609,7 +2732,8 @@
           },
           {
             "front": "réfuter",
-            "back": "опровергать"
+            "back": "опровергать",
+            "example": "Il est difficile de réfuter cet argument. — Трудно опровергнуть этот аргумент."
           },
           {
             "front": "invoquer",
@@ -2625,7 +2749,8 @@
           },
           {
             "front": "accélérer",
-            "back": "ускорять, содействовать"
+            "back": "ускорять, содействовать",
+            "example": "La technologie peut accélérer le processus. — Технология может ускорить процесс."
           },
           {
             "front": "réitérer",
@@ -2637,11 +2762,13 @@
           },
           {
             "front": "réduire",
-            "back": "сокращать, урезать"
+            "back": "сокращать, урезать",
+            "example": "Il faut réduire les dépenses. — Нужно сократить расходы."
           },
           {
             "front": "diffuser",
-            "back": "распространять, рассеивать"
+            "back": "распространять, рассеивать",
+            "example": "Les médias vont diffuser l'information. — СМИ распространят информацию."
           },
           {
             "front": "fluctuer",
@@ -2649,7 +2776,8 @@
           },
           {
             "front": "empêcher",
-            "back": "препятствовать, мешать"
+            "back": "препятствовать, мешать",
+            "example": "Rien ne peut empêcher le progrès. — Ничто не может остановить прогресс."
           },
           {
             "front": "manifester",
@@ -2657,7 +2785,8 @@
           },
           {
             "front": "nier",
-            "back": "отрицать, опровергать"
+            "back": "отрицать, опровергать",
+            "example": "On ne peut pas nier les faits. — Нельзя отрицать факты."
           },
           {
             "front": "précipiter",
@@ -2711,7 +2840,8 @@
           },
           {
             "front": "pragmatique",
-            "back": "прагматичный, практичный"
+            "back": "прагматичный, практичный",
+            "example": "Il a une approche pragmatique. — У него прагматичный подход."
           },
           {
             "front": "éphémère",
@@ -2755,7 +2885,8 @@
           },
           {
             "front": "indispensable",
-            "back": "необходимый, незаменимый"
+            "back": "необходимый, незаменимый",
+            "example": "Ton aide est indispensable. — Твоя помощь незаменима."
           },
           {
             "front": "cynique",
@@ -2763,11 +2894,13 @@
           },
           {
             "front": "profond",
-            "back": "глубокий, глубокомысленный"
+            "back": "глубокий, глубокомысленный",
+            "example": "C'est un sujet profond. — Это глубокая тема."
           },
           {
             "front": "obsolète",
-            "back": "устаревший, вышедший из употребления"
+            "back": "устаревший, вышедший из употребления",
+            "example": "Ce logiciel est obsolète. — Это ПО устарело."
           },
           {
             "front": "volatile",
@@ -2783,7 +2916,8 @@
           },
           {
             "front": "crucial",
-            "back": "ключевой, решающий"
+            "back": "ключевой, решающий",
+            "example": "C'est un moment crucial. — Это решающий момент."
           },
           {
             "front": "négligeable",
@@ -2799,11 +2933,13 @@
           },
           {
             "front": "tangible",
-            "back": "осязаемый, реальный"
+            "back": "осязаемый, реальный",
+            "example": "Nous voulons un résultat tangible. — Мы хотим осязаемый результат."
           },
           {
             "front": "banal",
-            "back": "обыденный, банальный"
+            "back": "обыденный, банальный",
+            "example": "Ce film est banal. — Этот фильм банален."
           },
           {
             "front": "intrinsèque",
@@ -2811,7 +2947,8 @@
           },
           {
             "front": "plausible",
-            "back": "правдоподобный, вероятный"
+            "back": "правдоподобный, вероятный",
+            "example": "C'est une explication plausible. — Это правдоподобное объяснение."
           },
           {
             "front": "éloquent",
