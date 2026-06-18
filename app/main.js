@@ -548,7 +548,7 @@ async function renderTopics(level) {
     sections.push({ title: 'Слово в контексте', icon: '&#9999;', route: 'cloze' });
   }
 
-  const catNames = { nouns: 'Существительные', verbs: 'Глаголы', adjectives: 'Прилагательные', others: 'Другие' };
+  const catNames = { nouns: 'Существительные', verbs: 'Глаголы', adjectives: 'Прилагательные', phrases: 'Фразы', numbers_time: 'Числа и время', idioms: 'Идиомы', others: 'Другие' };
 
   let vocabHTML = '';
   if (hasVocab) {
@@ -599,7 +599,7 @@ async function renderPracticeMode(level, category, mode) {
   if (!data || !data.levels[level] || !data.levels[level].vocabulary[category]) return;
 
   const words = data.levels[level].vocabulary[category];
-  const catNames = { nouns: 'Существительные', verbs: 'Глаголы', adjectives: 'Прилагательные', others: 'Другие' };
+  const catNames = { nouns: 'Существительные', verbs: 'Глаголы', adjectives: 'Прилагательные', phrases: 'Фразы', numbers_time: 'Числа и время', idioms: 'Идиомы', others: 'Другие' };
 
   const modes = [
     { id: 'flashcard', name: 'Карточки' },

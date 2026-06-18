@@ -583,6 +583,92 @@
             "front": "toujours",
             "back": "всегда"
           }
+        ],
+        "phrases": [
+          {
+            "front": "Bonjour",
+            "back": "Здравствуйте"
+          },
+          {
+            "front": "Bonsoir",
+            "back": "Добрый вечер"
+          },
+          {
+            "front": "Salut",
+            "back": "Привет / Пока"
+          },
+          {
+            "front": "Au revoir",
+            "back": "До свидания"
+          },
+          {
+            "front": "Merci beaucoup",
+            "back": "Большое спасибо"
+          },
+          {
+            "front": "S'il vous plaît",
+            "back": "Пожалуйста (просьба)"
+          },
+          {
+            "front": "De rien",
+            "back": "Не за что"
+          },
+          {
+            "front": "Excusez-moi",
+            "back": "Извините"
+          },
+          {
+            "front": "Pardon",
+            "back": "Простите"
+          },
+          {
+            "front": "Comment ça va ?",
+            "back": "Как дела?"
+          },
+          {
+            "front": "Ça va bien",
+            "back": "Всё хорошо"
+          },
+          {
+            "front": "Comment vous appelez-vous ?",
+            "back": "Как вас зовут?"
+          },
+          {
+            "front": "Je m'appelle...",
+            "back": "Меня зовут..."
+          },
+          {
+            "front": "Enchanté",
+            "back": "Приятно познакомиться"
+          },
+          {
+            "front": "Je ne comprends pas",
+            "back": "Я не понимаю"
+          },
+          {
+            "front": "Parlez-vous anglais ?",
+            "back": "Вы говорите по-английски?"
+          },
+          {
+            "front": "Combien ça coûte ?",
+            "back": "Сколько это стоит?"
+          },
+          {
+            "front": "Où sont les toilettes ?",
+            "back": "Где туалет?"
+          },
+          {
+            "front": "Je voudrais...",
+            "back": "Я хотел бы..."
+          },
+          {
+            "front": "Bonne journée",
+            "back": "Хорошего дня"
+          },
+          {
+            "front": "À bientôt",
+            "back": "До скорого"
+          }
         ]
       },
       "grammar": [

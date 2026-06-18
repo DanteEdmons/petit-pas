@@ -343,6 +343,108 @@
             "frontHint": "doko",
             "back": "где"
           }
+        ],
+        "phrases": [
+          {
+            "front": "はじめまして",
+            "back": "Приятно познакомиться (впервые)",
+            "frontHint": "hajimemashite"
+          },
+          {
+            "front": "よろしくお願いします",
+            "back": "Будем знакомы / прошу любить и жаловать",
+            "frontHint": "yoroshiku onegai shimasu"
+          },
+          {
+            "front": "お名前は？",
+            "back": "Как вас зовут?",
+            "frontHint": "onamae wa?"
+          },
+          {
+            "front": "元気ですか",
+            "back": "Как дела?",
+            "frontHint": "genki desu ka"
+          },
+          {
+            "front": "元気です",
+            "back": "У меня всё хорошо",
+            "frontHint": "genki desu"
+          },
+          {
+            "front": "分かりません",
+            "back": "Я не понимаю",
+            "frontHint": "wakarimasen"
+          },
+          {
+            "front": "もう一度お願いします",
+            "back": "Повторите ещё раз, пожалуйста",
+            "frontHint": "mou ichido onegai shimasu"
+          },
+          {
+            "front": "英語が話せますか",
+            "back": "Вы говорите по-английски?",
+            "frontHint": "eigo ga hanasemasu ka"
+          },
+          {
+            "front": "いくらですか",
+            "back": "Сколько стоит?",
+            "frontHint": "ikura desu ka"
+          },
+          {
+            "front": "トイレはどこですか",
+            "back": "Где туалет?",
+            "frontHint": "toire wa doko desu ka"
+          },
+          {
+            "front": "これをください",
+            "back": "Дайте это, пожалуйста",
+            "frontHint": "kore o kudasai"
+          },
+          {
+            "front": "大丈夫です",
+            "back": "Всё в порядке",
+            "frontHint": "daijoubu desu"
+          },
+          {
+            "front": "ありがとうございます",
+            "back": "Спасибо (вежливо)",
+            "frontHint": "arigatou gozaimasu"
+          },
+          {
+            "front": "どういたしまして",
+            "back": "Не за что",
+            "frontHint": "dou itashimashite"
+          },
+          {
+            "front": "おはようございます",
+            "back": "Доброе утро (вежливо)",
+            "frontHint": "ohayou gozaimasu"
+          },
+          {
+            "front": "おやすみなさい",
+            "back": "Спокойной ночи",
+            "frontHint": "oyasuminasai"
+          },
+          {
+            "front": "いただきます",
+            "back": "«Приятного аппетита» (перед едой)",
+            "frontHint": "itadakimasu"
+          },
+          {
+            "front": "ごちそうさまでした",
+            "back": "Спасибо за еду (после еды)",
+            "frontHint": "gochisousama deshita"
+          },
+          {
+            "front": "またね",
+            "back": "Пока, до встречи",
+            "frontHint": "mata ne"
+          },
+          {
+            "front": "すみません",
+            "back": "Извините / простите",
+            "frontHint": "sumimasen"
+          }
         ]
       },
       "grammar": [
